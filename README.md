@@ -13,53 +13,37 @@ A CLI tool to audit design system component usage across multiple MetaMask codeb
 
 ### **Extension**
 
-1. **Clone the [MetaMask Extension](https://github.com/MetaMask/metamask-extension)** repository if you haven’t already:
+1. **Clone the [MetaMask Extension](https://github.com/MetaMask/metamask-extension)** repository if you haven't already:
 
 ```bash
 git clone https://github.com/MetaMask/metamask-extension.git
 ```
 
-2. **Run the CLI tool from the `@georgewrmarshall/design-system-metrics` package:**
-
-Navigate to the `@georgewrmarshall/design-system-metrics` package directory:
+2. **Run the CLI tool using npx:**
 
 ```bash
-cd /path/to/@georgewrmarshall/design-system-metrics
+npx @georgewrmarshall/design-system-metrics --project extension
 ```
 
-3. **Run the CLI tool for the MetaMask Extension:**
-
-```bash
-yarn node index.js --project extension
-```
-
-4. A file called `extension-component-adoption-metrics.csv` will be generated in the current working directory if there are no errors.
+3. A file called `extension-component-adoption-metrics.csv` will be generated in the current working directory if there are no errors.
 
 ---
 
 ### **Mobile**
 
-1. **Clone the [MetaMask Mobile](https://github.com/MetaMask/metamask-mobile)** repository if you haven’t already:
+1. **Clone the [MetaMask Mobile](https://github.com/MetaMask/metamask-mobile)** repository if you haven't already:
 
 ```bash
 git clone https://github.com/MetaMask/metamask-mobile.git
 ```
 
-2. **Run the CLI tool from the `@georgewrmarshall/design-system-metrics` package:**
-
-Navigate to the `@georgewrmarshall/design-system-metrics` package directory:
+2. **Run the CLI tool using npx:**
 
 ```bash
-cd /path/to/@georgewrmarshall/design-system-metrics
+npx @georgewrmarshall/design-system-metrics --project mobile
 ```
 
-3. **Run the CLI tool for the MetaMask Mobile project:**
-
-```bash
-yarn node index.js --project mobile
-```
-
-4. A file called `mobile-component-adoption-metrics.csv` will be generated in the current working directory if there are no errors.
+3. A file called `mobile-component-adoption-metrics.csv` will be generated in the current working directory if there are no errors.
 
 ---
 
@@ -73,7 +57,7 @@ yarn node index.js --project mobile
 Example:
 
 ```bash
-yarn node index.js --project extension
+npx @georgewrmarshall/design-system-metrics --project extension
 ```
 
 - **`--format` (Optional)**: Specify the output format. Options are `csv` (default) or `json`.
@@ -81,13 +65,13 @@ yarn node index.js --project extension
 Example:
 
 ```bash
-yarn node index.js --project extension --format json
+npx @georgewrmarshall/design-system-metrics --project extension --format json
 ```
 
 - **Custom Configuration**: By default, the tool uses a `config.json` file to define the component list and ignore patterns. You can also pass a custom configuration file by adding the `--config` option:
 
 ```bash
-yarn node index.js --project extension --config /path/to/custom-config.json
+npx @georgewrmarshall/design-system-metrics --project extension --config /path/to/custom-config.json
 ```
 
 ---
