@@ -34,7 +34,7 @@ program
   .option("-f, --format <type>", "Output format (csv, json)", "csv")
   .option(
     "-s, --sources <types>",
-    "Comma-separated list of sources to track (local, npm, deprecated, all)",
+    "Comma-separated list of sources to track (deprecated, current, all)",
     "all"
   )
   .option(
@@ -69,9 +69,9 @@ const trackComponent = (componentName, source, filePath) => {
 // Function to process a single file
 const processFile = async (
   filePath,
-  componentsSet,
-  npmPackages,
-  deprecatedComponentsSet
+  deprecatedComponentsSet,
+  currentComponentsSet,
+  currentPackages
 ) => {
   // Track imports by source: Map<componentName, source>
   const componentImports = new Map();
@@ -85,46 +85,6 @@ const processFile = async (
       attachComment: true, // Enable comment attachment for JSDoc parsing
     });
 
-    // First, check for deprecated component definitions with JSDoc tags
-    traverse(ast, {
-      // Check function declarations with JSDoc comments
-      FunctionDeclaration(path) {
-        const { node } = path;
-        if (
-          node.id &&
-          node.id.name &&
-          componentsSet.has(node.id.name) &&
-          node.leadingComments
-        ) {
-          const hasDeprecatedTag = node.leadingComments.some((comment) =>
-            comment.value.includes("@deprecated")
-          );
-          if (hasDeprecatedTag) {
-            deprecatedComponentsSet.add(node.id.name);
-            console.log(`Found deprecated component: ${node.id.name}`);
-          }
-        }
-      },
-      // Check variable declarations (const Component = ...)
-      VariableDeclarator(path) {
-        const { node } = path;
-        if (
-          node.id &&
-          node.id.name &&
-          componentsSet.has(node.id.name) &&
-          path.parent.leadingComments
-        ) {
-          const hasDeprecatedTag = path.parent.leadingComments.some((comment) =>
-            comment.value.includes("@deprecated")
-          );
-          if (hasDeprecatedTag) {
-            deprecatedComponentsSet.add(node.id.name);
-            console.log(`Found deprecated component: ${node.id.name}`);
-          }
-        }
-      },
-    });
-
     // Traverse the AST to find import declarations from multiple sources
     traverse(ast, {
       ImportDeclaration({ node }) {
@@ -133,15 +93,15 @@ const processFile = async (
 
         let source = null;
 
-        // Check if it's from local component library
+        // Check if it's from local component library (DEPRECATED)
         if (importPath.includes("/component-library")) {
-          source = "local";
+          source = "deprecated";
         }
-        // Check if it's from npm packages
-        else if (npmPackages && npmPackages.length > 0) {
-          for (const pkg of npmPackages) {
+        // Check if it's from current NPM packages
+        else if (currentPackages && currentPackages.length > 0) {
+          for (const pkg of currentPackages) {
             if (importPath === pkg || importPath.startsWith(`${pkg}/`)) {
-              source = `npm:${pkg}`;
+              source = "current";
               break;
             }
           }
@@ -154,14 +114,29 @@ const processFile = async (
 
             if (specifier.type === "ImportDefaultSpecifier") {
               componentName = specifier.local.name;
-              console.log(`Default imported component: ${componentName}`);
+              console.log(
+                `Default imported component: ${componentName} (${source})`
+              );
             } else if (specifier.type === "ImportSpecifier") {
               componentName = specifier.local.name;
-              console.log(`Named imported component: ${componentName}`);
+              console.log(`Named imported component: ${componentName} (${source})`);
             }
 
-            if (componentName && componentsSet.has(componentName)) {
-              componentImports.set(componentName, source);
+            if (componentName) {
+              // Check if component is in deprecated list (for local imports)
+              if (
+                source === "deprecated" &&
+                deprecatedComponentsSet.has(componentName)
+              ) {
+                componentImports.set(componentName, source);
+              }
+              // Check if component is in current list (for NPM imports)
+              else if (
+                source === "current" &&
+                currentComponentsSet.has(componentName)
+              ) {
+                componentImports.set(componentName, source);
+              }
             }
           });
         }
@@ -194,20 +169,8 @@ const processFile = async (
           console.log(`JSX component detected: ${componentName}`);
 
           // Check if this component was imported and track its usage
-          if (
-            componentsSet.has(componentName) &&
-            componentImports.has(componentName)
-          ) {
-            let source = componentImports.get(componentName);
-
-            // Check if component is deprecated
-            if (
-              deprecatedComponentsSet &&
-              deprecatedComponentsSet.has(componentName)
-            ) {
-              source = "deprecated";
-            }
-
+          if (componentImports.has(componentName)) {
+            const source = componentImports.get(componentName);
             trackComponent(componentName, source, filePath);
 
             console.log(
@@ -245,15 +208,13 @@ const main = async () => {
     ignoreFolders,
     filePattern,
     outputFile,
-    components,
-    npmPackages = [],
     deprecatedComponents = [],
-    trackDeprecated = true,
-    sources = ["local", "npm", "deprecated"],
+    currentComponents = [],
+    currentPackages = [],
   } = projectConfig;
 
-  const componentsSet = new Set(components);
   const deprecatedComponentsSet = new Set(deprecatedComponents);
+  const currentComponentsSet = new Set(currentComponents);
 
   console.log(chalk.blue(`\nStarting audit for project: ${projectName}\n`));
 
@@ -273,59 +234,41 @@ const main = async () => {
     // Process files concurrently
     await Promise.all(
       files.map((file) =>
-        processFile(file, componentsSet, npmPackages, deprecatedComponentsSet)
+        processFile(
+          file,
+          deprecatedComponentsSet,
+          currentComponentsSet,
+          currentPackages
+        )
       )
     );
 
-    console.log(chalk.green("\nComponent Adoption Metrics:"));
+    console.log(chalk.green("\nComponent Migration Metrics:"));
 
     // Parse sources filter from CLI
-    let requestedSources = ["local", "npm", "deprecated"];
+    let requestedSources = ["deprecated", "current"];
     if (options.sources && options.sources !== "all") {
       requestedSources = options.sources.split(",").map((s) => s.trim());
     }
 
-    // Generate separate reports for each source
     const sourceTypes = requestedSources;
 
     for (const sourceType of sourceTypes) {
       // Filter component metrics for this source type
       const sourceMetrics = new Map();
 
-      componentsSet.forEach((componentName) => {
+      // Determine which component set to use based on source type
+      const componentSet =
+        sourceType === "deprecated"
+          ? deprecatedComponentsSet
+          : currentComponentsSet;
+
+      componentSet.forEach((componentName) => {
         const componentSources = componentMetrics.get(componentName);
         if (componentSources) {
-          // For npm source, aggregate all npm packages
-          if (sourceType === "npm") {
-            let totalNpmCount = 0;
-            let totalNpmFiles = [];
-            let npmPackageBreakdown = {};
-
-            componentSources.forEach((metrics, source) => {
-              if (source.startsWith("npm:")) {
-                const pkgName = source.replace("npm:", "");
-                totalNpmCount += metrics.count;
-                totalNpmFiles.push(...metrics.files);
-                npmPackageBreakdown[pkgName] = {
-                  count: metrics.count,
-                  files: metrics.files,
-                };
-              }
-            });
-
-            if (totalNpmCount > 0) {
-              sourceMetrics.set(componentName, {
-                count: totalNpmCount,
-                files: totalNpmFiles,
-                packageBreakdown: npmPackageBreakdown,
-              });
-            }
-          } else {
-            // For local and deprecated, get directly
-            const metrics = componentSources.get(sourceType);
-            if (metrics) {
-              sourceMetrics.set(componentName, metrics);
-            }
+          const metrics = componentSources.get(sourceType);
+          if (metrics) {
+            sourceMetrics.set(componentName, metrics);
           }
         }
       });
@@ -333,7 +276,9 @@ const main = async () => {
       // Skip if no metrics for this source
       if (sourceMetrics.size === 0) {
         console.log(
-          chalk.yellow(`No ${sourceType} components found, skipping report.`)
+          chalk.yellow(
+            `No ${sourceType} components found, skipping report.`
+          )
         );
         continue;
       }
@@ -342,7 +287,11 @@ const main = async () => {
       const baseFileName = outputFile.replace(/\.(csv|json)$/, "");
       const sourceOutputFile = `${baseFileName}-${sourceType}.${options.format.toLowerCase()}`;
 
-      console.log(chalk.blue(`\n${sourceType.toUpperCase()} Components:`));
+      console.log(
+        chalk.blue(
+          `\n${sourceType.toUpperCase()} Components (${sourceType === "deprecated" ? "Local component-library" : currentPackages.join(", ")}):`
+        )
+      );
 
       if (options.format.toLowerCase() === "json") {
         const jsonOutput = {};
@@ -352,10 +301,6 @@ const main = async () => {
             instances: metrics.count,
             files: metrics.files,
           };
-          if (metrics.packageBreakdown) {
-            jsonOutput[componentName].packageBreakdown =
-              metrics.packageBreakdown;
-          }
         });
 
         await fs.writeFile(
@@ -364,32 +309,17 @@ const main = async () => {
         );
       } else {
         // CSV format
-        let csvContent =
-          sourceType === "npm"
-            ? "Component,Instances,Package,File Paths\n"
-            : "Component,Instances,File Paths\n";
+        let csvContent = "Component,Instances,File Paths\n";
 
         sourceMetrics.forEach((metrics, componentName) => {
           console.log(`${chalk.cyan(componentName)}: ${metrics.count}`);
-
-          if (sourceType === "npm" && metrics.packageBreakdown) {
-            // For npm, create a row for each package
-            Object.entries(metrics.packageBreakdown).forEach(
-              ([pkgName, pkgMetrics]) => {
-                csvContent += `"${componentName}",${pkgMetrics.count},"${pkgName}","${pkgMetrics.files.join(", ")}"\n`;
-              }
-            );
-          } else {
-            csvContent += `"${componentName}",${metrics.count},"${metrics.files.join(", ")}"\n`;
-          }
+          csvContent += `"${componentName}",${metrics.count},"${metrics.files.join(", ")}"\n`;
         });
 
         await fs.writeFile(sourceOutputFile, csvContent);
       }
 
-      console.log(
-        chalk.green(`Metrics written to ${sourceOutputFile}`)
-      );
+      console.log(chalk.green(`Metrics written to ${sourceOutputFile}`));
     }
 
     console.log(chalk.green("\n✓ All reports generated successfully!\n"));

@@ -6,7 +6,9 @@
   "packageManager": "yarn@4.3.1",
   "bin": "./index.js",
   "scripts": {
-    "start": "node index.js --project extension"
+    "start": "node index.js --project extension",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [
     "cli",
