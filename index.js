@@ -8,14 +8,12 @@ const traverse = require("@babel/traverse").default;
 const { program } = require("commander");
 const chalk = require("chalk");
 
-// Load configuration
-const CONFIG_PATH = path.join(__dirname, "config.json");
 let config;
 
 // Function to load and parse the configuration file
-const loadConfig = async () => {
+const loadConfig = async (configPath) => {
   try {
-    const configContent = await fs.readFile(CONFIG_PATH, "utf8");
+    const configContent = await fs.readFile(configPath, "utf8");
     config = JSON.parse(configContent);
   } catch (err) {
     console.error(
@@ -27,23 +25,56 @@ const loadConfig = async () => {
 
 // Define CLI options using Commander
 program
-  .version("1.0.0")
-  .description("Design System Metrics CLI Tool")
+  .version("2.0.0")
+  .description("Design System Metrics CLI Tool - Track component usage from multiple sources")
   .requiredOption(
     "-p, --project <name>",
     "Specify the project to audit (e.g., extension, mobile)"
   )
   .option("-f, --format <type>", "Output format (csv, json)", "csv")
+  .option(
+    "-s, --sources <types>",
+    "Comma-separated list of sources to track (local, npm, deprecated, all)",
+    "all"
+  )
+  .option(
+    "-c, --config <path>",
+    "Path to custom config file",
+    path.join(__dirname, "config.json")
+  )
   .parse(process.argv);
 
 const options = program.opts();
 
 // Initialize component instances and file mappings
-let componentInstances = new Map();
-let componentFiles = new Map();
+// Structure: Map<componentName, Map<source, { count, files }>>
+let componentMetrics = new Map();
+
+// Helper function to track component usage by source
+const trackComponent = (componentName, source, filePath) => {
+  if (!componentMetrics.has(componentName)) {
+    componentMetrics.set(componentName, new Map());
+  }
+
+  const sourceMetrics = componentMetrics.get(componentName);
+  if (!sourceMetrics.has(source)) {
+    sourceMetrics.set(source, { count: 0, files: [] });
+  }
+
+  const metrics = sourceMetrics.get(source);
+  metrics.count++;
+  metrics.files.push(filePath);
+};
 
 // Function to process a single file
-const processFile = async (filePath, componentsSet, importedComponentsSet) => {
+const processFile = async (
+  filePath,
+  componentsSet,
+  npmPackages,
+  deprecatedComponentsSet
+) => {
+  // Track imports by source: Map<componentName, source>
+  const componentImports = new Map();
   try {
     const content = await fs.readFile(filePath, "utf8");
 
@@ -51,23 +82,86 @@ const processFile = async (filePath, componentsSet, importedComponentsSet) => {
     const ast = babelParser.parse(content, {
       sourceType: "module",
       plugins: ["jsx", "typescript"],
+      attachComment: true, // Enable comment attachment for JSDoc parsing
     });
 
-    // Traverse the AST to find import declarations from the component library
+    // First, check for deprecated component definitions with JSDoc tags
+    traverse(ast, {
+      // Check function declarations with JSDoc comments
+      FunctionDeclaration(path) {
+        const { node } = path;
+        if (
+          node.id &&
+          node.id.name &&
+          componentsSet.has(node.id.name) &&
+          node.leadingComments
+        ) {
+          const hasDeprecatedTag = node.leadingComments.some((comment) =>
+            comment.value.includes("@deprecated")
+          );
+          if (hasDeprecatedTag) {
+            deprecatedComponentsSet.add(node.id.name);
+            console.log(`Found deprecated component: ${node.id.name}`);
+          }
+        }
+      },
+      // Check variable declarations (const Component = ...)
+      VariableDeclarator(path) {
+        const { node } = path;
+        if (
+          node.id &&
+          node.id.name &&
+          componentsSet.has(node.id.name) &&
+          path.parent.leadingComments
+        ) {
+          const hasDeprecatedTag = path.parent.leadingComments.some((comment) =>
+            comment.value.includes("@deprecated")
+          );
+          if (hasDeprecatedTag) {
+            deprecatedComponentsSet.add(node.id.name);
+            console.log(`Found deprecated component: ${node.id.name}`);
+          }
+        }
+      },
+    });
+
+    // Traverse the AST to find import declarations from multiple sources
     traverse(ast, {
       ImportDeclaration({ node }) {
         const importPath = node.source.value;
         console.log(`Import path detected: ${importPath}`);
+
+        let source = null;
+
+        // Check if it's from local component library
         if (importPath.includes("/component-library")) {
+          source = "local";
+        }
+        // Check if it's from npm packages
+        else if (npmPackages && npmPackages.length > 0) {
+          for (const pkg of npmPackages) {
+            if (importPath === pkg || importPath.startsWith(`${pkg}/`)) {
+              source = `npm:${pkg}`;
+              break;
+            }
+          }
+        }
+
+        // If we found a relevant import source, track the components
+        if (source) {
           node.specifiers.forEach((specifier) => {
+            let componentName = null;
+
             if (specifier.type === "ImportDefaultSpecifier") {
-              importedComponentsSet.add(specifier.local.name);
-              console.log(
-                `Default imported component: ${specifier.local.name}`
-              );
+              componentName = specifier.local.name;
+              console.log(`Default imported component: ${componentName}`);
             } else if (specifier.type === "ImportSpecifier") {
-              importedComponentsSet.add(specifier.local.name);
-              console.log(`Named imported component: ${specifier.local.name}`);
+              componentName = specifier.local.name;
+              console.log(`Named imported component: ${componentName}`);
+            }
+
+            if (componentName && componentsSet.has(componentName)) {
+              componentImports.set(componentName, source);
             }
           });
         }
@@ -99,19 +193,25 @@ const processFile = async (filePath, componentsSet, importedComponentsSet) => {
 
           console.log(`JSX component detected: ${componentName}`);
 
+          // Check if this component was imported and track its usage
           if (
             componentsSet.has(componentName) &&
-            importedComponentsSet.has(componentName)
+            componentImports.has(componentName)
           ) {
-            const count = componentInstances.get(componentName) || 0;
-            componentInstances.set(componentName, count + 1);
+            let source = componentImports.get(componentName);
 
-            const files = componentFiles.get(componentName) || [];
-            files.push(filePath);
-            componentFiles.set(componentName, files);
+            // Check if component is deprecated
+            if (
+              deprecatedComponentsSet &&
+              deprecatedComponentsSet.has(componentName)
+            ) {
+              source = "deprecated";
+            }
+
+            trackComponent(componentName, source, filePath);
 
             console.log(
-              `Matched JSX component: ${componentName}, Count: ${count + 1}`
+              `Matched JSX component: ${componentName}, Source: ${source}`
             );
           }
         }
@@ -126,7 +226,7 @@ const processFile = async (filePath, componentsSet, importedComponentsSet) => {
 
 // Main function to coordinate the audit
 const main = async () => {
-  await loadConfig();
+  await loadConfig(options.config);
 
   const projectName = options.project;
   const projectConfig = config.projects[projectName];
@@ -140,10 +240,20 @@ const main = async () => {
     process.exit(1);
   }
 
-  const { rootFolder, ignoreFolders, filePattern, outputFile, components } =
-    projectConfig;
+  const {
+    rootFolder,
+    ignoreFolders,
+    filePattern,
+    outputFile,
+    components,
+    npmPackages = [],
+    deprecatedComponents = [],
+    trackDeprecated = true,
+    sources = ["local", "npm", "deprecated"],
+  } = projectConfig;
 
   const componentsSet = new Set(components);
+  const deprecatedComponentsSet = new Set(deprecatedComponents);
 
   console.log(chalk.blue(`\nStarting audit for project: ${projectName}\n`));
 
@@ -162,44 +272,127 @@ const main = async () => {
 
     // Process files concurrently
     await Promise.all(
-      files.map((file) => processFile(file, componentsSet, new Set()))
+      files.map((file) =>
+        processFile(file, componentsSet, npmPackages, deprecatedComponentsSet)
+      )
     );
 
     console.log(chalk.green("\nComponent Adoption Metrics:"));
 
-    let csvContent = "Component,Instances,File Paths\n";
-    let jsonOutput = {};
-
-    componentsSet.forEach((componentName) => {
-      const instanceCount = componentInstances.get(componentName) || 0;
-      const filePaths = componentFiles.get(componentName) || [];
-      console.log(`${chalk.cyan(componentName)}: ${instanceCount}`);
-
-      if (options.format.toLowerCase() === "json") {
-        jsonOutput[componentName] = {
-          instances: instanceCount,
-          files: filePaths,
-        };
-      } else {
-        csvContent += `"${componentName}",${instanceCount},"${filePaths.join(
-          ", "
-        )}"\n`;
-      }
-    });
-
-    // Write the metrics to the specified output file
-    try {
-      if (options.format.toLowerCase() === "json") {
-        await fs.writeFile(outputFile, JSON.stringify(jsonOutput, null, 2));
-      } else {
-        await fs.writeFile(outputFile, csvContent);
-      }
-      console.log(
-        chalk.green(`\nComponent metrics written to ${outputFile}\n`)
-      );
-    } catch (err) {
-      console.error(chalk.red(`Error writing to file: ${err.message}`));
+    // Parse sources filter from CLI
+    let requestedSources = ["local", "npm", "deprecated"];
+    if (options.sources && options.sources !== "all") {
+      requestedSources = options.sources.split(",").map((s) => s.trim());
     }
+
+    // Generate separate reports for each source
+    const sourceTypes = requestedSources;
+
+    for (const sourceType of sourceTypes) {
+      // Filter component metrics for this source type
+      const sourceMetrics = new Map();
+
+      componentsSet.forEach((componentName) => {
+        const componentSources = componentMetrics.get(componentName);
+        if (componentSources) {
+          // For npm source, aggregate all npm packages
+          if (sourceType === "npm") {
+            let totalNpmCount = 0;
+            let totalNpmFiles = [];
+            let npmPackageBreakdown = {};
+
+            componentSources.forEach((metrics, source) => {
+              if (source.startsWith("npm:")) {
+                const pkgName = source.replace("npm:", "");
+                totalNpmCount += metrics.count;
+                totalNpmFiles.push(...metrics.files);
+                npmPackageBreakdown[pkgName] = {
+                  count: metrics.count,
+                  files: metrics.files,
+                };
+              }
+            });
+
+            if (totalNpmCount > 0) {
+              sourceMetrics.set(componentName, {
+                count: totalNpmCount,
+                files: totalNpmFiles,
+                packageBreakdown: npmPackageBreakdown,
+              });
+            }
+          } else {
+            // For local and deprecated, get directly
+            const metrics = componentSources.get(sourceType);
+            if (metrics) {
+              sourceMetrics.set(componentName, metrics);
+            }
+          }
+        }
+      });
+
+      // Skip if no metrics for this source
+      if (sourceMetrics.size === 0) {
+        console.log(
+          chalk.yellow(`No ${sourceType} components found, skipping report.`)
+        );
+        continue;
+      }
+
+      // Generate output file name
+      const baseFileName = outputFile.replace(/\.(csv|json)$/, "");
+      const sourceOutputFile = `${baseFileName}-${sourceType}.${options.format.toLowerCase()}`;
+
+      console.log(chalk.blue(`\n${sourceType.toUpperCase()} Components:`));
+
+      if (options.format.toLowerCase() === "json") {
+        const jsonOutput = {};
+        sourceMetrics.forEach((metrics, componentName) => {
+          console.log(`${chalk.cyan(componentName)}: ${metrics.count}`);
+          jsonOutput[componentName] = {
+            instances: metrics.count,
+            files: metrics.files,
+          };
+          if (metrics.packageBreakdown) {
+            jsonOutput[componentName].packageBreakdown =
+              metrics.packageBreakdown;
+          }
+        });
+
+        await fs.writeFile(
+          sourceOutputFile,
+          JSON.stringify(jsonOutput, null, 2)
+        );
+      } else {
+        // CSV format
+        let csvContent =
+          sourceType === "npm"
+            ? "Component,Instances,Package,File Paths\n"
+            : "Component,Instances,File Paths\n";
+
+        sourceMetrics.forEach((metrics, componentName) => {
+          console.log(`${chalk.cyan(componentName)}: ${metrics.count}`);
+
+          if (sourceType === "npm" && metrics.packageBreakdown) {
+            // For npm, create a row for each package
+            Object.entries(metrics.packageBreakdown).forEach(
+              ([pkgName, pkgMetrics]) => {
+                csvContent += `"${componentName}",${pkgMetrics.count},"${pkgName}","${pkgMetrics.files.join(", ")}"\n`;
+              }
+            );
+          } else {
+            csvContent += `"${componentName}",${metrics.count},"${metrics.files.join(", ")}"\n`;
+          }
+        });
+
+        await fs.writeFile(sourceOutputFile, csvContent);
+      }
+
+      console.log(
+        chalk.green(`Metrics written to ${sourceOutputFile}`)
+      );
+    }
+
+    console.log(chalk.green("\n✓ All reports generated successfully!\n"));
   } catch (err) {
     console.error(chalk.red(`Error reading files: ${err.message}`));
   }
