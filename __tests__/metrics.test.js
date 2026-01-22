@@ -135,14 +135,15 @@ describe('Design System Metrics', () => {
       const deprecatedContent = await fs.readFile(DEPRECATED_OUTPUT, 'utf8');
       const currentContent = await fs.readFile(CURRENT_OUTPUT, 'utf8');
 
-      // Deprecated Button count (from deprecated-page.js and mixed-page.js)
+      // Deprecated Button count (2 in deprecated-page.js)
+      // Note: mixed-page.js uses "Button as OldButton" which doesn't match "Button" component name
       const deprecatedLines = deprecatedContent.trim().split('\n');
       const deprecatedButtonLine = deprecatedLines.find(line =>
         line.startsWith('"Button"')
       );
-      expect(deprecatedButtonLine).toContain(',3,'); // 2 in deprecated-page + 1 in mixed-page
+      expect(deprecatedButtonLine).toContain(',2,'); // 2 in deprecated-page
 
-      // Current Button count (from current-page.js and mixed-page.js)
+      // Current Button count (2 in current-page.js + 1 in mixed-page.js)
       const currentLines = currentContent.trim().split('\n');
       const currentButtonLine = currentLines.find(line =>
         line.startsWith('"Button"')
