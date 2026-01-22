@@ -33,11 +33,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Mobile Components**: Updated to 110 deprecated components (from 100)
 
-## [2.0.0] - 2025-01-21
+## [2.0.0] - 2026-01-21
+
+### 🎉 Major Refactor
+
+This release represents a complete architectural overhaul to better align with migration tracking goals.
 
 ### Added
 
-- **Complete Component Lists**: Added missing components to Extension deprecatedComponents:
+- **Explicit Component Lists**: Introduced `deprecatedComponents` and `currentComponents` arrays per project
+- **Missing Components**: Added 5 components to Extension tracking:
   - FileUploader
   - LottieAnimation
   - Skeleton
@@ -47,35 +52,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Test fixtures for deprecated, current, and mixed usage
   - Tests for source separation and file path tracking
   - JSON output format testing
-- **Test Configuration**: Added jest.config.js and test scripts to package.json
-
-### Changed
-
-- **Extension Components**: Updated to 47 deprecated components (from 43)
-- **Component Lists**: Verified all components match actual folder structure from component-library
-- Removed AvatarAccount from deprecatedComponents (only exists in NPM package)
-
-### Fixed
-
-- Component lists now 100% accurate to actual codebase structure
-- All test expectations match actual component usage
-
-## [2.0.0] - 2025-01-21
-
-### 🎉 Major Refactor
-
-This release represents a complete architectural overhaul to better align with migration tracking goals.
-
-### Added
-
-- **Explicit Component Lists**: Introduced `deprecatedComponents` and `currentComponents` arrays per project
-- **Missing Components**: Added FileUploader, LottieAnimation, Skeleton, Textarea, and SensitiveText to Extension tracking
-- **Comprehensive Test Suite**: Added 8 Jest tests covering all major functionality
-  - Deprecated component tracking
-  - Current component tracking
-  - Source separation
-  - File path tracking
-  - JSON output format
 - **Test Scripts**: Added `yarn test` and `yarn test:watch` commands
 - **Jest Configuration**: Added jest.config.js for proper test execution
 
@@ -87,8 +63,9 @@ This release represents a complete architectural overhaul to better align with m
 - **Architecture**: Local `/component-library` imports now map to `deprecatedComponents`
 - **Architecture**: NPM package imports now map to `currentComponents`
 - **Extension Components**: Now tracks 47 deprecated + 24 current components
-- **Mobile Components**: Now tracks 83 deprecated + 25 current components
+- **Mobile Components**: Now tracks 100 deprecated + 25 current components
 - **Component Lists**: Updated to match actual folder structure and NPM package exports
+- Removed AvatarAccount from Extension deprecatedComponents (only exists in NPM package)
 
 ### Fixed
 
