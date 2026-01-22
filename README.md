@@ -208,6 +208,28 @@ One aggregated report showing all component usage:
 
 ---
 
+### **Future Feature Ideas**
+
+We're exploring additional features to enhance design system adoption tracking:
+
+#### **Props Audit**
+- Track the most commonly used props for each component
+- Identify prop usage patterns across the codebase
+- Help inform API design decisions for design system components
+- Surface which props are heavily used vs rarely used
+
+#### **Team Adoption Metrics**
+- Use CODEOWNERS files to map component usage to teams
+- Generate team-level adoption reports showing:
+  - Which teams have the highest design system adoption
+  - Which teams still have the most deprecated component usage
+  - Per-team migration progress tracking
+- Help identify teams that may need additional migration support
+
+Want to contribute or suggest other features? Open an issue on GitHub!
+
+---
+
 ### **Contributing**
 
 If you wish to contribute to the tool, ensure you are running the latest version of **Yarn (v4.x)** and **Node.js**. You can make adjustments to the `config.json` file or update the CLI logic for tracking additional components or repositories.
