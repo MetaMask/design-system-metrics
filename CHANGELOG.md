@@ -1,0 +1,165 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [2.1.0] - 2025-01-21
+
+### Added
+
+- **Complete Component Lists**: Added missing components to Extension deprecatedComponents:
+  - FileUploader
+  - LottieAnimation
+  - Skeleton
+  - SensitiveText
+  - Textarea (restored)
+- **Comprehensive Test Suite**: Added Jest test suite with 8 passing tests
+  - Test fixtures for deprecated, current, and mixed usage
+  - Tests for source separation and file path tracking
+  - JSON output format testing
+- **Test Configuration**: Added jest.config.js and test scripts to package.json
+
+### Changed
+
+- **Extension Components**: Updated to 47 deprecated components (from 43)
+- **Component Lists**: Verified all components match actual folder structure from component-library
+- Removed AvatarAccount from deprecatedComponents (only exists in NPM package)
+
+### Fixed
+
+- Component lists now 100% accurate to actual codebase structure
+- All test expectations match actual component usage
+
+## [2.0.0] - 2025-01-21
+
+### 🎉 Major Refactor
+
+This release represents a complete architectural overhaul to better align with migration tracking goals.
+
+### Added
+
+- **Explicit Component Lists**: Introduced `deprecatedComponents` and `currentComponents` arrays per project
+- **Missing Components**: Added FileUploader, LottieAnimation, Skeleton, Textarea, and SensitiveText to Extension tracking
+- **Comprehensive Test Suite**: Added 8 Jest tests covering all major functionality
+  - Deprecated component tracking
+  - Current component tracking
+  - Source separation
+  - File path tracking
+  - JSON output format
+- **Test Scripts**: Added `yarn test` and `yarn test:watch` commands
+- **Jest Configuration**: Added jest.config.js for proper test execution
+
+### Changed
+
+- **BREAKING**: Simplified from 4 projects to 2 (extension and mobile only)
+- **BREAKING**: Removed `design-system-react` and `design-system-react-native` project configs
+- **BREAKING**: Split `components` array into `deprecatedComponents` and `currentComponents`
+- **Architecture**: Local `/component-library` imports now map to `deprecatedComponents`
+- **Architecture**: NPM package imports now map to `currentComponents`
+- **Extension Components**: Now tracks 47 deprecated + 24 current components
+- **Mobile Components**: Now tracks 83 deprecated + 25 current components
+- **Component Lists**: Updated to match actual folder structure and NPM package exports
+
+### Fixed
+
+- Component lists now accurately reflect the actual local component-library folders
+- Test expectations now match actual component usage patterns
+- All 8 tests passing
+
+### Documentation
+
+- Updated README.md with new architecture
+- Clarified two-project structure (extension and mobile)
+- Documented `deprecatedComponents` vs `currentComponents` mental model
+
+## [1.0.2] - 2024-10-04
+
+### Security
+
+- Dependency updates via Dependabot
+
+## [1.0.1] - 2024-10-04
+
+### Fixed
+
+- Added missing component
+- Updated dependencies
+
+### Security
+
+- Updated brace-expansion
+- Updated cross-spawn
+
+## [1.0.0] - 2024-10-04 - Initial Release
+
+### Added
+
+- Initial CLI tool for design system metrics
+- Support for Extension and Mobile projects
+- CSV and JSON output formats
+- Component usage tracking via AST parsing
+- Babel-based JSX parsing
+- Commander-based CLI interface
+
+---
+
+## Migration Guide: v1.x → v2.0.0
+
+### Breaking Changes
+
+If you were using v1.x, here's what changed:
+
+#### 1. Configuration Structure
+
+**Before (v1.x):**
+```json
+{
+  "projects": {
+    "extension": {
+      "components": ["Button", "Icon", ...]
+    }
+  }
+}
+```
+
+**After (v2.0.0):**
+```json
+{
+  "projects": {
+    "extension": {
+      "deprecatedComponents": ["Button", "Icon", ...],
+      "currentComponents": ["Button", "Icon", ...]
+    }
+  }
+}
+```
+
+#### 2. Removed Projects
+
+The following projects were removed:
+- `design-system-react`
+- `design-system-react-native`
+
+To audit the design system packages themselves, run the tool directly in those repositories.
+
+#### 3. Output Files
+
+Output file naming remains the same:
+- `{project}-component-metrics-deprecated.csv`
+- `{project}-component-metrics-current.csv`
+
+### Benefits of Upgrading
+
+- ✅ Clearer separation between deprecated and current components
+- ✅ More accurate component lists matching actual codebase
+- ✅ Better migration tracking (old vs new)
+- ✅ Comprehensive test coverage
+- ✅ Simpler, more focused architecture
+
+---
+
+[2.0.0]: https://github.com/georgewrmarshall/design-system-metrics/compare/v1.0.1...v2.0.0
+[1.0.1]: https://github.com/georgewrmarshall/design-system-metrics/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/georgewrmarshall/design-system-metrics/releases/tag/v1.0.0
