@@ -25,7 +25,7 @@ const loadConfig = async (configPath) => {
 
 // Define CLI options using Commander
 program
-  .version("2.0.0")
+  .version("2.1.0")
   .description("Design System Metrics CLI Tool - Track component usage from multiple sources")
   .requiredOption(
     "-p, --project <name>",
