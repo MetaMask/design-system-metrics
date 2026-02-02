@@ -1,7 +1,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 const { execSync } = require('child_process');
-const XLSX = require('xlsx');
+const ExcelJS = require('exceljs');
 
 const TEST_CONFIG = path.join(__dirname, 'fixtures/test-config.json');
 const OUTPUT_DIR = path.join(__dirname, 'output');
@@ -27,15 +27,20 @@ describe('Design System Metrics', () => {
   });
 
   // Helper function to read XLSX file
-  const readXLSX = (filePath) => {
-    const workbook = XLSX.readFile(filePath);
+  const readXLSX = async (filePath) => {
+    const workbook = new ExcelJS.Workbook();
+    await workbook.xlsx.readFile(filePath);
     return workbook;
   };
 
   // Helper function to get sheet data as array
   const getSheetData = (workbook, sheetName) => {
-    const sheet = workbook.Sheets[sheetName];
-    return XLSX.utils.sheet_to_json(sheet, { header: 1 });
+    const worksheet = workbook.getWorksheet(sheetName);
+    const data = [];
+    worksheet.eachRow((row) => {
+      data.push(row.values.slice(1)); // slice(1) to remove the empty first element
+    });
+    return data;
   };
 
   describe('XLSX File Generation', () => {
@@ -52,10 +57,11 @@ describe('Design System Metrics', () => {
 
       expect(exists).toBe(true);
 
-      const workbook = readXLSX(XLSX_OUTPUT);
-      expect(workbook.SheetNames).toContain('Migration Progress');
-      expect(workbook.SheetNames).toContain('MMDS Usage');
-      expect(workbook.SheetNames).toContain('Deprecated Usage');
+      const workbook = await readXLSX(XLSX_OUTPUT);
+      const sheetNames = workbook.worksheets.map(ws => ws.name);
+      expect(sheetNames).toContain('Migration Progress');
+      expect(sheetNames).toContain('MMDS Usage');
+      expect(sheetNames).toContain('Deprecated Usage');
     });
   });
 
@@ -66,7 +72,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
-      const workbook = readXLSX(XLSX_OUTPUT);
+      const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'Migration Progress');
       const headers = data[0];
 
@@ -83,7 +89,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
-      const workbook = readXLSX(XLSX_OUTPUT);
+      const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'Migration Progress');
 
       // Find Button row
@@ -102,7 +108,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
-      const workbook = readXLSX(XLSX_OUTPUT);
+      const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'Migration Progress');
 
       // Find Icon row
@@ -119,7 +125,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
-      const workbook = readXLSX(XLSX_OUTPUT);
+      const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'MMDS Usage');
       const headers = data[0];
 
@@ -134,7 +140,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
-      const workbook = readXLSX(XLSX_OUTPUT);
+      const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'MMDS Usage');
 
       // Check that current components are tracked
@@ -151,7 +157,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
-      const workbook = readXLSX(XLSX_OUTPUT);
+      const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'MMDS Usage');
 
       // Button appears 3 times total in current files (2 in current-page.js, 1 in mixed-page.js)
@@ -166,7 +172,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
-      const workbook = readXLSX(XLSX_OUTPUT);
+      const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'MMDS Usage');
 
       // Button should reference the files where it's used
@@ -182,7 +188,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
-      const workbook = readXLSX(XLSX_OUTPUT);
+      const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'Deprecated Usage');
       const headers = data[0];
 
@@ -197,7 +203,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
-      const workbook = readXLSX(XLSX_OUTPUT);
+      const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'Deprecated Usage');
 
       // Check that deprecated components are tracked
@@ -214,7 +220,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
-      const workbook = readXLSX(XLSX_OUTPUT);
+      const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'Deprecated Usage');
 
       // Button appears 2 times in deprecated-page.js
@@ -229,7 +235,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
-      const workbook = readXLSX(XLSX_OUTPUT);
+      const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'Deprecated Usage');
 
       // Button should reference the files where it's used

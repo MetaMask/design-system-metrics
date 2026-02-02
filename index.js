@@ -7,7 +7,7 @@ const babelParser = require("@babel/parser");
 const traverse = require("@babel/traverse").default;
 const { program } = require("commander");
 const chalk = require("chalk");
-const XLSX = require("xlsx");
+const ExcelJS = require("exceljs");
 
 let config;
 
@@ -266,12 +266,14 @@ const main = async () => {
       }
     });
 
-    // Generate XLSX file with multiple sheets
-    const workbook = XLSX.utils.book_new();
+    // Generate XLSX file with multiple sheets using ExcelJS
+    const workbook = new ExcelJS.Workbook();
 
     // Sheet 1: Migration Progress
-    const migrationData = [];
-    migrationData.push([
+    const migrationSheet = workbook.addWorksheet("Migration Progress");
+
+    // Add header row
+    migrationSheet.addRow([
       "Deprecated Component",
       "MMDS Component Replacement",
       "Deprecated Instances",
@@ -291,7 +293,7 @@ const main = async () => {
       const total = deprecatedCount + mmdsCount;
       const percentage = total > 0 ? (mmdsCount / total) * 100 : 0;
 
-      migrationData.push([
+      migrationSheet.addRow([
         deprecatedComp,
         mmdsComp,
         deprecatedCount,
@@ -300,51 +302,46 @@ const main = async () => {
       ]);
     });
 
-    const migrationSheet = XLSX.utils.aoa_to_sheet(migrationData);
-    XLSX.utils.book_append_sheet(workbook, migrationSheet, "Migration Progress");
-
     console.log(
       chalk.blue(`\nMigration Progress: ${deprecatedComponentsWithMapping.length} components tracked`)
     );
 
     // Sheet 2: MMDS Usage
-    const mmdsData = [];
-    mmdsData.push(["Component", "Instances", "File Paths"]);
+    const mmdsSheet = workbook.addWorksheet("MMDS Usage");
+
+    // Add header row
+    mmdsSheet.addRow(["Component", "Instances", "File Paths"]);
 
     currentMetrics.forEach((metrics, componentName) => {
       console.log(`${chalk.cyan(componentName)}: ${metrics.count} (MMDS)`);
-      mmdsData.push([
+      mmdsSheet.addRow([
         componentName,
         metrics.count,
         metrics.files.join(", "),
       ]);
     });
 
-    const mmdsSheet = XLSX.utils.aoa_to_sheet(mmdsData);
-    XLSX.utils.book_append_sheet(workbook, mmdsSheet, "MMDS Usage");
-
     // Sheet 3: Deprecated Usage
-    const deprecatedData = [];
-    deprecatedData.push(["Component", "Instances", "File Paths"]);
+    const deprecatedSheet = workbook.addWorksheet("Deprecated Usage");
+
+    // Add header row
+    deprecatedSheet.addRow(["Component", "Instances", "File Paths"]);
 
     deprecatedMetrics.forEach((metrics, componentName) => {
       console.log(`${chalk.yellow(componentName)}: ${metrics.count} (Deprecated)`);
-      deprecatedData.push([
+      deprecatedSheet.addRow([
         componentName,
         metrics.count,
         metrics.files.join(", "),
       ]);
     });
-
-    const deprecatedSheet = XLSX.utils.aoa_to_sheet(deprecatedData);
-    XLSX.utils.book_append_sheet(workbook, deprecatedSheet, "Deprecated Usage");
 
     // Create output directory if it doesn't exist
     const outputDir = path.dirname(outputFile);
     await fs.mkdir(outputDir, { recursive: true });
 
     // Write the XLSX file
-    XLSX.writeFile(workbook, outputFile);
+    await workbook.xlsx.writeFile(outputFile);
 
     console.log(chalk.green(`\n✓ Metrics written to ${outputFile}`));
     console.log(chalk.green("✓ All reports generated successfully!\n"));
