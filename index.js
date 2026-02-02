@@ -7,6 +7,7 @@ const babelParser = require("@babel/parser");
 const traverse = require("@babel/traverse").default;
 const { program } = require("commander");
 const chalk = require("chalk");
+const XLSX = require("xlsx");
 
 let config;
 
@@ -25,17 +26,11 @@ const loadConfig = async (configPath) => {
 
 // Define CLI options using Commander
 program
-  .version("2.1.0")
-  .description("Design System Metrics CLI Tool - Track component usage from multiple sources")
+  .version("2.3.0")
+  .description("Design System Metrics CLI Tool - Track component usage and migration progress")
   .requiredOption(
     "-p, --project <name>",
     "Specify the project to audit (e.g., extension, mobile)"
-  )
-  .option("-f, --format <type>", "Output format (csv, json)", "csv")
-  .option(
-    "-s, --sources <types>",
-    "Comma-separated list of sources to track (deprecated, current, all)",
-    "all"
   )
   .option(
     "-c, --config <path>",
@@ -245,84 +240,114 @@ const main = async () => {
 
     console.log(chalk.green("\nComponent Migration Metrics:"));
 
-    // Parse sources filter from CLI
-    let requestedSources = ["deprecated", "current"];
-    if (options.sources && options.sources !== "all") {
-      requestedSources = options.sources.split(",").map((s) => s.trim());
-    }
+    const componentMapping = projectConfig.componentMapping || {};
 
-    const sourceTypes = requestedSources;
-
-    for (const sourceType of sourceTypes) {
-      // Filter component metrics for this source type
-      const sourceMetrics = new Map();
-
-      // Determine which component set to use based on source type
-      const componentSet =
-        sourceType === "deprecated"
-          ? deprecatedComponentsSet
-          : currentComponentsSet;
-
-      componentSet.forEach((componentName) => {
-        const componentSources = componentMetrics.get(componentName);
-        if (componentSources) {
-          const metrics = componentSources.get(sourceType);
-          if (metrics) {
-            sourceMetrics.set(componentName, metrics);
-          }
+    // Collect deprecated metrics
+    const deprecatedMetrics = new Map();
+    deprecatedComponentsSet.forEach((componentName) => {
+      const componentSources = componentMetrics.get(componentName);
+      if (componentSources) {
+        const metrics = componentSources.get("deprecated");
+        if (metrics) {
+          deprecatedMetrics.set(componentName, metrics);
         }
-      });
-
-      // Skip if no metrics for this source
-      if (sourceMetrics.size === 0) {
-        console.log(
-          chalk.yellow(
-            `No ${sourceType} components found, skipping report.`
-          )
-        );
-        continue;
       }
+    });
 
-      // Generate output file name
-      const baseFileName = outputFile.replace(/\.(csv|json)$/, "");
-      const sourceOutputFile = `${baseFileName}-${sourceType}.${options.format.toLowerCase()}`;
-
-      console.log(
-        chalk.blue(
-          `\n${sourceType.toUpperCase()} Components (${sourceType === "deprecated" ? "Local component-library" : currentPackages.join(", ")}):`
-        )
-      );
-
-      if (options.format.toLowerCase() === "json") {
-        const jsonOutput = {};
-        sourceMetrics.forEach((metrics, componentName) => {
-          console.log(`${chalk.cyan(componentName)}: ${metrics.count}`);
-          jsonOutput[componentName] = {
-            instances: metrics.count,
-            files: metrics.files,
-          };
-        });
-
-        await fs.writeFile(
-          sourceOutputFile,
-          JSON.stringify(jsonOutput, null, 2)
-        );
-      } else {
-        // CSV format
-        let csvContent = "Component,Instances,File Paths\n";
-
-        sourceMetrics.forEach((metrics, componentName) => {
-          console.log(`${chalk.cyan(componentName)}: ${metrics.count}`);
-          csvContent += `"${componentName}",${metrics.count},"${metrics.files.join(", ")}"\n`;
-        });
-
-        await fs.writeFile(sourceOutputFile, csvContent);
+    // Collect current (MMDS) metrics
+    const currentMetrics = new Map();
+    currentComponentsSet.forEach((componentName) => {
+      const componentSources = componentMetrics.get(componentName);
+      if (componentSources) {
+        const metrics = componentSources.get("current");
+        if (metrics) {
+          currentMetrics.set(componentName, metrics);
+        }
       }
+    });
 
-      console.log(chalk.green(`Metrics written to ${sourceOutputFile}`));
-    }
+    // Generate XLSX file with multiple sheets
+    const workbook = XLSX.utils.book_new();
 
-    console.log(chalk.green("\n✓ All reports generated successfully!\n"));
+    // Sheet 1: Migration Progress
+    const migrationData = [];
+    migrationData.push([
+      "Deprecated Component",
+      "MMDS Component Replacement",
+      "Deprecated Instances",
+      "MMDS Instances",
+      "Migrated %",
+    ]);
+
+    // Collect all unique deprecated components that have mappings
+    const deprecatedComponentsWithMapping = Array.from(
+      deprecatedComponentsSet
+    ).filter((comp) => componentMapping[comp]);
+
+    deprecatedComponentsWithMapping.forEach((deprecatedComp) => {
+      const mmdsComp = componentMapping[deprecatedComp];
+      const deprecatedCount = deprecatedMetrics.get(deprecatedComp)?.count || 0;
+      const mmdsCount = currentMetrics.get(mmdsComp)?.count || 0;
+      const total = deprecatedCount + mmdsCount;
+      const percentage = total > 0 ? (mmdsCount / total) * 100 : 0;
+
+      migrationData.push([
+        deprecatedComp,
+        mmdsComp,
+        deprecatedCount,
+        mmdsCount,
+        `${percentage.toFixed(2)}%`,
+      ]);
+    });
+
+    const migrationSheet = XLSX.utils.aoa_to_sheet(migrationData);
+    XLSX.utils.book_append_sheet(workbook, migrationSheet, "Migration Progress");
+
+    console.log(
+      chalk.blue(`\nMigration Progress: ${deprecatedComponentsWithMapping.length} components tracked`)
+    );
+
+    // Sheet 2: MMDS Usage
+    const mmdsData = [];
+    mmdsData.push(["Component", "Instances", "File Paths"]);
+
+    currentMetrics.forEach((metrics, componentName) => {
+      console.log(`${chalk.cyan(componentName)}: ${metrics.count} (MMDS)`);
+      mmdsData.push([
+        componentName,
+        metrics.count,
+        metrics.files.join(", "),
+      ]);
+    });
+
+    const mmdsSheet = XLSX.utils.aoa_to_sheet(mmdsData);
+    XLSX.utils.book_append_sheet(workbook, mmdsSheet, "MMDS Usage");
+
+    // Sheet 3: Deprecated Usage
+    const deprecatedData = [];
+    deprecatedData.push(["Component", "Instances", "File Paths"]);
+
+    deprecatedMetrics.forEach((metrics, componentName) => {
+      console.log(`${chalk.yellow(componentName)}: ${metrics.count} (Deprecated)`);
+      deprecatedData.push([
+        componentName,
+        metrics.count,
+        metrics.files.join(", "),
+      ]);
+    });
+
+    const deprecatedSheet = XLSX.utils.aoa_to_sheet(deprecatedData);
+    XLSX.utils.book_append_sheet(workbook, deprecatedSheet, "Deprecated Usage");
+
+    // Create output directory if it doesn't exist
+    const outputDir = path.dirname(outputFile);
+    await fs.mkdir(outputDir, { recursive: true });
+
+    // Write the XLSX file
+    XLSX.writeFile(workbook, outputFile);
+
+    console.log(chalk.green(`\n✓ Metrics written to ${outputFile}`));
+    console.log(chalk.green("✓ All reports generated successfully!\n"));
   } catch (err) {
     console.error(chalk.red(`Error reading files: ${err.message}`));
   }

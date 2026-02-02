@@ -4,8 +4,12 @@
       "rootFolder": "__tests__/fixtures/test-project/ui",
       "ignoreFolders": ["__tests__/fixtures/test-project/ui/components/component-library"],
       "filePattern": "__tests__/fixtures/test-project/ui/**/*.{js,tsx}",
-      "outputFile": "__tests__/output/test-metrics.csv",
+      "outputFile": "__tests__/output/test-metrics.xlsx",
       "currentPackages": ["@metamask/design-system-react"],
+      "componentMapping": {
+        "Button": "Button",
+        "Icon": "Icon"
+      },
       "deprecatedComponents": [
         "Button",
         "Icon",
