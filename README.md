@@ -1,15 +1,15 @@
 # **@georgewrmarshall/design-system-metrics**
 
-A CLI tool to audit design system component usage and track migration progress across MetaMask codebases. Identifies deprecated local component usage and measures adoption of the new MetaMask Design System (MMDS) NPM packages.
+A CLI tool to audit design system component usage and track migration progress across MetaMask codebases. Identifies deprecated local component usage, tracks intermediate migrations, and measures adoption of the new MetaMask Design System (MMDS) NPM packages.
 
 ## **Getting Started**
 
 - [Extension](#extension)
 - [Mobile](#mobile)
-- [Design System Packages](#design-system-packages)
 - [CLI Options](#cli-options)
 - [Features](#features)
 - [Output Files](#output-files)
+- [Configuration](#configuration)
 - [Requirements](#requirements)
 
 ---
@@ -20,6 +20,7 @@ A CLI tool to audit design system component usage and track migration progress a
 
 ```bash
 git clone https://github.com/MetaMask/metamask-extension.git
+cd metamask-extension
 ```
 
 2. **Run the CLI tool using npx:**
@@ -28,9 +29,8 @@ git clone https://github.com/MetaMask/metamask-extension.git
 npx @georgewrmarshall/design-system-metrics --project extension
 ```
 
-3. Two files will be generated in the current working directory:
-   - `extension-component-metrics-deprecated.csv` - Old local component-library usage (needs migration)
-   - `extension-component-metrics-current.csv` - New MMDS NPM package usage (@metamask/design-system-react)
+3. An XLSX file will be generated in the current directory:
+   - `extension-component-metrics.xlsx` - Multi-sheet workbook with migration progress, path-level details, and MMDS usage
 
 ---
 
@@ -40,6 +40,7 @@ npx @georgewrmarshall/design-system-metrics --project extension
 
 ```bash
 git clone https://github.com/MetaMask/metamask-mobile.git
+cd metamask-mobile
 ```
 
 2. **Run the CLI tool using npx:**
@@ -48,49 +49,8 @@ git clone https://github.com/MetaMask/metamask-mobile.git
 npx @georgewrmarshall/design-system-metrics --project mobile
 ```
 
-3. Two files will be generated in the current working directory:
-   - `mobile-component-metrics-deprecated.csv` - Old local component-library usage (needs migration)
-   - `mobile-component-metrics-current.csv` - New MMDS NPM package usage (@metamask/design-system-react-native)
-
----
-
-### **Design System Packages**
-
-You can also audit the design system NPM packages themselves to track component usage within the design system repos.
-
-#### **design-system-react**
-
-1. **Clone the [design-system-react](https://github.com/MetaMask/design-system-react)** repository:
-
-```bash
-git clone https://github.com/MetaMask/design-system-react.git
-```
-
-2. **Run the CLI tool:**
-
-```bash
-npx @georgewrmarshall/design-system-metrics --project design-system-react
-```
-
-3. One file will be generated:
-   - `design-system-react-metrics.csv` - Component usage within the design system package
-
-#### **design-system-react-native**
-
-1. **Clone the [design-system-react-native](https://github.com/MetaMask/design-system-react-native)** repository:
-
-```bash
-git clone https://github.com/MetaMask/design-system-react-native.git
-```
-
-2. **Run the CLI tool:**
-
-```bash
-npx @georgewrmarshall/design-system-metrics --project design-system-react-native
-```
-
-3. One file will be generated:
-   - `design-system-react-native-metrics.csv` - Component usage within the design system package
+3. An XLSX file will be generated in the current directory:
+   - `mobile-component-metrics.xlsx` - Multi-sheet workbook with migration progress, path-level details, and MMDS usage
 
 ---
 
@@ -99,30 +59,10 @@ npx @georgewrmarshall/design-system-metrics --project design-system-react-native
 - **`--project` (Required)**: Specify the project to audit. Options are:
   - `extension`: For MetaMask Extension
   - `mobile`: For MetaMask Mobile
-  - `design-system-react`: For design-system-react package
-  - `design-system-react-native`: For design-system-react-native package
 
   Example:
   ```bash
   npx @georgewrmarshall/design-system-metrics --project extension
-  ```
-
-- **`--format` (Optional)**: Specify the output format. Options are `csv` (default) or `json`.
-
-  Example:
-  ```bash
-  npx @georgewrmarshall/design-system-metrics --project extension --format json
-  ```
-
-- **`--sources` (Optional)**: Specify which sources to track. Options are:
-  - `all` (default): Track both deprecated and current sources
-  - `deprecated`: Only track old local component-library usage
-  - `current`: Only track new MMDS NPM package usage
-  - Comma-separated: `deprecated,current` (same as `all`)
-
-  Example:
-  ```bash
-  npx @georgewrmarshall/design-system-metrics --project extension --sources deprecated
   ```
 
 - **`--config` (Optional)**: Path to custom configuration file
@@ -136,75 +76,189 @@ npx @georgewrmarshall/design-system-metrics --project design-system-react-native
 
 ### **Features**
 
-#### **Multi-Source Tracking (Extension & Mobile)**
-For Extension and Mobile projects, the tool tracks component usage from two distinct sources:
+#### **Multi-Path Component Tracking**
+Track component usage across multiple old implementations migrating to MMDS:
 
-1. **Deprecated**: Components imported from old local `/component-library` paths (needs migration)
-2. **Current**: Components imported from new MMDS NPM packages:
-   - Extension: `@metamask/design-system-react`
-   - Mobile: `@metamask/design-system-react-native`
+- **Multiple deprecated paths**: Track usage from really old UI components AND old component-library versions
+- **Path-level breakdowns**: See which specific implementation path has the most usage
+- **Accurate migration metrics**: Calculate migration progress across all deprecated versions
 
-This helps you track **migration progress** from deprecated local components to the new design system packages.
+**Example:**
+```
+Button from ui/components/ui/button: 15 uses (really old)
+Button from component-library/Button: 42 uses (old)
+Button from @metamask/design-system-react: 23 uses (new MMDS)
 
-#### **Design System Package Auditing**
-For design system packages themselves (`design-system-react` and `design-system-react-native`), the tool generates a single report showing all component usage within the package. This helps you understand which components are being used internally.
+Migration Progress: 23 / (15 + 42 + 23) = 28.75%
+```
 
-#### **Flexible Configuration**
-Four project configurations are available in `config.json`:
-- `extension` - Tracks Extension repo (deprecated = local, current = @metamask/design-system-react)
-- `mobile` - Tracks Mobile repo (deprecated = local, current = @metamask/design-system-react-native)
-- `design-system-react` - Tracks the design-system-react package itself
-- `design-system-react-native` - Tracks the design-system-react-native package itself
+#### **Intermediate Migration Tracking**
+Some components migrate to component-library first before going to MMDS:
 
-Each project can be configured with:
-- Custom file patterns and ignore rules
-- Component lists to audit
-- NPM packages to track (for extension/mobile)
+```
+Popover (ui/components/ui/popover) → Modal (component-library) → (future MMDS migration)
+```
+
+The tool identifies these intermediate migrations and reports them separately so you can track the full migration journey.
+
+#### **No Replacement Tracking**
+Some deprecated components don't have direct MMDS replacements yet. The tool identifies and reports these separately:
+
+```
+TextField - No direct MMDS replacement (custom implementation needed)
+```
+
+#### **Detailed XLSX Reports**
+Generate comprehensive Excel workbooks with 5 sheets:
+
+1. **Migration Progress**: Components migrating to MMDS with % complete
+2. **Intermediate Migrations**: Components with intermediate component-library steps
+3. **Path-Level Detail**: Usage broken down by specific import paths
+4. **MMDS Usage**: Current MMDS component adoption
+5. **No Replacement**: Components needing custom migration approaches
 
 ---
 
 ### **Output Files**
 
-#### **Extension & Mobile Projects**
-Two separate CSV or JSON files are generated to track migration progress:
+The tool generates an XLSX workbook with multiple sheets providing different views of your migration progress.
 
-**CSV Format:**
-```csv
-Component,Instances,File Paths
-"Button",42,"ui/pages/send/send.js, ui/pages/home/home.js"
-```
+#### **Sheet 1: Migration Progress**
+Tracks components migrating directly to MMDS packages.
 
-**Files Generated:**
-- `{project}-component-metrics-deprecated.csv` - Old local component usage
-- `{project}-component-metrics-current.csv` - New NPM package usage
+| Deprecated Component | Source Paths | MMDS Component | Deprecated Instances | MMDS Instances | Migrated % |
+|---------------------|--------------|----------------|---------------------|----------------|------------|
+| Button | ui/components/ui/button, component-library/button | Button | 57 | 23 | 28.75% |
+| Icon | component-library/icon | Icon | 142 | 89 | 38.52% |
 
-**JSON Format:**
+#### **Sheet 2: Intermediate Migrations**
+Shows components migrating to component-library before eventual MMDS migration.
+
+| Old Component | Old Path | New Component | New Package/Path | Instances |
+|--------------|----------|---------------|------------------|-----------|
+| Popover | ui/components/ui/popover | Modal | component-library/modal | 15 |
+
+#### **Sheet 3: Path-Level Detail**
+Breaks down usage by specific import paths to see which old implementations are most used.
+
+| Component | Specific Path | Instances | File Paths |
+|-----------|--------------|-----------|------------|
+| Button | ui/components/ui/button | 15 | pages/send.js, pages/home.js |
+| Button | component-library/button | 42 | pages/settings.js, pages/confirm.js |
+
+#### **Sheet 4: MMDS Usage**
+Current adoption of MMDS components.
+
+| Component | Instances | File Paths |
+|-----------|-----------|------------|
+| Button | 23 | pages/new-feature.js |
+| Icon | 89 | pages/dashboard.js, pages/wallet.js |
+
+#### **Sheet 5: No Replacement**
+Components without direct MMDS replacements.
+
+| Component | Path | Instances | File Paths |
+|-----------|------|-----------|------------|
+| TextField | component-library/text-field | 34 | pages/forms.js |
+
+---
+
+### **Configuration**
+
+The tool uses a `config.json` file to define projects and their component mappings.
+
+#### **Config Structure**
+
 ```json
 {
-  "Button": {
-    "instances": 42,
-    "files": ["ui/pages/send/send.js", "ui/pages/home/home.js"]
+  "projects": {
+    "extension": {
+      "rootFolder": "ui",
+      "ignoreFolders": ["ui/components/component-library"],
+      "filePattern": "ui/**/*.{js,tsx}",
+      "outputFile": "extension-component-metrics.xlsx",
+      "currentPackages": ["@metamask/design-system-react"],
+      "deprecatedComponents": {
+        "Button": {
+          "paths": [
+            "ui/components/ui/button",
+            "ui/components/component-library/button"
+          ],
+          "replacement": {
+            "component": "Button",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Popover": {
+          "paths": ["ui/components/ui/popover"],
+          "replacement": {
+            "component": "Modal",
+            "package": "component-library",
+            "path": "ui/components/component-library/modal"
+          }
+        },
+        "TextField": {
+          "paths": ["ui/components/component-library/text-field"],
+          "replacement": null
+        }
+      },
+      "currentComponents": [
+        "Button",
+        "Icon",
+        "Text",
+        "Box"
+      ]
+    }
   }
 }
 ```
 
-#### **Design System Package Projects**
-One aggregated report showing all component usage:
+#### **Config Fields**
 
-**Files Generated:**
-- `design-system-react-metrics.csv` - All component usage in design-system-react
-- `design-system-react-native-metrics.csv` - All component usage in design-system-react-native
+**Project Level:**
+- `rootFolder`: Root directory to scan
+- `ignoreFolders`: Directories to exclude (e.g., the component-library source itself)
+- `filePattern`: Glob pattern for files to scan
+- `outputFile`: Name of the generated XLSX file
+- `currentPackages`: NPM packages to track as "current" (MMDS packages)
+- `currentComponents`: List of components available in MMDS packages
+
+**Deprecated Components:**
+- `paths`: Array of import paths to match (can be multiple old implementations)
+- `replacement`: Object describing the migration target
+  - For MMDS migrations: `{ component: "Button", package: "@metamask/design-system-react" }`
+  - For intermediate migrations: `{ component: "Modal", package: "component-library", path: "..." }`
+  - For no replacement: `null`
+
+#### **Path Matching**
+
+The tool matches import paths flexibly:
+- Exact matches: `ui/components/component-library/button`
+- Relative imports: `../../components/component-library/button`
+- Partial matches: Any path containing `/component-library`
+- Package imports: `react-native-vector-icons/Ionicons`
 
 ---
 
 ### **Requirements**
 
-- The tool **only counts components that are imported** from tracked sources:
-  - For Extension/Mobile: Local `/component-library` (deprecated) or configured NPM packages (current)
-  - For Design System packages: Any imports within the package
+- The tool **only counts components that are imported** from tracked sources
 - Components **inside JSDoc comments** are not counted as usage
 - **Test files** are automatically excluded (`*.test.{js,tsx}`)
 - **Node.js** v14 or higher is required
+
+---
+
+### **Migration Strategy**
+
+The tool helps you plan your migration strategy by identifying:
+
+1. **High-impact components**: Components with the most usage that should be migrated first
+2. **Multiple old versions**: Components with usage spread across really old and old implementations
+3. **Intermediate steps**: Components that need to go through component-library first
+4. **Custom work needed**: Components without direct MMDS replacements
+
+Use the Path-Level Detail sheet to prioritize which old implementation to migrate first (usually the most-used one).
 
 ---
 

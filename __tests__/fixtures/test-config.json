@@ -6,17 +6,40 @@
       "filePattern": "__tests__/fixtures/test-project/ui/**/*.{js,tsx}",
       "outputFile": "__tests__/output/test-metrics.xlsx",
       "currentPackages": ["@metamask/design-system-react"],
-      "componentMapping": {
-        "Button": "Button",
-        "Icon": "Icon"
+      "deprecatedComponents": {
+        "Button": {
+          "paths": ["__tests__/fixtures/test-project/ui/components/component-library/button"],
+          "replacement": {
+            "component": "Button",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Icon": {
+          "paths": ["__tests__/fixtures/test-project/ui/components/component-library/icon"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Modal": {
+          "paths": ["__tests__/fixtures/test-project/ui/components/component-library/modal"],
+          "replacement": {
+            "component": "Modal",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "TextField": {
+          "paths": ["__tests__/fixtures/test-project/ui/components/component-library/text-field"],
+          "replacement": null
+        },
+        "BannerAlert": {
+          "paths": ["__tests__/fixtures/test-project/ui/components/component-library/banner-alert"],
+          "replacement": {
+            "component": "BannerAlert",
+            "package": "@metamask/design-system-react"
+          }
+        }
       },
-      "deprecatedComponents": [
-        "Button",
-        "Icon",
-        "Modal",
-        "TextField",
-        "BannerAlert"
-      ],
       "currentComponents": [
         "Button",
         "Icon",

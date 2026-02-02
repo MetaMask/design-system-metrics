@@ -44,7 +44,7 @@ describe('Design System Metrics', () => {
   };
 
   describe('XLSX File Generation', () => {
-    test('should generate XLSX file with three sheets', async () => {
+    test('should generate XLSX file with five sheets', async () => {
       execSync(
         `yarn node index.js --project test-project --config ${TEST_CONFIG}`,
         { stdio: 'pipe' }
@@ -60,8 +60,10 @@ describe('Design System Metrics', () => {
       const workbook = await readXLSX(XLSX_OUTPUT);
       const sheetNames = workbook.worksheets.map(ws => ws.name);
       expect(sheetNames).toContain('Migration Progress');
+      expect(sheetNames).toContain('Intermediate Migrations');
+      expect(sheetNames).toContain('Path-Level Detail');
       expect(sheetNames).toContain('MMDS Usage');
-      expect(sheetNames).toContain('Deprecated Usage');
+      expect(sheetNames).toContain('No Replacement');
     });
   });
 
@@ -77,10 +79,11 @@ describe('Design System Metrics', () => {
       const headers = data[0];
 
       expect(headers[0]).toBe('Deprecated Component');
-      expect(headers[1]).toBe('MMDS Component Replacement');
-      expect(headers[2]).toBe('Deprecated Instances');
-      expect(headers[3]).toBe('MMDS Instances');
-      expect(headers[4]).toBe('Migrated %');
+      expect(headers[1]).toBe('Source Paths');
+      expect(headers[2]).toBe('MMDS Component');
+      expect(headers[3]).toBe('Deprecated Instances');
+      expect(headers[4]).toBe('MMDS Instances');
+      expect(headers[5]).toBe('Migrated %');
     });
 
     test('should track Button migration progress', async () => {
@@ -95,11 +98,11 @@ describe('Design System Metrics', () => {
       // Find Button row
       const buttonRow = data.find(row => row[0] === 'Button');
       expect(buttonRow).toBeDefined();
-      expect(buttonRow[1]).toBe('Button'); // MMDS replacement
-      expect(buttonRow[2]).toBe(2); // Deprecated instances
-      expect(buttonRow[3]).toBe(3); // MMDS instances
+      expect(buttonRow[2]).toBe('Button'); // MMDS replacement
+      expect(buttonRow[3]).toBe(2); // Deprecated instances
+      expect(buttonRow[4]).toBe(3); // MMDS instances
       // Migration % should be 3 / (2 + 3) = 60%
-      expect(buttonRow[4]).toBe('60.00%');
+      expect(buttonRow[5]).toBe('60.00%');
     });
 
     test('should track Icon migration progress', async () => {
@@ -114,7 +117,69 @@ describe('Design System Metrics', () => {
       // Find Icon row
       const iconRow = data.find(row => row[0] === 'Icon');
       expect(iconRow).toBeDefined();
-      expect(iconRow[1]).toBe('Icon'); // MMDS replacement
+      expect(iconRow[2]).toBe('Icon'); // MMDS replacement
+    });
+  });
+
+  describe('Path-Level Detail Sheet', () => {
+    test('should have correct headers', async () => {
+      execSync(
+        `yarn node index.js --project test-project --config ${TEST_CONFIG}`,
+        { stdio: 'pipe' }
+      );
+
+      const workbook = await readXLSX(XLSX_OUTPUT);
+      const data = getSheetData(workbook, 'Path-Level Detail');
+      const headers = data[0];
+
+      expect(headers[0]).toBe('Component');
+      expect(headers[1]).toBe('Specific Path');
+      expect(headers[2]).toBe('Instances');
+      expect(headers[3]).toBe('File Paths');
+    });
+
+    test('should track deprecated components by path', async () => {
+      execSync(
+        `yarn node index.js --project test-project --config ${TEST_CONFIG}`,
+        { stdio: 'pipe' }
+      );
+
+      const workbook = await readXLSX(XLSX_OUTPUT);
+      const data = getSheetData(workbook, 'Path-Level Detail');
+
+      // Check that deprecated components are tracked
+      const components = data.slice(1).map(row => row[0]);
+      expect(components).toContain('Button');
+      expect(components).toContain('Icon');
+    });
+
+    test('should count Button instances by path', async () => {
+      execSync(
+        `yarn node index.js --project test-project --config ${TEST_CONFIG}`,
+        { stdio: 'pipe' }
+      );
+
+      const workbook = await readXLSX(XLSX_OUTPUT);
+      const data = getSheetData(workbook, 'Path-Level Detail');
+
+      // Button appears 2 times in deprecated-page.js
+      const buttonRow = data.find(row => row[0] === 'Button');
+      expect(buttonRow).toBeDefined();
+      expect(buttonRow[2]).toBe(2);
+    });
+
+    test('should track file paths for deprecated components', async () => {
+      execSync(
+        `yarn node index.js --project test-project --config ${TEST_CONFIG}`,
+        { stdio: 'pipe' }
+      );
+
+      const workbook = await readXLSX(XLSX_OUTPUT);
+      const data = getSheetData(workbook, 'Path-Level Detail');
+
+      // Button should reference the files where it's used
+      const buttonRow = data.find(row => row[0] === 'Button');
+      expect(buttonRow[3]).toContain('deprecated-page.js');
     });
   });
 
@@ -181,7 +246,7 @@ describe('Design System Metrics', () => {
     });
   });
 
-  describe('Deprecated Usage Sheet', () => {
+  describe('No Replacement Sheet', () => {
     test('should have correct headers', async () => {
       execSync(
         `yarn node index.js --project test-project --config ${TEST_CONFIG}`,
@@ -189,58 +254,27 @@ describe('Design System Metrics', () => {
       );
 
       const workbook = await readXLSX(XLSX_OUTPUT);
-      const data = getSheetData(workbook, 'Deprecated Usage');
+      const data = getSheetData(workbook, 'No Replacement');
       const headers = data[0];
 
       expect(headers[0]).toBe('Component');
-      expect(headers[1]).toBe('Instances');
-      expect(headers[2]).toBe('File Paths');
+      expect(headers[1]).toBe('Path');
+      expect(headers[2]).toBe('Instances');
+      expect(headers[3]).toBe('File Paths');
     });
 
-    test('should track deprecated components from local component-library', async () => {
+    test('should track components with no replacement', async () => {
       execSync(
         `yarn node index.js --project test-project --config ${TEST_CONFIG}`,
         { stdio: 'pipe' }
       );
 
       const workbook = await readXLSX(XLSX_OUTPUT);
-      const data = getSheetData(workbook, 'Deprecated Usage');
+      const data = getSheetData(workbook, 'No Replacement');
 
-      // Check that deprecated components are tracked
+      // TextField has no replacement in the test config
       const components = data.slice(1).map(row => row[0]);
-      expect(components).toContain('Button');
-      expect(components).toContain('Icon');
-      expect(components).toContain('Modal');
       expect(components).toContain('TextField');
-    });
-
-    test('should count deprecated Button instances correctly', async () => {
-      execSync(
-        `yarn node index.js --project test-project --config ${TEST_CONFIG}`,
-        { stdio: 'pipe' }
-      );
-
-      const workbook = await readXLSX(XLSX_OUTPUT);
-      const data = getSheetData(workbook, 'Deprecated Usage');
-
-      // Button appears 2 times in deprecated-page.js
-      const buttonRow = data.find(row => row[0] === 'Button');
-      expect(buttonRow).toBeDefined();
-      expect(buttonRow[1]).toBe(2);
-    });
-
-    test('should track file paths for deprecated components', async () => {
-      execSync(
-        `yarn node index.js --project test-project --config ${TEST_CONFIG}`,
-        { stdio: 'pipe' }
-      );
-
-      const workbook = await readXLSX(XLSX_OUTPUT);
-      const data = getSheetData(workbook, 'Deprecated Usage');
-
-      // Button should reference the files where it's used
-      const buttonRow = data.find(row => row[0] === 'Button');
-      expect(buttonRow[2]).toContain('deprecated-page.js');
     });
   });
 });

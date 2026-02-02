@@ -6,111 +6,345 @@
       "filePattern": "ui/**/*.{js,tsx}",
       "outputFile": "extension-component-metrics.xlsx",
       "currentPackages": ["@metamask/design-system-react"],
-      "componentMapping": {
-        "ApproveIcon": "Icon",
-        "AvatarBase": "AvatarBase",
-        "AvatarFavicon": "AvatarFavicon",
-        "AvatarIcon": "AvatarIcon",
-        "AvatarNetwork": "AvatarNetwork",
-        "AvatarToken": "AvatarToken",
-        "BadgeWrapper": "BadgeWrapper",
-        "Box": "Box",
-        "Button": "Button",
-        "ButtonBase": "ButtonBase",
-        "ButtonIcon": "ButtonIcon",
-        "ButtonLink": "ButtonBase",
-        "ButtonPrimary": "Button",
-        "ButtonSecondary": "Button",
-        "Checkbox": "Checkbox",
-        "Icon": "Icon",
-        "IconBorder": "AvatarBase",
-        "IconEye": "Icon",
-        "IconEyeSlash": "Icon",
-        "IconTokenSearch": "Icon",
-        "IconWithFallback": "AvatarBase",
-        "InfoIcon": "Icon",
-        "InfoIconInverted": "Icon",
-        "InteractionIcon": "Icon",
-        "OverviewBuyIcon": "Icon",
-        "ReceiveIcon": "Icon",
-        "SearchIcon": "Icon",
-        "SendIcon": "Icon",
-        "SignIcon": "Icon",
-        "SunCheckIcon": "Icon",
-        "SwapIconForList": "Icon",
-        "Text": "Text",
-        "Typography": "Text"
+      "deprecatedComponents": {
+        "AvatarBase": {
+          "paths": ["ui/components/component-library/avatar-base"],
+          "replacement": {
+            "component": "AvatarBase",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "AvatarFavicon": {
+          "paths": ["ui/components/component-library/avatar-favicon"],
+          "replacement": {
+            "component": "AvatarFavicon",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "AvatarIcon": {
+          "paths": ["ui/components/component-library/avatar-icon"],
+          "replacement": {
+            "component": "AvatarIcon",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "AvatarNetwork": {
+          "paths": ["ui/components/component-library/avatar-network"],
+          "replacement": {
+            "component": "AvatarNetwork",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "AvatarToken": {
+          "paths": ["ui/components/component-library/avatar-token"],
+          "replacement": {
+            "component": "AvatarToken",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "BadgeWrapper": {
+          "paths": ["ui/components/component-library/badge-wrapper"],
+          "replacement": {
+            "component": "BadgeWrapper",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "BannerAlert": {
+          "paths": ["ui/components/component-library/banner-alert"],
+          "replacement": {
+            "component": "BannerAlert",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "BannerBase": {
+          "paths": ["ui/components/component-library/banner-base"],
+          "replacement": {
+            "component": "BannerBase",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "BannerTip": {
+          "paths": ["ui/components/component-library/banner-tip"],
+          "replacement": {
+            "component": "BannerTip",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Box": {
+          "paths": [
+            "ui/components/ui/box",
+            "ui/components/component-library/box"
+          ],
+          "replacement": {
+            "component": "Box",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Button": {
+          "paths": [
+            "ui/components/ui/button",
+            "ui/components/component-library/button"
+          ],
+          "replacement": {
+            "component": "Button",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "ButtonBase": {
+          "paths": ["ui/components/component-library/button-base"],
+          "replacement": {
+            "component": "ButtonBase",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "ButtonIcon": {
+          "paths": ["ui/components/component-library/button-icon"],
+          "replacement": {
+            "component": "ButtonIcon",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "ButtonLink": {
+          "paths": ["ui/components/component-library/button-link"],
+          "replacement": {
+            "component": "ButtonBase",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "ButtonPrimary": {
+          "paths": ["ui/components/component-library/button-primary"],
+          "replacement": {
+            "component": "Button",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "ButtonSecondary": {
+          "paths": ["ui/components/component-library/button-secondary"],
+          "replacement": {
+            "component": "Button",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Checkbox": {
+          "paths": ["ui/components/component-library/checkbox"],
+          "replacement": {
+            "component": "Checkbox",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Container": {
+          "paths": ["ui/components/component-library/container"],
+          "replacement": {
+            "component": "Container",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "FileUploader": {
+          "paths": ["ui/components/component-library/file-uploader"],
+          "replacement": {
+            "component": "FileUploader",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "FormTextField": {
+          "paths": ["ui/components/component-library/form-text-field"],
+          "replacement": {
+            "component": "FormTextField",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "HeaderBase": {
+          "paths": ["ui/components/component-library/header-base"],
+          "replacement": {
+            "component": "HeaderBase",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "HelpText": {
+          "paths": ["ui/components/component-library/help-text"],
+          "replacement": {
+            "component": "HelpText",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Icon": {
+          "paths": ["ui/components/component-library/icon"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Input": {
+          "paths": ["ui/components/component-library/input"],
+          "replacement": {
+            "component": "Input",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Label": {
+          "paths": ["ui/components/component-library/label"],
+          "replacement": {
+            "component": "Label",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "LottieAnimation": {
+          "paths": ["ui/components/component-library/lottie-animation"],
+          "replacement": {
+            "component": "LottieAnimation",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Modal": {
+          "paths": ["ui/components/component-library/modal"],
+          "replacement": {
+            "component": "Modal",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "ModalBody": {
+          "paths": ["ui/components/component-library/modal-body"],
+          "replacement": {
+            "component": "ModalBody",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "ModalContent": {
+          "paths": ["ui/components/component-library/modal-content"],
+          "replacement": {
+            "component": "ModalContent",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "ModalFocus": {
+          "paths": ["ui/components/component-library/modal-focus"],
+          "replacement": {
+            "component": "ModalFocus",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "ModalFooter": {
+          "paths": ["ui/components/component-library/modal-footer"],
+          "replacement": {
+            "component": "ModalFooter",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "ModalHeader": {
+          "paths": ["ui/components/component-library/modal-header"],
+          "replacement": {
+            "component": "ModalHeader",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "ModalOverlay": {
+          "paths": ["ui/components/component-library/modal-overlay"],
+          "replacement": {
+            "component": "ModalOverlay",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "PickerNetwork": {
+          "paths": ["ui/components/component-library/picker-network"],
+          "replacement": {
+            "component": "PickerNetwork",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Popover": {
+          "paths": ["ui/components/ui/popover"],
+          "replacement": {
+            "component": "Modal",
+            "package": "component-library",
+            "path": "ui/components/component-library/modal"
+          }
+        },
+        "PopoverHeader": {
+          "paths": ["ui/components/ui/popover"],
+          "replacement": {
+            "component": "ModalHeader",
+            "package": "component-library",
+            "path": "ui/components/component-library/modal-header"
+          }
+        },
+        "SelectButton": {
+          "paths": ["ui/components/component-library/select-button"],
+          "replacement": {
+            "component": "SelectButton",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "SelectOption": {
+          "paths": ["ui/components/component-library/select-option"],
+          "replacement": {
+            "component": "SelectOption",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "SelectWrapper": {
+          "paths": ["ui/components/component-library/select-wrapper"],
+          "replacement": {
+            "component": "SelectWrapper",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "SensitiveText": {
+          "paths": ["ui/components/component-library/sensitive-text"],
+          "replacement": {
+            "component": "SensitiveText",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Skeleton": {
+          "paths": ["ui/components/component-library/skeleton"],
+          "replacement": {
+            "component": "Skeleton",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Tag": {
+          "paths": ["ui/components/component-library/tag"],
+          "replacement": {
+            "component": "Tag",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "TagUrl": {
+          "paths": ["ui/components/component-library/tag-url"],
+          "replacement": {
+            "component": "TagUrl",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Text": {
+          "paths": [
+            "ui/components/ui/text",
+            "ui/components/component-library/text"
+          ],
+          "replacement": {
+            "component": "Text",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Textarea": {
+          "paths": ["ui/components/component-library/textarea"],
+          "replacement": {
+            "component": "Textarea",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "TextField": {
+          "paths": ["ui/components/component-library/text-field"],
+          "replacement": null
+        },
+        "TextFieldSearch": {
+          "paths": ["ui/components/component-library/text-field-search"],
+          "replacement": {
+            "component": "TextFieldSearch",
+            "package": "@metamask/design-system-react"
+          }
+        }
       },
-      "deprecatedComponents": [
-        "ActionableMessage",
-        "ApproveIcon",
-        "AvatarBase",
-        "AvatarFavicon",
-        "AvatarIcon",
-        "AvatarNetwork",
-        "AvatarToken",
-        "BadgeWrapper",
-        "BannerAlert",
-        "BannerBase",
-        "BannerTip",
-        "Box",
-        "Button",
-        "ButtonBase",
-        "ButtonIcon",
-        "ButtonLink",
-        "ButtonPrimary",
-        "ButtonSecondary",
-        "Callout",
-        "Checkbox",
-        "Chip",
-        "Container",
-        "FileUploader",
-        "FormTextField",
-        "HeaderBase",
-        "HelpText",
-        "Icon",
-        "IconBorder",
-        "IconEye",
-        "IconEyeSlash",
-        "IconTokenSearch",
-        "IconWithFallback",
-        "InfoIcon",
-        "InfoIconInverted",
-        "Input",
-        "InteractionIcon",
-        "Label",
-        "LottieAnimation",
-        "Modal",
-        "ModalBody",
-        "ModalContent",
-        "ModalFocus",
-        "ModalFooter",
-        "ModalHeader",
-        "ModalOverlay",
-        "Menu",
-        "OverviewBuyIcon",
-        "PickerNetwork",
-        "Popover",
-        "PopoverHeader",
-        "ReceiveIcon",
-        "SearchIcon",
-        "SelectButton",
-        "SelectOption",
-        "SelectWrapper",
-        "SendIcon",
-        "SensitiveText",
-        "SignIcon",
-        "Skeleton",
-        "SunCheckIcon",
-        "SwapIconForList",
-        "Tag",
-        "TagUrl",
-        "Text",
-        "Textarea",
-        "TextField",
-        "TextFieldSearch",
-        "Typography"
-      ],
       "currentComponents": [
         "AvatarAccount",
         "AvatarBase",
@@ -144,176 +378,907 @@
       "filePattern": "app/components/**/*.{js,jsx,ts,tsx}",
       "outputFile": "mobile-component-metrics.xlsx",
       "currentPackages": ["@metamask/design-system-react-native"],
-      "componentMapping": {
-        "AntDesignIcon": "Icon",
-        "AvatarAccount": "AvatarAccount",
-        "AvatarBase": "AvatarBase",
-        "AvatarFavicon": "AvatarFavicon",
-        "AvatarGroup": "AvatarGroup",
-        "AvatarIcon": "AvatarIcon",
-        "AvatarNetwork": "AvatarNetwork",
-        "AvatarToken": "AvatarToken",
-        "BadgeNetwork": "BadgeNetwork",
-        "BadgeStatus": "BadgeStatus",
-        "BadgeWrapper": "BadgeWrapper",
-        "Button": "Button",
-        "ButtonBase": "ButtonBase",
-        "ButtonHero": "Button",
-        "ButtonIcon": "ButtonIcon",
-        "ButtonLink": "ButtonBase",
-        "ButtonPrimary": "Button",
-        "ButtonSecondary": "Button",
-        "CheckBox": "Checkbox",
-        "Checkbox": "Checkbox",
-        "EntypoIcon": "Icon",
-        "EvilIconsIcon": "Icon",
-        "FeatherIcon": "Icon",
-        "FontAwesome5Icon": "Icon",
-        "FontAwesomeIcon": "Icon",
-        "FontistoIcon": "Icon",
-        "FoundationIcon": "Icon",
-        "GenericButton": "Button",
-        "Icon": "Icon",
-        "IonicIcon": "Icon",
-        "MaterialCommunityIconsIcon": "Icon",
-        "MaterialIconsIcon": "Icon",
-        "OcticonsIcon": "Icon",
-        "SimpleLineIconsIcon": "Icon",
-        "StyledButton": "Button",
-        "Text": "Text",
-        "WebsiteIcon": "AvatarFavicon",
-        "ZocialIcon": "Icon"
+      "deprecatedComponents": {
+        "Accordion": {
+          "paths": ["app/component-library/components/Accordions/Accordion"],
+          "replacement": {
+            "component": "Accordion",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "AccountBalance": {
+          "paths": ["app/component-library/components/AccountBalance"],
+          "replacement": {
+            "component": "AccountBalance",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "AccountBase": {
+          "paths": ["app/component-library/components-temp/Accounts/AccountBase"],
+          "replacement": {
+            "component": "AccountBase",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "AccountCell": {
+          "paths": ["app/component-library/components-temp/Cells/AccountCell"],
+          "replacement": {
+            "component": "AccountCell",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ActionListItem": {
+          "paths": ["app/component-library/components/List/ActionListItem"],
+          "replacement": {
+            "component": "ActionListItem",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "AggregatedPercentage": {
+          "paths": ["app/component-library/components/AggregatedPercentage"],
+          "replacement": {
+            "component": "AggregatedPercentage",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "AntDesignIcon": {
+          "paths": ["react-native-vector-icons/AntDesign"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Avatar": {
+          "paths": ["app/component-library/components/Avatars/Avatar"],
+          "replacement": {
+            "component": "Avatar",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "AvatarAccount": {
+          "paths": ["app/component-library/components/Avatars/Avatar/variants/AvatarAccount"],
+          "replacement": {
+            "component": "AvatarAccount",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "AvatarBase": {
+          "paths": ["app/component-library/components/Avatars/Avatar/foundation/AvatarBase"],
+          "replacement": {
+            "component": "AvatarBase",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "AvatarFavicon": {
+          "paths": ["app/component-library/components/Avatars/Avatar/variants/AvatarFavicon"],
+          "replacement": {
+            "component": "AvatarFavicon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "AvatarGroup": {
+          "paths": ["app/component-library/components/Avatars/AvatarGroup"],
+          "replacement": {
+            "component": "AvatarGroup",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "AvatarIcon": {
+          "paths": ["app/component-library/components/Avatars/Avatar/variants/AvatarIcon"],
+          "replacement": {
+            "component": "AvatarIcon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "AvatarNetwork": {
+          "paths": ["app/component-library/components/Avatars/Avatar/variants/AvatarNetwork"],
+          "replacement": {
+            "component": "AvatarNetwork",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "AvatarToken": {
+          "paths": ["app/component-library/components/Avatars/Avatar/variants/AvatarToken"],
+          "replacement": {
+            "component": "AvatarToken",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Badge": {
+          "paths": ["app/component-library/components/Badges/Badge"],
+          "replacement": {
+            "component": "Badge",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "BadgeBase": {
+          "paths": ["app/component-library/components/Badges/Badge/foundation/BadgeBase"],
+          "replacement": {
+            "component": "BadgeBase",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "BadgeNetwork": {
+          "paths": ["app/component-library/components/Badges/Badge/variants/BadgeNetwork"],
+          "replacement": {
+            "component": "BadgeNetwork",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "BadgeNotifications": {
+          "paths": ["app/component-library/components/Badges/BadgeNotifications"],
+          "replacement": {
+            "component": "BadgeNotifications",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "BadgeStatus": {
+          "paths": ["app/component-library/components/Badges/Badge/variants/BadgeStatus"],
+          "replacement": {
+            "component": "BadgeStatus",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "BadgeWrapper": {
+          "paths": ["app/component-library/components/Badges/BadgeWrapper"],
+          "replacement": {
+            "component": "BadgeWrapper",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Banner": {
+          "paths": ["app/component-library/components/Banners/Banner"],
+          "replacement": {
+            "component": "Banner",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "BannerAlert": {
+          "paths": ["app/component-library/components/Banners/Banner/variants/BannerAlert"],
+          "replacement": {
+            "component": "BannerAlert",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "BannerBase": {
+          "paths": ["app/component-library/components/Banners/Banner/foundation/BannerBase"],
+          "replacement": {
+            "component": "BannerBase",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "BannerTip": {
+          "paths": ["app/component-library/components/Banners/Banner/variants/BannerTip"],
+          "replacement": {
+            "component": "BannerTip",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "BottomSheet": {
+          "paths": ["app/component-library/components/BottomSheets/BottomSheet"],
+          "replacement": {
+            "component": "BottomSheet",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "BottomSheetFooter": {
+          "paths": ["app/component-library/components/BottomSheets/BottomSheetFooter"],
+          "replacement": {
+            "component": "BottomSheetFooter",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "BottomSheetHeader": {
+          "paths": ["app/component-library/components/BottomSheets/BottomSheetHeader"],
+          "replacement": {
+            "component": "BottomSheetHeader",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Button": {
+          "paths": [
+            "app/components/Base/Button",
+            "app/component-library/components/Buttons/Button"
+          ],
+          "replacement": {
+            "component": "Button",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ButtonBase": {
+          "paths": ["app/component-library/components/Buttons/Button/foundation/ButtonBase"],
+          "replacement": {
+            "component": "ButtonBase",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ButtonFilter": {
+          "paths": ["app/component-library/components-temp/Buttons/ButtonFilter"],
+          "replacement": {
+            "component": "ButtonFilter",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ButtonHero": {
+          "paths": ["app/component-library/components/Buttons/Button/variants/ButtonHero"],
+          "replacement": {
+            "component": "Button",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ButtonIcon": {
+          "paths": ["app/component-library/components/Buttons/ButtonIcon"],
+          "replacement": {
+            "component": "ButtonIcon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ButtonLink": {
+          "paths": ["app/component-library/components/Buttons/Button/variants/ButtonLink"],
+          "replacement": {
+            "component": "ButtonBase",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ButtonPill": {
+          "paths": ["app/component-library/components-temp/Buttons/ButtonPill"],
+          "replacement": {
+            "component": "ButtonPill",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ButtonPrimary": {
+          "paths": ["app/component-library/components/Buttons/Button/variants/ButtonPrimary"],
+          "replacement": {
+            "component": "Button",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ButtonSecondary": {
+          "paths": ["app/component-library/components/Buttons/Button/variants/ButtonSecondary"],
+          "replacement": {
+            "component": "Button",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ButtonSemantic": {
+          "paths": ["app/component-library/components-temp/Buttons/ButtonSemantic"],
+          "replacement": {
+            "component": "ButtonSemantic",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ButtonToggle": {
+          "paths": ["app/component-library/components-temp/Buttons/ButtonToggle"],
+          "replacement": {
+            "component": "ButtonToggle",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Card": {
+          "paths": ["app/component-library/components/Cards/Card"],
+          "replacement": {
+            "component": "Card",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Cell": {
+          "paths": ["app/component-library/components/Cells/Cell"],
+          "replacement": {
+            "component": "Cell",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "CellBase": {
+          "paths": ["app/component-library/components/Cells/Cell/foundation/CellBase"],
+          "replacement": {
+            "component": "CellBase",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "CellDisplay": {
+          "paths": ["app/component-library/components/Cells/Cell/variants/CellDisplay"],
+          "replacement": {
+            "component": "CellDisplay",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "CellMultiSelect": {
+          "paths": ["app/component-library/components/Cells/Cell/variants/CellMultiSelect"],
+          "replacement": {
+            "component": "CellMultiSelect",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "CellSelect": {
+          "paths": ["app/component-library/components/Cells/Cell/variants/CellSelect"],
+          "replacement": {
+            "component": "CellSelect",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "CellSelectWithMenu": {
+          "paths": ["app/component-library/components-temp/Cells/CellSelectWithMenu"],
+          "replacement": {
+            "component": "CellSelectWithMenu",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "CheckBox": {
+          "paths": ["@react-native-community/checkbox"],
+          "replacement": {
+            "component": "Checkbox",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Checkbox": {
+          "paths": ["app/component-library/components/Checkbox"],
+          "replacement": {
+            "component": "Checkbox",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ConditionalScrollView": {
+          "paths": ["app/component-library/components-temp/Utility/ConditionalScrollView"],
+          "replacement": {
+            "component": "ConditionalScrollView",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ContractBox": {
+          "paths": ["app/component-library/components-temp/ContractBox/ContractBox"],
+          "replacement": {
+            "component": "ContractBox",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ContractBoxBase": {
+          "paths": ["app/component-library/components-temp/ContractBox/ContractBoxBase"],
+          "replacement": {
+            "component": "ContractBoxBase",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "CustomInput": {
+          "paths": ["app/component-library/components-temp/Form/CustomInput"],
+          "replacement": {
+            "component": "CustomInput",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "CustomSpendCap": {
+          "paths": ["app/component-library/components-temp/CustomSpendCap"],
+          "replacement": {
+            "component": "CustomSpendCap",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "EntypoIcon": {
+          "paths": ["react-native-vector-icons/Entypo"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "EvilIconsIcon": {
+          "paths": ["react-native-vector-icons/EvilIcons"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "FeatherIcon": {
+          "paths": ["react-native-vector-icons/Feather"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "FontAwesome5Icon": {
+          "paths": ["react-native-vector-icons/FontAwesome5"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "FontAwesomeIcon": {
+          "paths": ["react-native-vector-icons/FontAwesome"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "FontistoIcon": {
+          "paths": ["react-native-vector-icons/Fontisto"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "FoundationIcon": {
+          "paths": ["react-native-vector-icons/Foundation"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "GenericButton": {
+          "paths": ["app/components/UI/GenericButton"],
+          "replacement": {
+            "component": "Button",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Header": {
+          "paths": ["app/component-library/components/Header/Header"],
+          "replacement": {
+            "component": "Header",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "HeaderBase": {
+          "paths": ["app/component-library/components/Header/foundation/HeaderBase"],
+          "replacement": {
+            "component": "HeaderBase",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "HeaderCenter": {
+          "paths": ["app/component-library/components/Header/variants/HeaderCenter"],
+          "replacement": {
+            "component": "HeaderCenter",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "HeaderWithTitleLeft": {
+          "paths": ["app/component-library/components-temp/HeaderWithTitleLeft"],
+          "replacement": {
+            "component": "HeaderWithTitleLeft",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "HeaderWithTitleLeftScrollable": {
+          "paths": ["app/component-library/components-temp/HeaderWithTitleLeftScrollable"],
+          "replacement": {
+            "component": "HeaderWithTitleLeftScrollable",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "HelpText": {
+          "paths": ["app/component-library/components/Form/HelpText"],
+          "replacement": {
+            "component": "HelpText",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Icon": {
+          "paths": ["app/component-library/components/Icons/Icon"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Input": {
+          "paths": ["app/component-library/components/Form/TextInput"],
+          "replacement": {
+            "component": "Input",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "IonicIcon": {
+          "paths": ["react-native-vector-icons/Ionicons"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "KeyValueRow": {
+          "paths": ["app/component-library/components-temp/KeyValueRow"],
+          "replacement": {
+            "component": "KeyValueRow",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Label": {
+          "paths": ["app/component-library/components/Form/Label"],
+          "replacement": {
+            "component": "Label",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ListItem": {
+          "paths": ["app/component-library/components/List/ListItem"],
+          "replacement": {
+            "component": "ListItem",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ListItemColumn": {
+          "paths": ["app/component-library/components/List/ListItemColumn"],
+          "replacement": {
+            "component": "ListItemColumn",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ListItemMultiSelect": {
+          "paths": ["app/component-library/components/List/ListItemMultiSelect"],
+          "replacement": {
+            "component": "ListItemMultiSelect",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ListItemMultiSelectButton": {
+          "paths": ["app/component-library/components-temp/ListItemMultiSelectButton"],
+          "replacement": {
+            "component": "ListItemMultiSelectButton",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ListItemMultiSelectWithMenuButton": {
+          "paths": ["app/component-library/components-temp/ListItemMultiSelectWithMenuButton"],
+          "replacement": {
+            "component": "ListItemMultiSelectWithMenuButton",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ListItemSelect": {
+          "paths": ["app/component-library/components/List/ListItemSelect"],
+          "replacement": {
+            "component": "ListItemSelect",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Loader": {
+          "paths": ["app/component-library/components-temp/Loader"],
+          "replacement": {
+            "component": "Loader",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "MainActionButton": {
+          "paths": ["app/component-library/components-temp/Buttons/MainActionButton"],
+          "replacement": {
+            "component": "MainActionButton",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "MaterialCommunityIconsIcon": {
+          "paths": ["react-native-vector-icons/MaterialCommunityIcons"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "MaterialIconsIcon": {
+          "paths": ["react-native-vector-icons/MaterialIcons"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ModalConfirmation": {
+          "paths": ["app/component-library/components-temp/Modals/ModalConfirmation"],
+          "replacement": {
+            "component": "ModalConfirmation",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ModalMandatory": {
+          "paths": ["app/component-library/components-temp/Modals/ModalMandatory"],
+          "replacement": {
+            "component": "ModalMandatory",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "MultichainAccountSelectorList": {
+          "paths": ["app/component-library/components-temp/MultichainAccountSelector/MultichainAccountSelectorList"],
+          "replacement": {
+            "component": "MultichainAccountSelectorList",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "MultichainAddressRow": {
+          "paths": ["app/component-library/components-temp/MultichainAddressRow"],
+          "replacement": {
+            "component": "MultichainAddressRow",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "MultichainAddressRowsList": {
+          "paths": ["app/component-library/components-temp/MultichainAddressRowsList"],
+          "replacement": {
+            "component": "MultichainAddressRowsList",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "MultichainAddWalletActions": {
+          "paths": ["app/component-library/components-temp/MultichainAddWalletActions"],
+          "replacement": {
+            "component": "MultichainAddWalletActions",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "MultiSelectItem": {
+          "paths": ["app/component-library/components-temp/MultiSelectItem"],
+          "replacement": {
+            "component": "MultiSelectItem",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "OcticonsIcon": {
+          "paths": ["react-native-vector-icons/Octicons"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Overlay": {
+          "paths": ["app/component-library/components/Overlay"],
+          "replacement": {
+            "component": "Overlay",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "PercentageChange": {
+          "paths": ["app/component-library/components/PercentageChange"],
+          "replacement": {
+            "component": "PercentageChange",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "PickerAccount": {
+          "paths": ["app/component-library/components/Pickers/PickerAccount"],
+          "replacement": {
+            "component": "PickerAccount",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "PickerBase": {
+          "paths": ["app/component-library/components/Pickers/PickerBase"],
+          "replacement": {
+            "component": "PickerBase",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "PickerNetwork": {
+          "paths": ["app/component-library/components/Pickers/PickerNetwork"],
+          "replacement": {
+            "component": "PickerNetwork",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "QuickActionButton": {
+          "paths": ["app/component-library/components-temp/QuickActions/QuickActionButton"],
+          "replacement": {
+            "component": "QuickActionButton",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "QuickActionButtons": {
+          "paths": ["app/component-library/components-temp/QuickActions/QuickActionButtons"],
+          "replacement": {
+            "component": "QuickActionButtons",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "RadioButton": {
+          "paths": ["app/component-library/components-temp/RadioButton"],
+          "replacement": {
+            "component": "RadioButton",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "SegmentedControl": {
+          "paths": ["app/component-library/components-temp/SegmentedControl"],
+          "replacement": {
+            "component": "SegmentedControl",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "SelectButton": {
+          "paths": ["app/component-library/components/Select/SelectButton"],
+          "replacement": {
+            "component": "SelectButton",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "SelectItem": {
+          "paths": ["app/component-library/components/Select/SelectItem"],
+          "replacement": {
+            "component": "SelectItem",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "SelectOption": {
+          "paths": ["app/component-library/components/Select/SelectOption"],
+          "replacement": {
+            "component": "SelectOption",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "SelectValue": {
+          "paths": ["app/component-library/components/Select/SelectValue"],
+          "replacement": {
+            "component": "SelectValue",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "SensitiveText": {
+          "paths": ["app/component-library/components/SensitiveText"],
+          "replacement": {
+            "component": "SensitiveText",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "SheetActions": {
+          "paths": ["app/component-library/components-temp/SheetActions"],
+          "replacement": {
+            "component": "SheetActions",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "SheetBottom": {
+          "paths": ["app/component-library/components-temp/SheetBottom"],
+          "replacement": {
+            "component": "SheetBottom",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "SheetHeader": {
+          "paths": ["app/component-library/components/Sheet/SheetHeader"],
+          "replacement": {
+            "component": "SheetHeader",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "SimpleLineIconsIcon": {
+          "paths": ["react-native-vector-icons/SimpleLineIcons"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Skeleton": {
+          "paths": ["app/component-library/components/Skeleton"],
+          "replacement": {
+            "component": "Skeleton",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "StyledButton": {
+          "paths": ["app/components/UI/StyledButton"],
+          "replacement": {
+            "component": "Button",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Tab": {
+          "paths": ["app/component-library/components/Tabs/Tab"],
+          "replacement": {
+            "component": "Tab",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "TabBar": {
+          "paths": ["app/component-library/components/Tabs/TabBar"],
+          "replacement": {
+            "component": "TabBar",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "TabBarItem": {
+          "paths": ["app/component-library/components/Tabs/TabBar/TabBarItem"],
+          "replacement": {
+            "component": "TabBarItem",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "TabEmptyState": {
+          "paths": ["app/component-library/components-temp/TabEmptyState"],
+          "replacement": {
+            "component": "TabEmptyState",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Tabs": {
+          "paths": ["app/component-library/components/Tabs/Tabs"],
+          "replacement": {
+            "component": "Tabs",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "TabsBar": {
+          "paths": ["app/component-library/components-temp/TabsBar"],
+          "replacement": {
+            "component": "TabsBar",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "TabsList": {
+          "paths": ["app/component-library/components-temp/TabsList"],
+          "replacement": {
+            "component": "TabsList",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Tag": {
+          "paths": ["app/component-library/components/Tags/Tag"],
+          "replacement": {
+            "component": "Tag",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "TagColored": {
+          "paths": ["app/component-library/components/Tags/TagColored"],
+          "replacement": {
+            "component": "TagColored",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "TagUrl": {
+          "paths": ["app/component-library/components/Tags/TagUrl"],
+          "replacement": {
+            "component": "TagUrl",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Text": {
+          "paths": [
+            "app/components/Base/Text",
+            "app/component-library/components/Texts/Text"
+          ],
+          "replacement": {
+            "component": "Text",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "TextField": {
+          "paths": ["app/component-library/components/Form/TextField"],
+          "replacement": null
+        },
+        "TextFieldSearch": {
+          "paths": ["app/component-library/components/Form/TextFieldSearch"],
+          "replacement": {
+            "component": "TextFieldSearch",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "TextWithPrefixIcon": {
+          "paths": ["app/component-library/components-temp/TextWithPrefixIcon"],
+          "replacement": {
+            "component": "TextWithPrefixIcon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "TitleLeft": {
+          "paths": ["app/component-library/components-temp/TitleLeft"],
+          "replacement": {
+            "component": "TitleLeft",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "Toast": {
+          "paths": ["app/component-library/components/Toast"],
+          "replacement": {
+            "component": "Toast",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "WebsiteIcon": {
+          "paths": ["app/components/UI/WebsiteIcon"],
+          "replacement": {
+            "component": "AvatarFavicon",
+            "package": "@metamask/design-system-react-native"
+          }
+        },
+        "ZocialIcon": {
+          "paths": ["react-native-vector-icons/Zocial"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react-native"
+          }
+        }
       },
-      "deprecatedComponents": [
-        "Accordion",
-        "AccountBalance",
-        "AccountBase",
-        "AccountCell",
-        "ActionListItem",
-        "AggregatedPercentage",
-        "AntDesignIcon",
-        "Avatar",
-        "AvatarAccount",
-        "AvatarBase",
-        "AvatarFavicon",
-        "AvatarGroup",
-        "AvatarIcon",
-        "AvatarNetwork",
-        "AvatarToken",
-        "Badge",
-        "BadgeBase",
-        "BadgeNetwork",
-        "BadgeNotifications",
-        "BadgeStatus",
-        "BadgeWrapper",
-        "Banner",
-        "BannerAlert",
-        "BannerBase",
-        "BannerTip",
-        "BottomSheet",
-        "BottomSheetFooter",
-        "BottomSheetHeader",
-        "Button",
-        "ButtonBase",
-        "ButtonFilter",
-        "ButtonHero",
-        "ButtonIcon",
-        "ButtonLink",
-        "ButtonPill",
-        "ButtonPrimary",
-        "ButtonSecondary",
-        "ButtonSemantic",
-        "ButtonToggle",
-        "Card",
-        "Cell",
-        "CellBase",
-        "CellDisplay",
-        "CellMultiSelect",
-        "CellSelect",
-        "CellSelectWithMenu",
-        "CheckBox",
-        "Checkbox",
-        "ConditionalScrollView",
-        "ContractBox",
-        "ContractBoxBase",
-        "CustomInput",
-        "CustomSpendCap",
-        "EntypoIcon",
-        "EvilIconsIcon",
-        "FeatherIcon",
-        "FontAwesome5Icon",
-        "FontAwesomeIcon",
-        "FontistoIcon",
-        "FoundationIcon",
-        "GenericButton",
-        "Header",
-        "HeaderBase",
-        "HeaderCenter",
-        "HeaderWithTitleLeft",
-        "HeaderWithTitleLeftScrollable",
-        "HelpText",
-        "Icon",
-        "Input",
-        "IonicIcon",
-        "KeyValueRow",
-        "Label",
-        "ListItem",
-        "ListItemColumn",
-        "ListItemMultiSelect",
-        "ListItemMultiSelectButton",
-        "ListItemMultiSelectWithMenuButton",
-        "ListItemSelect",
-        "Loader",
-        "MainActionButton",
-        "MaterialCommunityIconsIcon",
-        "MaterialIconsIcon",
-        "ModalConfirmation",
-        "ModalMandatory",
-        "MultichainAccountSelectorList",
-        "MultichainAddressRow",
-        "MultichainAddressRowsList",
-        "MultichainAddWalletActions",
-        "MultiSelectItem",
-        "OcticonsIcon",
-        "Overlay",
-        "PercentageChange",
-        "PickerAccount",
-        "PickerBase",
-        "PickerNetwork",
-        "QuickActionButton",
-        "QuickActionButtons",
-        "RadioButton",
-        "SegmentedControl",
-        "SelectButton",
-        "SelectItem",
-        "SelectOption",
-        "SelectValue",
-        "SensitiveText",
-        "SheetActions",
-        "SheetBottom",
-        "SheetHeader",
-        "SimpleLineIconsIcon",
-        "Skeleton",
-        "StyledButton",
-        "Tab",
-        "TabBar",
-        "TabBarItem",
-        "TabEmptyState",
-        "Tabs",
-        "TabsBar",
-        "TabsList",
-        "Tag",
-        "TagColored",
-        "TagUrl",
-        "Text",
-        "TextField",
-        "TextFieldSearch",
-        "TextWithPrefixIcon",
-        "TitleLeft",
-        "Toast",
-        "WebsiteIcon",
-        "ZocialIcon"
-      ],
       "currentComponents": [
         "AvatarAccount",
         "AvatarBase",
