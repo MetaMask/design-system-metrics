@@ -7,6 +7,20 @@
       "outputFile": "extension-component-metrics.xlsx",
       "currentPackages": ["@metamask/design-system-react"],
       "deprecatedComponents": {
+        "ActionableMessage": {
+          "paths": ["ui/components/ui/actionable-message"],
+          "replacement": {
+            "component": "BannerBase",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "ApproveIcon": {
+          "paths": ["ui/components/ui/icon/approve-icon"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react"
+          }
+        },
         "AvatarBase": {
           "paths": ["ui/components/component-library/avatar-base"],
           "replacement": {
@@ -125,10 +139,31 @@
             "package": "@metamask/design-system-react"
           }
         },
+        "Callout": {
+          "paths": ["ui/components/ui/callout"],
+          "replacement": {
+            "component": "BannerBase",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "CheckBox": {
+          "paths": ["ui/components/ui/check-box"],
+          "replacement": {
+            "component": "Checkbox",
+            "package": "@metamask/design-system-react"
+          }
+        },
         "Checkbox": {
           "paths": ["ui/components/component-library/checkbox"],
           "replacement": {
             "component": "Checkbox",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Chip": {
+          "paths": ["ui/components/ui/chip"],
+          "replacement": {
+            "component": "Tag",
             "package": "@metamask/design-system-react"
           }
         },
@@ -143,6 +178,13 @@
           "paths": ["ui/components/component-library/file-uploader"],
           "replacement": {
             "component": "FileUploader",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "FormField": {
+          "paths": ["ui/components/ui/form-field"],
+          "replacement": {
+            "component": "FormTextField",
             "package": "@metamask/design-system-react"
           }
         },
@@ -174,10 +216,73 @@
             "package": "@metamask/design-system-react"
           }
         },
+        "IconBorder": {
+          "paths": ["ui/components/ui/icon-border"],
+          "replacement": {
+            "component": "AvatarBase",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "IconEye": {
+          "paths": ["ui/components/ui/icon/icon-eye"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "IconEyeSlash": {
+          "paths": ["ui/components/ui/icon/icon-eye-slash"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "IconTokenSearch": {
+          "paths": ["ui/components/ui/icon/icon-token-search"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "IconWithFallback": {
+          "paths": ["ui/components/ui/icon-with-fallback"],
+          "replacement": {
+            "component": "AvatarBase",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Identicon": {
+          "paths": ["ui/components/ui/identicon"],
+          "replacement": {
+            "component": "AvatarAccount",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "InfoIcon": {
+          "paths": ["ui/components/ui/icon/info-icon"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "InfoIconInverted": {
+          "paths": ["ui/components/ui/icon/info-icon-inverted"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react"
+          }
+        },
         "Input": {
           "paths": ["ui/components/component-library/input"],
           "replacement": {
             "component": "Input",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "InteractionIcon": {
+          "paths": ["ui/components/ui/icon/interaction-icon"],
+          "replacement": {
+            "component": "Icon",
             "package": "@metamask/design-system-react"
           }
         },
@@ -192,6 +297,13 @@
           "paths": ["ui/components/component-library/lottie-animation"],
           "replacement": {
             "component": "LottieAnimation",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Menu": {
+          "paths": ["ui/components/ui/menu"],
+          "replacement": {
+            "component": "Modal",
             "package": "@metamask/design-system-react"
           }
         },
@@ -244,6 +356,13 @@
             "package": "@metamask/design-system-react"
           }
         },
+        "OverviewBuyIcon": {
+          "paths": ["ui/components/ui/icon/overview-buy-icon"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react"
+          }
+        },
         "PickerNetwork": {
           "paths": ["ui/components/component-library/picker-network"],
           "replacement": {
@@ -267,6 +386,20 @@
             "path": "ui/components/component-library/modal-header"
           }
         },
+        "ReceiveIcon": {
+          "paths": ["ui/components/ui/icon/receive-icon"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "SearchIcon": {
+          "paths": ["ui/components/ui/icon/search-icon"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react"
+          }
+        },
         "SelectButton": {
           "paths": ["ui/components/component-library/select-button"],
           "replacement": {
@@ -288,6 +421,13 @@
             "package": "@metamask/design-system-react"
           }
         },
+        "SendIcon": {
+          "paths": ["ui/components/ui/icon/send-icon"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react"
+          }
+        },
         "SensitiveText": {
           "paths": ["ui/components/component-library/sensitive-text"],
           "replacement": {
@@ -295,10 +435,38 @@
             "package": "@metamask/design-system-react"
           }
         },
+        "SignIcon": {
+          "paths": ["ui/components/ui/icon/sign-icon"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "SiteOrigin": {
+          "paths": ["ui/components/ui/site-origin"],
+          "replacement": {
+            "component": "Text",
+            "package": "@metamask/design-system-react"
+          }
+        },
         "Skeleton": {
           "paths": ["ui/components/component-library/skeleton"],
           "replacement": {
             "component": "Skeleton",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "SunCheckIcon": {
+          "paths": ["ui/components/ui/icon/sun-check-icon"],
+          "replacement": {
+            "component": "Icon",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "SwapIconForList": {
+          "paths": ["ui/components/ui/icon/swap-icon-for-list"],
+          "replacement": {
+            "component": "Icon",
             "package": "@metamask/design-system-react"
           }
         },
@@ -341,6 +509,20 @@
           "paths": ["ui/components/component-library/text-field-search"],
           "replacement": {
             "component": "TextFieldSearch",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "Typography": {
+          "paths": ["ui/components/ui/typography"],
+          "replacement": {
+            "component": "Text",
+            "package": "@metamask/design-system-react"
+          }
+        },
+        "UrlIcon": {
+          "paths": ["ui/components/ui/url-icon"],
+          "replacement": {
+            "component": "AvatarFavicon",
             "package": "@metamask/design-system-react"
           }
         }
