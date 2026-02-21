@@ -46,7 +46,7 @@ const validateConfig = (cfg) => {
 
 // Define CLI options using Commander
 program
-  .version("2.6.0")
+  .version("2.7.0")
   .description("Design System Metrics CLI Tool - Track component usage and migration progress")
   .requiredOption(
     "-p, --project <name>",
@@ -369,6 +369,9 @@ const main = async () => {
         (metrics.replacement.package.includes("@metamask/design-system"))
       );
 
+    let totalDeprecated = 0;
+    let totalMMDS = 0;
+
     componentsWithMMDSReplacement.forEach(([componentName, metrics]) => {
       const mmdsComp = metrics.replacement.component;
       const deprecatedCount = metrics.totalCount;
@@ -376,6 +379,9 @@ const main = async () => {
       const total = deprecatedCount + mmdsCount;
       const percentage = total > 0 ? (mmdsCount / total) * 100 : 0;
       const sourcePaths = deprecatedComponents[componentName].paths.join(", ");
+
+      totalDeprecated += deprecatedCount;
+      totalMMDS += mmdsCount;
 
       migrationSheet.addRow([
         componentName,
@@ -387,8 +393,23 @@ const main = async () => {
       ]);
     });
 
+    // Add totals row
+    const totalAll = totalDeprecated + totalMMDS;
+    const totalPercentage = totalAll > 0 ? (totalMMDS / totalAll) * 100 : 0;
+    migrationSheet.addRow([
+      "TOTAL",
+      "",
+      "",
+      totalDeprecated,
+      totalMMDS,
+      `${totalPercentage.toFixed(2)}%`,
+    ]);
+
     console.log(
       chalk.blue(`Migration Progress: ${componentsWithMMDSReplacement.length} components tracked`)
+    );
+    console.log(
+      chalk.blue(`Total Migration: ${totalMMDS}/${totalAll} (${totalPercentage.toFixed(2)}%)`)
     );
 
     // Sheet 2: Intermediate Migrations (components migrating to component-library)
@@ -407,10 +428,14 @@ const main = async () => {
         metrics.replacement.package === "component-library"
       );
 
+    let totalIntermediate = 0;
+
     componentsWithIntermediateReplacement.forEach(([componentName, metrics]) => {
       const oldPaths = deprecatedComponents[componentName].paths.join(", ");
       const newComponent = metrics.replacement.component;
       const newPath = metrics.replacement.path || metrics.replacement.package;
+
+      totalIntermediate += metrics.totalCount;
 
       intermediateSheet.addRow([
         componentName,
@@ -421,8 +446,20 @@ const main = async () => {
       ]);
     });
 
+    // Add totals row
+    intermediateSheet.addRow([
+      "TOTAL",
+      "",
+      "",
+      "",
+      totalIntermediate,
+    ]);
+
     console.log(
       chalk.blue(`Intermediate Migrations: ${componentsWithIntermediateReplacement.length} components tracked`)
+    );
+    console.log(
+      chalk.blue(`Total Intermediate Instances: ${totalIntermediate}`)
     );
 
     // Sheet 3: Path-Level Detail
@@ -454,10 +491,14 @@ const main = async () => {
     mmdsSheet.addRow(["Component", "Instances", "File Paths"]);
 
     // Include all MMDS components, even those with 0 instances
+    let totalMMDSUsage = 0;
+
     currentComponentsSet.forEach((componentName) => {
       const metrics = currentMetrics.get(componentName);
       const count = metrics ? metrics.count : 0;
       const files = metrics ? metrics.files.join(", ") : "";
+
+      totalMMDSUsage += count;
 
       console.log(`${chalk.cyan(componentName)}: ${count} (MMDS)`);
       mmdsSheet.addRow([
@@ -467,6 +508,17 @@ const main = async () => {
       ]);
     });
 
+    // Add totals row
+    mmdsSheet.addRow([
+      "TOTAL",
+      totalMMDSUsage,
+      "",
+    ]);
+
+    console.log(
+      chalk.blue(`Total MMDS Usage: ${totalMMDSUsage} instances`)
+    );
+
     // Sheet 5: No Replacement Components
     const noReplacementSheet = workbook.addWorksheet("No Replacement");
     noReplacementSheet.addRow(["Component", "Path", "Instances", "File Paths"]);
@@ -474,8 +526,12 @@ const main = async () => {
     const componentsWithNoReplacement = Array.from(deprecatedMetrics.entries())
       .filter(([, metrics]) => !metrics.replacement);
 
+    let totalNoReplacement = 0;
+
     componentsWithNoReplacement.forEach(([componentName, metrics]) => {
       const paths = deprecatedComponents[componentName].paths.join(", ");
+      totalNoReplacement += metrics.totalCount;
+
       noReplacementSheet.addRow([
         componentName,
         paths,
@@ -484,8 +540,19 @@ const main = async () => {
       ]);
     });
 
+    // Add totals row
+    noReplacementSheet.addRow([
+      "TOTAL",
+      "",
+      totalNoReplacement,
+      "",
+    ]);
+
     console.log(
       chalk.blue(`No Replacement: ${componentsWithNoReplacement.length} components`)
+    );
+    console.log(
+      chalk.blue(`Total No Replacement Instances: ${totalNoReplacement}`)
     );
 
     // Create output directory if it doesn't exist

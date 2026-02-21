@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.7.0] - 2026-02-21
+
+### Added
+
+- **Totals Rows**: All sheets now include totals at the bottom for easy summary analysis
+  - Migration Progress: Shows total deprecated instances, total MMDS instances, and overall migration percentage
+  - Intermediate Migrations: Shows total instances awaiting intermediate migration
+  - MMDS Usage: Shows total MMDS component instances across all components
+  - No Replacement: Shows total instances of components without direct replacements
+  - Console output now displays these totals for quick visibility
+
 ## [2.6.0] - 2026-02-21
 
 ### Added
