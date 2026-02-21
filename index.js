@@ -259,11 +259,18 @@ const main = async () => {
     rootFolder,
     ignoreFolders,
     filePattern,
-    outputFile,
+    outputFile: baseOutputFile,
     deprecatedComponents = {},
     currentComponents = [],
     currentPackages = [],
   } = projectConfig;
+
+  // Add today's date to the output filename
+  const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
+  const ext = path.extname(baseOutputFile);
+  const basename = path.basename(baseOutputFile, ext);
+  const dirname = path.dirname(baseOutputFile);
+  const outputFile = path.join(dirname, `${basename}-${today}${ext}`);
 
   const currentComponentsSet = new Set(currentComponents);
 
