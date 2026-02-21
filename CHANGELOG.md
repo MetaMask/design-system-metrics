@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.4.0] - 2026-02-21
 
+### Added
+
+- **Output File Date Stamps**: Generated XLSX files now automatically include today's date in the filename
+  - Format: `{project}-component-metrics-YYYY-MM-DD.xlsx`
+  - Example: `extension-component-metrics-2026-02-21.xlsx`
+  - Makes it easier to track metrics over time and compare historical data
+
 ### Changed
 
 - **Extension Component Mappings**: Corrected replacement targets to reflect actual migration state
