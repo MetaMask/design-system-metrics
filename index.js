@@ -46,7 +46,7 @@ const validateConfig = (cfg) => {
 
 // Define CLI options using Commander
 program
-  .version("3.0.0")
+  .version("2.5.0")
   .description("Design System Metrics CLI Tool - Track component usage and migration progress")
   .requiredOption(
     "-p, --project <name>",
