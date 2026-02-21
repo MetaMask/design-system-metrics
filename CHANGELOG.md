@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.4.0] - 2026-02-21
+
+### Changed
+
+- **Extension Component Mappings**: Corrected replacement targets to reflect actual migration state
+  - Set 30+ component-library versions as most up to date with no MMDS replacement: BannerAlert, BannerBase, BannerTip, FileUploader, FormTextField, HeaderBase, HelpText, Input, Label, LottieAnimation, Modal components (7), PickerNetwork, SelectButton, SelectOption, SelectWrapper, SensitiveText, Skeleton, Tag, TagUrl, Textarea, TextFieldSearch
+  - Added intermediate migrations to component-library: Chip→Tag, FormField→FormTextField, Menu→Popover
+  - Fixed replacement targets: SiteOrigin→AvatarFavicon (was Text), ButtonLink→TextButton (was ButtonBase), ActionableMessage/Callout→BannerAlert (was BannerBase)
+
+- **Mobile Component Mappings**: Updated 60+ components to reflect actual migration state
+  - Set component-library versions as most up to date with no MMDS replacement: Accordion, AccountBalance, AccountBase, AccountCell, ActionListItem, AggregatedPercentage, Avatar, Badge, BadgeBase, Banner components (3), BottomSheet components (3), ButtonFilter, ButtonHero, ButtonPill, ButtonSemantic, ButtonToggle, Card, Cell components (5), ConditionalScrollView, ContractBox components (2), CustomInput, CustomSpendCap, Header components (5), HelpText, Input, KeyValueRow, Label, ListItem components (6), Loader, MainActionButton, Modal components (2), Multichain components (4), MultiSelectItem, PercentageChange, Picker components (3), QuickAction components (2), RadioButton, SegmentedControl, Select components (4), SensitiveText, Skeleton, Tab components (6), Tag components (3), TextField, TextFieldSearch, TextWithPrefixIcon, TitleLeft, Toast
+  - Added intermediate migrations to component-library: SheetBottom→BottomSheet, SheetHeader→BottomSheetHeader
+  - Fixed replacement targets: ButtonLink→TextButton (was ButtonBase), BadgeNotifications→BadgeCount
+
+### Fixed
+
+- Component replacement mappings now accurately reflect which components are the most current implementations
+- Intermediate migration paths correctly identify multi-step migrations through component-library before eventual MMDS migration
+
 ## [2.2.0] - 2026-01-22
 
 ### Added
