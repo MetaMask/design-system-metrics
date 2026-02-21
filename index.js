@@ -46,7 +46,7 @@ const validateConfig = (cfg) => {
 
 // Define CLI options using Commander
 program
-  .version("2.5.0")
+  .version("2.6.0")
   .description("Design System Metrics CLI Tool - Track component usage and migration progress")
   .requiredOption(
     "-p, --project <name>",
@@ -453,12 +453,17 @@ const main = async () => {
     const mmdsSheet = workbook.addWorksheet("MMDS Usage");
     mmdsSheet.addRow(["Component", "Instances", "File Paths"]);
 
-    currentMetrics.forEach((metrics, componentName) => {
-      console.log(`${chalk.cyan(componentName)}: ${metrics.count} (MMDS)`);
+    // Include all MMDS components, even those with 0 instances
+    currentComponentsSet.forEach((componentName) => {
+      const metrics = currentMetrics.get(componentName);
+      const count = metrics ? metrics.count : 0;
+      const files = metrics ? metrics.files.join(", ") : "";
+
+      console.log(`${chalk.cyan(componentName)}: ${count} (MMDS)`);
       mmdsSheet.addRow([
         componentName,
-        metrics.count,
-        metrics.files.join(", "),
+        count,
+        files,
       ]);
     });
 

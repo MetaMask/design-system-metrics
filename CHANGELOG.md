@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.6.0] - 2026-02-21
+
+### Added
+
+- **Complete MMDS Component List**: MMDS Usage sheet now shows all available MMDS components, including those with 0 instances
+  - Previously only showed components that were actively used
+  - Now displays the full component list with usage counts, making it easier to identify available but unused components
+  - Helps track MMDS component adoption opportunities
+
 ## [2.5.0] - 2026-02-21
 
 ### Fixed
