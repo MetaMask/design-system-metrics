@@ -46,7 +46,7 @@ const validateConfig = (cfg) => {
 
 // Define CLI options using Commander
 program
-  .version("2.7.0")
+  .version("2.6.0")
   .description("Design System Metrics CLI Tool - Track component usage and migration progress")
   .requiredOption(
     "-p, --project <name>",
@@ -371,6 +371,7 @@ const main = async () => {
 
     let totalDeprecated = 0;
     let totalMMDS = 0;
+    const countedMMDSComponents = new Set(); // Track which MMDS components we've counted
 
     componentsWithMMDSReplacement.forEach(([componentName, metrics]) => {
       const mmdsComp = metrics.replacement.component;
@@ -381,7 +382,12 @@ const main = async () => {
       const sourcePaths = deprecatedComponents[componentName].paths.join(", ");
 
       totalDeprecated += deprecatedCount;
-      totalMMDS += mmdsCount;
+
+      // Only count each MMDS component once (to avoid duplicates when multiple deprecated components map to same MMDS component)
+      if (!countedMMDSComponents.has(mmdsComp)) {
+        totalMMDS += mmdsCount;
+        countedMMDSComponents.add(mmdsComp);
+      }
 
       migrationSheet.addRow([
         componentName,
