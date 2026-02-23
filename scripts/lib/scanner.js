@@ -37,16 +37,12 @@ function getScanPatterns(project) {
   if (project === 'extension') {
     return [
       'ui/components/component-library/**/*.{js,jsx,ts,tsx}',
-      'ui/components/ui/**/*.{js,jsx,ts,tsx}',
-      'ui/components/**/*.{js,jsx,ts,tsx}', // Catch-all for icon libraries, etc.
     ];
   }
 
   // mobile
   return [
     'app/component-library/**/*.{js,jsx,ts,tsx}',
-    'app/components/UI/**/*.{js,jsx,ts,tsx}',
-    'app/components/**/*.{js,jsx,ts,tsx}', // Catch-all
   ];
 }
 
