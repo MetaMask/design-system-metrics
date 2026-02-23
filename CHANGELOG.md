@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.6.0] - 2026-02-21
+## [2.6.0] - 2026-02-23
 
 ### Added
 
@@ -21,11 +21,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - No Replacement: Shows total instances of components without direct replacements
   - Console output now displays these totals for quick visibility
 
+- **Grouped Display with Summary Rows**: Migration Progress sheet now groups deprecated components by their MMDS replacement
+  - Components mapping to the same MMDS component are displayed together (e.g., all Icon variants grouped together)
+  - Individual rows show deprecated component details with "-" for MMDS instances and percentage to avoid misleading duplicates
+  - Summary rows (format: "→ Component Total") show aggregated deprecated count, MMDS instances, and accurate migration percentage for each group
+  - Single-mapping components continue to display normally with all columns filled
+  - Provides much more accurate and meaningful migration percentages
+
 ### Fixed
 
 - **Migration Progress Totals**: Fixed duplicate counting when multiple deprecated components map to the same MMDS component
   - Each MMDS component is counted only once in the total, providing accurate migration percentage
   - Individual rows still show correct per-component breakdown
+
+- **Test Suite**: Updated tests to work with date-stamped output files
+  - Added helper function to dynamically find generated XLSX files
+  - All 14 tests passing
 
 ## [2.5.0] - 2026-02-21
 
