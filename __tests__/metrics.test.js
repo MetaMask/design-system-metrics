@@ -5,7 +5,13 @@ const ExcelJS = require('exceljs');
 
 const TEST_CONFIG = path.join(__dirname, 'fixtures/test-config.json');
 const OUTPUT_DIR = path.join(__dirname, 'output');
-const XLSX_OUTPUT = path.join(OUTPUT_DIR, 'test-metrics.xlsx');
+// Helper to get the generated XLSX file (with date stamp)
+const getXLSXOutput = async () => {
+  const files = await fs.readdir(OUTPUT_DIR);
+  const xlsxFile = files.find(f => f.startsWith('test-metrics-') && f.endsWith('.xlsx'));
+  return xlsxFile ? path.join(OUTPUT_DIR, xlsxFile) : null;
+};
+const XLSX_OUTPUT_BASE = 'test-metrics';
 
 describe('Design System Metrics', () => {
   beforeAll(() => {
@@ -50,12 +56,8 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
-      const exists = await fs
-        .access(XLSX_OUTPUT)
-        .then(() => true)
-        .catch(() => false);
-
-      expect(exists).toBe(true);
+      const XLSX_OUTPUT = await getXLSXOutput();
+      expect(XLSX_OUTPUT).not.toBeNull();
 
       const workbook = await readXLSX(XLSX_OUTPUT);
       const sheetNames = workbook.worksheets.map(ws => ws.name);
@@ -74,6 +76,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
+      const XLSX_OUTPUT = await getXLSXOutput();
       const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'Migration Progress');
       const headers = data[0];
@@ -92,6 +95,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
+      const XLSX_OUTPUT = await getXLSXOutput();
       const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'Migration Progress');
 
@@ -111,6 +115,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
+      const XLSX_OUTPUT = await getXLSXOutput();
       const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'Migration Progress');
 
@@ -128,6 +133,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
+      const XLSX_OUTPUT = await getXLSXOutput();
       const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'Path-Level Detail');
       const headers = data[0];
@@ -144,6 +150,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
+      const XLSX_OUTPUT = await getXLSXOutput();
       const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'Path-Level Detail');
 
@@ -159,6 +166,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
+      const XLSX_OUTPUT = await getXLSXOutput();
       const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'Path-Level Detail');
 
@@ -174,6 +182,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
+      const XLSX_OUTPUT = await getXLSXOutput();
       const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'Path-Level Detail');
 
@@ -190,6 +199,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
+      const XLSX_OUTPUT = await getXLSXOutput();
       const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'MMDS Usage');
       const headers = data[0];
@@ -205,6 +215,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
+      const XLSX_OUTPUT = await getXLSXOutput();
       const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'MMDS Usage');
 
@@ -222,6 +233,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
+      const XLSX_OUTPUT = await getXLSXOutput();
       const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'MMDS Usage');
 
@@ -237,6 +249,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
+      const XLSX_OUTPUT = await getXLSXOutput();
       const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'MMDS Usage');
 
@@ -253,6 +266,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
+      const XLSX_OUTPUT = await getXLSXOutput();
       const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'No Replacement');
       const headers = data[0];
@@ -269,6 +283,7 @@ describe('Design System Metrics', () => {
         { stdio: 'pipe' }
       );
 
+      const XLSX_OUTPUT = await getXLSXOutput();
       const workbook = await readXLSX(XLSX_OUTPUT);
       const data = getSheetData(workbook, 'No Replacement');
 
