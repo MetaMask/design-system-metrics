@@ -8,7 +8,12 @@
   "scripts": {
     "start": "node index.js --project extension",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "setup-repos": "git submodule update --init --recursive",
+    "update-repos": "git submodule update --remote --merge",
+    "sync-config": "node scripts/sync-config.js",
+    "sync-config:dry-run": "node scripts/sync-config.js --dry-run",
+    "sync-config:skip-update": "node scripts/sync-config.js --skip-update"
   },
   "keywords": [
     "cli",
