@@ -369,35 +369,80 @@ const main = async () => {
         (metrics.replacement.package.includes("@metamask/design-system"))
       );
 
-    let totalDeprecated = 0;
-    let totalMMDS = 0;
-    const countedMMDSComponents = new Set(); // Track which MMDS components we've counted
-
+    // Group deprecated components by their MMDS replacement component
+    const groupedByMMDS = new Map();
     componentsWithMMDSReplacement.forEach(([componentName, metrics]) => {
       const mmdsComp = metrics.replacement.component;
-      const deprecatedCount = metrics.totalCount;
-      const mmdsCount = currentMetrics.get(mmdsComp)?.count || 0;
-      const total = deprecatedCount + mmdsCount;
-      const percentage = total > 0 ? (mmdsCount / total) * 100 : 0;
-      const sourcePaths = deprecatedComponents[componentName].paths.join(", ");
-
-      totalDeprecated += deprecatedCount;
-
-      // Only count each MMDS component once (to avoid duplicates when multiple deprecated components map to same MMDS component)
-      if (!countedMMDSComponents.has(mmdsComp)) {
-        totalMMDS += mmdsCount;
-        countedMMDSComponents.add(mmdsComp);
+      if (!groupedByMMDS.has(mmdsComp)) {
+        groupedByMMDS.set(mmdsComp, []);
       }
-
-      migrationSheet.addRow([
-        componentName,
-        sourcePaths,
-        mmdsComp,
-        deprecatedCount,
-        mmdsCount,
-        `${percentage.toFixed(2)}%`,
-      ]);
+      groupedByMMDS.get(mmdsComp).push([componentName, metrics]);
     });
+
+    let totalDeprecated = 0;
+    let totalMMDS = 0;
+
+    // Process each MMDS component group
+    for (const [mmdsComp, deprecatedComponents] of groupedByMMDS.entries()) {
+      const mmdsCount = currentMetrics.get(mmdsComp)?.count || 0;
+
+      if (deprecatedComponents.length === 1) {
+        // Single component mapping - show normally
+        const [componentName, metrics] = deprecatedComponents[0];
+        const deprecatedCount = metrics.totalCount;
+        const total = deprecatedCount + mmdsCount;
+        const percentage = total > 0 ? (mmdsCount / total) * 100 : 0;
+        const sourcePaths = config.projects[projectName].deprecatedComponents[componentName].paths.join(", ");
+
+        totalDeprecated += deprecatedCount;
+        totalMMDS += mmdsCount;
+
+        migrationSheet.addRow([
+          componentName,
+          sourcePaths,
+          mmdsComp,
+          deprecatedCount,
+          mmdsCount,
+          `${percentage.toFixed(2)}%`,
+        ]);
+      } else {
+        // Multiple components mapping to same MMDS component
+        let groupDeprecatedTotal = 0;
+
+        // Add individual rows (without MMDS count and percentage)
+        deprecatedComponents.forEach(([componentName, metrics]) => {
+          const deprecatedCount = metrics.totalCount;
+          const sourcePaths = config.projects[projectName].deprecatedComponents[componentName].paths.join(", ");
+
+          groupDeprecatedTotal += deprecatedCount;
+
+          migrationSheet.addRow([
+            componentName,
+            sourcePaths,
+            mmdsComp,
+            deprecatedCount,
+            "-",
+            "-",
+          ]);
+        });
+
+        // Add summary row for the group
+        const total = groupDeprecatedTotal + mmdsCount;
+        const percentage = total > 0 ? (mmdsCount / total) * 100 : 0;
+
+        migrationSheet.addRow([
+          `→ ${mmdsComp} Total`,
+          "",
+          mmdsComp,
+          groupDeprecatedTotal,
+          mmdsCount,
+          `${percentage.toFixed(2)}%`,
+        ]);
+
+        totalDeprecated += groupDeprecatedTotal;
+        totalMMDS += mmdsCount;
+      }
+    }
 
     // Add totals row
     const totalAll = totalDeprecated + totalMMDS;
