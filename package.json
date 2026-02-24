@@ -14,7 +14,8 @@
     "update-repos": "git submodule update --remote --merge",
     "sync-config": "node scripts/sync-config.js",
     "sync-config:dry-run": "node scripts/sync-config.js --dry-run",
-    "sync-config:skip-update": "node scripts/sync-config.js --skip-update"
+    "sync-config:skip-update": "node scripts/sync-config.js --skip-update",
+    "fetch-migration-targets": "node scripts/fetch-migration-list.js"
   },
   "keywords": [
     "cli",
