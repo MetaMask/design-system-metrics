@@ -342,6 +342,47 @@ Use the Path-Level Detail sheet to prioritize which old implementation to migrat
 
 ---
 
+### **Automated Weekly Reports**
+
+The repository includes a GitHub Actions workflow that automatically generates weekly metrics reports every Friday.
+
+**What it does:**
+
+1. **Updates git submodules** to latest versions (Extension, Mobile, MMDS)
+2. **Syncs config.json** with latest component deprecations
+3. **Generates metrics spreadsheets** for both Extension and Mobile
+4. **Creates Slack report** with migration progress summary
+5. **Opens a Pull Request** with all updated files
+
+**Manual trigger:**
+
+You can also trigger the workflow manually:
+
+```bash
+# From GitHub UI: Actions → Weekly Design System Metrics → Run workflow
+```
+
+**Output files:**
+
+- `metrics/extension-component-metrics-YYYY-MM-DD.xlsx`
+- `metrics/mobile-component-metrics-YYYY-MM-DD.xlsx`
+- `slack-report.md` - Weekly update formatted for Slack
+
+**Generate Slack report locally:**
+
+```bash
+yarn slack-report                    # Output to console
+yarn slack-report --output report.md # Save to file
+```
+
+The Slack report includes:
+- Total MMDS components available (with GitHub links)
+- Migration progress percentages
+- Links to detailed spreadsheets
+- Comparison with migration targets from Jira epics
+
+---
+
 ### **Future Feature Ideas**
 
 We're exploring additional features to enhance design system adoption tracking:
