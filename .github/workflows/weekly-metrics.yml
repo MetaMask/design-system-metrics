@@ -46,6 +46,10 @@ jobs:
       - name: Sync config
         run: yarn sync-config
 
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
       - name: Generate extension metrics
         run: yarn start
 
@@ -53,11 +57,7 @@ jobs:
         run: yarn start:mobile
 
       - name: Generate Slack report
-        run: yarn slack-report --output slack-report.md
-
-      - name: Get current date
-        id: date
-        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+        run: yarn slack-report --output metrics/slack-report-${{ steps.date.outputs.date }}.md
 
       - name: Commit and push changes
         run: |

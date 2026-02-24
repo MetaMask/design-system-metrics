@@ -23,6 +23,7 @@ const METRICS_DIR = path.join(__dirname, '..', 'metrics');
 // GitHub URLs
 const MMDS_REACT_COMPONENTS = 'https://github.com/MetaMask/metamask-design-system/tree/main/packages/design-system-react/src/components';
 const MMDS_RN_COMPONENTS = 'https://github.com/MetaMask/metamask-design-system/tree/main/packages/design-system-react-native/src/components';
+const GITHUB_REPO = 'https://github.com/georgewrmarshall/design-system-metrics/blob/main';
 
 /**
  * Get the latest metrics file for a project
@@ -127,7 +128,7 @@ function generateReport(config, migrationTargets) {
   report.push(`    * Migrated to MMDS: ${mobileMappedCount}/${mobileMappedCount + mobileTargets} (${Math.round((mobileMappedCount / (mobileMappedCount + mobileTargets)) * 100)}%)`);
   if (mobileMetricsFile) {
     const fileName = path.basename(mobileMetricsFile);
-    report.push(`    * Instance replacement: [Placeholder]% ([breakdown](./metrics/${fileName}))`);
+    report.push(`    * Instance replacement: [Placeholder]% ([breakdown](${GITHUB_REPO}/metrics/${fileName}))`);
   }
 
   // Extension migration
@@ -137,7 +138,7 @@ function generateReport(config, migrationTargets) {
   report.push(`    * Migrated to MMDS: ${extensionMappedCount}/${extensionMappedCount + extensionTargets} (${Math.round((extensionMappedCount / (extensionMappedCount + extensionTargets)) * 100)}%)`);
   if (extensionMetricsFile) {
     const fileName = path.basename(extensionMetricsFile);
-    report.push(`    * Instance replacement: [Placeholder]% ([breakdown](./metrics/${fileName}))`);
+    report.push(`    * Instance replacement: [Placeholder]% ([breakdown](${GITHUB_REPO}/metrics/${fileName}))`);
   }
 
   report.push('\n---\n');
