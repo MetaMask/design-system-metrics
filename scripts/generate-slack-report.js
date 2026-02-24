@@ -35,7 +35,29 @@ function getLatestMetricsFile(project) {
     .sort()
     .reverse();
 
-  return projectFiles.length > 0 ? path.join(METRICS_DIR, projectFiles[0]) : null;
+  return projectFiles.length > 0 ? path.basename(projectFiles[0]) : null;
+}
+
+/**
+ * Get the latest metrics summary for a project
+ */
+function getLatestMetricsSummary(project) {
+  try {
+    const files = fs.readdirSync(METRICS_DIR);
+    const summaryFiles = files
+      .filter(f => f.startsWith(`${project}-component-metrics-`) && f.endsWith('-summary.json'))
+      .sort()
+      .reverse();
+
+    if (summaryFiles.length > 0) {
+      const summaryPath = path.join(METRICS_DIR, summaryFiles[0]);
+      const content = fs.readFileSync(summaryPath, 'utf8');
+      return JSON.parse(content);
+    }
+  } catch (err) {
+    console.error(`Error reading summary for ${project}:`, err.message);
+  }
+  return null;
 }
 
 /**
@@ -96,11 +118,14 @@ function generateReport(config, migrationTargets) {
   const mobileConfig = config.projects.mobile;
   const mobileMappedCount = countMappedComponents(mobileConfig.deprecatedComponents);
   const mobileMetricsFile = getLatestMetricsFile('mobile');
+  const mobileSummary = getLatestMetricsSummary('mobile');
   const mobileNewComponents = getNewComponents('mobile');
 
   report.push('  * **Mobile**');
   report.push(`    * Total: ${mobileMappedCount} [components](${MMDS_RN_COMPONENTS})`);
-  report.push(`    * Usage: [Placeholder] instances in mobile codebase`);
+  if (mobileSummary) {
+    report.push(`    * Usage: ${mobileSummary.mmdsInstances} instances in mobile codebase`);
+  }
   if (mobileNewComponents.length > 0) {
     report.push(`    * New components: ${mobileNewComponents.join(', ')}`);
   }
@@ -109,11 +134,14 @@ function generateReport(config, migrationTargets) {
   const extensionConfig = config.projects.extension;
   const extensionMappedCount = countMappedComponents(extensionConfig.deprecatedComponents);
   const extensionMetricsFile = getLatestMetricsFile('extension');
+  const extensionSummary = getLatestMetricsSummary('extension');
   const extensionNewComponents = getNewComponents('extension');
 
   report.push('  * **Extension**');
   report.push(`    * Total: ${extensionMappedCount} [components](${MMDS_REACT_COMPONENTS})`);
-  report.push(`    * Usage: [Placeholder] instances in extension codebase`);
+  if (extensionSummary) {
+    report.push(`    * Usage: ${extensionSummary.mmdsInstances} instances in extension codebase`);
+  }
   if (extensionNewComponents.length > 0) {
     report.push(`    * New components: ${extensionNewComponents.join(', ')}`);
   }
@@ -126,9 +154,8 @@ function generateReport(config, migrationTargets) {
   const mobileTargets = migrationTargets.mobile?.components?.length || 0;
   report.push(`    * Target components: ${mobileTargets} components planned for migration (${migrationTargets.mobile?.source || 'N/A'})`);
   report.push(`    * Migrated to MMDS: ${mobileMappedCount}/${mobileMappedCount + mobileTargets} (${Math.round((mobileMappedCount / (mobileMappedCount + mobileTargets)) * 100)}%)`);
-  if (mobileMetricsFile) {
-    const fileName = path.basename(mobileMetricsFile);
-    report.push(`    * Instance replacement: [Placeholder]% ([breakdown](${GITHUB_REPO}/metrics/${fileName}))`);
+  if (mobileSummary && mobileMetricsFile) {
+    report.push(`    * Instance replacement: ${mobileSummary.migrationPercentage}% ([breakdown](${GITHUB_REPO}/metrics/${mobileMetricsFile}))`);
   }
 
   // Extension migration
@@ -136,13 +163,11 @@ function generateReport(config, migrationTargets) {
   const extensionTargets = migrationTargets.extension?.components?.length || 0;
   report.push(`    * Target components: ${extensionTargets} components planned for migration (${migrationTargets.extension?.source || 'N/A'})`);
   report.push(`    * Migrated to MMDS: ${extensionMappedCount}/${extensionMappedCount + extensionTargets} (${Math.round((extensionMappedCount / (extensionMappedCount + extensionTargets)) * 100)}%)`);
-  if (extensionMetricsFile) {
-    const fileName = path.basename(extensionMetricsFile);
-    report.push(`    * Instance replacement: [Placeholder]% ([breakdown](${GITHUB_REPO}/metrics/${fileName}))`);
+  if (extensionSummary && extensionMetricsFile) {
+    report.push(`    * Instance replacement: ${extensionSummary.migrationPercentage}% ([breakdown](${GITHUB_REPO}/metrics/${extensionMetricsFile}))`);
   }
 
   report.push('\n---\n');
-  report.push('*Note: Instance replacement percentages require Excel parsing and will be added in future updates.*');
   report.push(`*Generated: ${new Date().toISOString().split('T')[0]}*`);
 
   return report.join('\n');

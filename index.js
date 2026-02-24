@@ -613,7 +613,28 @@ const main = async () => {
     // Write the XLSX file
     await workbook.xlsx.writeFile(outputFile);
 
+    // Write summary JSON for Slack report
+    const summaryFile = outputFile.replace('.xlsx', '-summary.json');
+    const summaryTotalAll = totalDeprecated + totalMMDS;
+    const summaryTotalPercentage = summaryTotalAll > 0 ? (totalMMDS / summaryTotalAll) * 100 : 0;
+
+    const summary = {
+      project: projectName,
+      date: today,
+      mmdsInstances: totalMMDSUsage,
+      deprecatedInstances: totalDeprecated,
+      mmdsUsageTotal: totalMMDS,
+      totalInstances: summaryTotalAll,
+      migrationPercentage: summaryTotalPercentage.toFixed(2),
+      componentsTracked: groupedByMMDS.size,
+      intermediateComponents: componentsWithIntermediateReplacement.length,
+      noReplacementComponents: componentsWithNoReplacement.length,
+      totalNoReplacementInstances: totalNoReplacement
+    };
+    await fs.writeFile(summaryFile, JSON.stringify(summary, null, 2));
+
     console.log(chalk.green(`\n✓ Metrics written to ${outputFile}`));
+    console.log(chalk.green(`✓ Summary written to ${summaryFile}`));
     console.log(chalk.green("✓ All reports generated successfully!\n"));
   } catch (err) {
     console.error(chalk.red(`Error: ${err.message}`));
