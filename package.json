@@ -16,7 +16,9 @@
     "sync-config:dry-run": "node scripts/sync-config.js --dry-run",
     "sync-config:skip-update": "node scripts/sync-config.js --skip-update",
     "fetch-migration-targets": "node scripts/fetch-migration-list.js",
-    "slack-report": "node scripts/generate-slack-report.js"
+    "slack-report": "node scripts/generate-slack-report.js",
+    "extract-json": "node scripts/xlsx-to-json.js",
+    "update-timeline": "node scripts/update-timeline.js"
   },
   "keywords": [
     "cli",
