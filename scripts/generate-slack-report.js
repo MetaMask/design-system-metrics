@@ -61,14 +61,30 @@ function getLatestMetricsSummary(project) {
 }
 
 /**
- * Count MMDS components mapped in config
+ * Count MMDS components available in the design system package
  */
-function countMappedComponents(deprecatedComponents) {
-  return Object.values(deprecatedComponents).filter(comp =>
-    comp.replacement &&
-    comp.replacement.package &&
-    comp.replacement.package.includes('@metamask/design-system')
-  ).length;
+function countAvailableMMDSComponents(currentComponents) {
+  if (!currentComponents) return 0;
+
+  // Explicitly list prop variants and utility components to exclude
+  const excludeList = [
+    // Prop variant enums
+    'BadgeCountSize',
+    'BadgeStatusStatus',
+    'BadgeWrapperPosition',
+    'ButtonBaseSize',
+    'IconName',
+    'TextVariant',
+    // Utility components not in MMDS package
+    'Blockies',
+    'Jazzicon',
+    'Maskicon',
+    'TextOrChildren'
+  ];
+
+  return currentComponents.filter(component => {
+    return !excludeList.includes(component);
+  }).length;
 }
 
 /**
@@ -116,13 +132,13 @@ function generateReport(config, migrationTargets) {
 
   // Mobile section
   const mobileConfig = config.projects.mobile;
-  const mobileMappedCount = countMappedComponents(mobileConfig.deprecatedComponents);
+  const mobileMMDSCount = countAvailableMMDSComponents(mobileConfig.currentComponents);
   const mobileMetricsFile = getLatestMetricsFile('mobile');
   const mobileSummary = getLatestMetricsSummary('mobile');
   const mobileNewComponents = getNewComponents('mobile');
 
   report.push('  * **Mobile**');
-  report.push(`    * MMDS components available: ${mobileMappedCount} [components](${MMDS_RN_COMPONENTS})`);
+  report.push(`    * MMDS components available: ${mobileMMDSCount} [components](${MMDS_RN_COMPONENTS})`);
   if (mobileSummary) {
     report.push(`    * MMDS usage: ${mobileSummary.mmdsInstances} instances in codebase`);
     report.push(`    * Deprecated components: ${mobileSummary.componentsTracked} legacy component types`);
@@ -133,13 +149,13 @@ function generateReport(config, migrationTargets) {
 
   // Extension section
   const extensionConfig = config.projects.extension;
-  const extensionMappedCount = countMappedComponents(extensionConfig.deprecatedComponents);
+  const extensionMMDSCount = countAvailableMMDSComponents(extensionConfig.currentComponents);
   const extensionMetricsFile = getLatestMetricsFile('extension');
   const extensionSummary = getLatestMetricsSummary('extension');
   const extensionNewComponents = getNewComponents('extension');
 
   report.push('  * **Extension**');
-  report.push(`    * MMDS components available: ${extensionMappedCount} [components](${MMDS_REACT_COMPONENTS})`);
+  report.push(`    * MMDS components available: ${extensionMMDSCount} [components](${MMDS_REACT_COMPONENTS})`);
   if (extensionSummary) {
     report.push(`    * MMDS usage: ${extensionSummary.mmdsInstances} instances in codebase`);
     report.push(`    * Deprecated components: ${extensionSummary.componentsTracked} legacy component types`);
@@ -155,7 +171,7 @@ function generateReport(config, migrationTargets) {
   report.push('  * **Mobile**');
   const mobileTargets = migrationTargets.mobile?.components?.length || 0;
   report.push(`    * Target components: ${mobileTargets} components planned for migration (${migrationTargets.mobile?.source || 'N/A'})`);
-  report.push(`    * Migrated to MMDS: ${mobileMappedCount}/${mobileMappedCount + mobileTargets} (${Math.round((mobileMappedCount / (mobileMappedCount + mobileTargets)) * 100)}%)`);
+  report.push(`    * Migrated to MMDS: ${mobileMMDSCount}/${mobileMMDSCount + mobileTargets} (${Math.round((mobileMMDSCount / (mobileMMDSCount + mobileTargets)) * 100)}%)`);
   if (mobileSummary && mobileMetricsFile) {
     report.push(`    * Instance replacement: ${mobileSummary.migrationPercentage}% ([breakdown](${GITHUB_REPO}/metrics/${mobileMetricsFile}))`);
   }
@@ -164,7 +180,7 @@ function generateReport(config, migrationTargets) {
   report.push('  * **Extension**');
   const extensionTargets = migrationTargets.extension?.components?.length || 0;
   report.push(`    * Target components: ${extensionTargets} components planned for migration (${migrationTargets.extension?.source || 'N/A'})`);
-  report.push(`    * Migrated to MMDS: ${extensionMappedCount}/${extensionMappedCount + extensionTargets} (${Math.round((extensionMappedCount / (extensionMappedCount + extensionTargets)) * 100)}%)`);
+  report.push(`    * Migrated to MMDS: ${extensionMMDSCount}/${extensionMMDSCount + extensionTargets} (${Math.round((extensionMMDSCount / (extensionMMDSCount + extensionTargets)) * 100)}%)`);
   if (extensionSummary && extensionMetricsFile) {
     report.push(`    * Instance replacement: ${extensionSummary.migrationPercentage}% ([breakdown](${GITHUB_REPO}/metrics/${extensionMetricsFile}))`);
   }
