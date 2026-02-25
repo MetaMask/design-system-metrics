@@ -8,6 +8,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   generate-metrics:
@@ -59,6 +61,25 @@ jobs:
       - name: Generate Slack report
         run: yarn slack-report --output metrics/slack-report-${{ steps.date.outputs.date }}.md
 
+      - name: Extract JSON from XLSX
+        run: yarn extract-json
+
+      - name: Update timeline data
+        run: yarn update-timeline
+
+      - name: Copy metrics to dashboard
+        run: cp metrics/*.json dashboard/public/metrics/
+
+      - name: Install dashboard dependencies
+        run: |
+          cd dashboard
+          npm ci
+
+      - name: Build dashboard
+        run: |
+          cd dashboard
+          npm run build
+
       - name: Commit and push changes
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -70,6 +91,14 @@ jobs:
           - Regenerated component metrics for extension and mobile
           - Updated config.json with latest component mappings
           - Generated weekly Slack report
+          - Updated dashboard data and rebuilt
 
           🤖 Automated weekly update" || echo "No changes to commit"
           git push origin main
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dashboard/dist
+          cname: false
