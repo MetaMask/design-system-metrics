@@ -122,9 +122,10 @@ function generateReport(config, migrationTargets) {
   const mobileNewComponents = getNewComponents('mobile');
 
   report.push('  * **Mobile**');
-  report.push(`    * Total: ${mobileMappedCount} [components](${MMDS_RN_COMPONENTS})`);
+  report.push(`    * MMDS components available: ${mobileMappedCount} [components](${MMDS_RN_COMPONENTS})`);
   if (mobileSummary) {
-    report.push(`    * Usage: ${mobileSummary.mmdsInstances} instances in mobile codebase`);
+    report.push(`    * MMDS usage: ${mobileSummary.mmdsInstances} instances in codebase`);
+    report.push(`    * Deprecated components: ${mobileSummary.componentsTracked} legacy component types`);
   }
   if (mobileNewComponents.length > 0) {
     report.push(`    * New components: ${mobileNewComponents.join(', ')}`);
@@ -138,9 +139,10 @@ function generateReport(config, migrationTargets) {
   const extensionNewComponents = getNewComponents('extension');
 
   report.push('  * **Extension**');
-  report.push(`    * Total: ${extensionMappedCount} [components](${MMDS_REACT_COMPONENTS})`);
+  report.push(`    * MMDS components available: ${extensionMappedCount} [components](${MMDS_REACT_COMPONENTS})`);
   if (extensionSummary) {
-    report.push(`    * Usage: ${extensionSummary.mmdsInstances} instances in extension codebase`);
+    report.push(`    * MMDS usage: ${extensionSummary.mmdsInstances} instances in codebase`);
+    report.push(`    * Deprecated components: ${extensionSummary.componentsTracked} legacy component types`);
   }
   if (extensionNewComponents.length > 0) {
     report.push(`    * New components: ${extensionNewComponents.join(', ')}`);

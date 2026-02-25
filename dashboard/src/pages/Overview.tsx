@@ -97,9 +97,9 @@ export function Overview() {
               }
             />
             <MetricsCard
-              title="Components Tracked"
+              title="Deprecated Components"
               value={mobileLatest?.components || 0}
-              subtitle="Total component types"
+              subtitle="Legacy components being tracked"
             />
           </div>
         </section>
@@ -147,9 +147,9 @@ export function Overview() {
               }
             />
             <MetricsCard
-              title="Components Tracked"
+              title="Deprecated Components"
               value={extensionLatest?.components || 0}
-              subtitle="Total component types"
+              subtitle="Legacy components being tracked"
             />
           </div>
         </section>
