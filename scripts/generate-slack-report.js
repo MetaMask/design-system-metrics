@@ -62,11 +62,12 @@ function getLatestMetricsSummary(project) {
 
 /**
  * Count MMDS components available in the design system package
+ * Includes components in temp-components folders
  */
 function countAvailableMMDSComponents(currentComponents) {
   if (!currentComponents) return 0;
 
-  // Explicitly list prop variants and utility components to exclude
+  // Explicitly list prop variants to exclude (but include temp-components like Blockies, Jazzicon, etc.)
   const excludeList = [
     // Prop variant enums
     'BadgeCountSize',
@@ -74,12 +75,7 @@ function countAvailableMMDSComponents(currentComponents) {
     'BadgeWrapperPosition',
     'ButtonBaseSize',
     'IconName',
-    'TextVariant',
-    // Utility components not in MMDS package
-    'Blockies',
-    'Jazzicon',
-    'Maskicon',
-    'TextOrChildren'
+    'TextVariant'
   ];
 
   return currentComponents.filter(component => {
