@@ -10,9 +10,19 @@ interface MetricsCardProps {
   className?: string;
 }
 
-export function MetricsCard({ title, value, subtitle, trend, newComponents, className = '' }: MetricsCardProps) {
+export function MetricsCard({
+  title,
+  value,
+  subtitle,
+  trend,
+  newComponents,
+  className = "",
+}: MetricsCardProps) {
+  console.log("newComponents", newComponents);
   return (
-    <div className={`bg-white dark:bg-gray-800 rounded-lg shadow p-6 ${className}`}>
+    <div
+      className={`bg-white dark:bg-gray-800 rounded-lg shadow p-6 ${className}`}
+    >
       <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">
         {title}
       </h3>
@@ -23,10 +33,11 @@ export function MetricsCard({ title, value, subtitle, trend, newComponents, clas
         {trend && (
           <span
             className={`text-sm font-medium ${
-              trend.isPositive ? 'text-green-600' : 'text-red-600'
+              trend.isPositive ? "text-green-600" : "text-red-600"
             }`}
           >
-            {trend.isPositive ? '+' : ''}{trend.value}
+            {trend.isPositive ? "+" : ""}
+            {trend.value}
           </span>
         )}
       </div>
@@ -41,7 +52,7 @@ export function MetricsCard({ title, value, subtitle, trend, newComponents, clas
             New components:
           </p>
           <p className="text-xs text-gray-600 dark:text-gray-300">
-            {newComponents.join(', ')}
+            {newComponents.join(", ")}
           </p>
         </div>
       )}

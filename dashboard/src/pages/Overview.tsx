@@ -77,6 +77,14 @@ export function Overview() {
               value={mobileLatest?.mmdsComponentsAvailable || 0}
               subtitle="Components available in package"
               newComponents={mobileLatest?.newComponents}
+              trend={
+                data.mobile.latestChange
+                  ? {
+                      value: data.mobile.latestChange.mmdsComponentsAvailableChange,
+                      isPositive: data.mobile.latestChange.mmdsComponentsAvailableChange > 0,
+                    }
+                  : undefined
+              }
             />
             <MetricsCard
               title="MMDS Instances"
@@ -200,6 +208,14 @@ export function Overview() {
               value={extensionLatest?.mmdsComponentsAvailable || 0}
               subtitle="Components available in package"
               newComponents={extensionLatest?.newComponents}
+              trend={
+                data.extension.latestChange
+                  ? {
+                      value: data.extension.latestChange.mmdsComponentsAvailableChange,
+                      isPositive: data.extension.latestChange.mmdsComponentsAvailableChange > 0,
+                    }
+                  : undefined
+              }
             />
             <MetricsCard
               title="MMDS Instances"

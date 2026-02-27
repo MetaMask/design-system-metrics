@@ -137,7 +137,8 @@ function calculateChanges(timeline) {
     mmdsInstancesChange: timeline.mmdsInstances[latest] - timeline.mmdsInstances[previous],
     deprecatedInstancesChange: timeline.deprecatedInstances[latest] - timeline.deprecatedInstances[previous],
     componentsFullyMigratedChange: timeline.componentsFullyMigrated[latest] - timeline.componentsFullyMigrated[previous],
-    componentsInProgressChange: timeline.componentsInProgress[latest] - timeline.componentsInProgress[previous]
+    componentsInProgressChange: timeline.componentsInProgress[latest] - timeline.componentsInProgress[previous],
+    mmdsComponentsAvailableChange: timeline.mmdsComponentsAvailable[latest] - timeline.mmdsComponentsAvailable[previous]
   };
 }
 

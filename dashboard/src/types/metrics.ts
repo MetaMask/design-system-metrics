@@ -45,6 +45,7 @@ export interface ProjectTimeline {
     deprecatedInstancesChange: number;
     componentsFullyMigratedChange: number;
     componentsInProgressChange: number;
+    mmdsComponentsAvailableChange: number;
   };
 }
 
