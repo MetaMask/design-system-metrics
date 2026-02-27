@@ -288,8 +288,8 @@ const main = async () => {
     currentPackages = [],
   } = projectConfig;
 
-  // Add today's date to the output filename
-  const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
+  // Add date to the output filename (from env var or today)
+  const today = process.env.METRICS_DATE || new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
   const ext = path.extname(baseOutputFile);
   const basename = path.basename(baseOutputFile, ext);
   const dirname = path.dirname(baseOutputFile);
