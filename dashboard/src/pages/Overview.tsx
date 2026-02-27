@@ -61,18 +61,6 @@ export function Overview() {
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Mobile</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             <MetricsCard
-              title="Migration Progress"
-              value={`${mobileLatest?.migration.toFixed(2)}%`}
-              trend={
-                data.mobile.latestChange
-                  ? {
-                      value: `${data.mobile.latestChange.migrationPercentageChange}%`,
-                      isPositive: parseFloat(data.mobile.latestChange.migrationPercentageChange) > 0,
-                    }
-                  : undefined
-              }
-            />
-            <MetricsCard
               title="MMDS Components"
               value={mobileLatest?.mmdsComponentsAvailable || 0}
               subtitle="Components available in package"
@@ -91,6 +79,11 @@ export function Overview() {
               }
             />
             <MetricsCard
+              title="Deprecated Components"
+              value={mobileLatest?.components || 0}
+              subtitle="Legacy components being tracked"
+            />
+            <MetricsCard
               title="Deprecated Instances"
               value={mobileLatest?.deprecated.toLocaleString() || 0}
               subtitle="Legacy components remaining"
@@ -104,9 +97,16 @@ export function Overview() {
               }
             />
             <MetricsCard
-              title="Deprecated Components"
-              value={mobileLatest?.components || 0}
-              subtitle="Legacy components being tracked"
+              title="Migration Progress"
+              value={`${mobileLatest?.migration.toFixed(2)}%`}
+              trend={
+                data.mobile.latestChange
+                  ? {
+                      value: `${data.mobile.latestChange.migrationPercentageChange}%`,
+                      isPositive: parseFloat(data.mobile.latestChange.migrationPercentageChange) > 0,
+                    }
+                  : undefined
+              }
             />
           </div>
         </section>
@@ -115,18 +115,6 @@ export function Overview() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Extension</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-            <MetricsCard
-              title="Migration Progress"
-              value={`${extensionLatest?.migration.toFixed(2)}%`}
-              trend={
-                data.extension.latestChange
-                  ? {
-                      value: `${data.extension.latestChange.migrationPercentageChange}%`,
-                      isPositive: parseFloat(data.extension.latestChange.migrationPercentageChange) > 0,
-                    }
-                  : undefined
-              }
-            />
             <MetricsCard
               title="MMDS Components"
               value={extensionLatest?.mmdsComponentsAvailable || 0}
@@ -146,6 +134,11 @@ export function Overview() {
               }
             />
             <MetricsCard
+              title="Deprecated Components"
+              value={extensionLatest?.components || 0}
+              subtitle="Legacy components being tracked"
+            />
+            <MetricsCard
               title="Deprecated Instances"
               value={extensionLatest?.deprecated.toLocaleString() || 0}
               subtitle="Legacy components remaining"
@@ -159,9 +152,16 @@ export function Overview() {
               }
             />
             <MetricsCard
-              title="Deprecated Components"
-              value={extensionLatest?.components || 0}
-              subtitle="Legacy components being tracked"
+              title="Migration Progress"
+              value={`${extensionLatest?.migration.toFixed(2)}%`}
+              trend={
+                data.extension.latestChange
+                  ? {
+                      value: `${data.extension.latestChange.migrationPercentageChange}%`,
+                      isPositive: parseFloat(data.extension.latestChange.migrationPercentageChange) > 0,
+                    }
+                  : undefined
+              }
             />
           </div>
         </section>
