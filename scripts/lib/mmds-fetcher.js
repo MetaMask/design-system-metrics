@@ -40,7 +40,13 @@ async function fetchMMDSComponents(mmdsRepoPath) {
  *
  * Matches patterns like:
  * export { Button, ButtonSize } from './Button';  → Extracts only 'Button'
+ * export { Blockies } from './temp-components/Blockies'; → Extracts 'Blockies'
  * export type { ButtonProps } from './Button';    → Skips (type export)
+ *
+ * Strategy:
+ * 1. Find exports where the name exactly matches the folder/file name
+ * 2. Extract the base component name from the path
+ * 3. If exported name matches base name, it's a component
  *
  * @param {string} filePath - Path to index.ts file
  * @returns {Promise<string[]>} - Array of React/RN component names only
@@ -50,39 +56,33 @@ async function parseIndexFile(filePath) {
     const content = await fs.readFile(filePath, 'utf8');
     const components = new Set();
 
-    // Common enum/type suffixes that are NOT components
-    const nonComponentSuffixes = [
-      'Size', 'Variant', 'Color', 'Status', 'Position', 'Shape', 'Severity',
-      'Props', 'Type', 'Name', 'Align', 'Direction', 'Wrap', 'Items', 'Content',
-      'BackgroundColor', 'BorderColor', 'Weight', 'Family', 'Style', 'Transform',
-      'OverflowWrap', 'FlexDirection', 'FlexWrap', 'AlignItems', 'JustifyContent',
-      'AnchorShape', 'CustomPosition'
-    ];
-
-    // Match: export { ComponentName, ... } from './ComponentName';
+    // Match: export { ComponentName, ... } from './path/to/ComponentName';
     const exportRegex = /export\s+\{\s*([^}]+)\s*\}\s+from\s+['"]\.\/([^'"]+)['"]/g;
 
     let match;
     while ((match = exportRegex.exec(content)) !== null) {
       const exports = match[1];
-      const folder = match[2];
+      const importPath = match[2]; // e.g., 'Button' or 'temp-components/Blockies'
 
-      // Split by comma and clean up
+      // Extract the base component name from the path (last segment)
+      // 'Button' → 'Button'
+      // 'temp-components/Blockies' → 'Blockies'
+      const baseName = importPath.split('/').pop();
+
+      // Split exports by comma and clean up
       const exportedNames = exports
         .split(',')
         .map(name => name.trim())
         .filter(name => name && !name.includes('type'));
 
-      // Filter to only component names (match folder name)
-      // Components typically match the folder name exactly
-      // e.g., export { Button, ButtonSize } from './Button' → Only 'Button' is the component
-      if (exportedNames.length > 0) {
-        const componentName = exportedNames.find(name => name === folder);
+      // Find exports that exactly match the base component name
+      // e.g., export { Button, ButtonSize } from './Button' → 'Button' matches
+      // e.g., export { BadgeStatus } from './BadgeStatus' → 'BadgeStatus' matches
+      // e.g., export { BadgeStatusStatus, BadgeStatusSize } from './BadgeStatus' → no match
+      const componentName = exportedNames.find(name => name === baseName);
 
-        // Only add if it matches the folder name AND doesn't look like an enum/type
-        if (componentName && !nonComponentSuffixes.some(suffix => componentName.endsWith(suffix))) {
-          components.add(componentName);
-        }
+      if (componentName) {
+        components.add(componentName);
       }
     }
 
