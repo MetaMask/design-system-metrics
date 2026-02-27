@@ -69,7 +69,7 @@ export function Overview() {
         {/* Mobile Metrics */}
         <section className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Mobile</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
             <MetricsCard
               title="MMDS Components"
               value={mobileLatest?.mmdsComponentsAvailable || 0}
@@ -119,12 +119,79 @@ export function Overview() {
               }
             />
           </div>
+
+          {/* Mobile Trend Chart */}
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+              6 Month Trend
+            </h3>
+            <ResponsiveContainer width="100%" height={400}>
+              <LineChart data={mobileChartData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis
+                  dataKey="date"
+                  tick={{ fontSize: 12 }}
+                  angle={-45}
+                  textAnchor="end"
+                  height={80}
+                />
+                <YAxis
+                  yAxisId="left"
+                  label={{ value: 'Component Instances', angle: -90, position: 'insideLeft' }}
+                />
+                <YAxis
+                  yAxisId="right"
+                  orientation="right"
+                  label={{ value: 'Migration % / Components', angle: 90, position: 'insideRight' }}
+                  domain={[0, 100]}
+                />
+                <Tooltip />
+                <Legend />
+                <Line
+                  yAxisId="left"
+                  type="monotone"
+                  dataKey="mmdsInstances"
+                  name="MMDS Instances"
+                  stroke="#3b82f6"
+                  strokeWidth={2}
+                  dot={{ r: 3 }}
+                />
+                <Line
+                  yAxisId="left"
+                  type="monotone"
+                  dataKey="deprecatedInstances"
+                  name="Deprecated Instances"
+                  stroke="#ef4444"
+                  strokeWidth={2}
+                  dot={{ r: 3 }}
+                />
+                <Line
+                  yAxisId="right"
+                  type="monotone"
+                  dataKey="mmdsComponents"
+                  name="MMDS Components Available"
+                  stroke="#10b981"
+                  strokeWidth={2}
+                  dot={{ r: 3 }}
+                />
+                <Line
+                  yAxisId="right"
+                  type="monotone"
+                  dataKey="migration"
+                  name="Migration %"
+                  stroke="#8b5cf6"
+                  strokeWidth={2}
+                  dot={{ r: 3 }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
         </section>
 
         {/* Extension Metrics */}
         <section className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Extension</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
             <MetricsCard
               title="MMDS Components"
               value={extensionLatest?.mmdsComponentsAvailable || 0}
@@ -174,140 +241,73 @@ export function Overview() {
               }
             />
           </div>
-        </section>
 
-        {/* Mobile Trend Chart */}
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 mb-8">
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-            Mobile - 6 Month Trend
-          </h2>
-          <ResponsiveContainer width="100%" height={400}>
-            <LineChart data={mobileChartData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis
-                dataKey="date"
-                tick={{ fontSize: 12 }}
-                angle={-45}
-                textAnchor="end"
-                height={80}
-              />
-              <YAxis
-                yAxisId="left"
-                label={{ value: 'Component Instances', angle: -90, position: 'insideLeft' }}
-              />
-              <YAxis
-                yAxisId="right"
-                orientation="right"
-                label={{ value: 'Migration % / Components', angle: 90, position: 'insideRight' }}
-                domain={[0, 100]}
-              />
-              <Tooltip />
-              <Legend />
-              <Line
-                yAxisId="left"
-                type="monotone"
-                dataKey="mmdsInstances"
-                name="MMDS Instances"
-                stroke="#3b82f6"
-                strokeWidth={2}
-                dot={{ r: 3 }}
-              />
-              <Line
-                yAxisId="left"
-                type="monotone"
-                dataKey="deprecatedInstances"
-                name="Deprecated Instances"
-                stroke="#ef4444"
-                strokeWidth={2}
-                dot={{ r: 3 }}
-              />
-              <Line
-                yAxisId="right"
-                type="monotone"
-                dataKey="mmdsComponents"
-                name="MMDS Components Available"
-                stroke="#10b981"
-                strokeWidth={2}
-                dot={{ r: 3 }}
-              />
-              <Line
-                yAxisId="right"
-                type="monotone"
-                dataKey="migration"
-                name="Migration %"
-                stroke="#8b5cf6"
-                strokeWidth={2}
-                dot={{ r: 3 }}
-              />
-            </LineChart>
-          </ResponsiveContainer>
-        </section>
-
-        {/* Extension Trend Chart */}
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-            Extension - 6 Month Trend
-          </h2>
-          <ResponsiveContainer width="100%" height={400}>
-            <LineChart data={extensionChartData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis
-                dataKey="date"
-                tick={{ fontSize: 12 }}
-                angle={-45}
-                textAnchor="end"
-                height={80}
-              />
-              <YAxis
-                yAxisId="left"
-                label={{ value: 'Component Instances', angle: -90, position: 'insideLeft' }}
-              />
-              <YAxis
-                yAxisId="right"
-                orientation="right"
-                label={{ value: 'Migration % / Components', angle: 90, position: 'insideRight' }}
-                domain={[0, 100]}
-              />
-              <Tooltip />
-              <Legend />
-              <Line
-                yAxisId="left"
-                type="monotone"
-                dataKey="mmdsInstances"
-                name="MMDS Instances"
-                stroke="#3b82f6"
-                strokeWidth={2}
-                dot={{ r: 3 }}
-              />
-              <Line
-                yAxisId="left"
-                type="monotone"
-                dataKey="deprecatedInstances"
-                name="Deprecated Instances"
-                stroke="#ef4444"
-                strokeWidth={2}
-                dot={{ r: 3 }}
-              />
-              <Line
-                yAxisId="right"
-                type="monotone"
-                dataKey="mmdsComponents"
-                name="MMDS Components Available"
-                stroke="#10b981"
-                strokeWidth={2}
-                dot={{ r: 3 }}
-              />
-              <Line
-                yAxisId="right"
-                type="monotone"
-                dataKey="migration"
-                name="Migration %"
-                stroke="#8b5cf6"
-                strokeWidth={2}
-                dot={{ r: 3 }}
-              />
-            </LineChart>
-          </ResponsiveContainer>
+          {/* Extension Trend Chart */}
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+              6 Month Trend
+            </h3>
+            <ResponsiveContainer width="100%" height={400}>
+              <LineChart data={extensionChartData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis
+                  dataKey="date"
+                  tick={{ fontSize: 12 }}
+                  angle={-45}
+                  textAnchor="end"
+                  height={80}
+                />
+                <YAxis
+                  yAxisId="left"
+                  label={{ value: 'Component Instances', angle: -90, position: 'insideLeft' }}
+                />
+                <YAxis
+                  yAxisId="right"
+                  orientation="right"
+                  label={{ value: 'Migration % / Components', angle: 90, position: 'insideRight' }}
+                  domain={[0, 100]}
+                />
+                <Tooltip />
+                <Legend />
+                <Line
+                  yAxisId="left"
+                  type="monotone"
+                  dataKey="mmdsInstances"
+                  name="MMDS Instances"
+                  stroke="#3b82f6"
+                  strokeWidth={2}
+                  dot={{ r: 3 }}
+                />
+                <Line
+                  yAxisId="left"
+                  type="monotone"
+                  dataKey="deprecatedInstances"
+                  name="Deprecated Instances"
+                  stroke="#ef4444"
+                  strokeWidth={2}
+                  dot={{ r: 3 }}
+                />
+                <Line
+                  yAxisId="right"
+                  type="monotone"
+                  dataKey="mmdsComponents"
+                  name="MMDS Components Available"
+                  stroke="#10b981"
+                  strokeWidth={2}
+                  dot={{ r: 3 }}
+                />
+                <Line
+                  yAxisId="right"
+                  type="monotone"
+                  dataKey="migration"
+                  name="Migration %"
+                  stroke="#8b5cf6"
+                  strokeWidth={2}
+                  dot={{ r: 3 }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
         </section>
       </div>
     </div>
