@@ -374,8 +374,8 @@ const main = async () => {
     // Generate XLSX file with multiple sheets using ExcelJS
     const workbook = new ExcelJS.Workbook();
 
-    // Sheet 1: Migration Progress (components migrating to MMDS)
-    const migrationSheet = workbook.addWorksheet("Migration Progress");
+    // Sheet 1: MMDS vs Legacy (comparison of MMDS and legacy component usage)
+    const migrationSheet = workbook.addWorksheet("MMDS vs Legacy");
     migrationSheet.addRow([
       "Deprecated Component",
       "Source Paths",
@@ -480,64 +480,14 @@ const main = async () => {
     ]);
 
     console.log(
-      chalk.blue(`Migration Progress: ${componentsWithMMDSReplacement.length} components tracked`)
+      chalk.blue(`MMDS vs Legacy: ${componentsWithMMDSReplacement.length} components tracked`)
     );
     console.log(
-      chalk.blue(`Total Migration: ${totalMMDS}/${totalAll} (${totalPercentage.toFixed(2)}%)`)
+      chalk.blue(`Total: ${totalMMDS} MMDS / ${totalDeprecated} Legacy (${totalPercentage.toFixed(2)}%)`)
     );
 
-    // Sheet 2: Intermediate Migrations (components migrating to component-library)
-    const intermediateSheet = workbook.addWorksheet("Intermediate Migrations");
-    intermediateSheet.addRow([
-      "Old Component",
-      "Old Path",
-      "New Component",
-      "New Package/Path",
-      "Instances",
-    ]);
-
-    const componentsWithIntermediateReplacement = Array.from(deprecatedMetrics.entries())
-      .filter(([, metrics]) =>
-        metrics.replacement &&
-        metrics.replacement.package === "component-library"
-      );
-
-    let totalIntermediate = 0;
-
-    componentsWithIntermediateReplacement.forEach(([componentName, metrics]) => {
-      const oldPaths = deprecatedComponents[componentName].paths.join(", ");
-      const newComponent = metrics.replacement.component;
-      const newPath = metrics.replacement.path || metrics.replacement.package;
-
-      totalIntermediate += metrics.totalCount;
-
-      intermediateSheet.addRow([
-        componentName,
-        oldPaths,
-        newComponent,
-        newPath,
-        metrics.totalCount,
-      ]);
-    });
-
-    // Add totals row
-    intermediateSheet.addRow([
-      "TOTAL",
-      "",
-      "",
-      "",
-      totalIntermediate,
-    ]);
-
-    console.log(
-      chalk.blue(`Intermediate Migrations: ${componentsWithIntermediateReplacement.length} components tracked`)
-    );
-    console.log(
-      chalk.blue(`Total Intermediate Instances: ${totalIntermediate}`)
-    );
-
-    // Sheet 3: Path-Level Detail
-    const pathDetailSheet = workbook.addWorksheet("Path-Level Detail");
+    // Sheet 2: Legacy Component Library Usage (detailed breakdown of legacy component usage)
+    const pathDetailSheet = workbook.addWorksheet("Legacy Component Library Usage");
     pathDetailSheet.addRow([
       "Component",
       "Specific Path",
@@ -557,10 +507,10 @@ const main = async () => {
     });
 
     console.log(
-      chalk.blue(`Path-Level Detail: ${deprecatedMetrics.size} components with path breakdowns`)
+      chalk.blue(`Legacy Component Library Usage: ${deprecatedMetrics.size} components with path breakdowns`)
     );
 
-    // Sheet 4: MMDS Usage
+    // Sheet 3: MMDS Usage
     const mmdsSheet = workbook.addWorksheet("MMDS Usage");
     mmdsSheet.addRow(["Component", "Instances", "File Paths"]);
 
@@ -593,8 +543,8 @@ const main = async () => {
       chalk.blue(`Total MMDS Usage: ${totalMMDSUsage} instances`)
     );
 
-    // Sheet 5: No Replacement Components
-    const noReplacementSheet = workbook.addWorksheet("No Replacement");
+    // Sheet 4: No MMDS Replacement Yet (components without defined MMDS replacements)
+    const noReplacementSheet = workbook.addWorksheet("No MMDS Replacement Yet");
     noReplacementSheet.addRow(["Component", "Path", "Instances", "File Paths"]);
 
     const componentsWithNoReplacement = Array.from(deprecatedMetrics.entries())
@@ -623,10 +573,10 @@ const main = async () => {
     ]);
 
     console.log(
-      chalk.blue(`No Replacement: ${componentsWithNoReplacement.length} components`)
+      chalk.blue(`No MMDS Replacement Yet: ${componentsWithNoReplacement.length} components`)
     );
     console.log(
-      chalk.blue(`Total No Replacement Instances: ${totalNoReplacement}`)
+      chalk.blue(`Total No MMDS Replacement Yet Instances: ${totalNoReplacement}`)
     );
 
     // Create output directory if it doesn't exist
@@ -653,7 +603,6 @@ const main = async () => {
       migrationPercentage: summaryTotalPercentage.toFixed(2),
       componentsTracked: groupedByMMDS.size,
       mmdsComponentsAvailable: mmdsComponentsAvailable,
-      intermediateComponents: componentsWithIntermediateReplacement.length,
       noReplacementComponents: componentsWithNoReplacement.length,
       totalNoReplacementInstances: totalNoReplacement
     };
