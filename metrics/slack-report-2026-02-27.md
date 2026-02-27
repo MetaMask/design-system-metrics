@@ -3,7 +3,8 @@
 * **MetaMask Design System (MMDS)**
   * **Mobile**
     * MMDS components available: 35 [components](https://github.com/MetaMask/metamask-design-system/tree/main/packages/design-system-react-native/src/components)
-    * MMDS usage: 2059 instances in codebase
+      * New components: RadioButton, TextField
+    * MMDS usage: 2055 instances in codebase
     * Deprecated components: 25 legacy component types
   * **Extension**
     * MMDS components available: 25 [components](https://github.com/MetaMask/metamask-design-system/tree/main/packages/design-system-react/src/components)
@@ -13,11 +14,11 @@
   * **Mobile**
     * Target components: 19 components planned for migration (DSYS-272)
     * Migrated to MMDS: 35/54 (65%)
-    * Instance replacement: 21.28% ([breakdown](https://github.com/georgewrmarshall/design-system-metrics/blob/main/metrics/mobile-component-metrics-2026-02-27.xlsx))
+    * Instance replacement: 21.31% ([breakdown](https://github.com/georgewrmarshall/design-system-metrics/blob/main/metrics/mobile-component-metrics-2026-02-27.xlsx))
   * **Extension**
     * Target components: 22 components planned for migration (DSYS-302)
     * Migrated to MMDS: 25/47 (53%)
-    * Instance replacement: 27.21% ([breakdown](https://github.com/georgewrmarshall/design-system-metrics/blob/main/metrics/extension-component-metrics-2026-02-27.xlsx))
+    * Instance replacement: 27.20% ([breakdown](https://github.com/georgewrmarshall/design-system-metrics/blob/main/metrics/extension-component-metrics-2026-02-27.xlsx))
 
 ---
 
