@@ -44,6 +44,29 @@ const validateConfig = (cfg) => {
   }
 };
 
+/**
+ * Count MMDS components available in the design system package
+ * Includes components in temp-components folders
+ */
+const countAvailableMMDSComponents = (currentComponents) => {
+  if (!currentComponents) return 0;
+
+  // Explicitly list prop variants to exclude (but include temp-components like Blockies, Jazzicon, etc.)
+  const excludeList = [
+    // Prop variant enums
+    'BadgeCountSize',
+    'BadgeStatusStatus',
+    'BadgeWrapperPosition',
+    'ButtonBaseSize',
+    'IconName',
+    'TextVariant'
+  ];
+
+  return currentComponents.filter(component => {
+    return !excludeList.includes(component);
+  }).length;
+};
+
 // Define CLI options using Commander
 program
   .version("2.6.0")
@@ -618,6 +641,8 @@ const main = async () => {
     const summaryTotalAll = totalDeprecated + totalMMDS;
     const summaryTotalPercentage = summaryTotalAll > 0 ? (totalMMDS / summaryTotalAll) * 100 : 0;
 
+    const mmdsComponentsAvailable = countAvailableMMDSComponents(projectConfig.currentComponents);
+
     const summary = {
       project: projectName,
       date: today,
@@ -627,6 +652,7 @@ const main = async () => {
       totalInstances: summaryTotalAll,
       migrationPercentage: summaryTotalPercentage.toFixed(2),
       componentsTracked: groupedByMMDS.size,
+      mmdsComponentsAvailable: mmdsComponentsAvailable,
       intermediateComponents: componentsWithIntermediateReplacement.length,
       noReplacementComponents: componentsWithNoReplacement.length,
       totalNoReplacementInstances: totalNoReplacement
