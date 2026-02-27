@@ -62,25 +62,11 @@ function getLatestMetricsSummary(project) {
 
 /**
  * Count MMDS components available in the design system package
- * Includes components in temp-components folders
+ * Now reads directly from the summary files which use anti-fragile name-matching
  */
-function countAvailableMMDSComponents(currentComponents) {
-  if (!currentComponents) return 0;
-
-  // Explicitly list prop variants to exclude (but include temp-components like Blockies, Jazzicon, etc.)
-  const excludeList = [
-    // Prop variant enums
-    'BadgeCountSize',
-    'BadgeStatusStatus',
-    'BadgeWrapperPosition',
-    'ButtonBaseSize',
-    'IconName',
-    'TextVariant'
-  ];
-
-  return currentComponents.filter(component => {
-    return !excludeList.includes(component);
-  }).length;
+function countAvailableMMDSComponents(project) {
+  const summary = getLatestMetricsSummary(project);
+  return summary?.mmdsComponentsAvailable || 0;
 }
 
 /**
@@ -128,7 +114,7 @@ function generateReport(config, migrationTargets) {
 
   // Mobile section
   const mobileConfig = config.projects.mobile;
-  const mobileMMDSCount = countAvailableMMDSComponents(mobileConfig.currentComponents);
+  const mobileMMDSCount = countAvailableMMDSComponents('mobile');
   const mobileMetricsFile = getLatestMetricsFile('mobile');
   const mobileSummary = getLatestMetricsSummary('mobile');
   const mobileNewComponents = getNewComponents('mobile');
@@ -145,7 +131,7 @@ function generateReport(config, migrationTargets) {
 
   // Extension section
   const extensionConfig = config.projects.extension;
-  const extensionMMDSCount = countAvailableMMDSComponents(extensionConfig.currentComponents);
+  const extensionMMDSCount = countAvailableMMDSComponents('extension');
   const extensionMetricsFile = getLatestMetricsFile('extension');
   const extensionSummary = getLatestMetricsSummary('extension');
   const extensionNewComponents = getNewComponents('extension');
