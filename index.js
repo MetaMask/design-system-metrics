@@ -67,6 +67,56 @@ const countAvailableMMDSComponents = (currentComponents) => {
   }).length;
 };
 
+/**
+ * Get filtered list of MMDS components (excluding prop variants)
+ */
+const getMMDSComponentsList = (currentComponents) => {
+  if (!currentComponents) return [];
+
+  const excludeList = [
+    'BadgeCountSize',
+    'BadgeStatusStatus',
+    'BadgeWrapperPosition',
+    'ButtonBaseSize',
+    'IconName',
+    'TextVariant'
+  ];
+
+  return currentComponents.filter(component => {
+    return !excludeList.includes(component);
+  }).sort();
+};
+
+/**
+ * Find new MMDS components by comparing with previous summary
+ */
+const findNewComponents = async (outputFile, currentComponents) => {
+  try {
+    // Get previous week's summary
+    const outputDir = path.dirname(outputFile);
+    const files = await fs.readdir(outputDir);
+    const summaryFiles = files
+      .filter(f => f.includes('-summary.json') && f.startsWith(path.basename(outputFile).split('-')[0]))
+      .sort()
+      .reverse();
+
+    // Skip the current file (first in sorted list) and get the previous one
+    if (summaryFiles.length > 1) {
+      const previousSummaryPath = path.join(outputDir, summaryFiles[1]);
+      const previousSummary = JSON.parse(await fs.readFile(previousSummaryPath, 'utf8'));
+
+      if (previousSummary.mmdsComponentsList) {
+        const previousComponents = new Set(previousSummary.mmdsComponentsList);
+        return currentComponents.filter(comp => !previousComponents.has(comp));
+      }
+    }
+  } catch (err) {
+    // If we can't find previous summary, just return empty array
+    console.log(chalk.yellow(`Could not find previous summary to compare: ${err.message}`));
+  }
+  return [];
+};
+
 // Define CLI options using Commander
 program
   .version("2.6.0")
@@ -592,6 +642,8 @@ const main = async () => {
     const summaryTotalPercentage = summaryTotalAll > 0 ? (totalMMDS / summaryTotalAll) * 100 : 0;
 
     const mmdsComponentsAvailable = countAvailableMMDSComponents(projectConfig.currentComponents);
+    const mmdsComponentsList = getMMDSComponentsList(projectConfig.currentComponents);
+    const newComponents = await findNewComponents(outputFile, mmdsComponentsList);
 
     const summary = {
       project: projectName,
@@ -603,6 +655,8 @@ const main = async () => {
       migrationPercentage: summaryTotalPercentage.toFixed(2),
       componentsTracked: groupedByMMDS.size,
       mmdsComponentsAvailable: mmdsComponentsAvailable,
+      mmdsComponentsList: mmdsComponentsList,
+      newComponents: newComponents,
       noReplacementComponents: componentsWithNoReplacement.length,
       totalNoReplacementInstances: totalNoReplacement
     };

@@ -37,6 +37,8 @@ export interface ProjectTimeline {
   componentsNotStarted: number[];
   totalComponents: number[];
   mmdsComponentsAvailable: number[];
+  mmdsComponentsList: string[][];
+  newComponents: string[][];
   latestChange?: {
     migrationPercentageChange: string;
     mmdsInstancesChange: number;
