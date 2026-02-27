@@ -20,6 +20,7 @@ export function Overview() {
         deprecated: data.mobile.deprecatedInstances[data.mobile.deprecatedInstances.length - 1],
         components: data.mobile.totalComponents[data.mobile.totalComponents.length - 1],
         mmdsComponentsAvailable: data.mobile.mmdsComponentsAvailable?.[data.mobile.mmdsComponentsAvailable.length - 1] || 0,
+        newComponents: data.mobile.newComponents?.[data.mobile.newComponents.length - 1] || [],
       }
     : null;
 
@@ -31,6 +32,7 @@ export function Overview() {
         deprecated: data.extension.deprecatedInstances[data.extension.deprecatedInstances.length - 1],
         components: data.extension.totalComponents[data.extension.totalComponents.length - 1],
         mmdsComponentsAvailable: data.extension.mmdsComponentsAvailable?.[data.extension.mmdsComponentsAvailable.length - 1] || 0,
+        newComponents: data.extension.newComponents?.[data.extension.newComponents.length - 1] || [],
       }
     : null;
 
@@ -74,6 +76,15 @@ export function Overview() {
               title="MMDS Components"
               value={mobileLatest?.mmdsComponentsAvailable || 0}
               subtitle="Components available in package"
+              newComponents={mobileLatest?.newComponents}
+              trend={
+                data.mobile.latestChange
+                  ? {
+                      value: data.mobile.latestChange.mmdsComponentsAvailableChange,
+                      isPositive: data.mobile.latestChange.mmdsComponentsAvailableChange > 0,
+                    }
+                  : undefined
+              }
             />
             <MetricsCard
               title="MMDS Instances"
@@ -196,6 +207,15 @@ export function Overview() {
               title="MMDS Components"
               value={extensionLatest?.mmdsComponentsAvailable || 0}
               subtitle="Components available in package"
+              newComponents={extensionLatest?.newComponents}
+              trend={
+                data.extension.latestChange
+                  ? {
+                      value: data.extension.latestChange.mmdsComponentsAvailableChange,
+                      isPositive: data.extension.latestChange.mmdsComponentsAvailableChange > 0,
+                    }
+                  : undefined
+              }
             />
             <MetricsCard
               title="MMDS Instances"

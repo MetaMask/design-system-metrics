@@ -79,7 +79,9 @@ function buildProjectTimeline(projectData) {
       componentsInProgress: [],
       componentsNotStarted: [],
       totalComponents: [],
-      mmdsComponentsAvailable: []
+      mmdsComponentsAvailable: [],
+      mmdsComponentsList: [],
+      newComponents: []
     };
   }
 
@@ -93,7 +95,9 @@ function buildProjectTimeline(projectData) {
     componentsInProgress: [],
     componentsNotStarted: [],
     totalComponents: [],
-    mmdsComponentsAvailable: []
+    mmdsComponentsAvailable: [],
+    mmdsComponentsList: [],
+    newComponents: []
   };
 
   for (const entry of projectData) {
@@ -110,6 +114,8 @@ function buildProjectTimeline(projectData) {
     timeline.componentsNotStarted.push(summary.notStarted);
     timeline.totalComponents.push(summary.totalComponents);
     timeline.mmdsComponentsAvailable.push(data.mmdsComponentsAvailable || 0);
+    timeline.mmdsComponentsList.push(data.mmdsComponentsList || []);
+    timeline.newComponents.push(data.newComponents || []);
   }
 
   return timeline;
@@ -131,7 +137,8 @@ function calculateChanges(timeline) {
     mmdsInstancesChange: timeline.mmdsInstances[latest] - timeline.mmdsInstances[previous],
     deprecatedInstancesChange: timeline.deprecatedInstances[latest] - timeline.deprecatedInstances[previous],
     componentsFullyMigratedChange: timeline.componentsFullyMigrated[latest] - timeline.componentsFullyMigrated[previous],
-    componentsInProgressChange: timeline.componentsInProgress[latest] - timeline.componentsInProgress[previous]
+    componentsInProgressChange: timeline.componentsInProgress[latest] - timeline.componentsInProgress[previous],
+    mmdsComponentsAvailableChange: timeline.mmdsComponentsAvailable[latest] - timeline.mmdsComponentsAvailable[previous]
   };
 }
 

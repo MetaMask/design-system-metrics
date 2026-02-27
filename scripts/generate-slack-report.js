@@ -121,12 +121,12 @@ function generateReport(config, migrationTargets) {
 
   report.push('  * **Mobile**');
   report.push(`    * MMDS components available: ${mobileMMDSCount} [components](${MMDS_RN_COMPONENTS})`);
+  if (mobileSummary && mobileSummary.newComponents && mobileSummary.newComponents.length > 0) {
+    report.push(`      * New components: ${mobileSummary.newComponents.join(', ')}`);
+  }
   if (mobileSummary) {
     report.push(`    * MMDS usage: ${mobileSummary.mmdsInstances} instances in codebase`);
     report.push(`    * Deprecated components: ${mobileSummary.componentsTracked} legacy component types`);
-  }
-  if (mobileNewComponents.length > 0) {
-    report.push(`    * New components: ${mobileNewComponents.join(', ')}`);
   }
 
   // Extension section
@@ -138,12 +138,12 @@ function generateReport(config, migrationTargets) {
 
   report.push('  * **Extension**');
   report.push(`    * MMDS components available: ${extensionMMDSCount} [components](${MMDS_REACT_COMPONENTS})`);
+  if (extensionSummary && extensionSummary.newComponents && extensionSummary.newComponents.length > 0) {
+    report.push(`      * New components: ${extensionSummary.newComponents.join(', ')}`);
+  }
   if (extensionSummary) {
     report.push(`    * MMDS usage: ${extensionSummary.mmdsInstances} instances in codebase`);
     report.push(`    * Deprecated components: ${extensionSummary.componentsTracked} legacy component types`);
-  }
-  if (extensionNewComponents.length > 0) {
-    report.push(`    * New components: ${extensionNewComponents.join(', ')}`);
   }
 
   // Migration Progress section
