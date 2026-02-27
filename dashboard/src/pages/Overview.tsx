@@ -19,6 +19,7 @@ export function Overview() {
         mmds: data.mobile.mmdsInstances[data.mobile.mmdsInstances.length - 1],
         deprecated: data.mobile.deprecatedInstances[data.mobile.deprecatedInstances.length - 1],
         components: data.mobile.totalComponents[data.mobile.totalComponents.length - 1],
+        mmdsComponentsAvailable: data.mobile.mmdsComponentsAvailable?.[data.mobile.mmdsComponentsAvailable.length - 1] || 0,
       }
     : null;
 
@@ -29,6 +30,7 @@ export function Overview() {
         mmds: data.extension.mmdsInstances[data.extension.mmdsInstances.length - 1],
         deprecated: data.extension.deprecatedInstances[data.extension.deprecatedInstances.length - 1],
         components: data.extension.totalComponents[data.extension.totalComponents.length - 1],
+        mmdsComponentsAvailable: data.extension.mmdsComponentsAvailable?.[data.extension.mmdsComponentsAvailable.length - 1] || 0,
       }
     : null;
 
@@ -57,7 +59,7 @@ export function Overview() {
         {/* Mobile Metrics */}
         <section className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Mobile</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             <MetricsCard
               title="Migration Progress"
               value={`${mobileLatest?.migration.toFixed(2)}%`}
@@ -69,6 +71,11 @@ export function Overview() {
                     }
                   : undefined
               }
+            />
+            <MetricsCard
+              title="MMDS Components"
+              value={mobileLatest?.mmdsComponentsAvailable || 0}
+              subtitle="Components available in package"
             />
             <MetricsCard
               title="MMDS Instances"
@@ -107,7 +114,7 @@ export function Overview() {
         {/* Extension Metrics */}
         <section className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Extension</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             <MetricsCard
               title="Migration Progress"
               value={`${extensionLatest?.migration.toFixed(2)}%`}
@@ -119,6 +126,11 @@ export function Overview() {
                     }
                   : undefined
               }
+            />
+            <MetricsCard
+              title="MMDS Components"
+              value={extensionLatest?.mmdsComponentsAvailable || 0}
+              subtitle="Components available in package"
             />
             <MetricsCard
               title="MMDS Instances"

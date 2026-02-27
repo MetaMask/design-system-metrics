@@ -78,7 +78,8 @@ function buildProjectTimeline(projectData) {
       componentsFullyMigrated: [],
       componentsInProgress: [],
       componentsNotStarted: [],
-      totalComponents: []
+      totalComponents: [],
+      mmdsComponentsAvailable: []
     };
   }
 
@@ -91,7 +92,8 @@ function buildProjectTimeline(projectData) {
     componentsFullyMigrated: [],
     componentsInProgress: [],
     componentsNotStarted: [],
-    totalComponents: []
+    totalComponents: [],
+    mmdsComponentsAvailable: []
   };
 
   for (const entry of projectData) {
@@ -107,6 +109,7 @@ function buildProjectTimeline(projectData) {
     timeline.componentsInProgress.push(summary.inProgress);
     timeline.componentsNotStarted.push(summary.notStarted);
     timeline.totalComponents.push(summary.totalComponents);
+    timeline.mmdsComponentsAvailable.push(data.mmdsComponentsAvailable || 0);
   }
 
   return timeline;

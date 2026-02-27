@@ -146,10 +146,22 @@ async function processFile(xlsxPath) {
 
   const data = await parseXLSX(xlsxPath);
 
+  // Try to load the summary JSON to get mmdsComponentsAvailable
+  const summaryPath = xlsxPath.replace('.xlsx', '-summary.json');
+  let mmdsComponentsAvailable = null;
+  try {
+    const summaryContent = await fs.readFile(summaryPath, 'utf8');
+    const summaryData = JSON.parse(summaryContent);
+    mmdsComponentsAvailable = summaryData.mmdsComponentsAvailable;
+  } catch (err) {
+    // Summary file might not exist for older data
+  }
+
   const output = {
     project,
     date,
     generatedAt: new Date().toISOString(),
+    mmdsComponentsAvailable,
     ...data
   };
 
