@@ -84,7 +84,7 @@ export function useIndexData() {
         setLoading(true);
         const res = await fetch(`${METRICS_PATH}index.json`);
         if (!res.ok) throw new Error('Failed to fetch index');
-        const index: IndexData = await index.json();
+        const index: IndexData = await res.json();
         setData(index);
         setError(null);
       } catch (err) {
