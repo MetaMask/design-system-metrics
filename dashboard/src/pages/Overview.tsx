@@ -1,11 +1,14 @@
-import { useTimelineData } from '../hooks/useMetricsData';
+import { useTimelineData, useLatestSummaryData } from '../hooks/useMetricsData';
 import { Loading } from '../components/Loading';
 import { ErrorMessage } from '../components/ErrorMessage';
 import { MetricsCard } from '../components/MetricsCard';
+import { CodeOwnerAdoptionChart } from '../components/CodeOwnerAdoptionChart';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 export function Overview() {
   const { data, loading, error } = useTimelineData();
+  const { data: mobileSummary } = useLatestSummaryData('mobile');
+  const { data: extensionSummary } = useLatestSummaryData('extension');
 
   if (loading) return <Loading />;
   if (error) return <ErrorMessage error={error} />;
@@ -329,6 +332,32 @@ export function Overview() {
             </ResponsiveContainer>
           </div>
         </section>
+
+        {/* Code Owner Adoption */}
+        {(mobileSummary?.codeOwnerStats || extensionSummary?.codeOwnerStats) && (
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+              Code Owner Adoption
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
+              Component usage breakdown by team ownership
+            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {mobileSummary?.codeOwnerStats && (
+                <CodeOwnerAdoptionChart
+                  codeOwnerStats={mobileSummary.codeOwnerStats}
+                  title="Mobile - Top Teams by Component Usage"
+                />
+              )}
+              {extensionSummary?.codeOwnerStats && (
+                <CodeOwnerAdoptionChart
+                  codeOwnerStats={extensionSummary.codeOwnerStats}
+                  title="Extension - Top Teams by Component Usage"
+                />
+              )}
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );

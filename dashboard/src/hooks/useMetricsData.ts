@@ -100,3 +100,45 @@ export function useIndexData() {
 
   return { data, loading, error };
 }
+
+export function useLatestSummaryData(project: 'mobile' | 'extension') {
+  const [data, setData] = useState<any | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+
+        // First, get the index to find the latest summary file
+        const indexRes = await fetch(`${METRICS_PATH}index.json`);
+        if (!indexRes.ok) throw new Error('Failed to fetch index');
+        const index: IndexData = await indexRes.json();
+
+        const latestFile = index.latest[project];
+        if (!latestFile) throw new Error(`No data available for ${project}`);
+
+        // Convert data file to summary file name
+        const summaryFile = latestFile.replace('-data.json', '-summary.json');
+
+        // Fetch the latest summary file
+        const dataRes = await fetch(`${METRICS_PATH}${summaryFile}`);
+        if (!dataRes.ok) throw new Error(`Failed to fetch ${summaryFile}`);
+        const summaryData = await dataRes.json();
+
+        setData(summaryData);
+        setError(null);
+      } catch (err) {
+        setError(err as Error);
+        setData(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [project]);
+
+  return { data, loading, error };
+}
