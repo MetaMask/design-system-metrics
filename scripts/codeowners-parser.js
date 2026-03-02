@@ -6,7 +6,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const minimatch = require('minimatch');
+const { minimatch } = require('minimatch');
 
 class CodeOwnersParser {
   constructor(codeownersPath) {

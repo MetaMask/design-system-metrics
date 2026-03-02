@@ -171,6 +171,7 @@ let componentMetrics = new Map();
 
 // Structure: Map<owner, { mmdsInstances, deprecatedInstances, files }>
 let codeOwnerMetrics = new Map();
+let repoRootPath = null; // Will be set in main function
 
 // Helper function to track component usage by source and specific path
 const trackComponent = (componentName, source, specificPath, filePath) => {
@@ -193,8 +194,13 @@ const trackComponent = (componentName, source, specificPath, filePath) => {
   metrics.files.push(filePath);
 
   // Track by code owner if parser is available
-  if (codeOwnersParser) {
-    const owner = codeOwnersParser.getPrimaryOwner(filePath);
+  if (codeOwnersParser && repoRootPath) {
+    // Make file path relative to repo root for CODEOWNERS matching
+    const relativePath = filePath.startsWith(repoRootPath)
+      ? filePath.substring(repoRootPath.length + 1) // +1 to remove leading slash
+      : filePath;
+
+    const owner = codeOwnersParser.getPrimaryOwner(relativePath);
     if (!codeOwnerMetrics.has(owner)) {
       codeOwnerMetrics.set(owner, {
         mmdsInstances: 0,
