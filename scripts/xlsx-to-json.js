@@ -79,19 +79,36 @@ async function parseXLSX(filePath) {
   const replacementCol = findColumn('mmds component') || findColumn('replacement') || 3;
   const migratedPercentCol = findColumn('migrated %') || 6;
 
+  const parseCount = (value) => {
+    if (value === null || value === undefined) return 0;
+    if (typeof value === 'number') return value;
+    const parsed = parseInt(value.toString().replace(/,/g, ''), 10);
+    return Number.isFinite(parsed) ? parsed : 0;
+  };
+
+  const isAggregateRow = (name) => {
+    const trimmed = name.trim();
+    if (!trimmed) return true;
+    if (trimmed.toUpperCase() === 'TOTAL') return true;
+    if (trimmed.startsWith('→') && /total$/i.test(trimmed)) return true;
+    return false;
+  };
+
   // Read data rows
   worksheet.eachRow((row, rowNumber) => {
     if (rowNumber === 1) return; // Skip header
 
     const componentName = row.getCell(componentCol).value;
     if (!componentName) return; // Skip empty rows
+    const componentNameStr = componentName.toString().trim();
+    if (isAggregateRow(componentNameStr)) return;
 
-    const mmdsInstances = parseInt(row.getCell(mmdsCol).value) || 0;
-    const deprecatedInstances = parseInt(row.getCell(deprecatedCol).value) || 0;
+    const mmdsInstances = parseCount(row.getCell(mmdsCol).value);
+    const deprecatedInstances = parseCount(row.getCell(deprecatedCol).value);
     const totalInstances = mmdsInstances + deprecatedInstances;
 
     const component = {
-      name: componentName.toString(),
+      name: componentNameStr,
       mmdsInstances,
       deprecatedInstances,
       totalInstances,
@@ -151,15 +168,27 @@ async function processFile(xlsxPath) {
   let mmdsComponentsAvailable = null;
   let mmdsComponentsList = null;
   let newComponents = null;
+  let summaryData = null;
   try {
     const summaryContent = await fs.readFile(summaryPath, 'utf8');
-    const summaryData = JSON.parse(summaryContent);
+    summaryData = JSON.parse(summaryContent);
     mmdsComponentsAvailable = summaryData.mmdsComponentsAvailable;
     mmdsComponentsList = summaryData.mmdsComponentsList;
     newComponents = summaryData.newComponents;
   } catch (err) {
     // Summary file might not exist for older data
   }
+
+  const normalizedSummary = summaryData
+    ? {
+        ...data.summary,
+        totalComponents: summaryData.componentsTracked ?? data.summary.totalComponents,
+        mmdsInstances: summaryData.mmdsInstances ?? data.summary.mmdsInstances,
+        deprecatedInstances: summaryData.deprecatedInstances ?? data.summary.deprecatedInstances,
+        totalInstances: summaryData.totalInstances ?? data.summary.totalInstances,
+        migrationPercentage: summaryData.migrationPercentage ?? data.summary.migrationPercentage,
+      }
+    : data.summary;
 
   const output = {
     project,
@@ -168,7 +197,8 @@ async function processFile(xlsxPath) {
     mmdsComponentsAvailable,
     mmdsComponentsList,
     newComponents,
-    ...data
+    summary: normalizedSummary,
+    components: data.components
   };
 
   // Write JSON file

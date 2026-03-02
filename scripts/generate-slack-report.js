@@ -26,16 +26,24 @@ const MMDS_RN_COMPONENTS = 'https://github.com/MetaMask/metamask-design-system/t
 const GITHUB_REPO = 'https://github.com/georgewrmarshall/design-system-metrics/blob/main';
 
 /**
- * Get the latest metrics file for a project
+ * Get latest data filename from index.json
+ */
+function getLatestDataFile(project) {
+  const indexPath = path.join(METRICS_DIR, 'index.json');
+  if (!fs.existsSync(indexPath)) {
+    return null;
+  }
+  const index = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
+  return index?.latest?.[project] || null;
+}
+
+/**
+ * Get the latest metrics workbook for a project based on latest date in index.json
  */
 function getLatestMetricsFile(project) {
-  const files = fs.readdirSync(METRICS_DIR);
-  const projectFiles = files
-    .filter(f => f.startsWith(`${project}-component-metrics-`) && f.endsWith('.xlsx'))
-    .sort()
-    .reverse();
-
-  return projectFiles.length > 0 ? path.basename(projectFiles[0]) : null;
+  const latestDataFile = getLatestDataFile(project);
+  if (!latestDataFile) return null;
+  return latestDataFile.replace('-data.json', '.xlsx');
 }
 
 /**
@@ -43,14 +51,9 @@ function getLatestMetricsFile(project) {
  */
 function getLatestMetricsSummary(project) {
   try {
-    const files = fs.readdirSync(METRICS_DIR);
-    const summaryFiles = files
-      .filter(f => f.startsWith(`${project}-component-metrics-`) && f.endsWith('-summary.json'))
-      .sort()
-      .reverse();
-
-    if (summaryFiles.length > 0) {
-      const summaryPath = path.join(METRICS_DIR, summaryFiles[0]);
+    const latestDataFile = getLatestDataFile(project);
+    if (latestDataFile) {
+      const summaryPath = path.join(METRICS_DIR, latestDataFile.replace('-data.json', '-summary.json'));
       const content = fs.readFileSync(summaryPath, 'utf8');
       return JSON.parse(content);
     }

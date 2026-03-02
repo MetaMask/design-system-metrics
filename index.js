@@ -645,6 +645,32 @@ const main = async () => {
     const mmdsComponentsList = getMMDSComponentsList(projectConfig.currentComponents);
     const newComponents = await findNewComponents(outputFile, mmdsComponentsList);
 
+    // Build canonical machine-readable component list grouped by MMDS replacement.
+    const groupedComponentData = Array.from(groupedByMMDS.entries()).map(([mmdsComp, deprecatedGroup]) => {
+      let legacyInstances = 0;
+      const legacyComponents = [];
+
+      deprecatedGroup.forEach(([componentName, metrics]) => {
+        legacyInstances += metrics.totalCount;
+        legacyComponents.push(componentName);
+      });
+
+      const mmdsInstances = currentMetrics.get(mmdsComp)?.count || 0;
+      const totalInstances = legacyInstances + mmdsInstances;
+      const migrationPercentage = totalInstances > 0
+        ? ((mmdsInstances / totalInstances) * 100).toFixed(2)
+        : '0.00';
+
+      return {
+        replacementComponent: mmdsComp,
+        legacyComponents: legacyComponents.sort(),
+        legacyInstances,
+        mmdsInstances,
+        totalInstances,
+        migrationPercentage,
+      };
+    }).sort((a, b) => b.totalInstances - a.totalInstances);
+
     const summary = {
       project: projectName,
       date: today,
@@ -662,8 +688,36 @@ const main = async () => {
     };
     await fs.writeFile(summaryFile, JSON.stringify(summary, null, 2));
 
+    // Write canonical data JSON used by dashboard/timeline.
+    // This avoids reparsing XLSX and keeps all derived outputs in sync.
+    const dataFile = outputFile.replace('.xlsx', '-data.json');
+    const dataSummary = {
+      totalComponents: groupedByMMDS.size,
+      mmdsInstances: summary.mmdsInstances,
+      deprecatedInstances: summary.deprecatedInstances,
+      totalInstances: summary.totalInstances,
+      migrationPercentage: summary.migrationPercentage,
+      fullyMigrated: groupedComponentData.filter(comp => comp.legacyInstances === 0 && comp.mmdsInstances > 0).length,
+      inProgress: groupedComponentData.filter(comp => comp.legacyInstances > 0 && comp.mmdsInstances > 0).length,
+      notStarted: groupedComponentData.filter(comp => comp.legacyInstances > 0 && comp.mmdsInstances === 0).length,
+    };
+
+    const dataOutput = {
+      project: projectName,
+      date: today,
+      generatedAt: new Date().toISOString(),
+      mmdsComponentsAvailable,
+      mmdsComponentsList,
+      newComponents,
+      summary: dataSummary,
+      components: groupedComponentData,
+    };
+
+    await fs.writeFile(dataFile, JSON.stringify(dataOutput, null, 2));
+
     console.log(chalk.green(`\n✓ Metrics written to ${outputFile}`));
     console.log(chalk.green(`✓ Summary written to ${summaryFile}`));
+    console.log(chalk.green(`✓ Data written to ${dataFile}`));
     console.log(chalk.green("✓ All reports generated successfully!\n"));
   } catch (err) {
     console.error(chalk.red(`Error: ${err.message}`));
