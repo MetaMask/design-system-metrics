@@ -61,11 +61,11 @@ jobs:
       - name: Generate Slack report
         run: yarn slack-report --output metrics/slack-report-${{ steps.date.outputs.date }}.md
 
-      - name: Extract JSON from XLSX
-        run: yarn extract-json
-
       - name: Update timeline data
         run: yarn update-timeline
+
+      - name: Validate metrics consistency
+        run: yarn validate-metrics
 
       - name: Copy metrics to dashboard
         run: cp metrics/*.json dashboard/public/metrics/

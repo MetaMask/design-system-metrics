@@ -57,6 +57,17 @@ function formatDate(date) {
 }
 
 /**
+ * Get most recent Friday from a given date (including same day if Friday)
+ */
+function getMostRecentFriday(inputDate = new Date()) {
+  const date = new Date(inputDate);
+  while (date.getDay() !== 5) {
+    date.setDate(date.getDate() - 1);
+  }
+  return date;
+}
+
+/**
  * Find nearest commit to target date (within ±3 days)
  */
 function findNearestCommit(repoPath, targetDate) {
@@ -255,18 +266,20 @@ async function main() {
   if (endDateArg) {
     endDate = new Date(endDateArg.split('=')[1]);
   } else {
-    endDate = new Date('2026-02-21'); // Last Friday before today
+    endDate = getMostRecentFriday(new Date());
   }
 
   if (startDateArg) {
     startDate = new Date(startDateArg.split('=')[1]);
   } else if (testMode) {
     // Test mode: only last 3 Fridays
-    startDate = new Date('2026-01-24');
+    startDate = new Date(endDate);
+    startDate.setDate(startDate.getDate() - 14);
     console.log('🧪 TEST MODE: Collecting last 3 Fridays only\n');
   } else {
     // Full mode: 26 weeks (6 months)
-    startDate = new Date('2025-08-29');
+    startDate = new Date(endDate);
+    startDate.setDate(startDate.getDate() - (25 * 7));
   }
 
   // Get target Fridays
@@ -308,6 +321,18 @@ async function main() {
     results
       .filter(r => !r.success && !r.skipped)
       .forEach(r => console.log(`  - ${formatDate(r.date)}`));
+  }
+
+  // Refresh derived dashboard artifacts once all historical points are collected.
+  try {
+    console.log('\n🔄 Rebuilding timeline/index and validating consistency...');
+    execSync('yarn update-timeline', { cwd: REPO_ROOT, stdio: 'inherit' });
+    execSync('yarn validate-metrics', { cwd: REPO_ROOT, stdio: 'inherit' });
+    execSync('cp metrics/*.json dashboard/public/metrics/', { cwd: REPO_ROOT, stdio: 'inherit' });
+    console.log('✅ Timeline/index refreshed and dashboard metrics synced');
+  } catch (err) {
+    console.error('❌ Failed to refresh derived artifacts:', err.message);
+    process.exit(1);
   }
 
   console.log('\n✨ Historical metrics collection complete!\n');

@@ -18,7 +18,9 @@
     "fetch-migration-targets": "node scripts/fetch-migration-list.js",
     "slack-report": "node scripts/generate-slack-report.js",
     "extract-json": "node scripts/xlsx-to-json.js",
-    "update-timeline": "node scripts/update-timeline.js"
+    "update-timeline": "node scripts/update-timeline.js",
+    "validate-metrics": "node scripts/validate-metrics-consistency.js",
+    "collect-history": "node scripts/collect-historical-metrics.js"
   },
   "keywords": [
     "cli",
