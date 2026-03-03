@@ -5,7 +5,6 @@
  */
 
 const fs = require('fs');
-const path = require('path');
 const { minimatch } = require('minimatch');
 
 class CodeOwnersParser {
@@ -45,8 +44,7 @@ class CodeOwnersParser {
       this.rules.push({
         pattern,
         owners,
-        // Convert glob pattern to regex for faster matching
-        glob: pattern
+        matcher: this.createMatcher(pattern),
       });
     }
 
@@ -55,16 +53,53 @@ class CodeOwnersParser {
   }
 
   /**
+   * Create a matcher function for a CODEOWNERS pattern.
+   * This approximates gitignore-style matching used by CODEOWNERS:
+   * - Leading "/" anchors pattern at repo root.
+   * - Patterns without leading "/" can match at any depth.
+   * - Trailing "/" implies directory and all descendants.
+   */
+  createMatcher(pattern) {
+    let normalizedPattern = pattern.trim().replace(/\\/g, '/');
+    const anchoredToRoot = normalizedPattern.startsWith('/');
+
+    if (anchoredToRoot) {
+      normalizedPattern = normalizedPattern.slice(1);
+    }
+
+    const directoryPattern = normalizedPattern.endsWith('/');
+    if (directoryPattern) {
+      normalizedPattern = `${normalizedPattern}**`;
+    }
+
+    const hasSlash = normalizedPattern.includes('/');
+    const candidates = [];
+
+    if (anchoredToRoot) {
+      candidates.push(normalizedPattern);
+    } else if (hasSlash) {
+      candidates.push(normalizedPattern);
+      candidates.push(`**/${normalizedPattern}`);
+    } else {
+      candidates.push(`**/${normalizedPattern}`);
+    }
+
+    return (filePath) =>
+      candidates.some((candidate) =>
+        minimatch(filePath, candidate, { dot: true }),
+      );
+  }
+
+  /**
    * Find owners for a given file path
    * Returns array of owner teams/users
    */
   getOwners(filePath) {
     // Normalize path separators
-    const normalizedPath = filePath.replace(/\\/g, '/');
+    const normalizedPath = filePath.replace(/\\/g, '/').replace(/^\.\//, '');
 
     for (const rule of this.rules) {
-      // Use minimatch for glob pattern matching
-      if (minimatch(normalizedPath, rule.glob, { matchBase: true })) {
+      if (rule.matcher(normalizedPath)) {
         return rule.owners;
       }
     }

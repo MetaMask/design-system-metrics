@@ -17,7 +17,8 @@ export function CodeOwnerAdoptionChart({ codeOwnerStats, title }: CodeOwnerAdopt
   // Transform data for chart
   const chartData = Object.entries(codeOwnerStats)
     .map(([owner, stats]) => ({
-      team: owner.replace('@MetaMask/', '').replace(/@/g, ''),
+      owner,
+      team: owner.replace('@MetaMask/', '').replace(/^@/, ''),
       'MMDS Components': stats.mmdsInstances,
       'Deprecated Components': stats.deprecatedInstances,
       migrationPercentage: parseFloat(stats.migrationPercentage),
@@ -41,7 +42,7 @@ export function CodeOwnerAdoptionChart({ codeOwnerStats, title }: CodeOwnerAdopt
       const data = payload[0].payload;
       return (
         <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-3">
-          <p className="font-semibold text-gray-900 dark:text-white mb-2">@MetaMask/{data.team}</p>
+          <p className="font-semibold text-gray-900 dark:text-white mb-2">{data.owner}</p>
           <p className="text-sm text-blue-600 dark:text-blue-400">
             MMDS: {data['MMDS Components'].toLocaleString()}
           </p>
