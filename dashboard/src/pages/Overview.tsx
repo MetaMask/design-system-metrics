@@ -1,4 +1,4 @@
-import { useTimelineData, useLatestSummaryData } from '../hooks/useMetricsData';
+import { useTimelineData, useMetricsData } from '../hooks/useMetricsData';
 import { Loading } from '../components/Loading';
 import { ErrorMessage } from '../components/ErrorMessage';
 import { MetricsCard } from '../components/MetricsCard';
@@ -7,8 +7,8 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 export function Overview() {
   const { data, loading, error } = useTimelineData();
-  const { data: mobileSummary } = useLatestSummaryData('mobile');
-  const { data: extensionSummary } = useLatestSummaryData('extension');
+  const { data: mobileMetrics } = useMetricsData('mobile');
+  const { data: extensionMetrics } = useMetricsData('extension');
 
   if (loading) return <Loading />;
   if (error) return <ErrorMessage error={error} />;
@@ -334,7 +334,7 @@ export function Overview() {
         </section>
 
         {/* Code Owner Adoption */}
-        {(mobileSummary?.codeOwnerStats || extensionSummary?.codeOwnerStats) && (
+        {(mobileMetrics?.summary.codeOwnerStats || extensionMetrics?.summary.codeOwnerStats) && (
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
               Code Owner Adoption
@@ -343,15 +343,15 @@ export function Overview() {
               Component usage breakdown by team ownership
             </p>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {mobileSummary?.codeOwnerStats && (
+              {mobileMetrics?.summary.codeOwnerStats && (
                 <CodeOwnerAdoptionChart
-                  codeOwnerStats={mobileSummary.codeOwnerStats}
+                  codeOwnerStats={mobileMetrics.summary.codeOwnerStats}
                   title="Mobile - Top Teams by Component Usage"
                 />
               )}
-              {extensionSummary?.codeOwnerStats && (
+              {extensionMetrics?.summary.codeOwnerStats && (
                 <CodeOwnerAdoptionChart
-                  codeOwnerStats={extensionSummary.codeOwnerStats}
+                  codeOwnerStats={extensionMetrics.summary.codeOwnerStats}
                   title="Extension - Top Teams by Component Usage"
                 />
               )}

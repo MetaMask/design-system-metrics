@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require("fs").promises;
+const fsSync = require("fs");
 const { glob } = require("glob");
 const path = require("path");
 const babelParser = require("@babel/parser");
@@ -171,7 +172,7 @@ let componentMetrics = new Map();
 
 // Structure: Map<owner, { mmdsInstances, deprecatedInstances, files }>
 let codeOwnerMetrics = new Map();
-let repoRootPath = null; // Will be set in main function
+let repoRootPath = null;
 
 // Helper function to track component usage by source and specific path
 const trackComponent = (componentName, source, specificPath, filePath) => {
@@ -194,13 +195,17 @@ const trackComponent = (componentName, source, specificPath, filePath) => {
   metrics.files.push(filePath);
 
   // Track by code owner if parser is available
-  if (codeOwnersParser && repoRootPath) {
-    // Make file path relative to repo root for CODEOWNERS matching
-    const relativePath = filePath.startsWith(repoRootPath)
-      ? filePath.substring(repoRootPath.length + 1) // +1 to remove leading slash
-      : filePath;
+  if (codeOwnersParser) {
+    const absoluteFilePath = path.resolve(process.cwd(), filePath);
+    let lookupPath = filePath;
+    if (repoRootPath) {
+      const relativePath = path.relative(repoRootPath, absoluteFilePath).replace(/\\/g, "/");
+      if (relativePath && !relativePath.startsWith("..")) {
+        lookupPath = relativePath;
+      }
+    }
 
-    const owner = codeOwnersParser.getPrimaryOwner(relativePath);
+    const owner = codeOwnersParser.getPrimaryOwner(lookupPath);
     if (!codeOwnerMetrics.has(owner)) {
       codeOwnerMetrics.set(owner, {
         mmdsInstances: 0,
@@ -414,15 +419,29 @@ const main = async () => {
 
   const currentComponentsSet = new Set(currentComponents);
 
+  // Derive target repository root from file pattern (e.g., repos/metamask-extension/**).
+  if (filePattern.startsWith("repos/")) {
+    const parts = filePattern.split("/");
+    if (parts.length >= 2) {
+      repoRootPath = path.resolve(process.cwd(), parts[0], parts[1]);
+    }
+  }
+
+  if (!repoRootPath) {
+    repoRootPath = process.cwd();
+  }
+
   // Initialize CodeOwners parser
-  const codeownersPath = path.join(process.cwd(), ".github", "CODEOWNERS");
-  try {
+  const codeownersCandidates = [
+    path.join(repoRootPath, ".github", "CODEOWNERS"),
+    path.join(repoRootPath, "CODEOWNERS"),
+  ];
+  const codeownersPath = codeownersCandidates.find((candidate) => fsSync.existsSync(candidate));
+  if (codeownersPath) {
     codeOwnersParser = new CodeOwnersParser(codeownersPath);
-    console.log(chalk.blue(`✓ Loaded CODEOWNERS file`));
-  } catch (err) {
-    console.log(
-      chalk.yellow(`⚠ CODEOWNERS file not found, skipping code owner tracking`),
-    );
+    console.log(chalk.blue(`✓ Loaded CODEOWNERS file from ${codeownersPath}`));
+  } else {
+    console.log(chalk.yellow("⚠ CODEOWNERS file not found, skipping code owner tracking"));
   }
 
   console.log(chalk.blue(`\nStarting audit for project: ${projectName}\n`));
@@ -771,6 +790,25 @@ const main = async () => {
       })
       .sort((a, b) => b.totalInstances - a.totalInstances);
 
+    // Aggregate code owner stats
+    const codeOwnerStats = {};
+    if (codeOwnerMetrics.size > 0) {
+      for (const [owner, metrics] of codeOwnerMetrics.entries()) {
+        const totalInstances = metrics.mmdsInstances + metrics.deprecatedInstances;
+        const migrationPercentage = totalInstances > 0
+          ? ((metrics.mmdsInstances / totalInstances) * 100).toFixed(2)
+          : "0.00";
+
+        codeOwnerStats[owner] = {
+          mmdsInstances: metrics.mmdsInstances,
+          deprecatedInstances: metrics.deprecatedInstances,
+          totalInstances: totalInstances,
+          migrationPercentage: migrationPercentage,
+          filesCount: metrics.files.size,
+        };
+      }
+    }
+
     const summary = {
       project: projectName,
       date: today,
@@ -807,6 +845,7 @@ const main = async () => {
       notStarted: groupedComponentData.filter(
         (comp) => comp.legacyInstances > 0 && comp.mmdsInstances === 0,
       ).length,
+      codeOwnerStats,
     };
 
     const dataOutput = {
