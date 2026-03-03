@@ -200,6 +200,15 @@ export function Overview() {
               </LineChart>
             </ResponsiveContainer>
           </div>
+
+          {mobileMetrics?.summary.codeOwnerStats && (
+            <div className="mt-6">
+              <CodeOwnerAdoptionChart
+                codeOwnerStats={mobileMetrics.summary.codeOwnerStats}
+                title="Mobile - Code Owner Adoption"
+              />
+            </div>
+          )}
         </section>
 
         {/* Extension Metrics */}
@@ -331,33 +340,16 @@ export function Overview() {
               </LineChart>
             </ResponsiveContainer>
           </div>
-        </section>
 
-        {/* Code Owner Adoption */}
-        {(mobileMetrics?.summary.codeOwnerStats || extensionMetrics?.summary.codeOwnerStats) && (
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              Code Owner Adoption
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
-              Component usage breakdown by team ownership
-            </p>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {mobileMetrics?.summary.codeOwnerStats && (
-                <CodeOwnerAdoptionChart
-                  codeOwnerStats={mobileMetrics.summary.codeOwnerStats}
-                  title="Mobile - Top Teams by Component Usage"
-                />
-              )}
-              {extensionMetrics?.summary.codeOwnerStats && (
-                <CodeOwnerAdoptionChart
-                  codeOwnerStats={extensionMetrics.summary.codeOwnerStats}
-                  title="Extension - Top Teams by Component Usage"
-                />
-              )}
+          {extensionMetrics?.summary.codeOwnerStats && (
+            <div className="mt-6">
+              <CodeOwnerAdoptionChart
+                codeOwnerStats={extensionMetrics.summary.codeOwnerStats}
+                title="Extension - Code Owner Adoption"
+              />
             </div>
-          </section>
-        )}
+          )}
+        </section>
       </div>
     </div>
   );
