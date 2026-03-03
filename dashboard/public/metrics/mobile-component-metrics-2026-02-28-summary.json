@@ -1,13 +1,13 @@
 {
-  "project": "extension",
+  "project": "mobile",
   "date": "2026-02-28",
-  "mmdsInstances": 1452,
-  "deprecatedInstances": 3838,
-  "mmdsUsageTotal": 1434,
-  "totalInstances": 5272,
-  "migrationPercentage": "27.20",
-  "componentsTracked": 15,
-  "mmdsComponentsAvailable": 25,
+  "mmdsInstances": 2055,
+  "deprecatedInstances": 3275,
+  "mmdsUsageTotal": 887,
+  "totalInstances": 4162,
+  "migrationPercentage": "21.31",
+  "componentsTracked": 25,
+  "mmdsComponentsAvailable": 35,
   "mmdsComponentsList": [
     "AvatarAccount",
     "AvatarBase",
@@ -22,45 +22,51 @@
     "BadgeStatus",
     "BadgeWrapper",
     "Blockies",
+    "BottomSheetFooter",
+    "BottomSheetOverlay",
     "Box",
     "Button",
+    "ButtonAnimated",
     "ButtonBase",
-    "ButtonHero",
     "ButtonIcon",
+    "Card",
     "Checkbox",
+    "HeaderBase",
     "Icon",
     "Input",
     "Jazzicon",
+    "Label",
     "Maskicon",
+    "RadioButton",
+    "Skeleton",
     "Text",
-    "TextButton"
+    "TextButton",
+    "TextField",
+    "TextOrChildren",
+    "Toast"
   ],
-  "newComponents": [],
-  "noReplacementComponents": 24,
-  "totalNoReplacementInstances": 671,
+  "newComponents": [
+    "RadioButton",
+    "TextField"
+  ],
+  "noReplacementComponents": 49,
+  "totalNoReplacementInstances": 948,
   "codeOwnerStats": {
-    "@HowardBraham": {
+    "@MetaMask/accounts-engineers": {
+      "mmdsInstances": 38,
+      "deprecatedInstances": 155,
+      "totalInstances": 193,
+      "migrationPercentage": "19.69",
+      "filesCount": 38
+    },
+    "@MetaMask/card": {
       "mmdsInstances": 0,
       "deprecatedInstances": 0,
       "totalInstances": 0,
       "migrationPercentage": "0.00",
       "filesCount": 0
     },
-    "@MetaMask/accounts-engineers": {
-      "mmdsInstances": 72,
-      "deprecatedInstances": 291,
-      "totalInstances": 363,
-      "migrationPercentage": "19.83",
-      "filesCount": 52
-    },
     "@MetaMask/confirmations": {
-      "mmdsInstances": 0,
-      "deprecatedInstances": 2,
-      "totalInstances": 2,
-      "migrationPercentage": "0.00",
-      "filesCount": 1
-    },
-    "@MetaMask/core-extension-ux": {
       "mmdsInstances": 0,
       "deprecatedInstances": 0,
       "totalInstances": 0,
@@ -69,33 +75,19 @@
     },
     "@MetaMask/core-platform": {
       "mmdsInstances": 1,
-      "deprecatedInstances": 406,
-      "totalInstances": 407,
-      "migrationPercentage": "0.25",
-      "filesCount": 56
+      "deprecatedInstances": 100,
+      "totalInstances": 101,
+      "migrationPercentage": "0.99",
+      "filesCount": 30
+    },
+    "@MetaMask/delegation": {
+      "mmdsInstances": 0,
+      "deprecatedInstances": 0,
+      "totalInstances": 0,
+      "migrationPercentage": "0.00",
+      "filesCount": 0
     },
     "@MetaMask/design-system-engineers": {
-      "mmdsInstances": 0,
-      "deprecatedInstances": 0,
-      "totalInstances": 0,
-      "migrationPercentage": "0.00",
-      "filesCount": 0
-    },
-    "@MetaMask/extension-platform": {
-      "mmdsInstances": 0,
-      "deprecatedInstances": 0,
-      "totalInstances": 0,
-      "migrationPercentage": "0.00",
-      "filesCount": 0
-    },
-    "@MetaMask/extension-privacy-reviewers": {
-      "mmdsInstances": 0,
-      "deprecatedInstances": 0,
-      "totalInstances": 0,
-      "migrationPercentage": "0.00",
-      "filesCount": 0
-    },
-    "@MetaMask/extension-security-team": {
       "mmdsInstances": 0,
       "deprecatedInstances": 0,
       "totalInstances": 0,
@@ -110,39 +102,53 @@
       "filesCount": 0
     },
     "@MetaMask/metamask-earn": {
+      "mmdsInstances": 10,
+      "deprecatedInstances": 186,
+      "totalInstances": 196,
+      "migrationPercentage": "5.10",
+      "filesCount": 41
+    },
+    "@MetaMask/mobile-admins": {
+      "mmdsInstances": 0,
+      "deprecatedInstances": 0,
+      "totalInstances": 0,
+      "migrationPercentage": "0.00",
+      "filesCount": 0
+    },
+    "@MetaMask/mobile-core-ux": {
+      "mmdsInstances": 0,
+      "deprecatedInstances": 0,
+      "totalInstances": 0,
+      "migrationPercentage": "0.00",
+      "filesCount": 0
+    },
+    "@MetaMask/mobile-platform": {
       "mmdsInstances": 3,
       "deprecatedInstances": 0,
       "totalInstances": 3,
       "migrationPercentage": "100.00",
       "filesCount": 1
     },
-    "@MetaMask/new-networks": {
-      "mmdsInstances": 0,
-      "deprecatedInstances": 0,
-      "totalInstances": 0,
-      "migrationPercentage": "0.00",
-      "filesCount": 0
-    },
     "@MetaMask/notifications": {
-      "mmdsInstances": 3,
-      "deprecatedInstances": 148,
-      "totalInstances": 151,
-      "migrationPercentage": "1.99",
-      "filesCount": 37
+      "mmdsInstances": 4,
+      "deprecatedInstances": 75,
+      "totalInstances": 79,
+      "migrationPercentage": "5.06",
+      "filesCount": 24
     },
     "@MetaMask/perps": {
-      "mmdsInstances": 634,
-      "deprecatedInstances": 76,
-      "totalInstances": 710,
-      "migrationPercentage": "89.30",
-      "filesCount": 49
+      "mmdsInstances": 104,
+      "deprecatedInstances": 702,
+      "totalInstances": 806,
+      "migrationPercentage": "12.90",
+      "filesCount": 108
     },
-    "@MetaMask/policy-reviewers": {
-      "mmdsInstances": 0,
-      "deprecatedInstances": 0,
-      "totalInstances": 0,
-      "migrationPercentage": "0.00",
-      "filesCount": 0
+    "@MetaMask/predict": {
+      "mmdsInstances": 409,
+      "deprecatedInstances": 149,
+      "totalInstances": 558,
+      "migrationPercentage": "73.30",
+      "filesCount": 67
     },
     "@MetaMask/qa": {
       "mmdsInstances": 0,
@@ -152,6 +158,20 @@
       "filesCount": 0
     },
     "@MetaMask/ramp": {
+      "mmdsInstances": 72,
+      "deprecatedInstances": 693,
+      "totalInstances": 765,
+      "migrationPercentage": "9.41",
+      "filesCount": 100
+    },
+    "@MetaMask/rewards": {
+      "mmdsInstances": 451,
+      "deprecatedInstances": 56,
+      "totalInstances": 507,
+      "migrationPercentage": "88.95",
+      "filesCount": 62
+    },
+    "@MetaMask/supply-chain": {
       "mmdsInstances": 0,
       "deprecatedInstances": 0,
       "totalInstances": 0,
@@ -159,11 +179,11 @@
       "filesCount": 0
     },
     "@MetaMask/swaps-engineers": {
-      "mmdsInstances": 30,
-      "deprecatedInstances": 162,
-      "totalInstances": 192,
-      "migrationPercentage": "15.63",
-      "filesCount": 36
+      "mmdsInstances": 0,
+      "deprecatedInstances": 0,
+      "totalInstances": 0,
+      "migrationPercentage": "0.00",
+      "filesCount": 0
     },
     "@MetaMask/transactions": {
       "mmdsInstances": 0,
@@ -186,19 +206,12 @@
       "migrationPercentage": "0.00",
       "filesCount": 0
     },
-    "@dbrans": {
-      "mmdsInstances": 0,
-      "deprecatedInstances": 0,
-      "totalInstances": 0,
-      "migrationPercentage": "0.00",
-      "filesCount": 0
-    },
     "@unknown": {
-      "mmdsInstances": 709,
-      "deprecatedInstances": 3695,
-      "totalInstances": 4404,
-      "migrationPercentage": "16.10",
-      "filesCount": 643
+      "mmdsInstances": 963,
+      "deprecatedInstances": 2132,
+      "totalInstances": 3095,
+      "migrationPercentage": "31.11",
+      "filesCount": 582
     }
   }
 }

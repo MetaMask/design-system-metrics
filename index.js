@@ -792,21 +792,33 @@ const main = async () => {
 
     // Aggregate code owner stats
     const codeOwnerStats = {};
-    if (codeOwnerMetrics.size > 0) {
-      for (const [owner, metrics] of codeOwnerMetrics.entries()) {
-        const totalInstances = metrics.mmdsInstances + metrics.deprecatedInstances;
-        const migrationPercentage = totalInstances > 0
-          ? ((metrics.mmdsInstances / totalInstances) * 100).toFixed(2)
-          : "0.00";
 
+    // Include all CODEOWNERS entries even when they currently have zero matched instances.
+    if (codeOwnersParser) {
+      for (const owner of codeOwnersParser.getAllTeams()) {
         codeOwnerStats[owner] = {
-          mmdsInstances: metrics.mmdsInstances,
-          deprecatedInstances: metrics.deprecatedInstances,
-          totalInstances: totalInstances,
-          migrationPercentage: migrationPercentage,
-          filesCount: metrics.files.size,
+          mmdsInstances: 0,
+          deprecatedInstances: 0,
+          totalInstances: 0,
+          migrationPercentage: "0.00",
+          filesCount: 0,
         };
       }
+    }
+
+    for (const [owner, metrics] of codeOwnerMetrics.entries()) {
+      const totalInstances = metrics.mmdsInstances + metrics.deprecatedInstances;
+      const migrationPercentage = totalInstances > 0
+        ? ((metrics.mmdsInstances / totalInstances) * 100).toFixed(2)
+        : "0.00";
+
+      codeOwnerStats[owner] = {
+        mmdsInstances: metrics.mmdsInstances,
+        deprecatedInstances: metrics.deprecatedInstances,
+        totalInstances: totalInstances,
+        migrationPercentage: migrationPercentage,
+        filesCount: metrics.files.size,
+      };
     }
 
     const summary = {

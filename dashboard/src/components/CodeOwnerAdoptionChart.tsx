@@ -23,8 +23,7 @@ export function CodeOwnerAdoptionChart({ codeOwnerStats, title }: CodeOwnerAdopt
       migrationPercentage: parseFloat(stats.migrationPercentage),
       totalInstances: stats.totalInstances
     }))
-    .sort((a, b) => b.totalInstances - a.totalInstances)
-    .slice(0, 10); // Show top 10 teams
+    .sort((a, b) => b.totalInstances - a.totalInstances);
 
   if (chartData.length === 0) {
     return (
@@ -63,7 +62,7 @@ export function CodeOwnerAdoptionChart({ codeOwnerStats, title }: CodeOwnerAdopt
       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
         {title}
       </h3>
-      <ResponsiveContainer width="100%" height={400}>
+      <ResponsiveContainer width="100%" height={Math.max(400, chartData.length * 36)}>
         <BarChart data={chartData} layout="vertical" margin={{ top: 5, right: 30, left: 100, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" className="stroke-gray-300 dark:stroke-gray-600" />
           <XAxis type="number" className="text-xs" />
