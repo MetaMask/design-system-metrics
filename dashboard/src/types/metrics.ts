@@ -7,6 +7,14 @@ export interface ComponentMetrics {
   migrationPercentage: string;
 }
 
+export interface CodeOwnerStats {
+  mmdsInstances: number;
+  deprecatedInstances: number;
+  totalInstances: number;
+  migrationPercentage: string;
+  filesCount: number;
+}
+
 export interface MetricsSummary {
   totalComponents: number;
   mmdsInstances: number;
@@ -16,6 +24,7 @@ export interface MetricsSummary {
   fullyMigrated: number;
   inProgress: number;
   notStarted: number;
+  codeOwnerStats?: Record<string, CodeOwnerStats>;
 }
 
 export interface MetricsData {

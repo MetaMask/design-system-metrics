@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require("fs").promises;
+const fsSync = require("fs");
 const { glob } = require("glob");
 const path = require("path");
 const babelParser = require("@babel/parser");
@@ -8,8 +9,10 @@ const traverse = require("@babel/traverse").default;
 const { program } = require("commander");
 const chalk = require("chalk");
 const ExcelJS = require("exceljs");
+const CodeOwnersParser = require("./scripts/codeowners-parser");
 
 let config;
+let codeOwnersParser = null;
 
 // Function to load and parse the configuration file
 const loadConfig = async (configPath) => {
@@ -19,7 +22,7 @@ const loadConfig = async (configPath) => {
     validateConfig(config);
   } catch (err) {
     console.error(
-      chalk.red(`Failed to load configuration file: ${err.message}`)
+      chalk.red(`Failed to load configuration file: ${err.message}`),
     );
     process.exit(1);
   }
@@ -27,19 +30,32 @@ const loadConfig = async (configPath) => {
 
 // Validate config structure
 const validateConfig = (cfg) => {
-  if (!cfg.projects || typeof cfg.projects !== 'object') {
+  if (!cfg.projects || typeof cfg.projects !== "object") {
     throw new Error('Config must have a "projects" object');
   }
 
   for (const [projectName, projectCfg] of Object.entries(cfg.projects)) {
-    if (projectCfg.deprecatedComponents && typeof projectCfg.deprecatedComponents !== 'object') {
-      throw new Error(`Project "${projectName}" deprecatedComponents must be an object`);
+    if (
+      projectCfg.deprecatedComponents &&
+      typeof projectCfg.deprecatedComponents !== "object"
+    ) {
+      throw new Error(
+        `Project "${projectName}" deprecatedComponents must be an object`,
+      );
     }
 
     // Check if using old array format
     if (Array.isArray(projectCfg.deprecatedComponents)) {
-      console.warn(chalk.yellow(`\nWarning: Project "${projectName}" is using the old array format for deprecatedComponents.`));
-      console.warn(chalk.yellow('Please migrate to the new object format with paths and replacement info.\n'));
+      console.warn(
+        chalk.yellow(
+          `\nWarning: Project "${projectName}" is using the old array format for deprecatedComponents.`,
+        ),
+      );
+      console.warn(
+        chalk.yellow(
+          "Please migrate to the new object format with paths and replacement info.\n",
+        ),
+      );
     }
   }
 };
@@ -50,21 +66,7 @@ const validateConfig = (cfg) => {
  */
 const countAvailableMMDSComponents = (currentComponents) => {
   if (!currentComponents) return 0;
-
-  // Explicitly list prop variants to exclude (but include temp-components like Blockies, Jazzicon, etc.)
-  const excludeList = [
-    // Prop variant enums
-    'BadgeCountSize',
-    'BadgeStatusStatus',
-    'BadgeWrapperPosition',
-    'ButtonBaseSize',
-    'IconName',
-    'TextVariant'
-  ];
-
-  return currentComponents.filter(component => {
-    return !excludeList.includes(component);
-  }).length;
+  return new Set(currentComponents).size;
 };
 
 /**
@@ -72,19 +74,7 @@ const countAvailableMMDSComponents = (currentComponents) => {
  */
 const getMMDSComponentsList = (currentComponents) => {
   if (!currentComponents) return [];
-
-  const excludeList = [
-    'BadgeCountSize',
-    'BadgeStatusStatus',
-    'BadgeWrapperPosition',
-    'ButtonBaseSize',
-    'IconName',
-    'TextVariant'
-  ];
-
-  return currentComponents.filter(component => {
-    return !excludeList.includes(component);
-  }).sort();
+  return Array.from(new Set(currentComponents)).sort();
 };
 
 /**
@@ -96,23 +86,35 @@ const findNewComponents = async (outputFile, currentComponents) => {
     const outputDir = path.dirname(outputFile);
     const files = await fs.readdir(outputDir);
     const summaryFiles = files
-      .filter(f => f.includes('-summary.json') && f.startsWith(path.basename(outputFile).split('-')[0]))
+      .filter(
+        (f) =>
+          f.includes("-summary.json") &&
+          f.startsWith(path.basename(outputFile).split("-")[0]),
+      )
       .sort()
       .reverse();
 
     // Skip the current file (first in sorted list) and get the previous one
     if (summaryFiles.length > 1) {
       const previousSummaryPath = path.join(outputDir, summaryFiles[1]);
-      const previousSummary = JSON.parse(await fs.readFile(previousSummaryPath, 'utf8'));
+      const previousSummary = JSON.parse(
+        await fs.readFile(previousSummaryPath, "utf8"),
+      );
 
       if (previousSummary.mmdsComponentsList) {
         const previousComponents = new Set(previousSummary.mmdsComponentsList);
-        return currentComponents.filter(comp => !previousComponents.has(comp));
+        return currentComponents.filter(
+          (comp) => !previousComponents.has(comp),
+        );
       }
     }
   } catch (err) {
     // If we can't find previous summary, just return empty array
-    console.log(chalk.yellow(`Could not find previous summary to compare: ${err.message}`));
+    console.log(
+      chalk.yellow(
+        `Could not find previous summary to compare: ${err.message}`,
+      ),
+    );
   }
   return [];
 };
@@ -120,15 +122,17 @@ const findNewComponents = async (outputFile, currentComponents) => {
 // Define CLI options using Commander
 program
   .version("2.6.0")
-  .description("Design System Metrics CLI Tool - Track component usage and migration progress")
+  .description(
+    "Design System Metrics CLI Tool - Track component usage and migration progress",
+  )
   .requiredOption(
     "-p, --project <name>",
-    "Specify the project to audit (e.g., extension, mobile)"
+    "Specify the project to audit (e.g., extension, mobile)",
   )
   .option(
     "-c, --config <path>",
     "Path to custom config file",
-    path.join(__dirname, "config.json")
+    path.join(__dirname, "config.json"),
   )
   .parse(process.argv);
 
@@ -137,6 +141,10 @@ const options = program.opts();
 // Initialize component instances and file mappings
 // Structure: Map<componentName, Map<source, Map<specificPath, { count, files }>>>
 let componentMetrics = new Map();
+
+// Structure: Map<owner, { mmdsInstances, deprecatedInstances, files }>
+let codeOwnerMetrics = new Map();
+let repoRootPath = null;
 
 // Helper function to track component usage by source and specific path
 const trackComponent = (componentName, source, specificPath, filePath) => {
@@ -157,17 +165,46 @@ const trackComponent = (componentName, source, specificPath, filePath) => {
   const metrics = pathMetrics.get(specificPath);
   metrics.count++;
   metrics.files.push(filePath);
+
+  // Track by code owner if parser is available
+  if (codeOwnersParser) {
+    const absoluteFilePath = path.resolve(process.cwd(), filePath);
+    let lookupPath = filePath;
+    if (repoRootPath) {
+      const relativePath = path.relative(repoRootPath, absoluteFilePath).replace(/\\/g, "/");
+      if (relativePath && !relativePath.startsWith("..")) {
+        lookupPath = relativePath;
+      }
+    }
+
+    const owner = codeOwnersParser.getPrimaryOwner(lookupPath);
+    if (!codeOwnerMetrics.has(owner)) {
+      codeOwnerMetrics.set(owner, {
+        mmdsInstances: 0,
+        deprecatedInstances: 0,
+        files: new Set(),
+      });
+    }
+
+    const ownerMetrics = codeOwnerMetrics.get(owner);
+    if (source === "current") {
+      ownerMetrics.mmdsInstances++;
+    } else if (source === "deprecated") {
+      ownerMetrics.deprecatedInstances++;
+    }
+    ownerMetrics.files.add(filePath);
+  }
 };
 
 // Helper function to check if import path matches any component paths
 const matchComponentPath = (importPath, deprecatedComponents) => {
   // Normalize the import path
-  const normalizedImportPath = importPath.replace(/\\/g, '/');
+  const normalizedImportPath = importPath.replace(/\\/g, "/");
 
   for (const [componentName, config] of Object.entries(deprecatedComponents)) {
     for (const componentPath of config.paths) {
       // Normalize the component path
-      const normalizedComponentPath = componentPath.replace(/\\/g, '/');
+      const normalizedComponentPath = componentPath.replace(/\\/g, "/");
 
       // Check for exact match
       if (normalizedImportPath === normalizedComponentPath) {
@@ -181,12 +218,14 @@ const matchComponentPath = (importPath, deprecatedComponents) => {
 
       // Check if import path includes key parts of component path
       // e.g., "../../components/component-library" matches "*/component-library/*"
-      const pathParts = normalizedComponentPath.split('/');
-      const importParts = normalizedImportPath.split('/');
+      const pathParts = normalizedComponentPath.split("/");
+      const importParts = normalizedImportPath.split("/");
 
       // If import includes "/component-library" and path includes "/component-library"
-      if (normalizedImportPath.includes('/component-library') &&
-          normalizedComponentPath.includes('/component-library')) {
+      if (
+        normalizedImportPath.includes("/component-library") &&
+        normalizedComponentPath.includes("/component-library")
+      ) {
         return { componentName, matchedPath: componentPath };
       }
 
@@ -204,7 +243,7 @@ const processFile = async (
   filePath,
   deprecatedComponents,
   currentComponentsSet,
-  currentPackages
+  currentPackages,
 ) => {
   // Track imports by source: Map<componentName, { source, specificPath }>
   const componentImports = new Map();
@@ -228,7 +267,10 @@ const processFile = async (
         let specificPath = null;
 
         // Check if it's a deprecated component from local paths
-        const deprecatedMatch = matchComponentPath(importPath, deprecatedComponents);
+        const deprecatedMatch = matchComponentPath(
+          importPath,
+          deprecatedComponents,
+        );
         if (deprecatedMatch) {
           source = "deprecated";
           specificPath = deprecatedMatch.matchedPath;
@@ -299,7 +341,8 @@ const processFile = async (
 
           // Check if this component was imported and track its usage
           if (componentImports.has(componentName)) {
-            const { source, specificPath } = componentImports.get(componentName);
+            const { source, specificPath } =
+              componentImports.get(componentName);
             trackComponent(componentName, source, specificPath, filePath);
           }
         }
@@ -307,7 +350,7 @@ const processFile = async (
     });
   } catch (err) {
     console.error(
-      chalk.yellow(`Error processing file ${filePath}: ${err.message}`)
+      chalk.yellow(`Error processing file ${filePath}: ${err.message}`),
     );
   }
 };
@@ -322,8 +365,8 @@ const main = async () => {
   if (!projectConfig) {
     console.error(
       chalk.red(
-        `Project "${projectName}" is not defined in the configuration file.`
-      )
+        `Project "${projectName}" is not defined in the configuration file.`,
+      ),
     );
     process.exit(1);
   }
@@ -339,13 +382,39 @@ const main = async () => {
   } = projectConfig;
 
   // Add date to the output filename (from env var or today)
-  const today = process.env.METRICS_DATE || new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
+  const today =
+    process.env.METRICS_DATE || new Date().toISOString().split("T")[0]; // YYYY-MM-DD format
   const ext = path.extname(baseOutputFile);
   const basename = path.basename(baseOutputFile, ext);
   const dirname = path.dirname(baseOutputFile);
   const outputFile = path.join(dirname, `${basename}-${today}${ext}`);
 
   const currentComponentsSet = new Set(currentComponents);
+
+  // Derive target repository root from file pattern (e.g., repos/metamask-extension/**).
+  if (filePattern.startsWith("repos/")) {
+    const parts = filePattern.split("/");
+    if (parts.length >= 2) {
+      repoRootPath = path.resolve(process.cwd(), parts[0], parts[1]);
+    }
+  }
+
+  if (!repoRootPath) {
+    repoRootPath = process.cwd();
+  }
+
+  // Initialize CodeOwners parser
+  const codeownersCandidates = [
+    path.join(repoRootPath, ".github", "CODEOWNERS"),
+    path.join(repoRootPath, "CODEOWNERS"),
+  ];
+  const codeownersPath = codeownersCandidates.find((candidate) => fsSync.existsSync(candidate));
+  if (codeownersPath) {
+    codeOwnersParser = new CodeOwnersParser(codeownersPath);
+    console.log(chalk.blue(`✓ Loaded CODEOWNERS file from ${codeownersPath}`));
+  } else {
+    console.log(chalk.yellow("⚠ CODEOWNERS file not found, skipping code owner tracking"));
+  }
 
   console.log(chalk.blue(`\nStarting audit for project: ${projectName}\n`));
 
@@ -369,9 +438,9 @@ const main = async () => {
           file,
           deprecatedComponents,
           currentComponentsSet,
-          currentPackages
-        )
-      )
+          currentPackages,
+        ),
+      ),
     );
 
     console.log(chalk.green("\nGenerating Component Migration Metrics...\n"));
@@ -381,7 +450,9 @@ const main = async () => {
     const currentMetrics = new Map(); // Map<componentName, { count, files }>
 
     // Aggregate deprecated metrics across all paths
-    for (const [componentName, componentConfig] of Object.entries(deprecatedComponents)) {
+    for (const [componentName, componentConfig] of Object.entries(
+      deprecatedComponents,
+    )) {
       const componentSources = componentMetrics.get(componentName);
       if (componentSources && componentSources.has("deprecated")) {
         const pathMetrics = componentSources.get("deprecated");
@@ -417,7 +488,10 @@ const main = async () => {
           allFiles.push(...metrics.files);
         }
 
-        currentMetrics.set(componentName, { count: totalCount, files: allFiles });
+        currentMetrics.set(componentName, {
+          count: totalCount,
+          files: allFiles,
+        });
       }
     });
 
@@ -435,12 +509,14 @@ const main = async () => {
       "Migrated %",
     ]);
 
-    const componentsWithMMDSReplacement = Array.from(deprecatedMetrics.entries())
-      .filter(([, metrics]) =>
+    const componentsWithMMDSReplacement = Array.from(
+      deprecatedMetrics.entries(),
+    ).filter(
+      ([, metrics]) =>
         metrics.replacement &&
         metrics.replacement.package &&
-        (metrics.replacement.package.includes("@metamask/design-system"))
-      );
+        metrics.replacement.package.includes("@metamask/design-system"),
+    );
 
     // Group deprecated components by their MMDS replacement component
     const groupedByMMDS = new Map();
@@ -465,7 +541,10 @@ const main = async () => {
         const deprecatedCount = metrics.totalCount;
         const total = deprecatedCount + mmdsCount;
         const percentage = total > 0 ? (mmdsCount / total) * 100 : 0;
-        const sourcePaths = config.projects[projectName].deprecatedComponents[componentName].paths.join(", ");
+        const sourcePaths =
+          config.projects[projectName].deprecatedComponents[
+            componentName
+          ].paths.join(", ");
 
         totalDeprecated += deprecatedCount;
         totalMMDS += mmdsCount;
@@ -485,7 +564,10 @@ const main = async () => {
         // Add individual rows (without MMDS count and percentage)
         deprecatedComponents.forEach(([componentName, metrics]) => {
           const deprecatedCount = metrics.totalCount;
-          const sourcePaths = config.projects[projectName].deprecatedComponents[componentName].paths.join(", ");
+          const sourcePaths =
+            config.projects[projectName].deprecatedComponents[
+              componentName
+            ].paths.join(", ");
 
           groupDeprecatedTotal += deprecatedCount;
 
@@ -530,14 +612,20 @@ const main = async () => {
     ]);
 
     console.log(
-      chalk.blue(`MMDS vs Legacy: ${componentsWithMMDSReplacement.length} components tracked`)
+      chalk.blue(
+        `MMDS vs Legacy: ${componentsWithMMDSReplacement.length} components tracked`,
+      ),
     );
     console.log(
-      chalk.blue(`Total: ${totalMMDS} MMDS / ${totalDeprecated} Legacy (${totalPercentage.toFixed(2)}%)`)
+      chalk.blue(
+        `Total: ${totalMMDS} MMDS / ${totalDeprecated} Legacy (${totalPercentage.toFixed(2)}%)`,
+      ),
     );
 
     // Sheet 2: Legacy Component Library Usage (detailed breakdown of legacy component usage)
-    const pathDetailSheet = workbook.addWorksheet("Legacy Component Library Usage");
+    const pathDetailSheet = workbook.addWorksheet(
+      "Legacy Component Library Usage",
+    );
     pathDetailSheet.addRow([
       "Component",
       "Specific Path",
@@ -557,7 +645,9 @@ const main = async () => {
     });
 
     console.log(
-      chalk.blue(`Legacy Component Library Usage: ${deprecatedMetrics.size} components with path breakdowns`)
+      chalk.blue(
+        `Legacy Component Library Usage: ${deprecatedMetrics.size} components with path breakdowns`,
+      ),
     );
 
     // Sheet 3: MMDS Usage
@@ -575,30 +665,21 @@ const main = async () => {
       totalMMDSUsage += count;
 
       console.log(`${chalk.cyan(componentName)}: ${count} (MMDS)`);
-      mmdsSheet.addRow([
-        componentName,
-        count,
-        files,
-      ]);
+      mmdsSheet.addRow([componentName, count, files]);
     });
 
     // Add totals row
-    mmdsSheet.addRow([
-      "TOTAL",
-      totalMMDSUsage,
-      "",
-    ]);
+    mmdsSheet.addRow(["TOTAL", totalMMDSUsage, ""]);
 
-    console.log(
-      chalk.blue(`Total MMDS Usage: ${totalMMDSUsage} instances`)
-    );
+    console.log(chalk.blue(`Total MMDS Usage: ${totalMMDSUsage} instances`));
 
     // Sheet 4: No MMDS Replacement Yet (components without defined MMDS replacements)
     const noReplacementSheet = workbook.addWorksheet("No MMDS Replacement Yet");
     noReplacementSheet.addRow(["Component", "Path", "Instances", "File Paths"]);
 
-    const componentsWithNoReplacement = Array.from(deprecatedMetrics.entries())
-      .filter(([, metrics]) => !metrics.replacement);
+    const componentsWithNoReplacement = Array.from(
+      deprecatedMetrics.entries(),
+    ).filter(([, metrics]) => !metrics.replacement);
 
     let totalNoReplacement = 0;
 
@@ -615,18 +696,17 @@ const main = async () => {
     });
 
     // Add totals row
-    noReplacementSheet.addRow([
-      "TOTAL",
-      "",
-      totalNoReplacement,
-      "",
-    ]);
+    noReplacementSheet.addRow(["TOTAL", "", totalNoReplacement, ""]);
 
     console.log(
-      chalk.blue(`No MMDS Replacement Yet: ${componentsWithNoReplacement.length} components`)
+      chalk.blue(
+        `No MMDS Replacement Yet: ${componentsWithNoReplacement.length} components`,
+      ),
     );
     console.log(
-      chalk.blue(`Total No MMDS Replacement Yet Instances: ${totalNoReplacement}`)
+      chalk.blue(
+        `Total No MMDS Replacement Yet Instances: ${totalNoReplacement}`,
+      ),
     );
 
     // Create output directory if it doesn't exist
@@ -637,39 +717,81 @@ const main = async () => {
     await workbook.xlsx.writeFile(outputFile);
 
     // Write summary JSON for Slack report
-    const summaryFile = outputFile.replace('.xlsx', '-summary.json');
+    const summaryFile = outputFile.replace(".xlsx", "-summary.json");
     const summaryTotalAll = totalDeprecated + totalMMDS;
-    const summaryTotalPercentage = summaryTotalAll > 0 ? (totalMMDS / summaryTotalAll) * 100 : 0;
+    const summaryTotalPercentage =
+      summaryTotalAll > 0 ? (totalMMDS / summaryTotalAll) * 100 : 0;
 
-    const mmdsComponentsAvailable = countAvailableMMDSComponents(projectConfig.currentComponents);
-    const mmdsComponentsList = getMMDSComponentsList(projectConfig.currentComponents);
-    const newComponents = await findNewComponents(outputFile, mmdsComponentsList);
+    const mmdsComponentsAvailable = countAvailableMMDSComponents(
+      projectConfig.currentComponents,
+    );
+    const mmdsComponentsList = getMMDSComponentsList(
+      projectConfig.currentComponents,
+    );
+    const newComponents = await findNewComponents(
+      outputFile,
+      mmdsComponentsList,
+    );
 
     // Build canonical machine-readable component list grouped by MMDS replacement.
-    const groupedComponentData = Array.from(groupedByMMDS.entries()).map(([mmdsComp, deprecatedGroup]) => {
-      let legacyInstances = 0;
-      const legacyComponents = [];
+    const groupedComponentData = Array.from(groupedByMMDS.entries())
+      .map(([mmdsComp, deprecatedGroup]) => {
+        let legacyInstances = 0;
+        const legacyComponents = [];
 
-      deprecatedGroup.forEach(([componentName, metrics]) => {
-        legacyInstances += metrics.totalCount;
-        legacyComponents.push(componentName);
-      });
+        deprecatedGroup.forEach(([componentName, metrics]) => {
+          legacyInstances += metrics.totalCount;
+          legacyComponents.push(componentName);
+        });
 
-      const mmdsInstances = currentMetrics.get(mmdsComp)?.count || 0;
-      const totalInstances = legacyInstances + mmdsInstances;
+        const mmdsInstances = currentMetrics.get(mmdsComp)?.count || 0;
+        const totalInstances = legacyInstances + mmdsInstances;
+        const migrationPercentage =
+          totalInstances > 0
+            ? ((mmdsInstances / totalInstances) * 100).toFixed(2)
+            : "0.00";
+
+        return {
+          replacementComponent: mmdsComp,
+          legacyComponents: legacyComponents.sort(),
+          legacyInstances,
+          mmdsInstances,
+          totalInstances,
+          migrationPercentage,
+        };
+      })
+      .sort((a, b) => b.totalInstances - a.totalInstances);
+
+    // Aggregate code owner stats
+    const codeOwnerStats = {};
+
+    // Include all CODEOWNERS entries even when they currently have zero matched instances.
+    if (codeOwnersParser) {
+      for (const owner of codeOwnersParser.getAllTeams()) {
+        codeOwnerStats[owner] = {
+          mmdsInstances: 0,
+          deprecatedInstances: 0,
+          totalInstances: 0,
+          migrationPercentage: "0.00",
+          filesCount: 0,
+        };
+      }
+    }
+
+    for (const [owner, metrics] of codeOwnerMetrics.entries()) {
+      const totalInstances = metrics.mmdsInstances + metrics.deprecatedInstances;
       const migrationPercentage = totalInstances > 0
-        ? ((mmdsInstances / totalInstances) * 100).toFixed(2)
-        : '0.00';
+        ? ((metrics.mmdsInstances / totalInstances) * 100).toFixed(2)
+        : "0.00";
 
-      return {
-        replacementComponent: mmdsComp,
-        legacyComponents: legacyComponents.sort(),
-        legacyInstances,
-        mmdsInstances,
-        totalInstances,
-        migrationPercentage,
+      codeOwnerStats[owner] = {
+        mmdsInstances: metrics.mmdsInstances,
+        deprecatedInstances: metrics.deprecatedInstances,
+        totalInstances: totalInstances,
+        migrationPercentage: migrationPercentage,
+        filesCount: metrics.files.size,
       };
-    }).sort((a, b) => b.totalInstances - a.totalInstances);
+    }
 
     const summary = {
       project: projectName,
@@ -684,22 +806,30 @@ const main = async () => {
       mmdsComponentsList: mmdsComponentsList,
       newComponents: newComponents,
       noReplacementComponents: componentsWithNoReplacement.length,
-      totalNoReplacementInstances: totalNoReplacement
+      totalNoReplacementInstances: totalNoReplacement,
+      codeOwnerStats: codeOwnerStats,
     };
     await fs.writeFile(summaryFile, JSON.stringify(summary, null, 2));
 
     // Write canonical data JSON used by dashboard/timeline.
     // This avoids reparsing XLSX and keeps all derived outputs in sync.
-    const dataFile = outputFile.replace('.xlsx', '-data.json');
+    const dataFile = outputFile.replace(".xlsx", "-data.json");
     const dataSummary = {
       totalComponents: groupedByMMDS.size,
       mmdsInstances: summary.mmdsInstances,
       deprecatedInstances: summary.deprecatedInstances,
       totalInstances: summary.totalInstances,
       migrationPercentage: summary.migrationPercentage,
-      fullyMigrated: groupedComponentData.filter(comp => comp.legacyInstances === 0 && comp.mmdsInstances > 0).length,
-      inProgress: groupedComponentData.filter(comp => comp.legacyInstances > 0 && comp.mmdsInstances > 0).length,
-      notStarted: groupedComponentData.filter(comp => comp.legacyInstances > 0 && comp.mmdsInstances === 0).length,
+      fullyMigrated: groupedComponentData.filter(
+        (comp) => comp.legacyInstances === 0 && comp.mmdsInstances > 0,
+      ).length,
+      inProgress: groupedComponentData.filter(
+        (comp) => comp.legacyInstances > 0 && comp.mmdsInstances > 0,
+      ).length,
+      notStarted: groupedComponentData.filter(
+        (comp) => comp.legacyInstances > 0 && comp.mmdsInstances === 0,
+      ).length,
+      codeOwnerStats,
     };
 
     const dataOutput = {

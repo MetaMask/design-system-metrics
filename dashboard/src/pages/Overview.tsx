@@ -1,11 +1,14 @@
-import { useTimelineData } from '../hooks/useMetricsData';
+import { useTimelineData, useMetricsData } from '../hooks/useMetricsData';
 import { Loading } from '../components/Loading';
 import { ErrorMessage } from '../components/ErrorMessage';
 import { MetricsCard } from '../components/MetricsCard';
+import { CodeOwnerAdoptionChart } from '../components/CodeOwnerAdoptionChart';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 export function Overview() {
   const { data, loading, error } = useTimelineData();
+  const { data: mobileMetrics } = useMetricsData('mobile');
+  const { data: extensionMetrics } = useMetricsData('extension');
 
   if (loading) return <Loading />;
   if (error) return <ErrorMessage error={error} />;
@@ -197,6 +200,15 @@ export function Overview() {
               </LineChart>
             </ResponsiveContainer>
           </div>
+
+          {mobileMetrics?.summary.codeOwnerStats && (
+            <div className="mt-6">
+              <CodeOwnerAdoptionChart
+                codeOwnerStats={mobileMetrics.summary.codeOwnerStats}
+                title="Mobile - Code Owner Adoption"
+              />
+            </div>
+          )}
         </section>
 
         {/* Extension Metrics */}
@@ -328,6 +340,15 @@ export function Overview() {
               </LineChart>
             </ResponsiveContainer>
           </div>
+
+          {extensionMetrics?.summary.codeOwnerStats && (
+            <div className="mt-6">
+              <CodeOwnerAdoptionChart
+                codeOwnerStats={extensionMetrics.summary.codeOwnerStats}
+                title="Extension - Code Owner Adoption"
+              />
+            </div>
+          )}
         </section>
       </div>
     </div>

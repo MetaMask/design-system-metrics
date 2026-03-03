@@ -18,6 +18,7 @@
 const { execSync } = require('child_process');
 const fs = require('fs').promises;
 const path = require('path');
+const { parseComponentsFromIndexContent } = require('./lib/component-export-parser');
 
 const ROOT = path.join(__dirname, '..');
 const METRICS_DIR = path.join(ROOT, 'metrics');
@@ -27,15 +28,6 @@ const PROJECTS = {
   mobile: 'packages/design-system-react-native',
   extension: 'packages/design-system-react',
 };
-
-const excludeList = new Set([
-  'BadgeCountSize',
-  'BadgeStatusStatus',
-  'BadgeWrapperPosition',
-  'ButtonBaseSize',
-  'IconName',
-  'TextVariant',
-]);
 
 function getDateFromFilename(filename) {
   return filename.match(/(\d{4}-\d{2}-\d{2})/)?.[1] || null;
@@ -60,28 +52,7 @@ function getComponentsAtRef(ref, packagePath) {
       `cd "${MMDS_REPO}" && git show ${ref}:${indexPath}`,
       { encoding: 'utf8' },
     );
-
-    const components = new Set();
-    const exportRegex = /export\s+\{\s*([^}]+)\s*\}\s+from\s+['"]\.\/([^'"]+)['"]/g;
-    let match;
-
-    while ((match = exportRegex.exec(content)) !== null) {
-      const exportsField = match[1];
-      const importPath = match[2];
-      const baseName = importPath.split('/').pop();
-
-      const exportedNames = exportsField
-        .split(',')
-        .map((name) => name.trim())
-        .filter((name) => name && !name.includes('type'));
-
-      const componentName = exportedNames.find((name) => name === baseName);
-      if (componentName && !excludeList.has(componentName)) {
-        components.add(componentName);
-      }
-    }
-
-    return Array.from(components).sort();
+    return parseComponentsFromIndexContent(content);
   } catch (err) {
     return [];
   }

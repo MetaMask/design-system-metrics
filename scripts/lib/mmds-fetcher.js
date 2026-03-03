@@ -1,5 +1,6 @@
 const fs = require('fs').promises;
 const path = require('path');
+const { parseComponentsFromIndexContent } = require('./component-export-parser');
 
 /**
  * Fetches the list of available MMDS components from the design system packages
@@ -54,39 +55,7 @@ async function fetchMMDSComponents(mmdsRepoPath) {
 async function parseIndexFile(filePath) {
   try {
     const content = await fs.readFile(filePath, 'utf8');
-    const components = new Set();
-
-    // Match: export { ComponentName, ... } from './path/to/ComponentName';
-    const exportRegex = /export\s+\{\s*([^}]+)\s*\}\s+from\s+['"]\.\/([^'"]+)['"]/g;
-
-    let match;
-    while ((match = exportRegex.exec(content)) !== null) {
-      const exports = match[1];
-      const importPath = match[2]; // e.g., 'Button' or 'temp-components/Blockies'
-
-      // Extract the base component name from the path (last segment)
-      // 'Button' → 'Button'
-      // 'temp-components/Blockies' → 'Blockies'
-      const baseName = importPath.split('/').pop();
-
-      // Split exports by comma and clean up
-      const exportedNames = exports
-        .split(',')
-        .map(name => name.trim())
-        .filter(name => name && !name.includes('type'));
-
-      // Find exports that exactly match the base component name
-      // e.g., export { Button, ButtonSize } from './Button' → 'Button' matches
-      // e.g., export { BadgeStatus } from './BadgeStatus' → 'BadgeStatus' matches
-      // e.g., export { BadgeStatusStatus, BadgeStatusSize } from './BadgeStatus' → no match
-      const componentName = exportedNames.find(name => name === baseName);
-
-      if (componentName) {
-        components.add(componentName);
-      }
-    }
-
-    return Array.from(components).sort();
+    return parseComponentsFromIndexContent(content);
   } catch (err) {
     console.error(`Failed to parse ${filePath}:`, err.message);
     return [];
