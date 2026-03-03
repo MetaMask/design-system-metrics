@@ -5,6 +5,7 @@
  */
 
 const fs = require('fs');
+const path = require('path');
 const { minimatch } = require('minimatch');
 
 class CodeOwnersParser {
@@ -62,26 +63,45 @@ class CodeOwnersParser {
   createMatcher(pattern) {
     let normalizedPattern = pattern.trim().replace(/\\/g, '/');
     const anchoredToRoot = normalizedPattern.startsWith('/');
+    const hasGlob = /[*?[\]{}()!+@]/.test(normalizedPattern);
 
     if (anchoredToRoot) {
       normalizedPattern = normalizedPattern.slice(1);
     }
 
     const directoryPattern = normalizedPattern.endsWith('/');
+    const basename = path.posix.basename(normalizedPattern);
+    const looksLikeFile = basename.includes('.');
     if (directoryPattern) {
       normalizedPattern = `${normalizedPattern}**`;
     }
 
     const hasSlash = normalizedPattern.includes('/');
     const candidates = [];
+    const includeDescendants = !directoryPattern && !hasGlob && !looksLikeFile;
+    const descendantPattern = includeDescendants
+      ? `${normalizedPattern}/**`
+      : null;
 
     if (anchoredToRoot) {
       candidates.push(normalizedPattern);
+      if (descendantPattern) {
+        candidates.push(descendantPattern);
+      }
     } else if (hasSlash) {
       candidates.push(normalizedPattern);
+      if (descendantPattern) {
+        candidates.push(descendantPattern);
+      }
       candidates.push(`**/${normalizedPattern}`);
+      if (descendantPattern) {
+        candidates.push(`**/${descendantPattern}`);
+      }
     } else {
       candidates.push(`**/${normalizedPattern}`);
+      if (descendantPattern) {
+        candidates.push(`**/${descendantPattern}`);
+      }
     }
 
     return (filePath) =>

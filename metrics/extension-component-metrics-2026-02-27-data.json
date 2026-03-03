@@ -1,7 +1,7 @@
 {
   "project": "extension",
   "date": "2026-02-27",
-  "generatedAt": "2026-03-02T19:39:59.452Z",
+  "generatedAt": "2026-03-03T02:15:40.358Z",
   "mmdsComponentsAvailable": 25,
   "mmdsComponentsList": [
     "AvatarAccount",
@@ -38,144 +38,323 @@
     "totalInstances": 5272,
     "migrationPercentage": "27.20",
     "fullyMigrated": 0,
-    "notStarted": 5,
-    "inProgress": 12
+    "inProgress": 13,
+    "notStarted": 2,
+    "codeOwnerStats": {
+      "@HowardBraham": {
+        "mmdsInstances": 0,
+        "deprecatedInstances": 0,
+        "totalInstances": 0,
+        "migrationPercentage": "0.00",
+        "filesCount": 0
+      },
+      "@MetaMask/accounts-engineers": {
+        "mmdsInstances": 72,
+        "deprecatedInstances": 374,
+        "totalInstances": 446,
+        "migrationPercentage": "16.14",
+        "filesCount": 66
+      },
+      "@MetaMask/confirmations": {
+        "mmdsInstances": 103,
+        "deprecatedInstances": 631,
+        "totalInstances": 734,
+        "migrationPercentage": "14.03",
+        "filesCount": 164
+      },
+      "@MetaMask/core-extension-ux": {
+        "mmdsInstances": 141,
+        "deprecatedInstances": 830,
+        "totalInstances": 971,
+        "migrationPercentage": "14.52",
+        "filesCount": 136
+      },
+      "@MetaMask/core-platform": {
+        "mmdsInstances": 1,
+        "deprecatedInstances": 403,
+        "totalInstances": 404,
+        "migrationPercentage": "0.25",
+        "filesCount": 54
+      },
+      "@MetaMask/design-system-engineers": {
+        "mmdsInstances": 0,
+        "deprecatedInstances": 0,
+        "totalInstances": 0,
+        "migrationPercentage": "0.00",
+        "filesCount": 0
+      },
+      "@MetaMask/extension-platform": {
+        "mmdsInstances": 0,
+        "deprecatedInstances": 0,
+        "totalInstances": 0,
+        "migrationPercentage": "0.00",
+        "filesCount": 0
+      },
+      "@MetaMask/extension-privacy-reviewers": {
+        "mmdsInstances": 0,
+        "deprecatedInstances": 0,
+        "totalInstances": 0,
+        "migrationPercentage": "0.00",
+        "filesCount": 0
+      },
+      "@MetaMask/extension-security-team": {
+        "mmdsInstances": 0,
+        "deprecatedInstances": 0,
+        "totalInstances": 0,
+        "migrationPercentage": "0.00",
+        "filesCount": 0
+      },
+      "@MetaMask/metamask-assets": {
+        "mmdsInstances": 2,
+        "deprecatedInstances": 214,
+        "totalInstances": 216,
+        "migrationPercentage": "0.93",
+        "filesCount": 43
+      },
+      "@MetaMask/metamask-earn": {
+        "mmdsInstances": 3,
+        "deprecatedInstances": 0,
+        "totalInstances": 3,
+        "migrationPercentage": "100.00",
+        "filesCount": 1
+      },
+      "@MetaMask/new-networks": {
+        "mmdsInstances": 0,
+        "deprecatedInstances": 0,
+        "totalInstances": 0,
+        "migrationPercentage": "0.00",
+        "filesCount": 0
+      },
+      "@MetaMask/notifications": {
+        "mmdsInstances": 0,
+        "deprecatedInstances": 57,
+        "totalInstances": 57,
+        "migrationPercentage": "0.00",
+        "filesCount": 18
+      },
+      "@MetaMask/perps": {
+        "mmdsInstances": 634,
+        "deprecatedInstances": 76,
+        "totalInstances": 710,
+        "migrationPercentage": "89.30",
+        "filesCount": 49
+      },
+      "@MetaMask/policy-reviewers": {
+        "mmdsInstances": 0,
+        "deprecatedInstances": 0,
+        "totalInstances": 0,
+        "migrationPercentage": "0.00",
+        "filesCount": 0
+      },
+      "@MetaMask/qa": {
+        "mmdsInstances": 0,
+        "deprecatedInstances": 0,
+        "totalInstances": 0,
+        "migrationPercentage": "0.00",
+        "filesCount": 0
+      },
+      "@MetaMask/ramp": {
+        "mmdsInstances": 0,
+        "deprecatedInstances": 0,
+        "totalInstances": 0,
+        "migrationPercentage": "0.00",
+        "filesCount": 0
+      },
+      "@MetaMask/swaps-engineers": {
+        "mmdsInstances": 31,
+        "deprecatedInstances": 220,
+        "totalInstances": 251,
+        "migrationPercentage": "12.35",
+        "filesCount": 48
+      },
+      "@MetaMask/transactions": {
+        "mmdsInstances": 0,
+        "deprecatedInstances": 0,
+        "totalInstances": 0,
+        "migrationPercentage": "0.00",
+        "filesCount": 0
+      },
+      "@MetaMask/wallet-integrations": {
+        "mmdsInstances": 0,
+        "deprecatedInstances": 0,
+        "totalInstances": 0,
+        "migrationPercentage": "0.00",
+        "filesCount": 0
+      },
+      "@MetaMask/web3auth": {
+        "mmdsInstances": 211,
+        "deprecatedInstances": 284,
+        "totalInstances": 495,
+        "migrationPercentage": "42.63",
+        "filesCount": 46
+      },
+      "@dbrans": {
+        "mmdsInstances": 0,
+        "deprecatedInstances": 0,
+        "totalInstances": 0,
+        "migrationPercentage": "0.00",
+        "filesCount": 0
+      },
+      "@unknown": {
+        "mmdsInstances": 254,
+        "deprecatedInstances": 1691,
+        "totalInstances": 1945,
+        "migrationPercentage": "13.06",
+        "filesCount": 250
+      }
+    }
   },
   "components": [
     {
-      "name": "Box",
+      "replacementComponent": "Box",
+      "legacyComponents": [
+        "Box"
+      ],
+      "legacyInstances": 1591,
       "mmdsInstances": 708,
-      "deprecatedInstances": 1591,
       "totalInstances": 2299,
-      "replacement": "Box",
       "migrationPercentage": "30.80"
     },
     {
-      "name": "Text",
+      "replacementComponent": "Text",
+      "legacyComponents": [
+        "Text"
+      ],
+      "legacyInstances": 1272,
       "mmdsInstances": 455,
-      "deprecatedInstances": 1272,
       "totalInstances": 1727,
-      "replacement": "Text",
       "migrationPercentage": "26.35"
     },
     {
-      "name": "Icon",
+      "replacementComponent": "Button",
+      "legacyComponents": [
+        "Button",
+        "ButtonPrimary",
+        "ButtonSecondary"
+      ],
+      "legacyInstances": 294,
+      "mmdsInstances": 81,
+      "totalInstances": 375,
+      "migrationPercentage": "21.60"
+    },
+    {
+      "replacementComponent": "Icon",
+      "legacyComponents": [
+        "Icon"
+      ],
+      "legacyInstances": 215,
       "mmdsInstances": 85,
-      "deprecatedInstances": 215,
       "totalInstances": 300,
-      "replacement": "Icon",
       "migrationPercentage": "28.33"
     },
     {
-      "name": "Button",
-      "mmdsInstances": 0,
-      "deprecatedInstances": 233,
-      "totalInstances": 233,
-      "replacement": "Button",
-      "migrationPercentage": "0.00"
-    },
-    {
-      "name": "ButtonIcon",
+      "replacementComponent": "ButtonIcon",
+      "legacyComponents": [
+        "ButtonIcon"
+      ],
+      "legacyInstances": 156,
       "mmdsInstances": 20,
-      "deprecatedInstances": 156,
       "totalInstances": 176,
-      "replacement": "ButtonIcon",
       "migrationPercentage": "11.36"
     },
     {
-      "name": "ButtonLink",
+      "replacementComponent": "TextButton",
+      "legacyComponents": [
+        "ButtonLink"
+      ],
+      "legacyInstances": 103,
       "mmdsInstances": 24,
-      "deprecatedInstances": 103,
       "totalInstances": 127,
-      "replacement": "TextButton",
       "migrationPercentage": "18.90"
     },
     {
-      "name": "AvatarNetwork",
+      "replacementComponent": "AvatarNetwork",
+      "legacyComponents": [
+        "AvatarNetwork"
+      ],
+      "legacyInstances": 60,
       "mmdsInstances": 10,
-      "deprecatedInstances": 60,
       "totalInstances": 70,
-      "replacement": "AvatarNetwork",
       "migrationPercentage": "14.29"
     },
     {
-      "name": "ButtonPrimary",
-      "mmdsInstances": 0,
-      "deprecatedInstances": 41,
-      "totalInstances": 41,
-      "replacement": "Button",
-      "migrationPercentage": "0.00"
-    },
-    {
-      "name": "ButtonBase",
+      "replacementComponent": "ButtonBase",
+      "legacyComponents": [
+        "ButtonBase"
+      ],
+      "legacyInstances": 15,
       "mmdsInstances": 23,
-      "deprecatedInstances": 15,
       "totalInstances": 38,
-      "replacement": "ButtonBase",
       "migrationPercentage": "60.53"
     },
     {
-      "name": "BadgeWrapper",
+      "replacementComponent": "BadgeWrapper",
+      "legacyComponents": [
+        "BadgeWrapper"
+      ],
+      "legacyInstances": 26,
       "mmdsInstances": 12,
-      "deprecatedInstances": 26,
       "totalInstances": 38,
-      "replacement": "BadgeWrapper",
       "migrationPercentage": "31.58"
     },
     {
-      "name": "AvatarToken",
+      "replacementComponent": "AvatarToken",
+      "legacyComponents": [
+        "AvatarToken"
+      ],
+      "legacyInstances": 27,
       "mmdsInstances": 10,
-      "deprecatedInstances": 27,
       "totalInstances": 37,
-      "replacement": "AvatarToken",
       "migrationPercentage": "27.03"
     },
     {
-      "name": "Checkbox",
+      "replacementComponent": "Checkbox",
+      "legacyComponents": [
+        "Checkbox"
+      ],
+      "legacyInstances": 34,
       "mmdsInstances": 2,
-      "deprecatedInstances": 34,
       "totalInstances": 36,
-      "replacement": "Checkbox",
       "migrationPercentage": "5.56"
     },
     {
-      "name": "AvatarIcon",
+      "replacementComponent": "AvatarIcon",
+      "legacyComponents": [
+        "AvatarIcon"
+      ],
+      "legacyInstances": 21,
       "mmdsInstances": 3,
-      "deprecatedInstances": 21,
       "totalInstances": 24,
-      "replacement": "AvatarIcon",
       "migrationPercentage": "12.50"
     },
     {
-      "name": "ButtonSecondary",
-      "mmdsInstances": 0,
-      "deprecatedInstances": 20,
-      "totalInstances": 20,
-      "replacement": "Button",
-      "migrationPercentage": "0.00"
-    },
-    {
-      "name": "AvatarFavicon",
+      "replacementComponent": "AvatarFavicon",
+      "legacyComponents": [
+        "AvatarFavicon"
+      ],
+      "legacyInstances": 15,
       "mmdsInstances": 1,
-      "deprecatedInstances": 15,
       "totalInstances": 16,
-      "replacement": "AvatarFavicon",
       "migrationPercentage": "6.25"
     },
     {
-      "name": "AvatarBase",
+      "replacementComponent": "AvatarBase",
+      "legacyComponents": [
+        "AvatarBase"
+      ],
+      "legacyInstances": 8,
       "mmdsInstances": 0,
-      "deprecatedInstances": 8,
       "totalInstances": 8,
-      "replacement": "AvatarBase",
       "migrationPercentage": "0.00"
     },
     {
-      "name": "Input",
+      "replacementComponent": "Input",
+      "legacyComponents": [
+        "Input"
+      ],
+      "legacyInstances": 1,
       "mmdsInstances": 0,
-      "deprecatedInstances": 1,
       "totalInstances": 1,
-      "replacement": "Input",
       "migrationPercentage": "0.00"
     }
   ]

@@ -66,21 +66,7 @@ const validateConfig = (cfg) => {
  */
 const countAvailableMMDSComponents = (currentComponents) => {
   if (!currentComponents) return 0;
-
-  // Explicitly list prop variants to exclude (but include temp-components like Blockies, Jazzicon, etc.)
-  const excludeList = [
-    // Prop variant enums
-    "BadgeCountSize",
-    "BadgeStatusStatus",
-    "BadgeWrapperPosition",
-    "ButtonBaseSize",
-    "IconName",
-    "TextVariant",
-  ];
-
-  return currentComponents.filter((component) => {
-    return !excludeList.includes(component);
-  }).length;
+  return new Set(currentComponents).size;
 };
 
 /**
@@ -88,21 +74,7 @@ const countAvailableMMDSComponents = (currentComponents) => {
  */
 const getMMDSComponentsList = (currentComponents) => {
   if (!currentComponents) return [];
-
-  const excludeList = [
-    "BadgeCountSize",
-    "BadgeStatusStatus",
-    "BadgeWrapperPosition",
-    "ButtonBaseSize",
-    "IconName",
-    "TextVariant",
-  ];
-
-  return currentComponents
-    .filter((component) => {
-      return !excludeList.includes(component);
-    })
-    .sort();
+  return Array.from(new Set(currentComponents)).sort();
 };
 
 /**
