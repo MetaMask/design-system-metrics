@@ -5,6 +5,55 @@ import { MetricsCard } from '../components/MetricsCard';
 import { CodeOwnerAdoptionChart } from '../components/CodeOwnerAdoptionChart';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
+const MOBILE_EXCLUDED_OWNERS = new Set([
+  'design-system-engineers',
+  'mobile-admins',
+  'supply-chain',
+  'qa',
+]);
+
+const EXTENSION_EXCLUDED_OWNERS = new Set([
+  'howardbraham',
+  'dbrans',
+  'qa',
+  'wallet-integrations',
+  'extension-platform',
+  'extension-privacy-reviewers',
+  'extension-security-team',
+  'policy-reviewers',
+  'design-system-engineers',
+]);
+
+function normalizeOwner(owner: string) {
+  return owner.replace('@MetaMask/', '').replace(/^@/, '').toLowerCase();
+}
+
+function filterCodeOwners(
+  codeOwnerStats: Record<string, {
+    mmdsInstances: number;
+    deprecatedInstances: number;
+    totalInstances: number;
+    migrationPercentage: string;
+    filesCount: number;
+  }> | undefined,
+  excludedOwners: Set<string>,
+) {
+  if (!codeOwnerStats) {
+    return undefined;
+  }
+
+  return Object.fromEntries(
+    Object.entries(codeOwnerStats).filter(([owner, stats]) => {
+      if (excludedOwners.has(normalizeOwner(owner))) {
+        return false;
+      }
+
+      // Remove CODEOWNERS entries that have no tracked footprint in current metrics.
+      return stats.totalInstances > 0 || stats.filesCount > 0;
+    }),
+  );
+}
+
 export function Overview() {
   const { data, loading, error } = useTimelineData();
   const { data: mobileMetrics } = useMetricsData('mobile');
@@ -55,6 +104,15 @@ export function Overview() {
     deprecatedInstances: data.extension.deprecatedInstances[i],
     migration: data.extension.migrationPercentage[i],
   }));
+
+  const mobileCodeOwnerStats = filterCodeOwners(
+    mobileMetrics?.summary.codeOwnerStats,
+    MOBILE_EXCLUDED_OWNERS,
+  );
+  const extensionCodeOwnerStats = filterCodeOwners(
+    extensionMetrics?.summary.codeOwnerStats,
+    EXTENSION_EXCLUDED_OWNERS,
+  );
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-6">
@@ -214,10 +272,10 @@ export function Overview() {
             growth with deprecated usage eventually peaking and then declining.
           </p>
 
-          {mobileMetrics?.summary.codeOwnerStats && (
+          {mobileCodeOwnerStats && Object.keys(mobileCodeOwnerStats).length > 0 && (
             <div className="mt-6">
               <CodeOwnerAdoptionChart
-                codeOwnerStats={mobileMetrics.summary.codeOwnerStats}
+                codeOwnerStats={mobileCodeOwnerStats}
                 title="Mobile - Code Owner Adoption"
               />
               <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
@@ -373,10 +431,10 @@ export function Overview() {
             growth with deprecated usage eventually peaking and then declining.
           </p>
 
-          {extensionMetrics?.summary.codeOwnerStats && (
+          {extensionCodeOwnerStats && Object.keys(extensionCodeOwnerStats).length > 0 && (
             <div className="mt-6">
               <CodeOwnerAdoptionChart
-                codeOwnerStats={extensionMetrics.summary.codeOwnerStats}
+                codeOwnerStats={extensionCodeOwnerStats}
                 title="Extension - Code Owner Adoption"
               />
               <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">

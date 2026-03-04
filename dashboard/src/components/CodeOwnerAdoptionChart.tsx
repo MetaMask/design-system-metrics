@@ -13,12 +13,25 @@ interface CodeOwnerAdoptionChartProps {
   title: string;
 }
 
+function isUnknownOwner(owner: string) {
+  const normalized = owner.replace(/^@/, '').toLowerCase();
+  return normalized === 'unknown' || normalized === 'metamask/unknown';
+}
+
+function formatOwnerLabel(owner: string) {
+  if (isUnknownOwner(owner)) {
+    return 'No CODEOWNERS';
+  }
+
+  return owner.replace('@MetaMask/', '').replace(/^@/, '');
+}
+
 export function CodeOwnerAdoptionChart({ codeOwnerStats, title }: CodeOwnerAdoptionChartProps) {
   // Transform data for chart
   const chartData = Object.entries(codeOwnerStats)
     .map(([owner, stats]) => ({
-      owner,
-      team: owner.replace('@MetaMask/', '').replace(/^@/, ''),
+      ownerLabel: formatOwnerLabel(owner),
+      team: formatOwnerLabel(owner),
       'MMDS Components': stats.mmdsInstances,
       'Deprecated Components': stats.deprecatedInstances,
       migrationPercentage: parseFloat(stats.migrationPercentage),
@@ -42,7 +55,7 @@ export function CodeOwnerAdoptionChart({ codeOwnerStats, title }: CodeOwnerAdopt
       const data = payload[0].payload;
       return (
         <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-3">
-          <p className="font-semibold text-gray-900 dark:text-white mb-2">{data.owner}</p>
+          <p className="font-semibold text-gray-900 dark:text-white mb-2">{data.ownerLabel}</p>
           <p className="text-sm text-blue-600 dark:text-blue-400">
             MMDS: {data['MMDS Components'].toLocaleString()}
           </p>
