@@ -1,0 +1,1943 @@
+{
+  "component": "ButtonIcon",
+  "generatedAt": "2026-03-04T22:19:03.038Z",
+  "projects": {
+    "mobile": {
+      "filesScanned": 5390,
+      "targetComponent": "ButtonIcon",
+      "mmds": {
+        "totalInstances": 50,
+        "filesCount": 26,
+        "props": {
+          "iconName": {
+            "count": 49,
+            "values": {
+              "{IconName.ArrowLeft}": 13,
+              "{IconName.Close}": 11,
+              "{IconName.Info}": 5,
+              "{IconName.Menu}": 2,
+              "{IconName.MoreVertical}": 2,
+              "{IconName.Arrow2Left}": 2,
+              "{IconName.Copy}": 1,
+              "{IconName.Minus}": 1,
+              "{IconName.Add}": 1,
+              "{IconName.Card}": 1,
+              "{IconName.Edit}": 1,
+              "{IconName.QrCode}": 1,
+              "{IconName.Notification}": 1,
+              "{IconName.Setting}": 1,
+              "{IconNameDS.UserCircleAdd}": 1,
+              "{IconNameDS.Setting}": 1,
+              "{IconNameDS.Close}": 1,
+              "{IconNameDS.Details}": 1,
+              "{linkButtonIconName}": 1,
+              "{IconName.ArrowRight}": 1
+            }
+          },
+          "onPress": {
+            "count": 48,
+            "values": {
+              "{() => navigation.goBack()}": 5,
+              "{() => navigation.pop()}": 3,
+              "{handleCancel}": 2,
+              "{onBackPress}": 2,
+              "{onInfoPress}": 2,
+              "{navigationPop}": 2,
+              "{handleHamburgerPress}": 2,
+              "{leftAction}": 2,
+              "{onClose}": 2,
+              "{handleOnPress}": 1,
+              "{() => handleInfoButtonPress(item)}": 1,
+              "{onDecrease}": 1,
+              "{onIncrease}": 1,
+              "{onPress}": 1,
+              "{() => navigation.reset({ index: 0, routes: [{ name: Routes.CARD.HOME }], })}": 1,
+              "{() => onTransitionToNextCard?.()}": 1,
+              "{handleEditPress}": 1,
+              "{openQRScanner}": 1,
+              "{handleNotificationOnPress}": 1,
+              "{onRightPress}": 1,
+              "{goBack}": 1,
+              "{handleBackPress}": 1,
+              "{onSettingsPress}": 1,
+              "{onDismiss}": 1,
+              "{handleInfoPress}": 1,
+              "{() => { navigation.navigate(Routes.REFERRAL_REWARDS_VIEW); }}": 1,
+              "{() => { navigation.navigate(Routes.REWARDS_SETTINGS_VIEW); }}": 1,
+              "{handleShowAddresses}": 1,
+              "{handleLinkAccountGroup}": 1,
+              "{onOptionsPress}": 1,
+              "{handleClosePress}": 1,
+              "{showWhatIsSeedPhrase}": 1,
+              "{handleBack}": 1,
+              "{handleClose}": 1,
+              "{isAligning ? undefined : handleClose}": 1
+            }
+          },
+          "size": {
+            "count": 43,
+            "values": {
+              "{ButtonIconSize.Lg}": 24,
+              "{ButtonIconSize.Md}": 17,
+              "{ButtonIconSize.Sm}": 2
+            }
+          },
+          "testID": {
+            "count": 34,
+            "values": {
+              "{CommonSelectorsIDs.BACK_ARROW_BUTTON}": 3,
+              "\"navbar-hamburger-menu-button\"": 2,
+              "{WalletViewSelectorsIDs.ACCOUNT_COPY_BUTTON}": 1,
+              "\"input-stepper-minus-button\"": 1,
+              "\"input-stepper-plus-button\"": 1,
+              "{WalletViewSelectorsIDs.CARD_BUTTON}": 1,
+              "\"confirm-modal-close-button\"": 1,
+              "{`carousel-slide-${slide.id}-close-button`}": 1,
+              "{LoginViewSelectors.DEVICE_AUTHENTICATION_ICON}": 1,
+              "{ConvertTokenRowTestIds.EDIT_BUTTON}": 1,
+              "{NetworksViewSelectorsIDs.CLOSE_ICON}": 1,
+              "{RequestPaymentViewSelectors.BACK_BUTTON_ID}": 1,
+              "{WalletViewSelectorsIDs.WALLET_SCAN_BUTTON}": 1,
+              "{WalletViewSelectorsIDs.WALLET_NOTIFICATIONS_BUTTON}": 1,
+              "\"build-quote-back-button\"": 1,
+              "\"build-quote-settings-button\"": 1,
+              "{`${testID}-info-button`}": 1,
+              "{testID ? `${testID}-close-button` : undefined}": 1,
+              "\"token-unsupported-info-button\"": 1,
+              "{REWARDS_VIEW_SELECTORS.REFERRAL_BUTTON}": 1,
+              "{REWARDS_VIEW_SELECTORS.SETTINGS_BUTTON}": 1,
+              "\"close-button\"": 1,
+              "\"modal-close-button\"": 1,
+              "{`rewards-account-addresses-${accountGroup.id}`}": 1,
+              "{`rewards-account-group-link-button-${accountGroup.id}`}": 1,
+              "\"back-arrow-button\"": 1,
+              "\"browser-tab-close-button\"": 1,
+              "\"info-icon\"": 1,
+              "\"learn-more-back-button\"": 1,
+              "\"learn-more-close-button\"": 1,
+              "{MULTICHAIN_ACCOUNTS_INTRO_MODAL_TEST_IDS.CLOSE_BUTTON}": 1
+            }
+          },
+          "style": {
+            "count": 20,
+            "values": {
+              "{headerStyle.icon}": 4,
+              "{innerStyles.accessories}": 2,
+              "{styles.headerLeftButton}": 2,
+              "{styles.headerRightButton}": 2,
+              "{tw.style(minusPressed ? 'bg-muted-pressed' : 'bg-muted')}": 1,
+              "{tw.style(plusPressed ? 'bg-muted-pressed' : 'bg-muted')}": 1,
+              "{styles.editButton}": 1,
+              "{innerStyles.headerCloseButton}": 1,
+              "{styles.closeButton}": 1,
+              "{innerStyles.headerLeft}": 1,
+              "{innerStyles.backButton}": 1,
+              "{styles.leftButton}": 1,
+              "{styles.rightButton}": 1,
+              "{inlineHeaderStyles.leftButton}": 1
+            }
+          },
+          "iconProps": {
+            "count": 18,
+            "values": {
+              "{{ color: IconColor.IconDefault }}": 5,
+              "{{ color: MMDSIconColor.Default }}": 4,
+              "{{ color: IconColor.IconAlternative }}": 2,
+              "{{ color: MMDSIconColor.IconDefault }}": 2,
+              "{{ color: IconColor.IconDefault, }}": 2,
+              "{iconColor && { color: iconColor }}": 1,
+              "{{ size: IconSize.Sm }}": 1,
+              "{{ color: IconColor.IconAlternative, }}": 1
+            }
+          },
+          "hitSlop": {
+            "count": 8,
+            "values": {
+              "{innerStyles.touchAreaSlop}": 4,
+              "{{ top: 8, bottom: 8, left: 8, right: 8 }}": 2,
+              "{hitSlop}": 1,
+              "{touchAreaSlop}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 5,
+            "values": {
+              "{parseFloat(value) <= minAmount}": 1,
+              "{parseFloat(value) >= maxAmount}": 1,
+              "{areActionsDisabled}": 1,
+              "{isLoading}": 1,
+              "{accountGroup.optedOutAccounts.length === 0 || isBulkLinkRunning}": 1
+            }
+          },
+          "iconColor": {
+            "count": 5,
+            "values": {
+              "{IconColor.Default}": 5
+            }
+          },
+          "disabled": {
+            "count": 3,
+            "values": {
+              "{!subscriptionId}": 2,
+              "{isAligning}": 1
+            }
+          },
+          "twClassName": {
+            "count": 3,
+            "values": {
+              "\"bg-subsection rounded-xl\"": 2,
+              "\"rounded-full\"": 1
+            }
+          },
+          "isFloating": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "onPressIn": {
+            "count": 2,
+            "values": {
+              "{() => setMinusPressed(true)}": 1,
+              "{() => setPlusPressed(true)}": 1
+            }
+          },
+          "onPressOut": {
+            "count": 2,
+            "values": {
+              "{() => setMinusPressed(false)}": 1,
+              "{() => setPlusPressed(false)}": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{props}": 1
+            }
+          }
+        }
+      },
+      "deprecated": {
+        "totalInstances": 79,
+        "filesCount": 62,
+        "props": {
+          "iconName": {
+            "count": 79,
+            "values": {
+              "{IconName.ArrowLeft}": 26,
+              "{IconName.Close}": 19,
+              "{IconName.Info}": 7,
+              "{IconName.ArrowDown}": 4,
+              "{IconName.Add}": 3,
+              "{IconName.ArrowRight}": 2,
+              "{IconName.Export}": 2,
+              "{IconName.CircleX}": 1,
+              "{IconName.Question}": 1,
+              "{IconName.Expand}": 1,
+              "{IconName.Arrow2Left}": 1,
+              "{IconName.Share}": 1,
+              "{IconName.SwapHorizontal}": 1,
+              "{IconName.Edit}": 1,
+              "{IconName.Trash}": 1,
+              "{isCopied ? IconName.CopySuccess : IconName.Copy}": 1,
+              "{IconName.Danger}": 1,
+              "{ComponentLibraryIconName.Trash}": 1,
+              "{ComponentLibraryIconName.SwapHorizontal}": 1,
+              "{IconName.Filter}": 1,
+              "{IconName.Setting}": 1,
+              "{iconName}": 1,
+              "{copied ? IconName.CopySuccess : IconName.Copy}": 1
+            }
+          },
+          "onPress": {
+            "count": 77,
+            "values": {
+              "{handleClosePress}": 6,
+              "{handleBackPress}": 5,
+              "{handleBack}": 4,
+              "{onPress}": 3,
+              "{() => navigation.goBack()}": 3,
+              "{handleClear}": 2,
+              "{navigateToHome}": 2,
+              "{withMetaMetrics(onDisplayAnnualRateTooltip, { event: MetaMetricsEvents.TOOLTI...}": 2,
+              "{onBack}": 2,
+              "{() => { navigate(Routes.MODAL.ROOT_MODAL_FLOW, { screen: Routes.SHEET.CONNECT...}": 2,
+              "{handleClose}": 2,
+              "{handlePress}": 2,
+              "{onBackButtonClick}": 2,
+              "{() => setHasValueModalOpen(false)}": 2,
+              "{handleTooltipPress}": 1,
+              "{onClearInput}": 1,
+              "{() => navigation.navigate(Routes.WALLET.HOME)}": 1,
+              "{onDimiss}": 1,
+              "{() => setIsResetWallet(false)}": 1,
+              "{() => openTooltipModal( strings('earn.receive'), strings('earn.tooltip_conten...}": 1,
+              "{onNavigateToLendingMaxWithdrawModal}": 1,
+              "{onCancel}": 1,
+              "{goToAddCollectible}": 1,
+              "{onBackPress}": 1,
+              "{onFullscreenPress}": 1,
+              "{onSharePress}": 1,
+              "{handleSizeToggle}": 1,
+              "{onMarginPress}": 1,
+              "{hideProfiler}": 1,
+              "{() => handleEditPress( activationKey.key, activationKey.label || '', activati...}": 1,
+              "{() => removeActivationKey(activationKey.key)}": 1,
+              "{handleCopy}": 1,
+              "{closeTabsView}": 1,
+              "{this.onNewTabPress}": 1,
+              "{goToAddToken}": 1,
+              "{triggerClose}": 1,
+              "{onPressRemove}": 1,
+              "{() => onSwapPress(result)}": 1,
+              "{handleSortControls}": 1,
+              "{onClose}": 1,
+              "{() => { navigate(Routes.MODAL.ROOT_MODAL_FLOW, { screen: Routes.SHEET.PERMITT...}": 1,
+              "{() => navigation.navigate(Routes.SETTINGS.NOTIFICATIONS)}": 1,
+              "{() => navigation.canGoBack() ? navigation.goBack() : navigation.navigate(Rout...}": 1,
+              "{goBack}": 1,
+              "{() => { if (this.state.editable) { this.setOpenNetworkSelector(true); } }}": 1,
+              "{() => !isNotificationEnabled ? navigation.navigate(Routes.WALLET.HOME) : navi...}": 1,
+              "{copyMessage}": 1,
+              "{() => setTooltipVisible(false)}": 1,
+              "{handleExplorerClick}": 1,
+              "{handleLeftPress}": 1,
+              "{() => onReject()}": 1,
+              "{onNextButtonClick}": 1
+            }
+          },
+          "size": {
+            "count": 61,
+            "values": {
+              "{ButtonIconSizes.Lg}": 29,
+              "{ButtonIconSizes.Md}": 16,
+              "{ButtonIconSizes.Sm}": 12,
+              "{TooltipSizes.Sm}": 1,
+              "{TooltipSizes.Md}": 1,
+              "{iconSize}": 1,
+              "{size}": 1
+            }
+          },
+          "testID": {
+            "count": 57,
+            "values": {
+              "\"checkout-close-button\"": 5,
+              "\"back-button\"": 3,
+              "\"snap-ui-address-input__clear-button\"": 2,
+              "\"exit-onboarding-button\"": 2,
+              "{BUTTON_TEST_ID}": 2,
+              "{WalletViewSelectorsIDs.IMPORT_TOKEN_BUTTON}": 2,
+              "{PermissionSummaryBottomSheetSelectorsIDs.BACK_BUTTON}": 2,
+              "{SDKSelectorsIDs.CONNECTION_DETAILS_BUTTON}": 2,
+              "{BrowserURLBarSelectorsIDs.URL_CLEAR_ICON}": 1,
+              "\"kyc-failed-back-button\"": 1,
+              "\"kyc-pending-back-button\"": 1,
+              "\"deep-link-modal-close-button\"": 1,
+              "{ForgotPasswordModalSelectorsIDs.BACK_BUTTON}": 1,
+              "\"annual-rate-tooltip\"": 1,
+              "{INPUT_DISPLAY_TEST_IDS.LENDING_MAX_SAFE_WITHDRAWAL_TOOLTIP_ICON}": 1,
+              "{PerpsOrderBookViewSelectorsIDs.BACK_BUTTON}": 1,
+              "{PerpsPositionsViewSelectorsIDs.BACK_BUTTON}": 1,
+              "{PerpsTPSLViewSelectorsIDs.BACK_BUTTON}": 1,
+              "\"perps-chart-fullscreen-close-button\"": 1,
+              "{PerpsMarketHeaderSelectorsIDs.BACK_BUTTON}": 1,
+              "{`${testID}-fullscreen-button`}": 1,
+              "{PerpsPositionCardSelectorsIDs.SHARE_BUTTON}": 1,
+              "{PerpsPositionCardSelectorsIDs.FLIP_ICON}": 1,
+              "{PerpsPositionCardSelectorsIDs.MARGIN_CHEVRON}": 1,
+              "\"close-profiler-button\"": 1,
+              "{testID}": 1,
+              "\"copy-button\"": 1,
+              "{BrowserViewSelectorsIDs.TABS_BACK_BUTTON}": 1,
+              "{BrowserViewSelectorsIDs.ADD_NEW_TAB}": 1,
+              "\"update-needed-modal-close-button\"": 1,
+              "{deleteFavoriteTestId(result.url)}": 1,
+              "\"autocomplete-result-swap-button\"": 1,
+              "{WalletViewSelectorsIDs.SORT_BUTTON}": 1,
+              "{AccountConnectMaliciousWarningSelectorsIDs.CLOSE_BUTTON}": 1,
+              "\"activity-view-back-button\"": 1,
+              "{ImportTokenViewSelectorsIDs.SELECT_NETWORK_BUTTON}": 1,
+              "{KEYRING_ACCOUNT_LIST_ITEM_BUTTON}": 1,
+              "{`${tooltipTestId}-open-btn`}": 1,
+              "{testID ?? 'copyButtonTestId'}": 1,
+              "{`${title}-navbar-back-button`}": 1,
+              "{tooltipTestId ?? 'tooltipTestId'}": 1,
+              "\"block-explorer-button\"": 1,
+              "\"flat-nav-header-back-button\"": 1,
+              "\"alert-button-icon-arrow-left\"": 1,
+              "\"alert-button-icon-arrow-right\"": 1
+            }
+          },
+          "iconColor": {
+            "count": 54,
+            "values": {
+              "{IconColor.Default}": 37,
+              "{IconColor.Alternative}": 3,
+              "{IconColor.Info}": 2,
+              "{importedColors.white}": 2,
+              "{IconColor.Muted}": 2,
+              "{IconColor.Primary}": 2,
+              "{IconColor.Error}": 2,
+              "{iconColor}": 2,
+              "{colors.icon.alternative}": 1,
+              "{isCopied ? IconColor.Success : undefined}": 1
+            }
+          },
+          "style": {
+            "count": 24,
+            "values": {
+              "{styles.icon}": 3,
+              "{navigationOptionsStyles.headerLeft}": 3,
+              "{headerStyle.icon}": 2,
+              "{styles.iconButton}": 2,
+              "{styles.controlIconButton}": 2,
+              "{styles.valueModalHeaderIcon}": 2,
+              "{styles.clearButton}": 1,
+              "{styles.resultActionButton}": 1,
+              "{{ ...styles.resultActionButton, ...(swapsEnabled ? {} : styles.hiddenButton), }}": 1,
+              "{styles.buttonIcon}": 1,
+              "{iconStyle}": 1,
+              "{innerStyles.headerLeft}": 1,
+              "{styles.backIcon}": 1,
+              "{styles.left}": 1,
+              "{styles.backButton}": 1,
+              "{styles.backButtonContainer}": 1
+            }
+          },
+          "accessibilityRole": {
+            "count": 12,
+            "values": {
+              "\"button\"": 11,
+              "{strings('earn.button')}": 1
+            }
+          },
+          "accessibilityLabel": {
+            "count": 11,
+            "values": {
+              "{strings( 'stake.accessibility_labels.stake_annual_rate_tooltip', )}": 2,
+              "{strings('bridge.approval_tooltip_title')}": 1,
+              "{strings('earn.receive_tooltip')}": 1,
+              "\"Close\"": 1,
+              "{strings( 'app_settings.fiat_on_ramp.edit_activation_key', )}": 1,
+              "\"Delete activation key\"": 1,
+              "{isCopied ? 'Copied' : 'Copy'}": 1,
+              "{strings('browser.go_back')}": 1,
+              "{strings('browser.add_new_tab')}": 1,
+              "\"back\"": 1
+            }
+          },
+          "isDisabled": {
+            "count": 4,
+            "values": {
+              "{disabled}": 2,
+              "{isDeletingWallet}": 1,
+              "{!value}": 1
+            }
+          },
+          "hitSlop": {
+            "count": 4,
+            "values": {
+              "{{ top: 20, bottom: 20, left: 20, right: 20 }}": 2,
+              "{{ top: 8, bottom: 8, left: 8, right: 8 }}": 1,
+              "{styles.hitSlop}": 1
+            }
+          },
+          "disabled": {
+            "count": 3,
+            "values": {
+              "{isLoadingKeys}": 2,
+              "{!swapsEnabled}": 1
+            }
+          },
+          "onPressIn": {
+            "count": 1,
+            "values": {
+              "{() => { setShowScamWarningModal(true); }}": 1
+            }
+          }
+        }
+      },
+      "overall": {
+        "totalInstances": 129,
+        "filesCount": 88,
+        "props": {
+          "iconName": {
+            "count": 128,
+            "values": {
+              "{IconName.ArrowLeft}": 39,
+              "{IconName.Close}": 30,
+              "{IconName.Info}": 12,
+              "{IconName.Add}": 4,
+              "{IconName.ArrowDown}": 4,
+              "{IconName.Arrow2Left}": 3,
+              "{IconName.ArrowRight}": 3,
+              "{IconName.Edit}": 2,
+              "{IconName.Menu}": 2,
+              "{IconName.MoreVertical}": 2,
+              "{IconName.Setting}": 2,
+              "{IconName.Export}": 2,
+              "{IconName.Copy}": 1,
+              "{IconName.Minus}": 1,
+              "{IconName.CircleX}": 1,
+              "{IconName.Card}": 1,
+              "{IconName.Question}": 1,
+              "{IconName.QrCode}": 1,
+              "{IconName.Notification}": 1,
+              "{IconName.Expand}": 1,
+              "{IconName.Share}": 1,
+              "{IconName.SwapHorizontal}": 1,
+              "{IconName.Trash}": 1,
+              "{IconNameDS.UserCircleAdd}": 1,
+              "{IconNameDS.Setting}": 1,
+              "{isCopied ? IconName.CopySuccess : IconName.Copy}": 1,
+              "{IconNameDS.Close}": 1,
+              "{IconNameDS.Details}": 1,
+              "{linkButtonIconName}": 1,
+              "{IconName.Danger}": 1,
+              "{ComponentLibraryIconName.Trash}": 1,
+              "{ComponentLibraryIconName.SwapHorizontal}": 1,
+              "{IconName.Filter}": 1,
+              "{iconName}": 1,
+              "{copied ? IconName.CopySuccess : IconName.Copy}": 1
+            }
+          },
+          "onPress": {
+            "count": 125,
+            "values": {
+              "{() => navigation.goBack()}": 8,
+              "{handleClosePress}": 7,
+              "{handleBackPress}": 6,
+              "{handleBack}": 5,
+              "{onPress}": 4,
+              "{onBackPress}": 3,
+              "{() => navigation.pop()}": 3,
+              "{handleClose}": 3,
+              "{onClose}": 3,
+              "{handleClear}": 2,
+              "{handleCancel}": 2,
+              "{navigateToHome}": 2,
+              "{withMetaMetrics(onDisplayAnnualRateTooltip, { event: MetaMetricsEvents.TOOLTI...}": 2,
+              "{onInfoPress}": 2,
+              "{navigationPop}": 2,
+              "{handleHamburgerPress}": 2,
+              "{leftAction}": 2,
+              "{goBack}": 2,
+              "{onBack}": 2,
+              "{() => { navigate(Routes.MODAL.ROOT_MODAL_FLOW, { screen: Routes.SHEET.CONNECT...}": 2,
+              "{handlePress}": 2,
+              "{onBackButtonClick}": 2,
+              "{() => setHasValueModalOpen(false)}": 2,
+              "{handleOnPress}": 1,
+              "{handleTooltipPress}": 1,
+              "{() => handleInfoButtonPress(item)}": 1,
+              "{onDecrease}": 1,
+              "{onIncrease}": 1,
+              "{onClearInput}": 1,
+              "{() => navigation.navigate(Routes.WALLET.HOME)}": 1,
+              "{() => navigation.reset({ index: 0, routes: [{ name: Routes.CARD.HOME }], })}": 1,
+              "{() => onTransitionToNextCard?.()}": 1,
+              "{onDimiss}": 1,
+              "{() => setIsResetWallet(false)}": 1,
+              "{() => openTooltipModal( strings('earn.receive'), strings('earn.tooltip_conten...}": 1,
+              "{onNavigateToLendingMaxWithdrawModal}": 1,
+              "{handleEditPress}": 1,
+              "{onCancel}": 1,
+              "{openQRScanner}": 1,
+              "{handleNotificationOnPress}": 1,
+              "{onRightPress}": 1,
+              "{onSettingsPress}": 1,
+              "{goToAddCollectible}": 1,
+              "{onFullscreenPress}": 1,
+              "{onSharePress}": 1,
+              "{handleSizeToggle}": 1,
+              "{onMarginPress}": 1,
+              "{onDismiss}": 1,
+              "{hideProfiler}": 1,
+              "{() => handleEditPress( activationKey.key, activationKey.label || '', activati...}": 1,
+              "{() => removeActivationKey(activationKey.key)}": 1,
+              "{handleInfoPress}": 1,
+              "{() => { navigation.navigate(Routes.REFERRAL_REWARDS_VIEW); }}": 1,
+              "{() => { navigation.navigate(Routes.REWARDS_SETTINGS_VIEW); }}": 1,
+              "{handleCopy}": 1,
+              "{handleShowAddresses}": 1,
+              "{handleLinkAccountGroup}": 1,
+              "{closeTabsView}": 1,
+              "{this.onNewTabPress}": 1,
+              "{onOptionsPress}": 1,
+              "{goToAddToken}": 1,
+              "{triggerClose}": 1,
+              "{onPressRemove}": 1,
+              "{() => onSwapPress(result)}": 1,
+              "{handleSortControls}": 1,
+              "{() => { navigate(Routes.MODAL.ROOT_MODAL_FLOW, { screen: Routes.SHEET.PERMITT...}": 1,
+              "{showWhatIsSeedPhrase}": 1,
+              "{isAligning ? undefined : handleClose}": 1,
+              "{() => navigation.navigate(Routes.SETTINGS.NOTIFICATIONS)}": 1,
+              "{() => navigation.canGoBack() ? navigation.goBack() : navigation.navigate(Rout...}": 1,
+              "{() => { if (this.state.editable) { this.setOpenNetworkSelector(true); } }}": 1,
+              "{() => !isNotificationEnabled ? navigation.navigate(Routes.WALLET.HOME) : navi...}": 1,
+              "{copyMessage}": 1,
+              "{() => setTooltipVisible(false)}": 1,
+              "{handleExplorerClick}": 1,
+              "{handleLeftPress}": 1,
+              "{() => onReject()}": 1,
+              "{onNextButtonClick}": 1
+            }
+          },
+          "size": {
+            "count": 104,
+            "values": {
+              "{ButtonIconSizes.Lg}": 29,
+              "{ButtonIconSize.Lg}": 24,
+              "{ButtonIconSize.Md}": 17,
+              "{ButtonIconSizes.Md}": 16,
+              "{ButtonIconSizes.Sm}": 12,
+              "{ButtonIconSize.Sm}": 2,
+              "{TooltipSizes.Sm}": 1,
+              "{TooltipSizes.Md}": 1,
+              "{iconSize}": 1,
+              "{size}": 1
+            }
+          },
+          "testID": {
+            "count": 91,
+            "values": {
+              "\"checkout-close-button\"": 5,
+              "{CommonSelectorsIDs.BACK_ARROW_BUTTON}": 3,
+              "\"back-button\"": 3,
+              "\"snap-ui-address-input__clear-button\"": 2,
+              "\"exit-onboarding-button\"": 2,
+              "\"navbar-hamburger-menu-button\"": 2,
+              "{BUTTON_TEST_ID}": 2,
+              "{WalletViewSelectorsIDs.IMPORT_TOKEN_BUTTON}": 2,
+              "{PermissionSummaryBottomSheetSelectorsIDs.BACK_BUTTON}": 2,
+              "{SDKSelectorsIDs.CONNECTION_DETAILS_BUTTON}": 2,
+              "{WalletViewSelectorsIDs.ACCOUNT_COPY_BUTTON}": 1,
+              "\"input-stepper-minus-button\"": 1,
+              "\"input-stepper-plus-button\"": 1,
+              "{BrowserURLBarSelectorsIDs.URL_CLEAR_ICON}": 1,
+              "{WalletViewSelectorsIDs.CARD_BUTTON}": 1,
+              "\"confirm-modal-close-button\"": 1,
+              "\"kyc-failed-back-button\"": 1,
+              "\"kyc-pending-back-button\"": 1,
+              "{`carousel-slide-${slide.id}-close-button`}": 1,
+              "\"deep-link-modal-close-button\"": 1,
+              "{ForgotPasswordModalSelectorsIDs.BACK_BUTTON}": 1,
+              "{LoginViewSelectors.DEVICE_AUTHENTICATION_ICON}": 1,
+              "\"annual-rate-tooltip\"": 1,
+              "{INPUT_DISPLAY_TEST_IDS.LENDING_MAX_SAFE_WITHDRAWAL_TOOLTIP_ICON}": 1,
+              "{ConvertTokenRowTestIds.EDIT_BUTTON}": 1,
+              "{NetworksViewSelectorsIDs.CLOSE_ICON}": 1,
+              "{RequestPaymentViewSelectors.BACK_BUTTON_ID}": 1,
+              "{WalletViewSelectorsIDs.WALLET_SCAN_BUTTON}": 1,
+              "{WalletViewSelectorsIDs.WALLET_NOTIFICATIONS_BUTTON}": 1,
+              "\"build-quote-back-button\"": 1,
+              "\"build-quote-settings-button\"": 1,
+              "{PerpsOrderBookViewSelectorsIDs.BACK_BUTTON}": 1,
+              "{PerpsPositionsViewSelectorsIDs.BACK_BUTTON}": 1,
+              "{PerpsTPSLViewSelectorsIDs.BACK_BUTTON}": 1,
+              "\"perps-chart-fullscreen-close-button\"": 1,
+              "{PerpsMarketHeaderSelectorsIDs.BACK_BUTTON}": 1,
+              "{`${testID}-fullscreen-button`}": 1,
+              "{PerpsPositionCardSelectorsIDs.SHARE_BUTTON}": 1,
+              "{PerpsPositionCardSelectorsIDs.FLIP_ICON}": 1,
+              "{PerpsPositionCardSelectorsIDs.MARGIN_CHEVRON}": 1,
+              "{`${testID}-info-button`}": 1,
+              "{testID ? `${testID}-close-button` : undefined}": 1,
+              "\"close-profiler-button\"": 1,
+              "{testID}": 1,
+              "\"token-unsupported-info-button\"": 1,
+              "{REWARDS_VIEW_SELECTORS.REFERRAL_BUTTON}": 1,
+              "{REWARDS_VIEW_SELECTORS.SETTINGS_BUTTON}": 1,
+              "\"close-button\"": 1,
+              "\"copy-button\"": 1,
+              "\"modal-close-button\"": 1,
+              "{`rewards-account-addresses-${accountGroup.id}`}": 1,
+              "{`rewards-account-group-link-button-${accountGroup.id}`}": 1,
+              "{BrowserViewSelectorsIDs.TABS_BACK_BUTTON}": 1,
+              "{BrowserViewSelectorsIDs.ADD_NEW_TAB}": 1,
+              "\"back-arrow-button\"": 1,
+              "\"update-needed-modal-close-button\"": 1,
+              "{deleteFavoriteTestId(result.url)}": 1,
+              "\"autocomplete-result-swap-button\"": 1,
+              "{WalletViewSelectorsIDs.SORT_BUTTON}": 1,
+              "{AccountConnectMaliciousWarningSelectorsIDs.CLOSE_BUTTON}": 1,
+              "\"activity-view-back-button\"": 1,
+              "{ImportTokenViewSelectorsIDs.SELECT_NETWORK_BUTTON}": 1,
+              "\"browser-tab-close-button\"": 1,
+              "\"info-icon\"": 1,
+              "\"learn-more-back-button\"": 1,
+              "\"learn-more-close-button\"": 1,
+              "{MULTICHAIN_ACCOUNTS_INTRO_MODAL_TEST_IDS.CLOSE_BUTTON}": 1,
+              "{KEYRING_ACCOUNT_LIST_ITEM_BUTTON}": 1,
+              "{`${tooltipTestId}-open-btn`}": 1,
+              "{testID ?? 'copyButtonTestId'}": 1,
+              "{`${title}-navbar-back-button`}": 1,
+              "{tooltipTestId ?? 'tooltipTestId'}": 1,
+              "\"block-explorer-button\"": 1,
+              "\"flat-nav-header-back-button\"": 1,
+              "\"alert-button-icon-arrow-left\"": 1,
+              "\"alert-button-icon-arrow-right\"": 1
+            }
+          },
+          "iconColor": {
+            "count": 59,
+            "values": {
+              "{IconColor.Default}": 42,
+              "{IconColor.Alternative}": 3,
+              "{IconColor.Info}": 2,
+              "{importedColors.white}": 2,
+              "{IconColor.Muted}": 2,
+              "{IconColor.Primary}": 2,
+              "{IconColor.Error}": 2,
+              "{iconColor}": 2,
+              "{colors.icon.alternative}": 1,
+              "{isCopied ? IconColor.Success : undefined}": 1
+            }
+          },
+          "style": {
+            "count": 44,
+            "values": {
+              "{headerStyle.icon}": 6,
+              "{styles.icon}": 3,
+              "{navigationOptionsStyles.headerLeft}": 3,
+              "{innerStyles.accessories}": 2,
+              "{styles.headerLeftButton}": 2,
+              "{styles.headerRightButton}": 2,
+              "{innerStyles.headerLeft}": 2,
+              "{styles.iconButton}": 2,
+              "{styles.controlIconButton}": 2,
+              "{styles.valueModalHeaderIcon}": 2,
+              "{tw.style(minusPressed ? 'bg-muted-pressed' : 'bg-muted')}": 1,
+              "{tw.style(plusPressed ? 'bg-muted-pressed' : 'bg-muted')}": 1,
+              "{styles.clearButton}": 1,
+              "{styles.editButton}": 1,
+              "{innerStyles.headerCloseButton}": 1,
+              "{styles.closeButton}": 1,
+              "{innerStyles.backButton}": 1,
+              "{styles.leftButton}": 1,
+              "{styles.rightButton}": 1,
+              "{styles.resultActionButton}": 1,
+              "{{ ...styles.resultActionButton, ...(swapsEnabled ? {} : styles.hiddenButton), }}": 1,
+              "{inlineHeaderStyles.leftButton}": 1,
+              "{styles.buttonIcon}": 1,
+              "{iconStyle}": 1,
+              "{styles.backIcon}": 1,
+              "{styles.left}": 1,
+              "{styles.backButton}": 1,
+              "{styles.backButtonContainer}": 1
+            }
+          },
+          "iconProps": {
+            "count": 18,
+            "values": {
+              "{{ color: IconColor.IconDefault }}": 5,
+              "{{ color: MMDSIconColor.Default }}": 4,
+              "{{ color: IconColor.IconAlternative }}": 2,
+              "{{ color: MMDSIconColor.IconDefault }}": 2,
+              "{{ color: IconColor.IconDefault, }}": 2,
+              "{iconColor && { color: iconColor }}": 1,
+              "{{ size: IconSize.Sm }}": 1,
+              "{{ color: IconColor.IconAlternative, }}": 1
+            }
+          },
+          "hitSlop": {
+            "count": 12,
+            "values": {
+              "{innerStyles.touchAreaSlop}": 4,
+              "{{ top: 8, bottom: 8, left: 8, right: 8 }}": 3,
+              "{{ top: 20, bottom: 20, left: 20, right: 20 }}": 2,
+              "{hitSlop}": 1,
+              "{touchAreaSlop}": 1,
+              "{styles.hitSlop}": 1
+            }
+          },
+          "accessibilityRole": {
+            "count": 12,
+            "values": {
+              "\"button\"": 11,
+              "{strings('earn.button')}": 1
+            }
+          },
+          "accessibilityLabel": {
+            "count": 11,
+            "values": {
+              "{strings( 'stake.accessibility_labels.stake_annual_rate_tooltip', )}": 2,
+              "{strings('bridge.approval_tooltip_title')}": 1,
+              "{strings('earn.receive_tooltip')}": 1,
+              "\"Close\"": 1,
+              "{strings( 'app_settings.fiat_on_ramp.edit_activation_key', )}": 1,
+              "\"Delete activation key\"": 1,
+              "{isCopied ? 'Copied' : 'Copy'}": 1,
+              "{strings('browser.go_back')}": 1,
+              "{strings('browser.add_new_tab')}": 1,
+              "\"back\"": 1
+            }
+          },
+          "isDisabled": {
+            "count": 9,
+            "values": {
+              "{disabled}": 2,
+              "{parseFloat(value) <= minAmount}": 1,
+              "{parseFloat(value) >= maxAmount}": 1,
+              "{isDeletingWallet}": 1,
+              "{areActionsDisabled}": 1,
+              "{!value}": 1,
+              "{isLoading}": 1,
+              "{accountGroup.optedOutAccounts.length === 0 || isBulkLinkRunning}": 1
+            }
+          },
+          "disabled": {
+            "count": 6,
+            "values": {
+              "{isLoadingKeys}": 2,
+              "{!subscriptionId}": 2,
+              "{!swapsEnabled}": 1,
+              "{isAligning}": 1
+            }
+          },
+          "onPressIn": {
+            "count": 3,
+            "values": {
+              "{() => setMinusPressed(true)}": 1,
+              "{() => setPlusPressed(true)}": 1,
+              "{() => { setShowScamWarningModal(true); }}": 1
+            }
+          },
+          "twClassName": {
+            "count": 3,
+            "values": {
+              "\"bg-subsection rounded-xl\"": 2,
+              "\"rounded-full\"": 1
+            }
+          },
+          "isFloating": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "onPressOut": {
+            "count": 2,
+            "values": {
+              "{() => setMinusPressed(false)}": 1,
+              "{() => setPlusPressed(false)}": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{props}": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {
+        "ButtonIcon": 79
+      }
+    },
+    "extension": {
+      "filesScanned": 2980,
+      "targetComponent": "ButtonIcon",
+      "mmds": {
+        "totalInstances": 20,
+        "filesCount": 14,
+        "props": {
+          "iconName": {
+            "count": 20,
+            "values": {
+              "{IconName.ArrowLeft}": 10,
+              "{IconName.Add}": 1,
+              "{isExpanded ? IconName.ArrowUp : IconName.ArrowDown}": 1,
+              "{IconName.Close}": 1,
+              "{IconName.ArrowDown}": 1,
+              "{IconName.Copy}": 1,
+              "{IconName.Global}": 1,
+              "{IconName.Menu}": 1,
+              "{IconName.Filter}": 1,
+              "{IconName.MoreVertical}": 1,
+              "{IconName.Search}": 1
+            }
+          },
+          "ariaLabel": {
+            "count": 20,
+            "values": {
+              "{t('back')}": 9,
+              "{title || t('close')}": 1,
+              "{t('add')}": 1,
+              "\"expand\"": 1,
+              "\"close-dapp-swap-comparison-banner\"": 1,
+              "\"Switch Account\"": 1,
+              "\"Copy\"": 1,
+              "\"Network\"": 1,
+              "\"Menu\"": 1,
+              "\"Filter\"": 1,
+              "\"More\"": 1,
+              "{t('search')}": 1
+            }
+          },
+          "size": {
+            "count": 14,
+            "values": {
+              "{ButtonIconSize.Md}": 9,
+              "{ButtonIconSize.Sm}": 5
+            }
+          },
+          "onClick": {
+            "count": 14,
+            "values": {
+              "{() => navigate(PREVIOUS_ROUTE)}": 7,
+              "{onClose}": 1,
+              "{async () => { dispatch(toggleNetworkMenu()); // First add the network to user...}": 1,
+              "{handleExpandClick}": 1,
+              "{hideDappSwapComparisonBanner}": 1,
+              "{handleBackClick}": 1,
+              "{handleSearchClick}": 1,
+              "{handleBack}": 1
+            }
+          },
+          "data-testid": {
+            "count": 8,
+            "values": {
+              "\"multichain-account-address-list-page-back-button\"": 2,
+              "\"drawer-close-button\"": 1,
+              "\"add-wallet-page-back-button\"": 1,
+              "\"smart-account-page-back-button\"": 1,
+              "\"perps-home-back-button\"": 1,
+              "\"perps-home-search-button\"": 1,
+              "\"shield-plan-back-button\"": 1
+            }
+          },
+          "color": {
+            "count": 5,
+            "values": {
+              "{IconColor.IconDefault}": 2,
+              "{IconColor.IconAlternative}": 2,
+              "{IconColor.IconMuted}": 1
+            }
+          },
+          "className": {
+            "count": 4,
+            "values": {
+              "\"connections-header__start-accessory\"": 2,
+              "\"text-icon-alternative\"": 1,
+              "\"dapp-swap_close-button\"": 1
+            }
+          },
+          "iconProps": {
+            "count": 1,
+            "values": {
+              "{{ color: IconColor.IconAlternative }}": 1
+            }
+          }
+        }
+      },
+      "deprecated": {
+        "totalInstances": 156,
+        "filesCount": 99,
+        "props": {
+          "iconName": {
+            "count": 156,
+            "values": {
+              "{IconName.ArrowLeft}": 42,
+              "{IconName.Close}": 34,
+              "{IconName.ArrowRight}": 16,
+              "{IconName.Export}": 9,
+              "{IconName.Edit}": 8,
+              "{IconName.MoreVertical}": 7,
+              "{copied ? IconName.CopySuccess : IconName.Copy}": 5,
+              "{addressCopied ? IconName.CopySuccess : IconName.Copy}": 3,
+              "{IconName.Info}": 3,
+              "{IconName.Danger}": 2,
+              "{isDropdownOpen ? IconName.ArrowUp : IconName.ArrowDown}": 2,
+              "{IconName.Setting}": 2,
+              "{IconName.SwapVertical}": 2,
+              "{IconName.Arrow2Down}": 2,
+              "\"arrow-left\"": 2,
+              "{IconName.ArrowDown}": 1,
+              "{expanded ? IconName.Collapse : IconName.Expand}": 1,
+              "{expanded ? IconName.ArrowUp : IconName.ArrowDown}": 1,
+              "{copiedAddress ? IconName.CopySuccess : IconName.Copy}": 1,
+              "{showPassword ? IconName.EyeSlash : IconName.Eye}": 1,
+              "{showConfirmPassword ? IconName.EyeSlash : IconName.Eye}": 1,
+              "{IconName.Upload}": 1,
+              "{privateKeyCopied ? IconName.CopySuccess : IconName.Copy}": 1,
+              "{IconNameDeprecated.Menu}": 1,
+              "{IconName.Trash}": 1,
+              "{IconName.Add}": 1,
+              "{copyIcon}": 1,
+              "{IconName.QrCode}": 1,
+              "{IconName.Check}": 1,
+              "{IconName.Customize}": 1,
+              "{IconName.Book}": 1,
+              "{userInput ? IconName.Close : IconName.Scan}": 1
+            }
+          },
+          "ariaLabel": {
+            "count": 148,
+            "values": {
+              "{t('back')}": 26,
+              "{t('close')}": 20,
+              "\"Back\"": 14,
+              "\"copy\"": 4,
+              "{t('next')}": 3,
+              "\"redirect\"": 3,
+              "\"\"": 3,
+              "{t('edit')}": 3,
+              "{title}": 3,
+              "\"Close\"": 3,
+              "\"copy-button\"": 2,
+              "{t('options')}": 2,
+              "\"Edit account name\"": 2,
+              "{t('scrollDown')}": 2,
+              "\"Close recipient modal\"": 2,
+              "\"Next\"": 2,
+              "\"export\"": 1,
+              "{t('nftOptions')}": 1,
+              "\"expand\"": 1,
+              "\"collapse-button\"": 1,
+              "{t('showPermissions')}": 1,
+              "{t('copyAddress')}": 1,
+              "{showPassword ? t('passwordToggleHide') : t('passwordToggleShow')}": 1,
+              "{showConfirmPassword ? t('passwordToggleHide') : t('passwordToggleShow')}": 1,
+              "\"snap-url-export\"": 1,
+              "{t('snapHomeMenu')}": 1,
+              "{t('uploadFile')}": 1,
+              "{t('copyPrivateKey')}": 1,
+              "{`${account.metadata.name} ${t('options')}`}": 1,
+              "{t('accountOptions')}": 1,
+              "{t('closeSlide', [ isContentfulContent ? slide.title : t(slide.title), ])}": 1,
+              "{t('delete')}": 1,
+              "{t('networkOptions')}": 1,
+              "{t('addNetwork')}": 1,
+              "{t('viewTokenDetails')}": 1,
+              "\"View details\"": 1,
+              "\"View QR code\"": 1,
+              "{t('copyAddressShort')}": 1,
+              "\"Show QR code\"": 1,
+              "{this.context.t('edit')}": 1,
+              "{t('clear')}": 1,
+              "{t('assetOptions')}": 1,
+              "{t('settings')}": 1,
+              "\"switch-tokens\"": 1,
+              "{t('moreQuotes')}": 1,
+              "{t('slippageEditAriaLabel')}": 1,
+              "{t('recipientEditAriaLabel')}": 1,
+              "\"View on block explorer\"": 1,
+              "\"Advanced tx details\"": 1,
+              "{t('accountDetails')}": 1,
+              "\"Previous Confirmation\"": 1,
+              "\"Next Confirmation\"": 1,
+              "{copied ? t('copiedExclamation') : t('copyToClipboard')}": 1,
+              "{t('openInBlockExplorer')}": 1,
+              "\"toggle fiat mode\"": 1,
+              "\"go to previous page\"": 1,
+              "\"Clear recipient\"": 1,
+              "\"Open recipient modal\"": 1,
+              "{t(userInput ? 'close' : 'scanQrCode')}": 1,
+              "{this.context.t('close')}": 1,
+              "\"back\"": 1,
+              "\"close\"": 1,
+              "{t('accountName')}": 1,
+              "{t('addresses')}": 1,
+              "{t('privateKeys')}": 1,
+              "{t('smartAccountLabel')}": 1,
+              "{t('wallet')}": 1,
+              "{t('removeAccount')}": 1,
+              "\"Notifications Settings\"": 1,
+              "\"info\"": 1
+            }
+          },
+          "size": {
+            "count": 137,
+            "values": {
+              "{ButtonIconSize.Sm}": 74,
+              "{ButtonIconSize.Md}": 49,
+              "{ButtonIconSize.Lg}": 6,
+              "{IconSize.Sm}": 5,
+              "{Size.SM}": 2,
+              "\"sm\"": 1
+            }
+          },
+          "onClick": {
+            "count": 129,
+            "values": {
+              "{onClose}": 8,
+              "{handleBack}": 7,
+              "{handleClick}": 5,
+              "{onBack}": 4,
+              "{() => navigate(PREVIOUS_ROUTE)}": 4,
+              "{onAutoHide}": 4,
+              "{() => navigate(DEFAULT_ROUTE)}": 3,
+              "{() => { global.platform.openTab({ url: getBoughtForLink() as string, }); }}": 2,
+              "{() => { (handleAddressCopy as (text: string) => void)?.( address || '', ); }}": 2,
+              "{hideModal}": 2,
+              "{handleCopyClick}": 2,
+              "{() => handleCopy(address)}": 2,
+              "{scrollToBottom}": 2,
+              "{() => { navigate(DEFAULT_ROUTE); }}": 2,
+              "{returnToPreviousPage}": 2,
+              "{handleBackClick}": 2,
+              "{() => navigate(backRoute)}": 2,
+              "{onBackButtonClick}": 1,
+              "{onNextButtonClick}": 1,
+              "{() => { global.platform.openTab({ url: 'test', }); }}": 1,
+              "{() => { global.platform.openTab({ url: collection?.floorAsk?.source?.url as s...}": 1,
+              "{() => { global.platform.openTab({ url: getTopBidSourceDomain() as string, // ...}": 1,
+              "{() => { (handleAddressCopy as (text: string) => void)?.( // TODO: Fix in http...}": 1,
+              "{() => setNftOptionsOpen(!nftOptionsOpen)}": 1,
+              "{(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => { e.preventDefault();...}": 1,
+              "{() => setExpanded(!expanded)}": 1,
+              "{onEditClick}": 1,
+              "{onShowOptions}": 1,
+              "{setDropdownOpen}": 1,
+              "{this.props.hideModal}": 1,
+              "{(e: React.MouseEvent<HTMLButtonElement>) => { e.stopPropagation(); setShowPas...}": 1,
+              "{(e: React.MouseEvent<HTMLButtonElement>) => { e.stopPropagation(); setShowCon...}": 1,
+              "{handleOpen}": 1,
+              "{() => { global.platform.openTab({ url: snapUrl, }); }}": 1,
+              "{onCancel}": 1,
+              "{() => { handleMenuOpen(); }}": 1,
+              "{() => setShowDisableSelectWarn(false) || handlePrivateKeyCopy(privateKey)}": 1,
+              "{(e) => { e.stopPropagation(); if (!accountOptionsMenuOpen) { trackEvent({ eve...}": 1,
+              "{handleMainMenuToggle}": 1,
+              "{handleCloseClick}": 1,
+              "{(e: React.MouseEvent) => { e.stopPropagation(); // Determine which item shoul...}": 1,
+              "{() => setAccountTypeToAdd(EVM_WALLET_TYPE)}": 1,
+              "{(e: React.MouseEvent) => { e.stopPropagation(); const willBeOpen = !networkOp...}": 1,
+              "{prevClick}": 1,
+              "{( e: React.MouseEvent<HTMLButtonElement, MouseEvent>, ) => { e.preventDefault...}": 1,
+              "{(e: React.MouseEvent) => { e.stopPropagation(); e.preventDefault(); setShowTo...}": 1,
+              "{handleQrClick}": 1,
+              "{() => { setRemoved(true); }}": 1,
+              "{() => this.handleSubmit(isValidAccountName)}": 1,
+              "{() => this.setState({ isEditing: true })}": 1,
+              "{() => handleClearClick()}": 1,
+              "{() => setAssetOptionsOpen(true)}": 1,
+              "{redirectToDefaultRoute}": 1,
+              "{() => { setIsSettingsModalOpen(true); }}": 1,
+              "{() => { const previousDestAmount = unvalidatedQuote?.toTokenAmount?.amount; d...}": 1,
+              "{() => { fromChain?.chainId && activeQuote && dispatch( trackUnifiedSwapBridge...}": 1,
+              "{onOpenSlippageModal}": 1,
+              "{onOpenRecipientModal}": 1,
+              "{() => navigate?.(PREVIOUS_ROUTE)}": 1,
+              "{(e) => { e.preventDefault(); e.stopPropagation(); dispatch( rejectPendingAppr...}": 1,
+              "{() => { setShowAdvancedDetails(!showAdvancedDetails); }}": 1,
+              "{() => { trackAccountModalOpened(); setShowAccountInfo(true); }}": 1,
+              "{() => setShowAccountInfo(false)}": 1,
+              "{handleBackButtonClick}": 1,
+              "{() => setIsOpenEditSpendingCapModal(true)}": 1,
+              "{() => onNavigateButtonClick(-1)}": 1,
+              "{() => onNavigateButtonClick(1)}": 1,
+              "{() => { const blockExplorerTokenLink = getAccountLink( address, chainId, { bl...}": 1,
+              "{toggleFiatMode}": 1,
+              "{goToPreviousPage}": 1,
+              "{closePopover}": 1,
+              "{closeRecipientModal}": 1,
+              "{clearRecipient}": 1,
+              "{openRecipientModal}": 1,
+              "{onEdit}": 1,
+              "{this.props.onReset}": 1,
+              "{() => { if (userInput?.length > 0) { this.props.onReset(); } else { this.prop...}": 1,
+              "{this.props.onCancel}": 1,
+              "{() => clearNewNetworkAdded()}": 1,
+              "{() => clearEditedNetwork()}": 1,
+              "{() => setNewTokensImported('')}": 1,
+              "{(e) => { e.preventDefault(); this.props.leaveImportSeedScreenState(); this.pr...}": 1,
+              "{onClickBack}": 1,
+              "{() => { navigate(NOTIFICATIONS_SETTINGS_ROUTE); }}": 1,
+              "{() => { // Use browser history for natural back navigation // Fallback to not...}": 1,
+              "{handleSubmit}": 1,
+              "{() => handleItemSelected(item)}": 1,
+              "{() => { handleCopy(checkSummedAddress); }}": 1,
+              "{() => { if (addNewNetwork) { navigate(NETWORKS_ROUTE); } else { navigate(most...}": 1,
+              "{() => { global.platform.openTab({ url }); onSubmit?.(); }}": 1,
+              "{onShowSrpDetailsModal}": 1
+            }
+          },
+          "data-testid": {
+            "count": 85,
+            "values": {
+              "\"back-button\"": 6,
+              "\"nft-address-copy\"": 3,
+              "\"scam-warning\"": 2,
+              "{buttonDataTestId}": 2,
+              "\"close-recipient-modal-btn\"": 2,
+              "\"import-srp-back-button\"": 2,
+              "\"alert-modal-back-button\"": 1,
+              "\"alert-modal-next-button\"": 1,
+              "\"nft__back\"": 1,
+              "\"nft-details__close\"": 1,
+              "\"nft-options__button\"": 1,
+              "\"sectionCollapseButton\"": 1,
+              "{editIconDataTestId}": 1,
+              "\"show-password\"": 1,
+              "\"show-confirm-password\"": 1,
+              "{permissionName}": 1,
+              "\"keyring-account-link\"": 1,
+              "\"snap-home-menu-button\"": 1,
+              "\"address-copy-button-text\"": 1,
+              "\"account-list-item-menu-button\"": 1,
+              "\"account-options-menu-button\"": 1,
+              "{`carousel-slide-${slide.id}-close-button`}": 1,
+              "{`delete-item-${index}`}": 1,
+              "{`network-list-item-options-button-${chainId}`}": 1,
+              "\"permissions-page-back\"": 1,
+              "\"multichain-product-tour-menu-popover-prevIcon\"": 1,
+              "\"multichain-address-row-copy-button\"": 1,
+              "\"multichain-address-row-qr-button\"": 1,
+              "\"save-account-label-input\"": 1,
+              "\"editable-label-button\"": 1,
+              "\"popover-close\"": 1,
+              "\"asset-options__button\"": 1,
+              "\"bridge__header-settings-button\"": 1,
+              "\"switch-tokens\"": 1,
+              "\"slippage-edit-button\"": 1,
+              "\"recipient-edit-button\"": 1,
+              "{`confirm-add-suggested-nft__nft-remove-${id}`}": 1,
+              "\"scroll-to-bottom\"": 1,
+              "\"block-explorer-link\"": 1,
+              "\"header-advanced-details-button\"": 1,
+              "\"header-info__account-details-button\"": 1,
+              "\"confirmation-account-details-modal__close-button\"": 1,
+              "\"wallet-initiated-header-back-button\"": 1,
+              "\"edit-spending-cap-icon\"": 1,
+              "\"confirm-nav__previous-confirmation\"": 1,
+              "\"confirm-nav__next-confirmation\"": 1,
+              "\"toggle-fiat-mode\"": 1,
+              "\"clear-recipient-btn\"": 1,
+              "\"open-recipient-modal-btn\"": 1,
+              "\"balance-change-edit\"": 1,
+              "\"ens-qr-scan-button\"": 1,
+              "\"hardware-connect-close-btn\"": 1,
+              "\"create-password-back-button\"": 1,
+              "\"defi-details-page-back-button\"": 1,
+              "\"account-name-action\"": 1,
+              "\"network-addresses-link\"": 1,
+              "\"private-keys-action\"": 1,
+              "\"smart-account-action\"": 1,
+              "\"wallet-details-link\"": 1,
+              "\"account-remove-action\"": 1,
+              "\"notification-details-back-button\"": 1,
+              "\"notifications-settings-button\"": 1,
+              "\"privacy-settings-back-button\"": 1,
+              "\"category-back-button\"": 1,
+              "\"reveal-recovery-phrase-confirm-back-button\"": 1,
+              "\"reveal-recovery-phrase-confirm-close-button\"": 1,
+              "\"confirm-recovery-phrase-back-button\"": 1,
+              "\"reveal-recovery-phrase-back-button\"": 1,
+              "\"reveal-recovery-phrase-close-button\"": 1,
+              "\"reveal-recovery-phrase-review-back-button\"": 1,
+              "\"reveal-recovery-phrase-review-close-button\"": 1,
+              "\"perps-activity-back-button\"": 1,
+              "\"settings-back-button\"": 1,
+              "\"snap-account-redirect-url-icon\"": 1
+            }
+          },
+          "color": {
+            "count": 85,
+            "values": {
+              "{IconColor.iconAlternative}": 28,
+              "{IconColor.iconDefault}": 22,
+              "{IconColor.primaryDefault}": 11,
+              "{IconColor.iconMuted}": 8,
+              "{Color.iconDefault}": 4,
+              "{IconColor.errorDefault}": 3,
+              "{Color.iconMuted}": 2,
+              "{color ?? IconColor.iconAlternative}": 1,
+              "{IconColor.infoInverse}": 1,
+              "{addressCopied ? IconColor.successDefault : IconColor.iconDefault}": 1,
+              "{Color.textDefault}": 1,
+              "{IconColor.primaryInverse}": 1,
+              "{userInput ? IconColor.iconDefault : IconColor.primaryDefault}": 1,
+              "{loading ? IconColor.iconMuted : IconColor.iconDefault}": 1
+            }
+          },
+          "className": {
+            "count": 30,
+            "values": {
+              "\"connections-header__start-accessory\"": 3,
+              "\"confirm_nav__left_btn\"": 2,
+              "\"confirm_nav__right_btn\"": 2,
+              "\"ens-input__wrapper__action-icon-button\"": 2,
+              "\"home__new-network-notification-close\"": 2,
+              "{classnames({ expandIcon: true, expanded, })}": 1,
+              "{editIconClassName || undefined}": 1,
+              "\"connected-accounts-options__button\"": 1,
+              "\"customize-nonce-modal__close\"": 1,
+              "\"edit-approval-permission__header__close\"": 1,
+              "\"new-account-modal__content__header-close\"": 1,
+              "\"multichain-product-tour-menu__previous-icon\"": 1,
+              "\"multichain-token-list-item__info-icon\"": 1,
+              "\"callout__close-button\"": 1,
+              "\"asset-options__button\"": 1,
+              "\"confirm-add-suggested-nft__nft-remove\"": 1,
+              "\"scroll-to-bottom__button\"": 1,
+              "\"confirm_header__close-button\"": 1,
+              "\"confirm-scroll-to-bottom__button\"": 1,
+              "\"send-header__previous-btn\"": 1,
+              "\"home__new-tokens-imported-notification-close\"": 1,
+              "\"address-book__view-contact__group__static-address--copy-icon\"": 1,
+              "\"settings-page__header__title-container__back-button\"": 1,
+              "\"settings-page__header__title-container__close-button\"": 1
+            }
+          },
+          "marginLeft": {
+            "count": 18,
+            "values": {
+              "1": 2,
+              "2": 10,
+              "\"auto\"": 5,
+              "auto": 1
+            }
+          },
+          "backgroundColor": {
+            "count": 9,
+            "values": {
+              "{BackgroundColor.backgroundAlternative}": 3,
+              "{BackgroundColor.transparent}": 2,
+              "{BackgroundColor.backgroundMuted}": 2,
+              "{BackgroundColor.primaryDefault}": 1,
+              "{BackgroundColor.backgroundDefault}": 1
+            }
+          },
+          "borderRadius": {
+            "count": 7,
+            "values": {
+              "{BorderRadius.full}": 6,
+              "{BorderRadius.MD}": 1
+            }
+          },
+          "padding": {
+            "count": 6,
+            "values": {
+              "0": 1,
+              "1": 2,
+              "2": 3
+            }
+          },
+          "style": {
+            "count": 6,
+            "values": {
+              "{{ marginRight: '-4px' }}": 2,
+              "{{ cursor: 'pointer', position: 'absolute', right: 0, top: 2, ...style, }}": 1,
+              "{{ cursor: 'pointer', position: 'absolute', right: 8, }}": 1,
+              "{{ cursor: 'pointer', position: 'absolute', right: -32, top: -2, }}": 1,
+              "{{ alignSelf: 'center', borderRadius: '100%', width: '100%', height: '100%', }}": 1
+            }
+          },
+          "display": {
+            "count": 6,
+            "values": {
+              "{Display.Flex}": 4,
+              "{DISPLAY.FLEX}": 1,
+              "{[Display.Flex, Display.None]}": 1
+            }
+          },
+          "disabled": {
+            "count": 5,
+            "values": {
+              "{disabled}": 1,
+              "{isSwitchingTemporarilyDisabled || !isValidQuoteRequest(quoteRequest, false) |...}": 1,
+              "{position === 0}": 1,
+              "{position === count - 1}": 1,
+              "{loading}": 1
+            }
+          },
+          "justifyContent": {
+            "count": 4,
+            "values": {
+              "{JustifyContent.flexEnd}": 4
+            }
+          },
+          "type": {
+            "count": 4,
+            "values": {
+              "\"button\"": 4
+            }
+          },
+          "ref": {
+            "count": 4,
+            "values": {
+              "{setMenuRef}": 1,
+              "{setAccountListItemMenuRef}": 1,
+              "{menuRef}": 1,
+              "{setNetworkListItemMenuRef}": 1
+            }
+          },
+          "marginRight": {
+            "count": 3,
+            "values": {
+              "1": 2,
+              "2": 1
+            }
+          },
+          "iconProps": {
+            "count": 2,
+            "values": {
+              "{{ className: classnames({ rotate: rotateSwitchTokens, }), }}": 1,
+              "{{ size: IconSize.Lg, }}": 1
+            }
+          },
+          "paddingLeft": {
+            "count": 1,
+            "values": {
+              "0": 1
+            }
+          },
+          "borderColor": {
+            "count": 1,
+            "values": {
+              "{BorderColor.borderMuted}": 1
+            }
+          },
+          "borderStyle": {
+            "count": 1,
+            "values": {
+              "{BorderStyle.solid}": 1
+            }
+          },
+          "borderWidth": {
+            "count": 1,
+            "values": {
+              "1": 1
+            }
+          },
+          "onMouseDown": {
+            "count": 1,
+            "values": {
+              "{(e: React.MouseEvent) => { // When closing: prevent button from losing focus ...}": 1
+            }
+          },
+          "onKeyUp": {
+            "count": 1,
+            "values": {
+              "{(event) => { if (event.key === 'Enter') { setRemoved(true); } }}": 1
+            }
+          }
+        }
+      },
+      "overall": {
+        "totalInstances": 176,
+        "filesCount": 113,
+        "props": {
+          "iconName": {
+            "count": 176,
+            "values": {
+              "{IconName.ArrowLeft}": 52,
+              "{IconName.Close}": 35,
+              "{IconName.ArrowRight}": 16,
+              "{IconName.Export}": 9,
+              "{IconName.MoreVertical}": 8,
+              "{IconName.Edit}": 8,
+              "{copied ? IconName.CopySuccess : IconName.Copy}": 5,
+              "{addressCopied ? IconName.CopySuccess : IconName.Copy}": 3,
+              "{IconName.Info}": 3,
+              "{IconName.Danger}": 2,
+              "{IconName.ArrowDown}": 2,
+              "{isDropdownOpen ? IconName.ArrowUp : IconName.ArrowDown}": 2,
+              "{IconName.Add}": 2,
+              "{IconName.Setting}": 2,
+              "{IconName.SwapVertical}": 2,
+              "{IconName.Arrow2Down}": 2,
+              "\"arrow-left\"": 2,
+              "{expanded ? IconName.Collapse : IconName.Expand}": 1,
+              "{expanded ? IconName.ArrowUp : IconName.ArrowDown}": 1,
+              "{copiedAddress ? IconName.CopySuccess : IconName.Copy}": 1,
+              "{showPassword ? IconName.EyeSlash : IconName.Eye}": 1,
+              "{showConfirmPassword ? IconName.EyeSlash : IconName.Eye}": 1,
+              "{IconName.Upload}": 1,
+              "{privateKeyCopied ? IconName.CopySuccess : IconName.Copy}": 1,
+              "{IconNameDeprecated.Menu}": 1,
+              "{IconName.Trash}": 1,
+              "{isExpanded ? IconName.ArrowUp : IconName.ArrowDown}": 1,
+              "{copyIcon}": 1,
+              "{IconName.QrCode}": 1,
+              "{IconName.Check}": 1,
+              "{IconName.Customize}": 1,
+              "{IconName.Book}": 1,
+              "{userInput ? IconName.Close : IconName.Scan}": 1,
+              "{IconName.Copy}": 1,
+              "{IconName.Global}": 1,
+              "{IconName.Menu}": 1,
+              "{IconName.Filter}": 1,
+              "{IconName.Search}": 1
+            }
+          },
+          "ariaLabel": {
+            "count": 168,
+            "values": {
+              "{t('back')}": 35,
+              "{t('close')}": 20,
+              "\"Back\"": 14,
+              "\"copy\"": 4,
+              "{t('next')}": 3,
+              "\"redirect\"": 3,
+              "\"\"": 3,
+              "{t('edit')}": 3,
+              "{title}": 3,
+              "\"Close\"": 3,
+              "\"copy-button\"": 2,
+              "\"expand\"": 2,
+              "{t('options')}": 2,
+              "\"Edit account name\"": 2,
+              "{t('scrollDown')}": 2,
+              "\"Close recipient modal\"": 2,
+              "\"Next\"": 2,
+              "\"export\"": 1,
+              "{t('nftOptions')}": 1,
+              "\"collapse-button\"": 1,
+              "{t('showPermissions')}": 1,
+              "{t('copyAddress')}": 1,
+              "{showPassword ? t('passwordToggleHide') : t('passwordToggleShow')}": 1,
+              "{showConfirmPassword ? t('passwordToggleHide') : t('passwordToggleShow')}": 1,
+              "\"snap-url-export\"": 1,
+              "{t('snapHomeMenu')}": 1,
+              "{t('uploadFile')}": 1,
+              "{t('copyPrivateKey')}": 1,
+              "{`${account.metadata.name} ${t('options')}`}": 1,
+              "{t('accountOptions')}": 1,
+              "{t('closeSlide', [ isContentfulContent ? slide.title : t(slide.title), ])}": 1,
+              "{t('delete')}": 1,
+              "{title || t('close')}": 1,
+              "{t('networkOptions')}": 1,
+              "{t('add')}": 1,
+              "{t('addNetwork')}": 1,
+              "{t('viewTokenDetails')}": 1,
+              "\"View details\"": 1,
+              "\"View QR code\"": 1,
+              "{t('copyAddressShort')}": 1,
+              "\"Show QR code\"": 1,
+              "{this.context.t('edit')}": 1,
+              "{t('clear')}": 1,
+              "{t('assetOptions')}": 1,
+              "{t('settings')}": 1,
+              "\"switch-tokens\"": 1,
+              "{t('moreQuotes')}": 1,
+              "{t('slippageEditAriaLabel')}": 1,
+              "{t('recipientEditAriaLabel')}": 1,
+              "\"View on block explorer\"": 1,
+              "\"close-dapp-swap-comparison-banner\"": 1,
+              "\"Advanced tx details\"": 1,
+              "{t('accountDetails')}": 1,
+              "\"Previous Confirmation\"": 1,
+              "\"Next Confirmation\"": 1,
+              "{copied ? t('copiedExclamation') : t('copyToClipboard')}": 1,
+              "{t('openInBlockExplorer')}": 1,
+              "\"toggle fiat mode\"": 1,
+              "\"go to previous page\"": 1,
+              "\"Clear recipient\"": 1,
+              "\"Open recipient modal\"": 1,
+              "{t(userInput ? 'close' : 'scanQrCode')}": 1,
+              "{this.context.t('close')}": 1,
+              "\"Switch Account\"": 1,
+              "\"Copy\"": 1,
+              "\"Network\"": 1,
+              "\"Menu\"": 1,
+              "\"Filter\"": 1,
+              "\"More\"": 1,
+              "\"back\"": 1,
+              "\"close\"": 1,
+              "{t('accountName')}": 1,
+              "{t('addresses')}": 1,
+              "{t('privateKeys')}": 1,
+              "{t('smartAccountLabel')}": 1,
+              "{t('wallet')}": 1,
+              "{t('removeAccount')}": 1,
+              "\"Notifications Settings\"": 1,
+              "{t('search')}": 1,
+              "\"info\"": 1
+            }
+          },
+          "size": {
+            "count": 151,
+            "values": {
+              "{ButtonIconSize.Sm}": 79,
+              "{ButtonIconSize.Md}": 58,
+              "{ButtonIconSize.Lg}": 6,
+              "{IconSize.Sm}": 5,
+              "{Size.SM}": 2,
+              "\"sm\"": 1
+            }
+          },
+          "onClick": {
+            "count": 143,
+            "values": {
+              "{() => navigate(PREVIOUS_ROUTE)}": 11,
+              "{onClose}": 9,
+              "{handleBack}": 8,
+              "{handleClick}": 5,
+              "{onBack}": 4,
+              "{onAutoHide}": 4,
+              "{() => navigate(DEFAULT_ROUTE)}": 3,
+              "{handleBackClick}": 3,
+              "{() => { global.platform.openTab({ url: getBoughtForLink() as string, }); }}": 2,
+              "{() => { (handleAddressCopy as (text: string) => void)?.( address || '', ); }}": 2,
+              "{hideModal}": 2,
+              "{handleCopyClick}": 2,
+              "{() => handleCopy(address)}": 2,
+              "{scrollToBottom}": 2,
+              "{() => { navigate(DEFAULT_ROUTE); }}": 2,
+              "{returnToPreviousPage}": 2,
+              "{() => navigate(backRoute)}": 2,
+              "{onBackButtonClick}": 1,
+              "{onNextButtonClick}": 1,
+              "{() => { global.platform.openTab({ url: 'test', }); }}": 1,
+              "{() => { global.platform.openTab({ url: collection?.floorAsk?.source?.url as s...}": 1,
+              "{() => { global.platform.openTab({ url: getTopBidSourceDomain() as string, // ...}": 1,
+              "{() => { (handleAddressCopy as (text: string) => void)?.( // TODO: Fix in http...}": 1,
+              "{() => setNftOptionsOpen(!nftOptionsOpen)}": 1,
+              "{(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => { e.preventDefault();...}": 1,
+              "{() => setExpanded(!expanded)}": 1,
+              "{onEditClick}": 1,
+              "{onShowOptions}": 1,
+              "{setDropdownOpen}": 1,
+              "{this.props.hideModal}": 1,
+              "{(e: React.MouseEvent<HTMLButtonElement>) => { e.stopPropagation(); setShowPas...}": 1,
+              "{(e: React.MouseEvent<HTMLButtonElement>) => { e.stopPropagation(); setShowCon...}": 1,
+              "{handleOpen}": 1,
+              "{() => { global.platform.openTab({ url: snapUrl, }); }}": 1,
+              "{onCancel}": 1,
+              "{() => { handleMenuOpen(); }}": 1,
+              "{() => setShowDisableSelectWarn(false) || handlePrivateKeyCopy(privateKey)}": 1,
+              "{(e) => { e.stopPropagation(); if (!accountOptionsMenuOpen) { trackEvent({ eve...}": 1,
+              "{handleMainMenuToggle}": 1,
+              "{handleCloseClick}": 1,
+              "{(e: React.MouseEvent) => { e.stopPropagation(); // Determine which item shoul...}": 1,
+              "{() => setAccountTypeToAdd(EVM_WALLET_TYPE)}": 1,
+              "{(e: React.MouseEvent) => { e.stopPropagation(); const willBeOpen = !networkOp...}": 1,
+              "{async () => { dispatch(toggleNetworkMenu()); // First add the network to user...}": 1,
+              "{handleExpandClick}": 1,
+              "{prevClick}": 1,
+              "{( e: React.MouseEvent<HTMLButtonElement, MouseEvent>, ) => { e.preventDefault...}": 1,
+              "{(e: React.MouseEvent) => { e.stopPropagation(); e.preventDefault(); setShowTo...}": 1,
+              "{handleQrClick}": 1,
+              "{() => { setRemoved(true); }}": 1,
+              "{() => this.handleSubmit(isValidAccountName)}": 1,
+              "{() => this.setState({ isEditing: true })}": 1,
+              "{() => handleClearClick()}": 1,
+              "{() => setAssetOptionsOpen(true)}": 1,
+              "{redirectToDefaultRoute}": 1,
+              "{() => { setIsSettingsModalOpen(true); }}": 1,
+              "{() => { const previousDestAmount = unvalidatedQuote?.toTokenAmount?.amount; d...}": 1,
+              "{() => { fromChain?.chainId && activeQuote && dispatch( trackUnifiedSwapBridge...}": 1,
+              "{onOpenSlippageModal}": 1,
+              "{onOpenRecipientModal}": 1,
+              "{() => navigate?.(PREVIOUS_ROUTE)}": 1,
+              "{(e) => { e.preventDefault(); e.stopPropagation(); dispatch( rejectPendingAppr...}": 1,
+              "{hideDappSwapComparisonBanner}": 1,
+              "{() => { setShowAdvancedDetails(!showAdvancedDetails); }}": 1,
+              "{() => { trackAccountModalOpened(); setShowAccountInfo(true); }}": 1,
+              "{() => setShowAccountInfo(false)}": 1,
+              "{handleBackButtonClick}": 1,
+              "{() => setIsOpenEditSpendingCapModal(true)}": 1,
+              "{() => onNavigateButtonClick(-1)}": 1,
+              "{() => onNavigateButtonClick(1)}": 1,
+              "{() => { const blockExplorerTokenLink = getAccountLink( address, chainId, { bl...}": 1,
+              "{toggleFiatMode}": 1,
+              "{goToPreviousPage}": 1,
+              "{closePopover}": 1,
+              "{closeRecipientModal}": 1,
+              "{clearRecipient}": 1,
+              "{openRecipientModal}": 1,
+              "{onEdit}": 1,
+              "{this.props.onReset}": 1,
+              "{() => { if (userInput?.length > 0) { this.props.onReset(); } else { this.prop...}": 1,
+              "{this.props.onCancel}": 1,
+              "{() => clearNewNetworkAdded()}": 1,
+              "{() => clearEditedNetwork()}": 1,
+              "{() => setNewTokensImported('')}": 1,
+              "{(e) => { e.preventDefault(); this.props.leaveImportSeedScreenState(); this.pr...}": 1,
+              "{onClickBack}": 1,
+              "{() => { navigate(NOTIFICATIONS_SETTINGS_ROUTE); }}": 1,
+              "{() => { // Use browser history for natural back navigation // Fallback to not...}": 1,
+              "{handleSubmit}": 1,
+              "{() => handleItemSelected(item)}": 1,
+              "{handleSearchClick}": 1,
+              "{() => { handleCopy(checkSummedAddress); }}": 1,
+              "{() => { if (addNewNetwork) { navigate(NETWORKS_ROUTE); } else { navigate(most...}": 1,
+              "{() => { global.platform.openTab({ url }); onSubmit?.(); }}": 1,
+              "{onShowSrpDetailsModal}": 1
+            }
+          },
+          "data-testid": {
+            "count": 93,
+            "values": {
+              "\"back-button\"": 6,
+              "\"nft-address-copy\"": 3,
+              "\"scam-warning\"": 2,
+              "{buttonDataTestId}": 2,
+              "\"close-recipient-modal-btn\"": 2,
+              "\"import-srp-back-button\"": 2,
+              "\"multichain-account-address-list-page-back-button\"": 2,
+              "\"alert-modal-back-button\"": 1,
+              "\"alert-modal-next-button\"": 1,
+              "\"nft__back\"": 1,
+              "\"nft-details__close\"": 1,
+              "\"nft-options__button\"": 1,
+              "\"sectionCollapseButton\"": 1,
+              "{editIconDataTestId}": 1,
+              "\"show-password\"": 1,
+              "\"show-confirm-password\"": 1,
+              "{permissionName}": 1,
+              "\"keyring-account-link\"": 1,
+              "\"snap-home-menu-button\"": 1,
+              "\"address-copy-button-text\"": 1,
+              "\"account-list-item-menu-button\"": 1,
+              "\"account-options-menu-button\"": 1,
+              "{`carousel-slide-${slide.id}-close-button`}": 1,
+              "{`delete-item-${index}`}": 1,
+              "\"drawer-close-button\"": 1,
+              "{`network-list-item-options-button-${chainId}`}": 1,
+              "\"permissions-page-back\"": 1,
+              "\"multichain-product-tour-menu-popover-prevIcon\"": 1,
+              "\"multichain-address-row-copy-button\"": 1,
+              "\"multichain-address-row-qr-button\"": 1,
+              "\"save-account-label-input\"": 1,
+              "\"editable-label-button\"": 1,
+              "\"popover-close\"": 1,
+              "\"asset-options__button\"": 1,
+              "\"bridge__header-settings-button\"": 1,
+              "\"switch-tokens\"": 1,
+              "\"slippage-edit-button\"": 1,
+              "\"recipient-edit-button\"": 1,
+              "{`confirm-add-suggested-nft__nft-remove-${id}`}": 1,
+              "\"scroll-to-bottom\"": 1,
+              "\"block-explorer-link\"": 1,
+              "\"header-advanced-details-button\"": 1,
+              "\"header-info__account-details-button\"": 1,
+              "\"confirmation-account-details-modal__close-button\"": 1,
+              "\"wallet-initiated-header-back-button\"": 1,
+              "\"edit-spending-cap-icon\"": 1,
+              "\"confirm-nav__previous-confirmation\"": 1,
+              "\"confirm-nav__next-confirmation\"": 1,
+              "\"toggle-fiat-mode\"": 1,
+              "\"clear-recipient-btn\"": 1,
+              "\"open-recipient-modal-btn\"": 1,
+              "\"balance-change-edit\"": 1,
+              "\"ens-qr-scan-button\"": 1,
+              "\"hardware-connect-close-btn\"": 1,
+              "\"create-password-back-button\"": 1,
+              "\"defi-details-page-back-button\"": 1,
+              "\"add-wallet-page-back-button\"": 1,
+              "\"account-name-action\"": 1,
+              "\"network-addresses-link\"": 1,
+              "\"private-keys-action\"": 1,
+              "\"smart-account-action\"": 1,
+              "\"wallet-details-link\"": 1,
+              "\"account-remove-action\"": 1,
+              "\"smart-account-page-back-button\"": 1,
+              "\"notification-details-back-button\"": 1,
+              "\"notifications-settings-button\"": 1,
+              "\"privacy-settings-back-button\"": 1,
+              "\"category-back-button\"": 1,
+              "\"reveal-recovery-phrase-confirm-back-button\"": 1,
+              "\"reveal-recovery-phrase-confirm-close-button\"": 1,
+              "\"confirm-recovery-phrase-back-button\"": 1,
+              "\"reveal-recovery-phrase-back-button\"": 1,
+              "\"reveal-recovery-phrase-close-button\"": 1,
+              "\"reveal-recovery-phrase-review-back-button\"": 1,
+              "\"reveal-recovery-phrase-review-close-button\"": 1,
+              "\"perps-activity-back-button\"": 1,
+              "\"perps-home-back-button\"": 1,
+              "\"perps-home-search-button\"": 1,
+              "\"settings-back-button\"": 1,
+              "\"shield-plan-back-button\"": 1,
+              "\"snap-account-redirect-url-icon\"": 1
+            }
+          },
+          "color": {
+            "count": 90,
+            "values": {
+              "{IconColor.iconAlternative}": 28,
+              "{IconColor.iconDefault}": 22,
+              "{IconColor.primaryDefault}": 11,
+              "{IconColor.iconMuted}": 8,
+              "{Color.iconDefault}": 4,
+              "{IconColor.errorDefault}": 3,
+              "{IconColor.IconDefault}": 2,
+              "{Color.iconMuted}": 2,
+              "{IconColor.IconAlternative}": 2,
+              "{color ?? IconColor.iconAlternative}": 1,
+              "{IconColor.IconMuted}": 1,
+              "{IconColor.infoInverse}": 1,
+              "{addressCopied ? IconColor.successDefault : IconColor.iconDefault}": 1,
+              "{Color.textDefault}": 1,
+              "{IconColor.primaryInverse}": 1,
+              "{userInput ? IconColor.iconDefault : IconColor.primaryDefault}": 1,
+              "{loading ? IconColor.iconMuted : IconColor.iconDefault}": 1
+            }
+          },
+          "className": {
+            "count": 34,
+            "values": {
+              "\"connections-header__start-accessory\"": 5,
+              "\"confirm_nav__left_btn\"": 2,
+              "\"confirm_nav__right_btn\"": 2,
+              "\"ens-input__wrapper__action-icon-button\"": 2,
+              "\"home__new-network-notification-close\"": 2,
+              "{classnames({ expandIcon: true, expanded, })}": 1,
+              "{editIconClassName || undefined}": 1,
+              "\"connected-accounts-options__button\"": 1,
+              "\"customize-nonce-modal__close\"": 1,
+              "\"edit-approval-permission__header__close\"": 1,
+              "\"new-account-modal__content__header-close\"": 1,
+              "\"text-icon-alternative\"": 1,
+              "\"multichain-product-tour-menu__previous-icon\"": 1,
+              "\"multichain-token-list-item__info-icon\"": 1,
+              "\"callout__close-button\"": 1,
+              "\"asset-options__button\"": 1,
+              "\"confirm-add-suggested-nft__nft-remove\"": 1,
+              "\"scroll-to-bottom__button\"": 1,
+              "\"dapp-swap_close-button\"": 1,
+              "\"confirm_header__close-button\"": 1,
+              "\"confirm-scroll-to-bottom__button\"": 1,
+              "\"send-header__previous-btn\"": 1,
+              "\"home__new-tokens-imported-notification-close\"": 1,
+              "\"address-book__view-contact__group__static-address--copy-icon\"": 1,
+              "\"settings-page__header__title-container__back-button\"": 1,
+              "\"settings-page__header__title-container__close-button\"": 1
+            }
+          },
+          "marginLeft": {
+            "count": 18,
+            "values": {
+              "1": 2,
+              "2": 10,
+              "\"auto\"": 5,
+              "auto": 1
+            }
+          },
+          "backgroundColor": {
+            "count": 9,
+            "values": {
+              "{BackgroundColor.backgroundAlternative}": 3,
+              "{BackgroundColor.transparent}": 2,
+              "{BackgroundColor.backgroundMuted}": 2,
+              "{BackgroundColor.primaryDefault}": 1,
+              "{BackgroundColor.backgroundDefault}": 1
+            }
+          },
+          "borderRadius": {
+            "count": 7,
+            "values": {
+              "{BorderRadius.full}": 6,
+              "{BorderRadius.MD}": 1
+            }
+          },
+          "padding": {
+            "count": 6,
+            "values": {
+              "0": 1,
+              "1": 2,
+              "2": 3
+            }
+          },
+          "style": {
+            "count": 6,
+            "values": {
+              "{{ marginRight: '-4px' }}": 2,
+              "{{ cursor: 'pointer', position: 'absolute', right: 0, top: 2, ...style, }}": 1,
+              "{{ cursor: 'pointer', position: 'absolute', right: 8, }}": 1,
+              "{{ cursor: 'pointer', position: 'absolute', right: -32, top: -2, }}": 1,
+              "{{ alignSelf: 'center', borderRadius: '100%', width: '100%', height: '100%', }}": 1
+            }
+          },
+          "display": {
+            "count": 6,
+            "values": {
+              "{Display.Flex}": 4,
+              "{DISPLAY.FLEX}": 1,
+              "{[Display.Flex, Display.None]}": 1
+            }
+          },
+          "disabled": {
+            "count": 5,
+            "values": {
+              "{disabled}": 1,
+              "{isSwitchingTemporarilyDisabled || !isValidQuoteRequest(quoteRequest, false) |...}": 1,
+              "{position === 0}": 1,
+              "{position === count - 1}": 1,
+              "{loading}": 1
+            }
+          },
+          "justifyContent": {
+            "count": 4,
+            "values": {
+              "{JustifyContent.flexEnd}": 4
+            }
+          },
+          "type": {
+            "count": 4,
+            "values": {
+              "\"button\"": 4
+            }
+          },
+          "ref": {
+            "count": 4,
+            "values": {
+              "{setMenuRef}": 1,
+              "{setAccountListItemMenuRef}": 1,
+              "{menuRef}": 1,
+              "{setNetworkListItemMenuRef}": 1
+            }
+          },
+          "iconProps": {
+            "count": 3,
+            "values": {
+              "{{ color: IconColor.IconAlternative }}": 1,
+              "{{ className: classnames({ rotate: rotateSwitchTokens, }), }}": 1,
+              "{{ size: IconSize.Lg, }}": 1
+            }
+          },
+          "marginRight": {
+            "count": 3,
+            "values": {
+              "1": 2,
+              "2": 1
+            }
+          },
+          "paddingLeft": {
+            "count": 1,
+            "values": {
+              "0": 1
+            }
+          },
+          "borderColor": {
+            "count": 1,
+            "values": {
+              "{BorderColor.borderMuted}": 1
+            }
+          },
+          "borderStyle": {
+            "count": 1,
+            "values": {
+              "{BorderStyle.solid}": 1
+            }
+          },
+          "borderWidth": {
+            "count": 1,
+            "values": {
+              "1": 1
+            }
+          },
+          "onMouseDown": {
+            "count": 1,
+            "values": {
+              "{(e: React.MouseEvent) => { // When closing: prevent button from losing focus ...}": 1
+            }
+          },
+          "onKeyUp": {
+            "count": 1,
+            "values": {
+              "{(event) => { if (event.key === 'Enter') { setRemoved(true); } }}": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {
+        "ButtonIcon": 156
+      }
+    }
+  }
+}

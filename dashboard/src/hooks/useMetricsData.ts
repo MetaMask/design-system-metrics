@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react';
-import type { MetricsData, TimelineData, IndexData } from '../types/metrics';
+import type {
+  MetricsData,
+  TimelineData,
+  IndexData,
+  ComponentPropsAuditData,
+  ComponentPropsAuditIndexData,
+} from '../types/metrics';
 
 const BASE_PATH = import.meta.env.BASE_URL || '/';
 const METRICS_PATH = `${BASE_PATH}metrics/`;
@@ -86,6 +92,79 @@ export function useIndexData() {
         if (!res.ok) throw new Error('Failed to fetch index');
         const index: IndexData = await res.json();
         setData(index);
+        setError(null);
+      } catch (err) {
+        setError(err as Error);
+        setData(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return { data, loading, error };
+}
+
+export function useComponentPropsAudit(componentName: string) {
+  const [data, setData] = useState<ComponentPropsAuditData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const fileName = `${componentName.toLowerCase()}-props-audit-latest.json`;
+        const res = await fetch(`${METRICS_PATH}${fileName}`);
+
+        // Optional dataset: no file yet should not be treated as a hard error.
+        if (res.status === 404) {
+          setData(null);
+          setError(null);
+          return;
+        }
+
+        if (!res.ok) throw new Error(`Failed to fetch ${fileName}`);
+        const audit: ComponentPropsAuditData = await res.json();
+        setData(audit);
+        setError(null);
+      } catch (err) {
+        setError(err as Error);
+        setData(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [componentName]);
+
+  return { data, loading, error };
+}
+
+export function useComponentPropsAuditIndex() {
+  const [data, setData] = useState<ComponentPropsAuditIndexData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const fileName = 'component-props-audit-index.json';
+        const res = await fetch(`${METRICS_PATH}${fileName}`);
+
+        if (res.status === 404) {
+          setData(null);
+          setError(null);
+          return;
+        }
+
+        if (!res.ok) throw new Error(`Failed to fetch ${fileName}`);
+        const auditIndex: ComponentPropsAuditIndexData = await res.json();
+        setData(auditIndex);
         setError(null);
       } catch (err) {
         setError(err as Error);

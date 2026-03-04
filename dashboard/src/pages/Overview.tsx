@@ -3,6 +3,7 @@ import { Loading } from '../components/Loading';
 import { ErrorMessage } from '../components/ErrorMessage';
 import { MetricsCard } from '../components/MetricsCard';
 import { CodeOwnerAdoptionChart } from '../components/CodeOwnerAdoptionChart';
+import { ComponentPropsAuditSection } from '../components/ComponentPropsAuditSection';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const MOBILE_EXCLUDED_OWNERS = new Set([
@@ -446,6 +447,8 @@ export function Overview() {
             </div>
           )}
         </section>
+
+        <ComponentPropsAuditSection />
       </div>
     </div>
   );
