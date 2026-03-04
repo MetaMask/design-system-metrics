@@ -222,7 +222,7 @@ export function Overview() {
                   label={{ value: 'Migration % / Components', angle: 90, position: 'insideRight' }}
                   domain={[0, 100]}
                 />
-                <Tooltip />
+                <Tooltip labelStyle={{ color: '#111827' }} />
                 <Legend />
                 <Line
                   yAxisId="left"
@@ -381,7 +381,7 @@ export function Overview() {
                   label={{ value: 'Migration % / Components', angle: 90, position: 'insideRight' }}
                   domain={[0, 100]}
                 />
-                <Tooltip />
+                <Tooltip labelStyle={{ color: '#111827' }} />
                 <Legend />
                 <Line
                   yAxisId="left"
