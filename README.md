@@ -1,413 +1,224 @@
 # **@georgewrmarshall/design-system-metrics**
 
-A CLI tool to audit design system component usage and track migration progress across MetaMask codebases. Identifies deprecated local component usage, tracks intermediate migrations, and measures adoption of the new MetaMask Design System (MMDS) NPM packages.
+Design system migration reporting for MetaMask.
+
+Primary outputs:
+- **Dashboard** (historical trends and latest status)
+- **Slack report** (weekly update summary)
+
+The npm package/CLI still exists, but this repository is now primarily operated as an internal reporting pipeline.
 
 ## **Getting Started**
 
-- [Extension](#extension)
-- [Mobile](#mobile)
-- [CLI Options](#cli-options)
-- [Features](#features)
-- [Output Files](#output-files)
+- [Primary Product Features](#primary-product-features)
+- [Project Architecture](#project-architecture)
+- [Maintainer Workflow](#maintainer-workflow)
+- [Dashboard](#dashboard)
+- [Slack Report](#slack-report)
+- [Data Outputs](#data-outputs)
 - [Configuration](#configuration)
+- [NPM Package and CLI (Secondary)](#npm-package-and-cli-secondary)
 - [Requirements](#requirements)
 
 ---
 
-### **Extension**
+### **Primary Product Features**
 
-1. **Clone the [MetaMask Extension](https://github.com/MetaMask/metamask-extension)** repository if you haven't already:
+#### **1) Dashboard**
 
-```bash
-git clone https://github.com/MetaMask/metamask-extension.git
-cd metamask-extension
-```
+A React dashboard (`dashboard/`) that visualizes migration progress over time for Mobile and Extension using generated JSON in `metrics/`.
 
-2. **Run the CLI tool using npx:**
+Current dashboard scope includes:
+- Latest migration KPIs
+- 6-month trend charts
+- MMDS vs deprecated instance trends
+- MMDS component availability and new-component deltas
+- Code owner adoption charts
 
-```bash
-npx @georgewrmarshall/design-system-metrics --project extension
-```
+#### **2) Slack Report**
 
-3. An XLSX file will be generated in the current directory:
-   - `extension-component-metrics.xlsx` - Multi-sheet workbook with migration progress, path-level details, and MMDS usage
+A generated weekly markdown report used for stakeholder updates.
 
----
-
-### **Mobile**
-
-1. **Clone the [MetaMask Mobile](https://github.com/MetaMask/metamask-mobile)** repository if you haven't already:
-
-```bash
-git clone https://github.com/MetaMask/metamask-mobile.git
-cd metamask-mobile
-```
-
-2. **Run the CLI tool using npx:**
-
-```bash
-npx @georgewrmarshall/design-system-metrics --project mobile
-```
-
-3. An XLSX file will be generated in the current directory:
-   - `mobile-component-metrics.xlsx` - Multi-sheet workbook with migration progress, path-level details, and MMDS usage
+It summarizes:
+- MMDS component availability
+- Migration progress by project
+- Week-over-week changes
+- Links to detailed artifacts
 
 ---
 
-### **CLI Options**
+### **Project Architecture**
 
-- **`--project` (Required)**: Specify the project to audit. Options are:
-  - `extension`: For MetaMask Extension
-  - `mobile`: For MetaMask Mobile
+This repository tracks migration from legacy components to MMDS across:
+- `repos/metamask-extension`
+- `repos/metamask-mobile`
 
-  Example:
-  ```bash
-  npx @georgewrmarshall/design-system-metrics --project extension
-  ```
+With MMDS component definitions sourced from:
+- `repos/metamask-design-system`
 
-- **`--config` (Optional)**: Path to custom configuration file
-
-  Example:
-  ```bash
-  npx @georgewrmarshall/design-system-metrics --project extension --config ./custom-config.json
-  ```
-
----
-
-### **Features**
-
-#### **Multi-Path Component Tracking**
-Track component usage across multiple old implementations migrating to MMDS:
-
-- **Multiple deprecated paths**: Track usage from really old UI components AND old component-library versions
-- **Path-level breakdowns**: See which specific implementation path has the most usage
-- **Accurate migration metrics**: Calculate migration progress across all deprecated versions
-
-**Example:**
-```
-Button from ui/components/ui/button: 15 uses (really old)
-Button from component-library/Button: 42 uses (old)
-Button from @metamask/design-system-react: 23 uses (new MMDS)
-
-Migration Progress: 23 / (15 + 42 + 23) = 28.75%
-```
-
-#### **Intermediate Migration Tracking**
-Some components migrate to component-library first before going to MMDS:
-
-```
-Popover (ui/components/ui/popover) → Modal (component-library) → (future MMDS migration)
-```
-
-The tool identifies these intermediate migrations and reports them separately so you can track the full migration journey.
-
-#### **No Replacement Tracking**
-Some deprecated components don't have direct MMDS replacements yet. The tool identifies and reports these separately:
-
-```
-TextField - No direct MMDS replacement (custom implementation needed)
-```
-
-#### **Detailed XLSX Reports**
-Generate comprehensive Excel workbooks with 5 sheets:
-
-1. **Migration Progress**: Components migrating to MMDS with % complete
-2. **Intermediate Migrations**: Components with intermediate component-library steps
-3. **Path-Level Detail**: Usage broken down by specific import paths
-4. **MMDS Usage**: Current MMDS component adoption
-5. **No Replacement**: Components needing custom migration approaches
+Core implementation files:
+- `index.js`: canonical scanner + generator (`.xlsx`, `-summary.json`, `-data.json`)
+- `config.json`: tracked component mappings
+- `scripts/sync-config.js`: updates `config.json` from submodules
+- `scripts/update-timeline.js`: rebuilds `metrics/timeline.json` + `metrics/index.json`
+- `scripts/validate-metrics-consistency.js`: consistency checks across generated artifacts
+- `scripts/generate-slack-report.js`: weekly Slack markdown output
 
 ---
 
-### **Output Files**
+### **Maintainer Workflow**
 
-The tool generates an XLSX workbook with multiple sheets providing different views of your migration progress.
+Use this sequence locally to match CI behavior:
 
-#### **Sheet 1: Migration Progress**
-Tracks components migrating directly to MMDS packages.
+```bash
+yarn install
+yarn setup-repos
 
-| Deprecated Component | Source Paths | MMDS Component | Deprecated Instances | MMDS Instances | Migrated % |
-|---------------------|--------------|----------------|---------------------|----------------|------------|
-| Button | ui/components/ui/button, component-library/button | Button | 57 | 23 | 28.75% |
-| Icon | component-library/icon | Icon | 142 | 89 | 38.52% |
+yarn sync-config
+yarn start
+yarn start:mobile
 
-#### **Sheet 2: Intermediate Migrations**
-Shows components migrating to component-library before eventual MMDS migration.
+yarn update-timeline
+yarn validate-metrics
 
-| Old Component | Old Path | New Component | New Package/Path | Instances |
-|--------------|----------|---------------|------------------|-----------|
-| Popover | ui/components/ui/popover | Modal | component-library/modal | 15 |
+yarn slack-report --output metrics/slack-report-YYYY-MM-DD.md
 
-#### **Sheet 3: Path-Level Detail**
-Breaks down usage by specific import paths to see which old implementations are most used.
+cp metrics/*.json dashboard/public/metrics/
+cd dashboard && npm ci && npm run build
+```
 
-| Component | Specific Path | Instances | File Paths |
-|-----------|--------------|-----------|------------|
-| Button | ui/components/ui/button | 15 | pages/send.js, pages/home.js |
-| Button | component-library/button | 42 | pages/settings.js, pages/confirm.js |
+Historical date override (backfills):
 
-#### **Sheet 4: MMDS Usage**
-Current adoption of MMDS components.
+```bash
+METRICS_DATE=2026-03-04 yarn start
+METRICS_DATE=2026-03-04 yarn start:mobile
+```
 
-| Component | Instances | File Paths |
-|-----------|-----------|------------|
-| Button | 23 | pages/new-feature.js |
-| Icon | 89 | pages/dashboard.js, pages/wallet.js |
+CI workflows:
+- `.github/workflows/weekly-metrics.yml`
+  - runs Fridays (`0 16 * * 5`) and manually
+  - updates submodules/config, regenerates metrics, updates timeline/index, validates data, generates Slack output, and rebuilds dashboard assets
+- `.github/workflows/deploy-dashboard.yml`
+  - deploys dashboard to GitHub Pages when dashboard or metrics JSON changes on `main`
 
-#### **Sheet 5: No Replacement**
-Components without direct MMDS replacements.
+---
 
-| Component | Path | Instances | File Paths |
-|-----------|------|-----------|------------|
-| TextField | component-library/text-field | 34 | pages/forms.js |
+### **Dashboard**
+
+Location:
+- Source: `dashboard/src/*`
+- Data input: `dashboard/public/metrics/*`
+
+Run locally:
+
+```bash
+cp metrics/*.json dashboard/public/metrics/
+cd dashboard
+npm ci
+npm run dev
+```
+
+Production build:
+
+```bash
+cd dashboard
+npm run build
+```
+
+---
+
+### **Slack Report**
+
+Generate:
+
+```bash
+yarn slack-report
+yarn slack-report --output metrics/slack-report-YYYY-MM-DD.md
+```
+
+The script reads the latest files via `metrics/index.json` and related `*-summary.json` data.
+
+---
+
+### **Data Outputs**
+
+Generated in `metrics/`:
+
+- `extension-component-metrics-YYYY-MM-DD.xlsx`
+- `mobile-component-metrics-YYYY-MM-DD.xlsx`
+- `extension-component-metrics-YYYY-MM-DD-summary.json`
+- `mobile-component-metrics-YYYY-MM-DD-summary.json`
+- `extension-component-metrics-YYYY-MM-DD-data.json`
+- `mobile-component-metrics-YYYY-MM-DD-data.json`
+- `timeline.json`
+- `index.json`
+- `slack-report-YYYY-MM-DD.md`
+
+Notes:
+- `index.js` is the canonical generator for XLSX + summary/data JSON.
+- `scripts/xlsx-to-json.js` is retained mainly for repair/backfill workflows.
 
 ---
 
 ### **Configuration**
 
-The tool uses a `config.json` file to define projects and their component mappings.
+The tool uses `config.json` project entries with:
+- `filePattern`, `ignoreFolders`, `outputFile`
+- `currentPackages`, `currentComponents`
+- `deprecatedComponents` mappings:
+  - `paths`: import paths to match
+  - `replacement`: MMDS target or `null`
 
-#### **Automated Config Generation**
+Keep config in sync with codebases:
 
-The repository includes an automated workflow to keep `config.json` synchronized with the latest component deprecations from the MetaMask codebases.
-
-**Setup:**
-
-1. **Initialize git submodules** (first time only):
-   ```bash
-   yarn setup-repos
-   ```
-   This clones Extension, Mobile, and Design System repos as submodules in `repos/`.
-
-2. **Sync config with latest deprecations**:
-   ```bash
-   yarn sync-config
-   ```
-   This will:
-   - Update git submodules to latest
-   - Scan Extension and Mobile for `@deprecated` components
-   - Fetch MMDS component lists
-   - Auto-map deprecated → MMDS replacements
-   - Update `config.json` with discovered components
-
-**Options:**
-
-- **Dry run** (see what would change without writing):
-  ```bash
-  yarn sync-config:dry-run
-  ```
-
-- **Skip submodule update** (faster for development):
-  ```bash
-  yarn sync-config:skip-update
-  ```
-
-- **Manual submodule update**:
-  ```bash
-  yarn update-repos
-  ```
-
-**How it works:**
-
-1. **Scanner** (`scripts/lib/scanner.js`): Uses Babel AST parsing to find all `@deprecated` JSDoc comments in:
-   - Extension: `ui/components/**/*`
-   - Mobile: `app/components/**/*`, `app/component-library/**/*`
-
-2. **MMDS Fetcher** (`scripts/lib/mmds-fetcher.js`): Parses the Design System index.ts files to get available MMDS components
-
-3. **Component Mapper** (`scripts/lib/component-mapper.js`): Maps deprecated → MMDS using:
-   - Manual mapping table (special cases like `ButtonPrimary` → `Button`)
-   - Explicit hints from `@deprecated` messages
-   - Exact name matching
-   - Returns `null` if no replacement exists
-
-4. **Config Merger** (`scripts/lib/config-merger.js`): Merges discovered components with existing config:
-   - Auto-generated entries (`_autoGenerated: true`) are refreshed from code
-   - Manual overrides (`_autoGenerated: false`) are preserved
-   - Generates a summary report of changes
-
-**Preserving Manual Overrides:**
-
-If you need to manually override a mapping, set `_autoGenerated: false`:
-
-```json
-{
-  "SiteOrigin": {
-    "paths": ["ui/components/ui/site-origin"],
-    "replacement": {
-      "component": "AvatarFavicon",
-      "package": "@metamask/design-system-react"
-    },
-    "_autoGenerated": false
-  }
-}
+```bash
+yarn sync-config
+yarn sync-config:dry-run
+yarn sync-config:skip-update
 ```
 
-This entry will never be modified by the sync script.
+Manual overrides are preserved when `_autoGenerated: false` is set on a component entry.
 
-See `PLAN.md` for full architecture documentation.
+---
 
-#### **Config Structure**
+### **NPM Package and CLI (Secondary)**
 
-```json
-{
-  "projects": {
-    "extension": {
-      "rootFolder": "ui",
-      "ignoreFolders": ["ui/components/component-library"],
-      "filePattern": "ui/**/*.{js,tsx}",
-      "outputFile": "extension-component-metrics.xlsx",
-      "currentPackages": ["@metamask/design-system-react"],
-      "deprecatedComponents": {
-        "Button": {
-          "paths": [
-            "ui/components/ui/button",
-            "ui/components/component-library/button"
-          ],
-          "replacement": {
-            "component": "Button",
-            "package": "@metamask/design-system-react"
-          }
-        },
-        "Popover": {
-          "paths": ["ui/components/ui/popover"],
-          "replacement": {
-            "component": "Modal",
-            "package": "component-library",
-            "path": "ui/components/component-library/modal"
-          }
-        },
-        "TextField": {
-          "paths": ["ui/components/component-library/text-field"],
-          "replacement": null
-        }
-      },
-      "currentComponents": [
-        "Button",
-        "Icon",
-        "Text",
-        "Box"
-      ]
-    }
-  }
-}
+The npm package remains published and usable for direct CLI audits, but this is no longer the primary operating mode of the repo.
+
+Install/run with npx:
+
+```bash
+npx @georgewrmarshall/design-system-metrics --project extension
+npx @georgewrmarshall/design-system-metrics --project mobile
 ```
 
-#### **Config Fields**
+CLI options:
+- `--project` (required): `extension` or `mobile`
+- `--config` (optional): path to custom config file
 
-**Project Level:**
-- `rootFolder`: Root directory to scan
-- `ignoreFolders`: Directories to exclude (e.g., the component-library source itself)
-- `filePattern`: Glob pattern for files to scan
-- `outputFile`: Name of the generated XLSX file
-- `currentPackages`: NPM packages to track as "current" (MMDS packages)
-- `currentComponents`: List of components available in MMDS packages
+Example:
 
-**Deprecated Components:**
-- `paths`: Array of import paths to match (can be multiple old implementations)
-- `replacement`: Object describing the migration target
-  - For MMDS migrations: `{ component: "Button", package: "@metamask/design-system-react" }`
-  - For intermediate migrations: `{ component: "Modal", package: "component-library", path: "..." }`
-  - For no replacement: `null`
-
-#### **Path Matching**
-
-The tool matches import paths flexibly:
-- Exact matches: `ui/components/component-library/button`
-- Relative imports: `../../components/component-library/button`
-- Partial matches: Any path containing `/component-library`
-- Package imports: `react-native-vector-icons/Ionicons`
+```bash
+npx @georgewrmarshall/design-system-metrics --project extension --config ./config.json
+```
 
 ---
 
 ### **Requirements**
 
-- The tool **only counts components that are imported** from tracked sources
-- Components **inside JSDoc comments** are not counted as usage
-- **Test files** are automatically excluded (`*.test.{js,tsx}`)
-- **Node.js** v14 or higher is required
-
----
-
-### **Migration Strategy**
-
-The tool helps you plan your migration strategy by identifying:
-
-1. **High-impact components**: Components with the most usage that should be migrated first
-2. **Multiple old versions**: Components with usage spread across really old and old implementations
-3. **Intermediate steps**: Components that need to go through component-library first
-4. **Custom work needed**: Components without direct MMDS replacements
-
-Use the Path-Level Detail sheet to prioritize which old implementation to migrate first (usually the most-used one).
-
----
-
-### **Automated Weekly Reports**
-
-The repository includes a GitHub Actions workflow that automatically generates weekly metrics reports every Friday.
-
-**What it does:**
-
-1. **Updates git submodules** to latest versions (Extension, Mobile, MMDS)
-2. **Syncs config.json** with latest component deprecations
-3. **Generates metrics spreadsheets** for both Extension and Mobile
-4. **Creates Slack report** with migration progress summary
-5. **Opens a Pull Request** with all updated files
-
-**Manual trigger:**
-
-You can also trigger the workflow manually:
-
-```bash
-# From GitHub UI: Actions → Weekly Design System Metrics → Run workflow
-```
-
-**Output files:**
-
-- `metrics/extension-component-metrics-YYYY-MM-DD.xlsx`
-- `metrics/mobile-component-metrics-YYYY-MM-DD.xlsx`
-- `slack-report.md` - Weekly update formatted for Slack
-
-**Generate Slack report locally:**
-
-```bash
-yarn slack-report                    # Output to console
-yarn slack-report --output report.md # Save to file
-```
-
-The Slack report includes:
-- Total MMDS components available (with GitHub links)
-- Migration progress percentages
-- Links to detailed spreadsheets
-- Comparison with migration targets from Jira epics
-
----
-
-### **Future Feature Ideas**
-
-We're exploring additional features to enhance design system adoption tracking:
-
-#### **Props Audit**
-- Track the most commonly used props for each component
-- Identify prop usage patterns across the codebase
-- Help inform API design decisions for design system components
-- Surface which props are heavily used vs rarely used
-
-#### **Team Adoption Metrics**
-- Use CODEOWNERS files to map component usage to teams
-- Generate team-level adoption reports showing:
-  - Which teams have the highest design system adoption
-  - Which teams still have the most deprecated component usage
-  - Per-team migration progress tracking
-- Help identify teams that may need additional migration support
-
-Want to contribute or suggest other features? Open an issue on GitHub!
+- Node.js 20+ recommended (CI uses Node 20)
+- Yarn 4.x for root scripts
+- npm for dashboard scripts (`dashboard/package.json`)
 
 ---
 
 ### **Contributing**
 
-If you wish to contribute to the tool, ensure you are running the latest version of **Yarn (v4.x)** and **Node.js**. You can make adjustments to the `config.json` file or update the CLI logic for tracking additional components or repositories.
+If you change generation logic or data contracts:
+1. Regenerate outputs (`yarn start`, `yarn start:mobile`)
+2. Rebuild timeline/index (`yarn update-timeline`)
+3. Validate consistency (`yarn validate-metrics`)
+4. Rebuild dashboard (`cd dashboard && npm run build`)
 
 ---
 
