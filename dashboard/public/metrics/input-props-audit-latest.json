@@ -1,0 +1,394 @@
+{
+  "component": "Input",
+  "generatedAt": "2026-03-04T22:27:34.422Z",
+  "projects": {
+    "mobile": {
+      "filesScanned": 5390,
+      "targetComponent": "Input",
+      "mmds": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "deprecated": {
+        "totalInstances": 4,
+        "filesCount": 4,
+        "props": {
+          "testID": {
+            "count": 4,
+            "values": {
+              "{`snap-ui-renderer__date-time-picker--${type}-input`}": 1,
+              "\"input-stepper-input\"": 1,
+              "{`${testID}-input`}": 1,
+              "{AddNewAccountIds.NAME_INPUT}": 1
+            }
+          },
+          "value": {
+            "count": 4,
+            "values": {
+              "{displayedAmount}": 2,
+              "{formatDateForDisplay(value, type)}": 1,
+              "{accountName}": 1
+            }
+          },
+          "placeholder": {
+            "count": 4,
+            "values": {
+              "{placeholder}": 2,
+              "\"0\"": 1,
+              "{accountName}": 1
+            }
+          },
+          "style": {
+            "count": 3,
+            "values": {
+              "{styles.input}": 2,
+              "{styles.accountInput}": 1
+            }
+          },
+          "showSoftInputOnFocus": {
+            "count": 2,
+            "values": {
+              "false": 2
+            }
+          },
+          "caretHidden": {
+            "count": 2,
+            "values": {
+              "false": 2
+            }
+          },
+          "autoFocus": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "isStateStylesDisabled": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "readOnly": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "pointerEvents": {
+            "count": 1,
+            "values": {
+              "\"none\"": 1
+            }
+          },
+          "ref": {
+            "count": 1,
+            "values": {
+              "{inputRef}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 1,
+            "values": {
+              "false": 1
+            }
+          },
+          "isReadonly": {
+            "count": 1,
+            "values": {
+              "{tokenType === TokenInputAreaType.Destination}": 1
+            }
+          },
+          "onPressIn": {
+            "count": 1,
+            "values": {
+              "{() => { onInputPress?.(); }}": 1
+            }
+          },
+          "onFocus": {
+            "count": 1,
+            "values": {
+              "{() => { onFocus?.(); onInputPress?.(); }}": 1
+            }
+          },
+          "onBlur": {
+            "count": 1,
+            "values": {
+              "{() => { onBlur?.(); }}": 1
+            }
+          },
+          "selection": {
+            "count": 1,
+            "values": {
+              "{tokenType === TokenInputAreaType.Destination ? { start: 0, end: 0 } : undefined}": 1
+            }
+          },
+          "textVariant": {
+            "count": 1,
+            "values": {
+              "{TextVariant.BodyMDMedium}": 1
+            }
+          },
+          "onChangeText": {
+            "count": 1,
+            "values": {
+              "{(newName: string) => { setAccountName(newName); }}": 1
+            }
+          },
+          "placeholderTextColor": {
+            "count": 1,
+            "values": {
+              "{colors.text.default}": 1
+            }
+          },
+          "onSubmitEditing": {
+            "count": 1,
+            "values": {
+              "{onSubmit}": 1
+            }
+          }
+        }
+      },
+      "overall": {
+        "totalInstances": 4,
+        "filesCount": 4,
+        "props": {
+          "testID": {
+            "count": 4,
+            "values": {
+              "{`snap-ui-renderer__date-time-picker--${type}-input`}": 1,
+              "\"input-stepper-input\"": 1,
+              "{`${testID}-input`}": 1,
+              "{AddNewAccountIds.NAME_INPUT}": 1
+            }
+          },
+          "value": {
+            "count": 4,
+            "values": {
+              "{displayedAmount}": 2,
+              "{formatDateForDisplay(value, type)}": 1,
+              "{accountName}": 1
+            }
+          },
+          "placeholder": {
+            "count": 4,
+            "values": {
+              "{placeholder}": 2,
+              "\"0\"": 1,
+              "{accountName}": 1
+            }
+          },
+          "style": {
+            "count": 3,
+            "values": {
+              "{styles.input}": 2,
+              "{styles.accountInput}": 1
+            }
+          },
+          "showSoftInputOnFocus": {
+            "count": 2,
+            "values": {
+              "false": 2
+            }
+          },
+          "caretHidden": {
+            "count": 2,
+            "values": {
+              "false": 2
+            }
+          },
+          "autoFocus": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "isStateStylesDisabled": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "readOnly": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "pointerEvents": {
+            "count": 1,
+            "values": {
+              "\"none\"": 1
+            }
+          },
+          "ref": {
+            "count": 1,
+            "values": {
+              "{inputRef}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 1,
+            "values": {
+              "false": 1
+            }
+          },
+          "isReadonly": {
+            "count": 1,
+            "values": {
+              "{tokenType === TokenInputAreaType.Destination}": 1
+            }
+          },
+          "onPressIn": {
+            "count": 1,
+            "values": {
+              "{() => { onInputPress?.(); }}": 1
+            }
+          },
+          "onFocus": {
+            "count": 1,
+            "values": {
+              "{() => { onFocus?.(); onInputPress?.(); }}": 1
+            }
+          },
+          "onBlur": {
+            "count": 1,
+            "values": {
+              "{() => { onBlur?.(); }}": 1
+            }
+          },
+          "selection": {
+            "count": 1,
+            "values": {
+              "{tokenType === TokenInputAreaType.Destination ? { start: 0, end: 0 } : undefined}": 1
+            }
+          },
+          "textVariant": {
+            "count": 1,
+            "values": {
+              "{TextVariant.BodyMDMedium}": 1
+            }
+          },
+          "onChangeText": {
+            "count": 1,
+            "values": {
+              "{(newName: string) => { setAccountName(newName); }}": 1
+            }
+          },
+          "placeholderTextColor": {
+            "count": 1,
+            "values": {
+              "{colors.text.default}": 1
+            }
+          },
+          "onSubmitEditing": {
+            "count": 1,
+            "values": {
+              "{onSubmit}": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {
+        "Input": 4
+      }
+    },
+    "extension": {
+      "filesScanned": 2980,
+      "targetComponent": "Input",
+      "mmds": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "deprecated": {
+        "totalInstances": 1,
+        "filesCount": 1,
+        "props": {
+          "className": {
+            "count": 1,
+            "values": {
+              "\"dropdown-editor__item-placeholder\"": 1
+            }
+          },
+          "placeholder": {
+            "count": 1,
+            "values": {
+              "{placeholder}": 1
+            }
+          },
+          "readOnly": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "tabIndex": {
+            "count": 1,
+            "values": {
+              "{-1}": 1
+            }
+          },
+          "paddingTop": {
+            "count": 1,
+            "values": {
+              "3": 1
+            }
+          },
+          "paddingBottom": {
+            "count": 1,
+            "values": {
+              "3": 1
+            }
+          }
+        }
+      },
+      "overall": {
+        "totalInstances": 1,
+        "filesCount": 1,
+        "props": {
+          "className": {
+            "count": 1,
+            "values": {
+              "\"dropdown-editor__item-placeholder\"": 1
+            }
+          },
+          "placeholder": {
+            "count": 1,
+            "values": {
+              "{placeholder}": 1
+            }
+          },
+          "readOnly": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "tabIndex": {
+            "count": 1,
+            "values": {
+              "{-1}": 1
+            }
+          },
+          "paddingTop": {
+            "count": 1,
+            "values": {
+              "3": 1
+            }
+          },
+          "paddingBottom": {
+            "count": 1,
+            "values": {
+              "3": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {
+        "Input": 1
+      }
+    }
+  }
+}

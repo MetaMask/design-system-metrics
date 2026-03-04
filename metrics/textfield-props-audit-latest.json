@@ -1,0 +1,1098 @@
+{
+  "component": "TextField",
+  "generatedAt": "2026-03-04T22:29:21.041Z",
+  "projects": {
+    "mobile": {
+      "filesScanned": 5390,
+      "targetComponent": "TextField",
+      "mmds": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "deprecated": {
+        "totalInstances": 58,
+        "filesCount": 36,
+        "props": {
+          "value": {
+            "count": 55,
+            "values": {
+              "{password}": 8,
+              "{email}": 5,
+              "{confirmCode}": 3,
+              "{confirmPassword}": 3,
+              "{value}": 2,
+              "{formatDateForDisplay(value, type)}": 2,
+              "{displayedAmount}": 2,
+              "{inputValue}": 2,
+              "{accountName}": 2,
+              "{blockExplorerUrlForm}": 2,
+              "{rpcNameForm}": 2,
+              "{firstName}": 1,
+              "{lastName}": 1,
+              "{SSN}": 1,
+              "{addressLine1}": 1,
+              "{addressLine2}": 1,
+              "{city}": 1,
+              "{zipCode}": 1,
+              "{phoneNumber}": 1,
+              "{label}": 1,
+              "{activationKey}": 1,
+              "{telegram}": 1,
+              "{referralCode}": 1,
+              "{hasReferredByCode ? (referredByCode ?? '') : inputCode}": 1,
+              "{bonusCode}": 1,
+              "{nickname}": 1,
+              "{chainId}": 1,
+              "{ticker}": 1,
+              "{failoverRpcUrls[0]}": 1,
+              "{this.state.password}": 1,
+              "{to}": 1,
+              "{address}": 1,
+              "{name}": 1
+            }
+          },
+          "onChangeText": {
+            "count": 50,
+            "values": {
+              "{handlePasswordChange}": 4,
+              "{handleEmailChange}": 3,
+              "{handleTextChange}": 3,
+              "{onPasswordChange}": 3,
+              "{handleChange}": 2,
+              "{onBlockExplorerUrlChange}": 2,
+              "{onRpcNameAdd}": 2,
+              "{this.onPasswordChange}": 2,
+              "{handleOtpValueChange}": 1,
+              "{onInputChange}": 1,
+              "{handleConfirmCodeChange}": 1,
+              "{handleValueChange}": 1,
+              "{setFirstName}": 1,
+              "{setLastName}": 1,
+              "{handleSSNChange}": 1,
+              "{handleAddressLine1Change}": 1,
+              "{handleAddressLine2Change}": 1,
+              "{handleCityChange}": 1,
+              "{handleZipCodeChange}": 1,
+              "{handlePhoneNumberChange}": 1,
+              "{setLabel}": 1,
+              "{setActivationKey}": 1,
+              "{setTelegram}": 1,
+              "{handleReferralCodeChange}": 1,
+              "{hasReferredByCode ? undefined : handleInputChange}": 1,
+              "{setInputValue}": 1,
+              "{(text: string) => { clearApplyBonusCodeError(); setBonusCode(text); }}": 1,
+              "{(newName: string) => { setAccountName(newName); }}": 1,
+              "{setConfirmPasswordValue}": 1,
+              "{onChangeName}": 1,
+              "{onPasswordConfirmChange}": 1,
+              "{onNicknameChange}": 1,
+              "{onChainIDChange}": 1,
+              "{onTickerChange}": 1,
+              "{this.setConfirmPassword}": 1,
+              "{setAddress}": 1,
+              "{setName}": 1
+            }
+          },
+          "testID": {
+            "count": 49,
+            "values": {
+              "{ChoosePasswordSelectorsIDs.NEW_PASSWORD_INPUT_ID}": 4,
+              "{ChoosePasswordSelectorsIDs.CONFIRM_PASSWORD_INPUT_ID}": 3,
+              "{`${testID}-input`}": 2,
+              "{LoginViewSelectors.PASSWORD_INPUT}": 2,
+              "{NetworkDetailsViewSelectorsIDs.BLOCK_EXPLORER_INPUT}": 2,
+              "{NetworkDetailsViewSelectorsIDs.RPC_NAME_INPUT}": 2,
+              "{`${name}-snap-address-input`}": 1,
+              "{`snap-ui-renderer__date-time-picker--${type}`}": 1,
+              "{`snap-ui-renderer__date-time-picker--${type}-input`}": 1,
+              "{testID ?? `${name}-snap-ui-input`}": 1,
+              "\"input-stepper-input\"": 1,
+              "\"otp-code-field\"": 1,
+              "\"email-field\"": 1,
+              "\"password-field\"": 1,
+              "\"confirm-email-code-field\"": 1,
+              "\"confirm-phone-number-code-field\"": 1,
+              "\"personal-details-first-name-input\"": 1,
+              "\"personal-details-last-name-input\"": 1,
+              "\"personal-details-ssn-input\"": 1,
+              "\"address-line-1-input\"": 1,
+              "\"address-line-2-input\"": 1,
+              "\"city-input\"": 1,
+              "\"zip-code-input\"": 1,
+              "\"set-phone-number-phone-number-input\"": 1,
+              "\"signup-email-input\"": 1,
+              "\"signup-password-input\"": 1,
+              "{REWARDS_VIEW_SELECTORS.CLAIM_MODAL_EMAIL_INPUT}": 1,
+              "{REWARDS_VIEW_SELECTORS.CLAIM_MODAL_TELEGRAM_INPUT}": 1,
+              "\"referred-by-code-input\"": 1,
+              "\"bonus-code-input\"": 1,
+              "{AddNewAccountIds.NAME_INPUT}": 1,
+              "{EditAccountNameSelectorIDs.ACCOUNT_NAME_INPUT}": 1,
+              "\"input\"": 1,
+              "{ManualBackUpStepsSelectorsIDs.CONFIRM_PASSWORD_INPUT}": 1,
+              "{NetworkDetailsViewSelectorsIDs.NETWORK_NAME_INPUT}": 1,
+              "{NetworkDetailsViewSelectorsIDs.CHAIN_INPUT}": 1,
+              "{NetworkDetailsViewSelectorsIDs.NETWORKS_SYMBOL_INPUT}": 1,
+              "\"recipient-address-input\"": 1,
+              "\"pet-name-address-input\"": 1,
+              "\"pet-name-name-input\"": 1
+            }
+          },
+          "autoCapitalize": {
+            "count": 45,
+            "values": {
+              "\"none\"": 25,
+              "none": 17,
+              "\"characters\"": 3
+            }
+          },
+          "placeholder": {
+            "count": 32,
+            "values": {
+              "{placeholder}": 3,
+              "\"0\"": 2,
+              "{strings('deposit.enter_email.input_placeholder')}": 2,
+              "{strings('login.password_placeholder')}": 2,
+              "{strings( 'app_settings.network_block_explorer_placeholder', )}": 2,
+              "{strings('app_settings.network_rpc_placeholder')}": 2,
+              "{strings('app_settings.fiat_on_ramp.add_label')}": 1,
+              "{strings( 'app_settings.fiat_on_ramp.paste_or_type_activation_key', )}": 1,
+              "{strings('rewards.metal_card_claim.telegram_placeholder')}": 1,
+              "{strings( 'rewards.onboarding.step4_referral_input_placeholder', )}": 1,
+              "{strings('rewards.referred_by_code.input_placeholder')}": 1,
+              "{inputPlaceholder}": 1,
+              "{strings('rewards.bonus_code.input_placeholder')}": 1,
+              "{accountName}": 1,
+              "{formatAddress(selectedAccount?.address, 'mid')}": 1,
+              "{strings('manual_backup_step_1.password')}": 1,
+              "{strings('app_settings.network_name_placeholder')}": 1,
+              "{strings('app_settings.network_chain_id_placeholder')}": 1,
+              "{strings('app_settings.network_symbol_label')}": 1,
+              "Password": 1,
+              "{strings( 'reset_password.new_password_placeholder', )}": 1,
+              "{strings( 'reset_password.confirm_password_placeholder', )}": 1,
+              "{strings('send.enter_address_to_send_to')}": 1,
+              "{strings('sample_feature.pet_name.address_placeholder')}": 1,
+              "{strings('sample_feature.pet_name.name_placeholder')}": 1
+            }
+          },
+          "autoComplete": {
+            "count": 25,
+            "values": {
+              "\"one-time-code\"": 13,
+              "\"new-password\"": 6,
+              "{autoComplete}": 2,
+              "\"email\"": 2,
+              "\"current-password\"": 1,
+              "\"off\"": 1
+            }
+          },
+          "isError": {
+            "count": 21,
+            "values": {
+              "{!!error}": 3,
+              "{verifyIsError}": 2,
+              "{isPasswordTooShort}": 2,
+              "{isSSNTouched && isSSNError}": 1,
+              "{debouncedEmail.length > 0 && isEmailError}": 1,
+              "{debouncedPassword.length > 0 && isPasswordError}": 1,
+              "{emailValidationError}": 1,
+              "{referralCode.length >= 6 && !referralCodeIsValid && !isValidatingReferralCode...}": 1,
+              "{showClientValidationError || Boolean(applyReferralCodeError)}": 1,
+              "{showValidationError || Boolean(applyBonusCodeError)}": 1,
+              "{checkError()}": 1,
+              "{isError}": 1,
+              "{hasInvalidUrl}": 1,
+              "{!!warningName}": 1,
+              "{!!warningChainId}": 1,
+              "{!!warningSymbol}": 1,
+              "{this.isPasswordTooShort()}": 1
+            }
+          },
+          "onSubmitEditing": {
+            "count": 21,
+            "values": {
+              "{handleSubmit}": 4,
+              "{jumpToConfirmPassword}": 2,
+              "{jumpToChainId}": 2,
+              "{() => performLogin()}": 1,
+              "{handleContinue}": 1,
+              "{onSubmit}": 1,
+              "{Keyboard.dismiss}": 1,
+              "{unlockWithPassword}": 1,
+              "{tryUnlock}": 1,
+              "{handleFormSubmit}": 1,
+              "{jumpToRpcURL}": 1,
+              "{jumpToSymbol}": 1,
+              "{jumpBlockExplorerURL}": 1,
+              "{handleLogin}": 1,
+              "{this.reauthenticateWithPassword}": 1,
+              "{this.jumpToConfirmPassword}": 1
+            }
+          },
+          "keyboardAppearance": {
+            "count": 20,
+            "values": {
+              "{themeAppearance}": 14,
+              "{theme.themeAppearance}": 3,
+              "{themeAppearance || 'light'}": 2,
+              "{themeAppearance || undefined}": 1
+            }
+          },
+          "ref": {
+            "count": 19,
+            "values": {
+              "{inputRef}": 5,
+              "{emailInputRef}": 2,
+              "{fieldRef}": 2,
+              "{inputBlockExplorerURL}": 2,
+              "{inputNameRpcURL}": 2,
+              "{ref}": 1,
+              "{confirmPasswordInputRef}": 1,
+              "{confirmPasswordInput}": 1,
+              "{inputChainId}": 1,
+              "{inputSymbol}": 1,
+              "{this.confirmPasswordInput}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 19,
+            "values": {
+              "{disabled}": 3,
+              "{isLoading}": 2,
+              "{isClaimingReward}": 2,
+              "{password === ''}": 2,
+              "true (shorthand)": 2,
+              "{isAnyModalVisible}": 2,
+              "false": 1,
+              "{optinLoading}": 1,
+              "{hasReferredByCode}": 1,
+              "{loading}": 1,
+              "{isAnyModalVisible || !addMode}": 1,
+              "{disabledInput}": 1
+            }
+          },
+          "keyboardType": {
+            "count": 19,
+            "values": {
+              "\"default\"": 6,
+              "\"email-address\"": 5,
+              "\"number-pad\"": 4,
+              "{keyboardType}": 1,
+              "\"decimal-pad\"": 1,
+              "\"phone-pad\"": 1,
+              "\"numbers-and-punctuation\"": 1
+            }
+          },
+          "numberOfLines": {
+            "count": 17,
+            "values": {
+              "1": 17
+            }
+          },
+          "maxLength": {
+            "count": 17,
+            "values": {
+              "9": 1,
+              "255": 11,
+              "{CODE_LENGTH}": 3,
+              "{REFERRAL_CODE_LENGTH}": 1,
+              "{BONUS_CODE_MAX_LENGTH}": 1
+            }
+          },
+          "accessibilityLabel": {
+            "count": 16,
+            "values": {
+              "{strings( 'card.card_otp_authentication.confirm_code_label', )}": 1,
+              "{strings( 'card.card_authentication.email_label', )}": 1,
+              "{strings( 'card.card_authentication.password_label', )}": 1,
+              "{strings( 'card.card_onboarding.confirm_email.code_label', )}": 1,
+              "{strings( 'card.card_onboarding.confirm_phone_number.confirm_code_label', )}": 1,
+              "{strings( 'card.card_onboarding.personal_details.first_name_label', )}": 1,
+              "{strings( 'card.card_onboarding.personal_details.last_name_label', )}": 1,
+              "{strings( 'card.card_onboarding.personal_details.ssn_label', )}": 1,
+              "{strings( 'card.card_onboarding.physical_address.address_line_1_label', )}": 1,
+              "{strings( 'card.card_onboarding.physical_address.address_line_2_label', )}": 1,
+              "{strings( 'card.card_onboarding.physical_address.city_label', )}": 1,
+              "{strings( 'card.card_onboarding.physical_address.zip_code_label', )}": 1,
+              "{strings( 'card.card_onboarding.set_phone_number.phone_number_label', )}": 1,
+              "{strings( 'card.card_onboarding.sign_up.email_label', )}": 1,
+              "{strings( 'card.card_onboarding.sign_up.password_label', )}": 1,
+              "{ChoosePasswordSelectorsIDs.CONFIRM_PASSWORD_INPUT_ID}": 1
+            }
+          },
+          "returnKeyType": {
+            "count": 16,
+            "values": {
+              "done": 9,
+              "next": 3,
+              "\"done\"": 2,
+              "\"next\"": 2
+            }
+          },
+          "endAccessory": {
+            "count": 14,
+            "values": {
+              "{<TouchableOpacity onPress={() => setIsPasswordVisible(!isPasswordVisible)} te...}": 2,
+              "{renderIcon()}": 2,
+              "{value ? ( <ButtonIcon onPress={handleClear} iconName={IconName.Close} size={B...}": 1,
+              "{renderInputIcon()}": 1,
+              "{<TouchableOpacity onPress={() => toggleShowPassword(0)}> <Icon name={ showPas...}": 1,
+              "{<TouchableOpacity onPress={() => toggleShowPassword(1)}> <Icon name={ showPas...}": 1,
+              "{<Icon name={ showPasswordIndex.includes(0) ? IconName.Eye : IconName.EyeSlash...}": 1,
+              "{<Icon name={ showPasswordIndex.includes(1) ? IconName.Eye : IconName.EyeSlash...}": 1,
+              "{capabilities ? ( <DeviceAuthenticationButton disabled={loading} onPress={unlo...}": 1,
+              "{<Icon name={ this.state.showPasswordIndex.includes(0) ? IconName.Eye : IconNa...}": 1,
+              "{<Icon name={ this.state.showPasswordIndex.includes(1) ? IconName.Eye : IconNa...}": 1,
+              "{renderEndAccessory}": 1
+            }
+          },
+          "secureTextEntry": {
+            "count": 13,
+            "values": {
+              "true (shorthand)": 5,
+              "{!isPasswordVisible}": 2,
+              "{showPasswordIndex.includes(0)}": 2,
+              "{showPasswordIndex.includes(1)}": 2,
+              "{this.state.showPasswordIndex.includes(0)}": 1,
+              "{this.state.showPasswordIndex.includes(1)}": 1
+            }
+          },
+          "autoCorrect": {
+            "count": 12,
+            "values": {
+              "false": 12
+            }
+          },
+          "autoFocus": {
+            "count": 12,
+            "values": {
+              "true (shorthand)": 11,
+              "false": 1
+            }
+          },
+          "onBlur": {
+            "count": 11,
+            "values": {
+              "{handleBlur}": 3,
+              "{() => setIsPasswordFieldFocused(false)}": 2,
+              "{() => { onBlur?.(); }}": 1,
+              "{handleSSNBlur}": 1,
+              "{handleNameBlur}": 1,
+              "{handleChainIdBlur}": 1,
+              "{handleSymbolBlur}": 1,
+              "{this.handlePasswordBlur}": 1
+            }
+          },
+          "onFocus": {
+            "count": 10,
+            "values": {
+              "{handleFocus}": 3,
+              "{() => setIsPasswordFieldFocused(true)}": 2,
+              "{() => { onFocus?.(); onInputPress?.(); }}": 1,
+              "{onNameFocused}": 1,
+              "{onChainIdFocused}": 1,
+              "{onSymbolFocused}": 1,
+              "{this.handlePasswordFocus}": 1
+            }
+          },
+          "placeholderTextColor": {
+            "count": 8,
+            "values": {
+              "{placeholderTextColor}": 7,
+              "{colors.text.default}": 1
+            }
+          },
+          "style": {
+            "count": 7,
+            "values": {
+              "{{ maxHeight: 58, flexGrow: 1 }}": 2,
+              "{styles.input}": 2,
+              "{style}": 1,
+              "{tw.style('my-4')}": 1,
+              "{styles.accountInput}": 1
+            }
+          },
+          "[spread]": {
+            "count": 4,
+            "values": {
+              "{props}": 2,
+              "{textFieldProps}": 1,
+              "{restProps}": 1
+            }
+          },
+          "textAlignVertical": {
+            "count": 4,
+            "values": {
+              "\"center\"": 4
+            }
+          },
+          "id": {
+            "count": 3,
+            "values": {
+              "{name}": 3
+            }
+          },
+          "textAlign": {
+            "count": 3,
+            "values": {
+              "\"left\"": 3
+            }
+          },
+          "startAccessory": {
+            "count": 2,
+            "values": {
+              "{displayAvatar && value && isCaipAccountId(`${chainId}:${value}`) ? ( <SnapUIA...}": 1,
+              "{defaultStartAccessory}": 1
+            }
+          },
+          "readOnly": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "pointerEvents": {
+            "count": 2,
+            "values": {
+              "\"none\"": 2
+            }
+          },
+          "showSoftInputOnFocus": {
+            "count": 2,
+            "values": {
+              "false": 2
+            }
+          },
+          "caretHidden": {
+            "count": 2,
+            "values": {
+              "false": 2
+            }
+          },
+          "isReadonly": {
+            "count": 2,
+            "values": {
+              "{tokenType === TokenInputAreaType.Destination}": 1,
+              "{Boolean(key)}": 1
+            }
+          },
+          "textContentType": {
+            "count": 2,
+            "values": {
+              "\"oneTimeCode\"": 2
+            }
+          },
+          "spellCheck": {
+            "count": 2,
+            "values": {
+              "false": 2
+            }
+          },
+          "inputElement": {
+            "count": 1,
+            "values": {
+              "{<TouchableOpacity disabled={disabled} testID={`snap-ui-renderer__date-time-pi...}": 1
+            }
+          },
+          "isStateStylesDisabled": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "onPressIn": {
+            "count": 1,
+            "values": {
+              "{() => { onInputPress?.(); }}": 1
+            }
+          },
+          "selection": {
+            "count": 1,
+            "values": {
+              "{tokenType === TokenInputAreaType.Destination ? { start: 0, end: 0 } : undefined}": 1
+            }
+          },
+          "textVariant": {
+            "count": 1,
+            "values": {
+              "{TextVariant.BodyMDMedium}": 1
+            }
+          },
+          "submitBehavior": {
+            "count": 1,
+            "values": {
+              "\"submit\"": 1
+            }
+          },
+          "scrollEnabled": {
+            "count": 1,
+            "values": {
+              "false": 1
+            }
+          },
+          "textBreakStrategy": {
+            "count": 1,
+            "values": {
+              "\"simple\"": 1
+            }
+          }
+        }
+      },
+      "overall": {
+        "totalInstances": 58,
+        "filesCount": 36,
+        "props": {
+          "value": {
+            "count": 55,
+            "values": {
+              "{password}": 8,
+              "{email}": 5,
+              "{confirmCode}": 3,
+              "{confirmPassword}": 3,
+              "{value}": 2,
+              "{formatDateForDisplay(value, type)}": 2,
+              "{displayedAmount}": 2,
+              "{inputValue}": 2,
+              "{accountName}": 2,
+              "{blockExplorerUrlForm}": 2,
+              "{rpcNameForm}": 2,
+              "{firstName}": 1,
+              "{lastName}": 1,
+              "{SSN}": 1,
+              "{addressLine1}": 1,
+              "{addressLine2}": 1,
+              "{city}": 1,
+              "{zipCode}": 1,
+              "{phoneNumber}": 1,
+              "{label}": 1,
+              "{activationKey}": 1,
+              "{telegram}": 1,
+              "{referralCode}": 1,
+              "{hasReferredByCode ? (referredByCode ?? '') : inputCode}": 1,
+              "{bonusCode}": 1,
+              "{nickname}": 1,
+              "{chainId}": 1,
+              "{ticker}": 1,
+              "{failoverRpcUrls[0]}": 1,
+              "{this.state.password}": 1,
+              "{to}": 1,
+              "{address}": 1,
+              "{name}": 1
+            }
+          },
+          "onChangeText": {
+            "count": 50,
+            "values": {
+              "{handlePasswordChange}": 4,
+              "{handleEmailChange}": 3,
+              "{handleTextChange}": 3,
+              "{onPasswordChange}": 3,
+              "{handleChange}": 2,
+              "{onBlockExplorerUrlChange}": 2,
+              "{onRpcNameAdd}": 2,
+              "{this.onPasswordChange}": 2,
+              "{handleOtpValueChange}": 1,
+              "{onInputChange}": 1,
+              "{handleConfirmCodeChange}": 1,
+              "{handleValueChange}": 1,
+              "{setFirstName}": 1,
+              "{setLastName}": 1,
+              "{handleSSNChange}": 1,
+              "{handleAddressLine1Change}": 1,
+              "{handleAddressLine2Change}": 1,
+              "{handleCityChange}": 1,
+              "{handleZipCodeChange}": 1,
+              "{handlePhoneNumberChange}": 1,
+              "{setLabel}": 1,
+              "{setActivationKey}": 1,
+              "{setTelegram}": 1,
+              "{handleReferralCodeChange}": 1,
+              "{hasReferredByCode ? undefined : handleInputChange}": 1,
+              "{setInputValue}": 1,
+              "{(text: string) => { clearApplyBonusCodeError(); setBonusCode(text); }}": 1,
+              "{(newName: string) => { setAccountName(newName); }}": 1,
+              "{setConfirmPasswordValue}": 1,
+              "{onChangeName}": 1,
+              "{onPasswordConfirmChange}": 1,
+              "{onNicknameChange}": 1,
+              "{onChainIDChange}": 1,
+              "{onTickerChange}": 1,
+              "{this.setConfirmPassword}": 1,
+              "{setAddress}": 1,
+              "{setName}": 1
+            }
+          },
+          "testID": {
+            "count": 49,
+            "values": {
+              "{ChoosePasswordSelectorsIDs.NEW_PASSWORD_INPUT_ID}": 4,
+              "{ChoosePasswordSelectorsIDs.CONFIRM_PASSWORD_INPUT_ID}": 3,
+              "{`${testID}-input`}": 2,
+              "{LoginViewSelectors.PASSWORD_INPUT}": 2,
+              "{NetworkDetailsViewSelectorsIDs.BLOCK_EXPLORER_INPUT}": 2,
+              "{NetworkDetailsViewSelectorsIDs.RPC_NAME_INPUT}": 2,
+              "{`${name}-snap-address-input`}": 1,
+              "{`snap-ui-renderer__date-time-picker--${type}`}": 1,
+              "{`snap-ui-renderer__date-time-picker--${type}-input`}": 1,
+              "{testID ?? `${name}-snap-ui-input`}": 1,
+              "\"input-stepper-input\"": 1,
+              "\"otp-code-field\"": 1,
+              "\"email-field\"": 1,
+              "\"password-field\"": 1,
+              "\"confirm-email-code-field\"": 1,
+              "\"confirm-phone-number-code-field\"": 1,
+              "\"personal-details-first-name-input\"": 1,
+              "\"personal-details-last-name-input\"": 1,
+              "\"personal-details-ssn-input\"": 1,
+              "\"address-line-1-input\"": 1,
+              "\"address-line-2-input\"": 1,
+              "\"city-input\"": 1,
+              "\"zip-code-input\"": 1,
+              "\"set-phone-number-phone-number-input\"": 1,
+              "\"signup-email-input\"": 1,
+              "\"signup-password-input\"": 1,
+              "{REWARDS_VIEW_SELECTORS.CLAIM_MODAL_EMAIL_INPUT}": 1,
+              "{REWARDS_VIEW_SELECTORS.CLAIM_MODAL_TELEGRAM_INPUT}": 1,
+              "\"referred-by-code-input\"": 1,
+              "\"bonus-code-input\"": 1,
+              "{AddNewAccountIds.NAME_INPUT}": 1,
+              "{EditAccountNameSelectorIDs.ACCOUNT_NAME_INPUT}": 1,
+              "\"input\"": 1,
+              "{ManualBackUpStepsSelectorsIDs.CONFIRM_PASSWORD_INPUT}": 1,
+              "{NetworkDetailsViewSelectorsIDs.NETWORK_NAME_INPUT}": 1,
+              "{NetworkDetailsViewSelectorsIDs.CHAIN_INPUT}": 1,
+              "{NetworkDetailsViewSelectorsIDs.NETWORKS_SYMBOL_INPUT}": 1,
+              "\"recipient-address-input\"": 1,
+              "\"pet-name-address-input\"": 1,
+              "\"pet-name-name-input\"": 1
+            }
+          },
+          "autoCapitalize": {
+            "count": 45,
+            "values": {
+              "\"none\"": 25,
+              "none": 17,
+              "\"characters\"": 3
+            }
+          },
+          "placeholder": {
+            "count": 32,
+            "values": {
+              "{placeholder}": 3,
+              "\"0\"": 2,
+              "{strings('deposit.enter_email.input_placeholder')}": 2,
+              "{strings('login.password_placeholder')}": 2,
+              "{strings( 'app_settings.network_block_explorer_placeholder', )}": 2,
+              "{strings('app_settings.network_rpc_placeholder')}": 2,
+              "{strings('app_settings.fiat_on_ramp.add_label')}": 1,
+              "{strings( 'app_settings.fiat_on_ramp.paste_or_type_activation_key', )}": 1,
+              "{strings('rewards.metal_card_claim.telegram_placeholder')}": 1,
+              "{strings( 'rewards.onboarding.step4_referral_input_placeholder', )}": 1,
+              "{strings('rewards.referred_by_code.input_placeholder')}": 1,
+              "{inputPlaceholder}": 1,
+              "{strings('rewards.bonus_code.input_placeholder')}": 1,
+              "{accountName}": 1,
+              "{formatAddress(selectedAccount?.address, 'mid')}": 1,
+              "{strings('manual_backup_step_1.password')}": 1,
+              "{strings('app_settings.network_name_placeholder')}": 1,
+              "{strings('app_settings.network_chain_id_placeholder')}": 1,
+              "{strings('app_settings.network_symbol_label')}": 1,
+              "Password": 1,
+              "{strings( 'reset_password.new_password_placeholder', )}": 1,
+              "{strings( 'reset_password.confirm_password_placeholder', )}": 1,
+              "{strings('send.enter_address_to_send_to')}": 1,
+              "{strings('sample_feature.pet_name.address_placeholder')}": 1,
+              "{strings('sample_feature.pet_name.name_placeholder')}": 1
+            }
+          },
+          "autoComplete": {
+            "count": 25,
+            "values": {
+              "\"one-time-code\"": 13,
+              "\"new-password\"": 6,
+              "{autoComplete}": 2,
+              "\"email\"": 2,
+              "\"current-password\"": 1,
+              "\"off\"": 1
+            }
+          },
+          "isError": {
+            "count": 21,
+            "values": {
+              "{!!error}": 3,
+              "{verifyIsError}": 2,
+              "{isPasswordTooShort}": 2,
+              "{isSSNTouched && isSSNError}": 1,
+              "{debouncedEmail.length > 0 && isEmailError}": 1,
+              "{debouncedPassword.length > 0 && isPasswordError}": 1,
+              "{emailValidationError}": 1,
+              "{referralCode.length >= 6 && !referralCodeIsValid && !isValidatingReferralCode...}": 1,
+              "{showClientValidationError || Boolean(applyReferralCodeError)}": 1,
+              "{showValidationError || Boolean(applyBonusCodeError)}": 1,
+              "{checkError()}": 1,
+              "{isError}": 1,
+              "{hasInvalidUrl}": 1,
+              "{!!warningName}": 1,
+              "{!!warningChainId}": 1,
+              "{!!warningSymbol}": 1,
+              "{this.isPasswordTooShort()}": 1
+            }
+          },
+          "onSubmitEditing": {
+            "count": 21,
+            "values": {
+              "{handleSubmit}": 4,
+              "{jumpToConfirmPassword}": 2,
+              "{jumpToChainId}": 2,
+              "{() => performLogin()}": 1,
+              "{handleContinue}": 1,
+              "{onSubmit}": 1,
+              "{Keyboard.dismiss}": 1,
+              "{unlockWithPassword}": 1,
+              "{tryUnlock}": 1,
+              "{handleFormSubmit}": 1,
+              "{jumpToRpcURL}": 1,
+              "{jumpToSymbol}": 1,
+              "{jumpBlockExplorerURL}": 1,
+              "{handleLogin}": 1,
+              "{this.reauthenticateWithPassword}": 1,
+              "{this.jumpToConfirmPassword}": 1
+            }
+          },
+          "keyboardAppearance": {
+            "count": 20,
+            "values": {
+              "{themeAppearance}": 14,
+              "{theme.themeAppearance}": 3,
+              "{themeAppearance || 'light'}": 2,
+              "{themeAppearance || undefined}": 1
+            }
+          },
+          "ref": {
+            "count": 19,
+            "values": {
+              "{inputRef}": 5,
+              "{emailInputRef}": 2,
+              "{fieldRef}": 2,
+              "{inputBlockExplorerURL}": 2,
+              "{inputNameRpcURL}": 2,
+              "{ref}": 1,
+              "{confirmPasswordInputRef}": 1,
+              "{confirmPasswordInput}": 1,
+              "{inputChainId}": 1,
+              "{inputSymbol}": 1,
+              "{this.confirmPasswordInput}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 19,
+            "values": {
+              "{disabled}": 3,
+              "{isLoading}": 2,
+              "{isClaimingReward}": 2,
+              "{password === ''}": 2,
+              "true (shorthand)": 2,
+              "{isAnyModalVisible}": 2,
+              "false": 1,
+              "{optinLoading}": 1,
+              "{hasReferredByCode}": 1,
+              "{loading}": 1,
+              "{isAnyModalVisible || !addMode}": 1,
+              "{disabledInput}": 1
+            }
+          },
+          "keyboardType": {
+            "count": 19,
+            "values": {
+              "\"default\"": 6,
+              "\"email-address\"": 5,
+              "\"number-pad\"": 4,
+              "{keyboardType}": 1,
+              "\"decimal-pad\"": 1,
+              "\"phone-pad\"": 1,
+              "\"numbers-and-punctuation\"": 1
+            }
+          },
+          "numberOfLines": {
+            "count": 17,
+            "values": {
+              "1": 17
+            }
+          },
+          "maxLength": {
+            "count": 17,
+            "values": {
+              "9": 1,
+              "255": 11,
+              "{CODE_LENGTH}": 3,
+              "{REFERRAL_CODE_LENGTH}": 1,
+              "{BONUS_CODE_MAX_LENGTH}": 1
+            }
+          },
+          "accessibilityLabel": {
+            "count": 16,
+            "values": {
+              "{strings( 'card.card_otp_authentication.confirm_code_label', )}": 1,
+              "{strings( 'card.card_authentication.email_label', )}": 1,
+              "{strings( 'card.card_authentication.password_label', )}": 1,
+              "{strings( 'card.card_onboarding.confirm_email.code_label', )}": 1,
+              "{strings( 'card.card_onboarding.confirm_phone_number.confirm_code_label', )}": 1,
+              "{strings( 'card.card_onboarding.personal_details.first_name_label', )}": 1,
+              "{strings( 'card.card_onboarding.personal_details.last_name_label', )}": 1,
+              "{strings( 'card.card_onboarding.personal_details.ssn_label', )}": 1,
+              "{strings( 'card.card_onboarding.physical_address.address_line_1_label', )}": 1,
+              "{strings( 'card.card_onboarding.physical_address.address_line_2_label', )}": 1,
+              "{strings( 'card.card_onboarding.physical_address.city_label', )}": 1,
+              "{strings( 'card.card_onboarding.physical_address.zip_code_label', )}": 1,
+              "{strings( 'card.card_onboarding.set_phone_number.phone_number_label', )}": 1,
+              "{strings( 'card.card_onboarding.sign_up.email_label', )}": 1,
+              "{strings( 'card.card_onboarding.sign_up.password_label', )}": 1,
+              "{ChoosePasswordSelectorsIDs.CONFIRM_PASSWORD_INPUT_ID}": 1
+            }
+          },
+          "returnKeyType": {
+            "count": 16,
+            "values": {
+              "done": 9,
+              "next": 3,
+              "\"done\"": 2,
+              "\"next\"": 2
+            }
+          },
+          "endAccessory": {
+            "count": 14,
+            "values": {
+              "{<TouchableOpacity onPress={() => setIsPasswordVisible(!isPasswordVisible)} te...}": 2,
+              "{renderIcon()}": 2,
+              "{value ? ( <ButtonIcon onPress={handleClear} iconName={IconName.Close} size={B...}": 1,
+              "{renderInputIcon()}": 1,
+              "{<TouchableOpacity onPress={() => toggleShowPassword(0)}> <Icon name={ showPas...}": 1,
+              "{<TouchableOpacity onPress={() => toggleShowPassword(1)}> <Icon name={ showPas...}": 1,
+              "{<Icon name={ showPasswordIndex.includes(0) ? IconName.Eye : IconName.EyeSlash...}": 1,
+              "{<Icon name={ showPasswordIndex.includes(1) ? IconName.Eye : IconName.EyeSlash...}": 1,
+              "{capabilities ? ( <DeviceAuthenticationButton disabled={loading} onPress={unlo...}": 1,
+              "{<Icon name={ this.state.showPasswordIndex.includes(0) ? IconName.Eye : IconNa...}": 1,
+              "{<Icon name={ this.state.showPasswordIndex.includes(1) ? IconName.Eye : IconNa...}": 1,
+              "{renderEndAccessory}": 1
+            }
+          },
+          "secureTextEntry": {
+            "count": 13,
+            "values": {
+              "true (shorthand)": 5,
+              "{!isPasswordVisible}": 2,
+              "{showPasswordIndex.includes(0)}": 2,
+              "{showPasswordIndex.includes(1)}": 2,
+              "{this.state.showPasswordIndex.includes(0)}": 1,
+              "{this.state.showPasswordIndex.includes(1)}": 1
+            }
+          },
+          "autoCorrect": {
+            "count": 12,
+            "values": {
+              "false": 12
+            }
+          },
+          "autoFocus": {
+            "count": 12,
+            "values": {
+              "true (shorthand)": 11,
+              "false": 1
+            }
+          },
+          "onBlur": {
+            "count": 11,
+            "values": {
+              "{handleBlur}": 3,
+              "{() => setIsPasswordFieldFocused(false)}": 2,
+              "{() => { onBlur?.(); }}": 1,
+              "{handleSSNBlur}": 1,
+              "{handleNameBlur}": 1,
+              "{handleChainIdBlur}": 1,
+              "{handleSymbolBlur}": 1,
+              "{this.handlePasswordBlur}": 1
+            }
+          },
+          "onFocus": {
+            "count": 10,
+            "values": {
+              "{handleFocus}": 3,
+              "{() => setIsPasswordFieldFocused(true)}": 2,
+              "{() => { onFocus?.(); onInputPress?.(); }}": 1,
+              "{onNameFocused}": 1,
+              "{onChainIdFocused}": 1,
+              "{onSymbolFocused}": 1,
+              "{this.handlePasswordFocus}": 1
+            }
+          },
+          "placeholderTextColor": {
+            "count": 8,
+            "values": {
+              "{placeholderTextColor}": 7,
+              "{colors.text.default}": 1
+            }
+          },
+          "style": {
+            "count": 7,
+            "values": {
+              "{{ maxHeight: 58, flexGrow: 1 }}": 2,
+              "{styles.input}": 2,
+              "{style}": 1,
+              "{tw.style('my-4')}": 1,
+              "{styles.accountInput}": 1
+            }
+          },
+          "[spread]": {
+            "count": 4,
+            "values": {
+              "{props}": 2,
+              "{textFieldProps}": 1,
+              "{restProps}": 1
+            }
+          },
+          "textAlignVertical": {
+            "count": 4,
+            "values": {
+              "\"center\"": 4
+            }
+          },
+          "id": {
+            "count": 3,
+            "values": {
+              "{name}": 3
+            }
+          },
+          "textAlign": {
+            "count": 3,
+            "values": {
+              "\"left\"": 3
+            }
+          },
+          "startAccessory": {
+            "count": 2,
+            "values": {
+              "{displayAvatar && value && isCaipAccountId(`${chainId}:${value}`) ? ( <SnapUIA...}": 1,
+              "{defaultStartAccessory}": 1
+            }
+          },
+          "readOnly": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "pointerEvents": {
+            "count": 2,
+            "values": {
+              "\"none\"": 2
+            }
+          },
+          "showSoftInputOnFocus": {
+            "count": 2,
+            "values": {
+              "false": 2
+            }
+          },
+          "caretHidden": {
+            "count": 2,
+            "values": {
+              "false": 2
+            }
+          },
+          "isReadonly": {
+            "count": 2,
+            "values": {
+              "{tokenType === TokenInputAreaType.Destination}": 1,
+              "{Boolean(key)}": 1
+            }
+          },
+          "textContentType": {
+            "count": 2,
+            "values": {
+              "\"oneTimeCode\"": 2
+            }
+          },
+          "spellCheck": {
+            "count": 2,
+            "values": {
+              "false": 2
+            }
+          },
+          "inputElement": {
+            "count": 1,
+            "values": {
+              "{<TouchableOpacity disabled={disabled} testID={`snap-ui-renderer__date-time-pi...}": 1
+            }
+          },
+          "isStateStylesDisabled": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "onPressIn": {
+            "count": 1,
+            "values": {
+              "{() => { onInputPress?.(); }}": 1
+            }
+          },
+          "selection": {
+            "count": 1,
+            "values": {
+              "{tokenType === TokenInputAreaType.Destination ? { start: 0, end: 0 } : undefined}": 1
+            }
+          },
+          "textVariant": {
+            "count": 1,
+            "values": {
+              "{TextVariant.BodyMDMedium}": 1
+            }
+          },
+          "submitBehavior": {
+            "count": 1,
+            "values": {
+              "\"submit\"": 1
+            }
+          },
+          "scrollEnabled": {
+            "count": 1,
+            "values": {
+              "false": 1
+            }
+          },
+          "textBreakStrategy": {
+            "count": 1,
+            "values": {
+              "\"simple\"": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {
+        "TextField": 58
+      }
+    },
+    "extension": {
+      "filesScanned": 2980,
+      "targetComponent": "TextField",
+      "mmds": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "deprecated": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "overall": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "deprecatedByLegacyComponent": {}
+    }
+  }
+}

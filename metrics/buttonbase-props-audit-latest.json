@@ -1,0 +1,1168 @@
+{
+  "component": "ButtonBase",
+  "generatedAt": "2026-03-04T22:25:48.922Z",
+  "projects": {
+    "mobile": {
+      "filesScanned": 5390,
+      "targetComponent": "ButtonBase",
+      "mmds": {
+        "totalInstances": 3,
+        "filesCount": 3,
+        "props": {
+          "onPress": {
+            "count": 3,
+            "values": {
+              "{() => toggleWalletExpanded(walletId)}": 1,
+              "{() => handleEarningWayPress(wayToEarn)}": 1,
+              "{handlePressRecipient}": 1
+            }
+          },
+          "testID": {
+            "count": 2,
+            "values": {
+              "{`show-more-button-${walletId}`}": 1,
+              "{isSelected ? `selected-${recipient.address}` : `recipient-${recipient.address}`}": 1
+            }
+          },
+          "twClassName": {
+            "count": 2,
+            "values": {
+              "\"bg-background-default\"": 1,
+              "\"h-auto px-4 py-3 bg-inherit\"": 1
+            }
+          },
+          "style": {
+            "count": 2,
+            "values": {
+              "{({ pressed }) => tw.style(pressed && 'bg-background-pressed')}": 1,
+              "{({ pressed }) => tw.style( 'w-full flex-row items-center justify-between h-18...}": 1
+            }
+          }
+        }
+      },
+      "deprecated": {
+        "totalInstances": 12,
+        "filesCount": 10,
+        "props": {
+          "label": {
+            "count": 12,
+            "values": {
+              "{<Text variant={TextVariant.BodyMDMedium} style={styles.getStartedButtonText} ...}": 2,
+              "{buttonContent}": 1,
+              "{inlineButtonLabel}": 1,
+              "{`${value}`}": 1,
+              "{energyLabel}": 1,
+              "{bandwidthLabel}": 1,
+              "{<Text variant={TextVariant.BodyMDMedium} style={styles.tryNowButtonText} > {s...}": 1,
+              "{<Text style={styles.applyButtonText}> {strings('perps.sort.apply')} </Text>}": 1,
+              "{label}": 1,
+              "{renderNetworkLabel()}": 1,
+              "{<> <View style={styles.networkManagerWrapper}> {!areAllNetworksSelected && ( ...}": 1
+            }
+          },
+          "onPress": {
+            "count": 12,
+            "values": {
+              "{handlePress}": 2,
+              "{handleModalOpen}": 1,
+              "{handleButtonPress}": 1,
+              "{onPress}": 1,
+              "{() => onChange('energy')}": 1,
+              "{() => onChange('bandwidth')}": 1,
+              "{() => tryPerpsNow()}": 1,
+              "{handleApply}": 1,
+              "{() => handleGetStarted()}": 1,
+              "{handleFilterControls}": 1,
+              "{showFilterControls}": 1
+            }
+          },
+          "style": {
+            "count": 12,
+            "values": {
+              "{styles.getStartedButton}": 2,
+              "{styles.buttonBase}": 2,
+              "{styles.modalButton}": 1,
+              "{styles.button}": 1,
+              "{styles.currencyToggleButton}": 1,
+              "{styles.tryNowButton}": 1,
+              "{styles.applyButton}": 1,
+              "{isHighlighted ? styles.amountHighlighted : styles.amount}": 1,
+              "{isDisabled ? styles.controlButtonDisabled : styles.controlButton}": 1,
+              "{styles.controlButton}": 1
+            }
+          },
+          "testID": {
+            "count": 11,
+            "values": {
+              "\"snap-ui-renderer__selector-item\"": 1,
+              "{testID}": 1,
+              "{CardWelcomeSelectors.VERIFY_ACCOUNT_BUTTON}": 1,
+              "\"currency-toggle\"": 1,
+              "{testIDEnergy}": 1,
+              "{testIDBandwidth}": 1,
+              "{PerpsGTMModalSelectorsIDs.PERPS_TRY_NOW_BUTTON}": 1,
+              "{testID ? `${testID}-apply-button` : undefined}": 1,
+              "\"predict-gtm-get-started-button\"": 1,
+              "{networkFilterTestId}": 1,
+              "{WalletViewSelectorsIDs.TOKEN_NETWORK_FILTER}": 1
+            }
+          },
+          "width": {
+            "count": 9,
+            "values": {
+              "{ButtonWidthTypes.Full}": 8,
+              "{ButtonWidthTypes.Auto}": 1
+            }
+          },
+          "size": {
+            "count": 7,
+            "values": {
+              "{ButtonSize.Lg}": 3,
+              "{ButtonSize.Md}": 3,
+              "{ButtonSize.Sm}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 4,
+            "values": {
+              "{disabled}": 2,
+              "{isDisabled}": 1,
+              "false": 1
+            }
+          },
+          "endIconName": {
+            "count": 4,
+            "values": {
+              "{IconName.ArrowDown}": 3,
+              "{IconName.SwapVertical}": 1
+            }
+          },
+          "activeOpacity": {
+            "count": 4,
+            "values": {
+              "0.6": 3,
+              "0.2": 1
+            }
+          },
+          "labelColor": {
+            "count": 4,
+            "values": {
+              "{theme.colors.text.default}": 2,
+              "{TextColor.Default}": 1,
+              "{isHighlighted ? TextColor.Primary : TextColor.Default}": 1
+            }
+          },
+          "labelTextVariant": {
+            "count": 4,
+            "values": {
+              "{TextVariant.BodyMDMedium}": 4
+            }
+          },
+          "startIconName": {
+            "count": 2,
+            "values": {
+              "{IconName.Flash}": 1,
+              "{IconName.Connect}": 1
+            }
+          },
+          "accessibilityLabel": {
+            "count": 2,
+            "values": {
+              "{energyLabel}": 1,
+              "{bandwidthLabel}": 1
+            }
+          },
+          "disabled": {
+            "count": 2,
+            "values": {
+              "{isDisabled}": 1,
+              "false": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{value === 1 && !isStablecoinLendingEnabled ? { startIconName: IconName.Sparkl...}": 1
+            }
+          }
+        }
+      },
+      "overall": {
+        "totalInstances": 15,
+        "filesCount": 13,
+        "props": {
+          "onPress": {
+            "count": 15,
+            "values": {
+              "{handlePress}": 2,
+              "{handleModalOpen}": 1,
+              "{handleButtonPress}": 1,
+              "{onPress}": 1,
+              "{() => onChange('energy')}": 1,
+              "{() => onChange('bandwidth')}": 1,
+              "{() => tryPerpsNow()}": 1,
+              "{handleApply}": 1,
+              "{() => handleGetStarted()}": 1,
+              "{() => toggleWalletExpanded(walletId)}": 1,
+              "{() => handleEarningWayPress(wayToEarn)}": 1,
+              "{handleFilterControls}": 1,
+              "{showFilterControls}": 1,
+              "{handlePressRecipient}": 1
+            }
+          },
+          "style": {
+            "count": 14,
+            "values": {
+              "{styles.getStartedButton}": 2,
+              "{styles.buttonBase}": 2,
+              "{styles.modalButton}": 1,
+              "{styles.button}": 1,
+              "{styles.currencyToggleButton}": 1,
+              "{styles.tryNowButton}": 1,
+              "{styles.applyButton}": 1,
+              "{({ pressed }) => tw.style(pressed && 'bg-background-pressed')}": 1,
+              "{isHighlighted ? styles.amountHighlighted : styles.amount}": 1,
+              "{isDisabled ? styles.controlButtonDisabled : styles.controlButton}": 1,
+              "{styles.controlButton}": 1,
+              "{({ pressed }) => tw.style( 'w-full flex-row items-center justify-between h-18...}": 1
+            }
+          },
+          "testID": {
+            "count": 13,
+            "values": {
+              "\"snap-ui-renderer__selector-item\"": 1,
+              "{testID}": 1,
+              "{CardWelcomeSelectors.VERIFY_ACCOUNT_BUTTON}": 1,
+              "\"currency-toggle\"": 1,
+              "{testIDEnergy}": 1,
+              "{testIDBandwidth}": 1,
+              "{PerpsGTMModalSelectorsIDs.PERPS_TRY_NOW_BUTTON}": 1,
+              "{testID ? `${testID}-apply-button` : undefined}": 1,
+              "\"predict-gtm-get-started-button\"": 1,
+              "{`show-more-button-${walletId}`}": 1,
+              "{networkFilterTestId}": 1,
+              "{WalletViewSelectorsIDs.TOKEN_NETWORK_FILTER}": 1,
+              "{isSelected ? `selected-${recipient.address}` : `recipient-${recipient.address}`}": 1
+            }
+          },
+          "label": {
+            "count": 12,
+            "values": {
+              "{<Text variant={TextVariant.BodyMDMedium} style={styles.getStartedButtonText} ...}": 2,
+              "{buttonContent}": 1,
+              "{inlineButtonLabel}": 1,
+              "{`${value}`}": 1,
+              "{energyLabel}": 1,
+              "{bandwidthLabel}": 1,
+              "{<Text variant={TextVariant.BodyMDMedium} style={styles.tryNowButtonText} > {s...}": 1,
+              "{<Text style={styles.applyButtonText}> {strings('perps.sort.apply')} </Text>}": 1,
+              "{label}": 1,
+              "{renderNetworkLabel()}": 1,
+              "{<> <View style={styles.networkManagerWrapper}> {!areAllNetworksSelected && ( ...}": 1
+            }
+          },
+          "width": {
+            "count": 9,
+            "values": {
+              "{ButtonWidthTypes.Full}": 8,
+              "{ButtonWidthTypes.Auto}": 1
+            }
+          },
+          "size": {
+            "count": 7,
+            "values": {
+              "{ButtonSize.Lg}": 3,
+              "{ButtonSize.Md}": 3,
+              "{ButtonSize.Sm}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 4,
+            "values": {
+              "{disabled}": 2,
+              "{isDisabled}": 1,
+              "false": 1
+            }
+          },
+          "endIconName": {
+            "count": 4,
+            "values": {
+              "{IconName.ArrowDown}": 3,
+              "{IconName.SwapVertical}": 1
+            }
+          },
+          "activeOpacity": {
+            "count": 4,
+            "values": {
+              "0.6": 3,
+              "0.2": 1
+            }
+          },
+          "labelColor": {
+            "count": 4,
+            "values": {
+              "{theme.colors.text.default}": 2,
+              "{TextColor.Default}": 1,
+              "{isHighlighted ? TextColor.Primary : TextColor.Default}": 1
+            }
+          },
+          "labelTextVariant": {
+            "count": 4,
+            "values": {
+              "{TextVariant.BodyMDMedium}": 4
+            }
+          },
+          "startIconName": {
+            "count": 2,
+            "values": {
+              "{IconName.Flash}": 1,
+              "{IconName.Connect}": 1
+            }
+          },
+          "accessibilityLabel": {
+            "count": 2,
+            "values": {
+              "{energyLabel}": 1,
+              "{bandwidthLabel}": 1
+            }
+          },
+          "twClassName": {
+            "count": 2,
+            "values": {
+              "\"bg-background-default\"": 1,
+              "\"h-auto px-4 py-3 bg-inherit\"": 1
+            }
+          },
+          "disabled": {
+            "count": 2,
+            "values": {
+              "{isDisabled}": 1,
+              "false": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{value === 1 && !isStablecoinLendingEnabled ? { startIconName: IconName.Sparkl...}": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {
+        "ButtonBase": 12
+      }
+    },
+    "extension": {
+      "filesScanned": 2980,
+      "targetComponent": "ButtonBase",
+      "mmds": {
+        "totalInstances": 23,
+        "filesCount": 14,
+        "props": {
+          "className": {
+            "count": 23,
+            "values": {
+              "\"h-auto flex-1 flex-col justify-center rounded-lg bg-muted py-4 hover:bg-muted-hover active:bg-muted-pressed\"": 4,
+              "{twMerge( // Reset ButtonBase defaults for card layout 'justify-start rounded-...}": 2,
+              "{twMerge(CARD_STYLES)}": 2,
+              "{twMerge( 'px-3 py-1 rounded-md text-sm', closePercent === preset ? 'bg-primar...}": 1,
+              "{longTabStyles}": 1,
+              "{shortTabStyles}": 1,
+              "\"bg-transparent rounded-none px-2 min-w-0 h-auto\"": 1,
+              "{twMerge( '!py-1.5 h-auto !min-w-12 rounded-lg bg-transparent hover:bg-hover a...}": 1,
+              "{twMerge( '!py-1.5 h-auto !min-w-12 rounded-lg flex items-center gap-1 bg-tran...}": 1,
+              "{twMerge( '!px-2 !py-1.5 h-auto !min-w-16 rounded-lg text-left bg-transparent ...}": 1,
+              "\"bg-transparent hover:bg-transparent active:bg-transparent p-0 min-w-0 h-auto\"": 1,
+              "{twMerge(rowBaseStyles, balanceRowStyles)}": 1,
+              "\"w-full justify-center rounded-xl bg-muted py-3 hover:bg-muted-hover active:bg-muted-pressed\"": 1,
+              "\"w-full px-0 h-[62px] rounded-none bg-transparent hover:bg-hover active:bg-pressed\"": 1,
+              "{twMerge( 'justify-start rounded-none min-w-0 h-auto text-left cursor-pointer'...}": 1,
+              "\"flex items-center justify-start gap-1 rounded-lg bg-background-muted px-3 py-2 hover:bg-hover active:opacity-70\"": 1,
+              "\"w-full justify-between text-left rounded-none px-3 py-2 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
+              "\"rounded-full p-1 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1
+            }
+          },
+          "onClick": {
+            "count": 19,
+            "values": {
+              "{handleClick}": 4,
+              "{() => handleMarketClick(market.symbol)}": 2,
+              "{() => handlePercentClick(preset)}": 1,
+              "{() => handleDirectionClick('long')}": 1,
+              "{() => handleDirectionClick('short')}": 1,
+              "{handleMidClick}": 1,
+              "{() => { onPeriodChange?.(period.value); }}": 1,
+              "{() => setIsMoreOpen(!isMoreOpen)}": 1,
+              "{() => handleMorePeriodSelect(period.value)}": 1,
+              "{handleSeeAll}": 1,
+              "{handleBalanceClick}": 1,
+              "{handleSeeAllPerps}": 1,
+              "{handleToggle}": 1,
+              "{() => handleSelect(option)}": 1,
+              "{handleBack}": 1
+            }
+          },
+          "data-testid": {
+            "count": 18,
+            "values": {
+              "{`order-card-${order.orderId}`}": 1,
+              "{`close-percent-preset-${preset}`}": 1,
+              "\"direction-tab-long\"": 1,
+              "\"direction-tab-short\"": 1,
+              "\"limit-price-mid-button\"": 1,
+              "{`perps-candle-period-${period.value}`}": 1,
+              "\"perps-candle-period-more\"": 1,
+              "{`perps-candle-period-more-${period.value}`}": 1,
+              "\"perps-control-bar-balance\"": 1,
+              "{`explore-crypto-${market.symbol}`}": 1,
+              "{`explore-hip3-${market.symbol.replace(/:/gu, '-')}`}": 1,
+              "\"see-all-perps-cta\"": 1,
+              "{`position-card-${position.symbol}`}": 1,
+              "\"start-new-trade-cta\"": 1,
+              "{`transaction-card-${transaction.id}`}": 1,
+              "{`${testId}-button`}": 1,
+              "{`${testId}-option-${option.id}`}": 1,
+              "\"back-button\"": 1
+            }
+          },
+          "key": {
+            "count": 6,
+            "values": {
+              "{period.value}": 2,
+              "{market.symbol}": 2,
+              "{preset}": 1,
+              "{option.id}": 1
+            }
+          },
+          "isFullWidth": {
+            "count": 5,
+            "values": {
+              "true (shorthand)": 5
+            }
+          },
+          "ref": {
+            "count": 3,
+            "values": {
+              "{moreButtonRef}": 1,
+              "{triggerRef}": 1,
+              "{(el) => { optionRefs.current[index] = el; }}": 1
+            }
+          },
+          "size": {
+            "count": 2,
+            "values": {
+              "{ButtonBaseSize.Sm}": 2
+            }
+          },
+          "onKeyDown": {
+            "count": 2,
+            "values": {
+              "{handleTriggerKeyDown}": 1,
+              "{(e) => handleOptionKeyDown(e, index)}": 1
+            }
+          },
+          "textProps": {
+            "count": 1,
+            "values": {
+              "{{ color: TextColor.PrimaryDefault, fontWeight: FontWeight.Medium, variant: Te...}": 1
+            }
+          },
+          "aria-haspopup": {
+            "count": 1,
+            "values": {
+              "\"listbox\"": 1
+            }
+          },
+          "aria-expanded": {
+            "count": 1,
+            "values": {
+              "{isOpen}": 1
+            }
+          },
+          "role": {
+            "count": 1,
+            "values": {
+              "\"option\"": 1
+            }
+          },
+          "aria-selected": {
+            "count": 1,
+            "values": {
+              "{option.id === selectedId}": 1
+            }
+          },
+          "id": {
+            "count": 1,
+            "values": {
+              "{`${testId}-option-${option.id}`}": 1
+            }
+          },
+          "aria-label": {
+            "count": 1,
+            "values": {
+              "{t('back')}": 1
+            }
+          }
+        }
+      },
+      "deprecated": {
+        "totalInstances": 15,
+        "filesCount": 12,
+        "props": {
+          "onClick": {
+            "count": 15,
+            "values": {
+              "{onClick}": 3,
+              "{handleNetworkManager}": 1,
+              "{toggleTokenSortPopover}": 1,
+              "{handleTokenImportModal}": 1,
+              "{handleClick}": 1,
+              "{handleModalOpen}": 1,
+              "{() => { trace({ name: TraceName.AccountList }); onClick(); }}": 1,
+              "{onClickCallback}": 1,
+              "{toggleNetworkFilterPopover}": 1,
+              "{() => setSelectedTimeRange(timeRange)}": 1,
+              "{() => setDappSuggestedGasFeeAcknowledged(true)}": 1,
+              "{handleNetworkFilterClick}": 1,
+              "{() => { removeQuizWord(quizWord.word); }}": 1
+            }
+          },
+          "backgroundColor": {
+            "count": 14,
+            "values": {
+              "{BackgroundColor.backgroundDefault}": 4,
+              "{BackgroundColor.transparent}": 3,
+              "{isTokenSortPopoverOpen ? BackgroundColor.backgroundPressed : BackgroundColor....}": 2,
+              "{BackgroundColor.backgroundMuted}": 2,
+              "{selected ? BackgroundColor.primaryMuted : BackgroundColor.transparent}": 1,
+              "{BackgroundColor.primaryMuted}": 1,
+              "{isNetworkFilterPopoverOpen ? BackgroundColor.backgroundPressed : BackgroundCo...}": 1
+            }
+          },
+          "className": {
+            "count": 12,
+            "values": {
+              "\"asset-list-control-bar__button\"": 3,
+              "\"asset-list-control-bar__button asset-list-control-bar__network_control\"": 2,
+              "{className ? classnames('snap-ui-renderer__selector-item', className) : 'snap-...}": 1,
+              "{className ? classnames('snap-ui-renderer__selector', className) : 'snap-ui-re...}": 1,
+              "{classnames('multichain-account-picker', className)}": 1,
+              "{classnames('multichain-address-copy-button', { 'multichain-address-copy-butto...}": 1,
+              "{classNames('icon-button', className)}": 1,
+              "{classnames('time-range-button', { 'time-range-button__selected': timeRange ==...}": 1,
+              "\"edit-gas-display__dapp-acknowledgement-button\"": 1
+            }
+          },
+          "data-testid": {
+            "count": 11,
+            "values": {
+              "\"sort-by-popover-toggle\"": 2,
+              "\"address-copy-button-text\"": 2,
+              "\"sort-by-networks\"": 1,
+              "\"importTokens-button\"": 1,
+              "\"asset-list-control-bar-action-button\"": 1,
+              "\"snap-ui-renderer__selector-item\"": 1,
+              "\"account-menu-icon\"": 1,
+              "\"send-network-filter-toggle\"": 1,
+              "{`recovery-phrase-quiz-answered-${actualIdxInSrp}`}": 1
+            }
+          },
+          "size": {
+            "count": 10,
+            "values": {
+              "{ButtonBaseSize.Sm}": 7,
+              "{showAddress ? ButtonBaseSize.Lg : ButtonBaseSize.Sm}": 1,
+              "{Size.SM}": 1,
+              "{ButtonBaseSize.Md}": 1
+            }
+          },
+          "color": {
+            "count": 10,
+            "values": {
+              "{TextColor.textDefault}": 6,
+              "{TextColor.textAlternative}": 2,
+              "{TextColor.primaryDefault}": 1,
+              "{color}": 1
+            }
+          },
+          "endIconName": {
+            "count": 7,
+            "values": {
+              "{IconName.ArrowDown}": 5,
+              "{copied ? IconName.CopySuccess : IconName.Copy}": 2
+            }
+          },
+          "ellipsis": {
+            "count": 6,
+            "values": {
+              "true (shorthand)": 6
+            }
+          },
+          "disabled": {
+            "count": 6,
+            "values": {
+              "{disabled}": 4,
+              "{!shouldShowTokensLinks}": 1,
+              "{isTestNetwork || !FEATURED_NETWORK_CHAIN_IDS.includes( currentNetworkConfig.c...}": 1
+            }
+          },
+          "paddingRight": {
+            "count": 6,
+            "values": {
+              "0": 1,
+              "2": 2,
+              "4": 3
+            }
+          },
+          "paddingLeft": {
+            "count": 6,
+            "values": {
+              "0": 1,
+              "2": 2,
+              "4": 3
+            }
+          },
+          "borderRadius": {
+            "count": 5,
+            "values": {
+              "{BorderRadius.LG}": 4,
+              "{BorderRadius.pill}": 1
+            }
+          },
+          "variant": {
+            "count": 4,
+            "values": {
+              "{TextVariant.bodySmMedium}": 1,
+              "{TextVariant.bodySm}": 1,
+              "{TextVariant.bodyMd}": 1,
+              "{TextVariant.bodyXsMedium}": 1
+            }
+          },
+          "marginRight": {
+            "count": 4,
+            "values": {
+              "{isFullScreen ? 2 : null}": 4
+            }
+          },
+          "ref": {
+            "count": 4,
+            "values": {
+              "{ref}": 2,
+              "{sortButtonRef}": 1,
+              "{importButtonRef}": 1
+            }
+          },
+          "textProps": {
+            "count": 4,
+            "values": {
+              "{{ display: Display.Flex, width: BlockSize.Full, }}": 2,
+              "{{ display: Display.Flex, alignItems: AlignItems.center, gap: 2, ...textProps, }}": 1,
+              "{{ ellipsis: true, className: 'icon-button__label', }}": 1
+            }
+          },
+          "startIconName": {
+            "count": 3,
+            "values": {
+              "{IconName.Filter}": 1,
+              "{IconName.Add}": 1,
+              "{IconName.MoreVertical}": 1
+            }
+          },
+          "startIconProps": {
+            "count": 3,
+            "values": {
+              "{{ marginInlineEnd: 0, size: IconSize.Md }}": 3
+            }
+          },
+          "paddingTop": {
+            "count": 3,
+            "values": {
+              "2": 2,
+              "3": 1
+            }
+          },
+          "paddingBottom": {
+            "count": 3,
+            "values": {
+              "2": 2,
+              "3": 1
+            }
+          },
+          "style": {
+            "count": 3,
+            "values": {
+              "{{ justifyContent: 'inherit', textAlign: 'inherit', height: 'inherit', minHeig...}": 2,
+              "{AccountMenuStyle}": 1
+            }
+          },
+          "alignItems": {
+            "count": 3,
+            "values": {
+              "{AlignItems.center}": 3
+            }
+          },
+          "borderColor": {
+            "count": 2,
+            "values": {
+              "{BorderColor.borderMuted}": 1,
+              "{BorderColor.borderDefault}": 1
+            }
+          },
+          "endIconProps": {
+            "count": 2,
+            "values": {
+              "{{ color: IconColor.primaryDefault, size: IconSize.Sm, }}": 1,
+              "{{ color: IconColor.iconDefault, size: Size.SM, }}": 1
+            }
+          },
+          "gap": {
+            "count": 2,
+            "values": {
+              "1": 1,
+              "2": 1
+            }
+          },
+          "[spread]": {
+            "count": 2,
+            "values": {
+              "{props}": 2
+            }
+          },
+          "key": {
+            "count": 2,
+            "values": {
+              "{timeRange}": 1,
+              "{quizWord.index}": 1
+            }
+          },
+          "fontWeight": {
+            "count": 1,
+            "values": {
+              "{FontWeight.Normal}": 1
+            }
+          },
+          "display": {
+            "count": 1,
+            "values": {
+              "{Display.InlineFlex}": 1
+            }
+          },
+          "flexDirection": {
+            "count": 1,
+            "values": {
+              "{FlexDirection.Column}": 1
+            }
+          },
+          "justifyContent": {
+            "count": 1,
+            "values": {
+              "{JustifyContent.center}": 1
+            }
+          },
+          "marginBottom": {
+            "count": 1,
+            "values": {
+              "2": 1
+            }
+          },
+          "marginTop": {
+            "count": 1,
+            "values": {
+              "2": 1
+            }
+          },
+          "block": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          }
+        }
+      },
+      "overall": {
+        "totalInstances": 38,
+        "filesCount": 26,
+        "props": {
+          "className": {
+            "count": 35,
+            "values": {
+              "\"h-auto flex-1 flex-col justify-center rounded-lg bg-muted py-4 hover:bg-muted-hover active:bg-muted-pressed\"": 4,
+              "\"asset-list-control-bar__button\"": 3,
+              "\"asset-list-control-bar__button asset-list-control-bar__network_control\"": 2,
+              "{twMerge( // Reset ButtonBase defaults for card layout 'justify-start rounded-...}": 2,
+              "{twMerge(CARD_STYLES)}": 2,
+              "{twMerge( 'px-3 py-1 rounded-md text-sm', closePercent === preset ? 'bg-primar...}": 1,
+              "{longTabStyles}": 1,
+              "{shortTabStyles}": 1,
+              "\"bg-transparent rounded-none px-2 min-w-0 h-auto\"": 1,
+              "{twMerge( '!py-1.5 h-auto !min-w-12 rounded-lg bg-transparent hover:bg-hover a...}": 1,
+              "{twMerge( '!py-1.5 h-auto !min-w-12 rounded-lg flex items-center gap-1 bg-tran...}": 1,
+              "{twMerge( '!px-2 !py-1.5 h-auto !min-w-16 rounded-lg text-left bg-transparent ...}": 1,
+              "\"bg-transparent hover:bg-transparent active:bg-transparent p-0 min-w-0 h-auto\"": 1,
+              "{twMerge(rowBaseStyles, balanceRowStyles)}": 1,
+              "\"w-full justify-center rounded-xl bg-muted py-3 hover:bg-muted-hover active:bg-muted-pressed\"": 1,
+              "\"w-full px-0 h-[62px] rounded-none bg-transparent hover:bg-hover active:bg-pressed\"": 1,
+              "{twMerge( 'justify-start rounded-none min-w-0 h-auto text-left cursor-pointer'...}": 1,
+              "{className ? classnames('snap-ui-renderer__selector-item', className) : 'snap-...}": 1,
+              "{className ? classnames('snap-ui-renderer__selector', className) : 'snap-ui-re...}": 1,
+              "{classnames('multichain-account-picker', className)}": 1,
+              "{classnames('multichain-address-copy-button', { 'multichain-address-copy-butto...}": 1,
+              "{classNames('icon-button', className)}": 1,
+              "{classnames('time-range-button', { 'time-range-button__selected': timeRange ==...}": 1,
+              "\"edit-gas-display__dapp-acknowledgement-button\"": 1,
+              "\"flex items-center justify-start gap-1 rounded-lg bg-background-muted px-3 py-2 hover:bg-hover active:opacity-70\"": 1,
+              "\"w-full justify-between text-left rounded-none px-3 py-2 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
+              "\"rounded-full p-1 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1
+            }
+          },
+          "onClick": {
+            "count": 34,
+            "values": {
+              "{handleClick}": 5,
+              "{onClick}": 3,
+              "{() => handleMarketClick(market.symbol)}": 2,
+              "{handleNetworkManager}": 1,
+              "{toggleTokenSortPopover}": 1,
+              "{handleTokenImportModal}": 1,
+              "{() => handlePercentClick(preset)}": 1,
+              "{() => handleDirectionClick('long')}": 1,
+              "{() => handleDirectionClick('short')}": 1,
+              "{handleMidClick}": 1,
+              "{() => { onPeriodChange?.(period.value); }}": 1,
+              "{() => setIsMoreOpen(!isMoreOpen)}": 1,
+              "{() => handleMorePeriodSelect(period.value)}": 1,
+              "{handleSeeAll}": 1,
+              "{handleBalanceClick}": 1,
+              "{handleSeeAllPerps}": 1,
+              "{handleModalOpen}": 1,
+              "{() => { trace({ name: TraceName.AccountList }); onClick(); }}": 1,
+              "{onClickCallback}": 1,
+              "{toggleNetworkFilterPopover}": 1,
+              "{() => setSelectedTimeRange(timeRange)}": 1,
+              "{() => setDappSuggestedGasFeeAcknowledged(true)}": 1,
+              "{handleNetworkFilterClick}": 1,
+              "{() => { removeQuizWord(quizWord.word); }}": 1,
+              "{handleToggle}": 1,
+              "{() => handleSelect(option)}": 1,
+              "{handleBack}": 1
+            }
+          },
+          "data-testid": {
+            "count": 29,
+            "values": {
+              "\"sort-by-popover-toggle\"": 2,
+              "\"address-copy-button-text\"": 2,
+              "\"sort-by-networks\"": 1,
+              "\"importTokens-button\"": 1,
+              "\"asset-list-control-bar-action-button\"": 1,
+              "{`order-card-${order.orderId}`}": 1,
+              "{`close-percent-preset-${preset}`}": 1,
+              "\"direction-tab-long\"": 1,
+              "\"direction-tab-short\"": 1,
+              "\"limit-price-mid-button\"": 1,
+              "{`perps-candle-period-${period.value}`}": 1,
+              "\"perps-candle-period-more\"": 1,
+              "{`perps-candle-period-more-${period.value}`}": 1,
+              "\"perps-control-bar-balance\"": 1,
+              "{`explore-crypto-${market.symbol}`}": 1,
+              "{`explore-hip3-${market.symbol.replace(/:/gu, '-')}`}": 1,
+              "\"see-all-perps-cta\"": 1,
+              "{`position-card-${position.symbol}`}": 1,
+              "\"start-new-trade-cta\"": 1,
+              "{`transaction-card-${transaction.id}`}": 1,
+              "\"snap-ui-renderer__selector-item\"": 1,
+              "\"account-menu-icon\"": 1,
+              "\"send-network-filter-toggle\"": 1,
+              "{`recovery-phrase-quiz-answered-${actualIdxInSrp}`}": 1,
+              "{`${testId}-button`}": 1,
+              "{`${testId}-option-${option.id}`}": 1,
+              "\"back-button\"": 1
+            }
+          },
+          "backgroundColor": {
+            "count": 14,
+            "values": {
+              "{BackgroundColor.backgroundDefault}": 4,
+              "{BackgroundColor.transparent}": 3,
+              "{isTokenSortPopoverOpen ? BackgroundColor.backgroundPressed : BackgroundColor....}": 2,
+              "{BackgroundColor.backgroundMuted}": 2,
+              "{selected ? BackgroundColor.primaryMuted : BackgroundColor.transparent}": 1,
+              "{BackgroundColor.primaryMuted}": 1,
+              "{isNetworkFilterPopoverOpen ? BackgroundColor.backgroundPressed : BackgroundCo...}": 1
+            }
+          },
+          "size": {
+            "count": 12,
+            "values": {
+              "{ButtonBaseSize.Sm}": 9,
+              "{showAddress ? ButtonBaseSize.Lg : ButtonBaseSize.Sm}": 1,
+              "{Size.SM}": 1,
+              "{ButtonBaseSize.Md}": 1
+            }
+          },
+          "color": {
+            "count": 10,
+            "values": {
+              "{TextColor.textDefault}": 6,
+              "{TextColor.textAlternative}": 2,
+              "{TextColor.primaryDefault}": 1,
+              "{color}": 1
+            }
+          },
+          "key": {
+            "count": 8,
+            "values": {
+              "{period.value}": 2,
+              "{market.symbol}": 2,
+              "{preset}": 1,
+              "{timeRange}": 1,
+              "{quizWord.index}": 1,
+              "{option.id}": 1
+            }
+          },
+          "endIconName": {
+            "count": 7,
+            "values": {
+              "{IconName.ArrowDown}": 5,
+              "{copied ? IconName.CopySuccess : IconName.Copy}": 2
+            }
+          },
+          "ref": {
+            "count": 7,
+            "values": {
+              "{ref}": 2,
+              "{sortButtonRef}": 1,
+              "{importButtonRef}": 1,
+              "{moreButtonRef}": 1,
+              "{triggerRef}": 1,
+              "{(el) => { optionRefs.current[index] = el; }}": 1
+            }
+          },
+          "ellipsis": {
+            "count": 6,
+            "values": {
+              "true (shorthand)": 6
+            }
+          },
+          "disabled": {
+            "count": 6,
+            "values": {
+              "{disabled}": 4,
+              "{!shouldShowTokensLinks}": 1,
+              "{isTestNetwork || !FEATURED_NETWORK_CHAIN_IDS.includes( currentNetworkConfig.c...}": 1
+            }
+          },
+          "paddingRight": {
+            "count": 6,
+            "values": {
+              "0": 1,
+              "2": 2,
+              "4": 3
+            }
+          },
+          "paddingLeft": {
+            "count": 6,
+            "values": {
+              "0": 1,
+              "2": 2,
+              "4": 3
+            }
+          },
+          "isFullWidth": {
+            "count": 5,
+            "values": {
+              "true (shorthand)": 5
+            }
+          },
+          "textProps": {
+            "count": 5,
+            "values": {
+              "{{ display: Display.Flex, width: BlockSize.Full, }}": 2,
+              "{{ color: TextColor.PrimaryDefault, fontWeight: FontWeight.Medium, variant: Te...}": 1,
+              "{{ display: Display.Flex, alignItems: AlignItems.center, gap: 2, ...textProps, }}": 1,
+              "{{ ellipsis: true, className: 'icon-button__label', }}": 1
+            }
+          },
+          "borderRadius": {
+            "count": 5,
+            "values": {
+              "{BorderRadius.LG}": 4,
+              "{BorderRadius.pill}": 1
+            }
+          },
+          "variant": {
+            "count": 4,
+            "values": {
+              "{TextVariant.bodySmMedium}": 1,
+              "{TextVariant.bodySm}": 1,
+              "{TextVariant.bodyMd}": 1,
+              "{TextVariant.bodyXsMedium}": 1
+            }
+          },
+          "marginRight": {
+            "count": 4,
+            "values": {
+              "{isFullScreen ? 2 : null}": 4
+            }
+          },
+          "startIconName": {
+            "count": 3,
+            "values": {
+              "{IconName.Filter}": 1,
+              "{IconName.Add}": 1,
+              "{IconName.MoreVertical}": 1
+            }
+          },
+          "startIconProps": {
+            "count": 3,
+            "values": {
+              "{{ marginInlineEnd: 0, size: IconSize.Md }}": 3
+            }
+          },
+          "paddingTop": {
+            "count": 3,
+            "values": {
+              "2": 2,
+              "3": 1
+            }
+          },
+          "paddingBottom": {
+            "count": 3,
+            "values": {
+              "2": 2,
+              "3": 1
+            }
+          },
+          "style": {
+            "count": 3,
+            "values": {
+              "{{ justifyContent: 'inherit', textAlign: 'inherit', height: 'inherit', minHeig...}": 2,
+              "{AccountMenuStyle}": 1
+            }
+          },
+          "alignItems": {
+            "count": 3,
+            "values": {
+              "{AlignItems.center}": 3
+            }
+          },
+          "borderColor": {
+            "count": 2,
+            "values": {
+              "{BorderColor.borderMuted}": 1,
+              "{BorderColor.borderDefault}": 1
+            }
+          },
+          "endIconProps": {
+            "count": 2,
+            "values": {
+              "{{ color: IconColor.primaryDefault, size: IconSize.Sm, }}": 1,
+              "{{ color: IconColor.iconDefault, size: Size.SM, }}": 1
+            }
+          },
+          "gap": {
+            "count": 2,
+            "values": {
+              "1": 1,
+              "2": 1
+            }
+          },
+          "[spread]": {
+            "count": 2,
+            "values": {
+              "{props}": 2
+            }
+          },
+          "onKeyDown": {
+            "count": 2,
+            "values": {
+              "{handleTriggerKeyDown}": 1,
+              "{(e) => handleOptionKeyDown(e, index)}": 1
+            }
+          },
+          "fontWeight": {
+            "count": 1,
+            "values": {
+              "{FontWeight.Normal}": 1
+            }
+          },
+          "display": {
+            "count": 1,
+            "values": {
+              "{Display.InlineFlex}": 1
+            }
+          },
+          "flexDirection": {
+            "count": 1,
+            "values": {
+              "{FlexDirection.Column}": 1
+            }
+          },
+          "justifyContent": {
+            "count": 1,
+            "values": {
+              "{JustifyContent.center}": 1
+            }
+          },
+          "marginBottom": {
+            "count": 1,
+            "values": {
+              "2": 1
+            }
+          },
+          "marginTop": {
+            "count": 1,
+            "values": {
+              "2": 1
+            }
+          },
+          "block": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "aria-haspopup": {
+            "count": 1,
+            "values": {
+              "\"listbox\"": 1
+            }
+          },
+          "aria-expanded": {
+            "count": 1,
+            "values": {
+              "{isOpen}": 1
+            }
+          },
+          "role": {
+            "count": 1,
+            "values": {
+              "\"option\"": 1
+            }
+          },
+          "aria-selected": {
+            "count": 1,
+            "values": {
+              "{option.id === selectedId}": 1
+            }
+          },
+          "id": {
+            "count": 1,
+            "values": {
+              "{`${testId}-option-${option.id}`}": 1
+            }
+          },
+          "aria-label": {
+            "count": 1,
+            "values": {
+              "{t('back')}": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {
+        "ButtonBase": 15
+      }
+    }
+  }
+}

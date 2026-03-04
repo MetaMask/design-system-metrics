@@ -1,6 +1,6 @@
 {
   "component": "AvatarBase",
-  "generatedAt": "2026-03-04T22:17:48.982Z",
+  "generatedAt": "2026-03-04T22:21:52.645Z",
   "projects": {
     "mobile": {
       "filesScanned": 5390,
@@ -95,25 +95,73 @@
         "props": {}
       },
       "deprecated": {
-        "totalInstances": 1,
-        "filesCount": 1,
+        "totalInstances": 8,
+        "filesCount": 7,
         "props": {
-          "backgroundColor": {
-            "count": 1,
+          "size": {
+            "count": 8,
             "values": {
+              "{AvatarBaseSize.Sm}": 2,
+              "{AvatarBaseSize.Lg}": 2,
+              "{IconSize.Lg}": 1,
+              "{avatarSize as unknown as AvatarBaseSize}": 1,
+              "{AvatarBaseSize.Md}": 1,
+              "{AvatarBaseSize.Xs}": 1
+            }
+          },
+          "color": {
+            "count": 8,
+            "values": {
+              "{TextColor.textAlternative}": 5,
+              "{TextColor.primaryDefault}": 2,
+              "{TextColor.overlayInverse}": 1
+            }
+          },
+          "backgroundColor": {
+            "count": 7,
+            "values": {
+              "{BackgroundColor.backgroundAlternative}": 2,
+              "{BackgroundColor.primaryMuted}": 2,
+              "{BackgroundColor.backgroundMuted}": 2,
               "{BackgroundColor.overlayAlternative}": 1
             }
           },
           "style": {
-            "count": 1,
+            "count": 6,
             "values": {
+              "{{ borderWidth: '0px' }}": 4,
+              "{{ borderWidth: '0px', backgroundColor: 'var(--color-background-alternative-ho...}": 1,
               "{{ marginLeft: marginLeftValue, fontSize: 8 }}": 1
             }
           },
-          "size": {
+          "display": {
+            "count": 5,
+            "values": {
+              "{Display.Flex}": 5
+            }
+          },
+          "alignItems": {
+            "count": 5,
+            "values": {
+              "{AlignItems.center}": 5
+            }
+          },
+          "justifyContent": {
+            "count": 5,
+            "values": {
+              "{JustifyContent.center}": 5
+            }
+          },
+          "marginRight": {
+            "count": 2,
+            "values": {
+              "2": 2
+            }
+          },
+          "[spread]": {
             "count": 1,
             "values": {
-              "{AvatarBaseSize.Xs}": 1
+              "{props}": 1
             }
           },
           "borderColor": {
@@ -126,36 +174,78 @@
             "count": 1,
             "values": {
               "{BorderRadius.MD}": 1
-            }
-          },
-          "color": {
-            "count": 1,
-            "values": {
-              "{TextColor.overlayInverse}": 1
             }
           }
         }
       },
       "overall": {
-        "totalInstances": 1,
-        "filesCount": 1,
+        "totalInstances": 8,
+        "filesCount": 7,
         "props": {
-          "backgroundColor": {
-            "count": 1,
+          "size": {
+            "count": 8,
             "values": {
+              "{AvatarBaseSize.Sm}": 2,
+              "{AvatarBaseSize.Lg}": 2,
+              "{IconSize.Lg}": 1,
+              "{avatarSize as unknown as AvatarBaseSize}": 1,
+              "{AvatarBaseSize.Md}": 1,
+              "{AvatarBaseSize.Xs}": 1
+            }
+          },
+          "color": {
+            "count": 8,
+            "values": {
+              "{TextColor.textAlternative}": 5,
+              "{TextColor.primaryDefault}": 2,
+              "{TextColor.overlayInverse}": 1
+            }
+          },
+          "backgroundColor": {
+            "count": 7,
+            "values": {
+              "{BackgroundColor.backgroundAlternative}": 2,
+              "{BackgroundColor.primaryMuted}": 2,
+              "{BackgroundColor.backgroundMuted}": 2,
               "{BackgroundColor.overlayAlternative}": 1
             }
           },
           "style": {
-            "count": 1,
+            "count": 6,
             "values": {
+              "{{ borderWidth: '0px' }}": 4,
+              "{{ borderWidth: '0px', backgroundColor: 'var(--color-background-alternative-ho...}": 1,
               "{{ marginLeft: marginLeftValue, fontSize: 8 }}": 1
             }
           },
-          "size": {
+          "display": {
+            "count": 5,
+            "values": {
+              "{Display.Flex}": 5
+            }
+          },
+          "alignItems": {
+            "count": 5,
+            "values": {
+              "{AlignItems.center}": 5
+            }
+          },
+          "justifyContent": {
+            "count": 5,
+            "values": {
+              "{JustifyContent.center}": 5
+            }
+          },
+          "marginRight": {
+            "count": 2,
+            "values": {
+              "2": 2
+            }
+          },
+          "[spread]": {
             "count": 1,
             "values": {
-              "{AvatarBaseSize.Xs}": 1
+              "{props}": 1
             }
           },
           "borderColor": {
@@ -169,17 +259,11 @@
             "values": {
               "{BorderRadius.MD}": 1
             }
-          },
-          "color": {
-            "count": 1,
-            "values": {
-              "{TextColor.overlayInverse}": 1
-            }
           }
         }
       },
       "deprecatedByLegacyComponent": {
-        "AvatarBase": 1
+        "AvatarBase": 8
       }
     }
   }
