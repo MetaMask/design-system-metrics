@@ -1,0 +1,1178 @@
+{
+  "component": "TextButton",
+  "generatedAt": "2026-03-04T22:29:05.365Z",
+  "projects": {
+    "mobile": {
+      "filesScanned": 5390,
+      "targetComponent": "TextButton",
+      "mmds": {
+        "totalInstances": 1,
+        "filesCount": 1,
+        "props": {
+          "onPress": {
+            "count": 1,
+            "values": {
+              "{handleTermsPress}": 1
+            }
+          }
+        }
+      },
+      "deprecated": {
+        "totalInstances": 13,
+        "filesCount": 12,
+        "props": {
+          "onPress": {
+            "count": 13,
+            "values": {
+              "{() => navigation.goBack()}": 5,
+              "{toggleContent}": 1,
+              "{handleAccountCreation}": 1,
+              "{() => { setScreen( AccountConnectMultiSelectorScreens.AddAccountActions, ); }}": 1,
+              "{handleBackClick}": 1,
+              "{() => { this.openAddBlockExplorerForm(); this.closeBlockExplorerModal(); }}": 1,
+              "{() => { this.openAddRpcForm(); this.closeRpcModal(); }}": 1,
+              "{showAlertModal}": 1,
+              "{() => Linking.openURL(SPEEDUP_CANCEL_TRANSACTION_URL)}": 1
+            }
+          },
+          "label": {
+            "count": 13,
+            "values": {
+              "{<Icon name={IconName.ArrowLeft} size={IconSize.Md} />}": 6,
+              "{strings( isExpanded ? 'asset_overview.about_content_display.show_less' : 'ass...}": 1,
+              "{strings( 'accounts.account_connect_create_initial_account.button', )}": 1,
+              "{strings('accounts.new_account')}": 1,
+              "{strings('app_settings.add_block_explorer_url')}": 1,
+              "{strings('app_settings.add_rpc_url')}": 1,
+              "{strings('alert_system.confirm_modal.review_alerts')}": 1,
+              "{strings('alert_system.pending_transaction.learn_more')}": 1
+            }
+          },
+          "testID": {
+            "count": 9,
+            "values": {
+              "{AccountDetailsIds.BACK_BUTTON}": 3,
+              "{AccountConnectSelectorsIDs.CREATE_ACCOUNT_BUTTON}": 1,
+              "{AccountListBottomSheetSelectorsIDs.ACCOUNT_LIST_ADD_BUTTON_ID}": 1,
+              "{SwitchAccountModalSelectorIDs.SMART_ACCOUNT_BACK_BUTTON}": 1,
+              "{WalletDetailsIds.BACK_BUTTON}": 1,
+              "{NetworksViewSelectorsIDs.ADD_BLOCK_EXPLORER}": 1,
+              "{NetworksViewSelectorsIDs.ADD_RPC_BUTTON}": 1
+            }
+          },
+          "labelTextVariant": {
+            "count": 9,
+            "values": {
+              "{TextVariant.BodyMDMedium}": 5,
+              "{TextVariant.BodyMD}": 3,
+              "{TextVariant.HeadingMD}": 1
+            }
+          },
+          "width": {
+            "count": 4,
+            "values": {
+              "{ButtonWidthTypes.Auto}": 3,
+              "{ButtonWidthTypes.Full}": 1
+            }
+          },
+          "size": {
+            "count": 4,
+            "values": {
+              "{ButtonSize.Lg}": 4
+            }
+          },
+          "style": {
+            "count": 3,
+            "values": {
+              "{styles.button}": 1,
+              "{styles.newAccountButton}": 1,
+              "{styles.reviewAlertsLink}": 1
+            }
+          },
+          "endIconName": {
+            "count": 2,
+            "values": {
+              "{IconName.Add}": 2
+            }
+          },
+          "startIconName": {
+            "count": 1,
+            "values": {
+              "{IconName.SecuritySearch}": 1
+            }
+          }
+        }
+      },
+      "overall": {
+        "totalInstances": 14,
+        "filesCount": 13,
+        "props": {
+          "onPress": {
+            "count": 14,
+            "values": {
+              "{() => navigation.goBack()}": 5,
+              "{toggleContent}": 1,
+              "{handleTermsPress}": 1,
+              "{handleAccountCreation}": 1,
+              "{() => { setScreen( AccountConnectMultiSelectorScreens.AddAccountActions, ); }}": 1,
+              "{handleBackClick}": 1,
+              "{() => { this.openAddBlockExplorerForm(); this.closeBlockExplorerModal(); }}": 1,
+              "{() => { this.openAddRpcForm(); this.closeRpcModal(); }}": 1,
+              "{showAlertModal}": 1,
+              "{() => Linking.openURL(SPEEDUP_CANCEL_TRANSACTION_URL)}": 1
+            }
+          },
+          "label": {
+            "count": 13,
+            "values": {
+              "{<Icon name={IconName.ArrowLeft} size={IconSize.Md} />}": 6,
+              "{strings( isExpanded ? 'asset_overview.about_content_display.show_less' : 'ass...}": 1,
+              "{strings( 'accounts.account_connect_create_initial_account.button', )}": 1,
+              "{strings('accounts.new_account')}": 1,
+              "{strings('app_settings.add_block_explorer_url')}": 1,
+              "{strings('app_settings.add_rpc_url')}": 1,
+              "{strings('alert_system.confirm_modal.review_alerts')}": 1,
+              "{strings('alert_system.pending_transaction.learn_more')}": 1
+            }
+          },
+          "testID": {
+            "count": 9,
+            "values": {
+              "{AccountDetailsIds.BACK_BUTTON}": 3,
+              "{AccountConnectSelectorsIDs.CREATE_ACCOUNT_BUTTON}": 1,
+              "{AccountListBottomSheetSelectorsIDs.ACCOUNT_LIST_ADD_BUTTON_ID}": 1,
+              "{SwitchAccountModalSelectorIDs.SMART_ACCOUNT_BACK_BUTTON}": 1,
+              "{WalletDetailsIds.BACK_BUTTON}": 1,
+              "{NetworksViewSelectorsIDs.ADD_BLOCK_EXPLORER}": 1,
+              "{NetworksViewSelectorsIDs.ADD_RPC_BUTTON}": 1
+            }
+          },
+          "labelTextVariant": {
+            "count": 9,
+            "values": {
+              "{TextVariant.BodyMDMedium}": 5,
+              "{TextVariant.BodyMD}": 3,
+              "{TextVariant.HeadingMD}": 1
+            }
+          },
+          "width": {
+            "count": 4,
+            "values": {
+              "{ButtonWidthTypes.Auto}": 3,
+              "{ButtonWidthTypes.Full}": 1
+            }
+          },
+          "size": {
+            "count": 4,
+            "values": {
+              "{ButtonSize.Lg}": 4
+            }
+          },
+          "style": {
+            "count": 3,
+            "values": {
+              "{styles.button}": 1,
+              "{styles.newAccountButton}": 1,
+              "{styles.reviewAlertsLink}": 1
+            }
+          },
+          "endIconName": {
+            "count": 2,
+            "values": {
+              "{IconName.Add}": 2
+            }
+          },
+          "startIconName": {
+            "count": 1,
+            "values": {
+              "{IconName.SecuritySearch}": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {
+        "ButtonLink": 13
+      }
+    },
+    "extension": {
+      "filesScanned": 2980,
+      "targetComponent": "TextButton",
+      "mmds": {
+        "totalInstances": 24,
+        "filesCount": 12,
+        "props": {
+          "className": {
+            "count": 13,
+            "values": {
+              "\"min-w-0\"": 5,
+              "\"inline\"": 3,
+              "\"text-primary-default\"": 2,
+              "\"text-text-alternative hover:text-text-alternative hover:decoration-text-alternative hover:bg-transparent\"": 2,
+              "\"!text-inherit !font-normal underline underline-offset-2 [text-decoration-skip-ink:none] cursor-pointer hover:!text-inherit hover:!font-normal hover:![text-decoration-color:inherit] hover:!underline-offset-2 hover:!cursor-pointer\"": 1
+            }
+          },
+          "asChild": {
+            "count": 12,
+            "values": {
+              "true (shorthand)": 12
+            }
+          },
+          "onClick": {
+            "count": 12,
+            "values": {
+              "{onClickFindTransactionHash}": 2,
+              "{handleClick}": 1,
+              "{openTermsOfUse}": 1,
+              "{openLearnMore}": 1,
+              "{(e: React.MouseEvent) => { e.stopPropagation(); trackEvent({ category: MetaMe...}": 1,
+              "{() => navigate(SECURITY_ROUTE)}": 1,
+              "{() => navigate(DEFAULT_ROUTE)}": 1,
+              "{(e) => { e.stopPropagation(); // Prevent parent div click /* Handle earn butt...}": 1,
+              "{toggleVisitSupportDataConsentModal}": 1,
+              "{() => { navigate(TRANSACTION_SHIELD_MANAGE_PLAN_ROUTE); }}": 1,
+              "{() => { handleViewFullBenefitsClicked(); }}": 1
+            }
+          },
+          "[spread]": {
+            "count": 7,
+            "values": {
+              "{linkProps}": 7
+            }
+          },
+          "data-testid": {
+            "count": 6,
+            "values": {
+              "\"add-rewards-account-button\"": 1,
+              "\"change-in-settings-link\"": 1,
+              "\"basic-functionality-off-review-in-settings\"": 1,
+              "\"basic-functionality-off-go-home\"": 1,
+              "\"shield-detail-manage-plan-button\"": 1,
+              "\"shield-detail-view-benefits-button\"": 1
+            }
+          },
+          "size": {
+            "count": 5,
+            "values": {
+              "{TextButtonSize.BodySm}": 4,
+              "{TextButtonSize.BodyXs}": 1
+            }
+          },
+          "key": {
+            "count": 4,
+            "values": {
+              "\"here-link\"": 2,
+              "\"import-token-fake-token-warning\"": 1,
+              "\"learnMoreLink\"": 1
+            }
+          },
+          "endIconName": {
+            "count": 2,
+            "values": {
+              "{IconName.ArrowRight}": 2
+            }
+          },
+          "endIconProps": {
+            "count": 2,
+            "values": {
+              "{{ size: IconSize.Sm, color: IconColor.IconAlternative, }}": 2
+            }
+          },
+          "textProps": {
+            "count": 1,
+            "values": {
+              "{{ variant: TextVariant.BodySm }}": 1
+            }
+          },
+          "startAccessory": {
+            "count": 1,
+            "values": {
+              "{isLoading ? ( <Icon name={IconName.Loading} size={IconSize.Sm} /> ) : ( <img ...}": 1
+            }
+          },
+          "endAccessory": {
+            "count": 1,
+            "values": {
+              "{isError ? ( <Icon name={IconName.Refresh} size={IconSize.Sm} color={IconColor...}": 1
+            }
+          },
+          "disabled": {
+            "count": 1,
+            "values": {
+              "{isLoading}": 1
+            }
+          }
+        }
+      },
+      "deprecated": {
+        "totalInstances": 103,
+        "filesCount": 69,
+        "props": {
+          "onClick": {
+            "count": 67,
+            "values": {
+              "{() => { trackEvent({ category: MetaMetricsEventCategory.Navigation, event: Me...}": 3,
+              "{() => { onClose(); trackEvent({ category: MetaMetricsEventCategory.Navigation...}": 2,
+              "{() => { global.platform.openTab({ url: ZENDESK_URLS.ACCOUNT_UPGRADE, }); }}": 2,
+              "{setModeToEditAccounts}": 2,
+              "{handleOpenAccountsModal}": 2,
+              "{onAlertLinkClick}": 1,
+              "{onClickSupportLink}": 1,
+              "{(e: { stopPropagation: () => void }) => { e.stopPropagation(); dispatch(showI...}": 1,
+              "{() => connectAccount(address)}": 1,
+              "{() => this.switchAccount(address)}": 1,
+              "{() => { handleCopy(tokenAddress); }}": 1,
+              "{() => setDisplayMore(true)}": 1,
+              "{() => { setCustomNonce(nextNonce); }}": 1,
+              "{updateRpc}": 1,
+              "{switchToInfura}": 1,
+              "{() => { global.platform.openTab({ url: ZENDESK_URLS.USER_GUIDE_DAPPS, }); }}": 1,
+              "{onConfirm}": 1,
+              "{onShowAllPermissionsHandler}": 1,
+              "{handleMetaMaskLinkClick}": 1,
+              "{handleLinkClick}": 1,
+              "{onClick}": 1,
+              "{() => onShowAllPermissions()}": 1,
+              "{handlePortfolioOnClick}": 1,
+              "{async () => { await handleMultichainSnapAccountCreation( solanaWalletSnapClie...}": 1,
+              "{async () => { return await handleMultichainSnapAccountCreation( bitcoinWallet...}": 1,
+              "{async () => { return await handleMultichainSnapAccountCreation( tronWalletSna...}": 1,
+              "{handleAddWatchAccount}": 1,
+              "{() => { onClose(); navigate( `/snaps/view/${encodeURIComponent( INSTITUTIONAL...}": 1,
+              "{() => { onMultiselectSubmit?.( Object.keys(checkedChainIds).filter( (chainId)...}": 1,
+              "{() => { handleToggleAllNetworks(); }}": 1,
+              "{() => dispatch( toggleNetworkMenu({ isAccessedFromDappConnectedSitePopover: t...}": 1,
+              "{() => setAccountTypeToAdd(EVM_WALLET_TYPE)}": 1,
+              "{() => setAccountTypeToAdd(WalletClientType.Solana)}": 1,
+              "{() => setModalStage(EditAccountModalStage.AddNewAccount)}": 1,
+              "{() => { dispatch(showImportNftsModal({ tokenAddress: address })); onClose(); }}": 1,
+              "{() => { onClose(); navigate( `${SECURITY_ROUTE}#auto-detect-tokens`, ); }}": 1,
+              "{() => onAccountTypeSelect(EVM_WALLET_TYPE)}": 1,
+              "{() => onAccountTypeSelect(WalletClientType.Solana)}": 1,
+              "{() => onAccountTypeSelect(WalletClientType.Bitcoin)}": 1,
+              "{() => onAccountTypeSelect(WalletClientType.Tron)}": 1,
+              "{() => { global.platform.openTab({ url: ZENDESK_URLS.UNKNOWN_NETWORK, }); }}": 1,
+              "{handleLearnMoreClick}": 1,
+              "{() => onClick()}": 1,
+              "{() => handleWalletDetailsClick(walletId)}": 1,
+              "{() => selectNewAccountViaModal(handleAccountClick)}": 1,
+              "{onFetchNewQuotes}": 1,
+              "{() => onMaxButtonClick(balanceAmount)}": 1,
+              "{() => { dispatch(setWasTxDeclined(false)); }}": 1,
+              "{() => { dispatch(setSortOrder(sortOrderOption)); fromChain && recommendedQuot...}": 1,
+              "{() => { trackEvent( { category: MetaMetricsEventCategory.Home, event: MetaMet...}": 1,
+              "{onSwitch}": 1,
+              "{updateToMax}": 1,
+              "{dismissAlert}": 1,
+              "{() => { dispatch( toggleNetworkMenu({ isAddingNewNetwork: true, }), ); }}": 1,
+              "{handleOnShowSrpDetailsModal}": 1,
+              "{() => { trackEvent( { category: MetaMetricsEventCategory.Onboarding, event: M...}": 1,
+              "{() => { setName(suggestedName); }}": 1,
+              "{() => { const chainIdHex = toHex(chainId); if (chainIdHex) { dispatch( setEdi...}": 1,
+              "{() => { setTicker(suggestedTicker); }}": 1,
+              "{() => { trackEvent({ event: 'Clicked \"Gas Fees: Learn More\" Link', category: ...}": 1,
+              "{(e) => { e.preventDefault(); dispatch(setTransactionSettingsOpened(true)); }}": 1
+            }
+          },
+          "size": {
+            "count": 59,
+            "values": {
+              "{ButtonLinkSize.Inherit}": 26,
+              "{ButtonLinkSize.Sm}": 21,
+              "{ButtonLinkSize.Auto}": 4,
+              "{Size.inherit}": 3,
+              "{BUTTON_SIZES.INHERIT}": 3,
+              "{ButtonLinkSize.Lg}": 1,
+              "{Size.auto}": 1
+            }
+          },
+          "href": {
+            "count": 40,
+            "values": {
+              "{safeWebsite.toString()}": 2,
+              "{url}": 2,
+              "{ZENDESK_URLS.IMPORTED_ACCOUNTS_PRIVATE_KEY}": 2,
+              "{SUPPORT_LINK}": 2,
+              "{blockExplorerLink}": 2,
+              "{SMART_TRANSACTIONS_LEARN_MORE_URL}": 2,
+              "\"https://support.metamask.io/configure/wallet/how-to-update-the-version-of-metamask/\"": 2,
+              "{SECURITY_PROVIDER_CONFIG[provider]?.url}": 1,
+              "{reportUrl ?? ZENDESK_URLS.SUPPORT_URL}": 1,
+              "{ZENDESK_URLS.CUSTOMIZE_NONCE}": 1,
+              "{getTransactionUrl( id, srcNetwork?.chainId ?? transaction.chain, )}": 1,
+              "{getChainExplorerUrl( status.destChain.txHash, status.destChain.chainId?.toStr...}": 1,
+              "{getAddressUrl(address, chain)}": 1,
+              "{getTransactionUrl(id, chain)}": 1,
+              "{TERMS_OF_USE_LINK}": 1,
+              "{href}": 1,
+              "\"https://consensys.io/privacy-policy/\"": 1,
+              "\"https://consensys.io/privacy-policy\"": 1,
+              "\"https://support.metamask.io/more-web3/dapps/connecting-to-a-dapp/\"": 1,
+              "{ZENDESK_URLS.IMPORTED_ACCOUNT_JSON}": 1,
+              "{blockExplorerTokenLink}": 1,
+              "{portfolioSpendingCapsUrl}": 1,
+              "{link}": 1,
+              "{SHIELD_TERMS_OF_USE_URL}": 1,
+              "{ZENDESK_URLS.ACCOUNT_UPGRADE}": 1,
+              "{ZENDESK_URLS.SPEEDUP_CANCEL}": 1,
+              "{SHIELD_LEARN_HOW_COVERAGE_WORKS_URL}": 1,
+              "{ZENDESK_URLS.PRIVATE_KEY_GUIDE}": 1,
+              "{learnMoreLink}": 1,
+              "{ZENDESK_URLS.NETWORK_DEPRECATED}": 1,
+              "\"https://snaps.metamask.io/\"": 1,
+              "{ZENDESK_URLS.GAS_FEES}": 1,
+              "\"https://support.metamask.io/token-swaps/user-guide-swaps/\"": 1
+            }
+          },
+          "target": {
+            "count": 29,
+            "values": {
+              "\"_blank\"": 29
+            }
+          },
+          "data-testid": {
+            "count": 25,
+            "values": {
+              "\"edit\"": 5,
+              "\"multichain-account-menu-popover-add-account\"": 2,
+              "\"multichain-account-menu-popover-add-solana-account\"": 2,
+              "\"confirm-alert-modal-review-all-alerts\"": 1,
+              "\"alert-provider-report-link\"": 1,
+              "\"customize-nonce-reset\"": 1,
+              "\"portfolio-link\"": 1,
+              "\"multichain-account-menu-popover-add-btc-account\"": 1,
+              "\"multichain-account-menu-popover-add-tron-account\"": 1,
+              "\"multichain-account-menu-popover-import-srp\"": 1,
+              "\"multichain-account-menu-popover-add-imported-account\"": 1,
+              "\"multichain-account-menu-popover-add-watch-only-account\"": 1,
+              "\"connected-site-popover-network-button\"": 1,
+              "\"add-new-account-button\"": 1,
+              "\"wallet-details-add-ethereum-account\"": 1,
+              "\"wallet-details-add-solana-account\"": 1,
+              "\"wallet-details-add-bitcoin-account\"": 1,
+              "\"wallet-details-add-tron-account\"": 1,
+              "{`switch_account-${name}`}": 1
+            }
+          },
+          "key": {
+            "count": 24,
+            "values": {
+              "\"link\"": 3,
+              "\"update-metamask-link\"": 2,
+              "{`security-provider-button-link-${provider}`}": 1,
+              "{`security-provider-button-supporturl-${provider}`}": 1,
+              "\"detected-token-aggrgators-link\"": 1,
+              "\"updateRpc\"": 1,
+              "\"switchToInfura\"": 1,
+              "\"permission-connect-footer-learn-more-link\"": 1,
+              "\"privacyNoticeTermsOfUseLink\"": 1,
+              "\"importAccountWithSocialMsgLearnMore\"": 1,
+              "\"import-token-verify-token-decimal\"": 1,
+              "\"nftAddressError\"": 1,
+              "\"token-detection-announcement\"": 1,
+              "{label}": 1,
+              "{origin}": 1,
+              "\"shield-footer-agreement-button\"": 1,
+              "\"walletReadyLearn\"": 1,
+              "\"seedPhraseReviewDetails\"": 1,
+              "\"loginErrorGenericDescription\"": 1,
+              "\"import-token-fake-token-warning\"": 1,
+              "\"gas-fees-learn-more\"": 1
+            }
+          },
+          "as": {
+            "count": 20,
+            "values": {
+              "\"a\"": 17,
+              "\"button\"": 3
+            }
+          },
+          "rel": {
+            "count": 20,
+            "values": {
+              "\"noopener noreferrer\"": 17,
+              "\"noreferrer noopener\"": 3
+            }
+          },
+          "externalLink": {
+            "count": 19,
+            "values": {
+              "true (shorthand)": 18,
+              "{!isMetaMaskUrl}": 1
+            }
+          },
+          "className": {
+            "count": 19,
+            "values": {
+              "\"snap-ui-renderer__link\"": 3,
+              "\"connected-accounts-list__account-status-link\"": 2,
+              "\"confirm-add-suggested-nft__nft-name\"": 2,
+              "\"nft-default__button\"": 1,
+              "\"detected-token-address__copy-link\"": 1,
+              "\"detected-token-aggregators__link\"": 1,
+              "\"customize-nonce-modal__link\"": 1,
+              "\"customize-nonce-modal__reset\"": 1,
+              "\"snap-privacy-warning__content__terms-link\"": 1,
+              "\"snap-ui-markdown__link\"": 1,
+              "\"snap-external-pill\"": 1,
+              "\"import-tokens-modal__button-link\"": 1,
+              "\"import-tokens-modal__nft-address-error-link\"": 1,
+              "\"import-tokens-modal__autodetect\"": 1,
+              "\"asset-page__spending-caps mm-text--body-md-medium\"": 1
+            }
+          },
+          "startIconName": {
+            "count": 17,
+            "values": {
+              "{IconName.Add}": 11,
+              "{IconName.Wallet}": 1,
+              "{IconName.Key}": 1,
+              "{IconName.Hardware}": 1,
+              "{IconName.Snaps}": 1,
+              "{IconName.Eye}": 1,
+              "{sortOrder === sortOrderOption && sortOrder === SortOrder.ETA_ASC ? icon : und...}": 1
+            }
+          },
+          "startIconProps": {
+            "count": 16,
+            "values": {
+              "{{ size: IconSize.Md }}": 15,
+              "{{ size: IconSize.Xs, }}": 1
+            }
+          },
+          "textProps": {
+            "count": 14,
+            "values": {
+              "{{ variant: TextVariant.bodyMd, alignItems: AlignItems.flexStart, }}": 9,
+              "{{ display: Display.Inline, }}": 2,
+              "{{ width: BlockSize.Full }}": 1,
+              "{{ variant: TextVariant.bodyMdMedium }}": 1,
+              "{{ variant: TextVariant.bodySm, }}": 1
+            }
+          },
+          "variant": {
+            "count": 14,
+            "values": {
+              "{TextVariant.bodySm}": 7,
+              "{TextVariant.bodyMdMedium}": 3,
+              "{TextVariant.bodyXsMedium}": 2,
+              "{TextVariant.bodyMd}": 2
+            }
+          },
+          "style": {
+            "count": 13,
+            "values": {
+              "{{ verticalAlign: 'baseline' }}": 3,
+              "{{ verticalAlign: 'bottom' }}": 2,
+              "{{ // Prevents the link from taking up the full width of the parent. width: 'f...}": 2,
+              "{{ alignSelf: AlignItems.flexStart, paddingInline: 16, }}": 1,
+              "{{ fontSize: '0.875rem', }}": 1,
+              "{{ height: '22px', fontSize: '14px', lineHeight: '22px', verticalAlign: 'basel...}": 1,
+              "{{ cursor: 'pointer', }}": 1,
+              "{{ whiteSpace: 'nowrap' }}": 1,
+              "{{ height: 'unset', verticalAlign: 'unset' }}": 1
+            }
+          },
+          "color": {
+            "count": 13,
+            "values": {
+              "{TextColor.primaryDefault}": 10,
+              "{TextColor.infoDefault}": 2,
+              "{sortOrder === sortOrderOption ? TextColor.primaryDefault : TextColor.textAlte...}": 1
+            }
+          },
+          "endIconName": {
+            "count": 5,
+            "values": {
+              "{IconName.Export}": 3,
+              "{IconName.Copy}": 1,
+              "{sortOrder === sortOrderOption && sortOrder === SortOrder.COST_ASC ? icon : un...}": 1
+            }
+          },
+          "display": {
+            "count": 3,
+            "values": {
+              "{Display.Inline}": 3
+            }
+          },
+          "marginBottom": {
+            "count": 3,
+            "values": {
+              "2": 3
+            }
+          },
+          "paddingLeft": {
+            "count": 3,
+            "values": {
+              "1": 3
+            }
+          },
+          "block": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "marginLeft": {
+            "count": 2,
+            "values": {
+              "2": 2
+            }
+          },
+          "paddingTop": {
+            "count": 2,
+            "values": {
+              "0": 2
+            }
+          },
+          "paddingBottom": {
+            "count": 2,
+            "values": {
+              "0": 2
+            }
+          },
+          "overflowWrap": {
+            "count": 2,
+            "values": {
+              "{OverflowWrap.Anywhere}": 2
+            }
+          },
+          "ellipsis": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "disabled": {
+            "count": 2,
+            "values": {
+              "{!isAddWatchEthereumAccountEnabled}": 1,
+              "{Object.values(checkedChainIds).every((v) => !v)}": 1
+            }
+          },
+          "fontWeight": {
+            "count": 2,
+            "values": {
+              "{FontWeight.Medium}": 1,
+              "{FontWeight.Normal}": 1
+            }
+          },
+          "title": {
+            "count": 2,
+            "values": {
+              "{address}": 2
+            }
+          },
+          "paddingRight": {
+            "count": 2,
+            "values": {
+              "1": 2
+            }
+          },
+          "marginTop": {
+            "count": 1,
+            "values": {
+              "4": 1
+            }
+          },
+          "marginRight": {
+            "count": 1,
+            "values": {
+              "2": 1
+            }
+          },
+          "width": {
+            "count": 1,
+            "values": {
+              "{BlockSize.Full}": 1
+            }
+          },
+          "textAlign": {
+            "count": 1,
+            "values": {
+              "{TextAlign.End}": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{rest}": 1
+            }
+          },
+          "endIconProps": {
+            "count": 1,
+            "values": {
+              "{{ size: IconSize.Xs, }}": 1
+            }
+          },
+          "justifyContent": {
+            "count": 1,
+            "values": {
+              "{JustifyContent.flexStart}": 1
+            }
+          }
+        }
+      },
+      "overall": {
+        "totalInstances": 127,
+        "filesCount": 80,
+        "props": {
+          "onClick": {
+            "count": 79,
+            "values": {
+              "{() => { trackEvent({ category: MetaMetricsEventCategory.Navigation, event: Me...}": 3,
+              "{() => { onClose(); trackEvent({ category: MetaMetricsEventCategory.Navigation...}": 2,
+              "{() => { global.platform.openTab({ url: ZENDESK_URLS.ACCOUNT_UPGRADE, }); }}": 2,
+              "{setModeToEditAccounts}": 2,
+              "{handleOpenAccountsModal}": 2,
+              "{onClickFindTransactionHash}": 2,
+              "{onAlertLinkClick}": 1,
+              "{onClickSupportLink}": 1,
+              "{(e: { stopPropagation: () => void }) => { e.stopPropagation(); dispatch(showI...}": 1,
+              "{() => connectAccount(address)}": 1,
+              "{() => this.switchAccount(address)}": 1,
+              "{() => { handleCopy(tokenAddress); }}": 1,
+              "{() => setDisplayMore(true)}": 1,
+              "{() => { setCustomNonce(nextNonce); }}": 1,
+              "{updateRpc}": 1,
+              "{switchToInfura}": 1,
+              "{() => { global.platform.openTab({ url: ZENDESK_URLS.USER_GUIDE_DAPPS, }); }}": 1,
+              "{onConfirm}": 1,
+              "{handleClick}": 1,
+              "{openTermsOfUse}": 1,
+              "{openLearnMore}": 1,
+              "{onShowAllPermissionsHandler}": 1,
+              "{handleMetaMaskLinkClick}": 1,
+              "{handleLinkClick}": 1,
+              "{onClick}": 1,
+              "{() => onShowAllPermissions()}": 1,
+              "{handlePortfolioOnClick}": 1,
+              "{async () => { await handleMultichainSnapAccountCreation( solanaWalletSnapClie...}": 1,
+              "{async () => { return await handleMultichainSnapAccountCreation( bitcoinWallet...}": 1,
+              "{async () => { return await handleMultichainSnapAccountCreation( tronWalletSna...}": 1,
+              "{handleAddWatchAccount}": 1,
+              "{() => { onClose(); navigate( `/snaps/view/${encodeURIComponent( INSTITUTIONAL...}": 1,
+              "{() => { onMultiselectSubmit?.( Object.keys(checkedChainIds).filter( (chainId)...}": 1,
+              "{() => { handleToggleAllNetworks(); }}": 1,
+              "{() => dispatch( toggleNetworkMenu({ isAccessedFromDappConnectedSitePopover: t...}": 1,
+              "{() => setAccountTypeToAdd(EVM_WALLET_TYPE)}": 1,
+              "{() => setAccountTypeToAdd(WalletClientType.Solana)}": 1,
+              "{() => setModalStage(EditAccountModalStage.AddNewAccount)}": 1,
+              "{() => { dispatch(showImportNftsModal({ tokenAddress: address })); onClose(); }}": 1,
+              "{() => { onClose(); navigate( `${SECURITY_ROUTE}#auto-detect-tokens`, ); }}": 1,
+              "{() => onAccountTypeSelect(EVM_WALLET_TYPE)}": 1,
+              "{() => onAccountTypeSelect(WalletClientType.Solana)}": 1,
+              "{() => onAccountTypeSelect(WalletClientType.Bitcoin)}": 1,
+              "{() => onAccountTypeSelect(WalletClientType.Tron)}": 1,
+              "{() => { global.platform.openTab({ url: ZENDESK_URLS.UNKNOWN_NETWORK, }); }}": 1,
+              "{handleLearnMoreClick}": 1,
+              "{() => onClick()}": 1,
+              "{() => handleWalletDetailsClick(walletId)}": 1,
+              "{(e: React.MouseEvent) => { e.stopPropagation(); trackEvent({ category: MetaMe...}": 1,
+              "{() => selectNewAccountViaModal(handleAccountClick)}": 1,
+              "{() => navigate(SECURITY_ROUTE)}": 1,
+              "{() => navigate(DEFAULT_ROUTE)}": 1,
+              "{onFetchNewQuotes}": 1,
+              "{() => onMaxButtonClick(balanceAmount)}": 1,
+              "{() => { dispatch(setWasTxDeclined(false)); }}": 1,
+              "{() => { dispatch(setSortOrder(sortOrderOption)); fromChain && recommendedQuot...}": 1,
+              "{() => { trackEvent( { category: MetaMetricsEventCategory.Home, event: MetaMet...}": 1,
+              "{onSwitch}": 1,
+              "{updateToMax}": 1,
+              "{dismissAlert}": 1,
+              "{(e) => { e.stopPropagation(); // Prevent parent div click /* Handle earn butt...}": 1,
+              "{() => { dispatch( toggleNetworkMenu({ isAddingNewNetwork: true, }), ); }}": 1,
+              "{handleOnShowSrpDetailsModal}": 1,
+              "{() => { trackEvent( { category: MetaMetricsEventCategory.Onboarding, event: M...}": 1,
+              "{toggleVisitSupportDataConsentModal}": 1,
+              "{() => { setName(suggestedName); }}": 1,
+              "{() => { const chainIdHex = toHex(chainId); if (chainIdHex) { dispatch( setEdi...}": 1,
+              "{() => { setTicker(suggestedTicker); }}": 1,
+              "{() => { navigate(TRANSACTION_SHIELD_MANAGE_PLAN_ROUTE); }}": 1,
+              "{() => { handleViewFullBenefitsClicked(); }}": 1,
+              "{() => { trackEvent({ event: 'Clicked \"Gas Fees: Learn More\" Link', category: ...}": 1,
+              "{(e) => { e.preventDefault(); dispatch(setTransactionSettingsOpened(true)); }}": 1
+            }
+          },
+          "size": {
+            "count": 64,
+            "values": {
+              "{ButtonLinkSize.Inherit}": 26,
+              "{ButtonLinkSize.Sm}": 21,
+              "{ButtonLinkSize.Auto}": 4,
+              "{TextButtonSize.BodySm}": 4,
+              "{Size.inherit}": 3,
+              "{BUTTON_SIZES.INHERIT}": 3,
+              "{ButtonLinkSize.Lg}": 1,
+              "{TextButtonSize.BodyXs}": 1,
+              "{Size.auto}": 1
+            }
+          },
+          "href": {
+            "count": 40,
+            "values": {
+              "{safeWebsite.toString()}": 2,
+              "{url}": 2,
+              "{ZENDESK_URLS.IMPORTED_ACCOUNTS_PRIVATE_KEY}": 2,
+              "{SUPPORT_LINK}": 2,
+              "{blockExplorerLink}": 2,
+              "{SMART_TRANSACTIONS_LEARN_MORE_URL}": 2,
+              "\"https://support.metamask.io/configure/wallet/how-to-update-the-version-of-metamask/\"": 2,
+              "{SECURITY_PROVIDER_CONFIG[provider]?.url}": 1,
+              "{reportUrl ?? ZENDESK_URLS.SUPPORT_URL}": 1,
+              "{ZENDESK_URLS.CUSTOMIZE_NONCE}": 1,
+              "{getTransactionUrl( id, srcNetwork?.chainId ?? transaction.chain, )}": 1,
+              "{getChainExplorerUrl( status.destChain.txHash, status.destChain.chainId?.toStr...}": 1,
+              "{getAddressUrl(address, chain)}": 1,
+              "{getTransactionUrl(id, chain)}": 1,
+              "{TERMS_OF_USE_LINK}": 1,
+              "{href}": 1,
+              "\"https://consensys.io/privacy-policy/\"": 1,
+              "\"https://consensys.io/privacy-policy\"": 1,
+              "\"https://support.metamask.io/more-web3/dapps/connecting-to-a-dapp/\"": 1,
+              "{ZENDESK_URLS.IMPORTED_ACCOUNT_JSON}": 1,
+              "{blockExplorerTokenLink}": 1,
+              "{portfolioSpendingCapsUrl}": 1,
+              "{link}": 1,
+              "{SHIELD_TERMS_OF_USE_URL}": 1,
+              "{ZENDESK_URLS.ACCOUNT_UPGRADE}": 1,
+              "{ZENDESK_URLS.SPEEDUP_CANCEL}": 1,
+              "{SHIELD_LEARN_HOW_COVERAGE_WORKS_URL}": 1,
+              "{ZENDESK_URLS.PRIVATE_KEY_GUIDE}": 1,
+              "{learnMoreLink}": 1,
+              "{ZENDESK_URLS.NETWORK_DEPRECATED}": 1,
+              "\"https://snaps.metamask.io/\"": 1,
+              "{ZENDESK_URLS.GAS_FEES}": 1,
+              "\"https://support.metamask.io/token-swaps/user-guide-swaps/\"": 1
+            }
+          },
+          "className": {
+            "count": 32,
+            "values": {
+              "\"min-w-0\"": 5,
+              "\"inline\"": 3,
+              "\"snap-ui-renderer__link\"": 3,
+              "\"connected-accounts-list__account-status-link\"": 2,
+              "\"text-primary-default\"": 2,
+              "\"confirm-add-suggested-nft__nft-name\"": 2,
+              "\"text-text-alternative hover:text-text-alternative hover:decoration-text-alternative hover:bg-transparent\"": 2,
+              "\"nft-default__button\"": 1,
+              "\"detected-token-address__copy-link\"": 1,
+              "\"detected-token-aggregators__link\"": 1,
+              "\"customize-nonce-modal__link\"": 1,
+              "\"customize-nonce-modal__reset\"": 1,
+              "\"!text-inherit !font-normal underline underline-offset-2 [text-decoration-skip-ink:none] cursor-pointer hover:!text-inherit hover:!font-normal hover:![text-decoration-color:inherit] hover:!underline-offset-2 hover:!cursor-pointer\"": 1,
+              "\"snap-privacy-warning__content__terms-link\"": 1,
+              "\"snap-ui-markdown__link\"": 1,
+              "\"snap-external-pill\"": 1,
+              "\"import-tokens-modal__button-link\"": 1,
+              "\"import-tokens-modal__nft-address-error-link\"": 1,
+              "\"import-tokens-modal__autodetect\"": 1,
+              "\"asset-page__spending-caps mm-text--body-md-medium\"": 1
+            }
+          },
+          "data-testid": {
+            "count": 31,
+            "values": {
+              "\"edit\"": 5,
+              "\"multichain-account-menu-popover-add-account\"": 2,
+              "\"multichain-account-menu-popover-add-solana-account\"": 2,
+              "\"confirm-alert-modal-review-all-alerts\"": 1,
+              "\"alert-provider-report-link\"": 1,
+              "\"customize-nonce-reset\"": 1,
+              "\"add-rewards-account-button\"": 1,
+              "\"portfolio-link\"": 1,
+              "\"multichain-account-menu-popover-add-btc-account\"": 1,
+              "\"multichain-account-menu-popover-add-tron-account\"": 1,
+              "\"multichain-account-menu-popover-import-srp\"": 1,
+              "\"multichain-account-menu-popover-add-imported-account\"": 1,
+              "\"multichain-account-menu-popover-add-watch-only-account\"": 1,
+              "\"connected-site-popover-network-button\"": 1,
+              "\"add-new-account-button\"": 1,
+              "\"wallet-details-add-ethereum-account\"": 1,
+              "\"wallet-details-add-solana-account\"": 1,
+              "\"wallet-details-add-bitcoin-account\"": 1,
+              "\"wallet-details-add-tron-account\"": 1,
+              "\"change-in-settings-link\"": 1,
+              "\"basic-functionality-off-review-in-settings\"": 1,
+              "\"basic-functionality-off-go-home\"": 1,
+              "{`switch_account-${name}`}": 1,
+              "\"shield-detail-manage-plan-button\"": 1,
+              "\"shield-detail-view-benefits-button\"": 1
+            }
+          },
+          "target": {
+            "count": 29,
+            "values": {
+              "\"_blank\"": 29
+            }
+          },
+          "key": {
+            "count": 28,
+            "values": {
+              "\"link\"": 3,
+              "\"import-token-fake-token-warning\"": 2,
+              "\"update-metamask-link\"": 2,
+              "\"here-link\"": 2,
+              "{`security-provider-button-link-${provider}`}": 1,
+              "{`security-provider-button-supporturl-${provider}`}": 1,
+              "\"detected-token-aggrgators-link\"": 1,
+              "\"updateRpc\"": 1,
+              "\"switchToInfura\"": 1,
+              "\"permission-connect-footer-learn-more-link\"": 1,
+              "\"privacyNoticeTermsOfUseLink\"": 1,
+              "\"importAccountWithSocialMsgLearnMore\"": 1,
+              "\"import-token-verify-token-decimal\"": 1,
+              "\"nftAddressError\"": 1,
+              "\"token-detection-announcement\"": 1,
+              "{label}": 1,
+              "{origin}": 1,
+              "\"shield-footer-agreement-button\"": 1,
+              "\"learnMoreLink\"": 1,
+              "\"walletReadyLearn\"": 1,
+              "\"seedPhraseReviewDetails\"": 1,
+              "\"loginErrorGenericDescription\"": 1,
+              "\"gas-fees-learn-more\"": 1
+            }
+          },
+          "as": {
+            "count": 20,
+            "values": {
+              "\"a\"": 17,
+              "\"button\"": 3
+            }
+          },
+          "rel": {
+            "count": 20,
+            "values": {
+              "\"noopener noreferrer\"": 17,
+              "\"noreferrer noopener\"": 3
+            }
+          },
+          "externalLink": {
+            "count": 19,
+            "values": {
+              "true (shorthand)": 18,
+              "{!isMetaMaskUrl}": 1
+            }
+          },
+          "startIconName": {
+            "count": 17,
+            "values": {
+              "{IconName.Add}": 11,
+              "{IconName.Wallet}": 1,
+              "{IconName.Key}": 1,
+              "{IconName.Hardware}": 1,
+              "{IconName.Snaps}": 1,
+              "{IconName.Eye}": 1,
+              "{sortOrder === sortOrderOption && sortOrder === SortOrder.ETA_ASC ? icon : und...}": 1
+            }
+          },
+          "startIconProps": {
+            "count": 16,
+            "values": {
+              "{{ size: IconSize.Md }}": 15,
+              "{{ size: IconSize.Xs, }}": 1
+            }
+          },
+          "textProps": {
+            "count": 15,
+            "values": {
+              "{{ variant: TextVariant.bodyMd, alignItems: AlignItems.flexStart, }}": 9,
+              "{{ display: Display.Inline, }}": 2,
+              "{{ variant: TextVariant.BodySm }}": 1,
+              "{{ width: BlockSize.Full }}": 1,
+              "{{ variant: TextVariant.bodyMdMedium }}": 1,
+              "{{ variant: TextVariant.bodySm, }}": 1
+            }
+          },
+          "variant": {
+            "count": 14,
+            "values": {
+              "{TextVariant.bodySm}": 7,
+              "{TextVariant.bodyMdMedium}": 3,
+              "{TextVariant.bodyXsMedium}": 2,
+              "{TextVariant.bodyMd}": 2
+            }
+          },
+          "style": {
+            "count": 13,
+            "values": {
+              "{{ verticalAlign: 'baseline' }}": 3,
+              "{{ verticalAlign: 'bottom' }}": 2,
+              "{{ // Prevents the link from taking up the full width of the parent. width: 'f...}": 2,
+              "{{ alignSelf: AlignItems.flexStart, paddingInline: 16, }}": 1,
+              "{{ fontSize: '0.875rem', }}": 1,
+              "{{ height: '22px', fontSize: '14px', lineHeight: '22px', verticalAlign: 'basel...}": 1,
+              "{{ cursor: 'pointer', }}": 1,
+              "{{ whiteSpace: 'nowrap' }}": 1,
+              "{{ height: 'unset', verticalAlign: 'unset' }}": 1
+            }
+          },
+          "color": {
+            "count": 13,
+            "values": {
+              "{TextColor.primaryDefault}": 10,
+              "{TextColor.infoDefault}": 2,
+              "{sortOrder === sortOrderOption ? TextColor.primaryDefault : TextColor.textAlte...}": 1
+            }
+          },
+          "asChild": {
+            "count": 12,
+            "values": {
+              "true (shorthand)": 12
+            }
+          },
+          "[spread]": {
+            "count": 8,
+            "values": {
+              "{linkProps}": 7,
+              "{rest}": 1
+            }
+          },
+          "endIconName": {
+            "count": 7,
+            "values": {
+              "{IconName.Export}": 3,
+              "{IconName.ArrowRight}": 2,
+              "{IconName.Copy}": 1,
+              "{sortOrder === sortOrderOption && sortOrder === SortOrder.COST_ASC ? icon : un...}": 1
+            }
+          },
+          "disabled": {
+            "count": 3,
+            "values": {
+              "{isLoading}": 1,
+              "{!isAddWatchEthereumAccountEnabled}": 1,
+              "{Object.values(checkedChainIds).every((v) => !v)}": 1
+            }
+          },
+          "display": {
+            "count": 3,
+            "values": {
+              "{Display.Inline}": 3
+            }
+          },
+          "marginBottom": {
+            "count": 3,
+            "values": {
+              "2": 3
+            }
+          },
+          "paddingLeft": {
+            "count": 3,
+            "values": {
+              "1": 3
+            }
+          },
+          "endIconProps": {
+            "count": 3,
+            "values": {
+              "{{ size: IconSize.Sm, color: IconColor.IconAlternative, }}": 2,
+              "{{ size: IconSize.Xs, }}": 1
+            }
+          },
+          "block": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "marginLeft": {
+            "count": 2,
+            "values": {
+              "2": 2
+            }
+          },
+          "paddingTop": {
+            "count": 2,
+            "values": {
+              "0": 2
+            }
+          },
+          "paddingBottom": {
+            "count": 2,
+            "values": {
+              "0": 2
+            }
+          },
+          "overflowWrap": {
+            "count": 2,
+            "values": {
+              "{OverflowWrap.Anywhere}": 2
+            }
+          },
+          "ellipsis": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "fontWeight": {
+            "count": 2,
+            "values": {
+              "{FontWeight.Medium}": 1,
+              "{FontWeight.Normal}": 1
+            }
+          },
+          "title": {
+            "count": 2,
+            "values": {
+              "{address}": 2
+            }
+          },
+          "paddingRight": {
+            "count": 2,
+            "values": {
+              "1": 2
+            }
+          },
+          "marginTop": {
+            "count": 1,
+            "values": {
+              "4": 1
+            }
+          },
+          "marginRight": {
+            "count": 1,
+            "values": {
+              "2": 1
+            }
+          },
+          "startAccessory": {
+            "count": 1,
+            "values": {
+              "{isLoading ? ( <Icon name={IconName.Loading} size={IconSize.Sm} /> ) : ( <img ...}": 1
+            }
+          },
+          "endAccessory": {
+            "count": 1,
+            "values": {
+              "{isError ? ( <Icon name={IconName.Refresh} size={IconSize.Sm} color={IconColor...}": 1
+            }
+          },
+          "width": {
+            "count": 1,
+            "values": {
+              "{BlockSize.Full}": 1
+            }
+          },
+          "textAlign": {
+            "count": 1,
+            "values": {
+              "{TextAlign.End}": 1
+            }
+          },
+          "justifyContent": {
+            "count": 1,
+            "values": {
+              "{JustifyContent.flexStart}": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {
+        "ButtonLink": 103
+      }
+    }
+  }
+}

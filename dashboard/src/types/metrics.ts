@@ -87,3 +87,45 @@ export interface IndexData {
     extension: string | null;
   };
 }
+
+export interface ComponentPropUsage {
+  count: number;
+  values: Record<string, number>;
+}
+
+export interface ComponentPropsAuditBucket {
+  totalInstances: number;
+  filesCount: number;
+  props: Record<string, ComponentPropUsage>;
+}
+
+export interface ComponentPropsAuditProject {
+  filesScanned: number;
+  targetComponent: string;
+  mmds: ComponentPropsAuditBucket;
+  deprecated: ComponentPropsAuditBucket;
+  overall: ComponentPropsAuditBucket;
+  deprecatedByLegacyComponent: Record<string, number>;
+}
+
+export interface ComponentPropsAuditData {
+  component: string;
+  generatedAt: string;
+  projects: {
+    mobile?: ComponentPropsAuditProject;
+    extension?: ComponentPropsAuditProject;
+    [key: string]: ComponentPropsAuditProject | undefined;
+  };
+}
+
+export interface ComponentPropsAuditIndexEntry {
+  component: string;
+  file: string;
+  projects: string[];
+  generatedAt: string;
+}
+
+export interface ComponentPropsAuditIndexData {
+  generatedAt: string;
+  components: ComponentPropsAuditIndexEntry[];
+}

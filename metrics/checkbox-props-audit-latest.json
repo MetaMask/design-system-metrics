@@ -1,0 +1,731 @@
+{
+  "component": "Checkbox",
+  "generatedAt": "2026-03-04T22:26:41.658Z",
+  "projects": {
+    "mobile": {
+      "filesScanned": 5390,
+      "targetComponent": "Checkbox",
+      "mmds": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "deprecated": {
+        "totalInstances": 21,
+        "filesCount": 18,
+        "props": {
+          "onPress": {
+            "count": 21,
+            "values": {
+              "{() => setIsChecked(!isChecked)}": 2,
+              "{handleBulkLinkToggle}": 2,
+              "{onPress}": 2,
+              "{handleChange}": 1,
+              "{handleElectronicConsentToggle}": 1,
+              "{handleCoinmeConsentToggle}": 1,
+              "{handleCrbConsentToggle}": 1,
+              "{onDontRemindMeAgainPressed}": 1,
+              "{handleBasicUsageToggle}": 1,
+              "{handleMarketingToggle}": 1,
+              "{handleNetworkOnPress(chainId)}": 1,
+              "{toggleSkipCheckbox}": 1,
+              "{setSelection}": 1,
+              "{() => setLearnMore(!learnMore)}": 1,
+              "{handleCheckboxToggle}": 1,
+              "{this.setSelection}": 1,
+              "{() => onCheckboxClick(isConfirmed)}": 1,
+              "{handleConfirmCheckbox}": 1
+            }
+          },
+          "isChecked": {
+            "count": 21,
+            "values": {
+              "{isChecked}": 3,
+              "{bulkLink}": 2,
+              "{isSelected}": 2,
+              "{value}": 1,
+              "{electronicConsent}": 1,
+              "{coinmeConsent}": 1,
+              "{crbConsent}": 1,
+              "{isBasicUsageChecked}": 1,
+              "{isMarketingChecked}": 1,
+              "{networkFilter?.includes(chainId) ?? false}": 1,
+              "{skipCheckbox}": 1,
+              "{areAllAccountsSelected}": 1,
+              "{learnMore}": 1,
+              "{isCheckboxChecked}": 1,
+              "{areAllNetworksSelected}": 1,
+              "{isConfirmed}": 1,
+              "{confirmCheckbox}": 1
+            }
+          },
+          "testID": {
+            "count": 13,
+            "values": {
+              "{ChoosePasswordSelectorsIDs.I_UNDERSTAND_CHECKBOX_ID}": 3,
+              "\"snap-ui-renderer__checkbox\"": 1,
+              "\"physical-address-electronic-consent-checkbox\"": 1,
+              "\"physical-address-coinme-terms-checkbox\"": 1,
+              "\"physical-address-crb-consent-checkbox\"": 1,
+              "{SkipAccountSecurityModalSelectorsIDs.iOS_SKIP_BACKUP_BUTTON_ID}": 1,
+              "{ConnectAccountBottomSheetSelectorsIDs.SELECT_ALL_BUTTON}": 1,
+              "\"learn-more-checkbox\"": 1,
+              "{ConnectedAccountsSelectorsIDs.SELECT_ALL_NETWORKS_BUTTON}": 1,
+              "\"alert-modal-checkbox\"": 1,
+              "\"confirm-alert-checkbox\"": 1
+            }
+          },
+          "label": {
+            "count": 12,
+            "values": {
+              "{<Box style={tw.style('flex-1 flex-shrink mr-2 -mt-1')}> <Text variant={TextVa...}": 3,
+              "{<Text variant={TextVariant.BodyMd} twClassName=\"text-text-alternative\" > {str...}": 2,
+              "{label}": 1,
+              "{strings('default_settings.sheet.checkbox_label')}": 1,
+              "{strings('deep_link_modal.private_link.checkbox_label')}": 1,
+              "{checkBoxLabel}": 1,
+              "{strings('accounts.select_all')}": 1,
+              "{strings('multichain_accounts.learn_more.checkbox_label')}": 1,
+              "{strings('networks.select_all')}": 1
+            }
+          },
+          "style": {
+            "count": 9,
+            "values": {
+              "{tw.style('h-auto flex flex-row items-start')}": 3,
+              "{styles.checkbox}": 3,
+              "{styles.skipModalCheckbox}": 1,
+              "{styles.selectAll}": 1,
+              "{styles.selectAllContainer}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 3,
+            "values": {
+              "{optinLoading}": 2,
+              "{disabled}": 1
+            }
+          },
+          "accessibilityLabel": {
+            "count": 3,
+            "values": {
+              "{ChoosePasswordSelectorsIDs.I_UNDERSTAND_CHECKBOX_ID}": 2,
+              "{ConnectedAccountsSelectorsIDs.SELECT_ALL_NETWORKS_BUTTON}": 1
+            }
+          },
+          "accessibilityRole": {
+            "count": 2,
+            "values": {
+              "checkbox": 2
+            }
+          },
+          "accessible": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "isIndeterminate": {
+            "count": 2,
+            "values": {
+              "{areSomeSelectedButNotAll}": 1,
+              "{areSomeNetworksSelectedButNotAll}": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{props}": 1
+            }
+          },
+          "disabled": {
+            "count": 1,
+            "values": {
+              "{isMarketingDisabled}": 1
+            }
+          }
+        }
+      },
+      "overall": {
+        "totalInstances": 21,
+        "filesCount": 18,
+        "props": {
+          "onPress": {
+            "count": 21,
+            "values": {
+              "{() => setIsChecked(!isChecked)}": 2,
+              "{handleBulkLinkToggle}": 2,
+              "{onPress}": 2,
+              "{handleChange}": 1,
+              "{handleElectronicConsentToggle}": 1,
+              "{handleCoinmeConsentToggle}": 1,
+              "{handleCrbConsentToggle}": 1,
+              "{onDontRemindMeAgainPressed}": 1,
+              "{handleBasicUsageToggle}": 1,
+              "{handleMarketingToggle}": 1,
+              "{handleNetworkOnPress(chainId)}": 1,
+              "{toggleSkipCheckbox}": 1,
+              "{setSelection}": 1,
+              "{() => setLearnMore(!learnMore)}": 1,
+              "{handleCheckboxToggle}": 1,
+              "{this.setSelection}": 1,
+              "{() => onCheckboxClick(isConfirmed)}": 1,
+              "{handleConfirmCheckbox}": 1
+            }
+          },
+          "isChecked": {
+            "count": 21,
+            "values": {
+              "{isChecked}": 3,
+              "{bulkLink}": 2,
+              "{isSelected}": 2,
+              "{value}": 1,
+              "{electronicConsent}": 1,
+              "{coinmeConsent}": 1,
+              "{crbConsent}": 1,
+              "{isBasicUsageChecked}": 1,
+              "{isMarketingChecked}": 1,
+              "{networkFilter?.includes(chainId) ?? false}": 1,
+              "{skipCheckbox}": 1,
+              "{areAllAccountsSelected}": 1,
+              "{learnMore}": 1,
+              "{isCheckboxChecked}": 1,
+              "{areAllNetworksSelected}": 1,
+              "{isConfirmed}": 1,
+              "{confirmCheckbox}": 1
+            }
+          },
+          "testID": {
+            "count": 13,
+            "values": {
+              "{ChoosePasswordSelectorsIDs.I_UNDERSTAND_CHECKBOX_ID}": 3,
+              "\"snap-ui-renderer__checkbox\"": 1,
+              "\"physical-address-electronic-consent-checkbox\"": 1,
+              "\"physical-address-coinme-terms-checkbox\"": 1,
+              "\"physical-address-crb-consent-checkbox\"": 1,
+              "{SkipAccountSecurityModalSelectorsIDs.iOS_SKIP_BACKUP_BUTTON_ID}": 1,
+              "{ConnectAccountBottomSheetSelectorsIDs.SELECT_ALL_BUTTON}": 1,
+              "\"learn-more-checkbox\"": 1,
+              "{ConnectedAccountsSelectorsIDs.SELECT_ALL_NETWORKS_BUTTON}": 1,
+              "\"alert-modal-checkbox\"": 1,
+              "\"confirm-alert-checkbox\"": 1
+            }
+          },
+          "label": {
+            "count": 12,
+            "values": {
+              "{<Box style={tw.style('flex-1 flex-shrink mr-2 -mt-1')}> <Text variant={TextVa...}": 3,
+              "{<Text variant={TextVariant.BodyMd} twClassName=\"text-text-alternative\" > {str...}": 2,
+              "{label}": 1,
+              "{strings('default_settings.sheet.checkbox_label')}": 1,
+              "{strings('deep_link_modal.private_link.checkbox_label')}": 1,
+              "{checkBoxLabel}": 1,
+              "{strings('accounts.select_all')}": 1,
+              "{strings('multichain_accounts.learn_more.checkbox_label')}": 1,
+              "{strings('networks.select_all')}": 1
+            }
+          },
+          "style": {
+            "count": 9,
+            "values": {
+              "{tw.style('h-auto flex flex-row items-start')}": 3,
+              "{styles.checkbox}": 3,
+              "{styles.skipModalCheckbox}": 1,
+              "{styles.selectAll}": 1,
+              "{styles.selectAllContainer}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 3,
+            "values": {
+              "{optinLoading}": 2,
+              "{disabled}": 1
+            }
+          },
+          "accessibilityLabel": {
+            "count": 3,
+            "values": {
+              "{ChoosePasswordSelectorsIDs.I_UNDERSTAND_CHECKBOX_ID}": 2,
+              "{ConnectedAccountsSelectorsIDs.SELECT_ALL_NETWORKS_BUTTON}": 1
+            }
+          },
+          "accessibilityRole": {
+            "count": 2,
+            "values": {
+              "checkbox": 2
+            }
+          },
+          "accessible": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "isIndeterminate": {
+            "count": 2,
+            "values": {
+              "{areSomeSelectedButNotAll}": 1,
+              "{areSomeNetworksSelectedButNotAll}": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{props}": 1
+            }
+          },
+          "disabled": {
+            "count": 1,
+            "values": {
+              "{isMarketingDisabled}": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {
+        "Checkbox": 21
+      }
+    },
+    "extension": {
+      "filesScanned": 2980,
+      "targetComponent": "Checkbox",
+      "mmds": {
+        "totalInstances": 2,
+        "filesCount": 2,
+        "props": {
+          "id": {
+            "count": 2,
+            "values": {
+              "\"defi-referral-consent-checkbox\"": 1,
+              "\"stripe-test-clocks\"": 1
+            }
+          },
+          "isSelected": {
+            "count": 2,
+            "values": {
+              "{isChecked}": 1,
+              "{enableStripeTestClock}": 1
+            }
+          },
+          "onChange": {
+            "count": 2,
+            "values": {
+              "{handleCheckboxClick}": 1,
+              "{() => setEnableStripeTestClock(!enableStripeTestClock)}": 1
+            }
+          },
+          "label": {
+            "count": 2,
+            "values": {
+              "{t('defiReferralCheckboxLabel')}": 1,
+              "\"Enable Stripe Test clocks (for development and testing only)\"": 1
+            }
+          },
+          "labelProps": {
+            "count": 2,
+            "values": {
+              "{{ variant: TextVariant.BodySm, color: TextColor.TextAlternative, }}": 1,
+              "{{ variant: TextVariant.BodySm, }}": 1
+            }
+          },
+          "className": {
+            "count": 1,
+            "values": {
+              "\"items-start cursor-pointer\"": 1
+            }
+          }
+        }
+      },
+      "deprecated": {
+        "totalInstances": 34,
+        "filesCount": 24,
+        "props": {
+          "isChecked": {
+            "count": 32,
+            "values": {
+              "{checked}": 6,
+              "{selectedChainIds.includes(network.caipChainId)}": 4,
+              "{termsChecked}": 3,
+              "true (shorthand)": 2,
+              "{checkedChainIds[chainId]}": 2,
+              "{isSelectedAccount}": 2,
+              "{isConfirmed}": 1,
+              "{hasAgreed}": 1,
+              "{tokenSelection}": 1,
+              "{selectedTokens[address] || tokenAlreadyAdded}": 1,
+              "{userAgree}": 1,
+              "{value}": 1,
+              "{isTermsOfUseChecked}": 1,
+              "{selectedAccountAddresses.some( (selectedAccountAddress) => isEqualCaseInsensi...}": 1,
+              "{selectedAccountGroupsSet.has( groupId as AccountGroupId, )}": 1,
+              "{isDefaultSettingsSelected}": 1,
+              "{skipDeepLinkInterstitialChecked}": 1,
+              "{isParticipateInMetaMetricsChecked}": 1,
+              "{isParticipateInMetaMetricsChecked && isDataCollectionForMarketingChecked}": 1
+            }
+          },
+          "label": {
+            "count": 15,
+            "values": {
+              "{t('selectAll')}": 4,
+              "{label}": 2,
+              "{<Text variant={TextVariant.bodyMdMedium}> {t('onboardingMetametricCheckboxTit...}": 2,
+              "{label ?? t('alertModalAcknowledge')}": 1,
+              "{termsOfUse}": 1,
+              "{<Text as=\"span\"> Install{' '} <Text as=\"span\" fontWeight={FontWeight.Medium}>...}": 1,
+              "{t('termsOfUseAgreeText')}": 1,
+              "{t('advancedGasFeeDefaultOptIn', [capitalize(networkIdentifier)])}": 1,
+              "{<Text variant={TextVariant.bodySm} color={TextColor.textDefault}> {checkboxLa...}": 1,
+              "{<> {isSocialLoginFlow ? t('passwordTermsWarningSocial') : t('passwordTermsWar...}": 1
+            }
+          },
+          "onChange": {
+            "count": 13,
+            "values": {
+              "{() => { setTermsChecked(!termsChecked); }}": 2,
+              "{onCheckboxClick}": 1,
+              "{toggleTermsCheck}": 1,
+              "{() => setUserAgree((state) => !state)}": 1,
+              "{handleChange}": 1,
+              "{() => { setIsTermsOfUseChecked(!isTermsOfUseChecked); }}": 1,
+              "{() => { handleToggleAllNetworks(); }}": 1,
+              "{() => { handleAccountClickToUse(groupId as AccountGroupId); }}": 1,
+              "{handleUpdateDefaultSettings}": 1,
+              "{onRemindMeStateChanged}": 1,
+              "{handleParticipateInMetaMetricsChange}": 1,
+              "{() => { setIsDataCollectionForMarketingChecked((prev) => !prev); }}": 1
+            }
+          },
+          "onClick": {
+            "count": 10,
+            "values": {
+              "{() => (allAreSelected() ? deselectAll() : selectAll())}": 3,
+              "{(e: React.MouseEvent<HTMLInputElement>) => e.stopPropagation()}": 2,
+              "{() => setHasAgreed((prevValue) => !prevValue)}": 1,
+              "{handleCheckBoxSelection}": 1,
+              "{onClick}": 1,
+              "{() => allAreSelected() ? deselectAll() : selectAll()}": 1,
+              "{() => (allAreSelected ? deselectAll() : selectAll())}": 1
+            }
+          },
+          "data-testid": {
+            "count": 7,
+            "values": {
+              "\"alert-modal-acknowledge-checkbox\"": 1,
+              "\"create-new-vault-terms-checkbox\"": 1,
+              "\"terms-of-use-checkbox\"": 1,
+              "\"choose-account-list-operate-all-check-box\"": 1,
+              "\"deep-link-checkbox\"": 1,
+              "\"metametrics-checkbox\"": 1,
+              "\"metametrics-data-collection-checkbox\"": 1
+            }
+          },
+          "id": {
+            "count": 7,
+            "values": {
+              "\"basic-configuration-checkbox\"": 1,
+              "{`connected-permission-${idx}`}": 1,
+              "\"create-new-vault-terms-checkbox\"": 1,
+              "\"terms-of-use__checkbox\"": 1,
+              "\"dont-remind-me-checkbox\"": 1,
+              "\"metametrics-opt-in\"": 1,
+              "\"metametrics-datacollection-opt-in\"": 1
+            }
+          },
+          "alignItems": {
+            "count": 6,
+            "values": {
+              "{AlignItems.flexStart}": 4,
+              "{AlignItems.center}": 2
+            }
+          },
+          "isDisabled": {
+            "count": 6,
+            "values": {
+              "true (shorthand)": 1,
+              "{disabled}": 1,
+              "{!isEvmAccountType(account.type)}": 1,
+              "{gasErrors.maxFeePerGas || gasErrors.maxPriorityFeePerGas}": 1,
+              "{loading}": 1,
+              "{!isParticipateInMetaMetricsChecked}": 1
+            }
+          },
+          "isIndeterminate": {
+            "count": 6,
+            "values": {
+              "{isIndeterminate}": 5,
+              "{Object.values(checkedChainIds).every((v) => v)}": 1
+            }
+          },
+          "inputProps": {
+            "count": 5,
+            "values": {
+              "{{ onClick: (e: React.MouseEvent<HTMLInputElement>) => e.stopPropagation(), }}": 2,
+              "{{ borderColor: BorderColor.borderMuted, }}": 1,
+              "{{ 'data-testid': 'create-password-terms' }}": 1,
+              "{{ 'data-testid': 'change-password-terms' }}": 1
+            }
+          },
+          "className": {
+            "count": 3,
+            "values": {
+              "\"alert-modal__acknowledge-checkbox\"": 1,
+              "\"terms-of-use__checkbox\"": 1,
+              "\"choose-account-list__header-check-box\"": 1
+            }
+          },
+          "gap": {
+            "count": 3,
+            "values": {
+              "4": 3
+            }
+          },
+          "name": {
+            "count": 2,
+            "values": {
+              "{chainId}": 2
+            }
+          },
+          "inputRef": {
+            "count": 2,
+            "values": {
+              "{participateCheckboxRef}": 1,
+              "{marketingCheckboxRef}": 1
+            }
+          },
+          "marginRight": {
+            "count": 1,
+            "values": {
+              "4": 1
+            }
+          },
+          "isRequired": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{props}": 1
+            }
+          },
+          "iconProps": {
+            "count": 1,
+            "values": {
+              "{{ name: Object.values(checkedChainIds).some((v) => !v) ? IconName.MinusBold :...}": 1
+            }
+          }
+        }
+      },
+      "overall": {
+        "totalInstances": 36,
+        "filesCount": 26,
+        "props": {
+          "isChecked": {
+            "count": 32,
+            "values": {
+              "{checked}": 6,
+              "{selectedChainIds.includes(network.caipChainId)}": 4,
+              "{termsChecked}": 3,
+              "true (shorthand)": 2,
+              "{checkedChainIds[chainId]}": 2,
+              "{isSelectedAccount}": 2,
+              "{isConfirmed}": 1,
+              "{hasAgreed}": 1,
+              "{tokenSelection}": 1,
+              "{selectedTokens[address] || tokenAlreadyAdded}": 1,
+              "{userAgree}": 1,
+              "{value}": 1,
+              "{isTermsOfUseChecked}": 1,
+              "{selectedAccountAddresses.some( (selectedAccountAddress) => isEqualCaseInsensi...}": 1,
+              "{selectedAccountGroupsSet.has( groupId as AccountGroupId, )}": 1,
+              "{isDefaultSettingsSelected}": 1,
+              "{skipDeepLinkInterstitialChecked}": 1,
+              "{isParticipateInMetaMetricsChecked}": 1,
+              "{isParticipateInMetaMetricsChecked && isDataCollectionForMarketingChecked}": 1
+            }
+          },
+          "label": {
+            "count": 17,
+            "values": {
+              "{t('selectAll')}": 4,
+              "{label}": 2,
+              "{<Text variant={TextVariant.bodyMdMedium}> {t('onboardingMetametricCheckboxTit...}": 2,
+              "{label ?? t('alertModalAcknowledge')}": 1,
+              "{termsOfUse}": 1,
+              "{<Text as=\"span\"> Install{' '} <Text as=\"span\" fontWeight={FontWeight.Medium}>...}": 1,
+              "{t('termsOfUseAgreeText')}": 1,
+              "{t('advancedGasFeeDefaultOptIn', [capitalize(networkIdentifier)])}": 1,
+              "{t('defiReferralCheckboxLabel')}": 1,
+              "{<Text variant={TextVariant.bodySm} color={TextColor.textDefault}> {checkboxLa...}": 1,
+              "{<> {isSocialLoginFlow ? t('passwordTermsWarningSocial') : t('passwordTermsWar...}": 1,
+              "\"Enable Stripe Test clocks (for development and testing only)\"": 1
+            }
+          },
+          "onChange": {
+            "count": 15,
+            "values": {
+              "{() => { setTermsChecked(!termsChecked); }}": 2,
+              "{onCheckboxClick}": 1,
+              "{toggleTermsCheck}": 1,
+              "{() => setUserAgree((state) => !state)}": 1,
+              "{handleChange}": 1,
+              "{() => { setIsTermsOfUseChecked(!isTermsOfUseChecked); }}": 1,
+              "{() => { handleToggleAllNetworks(); }}": 1,
+              "{() => { handleAccountClickToUse(groupId as AccountGroupId); }}": 1,
+              "{handleUpdateDefaultSettings}": 1,
+              "{handleCheckboxClick}": 1,
+              "{onRemindMeStateChanged}": 1,
+              "{handleParticipateInMetaMetricsChange}": 1,
+              "{() => { setIsDataCollectionForMarketingChecked((prev) => !prev); }}": 1,
+              "{() => setEnableStripeTestClock(!enableStripeTestClock)}": 1
+            }
+          },
+          "onClick": {
+            "count": 10,
+            "values": {
+              "{() => (allAreSelected() ? deselectAll() : selectAll())}": 3,
+              "{(e: React.MouseEvent<HTMLInputElement>) => e.stopPropagation()}": 2,
+              "{() => setHasAgreed((prevValue) => !prevValue)}": 1,
+              "{handleCheckBoxSelection}": 1,
+              "{onClick}": 1,
+              "{() => allAreSelected() ? deselectAll() : selectAll()}": 1,
+              "{() => (allAreSelected ? deselectAll() : selectAll())}": 1
+            }
+          },
+          "id": {
+            "count": 9,
+            "values": {
+              "\"basic-configuration-checkbox\"": 1,
+              "{`connected-permission-${idx}`}": 1,
+              "\"create-new-vault-terms-checkbox\"": 1,
+              "\"terms-of-use__checkbox\"": 1,
+              "\"defi-referral-consent-checkbox\"": 1,
+              "\"dont-remind-me-checkbox\"": 1,
+              "\"metametrics-opt-in\"": 1,
+              "\"metametrics-datacollection-opt-in\"": 1,
+              "\"stripe-test-clocks\"": 1
+            }
+          },
+          "data-testid": {
+            "count": 7,
+            "values": {
+              "\"alert-modal-acknowledge-checkbox\"": 1,
+              "\"create-new-vault-terms-checkbox\"": 1,
+              "\"terms-of-use-checkbox\"": 1,
+              "\"choose-account-list-operate-all-check-box\"": 1,
+              "\"deep-link-checkbox\"": 1,
+              "\"metametrics-checkbox\"": 1,
+              "\"metametrics-data-collection-checkbox\"": 1
+            }
+          },
+          "alignItems": {
+            "count": 6,
+            "values": {
+              "{AlignItems.flexStart}": 4,
+              "{AlignItems.center}": 2
+            }
+          },
+          "isDisabled": {
+            "count": 6,
+            "values": {
+              "true (shorthand)": 1,
+              "{disabled}": 1,
+              "{!isEvmAccountType(account.type)}": 1,
+              "{gasErrors.maxFeePerGas || gasErrors.maxPriorityFeePerGas}": 1,
+              "{loading}": 1,
+              "{!isParticipateInMetaMetricsChecked}": 1
+            }
+          },
+          "isIndeterminate": {
+            "count": 6,
+            "values": {
+              "{isIndeterminate}": 5,
+              "{Object.values(checkedChainIds).every((v) => v)}": 1
+            }
+          },
+          "inputProps": {
+            "count": 5,
+            "values": {
+              "{{ onClick: (e: React.MouseEvent<HTMLInputElement>) => e.stopPropagation(), }}": 2,
+              "{{ borderColor: BorderColor.borderMuted, }}": 1,
+              "{{ 'data-testid': 'create-password-terms' }}": 1,
+              "{{ 'data-testid': 'change-password-terms' }}": 1
+            }
+          },
+          "className": {
+            "count": 4,
+            "values": {
+              "\"alert-modal__acknowledge-checkbox\"": 1,
+              "\"terms-of-use__checkbox\"": 1,
+              "\"choose-account-list__header-check-box\"": 1,
+              "\"items-start cursor-pointer\"": 1
+            }
+          },
+          "gap": {
+            "count": 3,
+            "values": {
+              "4": 3
+            }
+          },
+          "name": {
+            "count": 2,
+            "values": {
+              "{chainId}": 2
+            }
+          },
+          "isSelected": {
+            "count": 2,
+            "values": {
+              "{isChecked}": 1,
+              "{enableStripeTestClock}": 1
+            }
+          },
+          "labelProps": {
+            "count": 2,
+            "values": {
+              "{{ variant: TextVariant.BodySm, color: TextColor.TextAlternative, }}": 1,
+              "{{ variant: TextVariant.BodySm, }}": 1
+            }
+          },
+          "inputRef": {
+            "count": 2,
+            "values": {
+              "{participateCheckboxRef}": 1,
+              "{marketingCheckboxRef}": 1
+            }
+          },
+          "marginRight": {
+            "count": 1,
+            "values": {
+              "4": 1
+            }
+          },
+          "isRequired": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{props}": 1
+            }
+          },
+          "iconProps": {
+            "count": 1,
+            "values": {
+              "{{ name: Object.values(checkedChainIds).some((v) => !v) ? IconName.MinusBold :...}": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {
+        "Checkbox": 34
+      }
+    }
+  }
+}

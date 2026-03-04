@@ -1,0 +1,262 @@
+{
+  "component": "AvatarAccount",
+  "generatedAt": "2026-03-04T22:21:35.995Z",
+  "projects": {
+    "mobile": {
+      "filesScanned": 5390,
+      "targetComponent": "AvatarAccount",
+      "mmds": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "deprecated": {
+        "totalInstances": 9,
+        "filesCount": 7,
+        "props": {
+          "type": {
+            "count": 9,
+            "values": {
+              "{avatarAccountType}": 6,
+              "{AvatarAccountType.Maskicon}": 1,
+              "{AvatarAccountType.JazzIcon}": 1,
+              "{AvatarAccountType.Blockies}": 1
+            }
+          },
+          "accountAddress": {
+            "count": 9,
+            "values": {
+              "{selectedAddress}": 4,
+              "{evmAddress || '0x0000000000000000000000000000000000000000'}": 2,
+              "{displayAddress}": 1,
+              "{address}": 1,
+              "{event.accountAddress}": 1
+            }
+          },
+          "size": {
+            "count": 8,
+            "values": {
+              "{diameter}": 3,
+              "{size}": 1,
+              "{avatarSize}": 1,
+              "{AvatarSize.Md}": 1,
+              "{AvatarSize.Lg}": 1,
+              "{AvatarSize.Sm}": 1
+            }
+          },
+          "testID": {
+            "count": 2,
+            "values": {
+              "{SNAP_UI_AVATAR_TEST_ID}": 1,
+              "{`rewards-account-group-avatar-${accountGroup.id}`}": 1
+            }
+          }
+        }
+      },
+      "overall": {
+        "totalInstances": 9,
+        "filesCount": 7,
+        "props": {
+          "type": {
+            "count": 9,
+            "values": {
+              "{avatarAccountType}": 6,
+              "{AvatarAccountType.Maskicon}": 1,
+              "{AvatarAccountType.JazzIcon}": 1,
+              "{AvatarAccountType.Blockies}": 1
+            }
+          },
+          "accountAddress": {
+            "count": 9,
+            "values": {
+              "{selectedAddress}": 4,
+              "{evmAddress || '0x0000000000000000000000000000000000000000'}": 2,
+              "{displayAddress}": 1,
+              "{address}": 1,
+              "{event.accountAddress}": 1
+            }
+          },
+          "size": {
+            "count": 8,
+            "values": {
+              "{diameter}": 3,
+              "{size}": 1,
+              "{avatarSize}": 1,
+              "{AvatarSize.Md}": 1,
+              "{AvatarSize.Lg}": 1,
+              "{AvatarSize.Sm}": 1
+            }
+          },
+          "testID": {
+            "count": 2,
+            "values": {
+              "{SNAP_UI_AVATAR_TEST_ID}": 1,
+              "{`rewards-account-group-avatar-${accountGroup.id}`}": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {
+        "AvatarAccount": 9
+      }
+    },
+    "extension": {
+      "filesScanned": 2980,
+      "targetComponent": "AvatarAccount",
+      "mmds": {
+        "totalInstances": 11,
+        "filesCount": 9,
+        "props": {
+          "address": {
+            "count": 10,
+            "values": {
+              "{selectedAddress}": 3,
+              "{member.avatarValue}": 1,
+              "\"0x7830c87C02e56AFf27FA8Ab1241711331FA86F43\"": 1,
+              "{acc.address}": 1,
+              "{CHAOS_ACCOUNT.address}": 1,
+              "{seedAddresses?.[acc.id] ?? ''}": 1,
+              "{address}": 1,
+              "\"0x1234567890123456789012345678901234567890\"": 1
+            }
+          },
+          "variant": {
+            "count": 9,
+            "values": {
+              "{variant}": 2,
+              "{avatarAccountVariant}": 2,
+              "{AvatarAccountVariant.Blockies}": 2,
+              "{AvatarAccountVariant.Maskicon}": 2,
+              "{AvatarAccountVariant.Jazzicon}": 1
+            }
+          },
+          "size": {
+            "count": 5,
+            "values": {
+              "{AvatarAccountSize.Xs}": 3,
+              "{AvatarAccountSize.Md}": 1,
+              "{mapDiameterToSize(diameter)}": 1
+            }
+          },
+          "className": {
+            "count": 3,
+            "values": {
+              "{classnames({ 'outline outline-2 outline-primary-default': currentAvatarType =...}": 3
+            }
+          },
+          "id": {
+            "count": 2,
+            "values": {
+              "\"jazzicon\"": 1,
+              "\"blockies\"": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{props}": 1
+            }
+          },
+          "borderStyle": {
+            "count": 1,
+            "values": {
+              "{BorderStyle.none}": 1
+            }
+          },
+          "alt": {
+            "count": 1,
+            "values": {
+              "{alt}": 1
+            }
+          },
+          "shape": {
+            "count": 1,
+            "values": {
+              "{AvatarBaseShape.Square}": 1
+            }
+          }
+        }
+      },
+      "deprecated": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "overall": {
+        "totalInstances": 11,
+        "filesCount": 9,
+        "props": {
+          "address": {
+            "count": 10,
+            "values": {
+              "{selectedAddress}": 3,
+              "{member.avatarValue}": 1,
+              "\"0x7830c87C02e56AFf27FA8Ab1241711331FA86F43\"": 1,
+              "{acc.address}": 1,
+              "{CHAOS_ACCOUNT.address}": 1,
+              "{seedAddresses?.[acc.id] ?? ''}": 1,
+              "{address}": 1,
+              "\"0x1234567890123456789012345678901234567890\"": 1
+            }
+          },
+          "variant": {
+            "count": 9,
+            "values": {
+              "{variant}": 2,
+              "{avatarAccountVariant}": 2,
+              "{AvatarAccountVariant.Blockies}": 2,
+              "{AvatarAccountVariant.Maskicon}": 2,
+              "{AvatarAccountVariant.Jazzicon}": 1
+            }
+          },
+          "size": {
+            "count": 5,
+            "values": {
+              "{AvatarAccountSize.Xs}": 3,
+              "{AvatarAccountSize.Md}": 1,
+              "{mapDiameterToSize(diameter)}": 1
+            }
+          },
+          "className": {
+            "count": 3,
+            "values": {
+              "{classnames({ 'outline outline-2 outline-primary-default': currentAvatarType =...}": 3
+            }
+          },
+          "id": {
+            "count": 2,
+            "values": {
+              "\"jazzicon\"": 1,
+              "\"blockies\"": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{props}": 1
+            }
+          },
+          "borderStyle": {
+            "count": 1,
+            "values": {
+              "{BorderStyle.none}": 1
+            }
+          },
+          "alt": {
+            "count": 1,
+            "values": {
+              "{alt}": 1
+            }
+          },
+          "shape": {
+            "count": 1,
+            "values": {
+              "{AvatarBaseShape.Square}": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {}
+    }
+  }
+}
