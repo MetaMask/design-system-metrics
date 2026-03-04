@@ -76,6 +76,7 @@ export function Overview() {
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Mobile</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
             <MetricsCard
+              project="mobile"
               title="MMDS Components"
               value={mobileLatest?.mmdsComponentsAvailable || 0}
               subtitle="Components available in package"
@@ -90,6 +91,7 @@ export function Overview() {
               }
             />
             <MetricsCard
+              project="mobile"
               title="MMDS Instances"
               value={mobileLatest?.mmds.toLocaleString() || 0}
               subtitle="Components from MMDS package"
@@ -103,11 +105,13 @@ export function Overview() {
               }
             />
             <MetricsCard
+              project="mobile"
               title="Deprecated Components"
               value={mobileLatest?.components || 0}
               subtitle="Legacy components being tracked"
             />
             <MetricsCard
+              project="mobile"
               title="Deprecated Instances"
               value={mobileLatest?.deprecated.toLocaleString() || 0}
               subtitle="Legacy components remaining"
@@ -121,6 +125,7 @@ export function Overview() {
               }
             />
             <MetricsCard
+              project="mobile"
               title="Migration Progress"
               value={`${mobileLatest?.migration.toFixed(2)}%`}
               trend={
@@ -200,6 +205,14 @@ export function Overview() {
               </LineChart>
             </ResponsiveContainer>
           </div>
+          <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
+            Disclaimer: Deprecated here mostly means older-generation design system components,
+            not inherently bad code. Many of these components were the latest standard when they
+            were introduced. The deprecated instances line can increase even during healthy
+            progress because newly released MMDS replacements often add new
+            <code> @deprecated</code> tags to legacy components. The long-term target is MMDS
+            growth with deprecated usage eventually peaking and then declining.
+          </p>
 
           {mobileMetrics?.summary.codeOwnerStats && (
             <div className="mt-6">
@@ -207,6 +220,12 @@ export function Overview() {
                 codeOwnerStats={mobileMetrics.summary.codeOwnerStats}
                 title="Mobile - Code Owner Adoption"
               />
+              <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                Disclaimer: Code owner adoption reflects migration stage, not code quality.
+                Higher deprecated counts often indicate older feature code built with components
+                that were current at the time and were later deprecated. Those areas are then
+                updated during planned replacement phases as MMDS alternatives roll out.
+              </p>
             </div>
           )}
         </section>
@@ -216,6 +235,7 @@ export function Overview() {
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Extension</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
             <MetricsCard
+              project="extension"
               title="MMDS Components"
               value={extensionLatest?.mmdsComponentsAvailable || 0}
               subtitle="Components available in package"
@@ -230,6 +250,7 @@ export function Overview() {
               }
             />
             <MetricsCard
+              project="extension"
               title="MMDS Instances"
               value={extensionLatest?.mmds.toLocaleString() || 0}
               subtitle="Components from MMDS package"
@@ -243,11 +264,13 @@ export function Overview() {
               }
             />
             <MetricsCard
+              project="extension"
               title="Deprecated Components"
               value={extensionLatest?.components || 0}
               subtitle="Legacy components being tracked"
             />
             <MetricsCard
+              project="extension"
               title="Deprecated Instances"
               value={extensionLatest?.deprecated.toLocaleString() || 0}
               subtitle="Legacy components remaining"
@@ -261,6 +284,7 @@ export function Overview() {
               }
             />
             <MetricsCard
+              project="extension"
               title="Migration Progress"
               value={`${extensionLatest?.migration.toFixed(2)}%`}
               trend={
@@ -340,6 +364,14 @@ export function Overview() {
               </LineChart>
             </ResponsiveContainer>
           </div>
+          <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
+            Disclaimer: Deprecated here mostly means older-generation design system components,
+            not inherently bad code. Many of these components were the latest standard when they
+            were introduced. The deprecated instances line can increase even during healthy
+            progress because newly released MMDS replacements often add new
+            <code> @deprecated</code> tags to legacy components. The long-term target is MMDS
+            growth with deprecated usage eventually peaking and then declining.
+          </p>
 
           {extensionMetrics?.summary.codeOwnerStats && (
             <div className="mt-6">
@@ -347,6 +379,12 @@ export function Overview() {
                 codeOwnerStats={extensionMetrics.summary.codeOwnerStats}
                 title="Extension - Code Owner Adoption"
               />
+              <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                Disclaimer: Code owner adoption reflects migration stage, not code quality.
+                Higher deprecated counts often indicate older feature code built with components
+                that were current at the time and were later deprecated. Those areas are then
+                updated during planned replacement phases as MMDS alternatives roll out.
+              </p>
             </div>
           )}
         </section>
