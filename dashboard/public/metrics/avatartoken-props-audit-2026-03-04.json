@@ -1,0 +1,662 @@
+{
+  "component": "AvatarToken",
+  "generatedAt": "2026-03-04T22:23:08.558Z",
+  "projects": {
+    "mobile": {
+      "filesScanned": 5390,
+      "targetComponent": "AvatarToken",
+      "mmds": {
+        "totalInstances": 6,
+        "filesCount": 6,
+        "props": {
+          "name": {
+            "count": 5,
+            "values": {
+              "{selectedAsset?.symbol}": 1,
+              "{token.symbol}": 1,
+              "{item.name}": 1,
+              "{asset.name || asset.collectionName || 'NFT'}": 1,
+              "{asset.symbol || asset.name || 'Token'}": 1
+            }
+          },
+          "src": {
+            "count": 5,
+            "values": {
+              "{asset.image ? { uri: asset.image } : undefined}": 2,
+              "{{ uri: selectedAsset?.logo }}": 1,
+              "{{ uri: token.logo }}": 1,
+              "{item.icon ? { uri: item.icon } : undefined}": 1
+            }
+          },
+          "size": {
+            "count": 3,
+            "values": {
+              "{AvatarTokenSize.Lg}": 2,
+              "{AvatarTokenSize.Xl}": 1
+            }
+          },
+          "style": {
+            "count": 3,
+            "values": {
+              "{tw.style('w-10 h-10')}": 3
+            }
+          },
+          "key": {
+            "count": 2,
+            "values": {
+              "{selectedAsset?.logo}": 1,
+              "{token.logo}": 1
+            }
+          },
+          "twClassName": {
+            "count": 1,
+            "values": {
+              "\"bg-background-hover\"": 1
+            }
+          }
+        }
+      },
+      "deprecated": {
+        "totalInstances": 34,
+        "filesCount": 32,
+        "props": {
+          "size": {
+            "count": 34,
+            "values": {
+              "{AvatarSize.Md}": 15,
+              "{AvatarSize.Lg}": 11,
+              "{AvatarSize.Sm}": 3,
+              "{AvatarSize.Xs}": 2,
+              "{AvatarSize.Xl}": 2,
+              "{size === GasFeeTokenIconSize.Md ? AvatarSize.Md : AvatarSize.Xs}": 1
+            }
+          },
+          "imageSource": {
+            "count": 30,
+            "values": {
+              "{{ uri: asset.image }}": 4,
+              "{{ uri: token.image }}": 2,
+              "{{ uri: USDC_TOKEN_ICON_URL }}": 2,
+              "{{ uri: token.iconUrl }}": 2,
+              "{{ uri: icon }}": 1,
+              "{getTokenImageSource(token.symbol, token.image)}": 1,
+              "{token.image ? { uri: token.image } : undefined}": 1,
+              "{{ uri: iconUrl }}": 1,
+              "{require('../../../../../images/solana-logo.png')}": 1,
+              "{{ uri: buildTokenIconUrl( item.caipChainId, // For EVM non-Linea chains (e.g....}": 1,
+              "{{ uri: avatarIconUrl }}": 1,
+              "{{ uri: token.image, }}": 1,
+              "{{ uri: (tokenToRender as TokenI).image }}": 1,
+              "{MUSD_TOKEN.imageSource}": 1,
+              "{{ uri: tokenImageUrl }}": 1,
+              "{{ uri: tokenIconUrl }}": 1,
+              "{{ uri: MUSD_PLACEHOLDER.iconUrl }}": 1,
+              "{{ uri: selectedCryptoCurrency?.iconUrl || '', }}": 1,
+              "{{ uri: cryptoToken.iconUrl }}": 1,
+              "{providerData.cryptoIconUrl ? { uri: providerData.cryptoIconUrl } : undefined}": 1,
+              "{{ uri: image }}": 1,
+              "{{ uri: imageUrl }}": 1,
+              "{token ? { uri: token?.image } : networkImage}": 1,
+              "{image ? { uri: image } : NetworkBadgeSource(chainId as Hex)}": 1
+            }
+          },
+          "name": {
+            "count": 30,
+            "values": {
+              "{token.symbol}": 5,
+              "{asset.symbol}": 4,
+              "{symbol}": 2,
+              "{iconTitle}": 2,
+              "{token.name}": 2,
+              "{sessionName}": 2,
+              "{avatarName}": 1,
+              "{(tokenToRender as TokenI).symbol ?? ''}": 1,
+              "{MUSD_TOKEN.symbol}": 1,
+              "{report.asset.toUpperCase()}": 1,
+              "{tokenName}": 1,
+              "{destToken.symbol}": 1,
+              "{USDC_SYMBOL}": 1,
+              "{MUSD_PLACEHOLDER.symbol}": 1,
+              "{selectedCryptoCurrency?.name || ''}": 1,
+              "{cryptoToken.symbol}": 1,
+              "{order.cryptocurrency}": 1,
+              "{nativeCurrency}": 1,
+              "{isUnknownToken ? undefined : displayName}": 1
+            }
+          },
+          "testID": {
+            "count": 6,
+            "values": {
+              "{isNative ? `network-logo-${token.symbol}` : `token-logo-${token.symbol}`}": 1,
+              "{testId}": 1,
+              "{EARN_LENDING_BALANCE_TEST_IDS.RECEIPT_TOKEN_BALANCE_ASSET_LOGO}": 1,
+              "{`earn-token-avatar-${token.symbol}`}": 1,
+              "avatar-asset-badge": 1,
+              "{`avatar-with-badge-avatar-token-${displayName}`}": 1
+            }
+          },
+          "style": {
+            "count": 4,
+            "values": {
+              "{styles.receiveTokenIcon}": 1,
+              "{styles.networkAvatar}": 1,
+              "{customStyles().style}": 1,
+              "{styles.avatarToken}": 1
+            }
+          },
+          "isHaloEnabled": {
+            "count": 4,
+            "values": {
+              "true (shorthand)": 4
+            }
+          },
+          "isIpfsGatewayCheckBypassed": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          }
+        }
+      },
+      "overall": {
+        "totalInstances": 40,
+        "filesCount": 38,
+        "props": {
+          "size": {
+            "count": 37,
+            "values": {
+              "{AvatarSize.Md}": 15,
+              "{AvatarSize.Lg}": 11,
+              "{AvatarSize.Sm}": 3,
+              "{AvatarSize.Xs}": 2,
+              "{AvatarSize.Xl}": 2,
+              "{AvatarTokenSize.Lg}": 2,
+              "{AvatarTokenSize.Xl}": 1,
+              "{size === GasFeeTokenIconSize.Md ? AvatarSize.Md : AvatarSize.Xs}": 1
+            }
+          },
+          "name": {
+            "count": 35,
+            "values": {
+              "{token.symbol}": 6,
+              "{asset.symbol}": 4,
+              "{symbol}": 2,
+              "{iconTitle}": 2,
+              "{token.name}": 2,
+              "{sessionName}": 2,
+              "{avatarName}": 1,
+              "{(tokenToRender as TokenI).symbol ?? ''}": 1,
+              "{MUSD_TOKEN.symbol}": 1,
+              "{report.asset.toUpperCase()}": 1,
+              "{tokenName}": 1,
+              "{destToken.symbol}": 1,
+              "{USDC_SYMBOL}": 1,
+              "{selectedAsset?.symbol}": 1,
+              "{MUSD_PLACEHOLDER.symbol}": 1,
+              "{selectedCryptoCurrency?.name || ''}": 1,
+              "{cryptoToken.symbol}": 1,
+              "{order.cryptocurrency}": 1,
+              "{item.name}": 1,
+              "{asset.name || asset.collectionName || 'NFT'}": 1,
+              "{asset.symbol || asset.name || 'Token'}": 1,
+              "{nativeCurrency}": 1,
+              "{isUnknownToken ? undefined : displayName}": 1
+            }
+          },
+          "imageSource": {
+            "count": 30,
+            "values": {
+              "{{ uri: asset.image }}": 4,
+              "{{ uri: token.image }}": 2,
+              "{{ uri: USDC_TOKEN_ICON_URL }}": 2,
+              "{{ uri: token.iconUrl }}": 2,
+              "{{ uri: icon }}": 1,
+              "{getTokenImageSource(token.symbol, token.image)}": 1,
+              "{token.image ? { uri: token.image } : undefined}": 1,
+              "{{ uri: iconUrl }}": 1,
+              "{require('../../../../../images/solana-logo.png')}": 1,
+              "{{ uri: buildTokenIconUrl( item.caipChainId, // For EVM non-Linea chains (e.g....}": 1,
+              "{{ uri: avatarIconUrl }}": 1,
+              "{{ uri: token.image, }}": 1,
+              "{{ uri: (tokenToRender as TokenI).image }}": 1,
+              "{MUSD_TOKEN.imageSource}": 1,
+              "{{ uri: tokenImageUrl }}": 1,
+              "{{ uri: tokenIconUrl }}": 1,
+              "{{ uri: MUSD_PLACEHOLDER.iconUrl }}": 1,
+              "{{ uri: selectedCryptoCurrency?.iconUrl || '', }}": 1,
+              "{{ uri: cryptoToken.iconUrl }}": 1,
+              "{providerData.cryptoIconUrl ? { uri: providerData.cryptoIconUrl } : undefined}": 1,
+              "{{ uri: image }}": 1,
+              "{{ uri: imageUrl }}": 1,
+              "{token ? { uri: token?.image } : networkImage}": 1,
+              "{image ? { uri: image } : NetworkBadgeSource(chainId as Hex)}": 1
+            }
+          },
+          "style": {
+            "count": 7,
+            "values": {
+              "{tw.style('w-10 h-10')}": 3,
+              "{styles.receiveTokenIcon}": 1,
+              "{styles.networkAvatar}": 1,
+              "{customStyles().style}": 1,
+              "{styles.avatarToken}": 1
+            }
+          },
+          "testID": {
+            "count": 6,
+            "values": {
+              "{isNative ? `network-logo-${token.symbol}` : `token-logo-${token.symbol}`}": 1,
+              "{testId}": 1,
+              "{EARN_LENDING_BALANCE_TEST_IDS.RECEIPT_TOKEN_BALANCE_ASSET_LOGO}": 1,
+              "{`earn-token-avatar-${token.symbol}`}": 1,
+              "avatar-asset-badge": 1,
+              "{`avatar-with-badge-avatar-token-${displayName}`}": 1
+            }
+          },
+          "src": {
+            "count": 5,
+            "values": {
+              "{asset.image ? { uri: asset.image } : undefined}": 2,
+              "{{ uri: selectedAsset?.logo }}": 1,
+              "{{ uri: token.logo }}": 1,
+              "{item.icon ? { uri: item.icon } : undefined}": 1
+            }
+          },
+          "isHaloEnabled": {
+            "count": 4,
+            "values": {
+              "true (shorthand)": 4
+            }
+          },
+          "key": {
+            "count": 2,
+            "values": {
+              "{selectedAsset?.logo}": 1,
+              "{token.logo}": 1
+            }
+          },
+          "isIpfsGatewayCheckBypassed": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "twClassName": {
+            "count": 1,
+            "values": {
+              "\"bg-background-hover\"": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {
+        "AvatarToken": 34
+      }
+    },
+    "extension": {
+      "filesScanned": 2980,
+      "targetComponent": "AvatarToken",
+      "mmds": {
+        "totalInstances": 10,
+        "filesCount": 7,
+        "props": {
+          "name": {
+            "count": 10,
+            "values": {
+              "{asset.symbol}": 2,
+              "{displaySymbol}": 1,
+              "{token.symbol}": 1,
+              "{symbol}": 1,
+              "{MUSD_SYMBOL}": 1,
+              "\"ETH\"": 1,
+              "\"UBT\"": 1,
+              "\"HOPR\"": 1,
+              "\"USDC\"": 1
+            }
+          },
+          "src": {
+            "count": 10,
+            "values": {
+              "{asset.iconUrl ?? undefined}": 2,
+              "{iconUrl}": 1,
+              "{token.iconUrl}": 1,
+              "{imageUrl}": 1,
+              "{MUSD_ICON_SRC}": 1,
+              "\"https://assets.coingecko.com/coins/images/279/small/ethereum.png\"": 1,
+              "\"https://s2.coinmarketcap.com/static/img/coins/64x64/2758.png\"": 1,
+              "\"https://s2.coinmarketcap.com/static/img/coins/64x64/6520.png\"": 1,
+              "\"https://assets.coingecko.com/coins/images/6319/small/USD_Coin_icon.png\"": 1
+            }
+          },
+          "size": {
+            "count": 9,
+            "values": {
+              "{AvatarTokenSize.Md}": 5,
+              "{size}": 1,
+              "{AvatarTokenSize.Lg}": 1,
+              "{AvatarTokenSize.Xs}": 1,
+              "{AvatarTokenSize.Xl}": 1
+            }
+          },
+          "data-testid": {
+            "count": 2,
+            "values": {
+              "{`perps-token-logo-${sanitizedSymbol}`}": 1,
+              "\"token-insights-icon\"": 1
+            }
+          },
+          "className": {
+            "count": 1,
+            "values": {
+              "{className}": 1
+            }
+          }
+        }
+      },
+      "deprecated": {
+        "totalInstances": 27,
+        "filesCount": 22,
+        "props": {
+          "src": {
+            "count": 27,
+            "values": {
+              "{tokenImage}": 3,
+              "{icon.src}": 2,
+              "{avatarTokenSrc}": 1,
+              "{token.image}": 1,
+              "{results[i]?.iconUrl}": 1,
+              "{icon}": 1,
+              "{sendingAsset.image}": 1,
+              "{member.avatarValue}": 1,
+              "{icon.badge?.src}": 1,
+              "{badgeSrc}": 1,
+              "{src}": 1,
+              "{bridgeHistoryItem?.quote.srcAsset.iconUrl ?? undefined}": 1,
+              "{bridgeHistoryItem?.quote.destAsset.iconUrl ?? undefined}": 1,
+              "{assetImage}": 1,
+              "{image || nativeTokenImage || (asset.assetId && getAssetImageUrl(asset.assetId...}": 1,
+              "{source}": 1,
+              "{CHAIN_ID_TOKEN_IMAGE_MAP[ transactionMeta.chainId as keyof typeof CHAIN_ID_TO...}": 1,
+              "{matchedToken?.image}": 1,
+              "{cachedSubjectMetadata.iconUrl}": 1,
+              "\"/images/logo/metamask-fox.svg\"": 1,
+              "{SUPPORTED_PAYMENT_TOKEN_IMAGES[token]}": 1,
+              "{selectedToken?.image}": 1,
+              "{selectedToken?.image || ''}": 1,
+              "{tokenForImport.iconUrl}": 1
+            }
+          },
+          "name": {
+            "count": 22,
+            "values": {
+              "{symbol}": 6,
+              "{nativeCurrency}": 2,
+              "{token.symbol}": 1,
+              "{sendingAsset.symbol}": 1,
+              "{member.symbol}": 1,
+              "{tokenSymbol}": 1,
+              "{bridgeHistoryItem?.quote.srcAsset.symbol}": 1,
+              "{bridgeHistoryItem?.quote.destAsset.symbol}": 1,
+              "{tokenSymbol !== t('unknown') && tokenSymbol}": 1,
+              "{matchedToken?.symbol}": 1,
+              "{cachedSubjectMetadata.name}": 1,
+              "\"metamask-fox\"": 1,
+              "{token}": 1,
+              "{selectedToken?.symbol}": 1,
+              "{selectedToken?.symbol || ''}": 1,
+              "{tokenForImport.symbol}": 1
+            }
+          },
+          "size": {
+            "count": 18,
+            "values": {
+              "{AvatarTokenSize.Xl}": 4,
+              "{AvatarTokenSize.Md}": 3,
+              "{AvatarTokenSize.Xs}": 3,
+              "{AvatarTokenSize.Sm}": 3,
+              "{AvatarTokenSize.Lg}": 2,
+              "{size}": 1,
+              "{size === GasFeeTokenIconSize.Md ? AvatarTokenSize.Md : AvatarTokenSize.Xs}": 1,
+              "{TOKEN_ICON_SIZE_MAP[size]}": 1
+            }
+          },
+          "backgroundColor": {
+            "count": 7,
+            "values": {
+              "{BackgroundColor.infoDefault}": 2,
+              "{BackgroundColor.backgroundDefault}": 2,
+              "{BackgroundColor.backgroundSection}": 1,
+              "{BackgroundColor.transparent}": 1,
+              "{tokenSymbol === t('unknown') ? BackgroundColor.overlayDefault : BackgroundCol...}": 1
+            }
+          },
+          "borderColor": {
+            "count": 7,
+            "values": {
+              "{BorderColor.borderMuted}": 4,
+              "{BorderColor.backgroundDefault}": 2,
+              "{borderColor}": 1
+            }
+          },
+          "showHalo": {
+            "count": 3,
+            "values": {
+              "false": 3
+            }
+          },
+          "borderWidth": {
+            "count": 2,
+            "values": {
+              "2": 2
+            }
+          },
+          "className": {
+            "count": 2,
+            "values": {
+              "\"notification-detail-asset__icon\"": 2
+            }
+          },
+          "borderRadius": {
+            "count": 1,
+            "values": {
+              "{BorderRadius.full}": 1
+            }
+          },
+          "data-testid": {
+            "count": 1,
+            "values": {
+              "\"avatar-token\"": 1
+            }
+          },
+          "padding": {
+            "count": 1,
+            "values": {
+              "1": 1
+            }
+          },
+          "borderStyle": {
+            "count": 1,
+            "values": {
+              "{BorderStyle.none}": 1
+            }
+          },
+          "color": {
+            "count": 1,
+            "values": {
+              "{tokenSymbol === t('unknown') ? TextColor.textMuted : TextColor.textDefault}": 1
+            }
+          },
+          "marginTop": {
+            "count": 1,
+            "values": {
+              "1": 1
+            }
+          }
+        }
+      },
+      "overall": {
+        "totalInstances": 37,
+        "filesCount": 29,
+        "props": {
+          "src": {
+            "count": 37,
+            "values": {
+              "{tokenImage}": 3,
+              "{icon.src}": 2,
+              "{asset.iconUrl ?? undefined}": 2,
+              "{avatarTokenSrc}": 1,
+              "{token.image}": 1,
+              "{results[i]?.iconUrl}": 1,
+              "{iconUrl}": 1,
+              "{icon}": 1,
+              "{sendingAsset.image}": 1,
+              "{member.avatarValue}": 1,
+              "{icon.badge?.src}": 1,
+              "{badgeSrc}": 1,
+              "{src}": 1,
+              "{token.iconUrl}": 1,
+              "{bridgeHistoryItem?.quote.srcAsset.iconUrl ?? undefined}": 1,
+              "{bridgeHistoryItem?.quote.destAsset.iconUrl ?? undefined}": 1,
+              "{assetImage}": 1,
+              "{image || nativeTokenImage || (asset.assetId && getAssetImageUrl(asset.assetId...}": 1,
+              "{source}": 1,
+              "{CHAIN_ID_TOKEN_IMAGE_MAP[ transactionMeta.chainId as keyof typeof CHAIN_ID_TO...}": 1,
+              "{imageUrl}": 1,
+              "{MUSD_ICON_SRC}": 1,
+              "{matchedToken?.image}": 1,
+              "\"https://assets.coingecko.com/coins/images/279/small/ethereum.png\"": 1,
+              "\"https://s2.coinmarketcap.com/static/img/coins/64x64/2758.png\"": 1,
+              "\"https://s2.coinmarketcap.com/static/img/coins/64x64/6520.png\"": 1,
+              "\"https://assets.coingecko.com/coins/images/6319/small/USD_Coin_icon.png\"": 1,
+              "{cachedSubjectMetadata.iconUrl}": 1,
+              "\"/images/logo/metamask-fox.svg\"": 1,
+              "{SUPPORTED_PAYMENT_TOKEN_IMAGES[token]}": 1,
+              "{selectedToken?.image}": 1,
+              "{selectedToken?.image || ''}": 1,
+              "{tokenForImport.iconUrl}": 1
+            }
+          },
+          "name": {
+            "count": 32,
+            "values": {
+              "{symbol}": 7,
+              "{token.symbol}": 2,
+              "{asset.symbol}": 2,
+              "{nativeCurrency}": 2,
+              "{displaySymbol}": 1,
+              "{sendingAsset.symbol}": 1,
+              "{member.symbol}": 1,
+              "{tokenSymbol}": 1,
+              "{bridgeHistoryItem?.quote.srcAsset.symbol}": 1,
+              "{bridgeHistoryItem?.quote.destAsset.symbol}": 1,
+              "{tokenSymbol !== t('unknown') && tokenSymbol}": 1,
+              "{MUSD_SYMBOL}": 1,
+              "{matchedToken?.symbol}": 1,
+              "\"ETH\"": 1,
+              "\"UBT\"": 1,
+              "\"HOPR\"": 1,
+              "\"USDC\"": 1,
+              "{cachedSubjectMetadata.name}": 1,
+              "\"metamask-fox\"": 1,
+              "{token}": 1,
+              "{selectedToken?.symbol}": 1,
+              "{selectedToken?.symbol || ''}": 1,
+              "{tokenForImport.symbol}": 1
+            }
+          },
+          "size": {
+            "count": 27,
+            "values": {
+              "{AvatarTokenSize.Md}": 8,
+              "{AvatarTokenSize.Xl}": 5,
+              "{AvatarTokenSize.Xs}": 4,
+              "{AvatarTokenSize.Sm}": 3,
+              "{AvatarTokenSize.Lg}": 3,
+              "{size}": 2,
+              "{size === GasFeeTokenIconSize.Md ? AvatarTokenSize.Md : AvatarTokenSize.Xs}": 1,
+              "{TOKEN_ICON_SIZE_MAP[size]}": 1
+            }
+          },
+          "backgroundColor": {
+            "count": 7,
+            "values": {
+              "{BackgroundColor.infoDefault}": 2,
+              "{BackgroundColor.backgroundDefault}": 2,
+              "{BackgroundColor.backgroundSection}": 1,
+              "{BackgroundColor.transparent}": 1,
+              "{tokenSymbol === t('unknown') ? BackgroundColor.overlayDefault : BackgroundCol...}": 1
+            }
+          },
+          "borderColor": {
+            "count": 7,
+            "values": {
+              "{BorderColor.borderMuted}": 4,
+              "{BorderColor.backgroundDefault}": 2,
+              "{borderColor}": 1
+            }
+          },
+          "className": {
+            "count": 3,
+            "values": {
+              "\"notification-detail-asset__icon\"": 2,
+              "{className}": 1
+            }
+          },
+          "data-testid": {
+            "count": 3,
+            "values": {
+              "{`perps-token-logo-${sanitizedSymbol}`}": 1,
+              "\"avatar-token\"": 1,
+              "\"token-insights-icon\"": 1
+            }
+          },
+          "showHalo": {
+            "count": 3,
+            "values": {
+              "false": 3
+            }
+          },
+          "borderWidth": {
+            "count": 2,
+            "values": {
+              "2": 2
+            }
+          },
+          "borderRadius": {
+            "count": 1,
+            "values": {
+              "{BorderRadius.full}": 1
+            }
+          },
+          "padding": {
+            "count": 1,
+            "values": {
+              "1": 1
+            }
+          },
+          "borderStyle": {
+            "count": 1,
+            "values": {
+              "{BorderStyle.none}": 1
+            }
+          },
+          "color": {
+            "count": 1,
+            "values": {
+              "{tokenSymbol === t('unknown') ? TextColor.textMuted : TextColor.textDefault}": 1
+            }
+          },
+          "marginTop": {
+            "count": 1,
+            "values": {
+              "1": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {
+        "AvatarToken": 27
+      }
+    }
+  }
+}
