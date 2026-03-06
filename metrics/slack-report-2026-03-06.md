@@ -13,12 +13,12 @@
     * Deprecated components: 16 legacy component types
 * **Migration Progress**
   * **Mobile**
-    * Target components: 53 planned (42 completed, 11 remaining) (DSYS-272)
-    * Migrated to MMDS: 84/95 (88%)
+    * Target components: 52 planned (42 completed, 10 remaining) (DSYS-272)
+    * Migrated to MMDS: 84/94 (89%)
     * Instance replacement: 21.32% ([breakdown](https://github.com/georgewrmarshall/design-system-metrics/blob/main/metrics/mobile-component-metrics-2026-03-06.xlsx))
   * **Extension**
-    * Target components: 47 planned (26 completed, 21 remaining) (DSYS-302)
-    * Migrated to MMDS: 52/73 (71%)
+    * Target components: 48 planned (26 completed, 22 remaining) (DSYS-302)
+    * Migrated to MMDS: 52/74 (70%)
     * Instance replacement: 28.50% ([breakdown](https://github.com/georgewrmarshall/design-system-metrics/blob/main/metrics/extension-component-metrics-2026-03-06.xlsx))
 
 ---
