@@ -73,6 +73,35 @@ function countAvailableMMDSComponents(project) {
 }
 
 /**
+ * Compare static migration targets against current MMDS export list.
+ * Matching is case-insensitive to avoid casing drift between sources.
+ */
+function getTargetCoverage(project, migrationTargets, summary) {
+  const targets = migrationTargets?.[project]?.components || [];
+  const exportedComponents = summary?.mmdsComponentsList || [];
+  const exportedByLower = new Set(
+    exportedComponents.map((component) => component.toLowerCase()),
+  );
+
+  const completedTargets = [];
+  const remainingTargets = [];
+
+  for (const target of targets) {
+    if (exportedByLower.has(target.toLowerCase())) {
+      completedTargets.push(target);
+    } else {
+      remainingTargets.push(target);
+    }
+  }
+
+  return {
+    totalTargets: targets.length,
+    completedTargets,
+    remainingTargets,
+  };
+}
+
+/**
  * Get list of new components since last report
  * For now, returns placeholder - can be enhanced to compare with previous reports
  */
@@ -154,18 +183,26 @@ function generateReport(config, migrationTargets) {
 
   // Mobile migration
   report.push('  * **Mobile**');
-  const mobileTargets = migrationTargets.mobile?.components?.length || 0;
-  report.push(`    * Target components: ${mobileTargets} components planned for migration (${migrationTargets.mobile?.source || 'N/A'})`);
-  report.push(`    * Migrated to MMDS: ${mobileMMDSCount}/${mobileMMDSCount + mobileTargets} (${Math.round((mobileMMDSCount / (mobileMMDSCount + mobileTargets)) * 100)}%)`);
+  const mobileCoverage = getTargetCoverage('mobile', migrationTargets, mobileSummary);
+  const mobileRemainingTargets = mobileCoverage.remainingTargets.length;
+  const mobileCompletedTargets = mobileCoverage.completedTargets.length;
+  const mobileMigratedNumerator = mobileMMDSCount + mobileCompletedTargets;
+  const mobileMigratedDenominator = mobileMigratedNumerator + mobileRemainingTargets;
+  report.push(`    * Target components: ${mobileCoverage.totalTargets} planned (${mobileCoverage.completedTargets.length} completed, ${mobileRemainingTargets} remaining) (${migrationTargets.mobile?.source || 'N/A'})`);
+  report.push(`    * Migrated to MMDS: ${mobileMigratedNumerator}/${mobileMigratedDenominator} (${Math.round((mobileMigratedNumerator / mobileMigratedDenominator) * 100)}%)`);
   if (mobileSummary && mobileMetricsFile) {
     report.push(`    * Instance replacement: ${mobileSummary.migrationPercentage}% ([breakdown](${GITHUB_REPO}/metrics/${mobileMetricsFile}))`);
   }
 
   // Extension migration
   report.push('  * **Extension**');
-  const extensionTargets = migrationTargets.extension?.components?.length || 0;
-  report.push(`    * Target components: ${extensionTargets} components planned for migration (${migrationTargets.extension?.source || 'N/A'})`);
-  report.push(`    * Migrated to MMDS: ${extensionMMDSCount}/${extensionMMDSCount + extensionTargets} (${Math.round((extensionMMDSCount / (extensionMMDSCount + extensionTargets)) * 100)}%)`);
+  const extensionCoverage = getTargetCoverage('extension', migrationTargets, extensionSummary);
+  const extensionRemainingTargets = extensionCoverage.remainingTargets.length;
+  const extensionCompletedTargets = extensionCoverage.completedTargets.length;
+  const extensionMigratedNumerator = extensionMMDSCount + extensionCompletedTargets;
+  const extensionMigratedDenominator = extensionMigratedNumerator + extensionRemainingTargets;
+  report.push(`    * Target components: ${extensionCoverage.totalTargets} planned (${extensionCoverage.completedTargets.length} completed, ${extensionRemainingTargets} remaining) (${migrationTargets.extension?.source || 'N/A'})`);
+  report.push(`    * Migrated to MMDS: ${extensionMigratedNumerator}/${extensionMigratedDenominator} (${Math.round((extensionMigratedNumerator / extensionMigratedDenominator) * 100)}%)`);
   if (extensionSummary && extensionMetricsFile) {
     report.push(`    * Instance replacement: ${extensionSummary.migrationPercentage}% ([breakdown](${GITHUB_REPO}/metrics/${extensionMetricsFile}))`);
   }
