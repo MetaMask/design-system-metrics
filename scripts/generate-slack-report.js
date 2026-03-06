@@ -72,12 +72,30 @@ function countAvailableMMDSComponents(project) {
   return summary?.mmdsComponentsAvailable || 0;
 }
 
+function normalizeTargetEntries(projectTargets) {
+  const raw = projectTargets?.components || [];
+
+  return raw
+    .map((entry) => {
+      if (typeof entry === 'string') {
+        return { name: entry, status: 'to_do' };
+      }
+
+      return {
+        name: entry?.name,
+        status: entry?.status || 'to_do',
+      };
+    })
+    .filter((entry) => typeof entry.name === 'string' && entry.name.length > 0);
+}
+
 /**
  * Compare static migration targets against current MMDS export list.
  * Matching is case-insensitive to avoid casing drift between sources.
+ * `not_doing` targets are excluded from completion/remaining totals.
  */
 function getTargetCoverage(project, migrationTargets, summary) {
-  const targets = migrationTargets?.[project]?.components || [];
+  const targets = normalizeTargetEntries(migrationTargets?.[project]);
   const exportedComponents = summary?.mmdsComponentsList || [];
   const exportedByLower = new Set(
     exportedComponents.map((component) => component.toLowerCase()),
@@ -85,19 +103,27 @@ function getTargetCoverage(project, migrationTargets, summary) {
 
   const completedTargets = [];
   const remainingTargets = [];
+  const notDoingTargets = [];
 
   for (const target of targets) {
-    if (exportedByLower.has(target.toLowerCase())) {
-      completedTargets.push(target);
+    if (target.status === 'not_doing') {
+      notDoingTargets.push(target.name);
+      continue;
+    }
+
+    const isExported = exportedByLower.has(target.name.toLowerCase());
+    if (target.status === 'complete' || isExported) {
+      completedTargets.push(target.name);
     } else {
-      remainingTargets.push(target);
+      remainingTargets.push(target.name);
     }
   }
 
   return {
-    totalTargets: targets.length,
+    totalTargets: completedTargets.length + remainingTargets.length,
     completedTargets,
     remainingTargets,
+    notDoingTargets,
   };
 }
 
