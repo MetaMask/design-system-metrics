@@ -24,6 +24,7 @@ const METRICS_DIR = path.join(__dirname, '..', 'metrics');
 const MMDS_REACT_COMPONENTS = 'https://github.com/MetaMask/metamask-design-system/tree/main/packages/design-system-react/src/components';
 const MMDS_RN_COMPONENTS = 'https://github.com/MetaMask/metamask-design-system/tree/main/packages/design-system-react-native/src/components';
 const GITHUB_REPO = 'https://github.com/georgewrmarshall/design-system-metrics/blob/main';
+const JIRA_BROWSE_BASE = 'https://consensyssoftware.atlassian.net/browse';
 
 /**
  * Get latest data filename from index.json
@@ -127,6 +128,11 @@ function getTargetCoverage(project, migrationTargets, summary) {
   };
 }
 
+function formatEpicLink(epicKey) {
+  if (!epicKey) return 'N/A';
+  return `[${epicKey}](${JIRA_BROWSE_BASE}/${epicKey})`;
+}
+
 /**
  * Get list of new components since last report
  * For now, returns placeholder - can be enhanced to compare with previous reports
@@ -213,7 +219,7 @@ function generateReport(config, migrationTargets) {
   const mobileRemainingTargets = mobileCoverage.remainingTargets.length;
   const mobileMigratedNumerator = mobileMMDSCount;
   const mobileMigratedDenominator = mobileCoverage.totalTargets;
-  report.push(`    * Target components: ${mobileCoverage.totalTargets} planned (${mobileCoverage.completedTargets.length} completed, ${mobileRemainingTargets} remaining) (${migrationTargets.mobile?.source || 'N/A'})`);
+  report.push(`    * Target components: ${mobileCoverage.totalTargets} planned (${mobileCoverage.completedTargets.length} completed, ${mobileRemainingTargets} remaining) (${formatEpicLink(migrationTargets.mobile?.source)})`);
   report.push(`    * Migrated to MMDS: ${mobileMigratedNumerator}/${mobileMigratedDenominator} (${mobileMigratedDenominator > 0 ? Math.round((mobileMigratedNumerator / mobileMigratedDenominator) * 100) : 0}%)`);
   if (mobileSummary && mobileMetricsFile) {
     report.push(`    * Instance replacement: ${mobileSummary.migrationPercentage}% ([breakdown](${GITHUB_REPO}/metrics/${mobileMetricsFile}))`);
@@ -225,7 +231,7 @@ function generateReport(config, migrationTargets) {
   const extensionRemainingTargets = extensionCoverage.remainingTargets.length;
   const extensionMigratedNumerator = extensionMMDSCount;
   const extensionMigratedDenominator = extensionCoverage.totalTargets;
-  report.push(`    * Target components: ${extensionCoverage.totalTargets} planned (${extensionCoverage.completedTargets.length} completed, ${extensionRemainingTargets} remaining) (${migrationTargets.extension?.source || 'N/A'})`);
+  report.push(`    * Target components: ${extensionCoverage.totalTargets} planned (${extensionCoverage.completedTargets.length} completed, ${extensionRemainingTargets} remaining) (${formatEpicLink(migrationTargets.extension?.source)})`);
   report.push(`    * Migrated to MMDS: ${extensionMigratedNumerator}/${extensionMigratedDenominator} (${extensionMigratedDenominator > 0 ? Math.round((extensionMigratedNumerator / extensionMigratedDenominator) * 100) : 0}%)`);
   if (extensionSummary && extensionMetricsFile) {
     report.push(`    * Instance replacement: ${extensionSummary.migrationPercentage}% ([breakdown](${GITHUB_REPO}/metrics/${extensionMetricsFile}))`);
