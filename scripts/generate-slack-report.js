@@ -178,7 +178,6 @@ function generateReport(config, migrationTargets) {
 
   // Mobile section
   const mobileMMDSCount = countAvailableMMDSComponents('mobile');
-  const mobileMetricsFile = getLatestMetricsFile('mobile');
   const mobileSummary = getLatestMetricsSummary('mobile');
   const mobileCoverage = getTargetCoverage('mobile', migrationTargets, mobileSummary);
   const mobileMigratedDenominator = mobileCoverage.totalTargets;
@@ -187,17 +186,19 @@ function generateReport(config, migrationTargets) {
     : 0;
 
   report.push('  - **Mobile**');
-  report.push(`    - MMDS components available: ${mobileMMDSCount}/${mobileMigratedDenominator} (${mobileMigratedPercent}% Migrated ${formatEpicLink(migrationTargets.mobile?.source)})`);
+  report.push(`    - MMDS components available: \`${mobileMMDSCount}\``);
   if (mobileSummary && mobileSummary.newComponents && mobileSummary.newComponents.length > 0) {
     report.push(`      - [New components](${MMDS_RN_COMPONENTS}): ${mobileSummary.newComponents.map((component) => `\`${component}\``).join(', ')}`);
   }
+  report.push(`      - [Migrated](${JIRA_BROWSE_BASE}/${migrationTargets.mobile?.source}): \`${mobileMMDSCount}/${mobileMigratedDenominator} (${mobileMigratedPercent}%)\``);
   if (mobileSummary) {
-    report.push(`    - MMDS vs Deprecated component instance usage: ${mobileSummary.mmdsInstances}/${mobileSummary.deprecatedInstances} (${mobileSummary.migrationPercentage}% [breakdown](${GITHUB_REPO}/metrics/${mobileMetricsFile}))`);
+    report.push(`    - MMDS component instances: \`${mobileSummary.mmdsInstances}\``);
+    report.push(`    - Deprecated component instances: \`${mobileSummary.deprecatedInstances}\``);
+    report.push(`    - [MMD vs Deprecated](https://georgewrmarshall.github.io/design-system-metrics/): \`${mobileSummary.migrationPercentage}% (${mobileSummary.mmdsInstances}/${mobileSummary.deprecatedInstances})\``);
   }
 
   // Extension section
   const extensionMMDSCount = countAvailableMMDSComponents('extension');
-  const extensionMetricsFile = getLatestMetricsFile('extension');
   const extensionSummary = getLatestMetricsSummary('extension');
   const extensionCoverage = getTargetCoverage('extension', migrationTargets, extensionSummary);
   const extensionMigratedDenominator = extensionCoverage.totalTargets;
@@ -206,12 +207,15 @@ function generateReport(config, migrationTargets) {
     : 0;
 
   report.push('\n  - **Extension**');
-  report.push(`    - MMDS components available: ${extensionMMDSCount}/${extensionMigratedDenominator} (${extensionMigratedPercent}% Migrated ${formatEpicLink(migrationTargets.extension?.source)})`);
+  report.push(`    - MMDS components available: \`${extensionMMDSCount}\``);
   if (extensionSummary && extensionSummary.newComponents && extensionSummary.newComponents.length > 0) {
     report.push(`      - [New components](${MMDS_REACT_COMPONENTS}): ${extensionSummary.newComponents.map((component) => `\`${component}\``).join(', ')}`);
   }
+  report.push(`      - [Migrated](${JIRA_BROWSE_BASE}/${migrationTargets.extension?.source}): \`${extensionMMDSCount}/${extensionMigratedDenominator} (${extensionMigratedPercent}%)\``);
   if (extensionSummary) {
-    report.push(`    - MMDS vs Deprecated component instance usage: ${extensionSummary.mmdsInstances}/${extensionSummary.deprecatedInstances} (${extensionSummary.migrationPercentage}% [breakdown](${GITHUB_REPO}/metrics/${extensionMetricsFile}))`);
+    report.push(`    - MMDS component instances: \`${extensionSummary.mmdsInstances}\``);
+    report.push(`    - Deprecated component instances: \`${extensionSummary.deprecatedInstances}\``);
+    report.push(`    - [MMD vs Deprecated](https://georgewrmarshall.github.io/design-system-metrics/): \`${extensionSummary.migrationPercentage}% (${extensionSummary.mmdsInstances}/${extensionSummary.deprecatedInstances})\``);
   }
 
   report.push('\n---\n');

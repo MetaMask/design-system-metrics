@@ -2,14 +2,20 @@
 
 - **MetaMask Design System (MMDS)**
   - **Mobile**
-    - MMDS components available: 42/52 (81% Migrated [DSYS-272](https://consensyssoftware.atlassian.net/browse/DSYS-272))
+    - MMDS components available: `42`
       - [New components](https://github.com/MetaMask/metamask-design-system/tree/main/packages/design-system-react-native/src/components): `ActionListItem`, `BannerBase`, `BottomSheetHeader`, `ButtonHero`, `ButtonSemantic`, `ListItem`, `TabEmptyState`
-    - MMDS vs Deprecated component instance usage: 2108/3398 (21.32% [breakdown](https://github.com/georgewrmarshall/design-system-metrics/blob/main/metrics/mobile-component-metrics-2026-03-06.xlsx))
+      - [Migrated](https://consensyssoftware.atlassian.net/browse/DSYS-272): `42/52 (81%)`
+    - MMDS component instances: `2108`
+    - Deprecated component instances: `3398`
+    - [MMD vs Deprecated](https://georgewrmarshall.github.io/design-system-metrics/): `21.32% (2108/3398)`
 
   - **Extension**
-    - MMDS components available: 26/48 (54% Migrated [DSYS-302](https://consensyssoftware.atlassian.net/browse/DSYS-302))
+    - MMDS components available: `26`
       - [New components](https://github.com/MetaMask/metamask-design-system/tree/main/packages/design-system-react/src/components): `BannerBase`
-    - MMDS vs Deprecated component instance usage: 1505/3730 (28.50% [breakdown](https://github.com/georgewrmarshall/design-system-metrics/blob/main/metrics/extension-component-metrics-2026-03-06.xlsx))
+      - [Migrated](https://consensyssoftware.atlassian.net/browse/DSYS-302): `26/48 (54%)`
+    - MMDS component instances: `1505`
+    - Deprecated component instances: `3730`
+    - [MMD vs Deprecated](https://georgewrmarshall.github.io/design-system-metrics/): `28.50% (1505/3730)`
 
 ---
 
