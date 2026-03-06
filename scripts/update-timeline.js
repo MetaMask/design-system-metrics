@@ -18,6 +18,7 @@ const fs = require('fs').promises;
 const path = require('path');
 
 const METRICS_DIR = path.join(__dirname, '..', 'metrics');
+const MIGRATION_TARGETS_PATH = path.join(__dirname, '..', 'migration-targets.json');
 
 /**
  * Load all data JSON files from metrics directory
@@ -218,6 +219,34 @@ async function buildIndex(allData) {
 }
 
 /**
+ * Publish migration targets alongside metrics outputs for dashboard/runtime consumers.
+ */
+async function publishMigrationTargets() {
+  try {
+    const content = await fs.readFile(MIGRATION_TARGETS_PATH, 'utf8');
+    const source = JSON.parse(content);
+
+    const output = {
+      generatedAt: new Date().toISOString(),
+      mobile: {
+        source: source.mobile?.source || null,
+        components: source.mobile?.components || [],
+      },
+      extension: {
+        source: source.extension?.source || null,
+        components: source.extension?.components || [],
+      },
+    };
+
+    const outputPath = path.join(METRICS_DIR, 'migration-targets.json');
+    await fs.writeFile(outputPath, JSON.stringify(output, null, 2));
+    console.log('  ✓ Generated migration-targets.json\n');
+  } catch (error) {
+    console.warn(`  ⚠️  Skipped migration-targets.json: ${error.message}\n`);
+  }
+}
+
+/**
  * Main execution
  */
 async function main() {
@@ -227,6 +256,7 @@ async function main() {
     const allData = await loadAllDataFiles();
     const timeline = await buildTimeline(allData);
     const index = await buildIndex(allData);
+    await publishMigrationTargets();
 
     console.log('✅ Successfully updated timeline and index!\n');
 

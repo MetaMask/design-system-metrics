@@ -129,3 +129,19 @@ export interface ComponentPropsAuditIndexData {
   generatedAt: string;
   components: ComponentPropsAuditIndexEntry[];
 }
+
+export interface MigrationTargetComponent {
+  name: string;
+  status?: 'to_do' | 'not_doing' | 'complete';
+}
+
+export interface MigrationTargetsProject {
+  source: string | null;
+  components: Array<string | MigrationTargetComponent>;
+}
+
+export interface MigrationTargetsData {
+  generatedAt: string;
+  mobile: MigrationTargetsProject;
+  extension: MigrationTargetsProject;
+}

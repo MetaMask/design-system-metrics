@@ -1,4 +1,5 @@
-import { useTimelineData, useMetricsData } from '../hooks/useMetricsData';
+import { useTimelineData, useMetricsData, useMigrationTargets } from '../hooks/useMetricsData';
+import type { MigrationTargetsProject } from '../types/metrics';
 import { Loading } from '../components/Loading';
 import { ErrorMessage } from '../components/ErrorMessage';
 import { MetricsCard } from '../components/MetricsCard';
@@ -24,6 +25,28 @@ const EXTENSION_EXCLUDED_OWNERS = new Set([
   'policy-reviewers',
   'design-system-engineers',
 ]);
+
+const JIRA_BROWSE_BASE = 'https://consensyssoftware.atlassian.net/browse';
+
+function normalizeTargetEntries(projectTargets?: MigrationTargetsProject | null) {
+  return (projectTargets?.components || [])
+    .map((entry) => {
+      if (typeof entry === 'string') {
+        return { name: entry, status: 'to_do' as const };
+      }
+
+      return {
+        name: entry?.name,
+        status: entry?.status || 'to_do',
+      };
+    })
+    .filter((entry) => typeof entry.name === 'string' && entry.name.length > 0);
+}
+
+function getPlannedTargetCount(projectTargets?: MigrationTargetsProject | null) {
+  const entries = normalizeTargetEntries(projectTargets);
+  return entries.filter((entry) => entry.status !== 'not_doing').length;
+}
 
 function normalizeOwner(owner: string) {
   return owner.replace('@MetaMask/', '').replace(/^@/, '').toLowerCase();
@@ -59,6 +82,7 @@ export function Overview() {
   const { data, loading, error } = useTimelineData();
   const { data: mobileMetrics } = useMetricsData('mobile');
   const { data: extensionMetrics } = useMetricsData('extension');
+  const { data: migrationTargets } = useMigrationTargets();
 
   if (loading) return <Loading />;
   if (error) return <ErrorMessage error={error} />;
@@ -115,6 +139,16 @@ export function Overview() {
     EXTENSION_EXCLUDED_OWNERS,
   );
 
+  const mobilePlannedTargets = getPlannedTargetCount(migrationTargets?.mobile);
+  const extensionPlannedTargets = getPlannedTargetCount(migrationTargets?.extension);
+
+  const mobileMigratedPercent = mobilePlannedTargets > 0 && mobileLatest
+    ? Math.round((mobileLatest.mmdsComponentsAvailable / mobilePlannedTargets) * 100)
+    : 0;
+  const extensionMigratedPercent = extensionPlannedTargets > 0 && extensionLatest
+    ? Math.round((extensionLatest.mmdsComponentsAvailable / extensionPlannedTargets) * 100)
+    : 0;
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-6">
       <div className="max-w-7xl mx-auto">
@@ -138,7 +172,22 @@ export function Overview() {
               project="mobile"
               title="MMDS Components"
               value={mobileLatest?.mmdsComponentsAvailable || 0}
-              subtitle="Components available in package"
+              subtitle={
+                mobilePlannedTargets > 0 && migrationTargets?.mobile?.source && mobileLatest ? (
+                  <div className="font-semibold text-fuchsia-600 dark:text-fuchsia-400">
+                    <a
+                      href={`${JIRA_BROWSE_BASE}/${migrationTargets.mobile.source}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:underline"
+                    >
+                      {`${mobileLatest.mmdsComponentsAvailable}/${mobilePlannedTargets} (${mobileMigratedPercent}%)`}
+                    </a>
+                  </div>
+                ) : (
+                  <p>Components available in package</p>
+                )
+              }
               newComponents={mobileLatest?.newComponents}
               trend={
                 data.mobile.latestChange
@@ -297,7 +346,22 @@ export function Overview() {
               project="extension"
               title="MMDS Components"
               value={extensionLatest?.mmdsComponentsAvailable || 0}
-              subtitle="Components available in package"
+              subtitle={
+                extensionPlannedTargets > 0 && migrationTargets?.extension?.source && extensionLatest ? (
+                  <div className="font-semibold text-fuchsia-600 dark:text-fuchsia-400">
+                    <a
+                      href={`${JIRA_BROWSE_BASE}/${migrationTargets.extension.source}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:underline"
+                    >
+                      {`${extensionLatest.mmdsComponentsAvailable}/${extensionPlannedTargets} (${extensionMigratedPercent}%)`}
+                    </a>
+                  </div>
+                ) : (
+                  <p>Components available in package</p>
+                )
+              }
               newComponents={extensionLatest?.newComponents}
               trend={
                 data.extension.latestChange

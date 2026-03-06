@@ -5,6 +5,7 @@ import type {
   IndexData,
   ComponentPropsAuditData,
   ComponentPropsAuditIndexData,
+  MigrationTargetsData,
 } from '../types/metrics';
 
 const BASE_PATH = import.meta.env.BASE_URL || '/';
@@ -165,6 +166,43 @@ export function useComponentPropsAuditIndex() {
         if (!res.ok) throw new Error(`Failed to fetch ${fileName}`);
         const auditIndex: ComponentPropsAuditIndexData = await res.json();
         setData(auditIndex);
+        setError(null);
+      } catch (err) {
+        setError(err as Error);
+        setData(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return { data, loading, error };
+}
+
+export function useMigrationTargets() {
+  const [data, setData] = useState<MigrationTargetsData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const fileName = 'migration-targets.json';
+        const res = await fetch(`${METRICS_PATH}${fileName}`);
+
+        // Optional dataset: dashboard should still render if this file is missing.
+        if (res.status === 404) {
+          setData(null);
+          setError(null);
+          return;
+        }
+
+        if (!res.ok) throw new Error(`Failed to fetch ${fileName}`);
+        const migrationTargets: MigrationTargetsData = await res.json();
+        setData(migrationTargets);
         setError(null);
       } catch (err) {
         setError(err as Error);

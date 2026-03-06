@@ -1,8 +1,10 @@
+import type { ReactNode } from 'react';
+
 interface MetricsCardProps {
   project: 'mobile' | 'extension';
   title: string;
   value: string | number;
-  subtitle?: string;
+  subtitle?: ReactNode;
   trend?: {
     value: string | number;
     isPositive: boolean;
@@ -83,9 +85,9 @@ export function MetricsCard({
         )}
       </div>
       {subtitle && (
-        <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+        <div className="text-sm text-gray-600 dark:text-gray-300 mt-1">
           {subtitle}
-        </p>
+        </div>
       )}
       {newComponents && newComponents.length > 0 && (
         <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
