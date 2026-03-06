@@ -211,11 +211,10 @@ function generateReport(config, migrationTargets) {
   report.push('  * **Mobile**');
   const mobileCoverage = getTargetCoverage('mobile', migrationTargets, mobileSummary);
   const mobileRemainingTargets = mobileCoverage.remainingTargets.length;
-  const mobileCompletedTargets = mobileCoverage.completedTargets.length;
-  const mobileMigratedNumerator = mobileMMDSCount + mobileCompletedTargets;
-  const mobileMigratedDenominator = mobileMigratedNumerator + mobileRemainingTargets;
+  const mobileMigratedNumerator = mobileMMDSCount;
+  const mobileMigratedDenominator = mobileCoverage.totalTargets;
   report.push(`    * Target components: ${mobileCoverage.totalTargets} planned (${mobileCoverage.completedTargets.length} completed, ${mobileRemainingTargets} remaining) (${migrationTargets.mobile?.source || 'N/A'})`);
-  report.push(`    * Migrated to MMDS: ${mobileMigratedNumerator}/${mobileMigratedDenominator} (${Math.round((mobileMigratedNumerator / mobileMigratedDenominator) * 100)}%)`);
+  report.push(`    * Migrated to MMDS: ${mobileMigratedNumerator}/${mobileMigratedDenominator} (${mobileMigratedDenominator > 0 ? Math.round((mobileMigratedNumerator / mobileMigratedDenominator) * 100) : 0}%)`);
   if (mobileSummary && mobileMetricsFile) {
     report.push(`    * Instance replacement: ${mobileSummary.migrationPercentage}% ([breakdown](${GITHUB_REPO}/metrics/${mobileMetricsFile}))`);
   }
@@ -224,11 +223,10 @@ function generateReport(config, migrationTargets) {
   report.push('  * **Extension**');
   const extensionCoverage = getTargetCoverage('extension', migrationTargets, extensionSummary);
   const extensionRemainingTargets = extensionCoverage.remainingTargets.length;
-  const extensionCompletedTargets = extensionCoverage.completedTargets.length;
-  const extensionMigratedNumerator = extensionMMDSCount + extensionCompletedTargets;
-  const extensionMigratedDenominator = extensionMigratedNumerator + extensionRemainingTargets;
+  const extensionMigratedNumerator = extensionMMDSCount;
+  const extensionMigratedDenominator = extensionCoverage.totalTargets;
   report.push(`    * Target components: ${extensionCoverage.totalTargets} planned (${extensionCoverage.completedTargets.length} completed, ${extensionRemainingTargets} remaining) (${migrationTargets.extension?.source || 'N/A'})`);
-  report.push(`    * Migrated to MMDS: ${extensionMigratedNumerator}/${extensionMigratedDenominator} (${Math.round((extensionMigratedNumerator / extensionMigratedDenominator) * 100)}%)`);
+  report.push(`    * Migrated to MMDS: ${extensionMigratedNumerator}/${extensionMigratedDenominator} (${extensionMigratedDenominator > 0 ? Math.round((extensionMigratedNumerator / extensionMigratedDenominator) * 100) : 0}%)`);
   if (extensionSummary && extensionMetricsFile) {
     report.push(`    * Instance replacement: ${extensionSummary.migrationPercentage}% ([breakdown](${GITHUB_REPO}/metrics/${extensionMetricsFile}))`);
   }
