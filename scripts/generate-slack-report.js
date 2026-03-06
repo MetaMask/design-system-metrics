@@ -174,71 +174,48 @@ function generateReport(config, migrationTargets) {
   const report = [];
 
   report.push('### Design System Weekly Update\n');
-  report.push('* **MetaMask Design System (MMDS)**');
+  report.push('- **MetaMask Design System (MMDS)**');
 
   // Mobile section
-  const mobileConfig = config.projects.mobile;
   const mobileMMDSCount = countAvailableMMDSComponents('mobile');
   const mobileMetricsFile = getLatestMetricsFile('mobile');
   const mobileSummary = getLatestMetricsSummary('mobile');
-  const mobileNewComponents = getNewComponents('mobile');
+  const mobileCoverage = getTargetCoverage('mobile', migrationTargets, mobileSummary);
+  const mobileMigratedDenominator = mobileCoverage.totalTargets;
+  const mobileMigratedPercent = mobileMigratedDenominator > 0
+    ? Math.round((mobileMMDSCount / mobileMigratedDenominator) * 100)
+    : 0;
 
-  report.push('  * **Mobile**');
-  report.push(`    * MMDS components available: ${mobileMMDSCount} [components](${MMDS_RN_COMPONENTS})`);
+  report.push('  - **Mobile**');
+  report.push(`    - MMDS components available: ${mobileMMDSCount}/${mobileMigratedDenominator} (${mobileMigratedPercent}% Migrated ${formatEpicLink(migrationTargets.mobile?.source)})`);
   if (mobileSummary && mobileSummary.newComponents && mobileSummary.newComponents.length > 0) {
-    report.push(`      * New components: ${mobileSummary.newComponents.join(', ')}`);
+    report.push(`      - [New components](${MMDS_RN_COMPONENTS}): ${mobileSummary.newComponents.map((component) => `\`${component}\``).join(', ')}`);
   }
   if (mobileSummary) {
-    report.push(`    * MMDS usage: ${mobileSummary.mmdsInstances} instances in codebase`);
-    report.push(`    * Deprecated components: ${mobileSummary.componentsTracked} legacy component types`);
+    report.push(`    - MMDS vs Deprecated component instance usage: ${mobileSummary.mmdsInstances}/${mobileSummary.deprecatedInstances} (${mobileSummary.migrationPercentage}% [breakdown](${GITHUB_REPO}/metrics/${mobileMetricsFile}))`);
   }
 
   // Extension section
-  const extensionConfig = config.projects.extension;
   const extensionMMDSCount = countAvailableMMDSComponents('extension');
   const extensionMetricsFile = getLatestMetricsFile('extension');
   const extensionSummary = getLatestMetricsSummary('extension');
-  const extensionNewComponents = getNewComponents('extension');
+  const extensionCoverage = getTargetCoverage('extension', migrationTargets, extensionSummary);
+  const extensionMigratedDenominator = extensionCoverage.totalTargets;
+  const extensionMigratedPercent = extensionMigratedDenominator > 0
+    ? Math.round((extensionMMDSCount / extensionMigratedDenominator) * 100)
+    : 0;
 
-  report.push('  * **Extension**');
-  report.push(`    * MMDS components available: ${extensionMMDSCount} [components](${MMDS_REACT_COMPONENTS})`);
+  report.push('\n  - **Extension**');
+  report.push(`    - MMDS components available: ${extensionMMDSCount}/${extensionMigratedDenominator} (${extensionMigratedPercent}% Migrated ${formatEpicLink(migrationTargets.extension?.source)})`);
   if (extensionSummary && extensionSummary.newComponents && extensionSummary.newComponents.length > 0) {
-    report.push(`      * New components: ${extensionSummary.newComponents.join(', ')}`);
+    report.push(`      - [New components](${MMDS_REACT_COMPONENTS}): ${extensionSummary.newComponents.map((component) => `\`${component}\``).join(', ')}`);
   }
   if (extensionSummary) {
-    report.push(`    * MMDS usage: ${extensionSummary.mmdsInstances} instances in codebase`);
-    report.push(`    * Deprecated components: ${extensionSummary.componentsTracked} legacy component types`);
-  }
-
-  // Migration Progress section
-  report.push('* **Migration Progress**');
-
-  // Mobile migration
-  report.push('  * **Mobile**');
-  const mobileCoverage = getTargetCoverage('mobile', migrationTargets, mobileSummary);
-  const mobileRemainingTargets = mobileCoverage.remainingTargets.length;
-  const mobileMigratedNumerator = mobileMMDSCount;
-  const mobileMigratedDenominator = mobileCoverage.totalTargets;
-  report.push(`    * Target components: ${mobileCoverage.totalTargets} planned (${mobileCoverage.completedTargets.length} completed, ${mobileRemainingTargets} remaining) (${formatEpicLink(migrationTargets.mobile?.source)})`);
-  report.push(`    * Migrated to MMDS: ${mobileMigratedNumerator}/${mobileMigratedDenominator} (${mobileMigratedDenominator > 0 ? Math.round((mobileMigratedNumerator / mobileMigratedDenominator) * 100) : 0}%)`);
-  if (mobileSummary && mobileMetricsFile) {
-    report.push(`    * Instance replacement: ${mobileSummary.migrationPercentage}% ([breakdown](${GITHUB_REPO}/metrics/${mobileMetricsFile}))`);
-  }
-
-  // Extension migration
-  report.push('  * **Extension**');
-  const extensionCoverage = getTargetCoverage('extension', migrationTargets, extensionSummary);
-  const extensionRemainingTargets = extensionCoverage.remainingTargets.length;
-  const extensionMigratedNumerator = extensionMMDSCount;
-  const extensionMigratedDenominator = extensionCoverage.totalTargets;
-  report.push(`    * Target components: ${extensionCoverage.totalTargets} planned (${extensionCoverage.completedTargets.length} completed, ${extensionRemainingTargets} remaining) (${formatEpicLink(migrationTargets.extension?.source)})`);
-  report.push(`    * Migrated to MMDS: ${extensionMigratedNumerator}/${extensionMigratedDenominator} (${extensionMigratedDenominator > 0 ? Math.round((extensionMigratedNumerator / extensionMigratedDenominator) * 100) : 0}%)`);
-  if (extensionSummary && extensionMetricsFile) {
-    report.push(`    * Instance replacement: ${extensionSummary.migrationPercentage}% ([breakdown](${GITHUB_REPO}/metrics/${extensionMetricsFile}))`);
+    report.push(`    - MMDS vs Deprecated component instance usage: ${extensionSummary.mmdsInstances}/${extensionSummary.deprecatedInstances} (${extensionSummary.migrationPercentage}% [breakdown](${GITHUB_REPO}/metrics/${extensionMetricsFile}))`);
   }
 
   report.push('\n---\n');
-  report.push(`*Generated: ${new Date().toISOString().split('T')[0]}*`);
+  report.push(`_Generated: ${new Date().toISOString().split('T')[0]}_`);
 
   return report.join('\n');
 }
