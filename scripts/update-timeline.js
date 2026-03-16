@@ -69,6 +69,8 @@ async function loadAllDataFiles() {
  * Build timeline data for a project
  */
 function buildProjectTimeline(projectData) {
+  const emptyCodeOwnerTimeline = { dates: [], owners: {} };
+
   if (projectData.length === 0) {
     return {
       dates: [],
@@ -82,7 +84,8 @@ function buildProjectTimeline(projectData) {
       totalComponents: [],
       mmdsComponentsAvailable: [],
       mmdsComponentsList: [],
-      newComponents: []
+      newComponents: [],
+      codeOwnerTimeline: emptyCodeOwnerTimeline
     };
   }
 
@@ -119,7 +122,77 @@ function buildProjectTimeline(projectData) {
     timeline.newComponents.push(data.newComponents || []);
   }
 
+  timeline.codeOwnerTimeline = buildCodeOwnerTimeline(projectData);
+
   return timeline;
+}
+
+/**
+ * Build code owner timeline data from project entries.
+ *
+ * Uses its own dates array so the timeline only includes weeks where
+ * codeOwnerStats was captured (the feature was added later than the
+ * top-level metrics).
+ */
+function buildCodeOwnerTimeline(projectData) {
+  const codeOwnerTimeline = { dates: [], owners: {} };
+  const allOwners = new Set();
+  const entriesWithStats = [];
+
+  for (const entry of projectData) {
+    const stats = entry.data.summary?.codeOwnerStats;
+    if (stats && Object.keys(stats).length > 0) {
+      entriesWithStats.push(entry);
+      for (const owner of Object.keys(stats)) {
+        allOwners.add(owner);
+      }
+    }
+  }
+
+  if (entriesWithStats.length === 0) {
+    return codeOwnerTimeline;
+  }
+
+  for (const owner of allOwners) {
+    codeOwnerTimeline.owners[owner] = {
+      migrationPercentage: [],
+      mmdsInstances: [],
+      deprecatedInstances: [],
+      totalInstances: []
+    };
+  }
+
+  for (const entry of entriesWithStats) {
+    const stats = entry.data.summary.codeOwnerStats;
+    codeOwnerTimeline.dates.push(entry.date);
+
+    for (const owner of allOwners) {
+      const ownerStats = stats[owner];
+      const ownerTimeline = codeOwnerTimeline.owners[owner];
+      ownerTimeline.migrationPercentage.push(
+        ownerStats ? parseFloat(ownerStats.migrationPercentage) : 0
+      );
+      ownerTimeline.mmdsInstances.push(
+        ownerStats ? ownerStats.mmdsInstances : 0
+      );
+      ownerTimeline.deprecatedInstances.push(
+        ownerStats ? ownerStats.deprecatedInstances : 0
+      );
+      ownerTimeline.totalInstances.push(
+        ownerStats ? ownerStats.totalInstances : 0
+      );
+    }
+  }
+
+  for (const owner of allOwners) {
+    const ownerTimeline = codeOwnerTimeline.owners[owner];
+    const hasActivity = ownerTimeline.totalInstances.some(v => v > 0);
+    if (!hasActivity) {
+      delete codeOwnerTimeline.owners[owner];
+    }
+  }
+
+  return codeOwnerTimeline;
 }
 
 /**
