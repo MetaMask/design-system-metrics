@@ -23,7 +23,7 @@ const METRICS_DIR = path.join(__dirname, '..', 'metrics');
 // GitHub URLs
 const MMDS_REACT_COMPONENTS = 'https://github.com/MetaMask/metamask-design-system/tree/main/packages/design-system-react/src/components';
 const MMDS_RN_COMPONENTS = 'https://github.com/MetaMask/metamask-design-system/tree/main/packages/design-system-react-native/src/components';
-const GITHUB_REPO = 'https://github.com/georgewrmarshall/design-system-metrics/blob/main';
+const GITHUB_REPO = 'https://github.com/MetaMask/design-system-metrics/blob/main';
 const JIRA_BROWSE_BASE = 'https://consensyssoftware.atlassian.net/browse';
 
 /**
@@ -194,7 +194,7 @@ function generateReport(config, migrationTargets) {
   if (mobileSummary) {
     report.push(`    - MMDS component instances: \`${mobileSummary.mmdsInstances}\``);
     report.push(`    - Deprecated component instances: \`${mobileSummary.deprecatedInstances}\``);
-    report.push(`    - [MMD vs Deprecated](https://georgewrmarshall.github.io/design-system-metrics/): \`${mobileSummary.migrationPercentage}% (${mobileSummary.mmdsInstances}/${mobileSummary.deprecatedInstances})\``);
+    report.push(`    - [MMD vs Deprecated](https://MetaMask.github.io/design-system-metrics/): \`${mobileSummary.migrationPercentage}% (${mobileSummary.mmdsInstances}/${mobileSummary.deprecatedInstances})\``);
   }
 
   // Extension section
@@ -215,7 +215,7 @@ function generateReport(config, migrationTargets) {
   if (extensionSummary) {
     report.push(`    - MMDS component instances: \`${extensionSummary.mmdsInstances}\``);
     report.push(`    - Deprecated component instances: \`${extensionSummary.deprecatedInstances}\``);
-    report.push(`    - [MMD vs Deprecated](https://georgewrmarshall.github.io/design-system-metrics/): \`${extensionSummary.migrationPercentage}% (${extensionSummary.mmdsInstances}/${extensionSummary.deprecatedInstances})\``);
+    report.push(`    - [MMD vs Deprecated](https://MetaMask.github.io/design-system-metrics/): \`${extensionSummary.migrationPercentage}% (${extensionSummary.mmdsInstances}/${extensionSummary.deprecatedInstances})\``);
   }
 
   report.push('\n---\n');
