@@ -531,6 +531,10 @@
       ],
       "filePattern": "repos/metamask-mobile/app/components/**/*.{js,jsx,ts,tsx}",
       "outputFile": "metrics/mobile-component-metrics.xlsx",
+      "codeOwnerMetricIgnoreGlobs": [
+        "app/components/**/Ramp/Deposit/**",
+        "app/components/**/Ramp/Aggregator/**"
+      ],
       "currentPackages": [
         "@metamask/design-system-react-native"
       ],
