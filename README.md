@@ -165,6 +165,7 @@ Notes:
 The tool uses `config.json` project entries with:
 - `filePattern`, `ignoreFolders`, `outputFile`
 - `currentPackages`, `currentComponents`
+- `codeOwnerMetricIgnoreGlobs` (optional): array of globs to exclude from code owner adoption metrics only (does not affect overall component counts). Useful for ignoring legacy or soon-to-be-deprecated areas from team adoption charts.
 - `deprecatedComponents` mappings:
   - `paths`: import paths to match
   - `replacement`: MMDS target or `null`
