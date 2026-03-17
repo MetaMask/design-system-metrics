@@ -718,9 +718,9 @@ const main = async () => {
 
     // Write summary JSON for Slack report
     const summaryFile = outputFile.replace(".xlsx", "-summary.json");
-    const summaryTotalAll = totalDeprecated + totalMMDS;
+    const summaryTotalAll = totalDeprecated + totalMMDSUsage;
     const summaryTotalPercentage =
-      summaryTotalAll > 0 ? (totalMMDS / summaryTotalAll) * 100 : 0;
+      summaryTotalAll > 0 ? (totalMMDSUsage / summaryTotalAll) * 100 : 0;
 
     const mmdsComponentsAvailable = countAvailableMMDSComponents(
       projectConfig.currentComponents,
