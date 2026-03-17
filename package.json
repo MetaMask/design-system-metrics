@@ -1,10 +1,9 @@
 {
-  "name": "@georgewrmarshall/design-system-metrics",
+  "name": "design-system-metrics",
   "version": "2.6.0",
-  "description": "A CLI tool to audit design system component usage from local libraries, NPM packages, and track deprecated components across MetaMask codebases",
-  "main": "index.js",
+  "description": "Design system migration reporting for MetaMask",
+  "private": true,
   "packageManager": "yarn@4.3.1",
-  "bin": "./index.js",
   "scripts": {
     "start": "node index.js --project extension",
     "start:mobile": "node index.js --project mobile",
@@ -23,14 +22,6 @@
     "collect-history": "node scripts/collect-historical-metrics.js",
     "audit-component-props": "node scripts/component-props-audit.js"
   },
-  "keywords": [
-    "cli",
-    "audit",
-    "components",
-    "ast",
-    "babel"
-  ],
-  "author": "George Marshall",
   "license": "MIT",
   "dependencies": {
     "@babel/parser": "^7.25.7",
