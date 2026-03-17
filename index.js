@@ -10,9 +10,11 @@ const { program } = require("commander");
 const chalk = require("chalk");
 const ExcelJS = require("exceljs");
 const CodeOwnersParser = require("./scripts/codeowners-parser");
+const { minimatch } = require("minimatch");
 
 let config;
 let codeOwnersParser = null;
+let codeOwnerMetricIgnoreGlobs = [];
 
 // Function to load and parse the configuration file
 const loadConfig = async (configPath) => {
@@ -175,6 +177,12 @@ const trackComponent = (componentName, source, specificPath, filePath) => {
       if (relativePath && !relativePath.startsWith("..")) {
         lookupPath = relativePath;
       }
+    }
+
+    // If this file is part of a path we want to exclude from code owner metrics,
+    // skip tracking it for the code owner stats only.
+    if (codeOwnerMetricIgnoreGlobs.some((pattern) => minimatch(lookupPath, pattern, { dot: true }))) {
+      return;
     }
 
     const owner = codeOwnersParser.getPrimaryOwner(lookupPath);
@@ -379,6 +387,7 @@ const main = async () => {
     deprecatedComponents = {},
     currentComponents = [],
     currentPackages = [],
+    codeOwnerMetricIgnoreGlobs: projectCodeOwnerIgnore = [],
   } = projectConfig;
 
   // Add date to the output filename (from env var or today)
@@ -402,6 +411,11 @@ const main = async () => {
   if (!repoRootPath) {
     repoRootPath = process.cwd();
   }
+
+  // Configure per-project exclusions for code owner metrics (does not affect other metrics).
+  codeOwnerMetricIgnoreGlobs = (projectCodeOwnerIgnore || []).map((pattern) =>
+    pattern.replace(/\\/g, "/"),
+  );
 
   // Initialize CodeOwners parser
   const codeownersCandidates = [
