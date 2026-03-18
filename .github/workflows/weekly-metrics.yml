@@ -62,6 +62,17 @@ jobs:
       - name: Validate metrics consistency
         run: yarn validate-metrics
 
+      - name: Discover untracked components (extension)
+        run: yarn discover:extension
+
+      - name: Discover untracked components (mobile)
+        run: yarn discover:mobile
+
+      - name: Copy untracked latest for dashboard
+        run: |
+          cp metrics/extension-untracked-${{ steps.date.outputs.date }}.json metrics/extension-untracked-latest.json
+          cp metrics/mobile-untracked-${{ steps.date.outputs.date }}.json metrics/mobile-untracked-latest.json
+
       - name: Generate Slack report
         run: yarn slack-report --output metrics/slack-report-${{ steps.date.outputs.date }}.md
 

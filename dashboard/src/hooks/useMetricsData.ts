@@ -6,6 +6,7 @@ import type {
   ComponentPropsAuditData,
   ComponentPropsAuditIndexData,
   MigrationTargetsData,
+  UntrackedData,
 } from '../types/metrics';
 
 const BASE_PATH = import.meta.env.BASE_URL || '/';
@@ -177,6 +178,43 @@ export function useComponentPropsAuditIndex() {
 
     fetchData();
   }, []);
+
+  return { data, loading, error };
+}
+
+export function useUntrackedData(project: 'mobile' | 'extension') {
+  const [data, setData] = useState<UntrackedData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const fileName = `${project}-untracked-latest.json`;
+        const res = await fetch(`${METRICS_PATH}${fileName}`);
+
+        // Optional dataset: return null without error when file is missing.
+        if (res.status === 404) {
+          setData(null);
+          setError(null);
+          return;
+        }
+
+        if (!res.ok) throw new Error(`Failed to fetch ${fileName}`);
+        const untracked: UntrackedData = await res.json();
+        setData(untracked);
+        setError(null);
+      } catch (err) {
+        setError(err as Error);
+        setData(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [project]);
 
   return { data, loading, error };
 }
