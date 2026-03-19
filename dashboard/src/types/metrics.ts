@@ -145,3 +145,35 @@ export interface MigrationTargetsData {
   mobile: MigrationTargetsProject;
   extension: MigrationTargetsProject;
 }
+
+export interface UntrackedMMDSMatch {
+  component: string;
+  confidence: 'exact' | 'high' | 'medium';
+}
+
+export interface UntrackedComponent {
+  component: string;
+  instances: number;
+  fileCount: number;
+  importSources: string[];
+  mmdsMatches: UntrackedMMDSMatch[];
+}
+
+export interface UntrackedSummary {
+  filesScanned: number;
+  totalJSXUsages: number;
+  trackedDeprecated: number;
+  trackedMMDS: number;
+  untrackedTotal: number;
+  uniqueUntrackedComponents: number;
+  replaceableNow: number;
+  futureDSCandidates: number;
+}
+
+export interface UntrackedData {
+  project: string;
+  date: string;
+  summary: UntrackedSummary;
+  replaceableWithMMDS: UntrackedComponent[];
+  futureDSCandidates: UntrackedComponent[];
+}

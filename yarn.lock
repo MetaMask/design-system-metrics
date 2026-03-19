@@ -419,24 +419,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@georgewrmarshall/design-system-metrics@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@georgewrmarshall/design-system-metrics@workspace:."
-  dependencies:
-    "@babel/parser": "npm:^7.25.7"
-    "@babel/traverse": "npm:^7.25.7"
-    brace-expansion: "npm:^4.0.0"
-    chalk: "npm:^4.1.2"
-    commander: "npm:^12.1.0"
-    exceljs: "npm:^4.4.0"
-    glob: "npm:^11.0.0"
-    jest: "npm:^29.7.0"
-    minimatch: "npm:^10.2.4"
-  bin:
-    design-system-metrics: ./index.js
-  languageName: unknown
-  linkType: soft
-
 "@isaacs/cliui@npm:^9.0.0":
   version: 9.0.0
   resolution: "@isaacs/cliui@npm:9.0.0"
@@ -1540,6 +1522,22 @@ __metadata:
   checksum: 10c0/e53481aaf1aa2c4082b5342be6b6d8ad9dfe387bc92ce197a66dea08bd4265904a087e75e464f14d1347cf2ac8afe1e4c16b266e0561cc5df29382d3c5f80044
   languageName: node
   linkType: hard
+
+"design-system-metrics@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "design-system-metrics@workspace:."
+  dependencies:
+    "@babel/parser": "npm:^7.25.7"
+    "@babel/traverse": "npm:^7.25.7"
+    brace-expansion: "npm:^4.0.0"
+    chalk: "npm:^4.1.2"
+    commander: "npm:^12.1.0"
+    exceljs: "npm:^4.4.0"
+    glob: "npm:^11.0.0"
+    jest: "npm:^29.7.0"
+    minimatch: "npm:^10.2.4"
+  languageName: unknown
+  linkType: soft
 
 "detect-newline@npm:^3.0.0":
   version: 3.1.0
