@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-19T17:28:08.146Z",
+  "generatedAt": "2026-03-20T16:32:44.192Z",
   "mobile": {
     "dates": [
       "2025-08-29",
@@ -29,7 +29,8 @@
       "2026-02-21",
       "2026-02-27",
       "2026-03-06",
-      "2026-03-13"
+      "2026-03-13",
+      "2026-03-20"
     ],
     "migrationPercentage": [
       6.35,
@@ -59,7 +60,8 @@
       37.07,
       38.56,
       38.29,
-      40.08
+      40.08,
+      44.52
     ],
     "mmdsInstances": [
       169,
@@ -89,7 +91,8 @@
       1891,
       2055,
       2108,
-      2303
+      2303,
+      2765
     ],
     "deprecatedInstances": [
       2492,
@@ -119,7 +122,8 @@
       3210,
       3275,
       3398,
-      3443
+      3443,
+      3445
     ],
     "totalInstances": [
       2661,
@@ -149,9 +153,11 @@
       5101,
       5330,
       5506,
-      5746
+      5746,
+      6210
     ],
     "componentsFullyMigrated": [
+      0,
       0,
       0,
       0,
@@ -209,7 +215,8 @@
       8,
       9,
       11,
-      11
+      11,
+      14
     ],
     "componentsNotStarted": [
       21,
@@ -239,7 +246,8 @@
       19,
       16,
       21,
-      25
+      25,
+      23
     ],
     "totalComponents": [
       25,
@@ -269,7 +277,8 @@
       25,
       25,
       32,
-      36
+      36,
+      37
     ],
     "mmdsComponentsAvailable": [
       25,
@@ -299,6 +308,7 @@
       33,
       35,
       42,
+      49,
       49
     ],
     "mmdsComponentsList": [
@@ -1117,6 +1127,57 @@
         "TextField",
         "TextOrChildren",
         "Toast"
+      ],
+      [
+        "ActionListItem",
+        "AvatarAccount",
+        "AvatarBase",
+        "AvatarFavicon",
+        "AvatarGroup",
+        "AvatarIcon",
+        "AvatarNetwork",
+        "AvatarToken",
+        "BadgeCount",
+        "BadgeIcon",
+        "BadgeNetwork",
+        "BadgeStatus",
+        "BadgeWrapper",
+        "BannerAlert",
+        "BannerBase",
+        "Blockies",
+        "BottomSheet",
+        "BottomSheetFooter",
+        "BottomSheetHeader",
+        "BottomSheetOverlay",
+        "Box",
+        "Button",
+        "ButtonAnimated",
+        "ButtonBase",
+        "ButtonFilter",
+        "ButtonHero",
+        "ButtonIcon",
+        "ButtonSemantic",
+        "Card",
+        "Checkbox",
+        "HeaderBase",
+        "Icon",
+        "ImageOrSvg",
+        "Input",
+        "Jazzicon",
+        "Label",
+        "ListItem",
+        "MainActionButton",
+        "Maskicon",
+        "RadioButton",
+        "SensitiveText",
+        "Skeleton",
+        "Spinner",
+        "TabEmptyState",
+        "Text",
+        "TextButton",
+        "TextField",
+        "TextOrChildren",
+        "Toast"
       ]
     ],
     "newComponents": [
@@ -1176,33 +1237,47 @@
         "MainActionButton",
         "SensitiveText",
         "Spinner"
+      ],
+      [
+        "BannerAlert",
+        "BottomSheet",
+        "ButtonFilter",
+        "ImageOrSvg",
+        "MainActionButton",
+        "SensitiveText",
+        "Spinner"
       ]
     ],
     "codeOwnerTimeline": {
       "dates": [
         "2026-02-27",
         "2026-03-06",
-        "2026-03-13"
+        "2026-03-13",
+        "2026-03-20"
       ],
       "owners": {
         "@MetaMask/accounts-engineers": {
           "migrationPercentage": [
             19.29,
             20.54,
-            20.54
+            20.54,
+            27.03
           ],
           "mmdsInstances": [
             38,
             38,
-            38
+            38,
+            50
           ],
           "deprecatedInstances": [
             159,
             147,
-            147
+            147,
+            135
           ],
           "totalInstances": [
             197,
+            185,
             185,
             185
           ]
@@ -1211,63 +1286,75 @@
           "migrationPercentage": [
             63.64,
             64.94,
-            68.36
+            68.36,
+            68.51
           ],
           "mmdsInstances": [
             266,
             276,
-            296
+            296,
+            298
           ],
           "deprecatedInstances": [
             152,
             149,
+            137,
             137
           ],
           "totalInstances": [
             418,
             425,
-            433
+            433,
+            435
           ]
         },
         "@MetaMask/confirmations": {
           "migrationPercentage": [
             18.44,
             17.35,
-            17.41
+            17.41,
+            19.71
           ],
           "mmdsInstances": [
             71,
             72,
-            74
+            74,
+            83
           ],
           "deprecatedInstances": [
             314,
             343,
-            351
+            351,
+            338
           ],
           "totalInstances": [
             385,
             415,
-            425
+            425,
+            421
           ]
         },
         "@MetaMask/core-platform": {
           "migrationPercentage": [
             0.99,
             0.99,
-            0.99
+            0.99,
+            7.92
           ],
           "mmdsInstances": [
             1,
             1,
-            1
+            1,
+            8
           ],
           "deprecatedInstances": [
             100,
             100,
-            100
+            100,
+            93
           ],
           "totalInstances": [
+            101,
             101,
             101,
             101
@@ -1277,70 +1364,83 @@
           "migrationPercentage": [
             38.58,
             38.58,
-            40.37
+            40.37,
+            47.37
           ],
           "mmdsInstances": [
             103,
             103,
-            109
+            109,
+            135
           ],
           "deprecatedInstances": [
             164,
             164,
-            161
+            161,
+            150
           ],
           "totalInstances": [
             267,
             267,
-            270
+            270,
+            285
           ]
         },
         "@MetaMask/metamask-earn": {
           "migrationPercentage": [
             3.37,
             3.69,
-            6.23
+            6.23,
+            15.55
           ],
           "mmdsInstances": [
             10,
             11,
-            19
+            19,
+            51
           ],
           "deprecatedInstances": [
             287,
             287,
-            286
+            286,
+            277
           ],
           "totalInstances": [
             297,
             298,
-            305
+            305,
+            328
           ]
         },
         "@MetaMask/mobile-core-ux": {
           "migrationPercentage": [
             10.29,
             12.41,
-            12.41
+            12.41,
+            14.33
           ],
           "mmdsInstances": [
             35,
             36,
-            36
+            36,
+            42
           ],
           "deprecatedInstances": [
             305,
             254,
-            254
+            254,
+            251
           ],
           "totalInstances": [
             340,
             290,
-            290
+            290,
+            293
           ]
         },
         "@MetaMask/mobile-platform": {
           "migrationPercentage": [
+            75,
             75,
             75,
             75
@@ -1348,14 +1448,17 @@
           "mmdsInstances": [
             3,
             3,
+            3,
             3
           ],
           "deprecatedInstances": [
             1,
             1,
+            1,
             1
           ],
           "totalInstances": [
+            4,
             4,
             4,
             4
@@ -1365,20 +1468,24 @@
           "migrationPercentage": [
             5.06,
             5.13,
-            5.13
+            5.13,
+            15.38
           ],
           "mmdsInstances": [
             4,
             4,
-            4
+            4,
+            12
           ],
           "deprecatedInstances": [
             75,
             74,
-            74
+            74,
+            66
           ],
           "totalInstances": [
             79,
+            78,
             78,
             78
           ]
@@ -1387,21 +1494,25 @@
           "migrationPercentage": [
             12.9,
             12.93,
+            13.43,
             13.43
           ],
           "mmdsInstances": [
             104,
             105,
+            110,
             110
           ],
           "deprecatedInstances": [
             702,
             707,
+            709,
             709
           ],
           "totalInstances": [
             806,
             812,
+            819,
             819
           ]
         },
@@ -1409,21 +1520,25 @@
           "migrationPercentage": [
             73.3,
             73.3,
+            75.54,
             75.54
           ],
           "mmdsInstances": [
             409,
             409,
+            454,
             454
           ],
           "deprecatedInstances": [
             149,
             149,
+            147,
             147
           ],
           "totalInstances": [
             558,
             558,
+            601,
             601
           ]
         },
@@ -1431,75 +1546,89 @@
           "migrationPercentage": [
             9.41,
             9.87,
-            10.57
+            10.57,
+            32.25
           ],
           "mmdsInstances": [
             72,
             78,
-            84
+            84,
+            89
           ],
           "deprecatedInstances": [
             693,
             712,
-            711
+            711,
+            187
           ],
           "totalInstances": [
             765,
             790,
-            795
+            795,
+            276
           ]
         },
         "@MetaMask/rewards": {
           "migrationPercentage": [
             88.95,
             88.05,
-            88.14
+            88.14,
+            89.58
           ],
           "mmdsInstances": [
             451,
             457,
-            483
+            483,
+            550
           ],
           "deprecatedInstances": [
             56,
             62,
-            65
+            65,
+            64
           ],
           "totalInstances": [
             507,
             519,
-            548
+            548,
+            614
           ]
         },
         "@MetaMask/swaps-engineers": {
           "migrationPercentage": [
             18.67,
             33.71,
-            40.31
+            40.31,
+            41.71
           ],
           "mmdsInstances": [
             28,
             59,
-            77
+            77,
+            78
           ],
           "deprecatedInstances": [
             122,
             116,
-            114
+            114,
+            109
           ],
           "totalInstances": [
             150,
             175,
-            191
+            191,
+            187
           ]
         },
         "@MetaMask/transactions": {
           "migrationPercentage": [
             0,
             0,
+            0,
             0
           ],
           "mmdsInstances": [
+            0,
             0,
             0,
             0
@@ -1507,9 +1636,11 @@
           "deprecatedInstances": [
             4,
             4,
+            4,
             4
           ],
           "totalInstances": [
+            4,
             4,
             4,
             4
@@ -1519,9 +1650,11 @@
           "migrationPercentage": [
             0,
             0,
+            0,
             0
           ],
           "mmdsInstances": [
+            0,
             0,
             0,
             0
@@ -1529,10 +1662,12 @@
           "deprecatedInstances": [
             33,
             34,
+            34,
             34
           ],
           "totalInstances": [
             33,
+            34,
             34,
             34
           ]
@@ -1541,55 +1676,63 @@
           "migrationPercentage": [
             0,
             0,
-            17.68
+            17.68,
+            68.91
           ],
           "mmdsInstances": [
             0,
             0,
-            32
+            32,
+            184
           ],
           "deprecatedInstances": [
             11,
             11,
-            149
+            149,
+            83
           ],
           "totalInstances": [
             11,
             11,
-            181
+            181,
+            267
           ]
         },
         "@unknown": {
           "migrationPercentage": [
             33.31,
             32.97,
-            38.49
+            38.49,
+            44.32
           ],
           "mmdsInstances": [
             460,
             456,
-            483
+            483,
+            605
           ],
           "deprecatedInstances": [
             921,
             927,
-            772
+            772,
+            760
           ],
           "totalInstances": [
             1381,
             1383,
-            1255
+            1255,
+            1365
           ]
         }
       }
     },
     "latestChange": {
-      "migrationPercentageChange": "1.79",
-      "mmdsInstancesChange": 195,
-      "deprecatedInstancesChange": 45,
+      "migrationPercentageChange": "4.44",
+      "mmdsInstancesChange": 462,
+      "deprecatedInstancesChange": 2,
       "componentsFullyMigratedChange": 0,
-      "componentsInProgressChange": 0,
-      "mmdsComponentsAvailableChange": 7
+      "componentsInProgressChange": 3,
+      "mmdsComponentsAvailableChange": 0
     }
   },
   "extension": {
@@ -1621,7 +1764,8 @@
       "2026-02-21",
       "2026-02-27",
       "2026-03-06",
-      "2026-03-13"
+      "2026-03-13",
+      "2026-03-20"
     ],
     "migrationPercentage": [
       2.57,
@@ -1651,7 +1795,8 @@
       27.16,
       27.45,
       28.75,
-      34.54
+      34.54,
+      37.28
     ],
     "mmdsInstances": [
       101,
@@ -1681,7 +1826,8 @@
       1436,
       1452,
       1505,
-      1875
+      1875,
+      2042
     ],
     "deprecatedInstances": [
       3823,
@@ -1711,7 +1857,8 @@
       3852,
       3838,
       3730,
-      3554
+      3554,
+      3435
     ],
     "totalInstances": [
       3924,
@@ -1741,9 +1888,11 @@
       5288,
       5290,
       5235,
-      5429
+      5429,
+      5477
     ],
     "componentsFullyMigrated": [
+      0,
       0,
       0,
       0,
@@ -1801,6 +1950,7 @@
       12,
       13,
       13,
+      13,
       13
     ],
     "componentsNotStarted": [
@@ -1831,6 +1981,7 @@
       5,
       2,
       3,
+      4,
       4
     ],
     "totalComponents": [
@@ -1861,6 +2012,7 @@
       15,
       15,
       16,
+      17,
       17
     ],
     "mmdsComponentsAvailable": [
@@ -1891,6 +2043,7 @@
       25,
       25,
       26,
+      28,
       28
     ],
     "mmdsComponentsList": [
@@ -2621,6 +2774,36 @@
         "Maskicon",
         "Text",
         "TextButton"
+      ],
+      [
+        "AvatarAccount",
+        "AvatarBase",
+        "AvatarFavicon",
+        "AvatarGroup",
+        "AvatarIcon",
+        "AvatarNetwork",
+        "AvatarToken",
+        "BadgeCount",
+        "BadgeIcon",
+        "BadgeNetwork",
+        "BadgeStatus",
+        "BadgeWrapper",
+        "BannerAlert",
+        "BannerBase",
+        "Blockies",
+        "Box",
+        "Button",
+        "ButtonBase",
+        "ButtonFilter",
+        "ButtonHero",
+        "ButtonIcon",
+        "Checkbox",
+        "Icon",
+        "Input",
+        "Jazzicon",
+        "Maskicon",
+        "Text",
+        "TextButton"
       ]
     ],
     "newComponents": [
@@ -2660,78 +2843,95 @@
       [
         "BannerAlert",
         "ButtonFilter"
+      ],
+      [
+        "BannerAlert",
+        "ButtonFilter"
       ]
     ],
     "codeOwnerTimeline": {
       "dates": [
         "2026-02-27",
         "2026-03-06",
-        "2026-03-13"
+        "2026-03-13",
+        "2026-03-20"
       ],
       "owners": {
         "@MetaMask/accounts-engineers": {
           "migrationPercentage": [
             16.14,
             16.14,
-            17.31
+            17.31,
+            15.53
           ],
           "mmdsInstances": [
             72,
             72,
-            72
+            72,
+            73
           ],
           "deprecatedInstances": [
             374,
             374,
-            344
+            344,
+            397
           ],
           "totalInstances": [
             446,
             446,
-            416
+            416,
+            470
           ]
         },
         "@MetaMask/confirmations": {
           "migrationPercentage": [
             14.03,
             15.15,
-            19.95
+            19.95,
+            22.95
           ],
           "mmdsInstances": [
             103,
             115,
-            157
+            157,
+            185
           ],
           "deprecatedInstances": [
             631,
             644,
-            630
+            630,
+            621
           ],
           "totalInstances": [
             734,
             759,
-            787
+            787,
+            806
           ]
         },
         "@MetaMask/core-extension-ux": {
           "migrationPercentage": [
             14.52,
             16.49,
+            16.83,
             16.83
           ],
           "mmdsInstances": [
             141,
             156,
+            159,
             159
           ],
           "deprecatedInstances": [
             830,
             790,
+            786,
             786
           ],
           "totalInstances": [
             971,
             946,
+            945,
             945
           ]
         },
@@ -2739,19 +2939,23 @@
           "migrationPercentage": [
             0.25,
             0.25,
+            0.74,
             0.74
           ],
           "mmdsInstances": [
             1,
             1,
+            3,
             3
           ],
           "deprecatedInstances": [
             403,
             403,
+            401,
             401
           ],
           "totalInstances": [
+            404,
             404,
             404,
             404
@@ -2761,21 +2965,25 @@
           "migrationPercentage": [
             0.93,
             0.94,
+            0.45,
             0.45
           ],
           "mmdsInstances": [
             2,
             2,
+            1,
             1
           ],
           "deprecatedInstances": [
             214,
             211,
+            222,
             222
           ],
           "totalInstances": [
             216,
             213,
+            223,
             223
           ]
         },
@@ -2783,21 +2991,25 @@
           "migrationPercentage": [
             100,
             100,
-            100
+            100,
+            91.67
           ],
           "mmdsInstances": [
             3,
             3,
-            36
+            36,
+            33
           ],
           "deprecatedInstances": [
             0,
             0,
-            0
+            0,
+            3
           ],
           "totalInstances": [
             3,
             3,
+            36,
             36
           ]
         },
@@ -2805,20 +3017,24 @@
           "migrationPercentage": [
             0,
             30.51,
+            30.51,
             30.51
           ],
           "mmdsInstances": [
             0,
+            18,
             18,
             18
           ],
           "deprecatedInstances": [
             57,
             41,
+            41,
             41
           ],
           "totalInstances": [
             57,
+            59,
             59,
             59
           ]
@@ -2827,20 +3043,24 @@
           "migrationPercentage": [
             89.3,
             85.16,
+            85.16,
             85.16
           ],
           "mmdsInstances": [
             634,
+            568,
             568,
             568
           ],
           "deprecatedInstances": [
             76,
             99,
+            99,
             99
           ],
           "totalInstances": [
             710,
+            667,
             667,
             667
           ]
@@ -2849,21 +3069,25 @@
           "migrationPercentage": [
             12.35,
             12.4,
+            13.74,
             13.74
           ],
           "mmdsInstances": [
             31,
             31,
+            36,
             36
           ],
           "deprecatedInstances": [
             220,
             219,
+            226,
             226
           ],
           "totalInstances": [
             251,
             250,
+            262,
             262
           ]
         },
@@ -2871,21 +3095,25 @@
           "migrationPercentage": [
             42.63,
             42.63,
-            62.32
+            62.32,
+            80.65
           ],
           "mmdsInstances": [
             211,
             211,
-            306
+            306,
+            396
           ],
           "deprecatedInstances": [
             284,
             284,
-            185
+            185,
+            95
           ],
           "totalInstances": [
             495,
             495,
+            491,
             491
           ]
         },
@@ -2893,40 +3121,44 @@
           "migrationPercentage": [
             13.06,
             16.82,
-            25.08
+            25.08,
+            27.59
           ],
           "mmdsInstances": [
             254,
             328,
-            519
+            519,
+            570
           ],
           "deprecatedInstances": [
             1691,
             1622,
-            1550
+            1550,
+            1496
           ],
           "totalInstances": [
             1945,
             1950,
-            2069
+            2069,
+            2066
           ]
         }
       }
     },
     "latestChange": {
-      "migrationPercentageChange": "5.79",
-      "mmdsInstancesChange": 370,
-      "deprecatedInstancesChange": -176,
+      "migrationPercentageChange": "2.74",
+      "mmdsInstancesChange": 167,
+      "deprecatedInstancesChange": -119,
       "componentsFullyMigratedChange": 0,
       "componentsInProgressChange": 0,
-      "mmdsComponentsAvailableChange": 2
+      "mmdsComponentsAvailableChange": 0
     }
   },
   "summary": {
-    "totalWeeks": 28,
+    "totalWeeks": 29,
     "dateRange": {
       "start": "2025-08-29",
-      "end": "2026-03-13"
+      "end": "2026-03-20"
     }
   }
 }
