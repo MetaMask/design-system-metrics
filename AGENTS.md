@@ -52,7 +52,7 @@ For any change touching generation or schemas:
 - Keep JSON schemas backward-compatible unless you also update dashboard types and readers.
 - Do not hand-edit generated files in `metrics/` unless explicitly doing a repair/backfill task.
 - Prefer updating `config.json` via `yarn sync-config`; reserve manual edits for intentional overrides.
-- Weekly automation truth is in `.github/workflows/weekly-metrics.yml`.
+- Weekly automation truth is in `.github/workflows/weekly-metrics.yml` (opens a PR to `main`; merge to deploy via `deploy-dashboard.yml`).
 
 ## Documentation Policy
 
