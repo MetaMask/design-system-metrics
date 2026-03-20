@@ -95,7 +95,7 @@ METRICS_DATE=2026-03-04 yarn start:mobile
 
 CI workflows:
 - `.github/workflows/weekly-metrics.yml`
-  - runs Fridays (8:00 AM `America/Los_Angeles`) and manually; opens a PR to `main` (org rules require changes via PR)
+  - runs Fridays 16:00 UTC (~8am Pacific standard / ~9am Pacific daylight) and manually; opens a PR to `main` (org rules require changes via PR)
   - updates submodules/config, regenerates metrics, updates timeline/index, validates data, generates Slack output, and rebuilds dashboard assets
 - `.github/workflows/deploy-dashboard.yml`
   - deploys dashboard to GitHub Pages when dashboard or metrics JSON changes on `main` (merge the weekly metrics PR to publish)
