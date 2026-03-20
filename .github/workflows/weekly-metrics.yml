@@ -2,12 +2,14 @@ name: Weekly Design System Metrics
 
 on:
   schedule:
-    # Run every Friday at 4:00 PM UTC (8:00 AM PST / 11:00 AM EST)
-    - cron: '0 16 * * 5'
+    # Friday 8:00 AM America/Los_Angeles (handles PST/PDT; was 16:00 UTC which is 9am Pacific during DST)
+    - cron: '0 8 * * 5'
+      timezone: America/Los_Angeles
   workflow_dispatch: # Allow manual trigger
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   generate-metrics:
@@ -32,8 +34,8 @@ jobs:
 
       - name: Initialize git submodules
         run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
+          git config --global user.email 'metamaskbot@users.noreply.github.com'
+          git config --global user.name 'metamaskbot'
           git submodule update --init --recursive || true
 
       - name: Update git submodules
@@ -89,18 +91,38 @@ jobs:
           cd dashboard
           npm run build
 
-      - name: Commit and push changes
+      - name: Commit, push branch, open pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
+          set -e
+          git config --global user.email 'metamaskbot@users.noreply.github.com'
+          git config --global user.name 'metamaskbot'
           git add .
-          git commit -m "chore: weekly metrics update ${{ steps.date.outputs.date }}
-
-          - Updated git submodules to latest versions
-          - Regenerated component metrics for extension and mobile
-          - Updated config.json with latest component mappings
-          - Generated weekly Slack report
-          - Updated dashboard data and rebuilt
-
-          🤖 Automated weekly update" || echo "No changes to commit"
-          git push origin main
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          BRANCH="metamaskbot/weekly-metrics-${{ steps.date.outputs.date }}-${{ github.run_id }}"
+          git checkout -b "$BRANCH"
+          git commit -m "chore: weekly metrics update ${{ steps.date.outputs.date }}" \
+            -m "- Updated git submodules to latest versions" \
+            -m "- Regenerated component metrics for extension and mobile" \
+            -m "- Updated config.json with latest component mappings" \
+            -m "- Generated weekly Slack report" \
+            -m "- Updated dashboard data and rebuilt" \
+            -m "" \
+            -m "🤖 Automated weekly update"
+          git push -u origin "$BRANCH"
+          BODY_FILE="$(mktemp)"
+          {
+            echo "Automated weekly metrics run."
+            echo ""
+            echo "- [ ] Review generated artifacts and merge to publish the dashboard (merge to **main** triggers GitHub Pages deploy)."
+            echo ""
+            echo "🤖 Workflow: https://github.com/${{ github.repository }}/blob/main/.github/workflows/weekly-metrics.yml"
+          } > "$BODY_FILE"
+          gh pr create --base main --head "$BRANCH" \
+            --title "chore: weekly metrics update ${{ steps.date.outputs.date }}" \
+            --body-file "$BODY_FILE"
+          rm -f "$BODY_FILE"

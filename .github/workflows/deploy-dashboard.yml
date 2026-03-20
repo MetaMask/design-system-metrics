@@ -8,11 +8,6 @@ on:
       - 'dashboard/**'
       - 'metrics/*.json'
       - '.github/workflows/deploy-dashboard.yml'
-  workflow_run:
-    workflows:
-      - Weekly Design System Metrics
-    types:
-      - completed
   workflow_dispatch: # Allow manual trigger
 
 permissions:
@@ -27,7 +22,6 @@ concurrency:
 
 jobs:
   build:
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
