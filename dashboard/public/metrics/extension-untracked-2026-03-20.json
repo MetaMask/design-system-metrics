@@ -3,9 +3,9 @@
   "date": "2026-03-20",
   "summary": {
     "filesScanned": 1578,
-    "totalJSXUsages": 9014,
+    "totalJSXUsages": 9015,
     "trackedDeprecated": 4235,
-    "trackedMMDS": 1935,
+    "trackedMMDS": 1936,
     "untrackedTotal": 2844,
     "uniqueUntrackedComponents": 383,
     "replaceableNow": 115,
@@ -48,8 +48,8 @@
         "../../../app/preferred-avatar",
         "../../preferred-avatar",
         "../../../../../components/app/preferred-avatar",
-        "../../../preferred-avatar",
         "../../../../app/preferred-avatar",
+        "../../../preferred-avatar",
         "../../../../../../components/app/preferred-avatar",
         "../../../../../../../components/app/preferred-avatar"
       ],
@@ -139,8 +139,8 @@
       "instances": 18,
       "fileCount": 12,
       "importSources": [
-        "./network-list-item/network-list-item",
         "../network-list-item",
+        "./network-list-item/network-list-item",
         "../../../../components/multichain/network-list-item",
         "../../../multichain/network-list-item",
         "../../network-list-item",
@@ -213,11 +213,11 @@
       "fileCount": 13,
       "importSources": [
         "../../components/app/snaps/snap-icon",
-        "../snaps/snap-icon",
         "../../app/snaps/snap-icon",
+        "../snaps/snap-icon",
         "../../../../components/app/snaps/snap-icon",
-        "../snap-icon",
-        "../../../app/snaps/snap-icon"
+        "../../../app/snaps/snap-icon",
+        "../snap-icon"
       ],
       "mmdsMatches": [
         {
@@ -307,8 +307,8 @@
       "instances": 9,
       "fileCount": 6,
       "importSources": [
-        "../transaction-status-label/transaction-status-label",
-        "../../app/transaction-status-label/transaction-status-label"
+        "../../app/transaction-status-label/transaction-status-label",
+        "../transaction-status-label/transaction-status-label"
       ],
       "mmdsMatches": [
         {
@@ -401,9 +401,9 @@
       "importSources": [
         "../../multichain/avatar-group",
         "../avatar-group",
-        "../../../../multichain/avatar-group/avatar-group",
         "../../..",
-        "../../../avatar-group"
+        "../../../avatar-group",
+        "../../../../multichain/avatar-group/avatar-group"
       ],
       "mmdsMatches": [
         {
@@ -461,29 +461,6 @@
       ]
     },
     {
-      "component": "TransactionIcon",
-      "instances": 6,
-      "fileCount": 5,
-      "importSources": [
-        "../transaction-icon",
-        "../../app/transaction-icon/transaction-icon"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Icon",
-          "confidence": "high"
-        },
-        {
-          "component": "AvatarIcon",
-          "confidence": "medium"
-        },
-        {
-          "component": "BadgeIcon",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
       "component": "NotificationDetailCopyButton",
       "instances": 6,
       "fileCount": 6,
@@ -502,6 +479,29 @@
         },
         {
           "component": "ButtonFilter",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "TransactionIcon",
+      "instances": 6,
+      "fileCount": 5,
+      "importSources": [
+        "../../app/transaction-icon/transaction-icon",
+        "../transaction-icon"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Icon",
+          "confidence": "high"
+        },
+        {
+          "component": "AvatarIcon",
+          "confidence": "medium"
+        },
+        {
+          "component": "BadgeIcon",
           "confidence": "medium"
         }
       ]
@@ -673,52 +673,6 @@
       ]
     },
     {
-      "component": "CancelButton",
-      "instances": 4,
-      "fileCount": 4,
-      "importSources": [
-        "../cancel-button",
-        "(local or re-export)"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Button",
-          "confidence": "high"
-        },
-        {
-          "component": "ButtonBase",
-          "confidence": "medium"
-        },
-        {
-          "component": "ButtonFilter",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
-      "component": "ChainBadge",
-      "instances": 4,
-      "fileCount": 3,
-      "importSources": [
-        "../chain-badge/chain-badge",
-        "../../app/chain-badge/chain-badge"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "BadgeCount",
-          "confidence": "medium"
-        },
-        {
-          "component": "BadgeIcon",
-          "confidence": "medium"
-        },
-        {
-          "component": "BadgeNetwork",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
       "component": "NotificationDetailButton",
       "instances": 4,
       "fileCount": 3,
@@ -753,6 +707,52 @@
       "mmdsMatches": [
         {
           "component": "AvatarAccount",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "ChainBadge",
+      "instances": 4,
+      "fileCount": 3,
+      "importSources": [
+        "../../app/chain-badge/chain-badge",
+        "../chain-badge/chain-badge"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "BadgeCount",
+          "confidence": "medium"
+        },
+        {
+          "component": "BadgeIcon",
+          "confidence": "medium"
+        },
+        {
+          "component": "BadgeNetwork",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "CancelButton",
+      "instances": 4,
+      "fileCount": 4,
+      "importSources": [
+        "../cancel-button",
+        "(local or re-export)"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Button",
+          "confidence": "high"
+        },
+        {
+          "component": "ButtonBase",
+          "confidence": "medium"
+        },
+        {
+          "component": "ButtonFilter",
           "confidence": "medium"
         }
       ]
@@ -917,29 +917,6 @@
       ]
     },
     {
-      "component": "MultichainAccountNetworkGroup",
-      "instances": 3,
-      "fileCount": 3,
-      "importSources": [
-        "../multichain-account-network-group",
-        "../../multichain-accounts/multichain-account-network-group"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "AvatarAccount",
-          "confidence": "medium"
-        },
-        {
-          "component": "AvatarGroup",
-          "confidence": "medium"
-        },
-        {
-          "component": "AvatarNetwork",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
       "component": "IconWithFallback",
       "instances": 3,
       "fileCount": 3,
@@ -963,16 +940,24 @@
       ]
     },
     {
-      "component": "AccountRow",
+      "component": "MultichainAccountNetworkGroup",
       "instances": 3,
-      "fileCount": 2,
+      "fileCount": 3,
       "importSources": [
-        "(local or re-export)",
-        "../../rows/account-row"
+        "../multichain-account-network-group",
+        "../../multichain-accounts/multichain-account-network-group"
       ],
       "mmdsMatches": [
         {
           "component": "AvatarAccount",
+          "confidence": "medium"
+        },
+        {
+          "component": "AvatarGroup",
+          "confidence": "medium"
+        },
+        {
+          "component": "AvatarNetwork",
           "confidence": "medium"
         }
       ]
@@ -1025,6 +1010,21 @@
       "fileCount": 3,
       "importSources": [
         "./account-overview-layout"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "AvatarAccount",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "AccountRow",
+      "instances": 3,
+      "fileCount": 2,
+      "importSources": [
+        "(local or re-export)",
+        "../../rows/account-row"
       ],
       "mmdsMatches": [
         {
@@ -1504,6 +1504,44 @@
       ]
     },
     {
+      "component": "AccountMismatchWarning",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../account-mismatch-warning/account-mismatch-warning.component",
+        "../../ui/account-mismatch-warning/account-mismatch-warning.component"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "AvatarAccount",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "InfoTooltipIcon",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "./info-tooltip-icon",
+        "../info-tooltip/info-tooltip-icon"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Icon",
+          "confidence": "high"
+        },
+        {
+          "component": "AvatarIcon",
+          "confidence": "medium"
+        },
+        {
+          "component": "BadgeIcon",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
       "component": "ConnectedStatus",
       "instances": 2,
       "fileCount": 2,
@@ -1566,117 +1604,6 @@
       "mmdsMatches": [
         {
           "component": "AvatarAccount",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
-      "component": "AccountMismatchWarning",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../account-mismatch-warning/account-mismatch-warning.component",
-        "../../ui/account-mismatch-warning/account-mismatch-warning.component"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "AvatarAccount",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
-      "component": "InfoTooltipIcon",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "./info-tooltip-icon",
-        "../info-tooltip/info-tooltip-icon"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Icon",
-          "confidence": "high"
-        },
-        {
-          "component": "AvatarIcon",
-          "confidence": "medium"
-        },
-        {
-          "component": "BadgeIcon",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
-      "component": "SwitchToInfuraButton",
-      "instances": 2,
-      "fileCount": 1,
-      "importSources": [
-        "(local or re-export)"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Button",
-          "confidence": "high"
-        },
-        {
-          "component": "ButtonBase",
-          "confidence": "medium"
-        },
-        {
-          "component": "ButtonFilter",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
-      "component": "UpdateRpcButton",
-      "instances": 2,
-      "fileCount": 1,
-      "importSources": [
-        "(local or re-export)"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Button",
-          "confidence": "high"
-        },
-        {
-          "component": "ButtonBase",
-          "confidence": "medium"
-        },
-        {
-          "component": "ButtonFilter",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
-      "component": "UnitInput",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../../ui/unit-input",
-        "../../../ui/unit-input"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Input",
-          "confidence": "high"
-        }
-      ]
-    },
-    {
-      "component": "RecipientGroup",
-      "instances": 2,
-      "fileCount": 1,
-      "importSources": [
-        "./recipient-group/recipient-group.component"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "AvatarGroup",
           "confidence": "medium"
         }
       ]
@@ -1804,6 +1731,79 @@
       ]
     },
     {
+      "component": "SwitchToInfuraButton",
+      "instances": 2,
+      "fileCount": 1,
+      "importSources": [
+        "(local or re-export)"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Button",
+          "confidence": "high"
+        },
+        {
+          "component": "ButtonBase",
+          "confidence": "medium"
+        },
+        {
+          "component": "ButtonFilter",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "UpdateRpcButton",
+      "instances": 2,
+      "fileCount": 1,
+      "importSources": [
+        "(local or re-export)"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Button",
+          "confidence": "high"
+        },
+        {
+          "component": "ButtonBase",
+          "confidence": "medium"
+        },
+        {
+          "component": "ButtonFilter",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "UnitInput",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../../ui/unit-input",
+        "../../../ui/unit-input"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Input",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "component": "RecipientGroup",
+      "instances": 2,
+      "fileCount": 1,
+      "importSources": [
+        "./recipient-group/recipient-group.component"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "AvatarGroup",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
       "component": "InlineAlert",
       "instances": 2,
       "fileCount": 2,
@@ -1899,6 +1899,20 @@
         },
         {
           "component": "AvatarBase",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "TokenListItem",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../../token-list-item"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "AvatarToken",
           "confidence": "medium"
         }
       ]
@@ -2009,20 +2023,6 @@
       ]
     },
     {
-      "component": "TokenListItem",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../../token-list-item"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "AvatarToken",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
       "component": "GasInput",
       "instances": 2,
       "fileCount": 2,
@@ -2110,6 +2110,29 @@
       ]
     },
     {
+      "component": "CopyIcon",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../../../../app/confirm/info/row/copy-icon",
+        "./copy-icon"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Icon",
+          "confidence": "high"
+        },
+        {
+          "component": "AvatarIcon",
+          "confidence": "medium"
+        },
+        {
+          "component": "BadgeIcon",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
       "component": "InfoText",
       "instances": 2,
       "fileCount": 1,
@@ -2123,29 +2146,6 @@
         },
         {
           "component": "TextButton",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
-      "component": "CopyIcon",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "./copy-icon",
-        "../../../../app/confirm/info/row/copy-icon"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Icon",
-          "confidence": "high"
-        },
-        {
-          "component": "AvatarIcon",
-          "confidence": "medium"
-        },
-        {
-          "component": "BadgeIcon",
           "confidence": "medium"
         }
       ]
@@ -2196,8 +2196,8 @@
         "../tooltip",
         "../tooltip/tooltip",
         "../../ui/tooltip",
-        "@material-ui/core/Tooltip",
         "../../ui/tooltip/tooltip",
+        "@material-ui/core/Tooltip",
         "../../../../components/ui/tooltip",
         "../../../../components/ui/tooltip/tooltip",
         "../../../ui/tooltip",
@@ -2267,8 +2267,8 @@
         "../pages/page",
         "../../../multichain/pages/page",
         "../page",
-        "../../../../multichain/pages/page",
-        "../../page"
+        "../../page",
+        "../../../../multichain/pages/page"
       ],
       "mmdsMatches": []
     },
@@ -2281,8 +2281,8 @@
         "../../../components/multichain/pages/page",
         "../../../multichain/pages/page",
         "../page",
-        "../../../../multichain/pages/page",
-        "../../page"
+        "../../page",
+        "../../../../multichain/pages/page"
       ],
       "mmdsMatches": []
     },
@@ -2314,8 +2314,8 @@
         "(local or re-export)",
         "../../../multichain/pages/page",
         "../page",
-        "../../../../multichain/pages/page",
-        "../../page"
+        "../../page",
+        "../../../../multichain/pages/page"
       ],
       "mmdsMatches": []
     },
@@ -2343,8 +2343,8 @@
       "instances": 25,
       "fileCount": 12,
       "importSources": [
-        "../user-preferenced-currency-display",
         "../../app/user-preferenced-currency-display/user-preferenced-currency-display.component",
+        "../user-preferenced-currency-display",
         "../../../../components/app/user-preferenced-currency-display",
         "../../../../components/app/user-preferenced-currency-display/user-preferenced-currency-display.component",
         "../../../app/user-preferenced-currency-display/user-preferenced-currency-display.component",
@@ -2436,8 +2436,8 @@
       "fileCount": 15,
       "importSources": [
         "../../components/ui/icon/preloader/preloader-icon.component",
-        "../../ui/icon/preloader",
         "../icon/preloader/preloader-icon.component",
+        "../../ui/icon/preloader",
         "../../ui/icon/preloader/preloader-icon.component",
         "../../../ui/icon/preloader/preloader-icon.component",
         "../../../../../components/ui/icon/preloader",
@@ -2563,8 +2563,8 @@
       "fileCount": 4,
       "importSources": [
         "../../asset-list/sort-control/sort-control",
-        "../sort-control/sort-control",
-        "(local or re-export)"
+        "(local or re-export)",
+        "../sort-control/sort-control"
       ],
       "mmdsMatches": []
     },
@@ -3201,9 +3201,9 @@
       "instances": 4,
       "fileCount": 4,
       "importSources": [
+        "./activity-list-item",
         "../../multichain/activity-list-item",
-        "../../multichain/activity-list-item/activity-list-item",
-        "./activity-list-item"
+        "../../multichain/activity-list-item/activity-list-item"
       ],
       "mmdsMatches": []
     },
@@ -3213,8 +3213,8 @@
       "fileCount": 4,
       "importSources": [
         "../../app/assets/asset-list/asset-list-control-bar",
-        "../asset-list/asset-list-control-bar",
         "./asset-list-control-bar",
+        "../asset-list/asset-list-control-bar",
         "../../asset-list/asset-list-control-bar"
       ],
       "mmdsMatches": []
@@ -3316,6 +3316,15 @@
       "mmdsMatches": []
     },
     {
+      "component": "RouterRoutes",
+      "instances": 3,
+      "fileCount": 3,
+      "importSources": [
+        "react-router-dom"
+      ],
+      "mmdsMatches": []
+    },
+    {
       "component": "ApiErrorHandler",
       "instances": 3,
       "fileCount": 3,
@@ -3327,11 +3336,12 @@
       "mmdsMatches": []
     },
     {
-      "component": "RouterRoutes",
+      "component": "Loading",
       "instances": 3,
       "fileCount": 3,
       "importSources": [
-        "react-router-dom"
+        "../../components/ui/loading-screen",
+        "../../../components/ui/loading-screen"
       ],
       "mmdsMatches": []
     },
@@ -3342,16 +3352,6 @@
       "importSources": [
         "../../components/app/password-outdated-modal",
         "../../../components/app/password-outdated-modal"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "Loading",
-      "instances": 3,
-      "fileCount": 3,
-      "importSources": [
-        "../../components/ui/loading-screen",
-        "../../../components/ui/loading-screen"
       ],
       "mmdsMatches": []
     },
@@ -3447,11 +3447,12 @@
       "mmdsMatches": []
     },
     {
-      "component": "HexToDecimal",
+      "component": "StakeableLink",
       "instances": 3,
-      "fileCount": 1,
+      "fileCount": 2,
       "importSources": [
-        "../../ui/hex-to-decimal"
+        "./stakeable-link",
+        "../../../../multichain/token-list-item/stakeable-link"
       ],
       "mmdsMatches": []
     },
@@ -3460,28 +3461,8 @@
       "instances": 3,
       "fileCount": 3,
       "importSources": [
-        "(local or re-export)",
-        "../../ui/qr-code-view"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "PermissionCell",
-      "instances": 3,
-      "fileCount": 3,
-      "importSources": [
-        "../permission-cell",
-        "../../permission-cell"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "StakeableLink",
-      "instances": 3,
-      "fileCount": 2,
-      "importSources": [
-        "./stakeable-link",
-        "../../../../multichain/token-list-item/stakeable-link"
+        "../../ui/qr-code-view",
+        "(local or re-export)"
       ],
       "mmdsMatches": []
     },
@@ -3540,6 +3521,25 @@
         "../../app/assets/asset-list",
         "./AssetList",
         "../asset-list"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "HexToDecimal",
+      "instances": 3,
+      "fileCount": 1,
+      "importSources": [
+        "../../ui/hex-to-decimal"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "PermissionCell",
+      "instances": 3,
+      "fileCount": 3,
+      "importSources": [
+        "../permission-cell",
+        "../../permission-cell"
       ],
       "mmdsMatches": []
     },
@@ -3649,16 +3649,6 @@
       "mmdsMatches": []
     },
     {
-      "component": "Recipient",
-      "instances": 3,
-      "fileCount": 2,
-      "importSources": [
-        "../../UI/recipient",
-        "../recipient"
-      ],
-      "mmdsMatches": []
-    },
-    {
       "component": "PayWithRow",
       "instances": 3,
       "fileCount": 3,
@@ -3685,6 +3675,16 @@
       "importSources": [
         "../total-row/total-row",
         "../../rows/total-row/total-row"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "Recipient",
+      "instances": 3,
+      "fileCount": 2,
+      "importSources": [
+        "../../UI/recipient",
+        "../recipient"
       ],
       "mmdsMatches": []
     },
@@ -3813,21 +3813,21 @@
       "mmdsMatches": []
     },
     {
+      "component": "TabBar",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../../components/app/tab-bar"
+      ],
+      "mmdsMatches": []
+    },
+    {
       "component": "ShieldPaymentModal",
       "instances": 2,
       "fileCount": 2,
       "importSources": [
         "./shield-payment-modal",
         "../../shield-plan/shield-payment-modal"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "TabBar",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../../components/app/tab-bar"
       ],
       "mmdsMatches": []
     },
@@ -4159,53 +4159,6 @@
       "mmdsMatches": []
     },
     {
-      "component": "MultichainSiteCellTooltip",
-      "instances": 2,
-      "fileCount": 1,
-      "importSources": [
-        "./tool-tip/multichain-site-cell-tooltip"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "EditNetworksModal",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../../multichain/edit-networks-modal",
-        "../../.."
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "MultichainAddressRow",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../multichain-address-row/multichain-address-row"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "MultichainHoveredAddressRowsList",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../multichain-address-rows-hovered-list",
-        "../../multichain-accounts/multichain-address-rows-hovered-list"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "HoldToRevealModal",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../../app/modals/hold-to-reveal-modal/hold-to-reveal-modal"
-      ],
-      "mmdsMatches": []
-    },
-    {
       "component": "Tag",
       "instances": 2,
       "fileCount": 2,
@@ -4244,6 +4197,148 @@
       "mmdsMatches": []
     },
     {
+      "component": "MultichainAddressRow",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../multichain-address-row/multichain-address-row"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "MultichainSiteCellTooltip",
+      "instances": 2,
+      "fileCount": 1,
+      "importSources": [
+        "./tool-tip/multichain-site-cell-tooltip"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "EditNetworksModal",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../../multichain/edit-networks-modal",
+        "../../.."
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "MultichainHoveredAddressRowsList",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../multichain-address-rows-hovered-list",
+        "../../multichain-accounts/multichain-address-rows-hovered-list"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "HoldToRevealModal",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../../app/modals/hold-to-reveal-modal/hold-to-reveal-modal"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "PercentageChange",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "./price/percentage-change/percentage-change",
+        "../../../../multichain/token-list-item/price/percentage-change"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "SnapUIMarkdown",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../../app/snaps/snap-ui-markdown",
+        "../../../../components/app/snaps/snap-ui-markdown"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "SelectRpcUrlModal",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../network-list-menu/select-rpc-url-modal/select-rpc-url-modal",
+        "./select-rpc-url-modal/select-rpc-url-modal"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "NetworksForm",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../../../pages/settings/networks-tab/networks-form",
+        "../../../../../pages/settings/networks-tab/networks-form/networks-form"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "ShowHideToggle",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../../ui/show-hide-toggle"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "NotificationsTagCounter",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../notifications-tag-counter"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "StackCard",
+      "instances": 2,
+      "fileCount": 1,
+      "importSources": [
+        "./stack-card"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "StackCardEmpty",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "./stack-card-empty",
+        "(local or re-export)"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "Carousel",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "./carousel"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "LegacyActivityListItem",
+      "instances": 2,
+      "fileCount": 1,
+      "importSources": [
+        "../activity-list-item"
+      ],
+      "mmdsMatches": []
+    },
+    {
       "component": "CoinOverview",
       "instances": 2,
       "fileCount": 2,
@@ -4277,15 +4372,6 @@
       "fileCount": 1,
       "importSources": [
         "../../../pages/confirmations/components/edit-gas-popover"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "ShowHideToggle",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../../ui/show-hide-toggle"
       ],
       "mmdsMatches": []
     },
@@ -4381,92 +4467,6 @@
       "importSources": [
         "../app-loading-spinner",
         "../../../../components/app/app-loading-spinner"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "PercentageChange",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "./price/percentage-change/percentage-change",
-        "../../../../multichain/token-list-item/price/percentage-change"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "SnapUIMarkdown",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../../app/snaps/snap-ui-markdown",
-        "../../../../components/app/snaps/snap-ui-markdown"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "SelectRpcUrlModal",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../network-list-menu/select-rpc-url-modal/select-rpc-url-modal",
-        "./select-rpc-url-modal/select-rpc-url-modal"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "NetworksForm",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../../../pages/settings/networks-tab/networks-form",
-        "../../../../../pages/settings/networks-tab/networks-form/networks-form"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "NotificationsTagCounter",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../notifications-tag-counter"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "StackCard",
-      "instances": 2,
-      "fileCount": 1,
-      "importSources": [
-        "./stack-card"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "StackCardEmpty",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "./stack-card-empty",
-        "(local or re-export)"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "Carousel",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "./carousel"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "LegacyActivityListItem",
-      "instances": 2,
-      "fileCount": 1,
-      "importSources": [
-        "../activity-list-item"
       ],
       "mmdsMatches": []
     },
@@ -4603,6 +4603,34 @@
       "mmdsMatches": []
     },
     {
+      "component": "PermissionListItem",
+      "instances": 2,
+      "fileCount": 1,
+      "importSources": [
+        "./components/permission-list-item"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "AssetComponent",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "./Asset",
+        "../../UI/asset"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "OnboardingIntroStep",
+      "instances": 2,
+      "fileCount": 1,
+      "importSources": [
+        "./OnboardingIntroStep"
+      ],
+      "mmdsMatches": []
+    },
+    {
       "component": "Copyable",
       "instances": 2,
       "fileCount": 2,
@@ -4617,15 +4645,6 @@
       "fileCount": 2,
       "importSources": [
         "../snap-version/snap-external-pill"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "OnboardingIntroStep",
-      "instances": 2,
-      "fileCount": 1,
-      "importSources": [
-        "./OnboardingIntroStep"
       ],
       "mmdsMatches": []
     },
@@ -4677,25 +4696,6 @@
       "mmdsMatches": []
     },
     {
-      "component": "PermissionListItem",
-      "instances": 2,
-      "fileCount": 1,
-      "importSources": [
-        "./components/permission-list-item"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "AssetComponent",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "./Asset",
-        "../../UI/asset"
-      ],
-      "mmdsMatches": []
-    },
-    {
       "component": "CustomAmountSkeleton",
       "instances": 2,
       "fileCount": 2,
@@ -4711,6 +4711,16 @@
       "fileCount": 2,
       "importSources": [
         "../../info-popover-tooltip"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "CustomAmountInfoSkeleton",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "(local or re-export)",
+        "../../info/custom-amount-info"
       ],
       "mmdsMatches": []
     },
@@ -4734,16 +4744,6 @@
       "mmdsMatches": []
     },
     {
-      "component": "CustomAmountInfoSkeleton",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "(local or re-export)",
-        "../../info/custom-amount-info"
-      ],
-      "mmdsMatches": []
-    },
-    {
       "component": "TitleSkeleton",
       "instances": 2,
       "fileCount": 1,
@@ -4763,20 +4763,20 @@
       "mmdsMatches": []
     },
     {
-      "component": "SimpleHeaderLayout",
-      "instances": 2,
-      "fileCount": 1,
-      "importSources": [
-        "(local or re-export)"
-      ],
-      "mmdsMatches": []
-    },
-    {
       "component": "PageFooter",
       "instances": 2,
       "fileCount": 2,
       "importSources": [
         "../../../../../components/multichain/pages/page"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "SimpleHeaderLayout",
+      "instances": 2,
+      "fileCount": 1,
+      "importSources": [
+        "(local or re-export)"
       ],
       "mmdsMatches": []
     },
@@ -4791,20 +4791,20 @@
       "mmdsMatches": []
     },
     {
-      "component": "AssetCellTitle",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../../asset-list/cells/asset-title"
-      ],
-      "mmdsMatches": []
-    },
-    {
       "component": "SiteCellTooltip",
       "instances": 2,
       "fileCount": 1,
       "importSources": [
         "./site-cell-tooltip"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "AssetCellTitle",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../../asset-list/cells/asset-title"
       ],
       "mmdsMatches": []
     },

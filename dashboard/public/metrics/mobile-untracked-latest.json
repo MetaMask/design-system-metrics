@@ -3,10 +3,10 @@
   "date": "2026-03-20",
   "summary": {
     "filesScanned": 4295,
-    "totalJSXUsages": 15147,
-    "trackedDeprecated": 4085,
-    "trackedMMDS": 2763,
-    "untrackedTotal": 8299,
+    "totalJSXUsages": 15145,
+    "trackedDeprecated": 4075,
+    "trackedMMDS": 2773,
+    "untrackedTotal": 8297,
     "uniqueUntrackedComponents": 526,
     "replaceableNow": 263,
     "futureDSCandidates": 263
@@ -74,8 +74,8 @@
       "instances": 131,
       "fileCount": 116,
       "importSources": [
-        "react-native",
-        "expo-image"
+        "expo-image",
+        "react-native"
       ],
       "mmdsMatches": [
         {
@@ -255,8 +255,8 @@
         "../Ramp/Aggregator/components/SkeletonText",
         "../../../Ramp/Aggregator/components/SkeletonText",
         "./SkeletonText",
-        "../SkeletonText",
-        "../../components/SkeletonText"
+        "../../components/SkeletonText",
+        "../SkeletonText"
       ],
       "mmdsMatches": [
         {
@@ -1027,8 +1027,8 @@
       "fileCount": 5,
       "importSources": [
         "./ListItemColumnEnd",
-        "../ListItemColumnEnd",
-        "../../components/ListItemColumnEnd"
+        "../../components/ListItemColumnEnd",
+        "../ListItemColumnEnd"
       ],
       "mmdsMatches": [
         {
@@ -1430,6 +1430,24 @@
       ]
     },
     {
+      "component": "SectionList",
+      "instances": 4,
+      "fileCount": 3,
+      "importSources": [
+        "react-native"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "ActionListItem",
+          "confidence": "medium"
+        },
+        {
+          "component": "ListItem",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
       "component": "MaterialCommunityIcon",
       "instances": 4,
       "fileCount": 2,
@@ -1447,24 +1465,6 @@
         },
         {
           "component": "BadgeIcon",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
-      "component": "SectionList",
-      "instances": 4,
-      "fileCount": 3,
-      "importSources": [
-        "react-native"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "ActionListItem",
-          "confidence": "medium"
-        },
-        {
-          "component": "ListItem",
           "confidence": "medium"
         }
       ]
@@ -1673,6 +1673,28 @@
         },
         {
           "component": "TextButton",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "SnapUIAvatar",
+      "instances": 3,
+      "fileCount": 2,
+      "importSources": [
+        "../SnapUIAvatar/SnapUIAvatar"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "AvatarAccount",
+          "confidence": "medium"
+        },
+        {
+          "component": "AvatarBase",
+          "confidence": "medium"
+        },
+        {
+          "component": "AvatarFavicon",
           "confidence": "medium"
         }
       ]
@@ -1928,28 +1950,6 @@
       ]
     },
     {
-      "component": "SnapUIAvatar",
-      "instances": 3,
-      "fileCount": 2,
-      "importSources": [
-        "../SnapUIAvatar/SnapUIAvatar"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "AvatarAccount",
-          "confidence": "medium"
-        },
-        {
-          "component": "AvatarBase",
-          "confidence": "medium"
-        },
-        {
-          "component": "AvatarFavicon",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
       "component": "CaipAccountSelectorList",
       "instances": 3,
       "fileCount": 3,
@@ -1973,8 +1973,8 @@
       "fileCount": 3,
       "importSources": [
         "../../../Views/confirmations/components/edit-spending-cap-button",
-        "../../edit-spending-cap-button/edit-spending-cap-button",
-        "../../edit-spending-cap-button"
+        "../../edit-spending-cap-button",
+        "../../edit-spending-cap-button/edit-spending-cap-button"
       ],
       "mmdsMatches": [
         {
@@ -2429,6 +2429,43 @@
       ]
     },
     {
+      "component": "SvgXml",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "react-native-svg"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "ImageOrSvg",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "AccountNetworkIndicator",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../../UI/AccountNetworkIndicator",
+        "../AccountNetworkIndicator/AccountNetworkIndicator"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "AvatarAccount",
+          "confidence": "medium"
+        },
+        {
+          "component": "AvatarNetwork",
+          "confidence": "medium"
+        },
+        {
+          "component": "BadgeNetwork",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
       "component": "GoogleIcon",
       "instances": 2,
       "fileCount": 2,
@@ -2509,6 +2546,25 @@
       ]
     },
     {
+      "component": "SiteRowItemWrapper",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../../UI/Sites/components/SiteRowItemWrapper/SiteRowItemWrapper",
+        "../SiteRowItemWrapper/SiteRowItemWrapper"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "BadgeWrapper",
+          "confidence": "medium"
+        },
+        {
+          "component": "ListItem",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
       "component": "TransactionsFooter",
       "instances": 2,
       "fileCount": 2,
@@ -2557,25 +2613,6 @@
         {
           "component": "ListItem",
           "confidence": "high"
-        }
-      ]
-    },
-    {
-      "component": "SiteRowItemWrapper",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../../UI/Sites/components/SiteRowItemWrapper/SiteRowItemWrapper",
-        "../SiteRowItemWrapper/SiteRowItemWrapper"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "BadgeWrapper",
-          "confidence": "medium"
-        },
-        {
-          "component": "ListItem",
-          "confidence": "medium"
         }
       ]
     },
@@ -2773,6 +2810,20 @@
       ]
     },
     {
+      "component": "WarningAlert",
+      "instances": 2,
+      "fileCount": 1,
+      "importSources": [
+        "../../../components/UI/WarningAlert"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "BannerAlert",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
       "component": "TrendingTokenLogo",
       "instances": 2,
       "fileCount": 2,
@@ -2797,6 +2848,28 @@
       "mmdsMatches": [
         {
           "component": "ListItem",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "AssetIcon",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../AssetIcon"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Icon",
+          "confidence": "high"
+        },
+        {
+          "component": "AvatarIcon",
+          "confidence": "medium"
+        },
+        {
+          "component": "BadgeIcon",
           "confidence": "medium"
         }
       ]
@@ -2866,28 +2939,6 @@
         },
         {
           "component": "BottomSheetFooter",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
-      "component": "AssetIcon",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../AssetIcon"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Icon",
-          "confidence": "high"
-        },
-        {
-          "component": "AvatarIcon",
-          "confidence": "medium"
-        },
-        {
-          "component": "BadgeIcon",
           "confidence": "medium"
         }
       ]
@@ -3118,28 +3169,6 @@
       ]
     },
     {
-      "component": "AccountRightButton",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../AccountRightButton"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Button",
-          "confidence": "high"
-        },
-        {
-          "component": "AvatarAccount",
-          "confidence": "medium"
-        },
-        {
-          "component": "ButtonAnimated",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
       "component": "TrustIcon",
       "instances": 2,
       "fileCount": 1,
@@ -3172,6 +3201,28 @@
         {
           "component": "Label",
           "confidence": "high"
+        }
+      ]
+    },
+    {
+      "component": "AccountRightButton",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../AccountRightButton"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Button",
+          "confidence": "high"
+        },
+        {
+          "component": "AvatarAccount",
+          "confidence": "medium"
+        },
+        {
+          "component": "ButtonAnimated",
+          "confidence": "medium"
         }
       ]
     },
@@ -3232,29 +3283,6 @@
       ]
     },
     {
-      "component": "AccountNetworkIndicator",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../AccountNetworkIndicator/AccountNetworkIndicator",
-        "../../UI/AccountNetworkIndicator"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "AvatarAccount",
-          "confidence": "medium"
-        },
-        {
-          "component": "AvatarNetwork",
-          "confidence": "medium"
-        },
-        {
-          "component": "BadgeNetwork",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
       "component": "AnimatedCircle",
       "instances": 2,
       "fileCount": 2,
@@ -3298,34 +3326,6 @@
       "mmdsMatches": [
         {
           "component": "HeaderBase",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
-      "component": "SvgXml",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "react-native-svg"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "ImageOrSvg",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
-      "component": "WarningAlert",
-      "instances": 2,
-      "fileCount": 1,
-      "importSources": [
-        "../../../components/UI/WarningAlert"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "BannerAlert",
           "confidence": "medium"
         }
       ]
@@ -3445,36 +3445,6 @@
       ]
     },
     {
-      "component": "MarketInsightsEntryCard",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../../MarketInsights",
-        "../../../MarketInsights"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Card",
-          "confidence": "high"
-        }
-      ]
-    },
-    {
-      "component": "TokenDetails",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../../AssetOverview/TokenDetails",
-        "(local or re-export)"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "AvatarToken",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
       "component": "TokenDetailsStickyFooter",
       "instances": 2,
       "fileCount": 2,
@@ -3486,6 +3456,36 @@
         {
           "component": "AvatarToken",
           "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "TokenDetails",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "(local or re-export)",
+        "../../AssetOverview/TokenDetails"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "AvatarToken",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "MarketInsightsEntryCard",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../../MarketInsights",
+        "../../../MarketInsights"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Card",
+          "confidence": "high"
         }
       ]
     },
@@ -3617,25 +3617,6 @@
       ]
     },
     {
-      "component": "PayTokenAmountSkeleton",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "(local or re-export)",
-        "../../pay-token-amount"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Skeleton",
-          "confidence": "high"
-        },
-        {
-          "component": "AvatarToken",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
       "component": "NetworkFilterTab",
       "instances": 2,
       "fileCount": 1,
@@ -3653,6 +3634,25 @@
         },
         {
           "component": "ButtonFilter",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "PayTokenAmountSkeleton",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "(local or re-export)",
+        "../../pay-token-amount"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Skeleton",
+          "confidence": "high"
+        },
+        {
+          "component": "AvatarToken",
           "confidence": "medium"
         }
       ]
@@ -4476,6 +4476,21 @@
       ]
     },
     {
+      "component": "CardScreenshotDeterrent",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../CardScreenshotDeterrent/CardScreenshotDeterrent",
+        "../../components/CardScreenshotDeterrent"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Card",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
       "component": "AssetCard",
       "instances": 2,
       "fileCount": 1,
@@ -4523,17 +4538,20 @@
       ]
     },
     {
-      "component": "CardScreenshotDeterrent",
+      "component": "TokenInputArea",
       "instances": 2,
-      "fileCount": 2,
+      "fileCount": 1,
       "importSources": [
-        "../../components/CardScreenshotDeterrent",
-        "../CardScreenshotDeterrent/CardScreenshotDeterrent"
+        "../../components/TokenInputArea"
       ],
       "mmdsMatches": [
         {
-          "component": "Card",
-          "confidence": "high"
+          "component": "AvatarToken",
+          "confidence": "medium"
+        },
+        {
+          "component": "Input",
+          "confidence": "medium"
         }
       ]
     },
@@ -4555,24 +4573,6 @@
         },
         {
           "component": "ListItem",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
-      "component": "TokenInputArea",
-      "instances": 2,
-      "fileCount": 1,
-      "importSources": [
-        "../../components/TokenInputArea"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "AvatarToken",
-          "confidence": "medium"
-        },
-        {
-          "component": "Input",
           "confidence": "medium"
         }
       ]
@@ -4621,71 +4621,6 @@
       "mmdsMatches": [
         {
           "component": "Skeleton",
-          "confidence": "high"
-        }
-      ]
-    },
-    {
-      "component": "AccountNetworkRow",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "./account-network-row",
-        "../../../../confirmations/components/modals/switch-account-type-modal/account-network-row"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "AvatarAccount",
-          "confidence": "medium"
-        },
-        {
-          "component": "AvatarNetwork",
-          "confidence": "medium"
-        },
-        {
-          "component": "BadgeNetwork",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
-      "component": "AlertModal",
-      "instances": 2,
-      "fileCount": 1,
-      "importSources": [
-        "../alert-modal"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "BannerAlert",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
-      "component": "GasModalHeader",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../../../components/gas/gas-modal-header"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "HeaderBase",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
-      "component": "GasInput",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../../../components/gas/gas-input"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Input",
           "confidence": "high"
         }
       ]
@@ -4758,6 +4693,71 @@
         {
           "component": "BadgeNetwork",
           "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "AlertModal",
+      "instances": 2,
+      "fileCount": 1,
+      "importSources": [
+        "../alert-modal"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "BannerAlert",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "AccountNetworkRow",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "./account-network-row",
+        "../../../../confirmations/components/modals/switch-account-type-modal/account-network-row"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "AvatarAccount",
+          "confidence": "medium"
+        },
+        {
+          "component": "AvatarNetwork",
+          "confidence": "medium"
+        },
+        {
+          "component": "BadgeNetwork",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "GasModalHeader",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../../../components/gas/gas-modal-header"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "HeaderBase",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "component": "GasInput",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../../../components/gas/gas-input"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Input",
+          "confidence": "high"
         }
       ]
     },
@@ -4846,6 +4846,20 @@
       ]
     },
     {
+      "component": "InfoAlert",
+      "instances": 2,
+      "fileCount": 1,
+      "importSources": [
+        "../../components/InfoAlert"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "BannerAlert",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
       "component": "NetworksFilterBar",
       "instances": 2,
       "fileCount": 2,
@@ -4856,20 +4870,6 @@
       "mmdsMatches": [
         {
           "component": "ButtonFilter",
-          "confidence": "medium"
-        }
-      ]
-    },
-    {
-      "component": "InfoAlert",
-      "instances": 2,
-      "fileCount": 1,
-      "importSources": [
-        "../../components/InfoAlert"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "BannerAlert",
           "confidence": "medium"
         }
       ]
@@ -4888,8 +4888,8 @@
     },
     {
       "component": "TouchableOpacity",
-      "instances": 443,
-      "fileCount": 270,
+      "instances": 441,
+      "fileCount": 269,
       "importSources": [
         "react-native",
         "react-native-gesture-handler"
@@ -5195,21 +5195,21 @@
       "mmdsMatches": []
     },
     {
-      "component": "WebView",
-      "instances": 11,
-      "fileCount": 11,
-      "importSources": [
-        "@metamask/react-native-webview"
-      ],
-      "mmdsMatches": []
-    },
-    {
       "component": "ApprovalModal",
       "instances": 11,
       "fileCount": 11,
       "importSources": [
         "../../Approvals/ApprovalModal",
         "../ApprovalModal"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "WebView",
+      "instances": 11,
+      "fileCount": 11,
+      "importSources": [
+        "@metamask/react-native-webview"
       ],
       "mmdsMatches": []
     },
@@ -5301,8 +5301,8 @@
       "instances": 10,
       "fileCount": 10,
       "importSources": [
-        "../../components/Onboarding/OnboardingStep",
-        "./OnboardingStep"
+        "./OnboardingStep",
+        "../../components/Onboarding/OnboardingStep"
       ],
       "mmdsMatches": []
     },
@@ -5387,6 +5387,15 @@
       "mmdsMatches": []
     },
     {
+      "component": "Component",
+      "instances": 7,
+      "fileCount": 7,
+      "importSources": [
+        "(local or re-export)"
+      ],
+      "mmdsMatches": []
+    },
+    {
       "component": "CollectibleMedia",
       "instances": 7,
       "fileCount": 7,
@@ -5404,15 +5413,6 @@
       "fileCount": 7,
       "importSources": [
         "rive-react-native"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "Component",
-      "instances": 7,
-      "fileCount": 7,
-      "importSources": [
-        "(local or re-export)"
       ],
       "mmdsMatches": []
     },
@@ -5472,6 +5472,18 @@
       "mmdsMatches": []
     },
     {
+      "component": "Tooltip",
+      "instances": 5,
+      "fileCount": 5,
+      "importSources": [
+        "../../Views/confirmations/components/UI/Tooltip",
+        "(local or re-export)",
+        "../UI/Tooltip",
+        "../Tooltip/Tooltip"
+      ],
+      "mmdsMatches": []
+    },
+    {
       "component": "ElevatedView",
       "instances": 5,
       "fileCount": 5,
@@ -5526,18 +5538,6 @@
         "../UI/Tooltip/Tooltip",
         "../Tooltip/Tooltip",
         "(local or re-export)"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "Tooltip",
-      "instances": 5,
-      "fileCount": 5,
-      "importSources": [
-        "../../Views/confirmations/components/UI/Tooltip",
-        "(local or re-export)",
-        "../UI/Tooltip",
-        "../Tooltip/Tooltip"
       ],
       "mmdsMatches": []
     },
@@ -5622,6 +5622,26 @@
       "mmdsMatches": []
     },
     {
+      "component": "TemplateRenderer",
+      "instances": 4,
+      "fileCount": 3,
+      "importSources": [
+        "../../UI/TemplateRenderer",
+        "(local or re-export)",
+        "../../../../../../UI/TemplateRenderer"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "DateTimePicker",
+      "instances": 4,
+      "fileCount": 2,
+      "importSources": [
+        "@react-native-community/datetimepicker"
+      ],
+      "mmdsMatches": []
+    },
+    {
       "component": "LottieView",
       "instances": 4,
       "fileCount": 4,
@@ -5650,22 +5670,20 @@
       "mmdsMatches": []
     },
     {
+      "component": "UnmountOnBlur",
+      "instances": 4,
+      "fileCount": 2,
+      "importSources": [
+        "../../Views/UnmountOnBlur"
+      ],
+      "mmdsMatches": []
+    },
+    {
       "component": "FadeIn",
       "instances": 4,
       "fileCount": 3,
       "importSources": [
         "react-native-fade-in-image"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "TemplateRenderer",
-      "instances": 4,
-      "fileCount": 3,
-      "importSources": [
-        "(local or re-export)",
-        "../../UI/TemplateRenderer",
-        "../../../../../../UI/TemplateRenderer"
       ],
       "mmdsMatches": []
     },
@@ -5679,30 +5697,12 @@
       "mmdsMatches": []
     },
     {
-      "component": "UnmountOnBlur",
-      "instances": 4,
-      "fileCount": 2,
-      "importSources": [
-        "../../Views/UnmountOnBlur"
-      ],
-      "mmdsMatches": []
-    },
-    {
       "component": "Description",
       "instances": 4,
       "fileCount": 2,
       "importSources": [
         "./InfoDescription",
         "(local or re-export)"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "DateTimePicker",
-      "instances": 4,
-      "fileCount": 2,
-      "importSources": [
-        "@react-native-community/datetimepicker"
       ],
       "mmdsMatches": []
     },
@@ -6195,6 +6195,16 @@
       "mmdsMatches": []
     },
     {
+      "component": "SnapUIRenderer",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "./SnapUIRenderer",
+        "../SnapUIRenderer/SnapUIRenderer"
+      ],
+      "mmdsMatches": []
+    },
+    {
       "component": "SelectSRP",
       "instances": 2,
       "fileCount": 2,
@@ -6244,6 +6254,26 @@
       "mmdsMatches": []
     },
     {
+      "component": "ExploreSearchBar",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "./components/ExploreSearchBar/ExploreSearchBar",
+        "../../components/ExploreSearchBar/ExploreSearchBar"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "Section",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "./components/Sections/Section",
+        "../../../../Views/TrendingView/components/Sections/Section"
+      ],
+      "mmdsMatches": []
+    },
+    {
       "component": "MultichainTransactionsFooter",
       "instances": 2,
       "fileCount": 2,
@@ -6270,26 +6300,6 @@
       "importSources": [
         "../../UI/Transactions/RetryModal",
         "./RetryModal"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "ExploreSearchBar",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "./components/ExploreSearchBar/ExploreSearchBar",
-        "../../components/ExploreSearchBar/ExploreSearchBar"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "Section",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "./components/Sections/Section",
-        "../../../../Views/TrendingView/components/Sections/Section"
       ],
       "mmdsMatches": []
     },
@@ -6453,6 +6463,24 @@
       "mmdsMatches": []
     },
     {
+      "component": "RampRoutes",
+      "instances": 2,
+      "fileCount": 1,
+      "importSources": [
+        "../../UI/Ramp/Aggregator/routes"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "SocialLoginIosUser",
+      "instances": 2,
+      "fileCount": 1,
+      "importSources": [
+        "../../Views/SocialLoginIosUser"
+      ],
+      "mmdsMatches": []
+    },
+    {
       "component": "Result",
       "instances": 2,
       "fileCount": 1,
@@ -6552,34 +6580,6 @@
       "fileCount": 1,
       "importSources": [
         "(local or re-export)"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "SnapUIRenderer",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "./SnapUIRenderer",
-        "../SnapUIRenderer/SnapUIRenderer"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "RampRoutes",
-      "instances": 2,
-      "fileCount": 1,
-      "importSources": [
-        "../../UI/Ramp/Aggregator/routes"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "SocialLoginIosUser",
-      "instances": 2,
-      "fileCount": 1,
-      "importSources": [
-        "../../Views/SocialLoginIosUser"
       ],
       "mmdsMatches": []
     },
@@ -7236,26 +7236,6 @@
       "mmdsMatches": []
     },
     {
-      "component": "GasSpeed",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../../gas/gas-speed",
-        "../../../gas/gas-speed"
-      ],
-      "mmdsMatches": []
-    },
-    {
-      "component": "GasFeeModal",
-      "instances": 2,
-      "fileCount": 2,
-      "importSources": [
-        "../gas-fee-modal",
-        "../../../modals/gas-fee-modal"
-      ],
-      "mmdsMatches": []
-    },
-    {
       "component": "PredictClaimBackground",
       "instances": 2,
       "fileCount": 1,
@@ -7297,6 +7277,26 @@
       "fileCount": 2,
       "importSources": [
         "../../rows/pay-with-row"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "GasSpeed",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../../gas/gas-speed",
+        "../../../gas/gas-speed"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "GasFeeModal",
+      "instances": 2,
+      "fileCount": 2,
+      "importSources": [
+        "../gas-fee-modal",
+        "../../../modals/gas-fee-modal"
       ],
       "mmdsMatches": []
     },
@@ -7382,20 +7382,20 @@
       "mmdsMatches": []
     },
     {
-      "component": "PredictPositionDetail",
-      "instances": 2,
-      "fileCount": 1,
-      "importSources": [
-        "../../../../components/PredictPositionDetail"
-      ],
-      "mmdsMatches": []
-    },
-    {
       "component": "PredictMarketOutcomeResolved",
       "instances": 2,
       "fileCount": 1,
       "importSources": [
         "../../../../components/PredictMarketOutcomeResolved"
+      ],
+      "mmdsMatches": []
+    },
+    {
+      "component": "PredictPositionDetail",
+      "instances": 2,
+      "fileCount": 1,
+      "importSources": [
+        "../../../../components/PredictPositionDetail"
       ],
       "mmdsMatches": []
     },
