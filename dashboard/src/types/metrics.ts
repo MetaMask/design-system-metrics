@@ -35,6 +35,18 @@ export interface MetricsData {
   components: ComponentMetrics[];
 }
 
+export interface CodeOwnerTimelineEntry {
+  migrationPercentage: number[];
+  mmdsInstances: number[];
+  deprecatedInstances: number[];
+  totalInstances: number[];
+}
+
+export interface CodeOwnerTimeline {
+  dates: string[];
+  owners: Record<string, CodeOwnerTimelineEntry>;
+}
+
 export interface ProjectTimeline {
   dates: string[];
   migrationPercentage: number[];
@@ -48,6 +60,7 @@ export interface ProjectTimeline {
   mmdsComponentsAvailable: number[];
   mmdsComponentsList: string[][];
   newComponents: string[][];
+  codeOwnerTimeline?: CodeOwnerTimeline;
   latestChange?: {
     migrationPercentageChange: string;
     mmdsInstancesChange: number;

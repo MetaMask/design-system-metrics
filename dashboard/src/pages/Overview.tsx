@@ -4,6 +4,7 @@ import { Loading } from '../components/Loading';
 import { ErrorMessage } from '../components/ErrorMessage';
 import { MetricsCard } from '../components/MetricsCard';
 import { CodeOwnerAdoptionChart } from '../components/CodeOwnerAdoptionChart';
+import { CodeOwnerTrendChart } from '../components/CodeOwnerTrendChart';
 import { ComponentPropsAuditSection } from '../components/ComponentPropsAuditSection';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
@@ -336,6 +337,16 @@ export function Overview() {
               </p>
             </div>
           )}
+
+          {data.mobile.codeOwnerTimeline && data.mobile.codeOwnerTimeline.dates.length > 0 && (
+            <div className="mt-6">
+              <CodeOwnerTrendChart
+                codeOwnerTimeline={data.mobile.codeOwnerTimeline}
+                title="Mobile - Code Owner Migration Trend"
+                excludedOwners={MOBILE_EXCLUDED_OWNERS}
+              />
+            </div>
+          )}
         </section>
 
         {/* Extension Metrics */}
@@ -508,6 +519,16 @@ export function Overview() {
                 that were current at the time and were later deprecated. Those areas are then
                 updated during planned replacement phases as MMDS alternatives roll out.
               </p>
+            </div>
+          )}
+
+          {data.extension.codeOwnerTimeline && data.extension.codeOwnerTimeline.dates.length > 0 && (
+            <div className="mt-6">
+              <CodeOwnerTrendChart
+                codeOwnerTimeline={data.extension.codeOwnerTimeline}
+                title="Extension - Code Owner Migration Trend"
+                excludedOwners={EXTENSION_EXCLUDED_OWNERS}
+              />
             </div>
           )}
         </section>
