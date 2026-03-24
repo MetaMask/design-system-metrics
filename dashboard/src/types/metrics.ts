@@ -170,6 +170,20 @@ export interface UntrackedComponent {
   fileCount: number;
   importSources: string[];
   mmdsMatches: UntrackedMMDSMatch[];
+  /** Dominant import source category for this component. */
+  sourceCategory?: 'local-oneoff' | 'platform-primitive' | 'third-party' | 'mixed';
+  /** Best single representative import path (normalized, no leading ../). */
+  canonicalSource?: string;
+  /** Top code owners by instance count (up to 5). */
+  codeOwners?: string[];
+  /** Per-owner instance counts. */
+  codeOwnerBreakdown?: Record<string, number>;
+}
+
+export interface UntrackedCodeOwnerSummary {
+  replaceableComponents: number;
+  futureDSComponents: number;
+  replaceableInstances: number;
 }
 
 export interface UntrackedSummary {
@@ -180,12 +194,18 @@ export interface UntrackedSummary {
   untrackedTotal: number;
   uniqueUntrackedComponents: number;
   replaceableNow: number;
+  /** Total JSX instances belonging to replaceable components. */
+  replaceableInstances?: number;
   futureDSCandidates: number;
+  /** Per-team breakdown of replaceable/candidate component counts. */
+  codeOwnerBreakdown?: Record<string, UntrackedCodeOwnerSummary>;
 }
 
 export interface UntrackedData {
   project: string;
   date: string;
+  /** All unique code owner teams found across untracked components. */
+  teams?: string[];
   summary: UntrackedSummary;
   replaceableWithMMDS: UntrackedComponent[];
   futureDSCandidates: UntrackedComponent[];
