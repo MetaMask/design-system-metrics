@@ -19,6 +19,7 @@ const path = require('path');
 const CONFIG_PATH = path.join(__dirname, '..', 'config.json');
 const MIGRATION_TARGETS_PATH = path.join(__dirname, '..', 'migration-targets.json');
 const METRICS_DIR = path.join(__dirname, '..', 'metrics');
+const DASHBOARD_METRICS_DIR = path.join(__dirname, '..', 'dashboard', 'public', 'metrics');
 
 // GitHub URLs
 const MMDS_REACT_COMPONENTS = 'https://github.com/MetaMask/metamask-design-system/tree/main/packages/design-system-react/src/components';
@@ -134,6 +135,20 @@ function formatEpicLink(epicKey) {
 }
 
 /**
+ * Get latest untracked components data for a project
+ */
+function getLatestUntrackedData(project) {
+  try {
+    const filePath = path.join(DASHBOARD_METRICS_DIR, `${project}-untracked-latest.json`);
+    if (!fs.existsSync(filePath)) return null;
+    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  } catch (err) {
+    console.error(`Error reading untracked data for ${project}:`, err.message);
+    return null;
+  }
+}
+
+/**
  * Get list of new components since last report
  * For now, returns placeholder - can be enhanced to compare with previous reports
  */
@@ -218,7 +233,55 @@ function generateReport(config, migrationTargets) {
     report.push(`    - [MMD vs Deprecated](https://MetaMask.github.io/design-system-metrics/): \`${extensionSummary.migrationPercentage}% (${extensionSummary.mmdsInstances}/${extensionSummary.deprecatedInstances})\``);
   }
 
+  // Untracked components section
   report.push('\n---\n');
+  report.push('#### Untracked Components (Top 5 Replaceable with MMDS)\n');
+
+  for (const project of ['mobile', 'extension']) {
+    const untracked = getLatestUntrackedData(project);
+    report.push(`**${project.charAt(0).toUpperCase() + project.slice(1)}**`);
+    if (!untracked || !untracked.replaceableWithMMDS || untracked.replaceableWithMMDS.length === 0) {
+      report.push('_No data available_\n');
+      continue;
+    }
+
+    const { summary } = untracked;
+    const replaceableInstances = summary.replaceableInstances ||
+      untracked.replaceableWithMMDS.reduce((sum, c) => sum + c.instances, 0);
+    const addressableGap = summary.totalJSXUsages > 0
+      ? ((replaceableInstances / summary.totalJSXUsages) * 100).toFixed(1)
+      : '0.0';
+
+    report.push(`Replaceable: \`${summary.replaceableNow}\` components, \`${replaceableInstances}\` instances (\`${addressableGap}%\` of JSX usage)`);
+    report.push('');
+    report.push('| Component | Instances | MMDS Replacement | Confidence |');
+    report.push('|-----------|-----------|-----------------|------------|');
+
+    const top5 = untracked.replaceableWithMMDS.slice(0, 5);
+    for (const comp of top5) {
+      const bestMatch = comp.mmdsMatches && comp.mmdsMatches.length > 0 ? comp.mmdsMatches[0] : null;
+      const replacement = bestMatch ? bestMatch.component : '—';
+      const confidence = bestMatch ? bestMatch.confidence : '—';
+      report.push(`| \`${comp.component}\` | ${comp.instances} | \`${replacement}\` | ${confidence} |`);
+    }
+    report.push('');
+
+    // Top teams with most replaceable components
+    if (summary.codeOwnerBreakdown) {
+      const teamEntries = Object.entries(summary.codeOwnerBreakdown)
+        .sort((a, b) => b[1].replaceableInstances - a[1].replaceableInstances)
+        .slice(0, 3);
+      if (teamEntries.length > 0) {
+        const teamList = teamEntries
+          .map(([team, stats]) => `${team.replace('@MetaMask/', '')} (${stats.replaceableInstances} instances)`)
+          .join(', ');
+        report.push(`Top teams: ${teamList}`);
+      }
+    }
+    report.push('');
+  }
+
+  report.push('---\n');
   report.push(`_Generated: ${new Date().toISOString().split('T')[0]}_`);
 
   return report.join('\n');
