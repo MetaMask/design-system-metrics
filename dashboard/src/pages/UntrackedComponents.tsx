@@ -65,8 +65,11 @@ function sourceEntries(row: UntrackedComponent): { source: string; category: 'lo
   }
   // For mixed: deduplicate by category, pick best representative per category
   const seen = new Map<string, string>();
-  // canonicalSource is the local-oneoff representative
-  if (row.canonicalSource) seen.set('local-oneoff', row.canonicalSource);
+  // canonicalSource may be a local path or an external package — classify it properly
+  if (row.canonicalSource) {
+    const cat = classifySource(row.canonicalSource);
+    seen.set(cat, row.canonicalSource);
+  }
   for (const src of row.importSources) {
     const cat = classifySource(src);
     if (!seen.has(cat)) seen.set(cat, src);
