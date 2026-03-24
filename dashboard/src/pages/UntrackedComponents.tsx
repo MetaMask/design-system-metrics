@@ -63,16 +63,24 @@ function sourceEntries(row: UntrackedComponent): { source: string; category: 'lo
     const cat = (row.sourceCategory as 'local-oneoff' | 'platform-primitive' | 'third-party') ?? classifySource(src);
     return [{ source: src, category: cat }];
   }
-  // For mixed: deduplicate by category, pick best representative per category
+  // For mixed: deduplicate by category, pick best representative per category.
+  // canonicalSource is a normalised local path (leading ../ stripped) so it may not start
+  // with '.' even though it represents a local-oneoff — use it explicitly for that category
+  // when any raw importSources are relative, then skip relative sources in the loop.
   const seen = new Map<string, string>();
-  // canonicalSource may be a local path or an external package — classify it properly
-  if (row.canonicalSource) {
-    const cat = classifySource(row.canonicalSource);
-    seen.set(cat, row.canonicalSource);
+  const hasLocalSources = row.importSources.some(s => s.startsWith('.') || s.startsWith('/'));
+  if (row.canonicalSource && hasLocalSources) {
+    seen.set('local-oneoff', row.canonicalSource);
   }
   for (const src of row.importSources) {
+    if (src.startsWith('.') || src.startsWith('/')) continue; // local already covered above
     const cat = classifySource(src);
     if (!seen.has(cat)) seen.set(cat, src);
+  }
+  // Fallback: if no local sources, classify canonicalSource normally
+  if (row.canonicalSource && !hasLocalSources && !seen.size) {
+    const cat = classifySource(row.canonicalSource);
+    seen.set(cat, row.canonicalSource);
   }
   return Array.from(seen.entries()).map(([category, source]) => ({
     source,
