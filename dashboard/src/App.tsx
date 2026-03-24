@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import { HashRouter, Routes, Route, NavLink } from 'react-router-dom';
 import { Overview } from './pages/Overview';
 import { UntrackedComponents } from './pages/UntrackedComponents';
 import './App.css';
@@ -10,7 +10,7 @@ const navItems = [
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <nav className="bg-white dark:bg-gray-800 shadow">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex space-x-6">
@@ -38,7 +38,7 @@ function App() {
         <Route path="/" element={<Overview />} />
         <Route path="/untracked" element={<UntrackedComponents />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
