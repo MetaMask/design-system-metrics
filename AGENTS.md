@@ -13,7 +13,7 @@ Use this as the quick-start guide when making changes in this repository.
 ## Task Routing
 
 - Metrics scanner/report logic: `index.js`
-- Config sync/discovery logic: `scripts/sync-config.js`, `scripts/lib/*`
+- Config sync/discovery logic: current production path `scripts/sync-config.js`; phase 3 rewrite path `pipeline/sync-config.ts`, `config.static.json`
 - Timeline/index derivation: `scripts/update-timeline.js`
 - Data consistency checks: `scripts/validate-metrics-consistency.js`
 - Slack output: `scripts/generate-slack-report.js`

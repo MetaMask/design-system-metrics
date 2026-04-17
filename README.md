@@ -57,8 +57,10 @@ With MMDS component definitions sourced from:
 
 Core implementation files:
 - `index.js`: canonical scanner + generator (`.xlsx`, `-summary.json`, `-data.json`)
-- `config.json`: tracked component mappings
-- `scripts/sync-config.js`: updates `config.json` from submodules
+- `config.static.json`: stable project metadata (`rootFolder`, globs, packages, ignores)
+- `config.json`: generated tracked component mappings + current MMDS exports
+- `scripts/sync-config.js`: current production sync path
+- `pipeline/sync-config.ts`: phase-3 rewrite path for validating `@deprecated`-driven generation in parallel
 - `scripts/update-timeline.js`: rebuilds `metrics/timeline.json` + `metrics/index.json`
 - `scripts/validate-metrics-consistency.js`: consistency checks across generated artifacts
 - `scripts/generate-slack-report.js`: weekly Slack markdown output
@@ -168,6 +170,9 @@ The tool uses `config.json` project entries with:
 - `deprecatedComponents` mappings:
   - `paths`: import paths to match
   - `replacement`: MMDS target or `null`
+
+Stable project settings live in `config.static.json`; `yarn sync-config` merges those with discovered deprecated component metadata to produce `config.json`.
+To validate the phase-3 rewrite in parallel without changing `config.json`, run `yarn sync-config:next:check`.
 
 Keep config in sync with codebases:
 
