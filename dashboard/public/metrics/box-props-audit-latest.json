@@ -1,16 +1,23 @@
 {
   "component": "Box",
-  "generatedAt": "2026-05-01T15:42:22.629Z",
+  "generatedAt": "2026-05-05T16:14:03.352Z",
   "projects": {
     "extension": {
-      "filesScanned": 3104,
+      "filesScanned": 3114,
       "targetComponent": "Box",
       "mmds": {
-        "totalInstances": 1316,
+        "totalInstances": 1315,
         "filesCount": 312,
         "props": {
-          "className": {
+          "flexDirection": {
             "count": 686,
+            "values": {
+              "{BoxFlexDirection.Row}": 351,
+              "{BoxFlexDirection.Column}": 335
+            }
+          },
+          "className": {
+            "count": 685,
             "values": {
               "\"w-full\"": 39,
               "\"shrink-0\"": 13,
@@ -21,21 +28,21 @@
               "\"rounded-lg\"": 8,
               "\"flex-1 min-w-0\"": 8,
               "\"flex w-full flex-col\"": 8,
-              "\"bg-muted px-4 py-3\"": 7,
               "\"h-full\"": 7,
+              "\"bg-muted px-4 py-3\"": 7,
               "\"overflow-hidden rounded-xl\"": 6,
               "\"flex-1 flex flex-col items-center px-6 pt-4 pb-2\"": 6,
               "\"asset-page__divider\"": 6,
               "\"hw-connect\"": 6,
               "\"text-left\"": 6,
               "\"ml-2\"": 6,
-              "\"main-container asset__container\"": 5,
               "\"flex-1 flex items-center justify-center w-full\"": 5,
               "\"text-right\"": 5,
               "\"flex-1 overflow-y-auto\"": 5,
               "{`w-full cursor-pointer border-0 p-4 ${ isSelected ? 'bg-muted hover:bg-muted-...}": 5,
               "\"min-w-0\"": 4,
               "\"flex gap-4\"": 4,
+              "\"main-container asset__container\"": 4,
               "\"flex items-center gap-1\"": 4,
               "\"flex flex-col gap-2\"": 4,
               "{containerClassName}": 4,
@@ -110,6 +117,8 @@
               "\"flex items-center gap-2\"": 2,
               "{classnames( 'flex flex-col items-center text-center gap-4 max-w-xs', classNam...}": 1,
               "{twMerge('rounded-lg', props.className)}": 1,
+              "\"change-password\"": 1,
+              "\"create-password__terms-container\"": 1,
               "\"mx-auto w-fit rounded-2xl\"": 1,
               "\"add-funds-modal__row flex items-center w-full gap-3 p-4\"": 1,
               "\"musd-asset-cta-inline\"": 1,
@@ -375,8 +384,6 @@
               "\"w-9 shrink-0\"": 1,
               "{twMerge( 'flex-1 overflow-y-auto overflow-x-hidden', isOrderPending && 'point...}": 1,
               "\"flex justify-center items-center flex-1\"": 1,
-              "\"change-password\"": 1,
-              "\"create-password__terms-container\"": 1,
               "{classnames( 'account-selector-modal__account w-full flex items-center gap-4 p...}": 1,
               "\"submit-claim-page flex flex-col pt-4 px-4 pb-4 overflow-y-auto\"": 1,
               "\"flex flex-col gap-1\"": 1,
@@ -422,13 +429,6 @@
               "\"unlock-page__mascot-container\"": 1
             }
           },
-          "flexDirection": {
-            "count": 686,
-            "values": {
-              "{BoxFlexDirection.Row}": 351,
-              "{BoxFlexDirection.Column}": 335
-            }
-          },
           "alignItems": {
             "count": 428,
             "values": {
@@ -466,7 +466,7 @@
             }
           },
           "data-testid": {
-            "count": 220,
+            "count": 219,
             "values": {
               "\"perps-tutorial-step-image\"": 6,
               "{dataTestId}": 5,
@@ -647,7 +647,6 @@
               "\"perps-learn-basics\"": 1,
               "\"perps-position-cta-buttons\"": 1,
               "\"perps-trade-cta-buttons\"": 1,
-              "\"perps-order-entry-page\"": 1,
               "\"perps-withdraw-summary-asset-value\"": 1,
               "\"submit-claim-page\"": 1,
               "{`claim-item-${id}`}": 1,
@@ -856,7 +855,7 @@
               "{handleConvert}": 2,
               "{(e: React.MouseEvent) => e.stopPropagation()}": 2,
               "{handleBackClick}": 2,
-              "{() => handleBackClick()}": 2,
+              "{handleBackButtonClick}": 2,
               "{(e?: React.MouseEvent) => { e?.preventDefault(); handleClick(); }}": 1,
               "{() => handleSetMode('add')}": 1,
               "{() => handleSetMode('remove')}": 1,
@@ -1183,13 +1182,13 @@
         }
       },
       "deprecated": {
-        "totalInstances": 1177,
-        "filesCount": 382,
+        "totalInstances": 1151,
+        "filesCount": 381,
         "props": {
           "display": {
-            "count": 748,
+            "count": 725,
             "values": {
-              "{Display.Flex}": 699,
+              "{Display.Flex}": 676,
               "{Display.InlineFlex}": 20,
               "{Display.Block}": 16,
               "{Display.Inline}": 5,
@@ -1202,19 +1201,19 @@
             }
           },
           "flexDirection": {
-            "count": 401,
+            "count": 379,
             "values": {
-              "{FlexDirection.Column}": 257,
-              "{FlexDirection.Row}": 141,
+              "{FlexDirection.Column}": 250,
+              "{FlexDirection.Row}": 126,
               "{isCollapsible ? FlexDirection.Column : FlexDirection.Row}": 1,
               "{showAvatarAccount ? FlexDirection.Row : FlexDirection.Column}": 1,
               "{FlexDirection.RowReverse}": 1
             }
           },
           "alignItems": {
-            "count": 360,
+            "count": 359,
             "values": {
-              "{AlignItems.center}": 311,
+              "{AlignItems.center}": 310,
               "{AlignItems.flexStart}": 21,
               "{AlignItems.flexEnd}": 14,
               "{AlignItems.baseline}": 5,
@@ -1225,9 +1224,9 @@
             }
           },
           "className": {
-            "count": 331,
+            "count": 310,
             "values": {
-              "\"settings-page__content-row\"": 30,
+              "\"settings-page__content-row\"": 9,
               "\"dropdown-editor__item-dropdown\"": 3,
               "\"snap-home-menu__item\"": 3,
               "\"gap-1\"": 3,
@@ -1295,6 +1294,9 @@
               "{className}": 1,
               "\"permission-cell\"": 1,
               "\"permission-page-container-content\"": 1,
+              "\"srp-reveal-list h-full min-h-0 overflow-y-auto\"": 1,
+              "\"srp-reveal-list__divider\"": 1,
+              "\"srp-reveal-list__srp-list\"": 1,
               "{classnames('copyable', { sensitive, clicked: isClicked, visible: isVisible, })}": 1,
               "\"copyable__icon\"": 1,
               "{classnames('show-more', className)}": 1,
@@ -1480,9 +1482,6 @@
               "\"network-indicator\"": 1,
               "\"networks-tab__scrollable\"": 1,
               "{`networks-tab__network-form__footer${ usePageFooterStyle ? ' networks-tab__ne...}": 1,
-              "\"srp-reveal-list h-full min-h-0 overflow-y-auto\"": 1,
-              "\"srp-reveal-list__divider\"": 1,
-              "\"srp-reveal-list__srp-list\"": 1,
               "\"smart-transaction-status-page__description\"": 1,
               "\"smart-transaction-status-page__footer\"": 1,
               "\"smart-transaction-status-page\"": 1,
@@ -1497,10 +1496,10 @@
             }
           },
           "justifyContent": {
-            "count": 310,
+            "count": 294,
             "values": {
-              "{JustifyContent.spaceBetween}": 140,
               "{JustifyContent.center}": 129,
+              "{JustifyContent.spaceBetween}": 124,
               "{JustifyContent.flexEnd}": 17,
               "{JustifyContent.flexStart}": 15,
               "{JustifyContent.spaceEvenly}": 3,
@@ -1512,13 +1511,13 @@
             }
           },
           "gap": {
-            "count": 243,
+            "count": 221,
             "values": {
               "0": 1,
               "1": 44,
-              "2": 74,
+              "2": 73,
               "3": 25,
-              "4": 96,
+              "4": 75,
               "6": 2,
               "{showAvatarAccount ? 2 : 0}": 1
             }
@@ -1538,7 +1537,7 @@
             }
           },
           "style": {
-            "count": 155,
+            "count": 154,
             "values": {
               "{{ overflow: 'hidden' }}": 13,
               "{{ marginLeft: 'auto', maxWidth: '100%' }}": 8,
@@ -1648,12 +1647,68 @@
               "{{ overflowY: 'auto', flex: !isLoading && '1', }}": 1,
               "{{ overflowY: 'hidden' }}": 1,
               "{{ overflowY: 'auto', flex: 1 }}": 1,
-              "{{ listStyleType: 'circle' }}": 1,
               "{{ width: '96px', height: '96px' }}": 1
             }
           },
+          "paddingBottom": {
+            "count": 110,
+            "values": {
+              "0": 5,
+              "1": 2,
+              "2": 33,
+              "3": 10,
+              "4": 42,
+              "5": 2,
+              "6": 2,
+              "8": 5,
+              "12": 4,
+              "{noPadding ? 0 : 1}": 1,
+              "{rpcEndpoint ? 2 : 4}": 1,
+              "{padding}": 1,
+              "{paddingBottomValue}": 1,
+              "{isExpanded ? 0 : 2}": 1
+            }
+          },
+          "backgroundColor": {
+            "count": 108,
+            "values": {
+              "{BackgroundColor.backgroundDefault}": 35,
+              "{BackgroundColor.backgroundAlternative}": 14,
+              "{BackgroundColor.primaryDefault}": 8,
+              "{BackgroundColor.transparent}": 8,
+              "{BackgroundColor.backgroundSection}": 5,
+              "{backgroundColor}": 3,
+              "{BackgroundColor.primaryMuted}": 3,
+              "{isSelected ? BackgroundColor.backgroundHover : BackgroundColor.transparent}": 3,
+              "{BackgroundColor.errorDefault}": 2,
+              "{BackgroundColor.backgroundMuted}": 2,
+              "{isSelected ? BackgroundColor.primaryMuted : undefined}": 2,
+              "{BackgroundColor.infoMuted}": 2,
+              "{customDetails ? undefined : alertDetailsBackgroundColor}": 1,
+              "{severityStyle.background}": 1,
+              "{BACKGROUND_COLORS[variant]}": 1,
+              "{containerbackgroundColor}": 1,
+              "{selectedTokens[address] ? BackgroundColor.primaryMuted : BackgroundColor.tran...}": 1,
+              "{isVisible && sensitive ? BackgroundColor.errorMuted : BackgroundColor.primary...}": 1,
+              "{isError ? BackgroundColor.errorMuted : BackgroundColor.backgroundDefault}": 1,
+              "{userAgree ? BackgroundColor.infoMuted : BackgroundColor.backgroundAlternative}": 1,
+              "{Color.primaryDefault}": 1,
+              "{isSelected ? BackgroundColor.primaryMuted : BackgroundColor.transparent}": 1,
+              "{badgeBackgroundColor}": 1,
+              "{selected ? BackgroundColor.backgroundMuted : BackgroundColor.transparent}": 1,
+              "{BackgroundColor.infoDefault}": 1,
+              "{buttonBackgroundColor || BackgroundColor.backgroundMuted}": 1,
+              "{loading && !prices ? BackgroundColor.backgroundSection : BackgroundColor.tran...}": 1,
+              "{BackgroundColor.iconAlternative}": 1,
+              "{showAdvancedDetails ? BackgroundColor.infoMuted : BackgroundColor.transparent}": 1,
+              "{hasMoreThanOneGasFeeTokenToChooseFrom ? BackgroundColor.backgroundMuted : Bac...}": 1,
+              "{canEdit ? BackgroundColor.backgroundMuted : BackgroundColor.transparent}": 1,
+              "{BackgroundColor.errorMuted}": 1,
+              "{usePageFooterStyle ? BackgroundColor.transparent : BackgroundColor.background...}": 1
+            }
+          },
           "data-testid": {
-            "count": 114,
+            "count": 108,
             "values": {
               "{dataTestId}": 9,
               "\"notifications-list-loading\"": 3,
@@ -1672,6 +1727,8 @@
               "\"nft-default-image\"": 1,
               "\"nft-wrapper\"": 1,
               "{buttonDataTestId}": 1,
+              "\"participate-in-meta-metrics-container\"": 1,
+              "\"select-srp-container\"": 1,
               "\"keyring-account-list-item\"": 1,
               "{snapId}": 1,
               "\"snap-ui-address\"": 1,
@@ -1739,72 +1796,7 @@
               "\"deep-link-description\"": 1,
               "{`notification-list-item-${notification.id}`}": 1,
               "\"notifications-list-placeholder\"": 1,
-              "\"notifications-list\"": 1,
-              "\"participate-in-meta-metrics-container\"": 1,
-              "\"select-srp-container\"": 1,
-              "\"advanced-setting-choose-your-network\"": 1,
-              "\"setting-safe-chains-validation\"": 1,
-              "\"setting-ipfs-gateway\"": 1,
-              "\"advanced-setting-gas-fee-estimation\"": 1,
-              "\"advanced-setting-show-testnet-conversion\"": 1,
-              "\"setting-skip-deep-link-interstitial\"": 1
-            }
-          },
-          "paddingBottom": {
-            "count": 111,
-            "values": {
-              "0": 5,
-              "1": 2,
-              "2": 33,
-              "3": 10,
-              "4": 43,
-              "5": 2,
-              "6": 2,
-              "8": 5,
-              "12": 4,
-              "{noPadding ? 0 : 1}": 1,
-              "{rpcEndpoint ? 2 : 4}": 1,
-              "{padding}": 1,
-              "{paddingBottomValue}": 1,
-              "{isExpanded ? 0 : 2}": 1
-            }
-          },
-          "backgroundColor": {
-            "count": 108,
-            "values": {
-              "{BackgroundColor.backgroundDefault}": 35,
-              "{BackgroundColor.backgroundAlternative}": 14,
-              "{BackgroundColor.primaryDefault}": 8,
-              "{BackgroundColor.transparent}": 8,
-              "{BackgroundColor.backgroundSection}": 5,
-              "{backgroundColor}": 3,
-              "{BackgroundColor.primaryMuted}": 3,
-              "{isSelected ? BackgroundColor.backgroundHover : BackgroundColor.transparent}": 3,
-              "{BackgroundColor.errorDefault}": 2,
-              "{BackgroundColor.backgroundMuted}": 2,
-              "{isSelected ? BackgroundColor.primaryMuted : undefined}": 2,
-              "{BackgroundColor.infoMuted}": 2,
-              "{customDetails ? undefined : alertDetailsBackgroundColor}": 1,
-              "{severityStyle.background}": 1,
-              "{BACKGROUND_COLORS[variant]}": 1,
-              "{containerbackgroundColor}": 1,
-              "{selectedTokens[address] ? BackgroundColor.primaryMuted : BackgroundColor.tran...}": 1,
-              "{isVisible && sensitive ? BackgroundColor.errorMuted : BackgroundColor.primary...}": 1,
-              "{isError ? BackgroundColor.errorMuted : BackgroundColor.backgroundDefault}": 1,
-              "{userAgree ? BackgroundColor.infoMuted : BackgroundColor.backgroundAlternative}": 1,
-              "{Color.primaryDefault}": 1,
-              "{isSelected ? BackgroundColor.primaryMuted : BackgroundColor.transparent}": 1,
-              "{badgeBackgroundColor}": 1,
-              "{selected ? BackgroundColor.backgroundMuted : BackgroundColor.transparent}": 1,
-              "{BackgroundColor.infoDefault}": 1,
-              "{buttonBackgroundColor || BackgroundColor.backgroundMuted}": 1,
-              "{loading && !prices ? BackgroundColor.backgroundSection : BackgroundColor.tran...}": 1,
-              "{BackgroundColor.iconAlternative}": 1,
-              "{showAdvancedDetails ? BackgroundColor.infoMuted : BackgroundColor.transparent}": 1,
-              "{hasMoreThanOneGasFeeTokenToChooseFrom ? BackgroundColor.backgroundMuted : Bac...}": 1,
-              "{canEdit ? BackgroundColor.backgroundMuted : BackgroundColor.transparent}": 1,
-              "{BackgroundColor.errorMuted}": 1,
-              "{usePageFooterStyle ? BackgroundColor.transparent : BackgroundColor.background...}": 1
+              "\"notifications-list\"": 1
             }
           },
           "paddingLeft": {
@@ -1855,13 +1847,13 @@
             }
           },
           "marginTop": {
-            "count": 94,
+            "count": 92,
             "values": {
               "0": 1,
               "1": 8,
               "2": 13,
-              "3": 4,
-              "4": 49,
+              "3": 3,
+              "4": 48,
               "5": 1,
               "6": 7,
               "8": 1,
@@ -1909,13 +1901,13 @@
             }
           },
           "marginBottom": {
-            "count": 52,
+            "count": 50,
             "values": {
               "0": 3,
               "1": 5,
-              "2": 7,
+              "2": 6,
               "3": 4,
-              "4": 23,
+              "4": 22,
               "6": 3,
               "8": 3,
               "9": 2,
@@ -1954,42 +1946,6 @@
               "{() => { handleCopy(checksummedAddress); trackEvent({ category: MetaMetricsEve...}": 1,
               "{() => onClick(recipient)}": 1,
               "{() => onClick?.()}": 1
-            }
-          },
-          "ref": {
-            "count": 45,
-            "values": {
-              "{ref}": 10,
-              "{setBoxRef}": 4,
-              "{popoverRef}": 2,
-              "{this.settingsRefs[4]}": 2,
-              "{containerRef}": 1,
-              "{dropdownRef}": 1,
-              "{contentRef}": 1,
-              "{scrollContainerRef}": 1,
-              "{titleRef}": 1,
-              "{dropdown}": 1,
-              "{provided.innerRef}": 1,
-              "{providedDrag.innerRef}": 1,
-              "{headerRef}": 1,
-              "{!isLoading && !hasError ? ref : undefined}": 1,
-              "{settingsRefs[1] as React.RefObject<HTMLDivElement>}": 1,
-              "{settingsRefs[2] as React.RefObject<HTMLDivElement>}": 1,
-              "{settingsRef}": 1,
-              "{scrollableRef}": 1,
-              "{this.settingsRefs[2]}": 1,
-              "{this.settingsRefs[19]}": 1,
-              "{this.settingsRefs[14]}": 1,
-              "{this.settingsRefs[7]}": 1,
-              "{this.settingsRefs[11]}": 1,
-              "{this.settingsRefs[8]}": 1,
-              "{this.settingsRefs[9]}": 1,
-              "{this.settingsRefs[10]}": 1,
-              "{this.settingsRefs[12]}": 1,
-              "{this.settingsRefs[13]}": 1,
-              "{this.settingsRefs[17]}": 1,
-              "{this.settingsRefs[0]}": 1,
-              "{this.settingsRefs[3]}": 1
             }
           },
           "key": {
@@ -2040,13 +1996,13 @@
             }
           },
           "as": {
-            "count": 37,
+            "count": 36,
             "values": {
               "\"button\"": 10,
               "\"img\"": 9,
               "\"span\"": 5,
-              "\"ul\"": 3,
               "\"li\"": 3,
+              "\"ul\"": 2,
               "\"form\"": 2,
               "\"ol\"": 2,
               "\"a\"": 1,
@@ -2059,6 +2015,28 @@
             "values": {
               "{FlexWrap.Wrap}": 24,
               "{FlexWrap.NoWrap}": 10
+            }
+          },
+          "ref": {
+            "count": 30,
+            "values": {
+              "{ref}": 10,
+              "{setBoxRef}": 4,
+              "{popoverRef}": 2,
+              "{containerRef}": 1,
+              "{dropdownRef}": 1,
+              "{contentRef}": 1,
+              "{scrollContainerRef}": 1,
+              "{titleRef}": 1,
+              "{dropdown}": 1,
+              "{provided.innerRef}": 1,
+              "{providedDrag.innerRef}": 1,
+              "{headerRef}": 1,
+              "{!isLoading && !hasError ? ref : undefined}": 1,
+              "{scrollableRef}": 1,
+              "{settingsRefs[1] as React.RefObject<HTMLDivElement>}": 1,
+              "{settingsRefs[2] as React.RefObject<HTMLDivElement>}": 1,
+              "{settingsRef}": 1
             }
           },
           "[spread]": {
@@ -2139,11 +2117,11 @@
             }
           },
           "margin": {
-            "count": 11,
+            "count": 10,
             "values": {
               "0": 2,
               "2": 2,
-              "4": 3,
+              "4": 2,
               "\"auto\"": 2,
               "{isTransactionsRedesign ? null : 4}": 2
             }
@@ -2162,24 +2140,6 @@
             "values": {
               "{BlockSize.Zero}": 6,
               "\"0\"": 1
-            }
-          },
-          "paddingInlineStart": {
-            "count": 5,
-            "values": {
-              "1": 1,
-              "4": 3,
-              "8": 1
-            }
-          },
-          "id": {
-            "count": 5,
-            "values": {
-              "{name}": 1,
-              "\"ens-domains\"": 1,
-              "\"advanced-settings-autodetect-tokens\"": 1,
-              "\"display-nft-media\"": 1,
-              "\"skip-deep-link-interstitial\"": 1
             }
           },
           "marginInline": {
@@ -2203,6 +2163,14 @@
               "{handleMouseEnter}": 2,
               "{open}": 1,
               "{close}": 1
+            }
+          },
+          "paddingInlineStart": {
+            "count": 4,
+            "values": {
+              "1": 1,
+              "4": 2,
+              "8": 1
             }
           },
           "color": {
@@ -2299,6 +2267,12 @@
               "{handleDrop}": 1
             }
           },
+          "id": {
+            "count": 1,
+            "values": {
+              "{name}": 1
+            }
+          },
           "onKeyPress": {
             "count": 1,
             "values": {
@@ -2338,37 +2312,37 @@
         }
       },
       "overall": {
-        "totalInstances": 2493,
-        "filesCount": 694,
+        "totalInstances": 2466,
+        "filesCount": 693,
         "props": {
           "flexDirection": {
-            "count": 1087,
+            "count": 1065,
             "values": {
               "{BoxFlexDirection.Row}": 351,
               "{BoxFlexDirection.Column}": 335,
-              "{FlexDirection.Column}": 257,
-              "{FlexDirection.Row}": 141,
+              "{FlexDirection.Column}": 250,
+              "{FlexDirection.Row}": 126,
               "{isCollapsible ? FlexDirection.Column : FlexDirection.Row}": 1,
               "{showAvatarAccount ? FlexDirection.Row : FlexDirection.Column}": 1,
               "{FlexDirection.RowReverse}": 1
             }
           },
           "className": {
-            "count": 1017,
+            "count": 995,
             "values": {
               "\"w-full\"": 40,
-              "\"settings-page__content-row\"": 30,
               "\"shrink-0\"": 13,
               "\"min-w-0 flex-1\"": 13,
               "\"flex\"": 12,
               "\"flex-1\"": 11,
               "\"overflow-hidden\"": 10,
+              "\"settings-page__content-row\"": 9,
               "\"rounded-lg\"": 8,
               "\"flex-1 min-w-0\"": 8,
               "\"flex w-full flex-col\"": 8,
-              "\"main-container asset__container\"": 7,
-              "\"bg-muted px-4 py-3\"": 7,
               "\"h-full\"": 7,
+              "\"bg-muted px-4 py-3\"": 7,
+              "\"main-container asset__container\"": 6,
               "\"min-w-0\"": 6,
               "\"overflow-hidden rounded-xl\"": 6,
               "\"flex-1 flex flex-col items-center px-6 pt-4 pb-2\"": 6,
@@ -2504,6 +2478,8 @@
               "\"nft-items__image-wrapper\"": 1,
               "\"nfts-tab\"": 1,
               "{twMerge('rounded-lg', props.className)}": 1,
+              "\"change-password\"": 1,
+              "\"create-password__terms-container\"": 1,
               "\"flex-grow justify-items-end\"": 1,
               "\"expandable\"": 1,
               "\"confirm-info-row\"": 1,
@@ -2566,6 +2542,9 @@
               "\"bg-error-muted rounded-lg px-3 py-2\"": 1,
               "\"flex h-8 w-8 shrink-0 rounded-full\"": 1,
               "{sharedClassName}": 1,
+              "\"srp-reveal-list h-full min-h-0 overflow-y-auto\"": 1,
+              "\"srp-reveal-list__divider\"": 1,
+              "\"srp-reveal-list__srp-list\"": 1,
               "{`relative flex items-center${boxClassName ? ` ${boxClassName}` : ''}${onClick...}": 1,
               "\"cursor-pointer flex items-center hover:text-text-alternative\"": 1,
               "\"bg-error-muted rounded-2xl p-4 gap-4 w-full\"": 1,
@@ -2958,11 +2937,6 @@
               "\"flex justify-center items-center flex-1\"": 1,
               "\"networks-tab__scrollable\"": 1,
               "{`networks-tab__network-form__footer${ usePageFooterStyle ? ' networks-tab__ne...}": 1,
-              "\"change-password\"": 1,
-              "\"create-password__terms-container\"": 1,
-              "\"srp-reveal-list h-full min-h-0 overflow-y-auto\"": 1,
-              "\"srp-reveal-list__divider\"": 1,
-              "\"srp-reveal-list__srp-list\"": 1,
               "{classnames( 'account-selector-modal__account w-full flex items-center gap-4 p...}": 1,
               "\"submit-claim-page flex flex-col pt-4 px-4 pb-4 overflow-y-auto\"": 1,
               "\"flex flex-col gap-1\"": 1,
@@ -3020,10 +2994,10 @@
             }
           },
           "alignItems": {
-            "count": 788,
+            "count": 787,
             "values": {
               "{BoxAlignItems.Center}": 362,
-              "{AlignItems.center}": 311,
+              "{AlignItems.center}": 310,
               "{BoxAlignItems.Start}": 34,
               "{AlignItems.flexStart}": 21,
               "{BoxAlignItems.End}": 15,
@@ -3039,9 +3013,9 @@
             }
           },
           "display": {
-            "count": 748,
+            "count": 725,
             "values": {
-              "{Display.Flex}": 699,
+              "{Display.Flex}": 676,
               "{Display.InlineFlex}": 20,
               "{Display.Block}": 16,
               "{Display.Inline}": 5,
@@ -3054,13 +3028,13 @@
             }
           },
           "gap": {
-            "count": 611,
+            "count": 589,
             "values": {
               "0": 3,
               "1": 121,
-              "2": 213,
+              "2": 212,
               "3": 58,
-              "4": 194,
+              "4": 173,
               "5": 2,
               "6": 17,
               "{showAvatarAccount ? 2 : 0}": 1,
@@ -3069,11 +3043,11 @@
             }
           },
           "justifyContent": {
-            "count": 557,
+            "count": 541,
             "values": {
-              "{JustifyContent.spaceBetween}": 140,
               "{BoxJustifyContent.Between}": 133,
               "{JustifyContent.center}": 129,
+              "{JustifyContent.spaceBetween}": 124,
               "{BoxJustifyContent.Center}": 81,
               "{BoxJustifyContent.Start}": 20,
               "{JustifyContent.flexEnd}": 17,
@@ -3090,7 +3064,7 @@
             }
           },
           "data-testid": {
-            "count": 334,
+            "count": 327,
             "values": {
               "{dataTestId}": 14,
               "{testId}": 6,
@@ -3102,11 +3076,11 @@
               "\"simulation-details-layout\"": 3,
               "\"transaction-shield-page\"": 3,
               "{`${classPrefix}-overview__primary-currency`}": 2,
+              "\"select-srp-container\"": 2,
               "\"qr-code-image\"": 2,
               "\"app-header-logo\"": 2,
               "\"avatar-group\"": 2,
               "{`select-network-item-${network.chainId}`}": 2,
-              "\"select-srp-container\"": 2,
               "{`network-list-item-${chainId}`}": 2,
               "{`popular-network-${network.chainId}`}": 2,
               "\"nft-image\"": 2,
@@ -3126,6 +3100,7 @@
               "{backupAndSyncFeaturesTogglesTestIds.container}": 1,
               "{backupAndSyncToggleTestIds.container}": 1,
               "{buttonDataTestId}": 1,
+              "\"participate-in-meta-metrics-container\"": 1,
               "{id}": 1,
               "\"musd-asset-cta-inline\"": 1,
               "\"musd-asset-cta\"": 1,
@@ -3347,15 +3322,7 @@
               "\"perps-learn-basics\"": 1,
               "\"perps-position-cta-buttons\"": 1,
               "\"perps-trade-cta-buttons\"": 1,
-              "\"perps-order-entry-page\"": 1,
               "\"perps-withdraw-summary-asset-value\"": 1,
-              "\"participate-in-meta-metrics-container\"": 1,
-              "\"advanced-setting-choose-your-network\"": 1,
-              "\"setting-safe-chains-validation\"": 1,
-              "\"setting-ipfs-gateway\"": 1,
-              "\"advanced-setting-gas-fee-estimation\"": 1,
-              "\"advanced-setting-show-testnet-conversion\"": 1,
-              "\"setting-skip-deep-link-interstitial\"": 1,
               "\"submit-claim-page\"": 1,
               "{`claim-item-${id}`}": 1,
               "{groupDetails.isDraft ? 'claims-group-drafts-list' : undefined}": 1,
@@ -3379,7 +3346,7 @@
             }
           },
           "style": {
-            "count": 250,
+            "count": 249,
             "values": {
               "{{ overflow: 'hidden' }}": 14,
               "{{ flex: 1 }}": 9,
@@ -3410,7 +3377,6 @@
               "{{ display: 'inline-flex' }}": 2,
               "{{ flexShrink: 1, flexBasis: 'auto', minWidth: 0, }}": 2,
               "{{ scrollbarColor: 'var(--color-icon-muted) transparent', }}": 2,
-              "{{ listStyleType: 'circle' }}": 2,
               "{{ flex: 1, minHeight: 0 }}": 2,
               "{{ cursor: onClick ? 'pointer' : 'default', ...style, }}": 1,
               "{{ height: ASSET_CELL_HEIGHT, }}": 1,
@@ -3537,6 +3503,7 @@
               "{{ borderBottom: '1px solid var(--color-border-muted)', }}": 1,
               "{{ backgroundColor: backgroundColorForWelcomePage, }}": 1,
               "{{ backgroundColor: [ONBOARDING_WELCOME_ROUTE, ONBOARDING_UNLOCK_ROUTE].includ...}": 1,
+              "{{ listStyleType: 'circle' }}": 1,
               "{{ opacity: isAnimationComplete ? 1 : 0, transform: isAnimationComplete ? 'tra...}": 1,
               "{{ overflow: 'auto', maxHeight: '268px', scrollbarColor: 'var(--color-icon-mut...}": 1,
               "{{ boxShadow: targetSubjectMetadata.subjectType === SubjectType.Snap ? 'var(--...}": 1,
@@ -3550,13 +3517,13 @@
             }
           },
           "paddingBottom": {
-            "count": 205,
+            "count": 204,
             "values": {
               "0": 7,
               "1": 12,
               "2": 58,
               "3": 19,
-              "4": 74,
+              "4": 73,
               "5": 2,
               "6": 10,
               "8": 8,
@@ -3715,13 +3682,13 @@
             }
           },
           "marginTop": {
-            "count": 151,
+            "count": 149,
             "values": {
               "0": 1,
               "1": 12,
               "2": 31,
-              "3": 7,
-              "4": 64,
+              "3": 6,
+              "4": 63,
               "5": 7,
               "6": 16,
               "8": 1,
@@ -3735,13 +3702,13 @@
             }
           },
           "marginBottom": {
-            "count": 134,
+            "count": 132,
             "values": {
               "0": 3,
               "1": 9,
-              "2": 27,
+              "2": 26,
               "3": 17,
-              "4": 55,
+              "4": 54,
               "5": 7,
               "6": 6,
               "8": 3,
@@ -3765,7 +3732,7 @@
               "{() => onClick?.()}": 2,
               "{canEdit ? onOpenModal : undefined}": 2,
               "{handleBackClick}": 2,
-              "{() => handleBackClick()}": 2,
+              "{handleBackButtonClick}": 2,
               "{(e?: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => { e?.preventDefault(...}": 1,
               "{isSnapUsingThis ? () => null : handleDisplayNameClick}": 1,
               "{toggleExpanded}": 1,
@@ -3905,15 +3872,21 @@
               "{plan.id}": 1
             }
           },
+          "height": {
+            "count": 60,
+            "values": {
+              "{BlockSize.Full}": 58,
+              "{BlockSize.Min}": 2
+            }
+          },
           "ref": {
-            "count": 62,
+            "count": 47,
             "values": {
               "{ref}": 10,
               "{setBoxRef}": 4,
               "{containerRef}": 4,
               "{dropdownRef}": 2,
               "{popoverRef}": 2,
-              "{this.settingsRefs[4]}": 2,
               "{contentRef}": 1,
               "{scrollContainerRef}": 1,
               "{itemRef}": 1,
@@ -3926,23 +3899,7 @@
               "{!isLoading && !hasError ? ref : undefined}": 1,
               "{marginMenuRef}": 1,
               "{modifyMenuRef}": 1,
-              "{settingsRefs[1] as React.RefObject<HTMLDivElement>}": 1,
-              "{settingsRefs[2] as React.RefObject<HTMLDivElement>}": 1,
-              "{settingsRef}": 1,
               "{scrollableRef}": 1,
-              "{this.settingsRefs[2]}": 1,
-              "{this.settingsRefs[19]}": 1,
-              "{this.settingsRefs[14]}": 1,
-              "{this.settingsRefs[7]}": 1,
-              "{this.settingsRefs[11]}": 1,
-              "{this.settingsRefs[8]}": 1,
-              "{this.settingsRefs[9]}": 1,
-              "{this.settingsRefs[10]}": 1,
-              "{this.settingsRefs[12]}": 1,
-              "{this.settingsRefs[13]}": 1,
-              "{this.settingsRefs[17]}": 1,
-              "{this.settingsRefs[0]}": 1,
-              "{this.settingsRefs[3]}": 1,
               "{settingsRefs[1]}": 1,
               "{settingsRefs[2]}": 1,
               "{settingsRefs[3]}": 1,
@@ -3951,14 +3908,10 @@
               "{settingsRefs[5]}": 1,
               "{settingsRefs[6]}": 1,
               "{settingsRefs[7]}": 1,
-              "{settingsRefs[0]}": 1
-            }
-          },
-          "height": {
-            "count": 60,
-            "values": {
-              "{BlockSize.Full}": 58,
-              "{BlockSize.Min}": 2
+              "{settingsRefs[0]}": 1,
+              "{settingsRefs[1] as React.RefObject<HTMLDivElement>}": 1,
+              "{settingsRefs[2] as React.RefObject<HTMLDivElement>}": 1,
+              "{settingsRef}": 1
             }
           },
           "marginLeft": {
@@ -4023,13 +3976,13 @@
             }
           },
           "as": {
-            "count": 37,
+            "count": 36,
             "values": {
               "\"button\"": 10,
               "\"img\"": 9,
               "\"span\"": 5,
-              "\"ul\"": 3,
               "\"li\"": 3,
+              "\"ul\"": 2,
               "\"form\"": 2,
               "\"ol\"": 2,
               "\"a\"": 1,
@@ -4106,11 +4059,11 @@
             }
           },
           "margin": {
-            "count": 11,
+            "count": 10,
             "values": {
               "0": 2,
               "2": 2,
-              "4": 3,
+              "4": 2,
               "\"auto\"": 2,
               "{isTransactionsRedesign ? null : 4}": 2
             }
@@ -4158,18 +4111,6 @@
               "\"0\"": 1
             }
           },
-          "id": {
-            "count": 7,
-            "values": {
-              "{`backup-and-sync-features-toggles-${section.id}`}": 1,
-              "\"backup-and-sync-toggle\"": 1,
-              "{name}": 1,
-              "\"ens-domains\"": 1,
-              "\"advanced-settings-autodetect-tokens\"": 1,
-              "\"display-nft-media\"": 1,
-              "\"skip-deep-link-interstitial\"": 1
-            }
-          },
           "paddingVertical": {
             "count": 7,
             "values": {
@@ -4195,14 +4136,6 @@
               "{() => setIsHovered(false)}": 1
             }
           },
-          "paddingInlineStart": {
-            "count": 5,
-            "values": {
-              "1": 1,
-              "4": 3,
-              "8": 1
-            }
-          },
           "marginInline": {
             "count": 5,
             "values": {
@@ -4216,6 +4149,14 @@
             "values": {
               "1": 4,
               "2": 1
+            }
+          },
+          "paddingInlineStart": {
+            "count": 4,
+            "values": {
+              "1": 1,
+              "4": 2,
+              "8": 1
             }
           },
           "color": {
@@ -4264,6 +4205,14 @@
             "values": {
               "4": 2,
               "8": 1
+            }
+          },
+          "id": {
+            "count": 3,
+            "values": {
+              "{`backup-and-sync-features-toggles-${section.id}`}": 1,
+              "\"backup-and-sync-toggle\"": 1,
+              "{name}": 1
             }
           },
           "data-test-id": {
@@ -4399,74 +4348,78 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "Box": 1177
+        "Box": 1151
       }
     },
     "mobile": {
-      "filesScanned": 6139,
+      "filesScanned": 6234,
       "targetComponent": "Box",
       "mmds": {
-        "totalInstances": 2052,
-        "filesCount": 501,
+        "totalInstances": 2163,
+        "filesCount": 526,
         "props": {
           "twClassName": {
-            "count": 1623,
+            "count": 1699,
             "values": {
-              "\"flex-1\"": 140,
+              "\"flex-1\"": 148,
+              "\"gap-2\"": 50,
               "\"gap-1\"": 45,
-              "\"gap-2\"": 42,
-              "\"gap-3\"": 36,
-              "\"w-full\"": 31,
-              "\"px-4\"": 30,
-              "\"gap-4\"": 20,
+              "\"gap-3\"": 37,
+              "\"px-4\"": 32,
+              "\"w-full\"": 32,
+              "\"gap-4\"": 21,
+              "\"p-4\"": 18,
+              "\"px-4 py-3\"": 17,
               "\"mb-4\"": 16,
-              "\"px-4 py-3\"": 16,
-              "\"p-4\"": 13,
               "\"flex-1 min-w-0\"": 13,
               "\"flex-1 px-4\"": 12,
               "\"px-4 pb-4\"": 12,
               "\"flex-1 bg-default\"": 12,
               "\"py-3\"": 11,
+              "\"mt-2\"": 9,
               "\"px-4 py-4\"": 9,
               "\"flex-row items-center gap-1\"": 9,
+              "\"my-1 border-b border-border-muted\"": 9,
               "\"px-4 pb-3\"": 8,
+              "\"py-4\"": 8,
               "\"mb-6\"": 8,
               "\"h-px bg-border-muted\"": 8,
               "\"gap-6\"": 8,
-              "\"mt-2\"": 7,
+              "\"bg-muted rounded-xl p-4 mt-2 gap-2\"": 8,
+              "\"p-4 mb-2\"": 8,
               "\"flex-row items-center gap-2\"": 7,
-              "\"py-4\"": 7,
               "\"mt-3\"": 7,
               "\"px-4 pb-6\"": 7,
               "\"py-2\"": 7,
               "\"w-full flex-1\"": 7,
+              "\"px-4 pt-4\"": 7,
               "\"items-end\"": 6,
+              "\"p-4 items-center\"": 6,
               "\"mb-2\"": 6,
               "\"h-px bg-border-muted my-5\"": 6,
+              "\"pt-3\"": 6,
               "\"px-4 py-2\"": 6,
-              "\"px-4 pt-4\"": 6,
-              "\"bg-muted rounded-xl p-4 mt-2 gap-2\"": 6,
               "\"mt-6\"": 5,
               "\"mt-4\"": 5,
-              "\"pt-3\"": 5,
               "\"px-2 py-2\"": 5,
               "\"w-10\"": 5,
+              "\"flex-1 gap-1\"": 5,
               "\"flex-row gap-2\"": 5,
               "\"w-full h-full bg-muted\"": 5,
               "\"flex-row justify-between items-center\"": 5,
-              "\"my-1 border-b border-border-muted\"": 5,
-              "\"p-4 mb-2\"": 5,
-              "\"ml-3\"": 5,
               "\"gap-2.5\"": 5,
+              "\"pb-4\"": 4,
               "\"w-full gap-3\"": 4,
-              "\"p-4 items-center\"": 4,
               "\"pb-6\"": 4,
               "\"py-1\"": 4,
-              "\"flex-1 gap-1\"": 4,
+              "\"px-4 py-3 gap-3\"": 4,
               "\"px-5 py-2\"": 4,
+              "\"min-w-0 flex-1\"": 4,
+              "\"gap-2 mt-2\"": 4,
               "\"flex-1 gap-4\"": 4,
               "\"pb-2 pt-8 self-stretch -mx-4\"": 4,
               "\"flex-1 py-1\"": 4,
+              "\"ml-3\"": 4,
               "\"flex-row items-center\"": 4,
               "\"w-full px-4\"": 3,
               "\"flex-col w-[337px] items-stretch\"": 3,
@@ -4476,14 +4429,12 @@
               "\"w-full mt-4\"": 3,
               "\"flex-col\"": 3,
               "\"rounded-xl overflow-hidden\"": 3,
-              "\"pb-4\"": 3,
               "\"flex-row items-center p-4\"": 3,
               "\"flex-row items-center gap-2 shrink min-w-0\"": 3,
               "\"flex flex-1 items-center justify-center\"": 3,
               "\"flex-1 items-center justify-center\"": 3,
               "\"flex-wrap\"": 3,
               "\"px-4 pt-2\"": 3,
-              "\"px-4 py-3 gap-3\"": 3,
               "\"ml-1\"": 3,
               "\"px-4 pt-2 pb-4\"": 3,
               "\"w-10 h-10 rounded-lg bg-muted overflow-hidden\"": 3,
@@ -4492,6 +4443,7 @@
               "\"px-4 pt-4 pb-2\"": 3,
               "\"pb-3\"": 3,
               "\"px-3 pt-4 pb-8\"": 3,
+              "\"px-4 pt-4 gap-4\"": 3,
               "\"flex-1 w-full\"": 3,
               "\"gap-4 w-full\"": 3,
               "\"gap-1 flex-row items-center\"": 3,
@@ -4503,6 +4455,7 @@
               "\"px-4 py-6\"": 3,
               "\"flex-row items-center justify-between px-4 my-4\"": 3,
               "\"flex-1 min-w-0 mr-3\"": 3,
+              "\"flex-nowrap gap-2\"": 3,
               "\"h-12 justify-center\"": 3,
               "\"justify-center items-center\"": 2,
               "\"pt-2 pb-4 pl-4\"": 2,
@@ -4529,11 +4482,11 @@
               "\"mt-5\"": 2,
               "\"pr-1\"": 2,
               "\"py-5 px-4\"": 2,
+              "\"self-start rounded-md bg-success-muted px-2 py-0.5\"": 2,
               "\"self-center\"": 2,
               "\"px-4 pt-3 pb-1\"": 2,
               "\"px-4 mt-3\"": 2,
               "\"flex-1 gap-0.5\"": 2,
-              "\"gap-0.5\"": 2,
               "\"px-4 py-3 gap-4\"": 2,
               "\"pt-3 pb-9\"": 2,
               "\"pt-4 mx-4 flex gap-4\"": 2,
@@ -4567,21 +4520,24 @@
               "\"px-6 pb-6\"": 2,
               "\"flex-1 min-h-0\"": 2,
               "\"bg-muted rounded h-[18px] w-24\"": 2,
-              "\"px-4 pt-4 gap-4\"": 2,
+              "\"gap-2 mb-3\"": 2,
               "\"py-4 items-center\"": 2,
+              "\"p-4 gap-3\"": 2,
               "\"w-full max-w-md\"": 2,
+              "\"bg-muted rounded-xl p-4 gap-2\"": 2,
               "\"py-6 gap-3\"": 2,
-              "\"gap-1.5\"": 2,
+              "\"py-1 px-4\"": 2,
+              "\"flex-1 border-b border-border-muted\"": 2,
               "\"gap-4 p-4\"": 2,
               "\"w-full py-3\"": 2,
               "\"bg-muted rounded-full items-center justify-center size-10\"": 2,
-              "\"py-1 px-4\"": 2,
-              "\"flex-1 border-b border-border-muted\"": 2,
-              "\"gap-2 mt-2\"": 2,
+              "\"gap-1.5\"": 2,
+              "\"bg-success-muted rounded-[6px] px-1.5\"": 2,
+              "\"h-3 rounded-full bg-muted overflow-hidden\"": 2,
+              "\"h-full rounded-full bg-success-default\"": 2,
               "\"w-full mb-2\"": 2,
               "\"flex-col items-center justify-center w-full\"": 2,
               "\"w-full gap-2\"": 2,
-              "\"min-w-0 flex-1\"": 2,
               "\"gap-2 items-center\"": 2,
               "\"gap-4 flex-col p-4\"": 2,
               "\"gap-3 px-4\"": 2,
@@ -4595,8 +4551,6 @@
               "\"flex-col items-start px-0.5\"": 2,
               "\"flex-1 justify-center px-1\"": 2,
               "\"p-4 border-b border-border-muted\"": 2,
-              "\"self-start\"": 2,
-              "\"rounded-full bg-background-default px-2 py-0.5\"": 2,
               "\"relative gap-2\"": 2,
               "\"px-4 py-4 bg-default\"": 2,
               "\"mx-2 flex-1\"": 2,
@@ -4707,21 +4661,22 @@
               "\"flex-1 px-6 pb-8\"": 1,
               "\"px-1 py-2\"": 1,
               "\"px-4 pt-6 pb-3 gap-3\"": 1,
+              "\"flex-row items-center px-4 py-2\"": 1,
               "\"px-4 pt-6 gap-2\"": 1,
               "\"min-w-0 flex-1 gap-0.5\"": 1,
               "\"shrink-0 gap-0.5\"": 1,
               "\"px-4 my-3\"": 1,
-              "\"self-start rounded-md bg-success-muted px-2 py-0.5\"": 1,
               "\"bg-muted rounded-xl p-4 gap-4\"": 1,
               "\"bg-muted rounded-xl size-[78px] justify-center\"": 1,
               "\"flex-wrap gap-2 mt-4\"": 1,
               "\"px-4 pt-3\"": 1,
               "\"mt-3 gap-4\"": 1,
+              "\"gap-0.5 flex-1\"": 1,
               "\"px-4 pt-4 bg-default\"": 1,
               "\"gap-2 flex-1 justify-center\"": 1,
               "\"mx-4 my-3 rounded-2xl bg-muted overflow-hidden\"": 1,
               "\"p-4 gap-2\"": 1,
-              "\"h-[202px]\"": 1,
+              "\"h-[200px]\"": 1,
               "\"p-4 gap-4\"": 1,
               "\"rounded bg-muted px-1.5\"": 1,
               "\"h-2 w-full rounded-full bg-success-muted overflow-hidden\"": 1,
@@ -4893,17 +4848,18 @@
               "\"self-center px-4\"": 1,
               "\"items-center justify-center py-12\"": 1,
               "\"mb-4 gap-2\"": 1,
-              "\"gap-2 mb-3\"": 1,
-              "\"gap-2 mb-4 px-4\"": 1,
+              "\"gap-2 px-4 mb-1\"": 1,
               "\"px-4 pt-4 pb-1\"": 1,
               "\"px-4 pb-2 gap-3\"": 1,
               "\"px-4 pt-4 gap-3\"": 1,
               "\"px-4 pt-8\"": 1,
-              "\"p-4 gap-3\"": 1,
               "\"relative w-full overflow-hidden\"": 1,
               "\"absolute right-4 top-0 z-10\"": 1,
               "\"w-full gap-6 items-center px-4\"": 1,
               "\"items-center gap-1 w-full px-4\"": 1,
+              "\"border border-border-default rounded-full px-3 py-1 gap-1\"": 1,
+              "\"px-4 gap-2 mb-1\"": 1,
+              "\"px-4 gap-0.5 mb-2\"": 1,
               "\"py-4 flex-1 gap-4\"": 1,
               "\"flex-row items-start\"": 1,
               "\"w-[78px] h-[78px] rounded-lg bg-muted overflow-hidden items-center justify-center\"": 1,
@@ -4911,19 +4867,22 @@
               "\"gap-3 px-4 pb-6\"": 1,
               "\"flex flex-row gap-1 items-center justify-center\"": 1,
               "\"w-6 h-6 rounded-full\"": 1,
-              "\"bg-muted rounded-[6px] px-1.5\"": 1,
-              "\"bg-warning-muted rounded-[6px] px-1.5\"": 1,
+              "{`py-2 px-4 ${rowBg}`}": 1,
+              "\"rounded-xl bg-muted p-4 gap-3\"": 1,
+              "\"min-w-0 flex-1 shrink gap-0.5\"": 1,
               "\"rounded-xl overflow-hidden h-50 bg-muted\"": 1,
+              "\"h-50 rounded-xl overflow-hidden bg-muted\"": 1,
               "\"p-4 flex-1\"": 1,
+              "\"min-w-0 flex-1 shrink\"": 1,
               "\"gap-3 p-4\"": 1,
+              "\"mt-1 w-full\"": 1,
               "\"rounded-full px-4 py-2 gap-1\"": 1,
               "\"bg-muted rounded-xl p-4 gap-3\"": 1,
-              "{`py-2 px-4 ${rowBg}`}": 1,
+              "\"gap-0.5\"": 1,
+              "\"bg-muted rounded-[6px] px-1.5\"": 1,
+              "\"bg-warning-muted rounded-[6px] px-1.5\"": 1,
               "\"gap-2 mb-2 px-4\"": 1,
               "\"justify-end mb-4\"": 1,
-              "\"bg-success-muted rounded-[6px] px-1.5\"": 1,
-              "\"h-3 rounded-full bg-muted overflow-hidden\"": 1,
-              "\"h-full rounded-full bg-success-default\"": 1,
               "\"flex-1 px-6 pt-3\"": 1,
               "\"flex-row\"": 1,
               "\"flex-1 flex-shrink\"": 1,
@@ -5023,8 +4982,8 @@
               "\"bg-muted rounded self-start min-w-[22px] px-1.5 py-0.5\"": 1,
               "\"rounded self-start px-1.5 py-0.5\"": 1,
               "{`rounded min-w-[22px] px-1.5 gap-1 shrink-0 ${twBg}`}": 1,
-              "{`w-10 h-10 rounded-full bg-white border border-muted mr-4 overflow-hidden ite...}": 1,
-              "\"w-10 h-10 mr-4 items-center justify-center\"": 1,
+              "\"w-10 h-10 rounded-full border border-muted mr-4 overflow-hidden items-center justify-center\"": 1,
+              "\"ml-3 flex-row items-center gap-3\"": 1,
               "\"flex-1 flex-row items-center\"": 1,
               "\"flex-col gap-1 mt-2 mb-6\"": 1,
               "{`rounded-[10px] min-h-[210px] flex-row flex-wrap w-full px-4 ${!isFirstInput ...}": 1,
@@ -5108,8 +5067,9 @@
               "\"flex-1 justify-center ml-5\"": 1,
               "{`w-[${TOP_TRADER_CARD_WIDTH}px] h-auto rounded-2xl bg-muted p-4 overflow-hidd...}": 1,
               "\"w-full gap-0.5\"": 1,
-              "\"w-[280px] h-[248px] rounded-2xl bg-background-muted overflow-hidden\"": 1,
+              "\"self-start rounded-full bg-background-default px-2 py-0.5\"": 1,
               "\"flex-wrap gap-1\"": 1,
+              "\"rounded-full bg-background-default px-2 py-0.5\"": 1,
               "\"rounded-xl w-full\"": 1,
               "{`rounded-xl bg-background-muted ${twClassName}`}": 1,
               "\"mt-1.5\"": 1,
@@ -5117,6 +5077,7 @@
               "\"gap-2 mt-2 mb-4 bg-background-section rounded-lg p-4\"": 1,
               "\"flex-1 w-full pt-20\"": 1,
               "\"w-full mt-[80px]\"": 1,
+              "\"self-start\"": 1,
               "\"relative flex-col gap-0.5 w-full\"": 1,
               "\"flex-1 justify-between\"": 1,
               "\"flex-1 flex-col gap-4\"": 1,
@@ -5195,16 +5156,24 @@
               "\"px-4 mb-2\"": 1,
               "\"mr-3\"": 1,
               "\"flex-1 h-[46px]\"": 1,
-              "\"mt-3 flex-row items-center gap-2 px-4\"": 1,
+              "\"mt-2 mb-2 flex-row items-center gap-2 px-4\"": 1,
               "\"rounded-lg items-center justify-center h-8 w-8 border border-muted bg-section\"": 1,
-              "{isHidden ? 'hidden' : undefined}": 1,
               "\"px-4 pb-3 gap-3\"": 1,
+              "\"rounded-full\"": 1,
               "\"h-12 gap-3 rounded-full border border-border-muted bg-muted px-4\"": 1,
-              "\"py-2 bg-default\"": 1,
+              "\"-mx-4 mb-7\"": 1,
+              "{`rounded-2xl overflow-hidden ${ !isLastItem ? 'pr-3' : '' }`}": 1,
+              "\"-mx-4 mb-2\"": 1,
+              "\"-mx-4 bg-transparent mt-3 mb-9\"": 1,
+              "\"mt-2 mb-9\"": 1,
               "\"mb-7 -mx-4\"": 1,
-              "\"-mx-4 mb-9\"": 1,
-              "\"-mx-4 mb-6\"": 1,
-              "{`rounded-2xl overflow-hidden ${!isLastItem ? 'pr-4' : ''}`}": 1,
+              "{`-mx-4 mt-3 ${compactSectionTail ? 'mb-7' : 'mb-9'}`}": 1,
+              "\"bg-transparent\"": 1,
+              "\"py-2 bg-default\"": 1,
+              "\"h-[220px] w-full overflow-hidden rounded-2xl\"": 1,
+              "\"items-center py-8\"": 1,
+              "\"mt-3 mb-9\"": 1,
+              "\"mb-9\"": 1,
               "\"flex-1 items-center pt-12\"": 1,
               "\"flex-row bg-info-muted rounded-lg p-3 mb-6 w-full\"": 1,
               "\"flex-row justify-between items-center mb-2\"": 1,
@@ -5229,31 +5198,32 @@
             }
           },
           "flexDirection": {
-            "count": 503,
+            "count": 529,
             "values": {
-              "{BoxFlexDirection.Row}": 425,
-              "{BoxFlexDirection.Column}": 78
+              "{BoxFlexDirection.Row}": 448,
+              "{BoxFlexDirection.Column}": 81
             }
           },
           "alignItems": {
-            "count": 478,
+            "count": 497,
             "values": {
-              "{BoxAlignItems.Center}": 417,
-              "{BoxAlignItems.Start}": 40,
-              "{BoxAlignItems.End}": 16,
+              "{BoxAlignItems.Center}": 433,
+              "{BoxAlignItems.Start}": 41,
+              "{BoxAlignItems.End}": 18,
               "{typeof title === 'string' ? BoxAlignItems.Center : BoxAlignItems.Start}": 2,
               "{typeof description === 'string' ? BoxAlignItems.Center : BoxAlignItems.Start}": 2,
               "{BoxAlignItems.Stretch}": 1
             }
           },
           "testID": {
-            "count": 290,
+            "count": 309,
             "values": {
               "{testID}": 53,
               "{ONDO_PRIZE_POOL_TEST_IDS.CONTAINER}": 3,
+              "{PERPS_PRIZE_POOL_TEST_IDS.CONTAINER}": 3,
               "\"price-chart-loading\"": 2,
               "\"onboarding-step-actions\"": 2,
-              "{CAMPAIGN_STATS_SUMMARY_TEST_IDS.NOT_ELIGIBLE_BANNER}": 2,
+              "{ONDO_CAMPAIGN_STATS_SUMMARY_TEST_IDS.NOT_ELIGIBLE_BANNER}": 2,
               "\"progress-indicator-container\"": 2,
               "{REWARDS_VIEW_SELECTORS.TIER_REWARD_ICON}": 2,
               "\"rewards-settings-bulk-link-progress\"": 2,
@@ -5311,6 +5281,8 @@
               "{MoneyActivityViewTestIds.EMPTY_LIST}": 1,
               "{MoneyHomeViewTestIds.CONTAINER}": 1,
               "{MoneyHowItWorksViewTestIds.CONTAINER}": 1,
+              "{MoneyPotentialEarningsViewTestIds.CONTAINER}": 1,
+              "{MoneyAccountHomeRowTestIds.APY_TAG}": 1,
               "{MoneyActionButtonRowTestIds.CONTAINER}": 1,
               "{MoneyActivityListTestIds.CONTAINER}": 1,
               "{MoneyBalanceSummaryTestIds.CONTAINER}": 1,
@@ -5365,22 +5337,26 @@
               "{ProtectWalletModalSelectorsIDs.CONTAINER}": 1,
               "{CAMPAIGN_MECHANICS_TEST_IDS.HOW_IT_WORKS_SECTION}": 1,
               "{CAMPAIGN_MECHANICS_TEST_IDS.NOTES_SECTION}": 1,
+              "{PERPS_CAMPAIGN_LEADERBOARD_TEST_IDS.TOTAL_PARTICIPANTS}": 1,
+              "{PERPS_CAMPAIGN_STATS_VIEW_TEST_IDS.QUALIFIED_CARD}": 1,
+              "{PERPS_CAMPAIGN_STATS_VIEW_TEST_IDS.QUALIFY_FOR_RANK_CARD}": 1,
               "{REWARDS_VIEW_SELECTORS.TOP_BENEFIT_DETAILS}": 1,
               "{REWARDS_VIEW_SELECTORS.TOP_BENEFIT_SECTION}": 1,
               "{CAMPAIGN_ENDED_STATS_TEST_IDS.CONTAINER}": 1,
               "{CAMPAIGN_HOW_IT_WORKS_TEST_IDS.CONTAINER}": 1,
               "{`${CAMPAIGN_HOW_IT_WORKS_TEST_IDS.STEP}-${stepIndex}`}": 1,
               "{`${CAMPAIGN_HOW_IT_WORKS_TEST_IDS.STEP_INDEX}-${stepIndex}`}": 1,
-              "{CAMPAIGN_STATS_SUMMARY_TEST_IDS.CONTAINER}": 1,
+              "{`${CAMPAIGN_LEADERBOARD_SHARED_TEST_IDS.ENTRY_ROW}-${entry.rank}`}": 1,
+              "{CAMPAIGN_LEADERBOARD_SHARED_TEST_IDS.LOADING}": 1,
+              "{CAMPAIGN_LEADERBOARD_SHARED_TEST_IDS.NEIGHBOR_SEPARATOR}": 1,
+              "{`campaign-reminder-${campaign.id}`}": 1,
               "{CAMPAIGN_STATUS_TEST_IDS.CONTAINER}": 1,
               "{CAMPAIGN_STATUS_TEST_IDS.STATUS_LABEL}": 1,
               "{CAMPAIGN_STATUS_TEST_IDS.DATE_LABEL}": 1,
               "\"campaign-tile-status-label\"": 1,
               "{REWARDS_VIEW_SELECTORS.CAMPAIGNS_PREVIEW}": 1,
               "{LEADERBOARD_POSITION_HEADER_TEST_IDS.CONTAINER}": 1,
-              "{`${CAMPAIGN_LEADERBOARD_TEST_IDS.ENTRY_ROW}-${entry.rank}`}": 1,
-              "{CAMPAIGN_LEADERBOARD_TEST_IDS.LOADING}": 1,
-              "{CAMPAIGN_LEADERBOARD_TEST_IDS.NEIGHBOR_SEPARATOR}": 1,
+              "{ONDO_CAMPAIGN_STATS_SUMMARY_TEST_IDS.CONTAINER}": 1,
               "{CAMPAIGN_LEADERBOARD_TEST_IDS.CONTAINER}": 1,
               "{CAMPAIGN_LEADERBOARD_TEST_IDS.LIST}": 1,
               "{ONDO_PORTFOLIO_TEST_IDS.ERROR}": 1,
@@ -5389,6 +5365,14 @@
               "{ONDO_PORTFOLIO_TEST_IDS.CONTAINER}": 1,
               "{ONDO_PRIZE_POOL_TEST_IDS.MAX_BADGE}": 1,
               "{ONDO_PRIZE_POOL_TEST_IDS.PROGRESS_BAR}": 1,
+              "{PERPS_CAMPAIGN_STATS_SUMMARY_TEST_IDS.CONTAINER}": 1,
+              "{PERPS_CAMPAIGN_STATS_SUMMARY_TEST_IDS.QUALIFIED_CARD}": 1,
+              "{PERPS_CAMPAIGN_STATS_SUMMARY_TEST_IDS.QUALIFY_FOR_RANK_CARD}": 1,
+              "{PERPS_CAMPAIGN_LEADERBOARD_TEST_IDS.CONTAINER}": 1,
+              "{PERPS_CAMPAIGN_LEADERBOARD_TEST_IDS.LIST}": 1,
+              "{PERPS_PRIZE_POOL_TEST_IDS.MAX_BADGE}": 1,
+              "{PERPS_PRIZE_POOL_TEST_IDS.PROGRESS_BAR}": 1,
+              "{PERPS_STATS_HEADER_TEST_IDS.CONTAINER}": 1,
               "{REWARDS_VIEW_SELECTORS.EARN_REWARDS_PREVIEW}": 1,
               "{REWARDS_VIEW_SELECTORS.CLAIM_MODAL_LINEA_TOKENS_LOADED}": 1,
               "{REWARDS_VIEW_SELECTORS.CLAIM_MODAL_LINEA_TOKENS_DEFAULT_TITLE}": 1,
@@ -5423,7 +5407,6 @@
               "\"bonus-code-bottom-sheet\"": 1,
               "{REWARDS_VIEW_SELECTORS.TAB_CONTENT_ACTIVITY}": 1,
               "{SRPListSelectorsIDs.SRP_LIST}": 1,
-              "\"site-logo-fallback\"": 1,
               "{TokenOverviewSelectorsIDs.CONTAINER}": 1,
               "{WalletViewSelectorsIDs.TOKENS_CONTAINER_LIST}": 1,
               "{WalletViewSelectorsIDs.TOKENS_CONTAINER}": 1,
@@ -5469,19 +5452,22 @@
               "{TEXTFIELD_TEST_ID}": 1,
               "{TEXTFIELD_STARTACCESSORY_TEST_ID}": 1,
               "{TEXTFIELD_ENDACCESSORY_TEST_ID}": 1,
+              "\"explore-page-v1\"": 1,
               "\"empty-error-trending-state\"": 1,
               "\"empty-search-result-state\"": 1,
-              "\"explore-view-search-input\"": 1,
+              "{TrendingViewSelectorsIDs.EXPLORE_VIEW_SEARCH_INPUT}": 1,
+              "{testIdPrefix}": 1,
+              "\"all-sports-empty-state\"": 1,
               "{`recipient-avatar-${recipient.address}`}": 1
             }
           },
           "justifyContent": {
-            "count": 231,
+            "count": 236,
             "values": {
-              "{BoxJustifyContent.Between}": 113,
-              "{BoxJustifyContent.Center}": 78,
+              "{BoxJustifyContent.Between}": 116,
+              "{BoxJustifyContent.Center}": 79,
               "{BoxJustifyContent.Start}": 22,
-              "{BoxJustifyContent.End}": 12,
+              "{BoxJustifyContent.End}": 13,
               "{BoxJustifyContent.SpaceBetween}": 2,
               "{titleLineCount >= 2 ? undefined : BoxJustifyContent.Center}": 1,
               "{BoxJustifyContent.FlexEnd}": 1,
@@ -5490,12 +5476,12 @@
             }
           },
           "gap": {
-            "count": 181,
+            "count": 180,
             "values": {
               "0": 2,
               "1": 39,
-              "2": 38,
-              "3": 54,
+              "2": 39,
+              "3": 52,
               "4": 36,
               "5": 1,
               "6": 5,
@@ -5506,7 +5492,7 @@
             }
           },
           "style": {
-            "count": 167,
+            "count": 170,
             "values": {
               "{styles.container}": 9,
               "{tw.style('flex-1 flex-shrink mr-2 -mt-1')}": 3,
@@ -5514,6 +5500,7 @@
               "{{ aspectRatio: 851 / 540 }}": 2,
               "{tw.style( 'rounded-xl relative overflow-hidden border border-muted bg-default...}": 2,
               "{tw.style('w-full bg-background-default', { height })}": 2,
+              "{[styles.safeArea, { paddingTop: insets.top }]}": 2,
               "{styles.periodOptionsGrid}": 2,
               "{styles.banner}": 2,
               "{styles.textContainer}": 2,
@@ -5522,6 +5509,7 @@
               "{{ paddingTop: insets.top + 12 }}": 2,
               "{{ paddingTop: insets.top + 8 }}": 2,
               "{tw.style('flex-row items-center gap-3 h-12', twClassName)}": 2,
+              "{{ width: progressPercent }}": 2,
               "{tw.style('mb-2 flex-1')}": 2,
               "{tw.style('px-4 py-3')}": 2,
               "{tw.style('flex-1 p-4', { backgroundColor: mockTheme.colors.background.default...}": 2,
@@ -5560,8 +5548,7 @@
               "{{ paddingBottom: insets.bottom }}": 1,
               "{styles.overflowHidden}": 1,
               "{[ styles.safeArea, { paddingTop: insets.top, backgroundColor: colors.backgrou...}": 1,
-              "{[styles.safeArea, { paddingTop: insets.top }]}": 1,
-              "{[ localStyles.safeArea, { paddingTop: insets.top, backgroundColor: colors.bac...}": 1,
+              "{[ localStyles.safeArea, { paddingTop: insets.top, backgroundColor: themeColor...}": 1,
               "{localStyles.headerSpacer}": 1,
               "{{ paddingBottom: insets.bottom + 16 }}": 1,
               "{{ width: `${percent}%` }}": 1,
@@ -5608,7 +5595,6 @@
               "{tw.style(!showSkip && 'opacity-0')}": 1,
               "{styles.heroBox}": 1,
               "{CELL_STYLE}": 1,
-              "{{ width: progressPercent }}": 1,
               "{[tw.style('rounded-lg overflow-hidden'), styles.avatar]}": 1,
               "{tw.style( 'w-[12px] h-[12px] rounded-full', index === currentStep - 1 ? activ...}": 1,
               "{tw.style( 'h-[12px] rounded-xl', index === currentStep - 1 ? `w-[23px] ${acti...}": 1,
@@ -5645,11 +5631,12 @@
               "{{ width: foxSize, height: foxSize, padding: foxPadding, }}": 1,
               "{tw.style( 'flex-row items-center rounded-xl h-12 border px-4 bg-muted', isDis...}": 1,
               "{tw.style('flex-row justify-center px-4 pt-1', { paddingBottom: insets.bottom, })}": 1,
-              "{tw.style({ width: CARD_WIDTH, minHeight: CARD_HEIGHT })}": 1
+              "{tw.style({ width: CARD_WIDTH, minHeight: CARD_HEIGHT })}": 1,
+              "{tw.style('overflow-hidden rounded-full border border-muted')}": 1
             }
           },
           "key": {
-            "count": 47,
+            "count": 53,
             "values": {
               "{index}": 5,
               "{key}": 4,
@@ -5680,15 +5667,21 @@
               "{`${nft.address}-${nft.tokenId}`}": 1,
               "{`empty-${rowIndex}-${i}`}": 1,
               "{asset.sourceAssetId}": 1,
-              "{section.id}": 1,
+              "\"now\"": 1,
+              "\"macro\"": 1,
+              "\"rwas\"": 1,
+              "\"crypto\"": 1,
+              "\"sports\"": 1,
+              "\"dapps\"": 1,
+              "{`all-sports-skeleton-${i}`}": 1,
               "{`${item.name}-${actionItem.buttonLabel}-${index}`}": 1,
               "{walletName}": 1
             }
           },
           "paddingHorizontal": {
-            "count": 29,
+            "count": 30,
             "values": {
-              "2": 2,
+              "2": 3,
               "4": 20,
               "5": 1,
               "6": 2,
@@ -5708,9 +5701,9 @@
             }
           },
           "backgroundColor": {
-            "count": 16,
+            "count": 17,
             "values": {
-              "{BoxBackgroundColor.BackgroundMuted}": 6,
+              "{BoxBackgroundColor.BackgroundMuted}": 7,
               "{BoxBackgroundColor.BackgroundDefault}": 3,
               "{BoxBackgroundColor.BackgroundSection}": 3,
               "{selected ? BoxBackgroundColor.BackgroundMuted : BoxBackgroundColor.Background...}": 1,
@@ -5719,10 +5712,23 @@
               "{BoxBackgroundColor.PrimaryMuted}": 1
             }
           },
-          "padding": {
-            "count": 13,
+          "[spread]": {
+            "count": 12,
             "values": {
-              "4": 13
+              "{props}": 4,
+              "{boxWrapperProps}": 2,
+              "{{ tabLabel: strings('trending.tabs.now') } as TabViewProps}": 1,
+              "{{ tabLabel: strings('trending.tabs.macro'), } as TabViewProps}": 1,
+              "{{ tabLabel: strings('trending.tabs.rwas') } as TabViewProps}": 1,
+              "{{ tabLabel: strings('trending.tabs.crypto'), } as TabViewProps}": 1,
+              "{{ tabLabel: strings('trending.tabs.sports'), } as TabViewProps}": 1,
+              "{{ tabLabel: strings('trending.tabs.dapps'), } as TabViewProps}": 1
+            }
+          },
+          "padding": {
+            "count": 12,
+            "values": {
+              "4": 12
             }
           },
           "paddingBottom": {
@@ -5734,11 +5740,11 @@
             }
           },
           "marginBottom": {
-            "count": 10,
+            "count": 11,
             "values": {
               "2": 4,
               "4": 3,
-              "5": 1,
+              "5": 2,
               "8": 2
             }
           },
@@ -5763,18 +5769,11 @@
               "{(e) => handlePillLayout(market.id, e.nativeEvent.layout.x)}": 1
             }
           },
-          "[spread]": {
-            "count": 6,
-            "values": {
-              "{props}": 4,
-              "{boxWrapperProps}": 2
-            }
-          },
           "paddingVertical": {
-            "count": 6,
+            "count": 7,
             "values": {
               "1": 1,
-              "2": 3,
+              "2": 4,
               "3": 2
             }
           },
@@ -5865,67 +5864,71 @@
         "props": {}
       },
       "overall": {
-        "totalInstances": 2052,
-        "filesCount": 501,
+        "totalInstances": 2163,
+        "filesCount": 526,
         "props": {
           "twClassName": {
-            "count": 1623,
+            "count": 1699,
             "values": {
-              "\"flex-1\"": 140,
+              "\"flex-1\"": 148,
+              "\"gap-2\"": 50,
               "\"gap-1\"": 45,
-              "\"gap-2\"": 42,
-              "\"gap-3\"": 36,
-              "\"w-full\"": 31,
-              "\"px-4\"": 30,
-              "\"gap-4\"": 20,
+              "\"gap-3\"": 37,
+              "\"px-4\"": 32,
+              "\"w-full\"": 32,
+              "\"gap-4\"": 21,
+              "\"p-4\"": 18,
+              "\"px-4 py-3\"": 17,
               "\"mb-4\"": 16,
-              "\"px-4 py-3\"": 16,
-              "\"p-4\"": 13,
               "\"flex-1 min-w-0\"": 13,
               "\"flex-1 px-4\"": 12,
               "\"px-4 pb-4\"": 12,
               "\"flex-1 bg-default\"": 12,
               "\"py-3\"": 11,
+              "\"mt-2\"": 9,
               "\"px-4 py-4\"": 9,
               "\"flex-row items-center gap-1\"": 9,
+              "\"my-1 border-b border-border-muted\"": 9,
               "\"px-4 pb-3\"": 8,
+              "\"py-4\"": 8,
               "\"mb-6\"": 8,
               "\"h-px bg-border-muted\"": 8,
               "\"gap-6\"": 8,
-              "\"mt-2\"": 7,
+              "\"bg-muted rounded-xl p-4 mt-2 gap-2\"": 8,
+              "\"p-4 mb-2\"": 8,
               "\"flex-row items-center gap-2\"": 7,
-              "\"py-4\"": 7,
               "\"mt-3\"": 7,
               "\"px-4 pb-6\"": 7,
               "\"py-2\"": 7,
               "\"w-full flex-1\"": 7,
+              "\"px-4 pt-4\"": 7,
               "\"items-end\"": 6,
+              "\"p-4 items-center\"": 6,
               "\"mb-2\"": 6,
               "\"h-px bg-border-muted my-5\"": 6,
+              "\"pt-3\"": 6,
               "\"px-4 py-2\"": 6,
-              "\"px-4 pt-4\"": 6,
-              "\"bg-muted rounded-xl p-4 mt-2 gap-2\"": 6,
               "\"mt-6\"": 5,
               "\"mt-4\"": 5,
-              "\"pt-3\"": 5,
               "\"px-2 py-2\"": 5,
               "\"w-10\"": 5,
+              "\"flex-1 gap-1\"": 5,
               "\"flex-row gap-2\"": 5,
               "\"w-full h-full bg-muted\"": 5,
               "\"flex-row justify-between items-center\"": 5,
-              "\"my-1 border-b border-border-muted\"": 5,
-              "\"p-4 mb-2\"": 5,
-              "\"ml-3\"": 5,
               "\"gap-2.5\"": 5,
+              "\"pb-4\"": 4,
               "\"w-full gap-3\"": 4,
-              "\"p-4 items-center\"": 4,
               "\"pb-6\"": 4,
               "\"py-1\"": 4,
-              "\"flex-1 gap-1\"": 4,
+              "\"px-4 py-3 gap-3\"": 4,
               "\"px-5 py-2\"": 4,
+              "\"min-w-0 flex-1\"": 4,
+              "\"gap-2 mt-2\"": 4,
               "\"flex-1 gap-4\"": 4,
               "\"pb-2 pt-8 self-stretch -mx-4\"": 4,
               "\"flex-1 py-1\"": 4,
+              "\"ml-3\"": 4,
               "\"flex-row items-center\"": 4,
               "\"w-full px-4\"": 3,
               "\"flex-col w-[337px] items-stretch\"": 3,
@@ -5935,14 +5938,12 @@
               "\"w-full mt-4\"": 3,
               "\"flex-col\"": 3,
               "\"rounded-xl overflow-hidden\"": 3,
-              "\"pb-4\"": 3,
               "\"flex-row items-center p-4\"": 3,
               "\"flex-row items-center gap-2 shrink min-w-0\"": 3,
               "\"flex flex-1 items-center justify-center\"": 3,
               "\"flex-1 items-center justify-center\"": 3,
               "\"flex-wrap\"": 3,
               "\"px-4 pt-2\"": 3,
-              "\"px-4 py-3 gap-3\"": 3,
               "\"ml-1\"": 3,
               "\"px-4 pt-2 pb-4\"": 3,
               "\"w-10 h-10 rounded-lg bg-muted overflow-hidden\"": 3,
@@ -5951,6 +5952,7 @@
               "\"px-4 pt-4 pb-2\"": 3,
               "\"pb-3\"": 3,
               "\"px-3 pt-4 pb-8\"": 3,
+              "\"px-4 pt-4 gap-4\"": 3,
               "\"flex-1 w-full\"": 3,
               "\"gap-4 w-full\"": 3,
               "\"gap-1 flex-row items-center\"": 3,
@@ -5962,6 +5964,7 @@
               "\"px-4 py-6\"": 3,
               "\"flex-row items-center justify-between px-4 my-4\"": 3,
               "\"flex-1 min-w-0 mr-3\"": 3,
+              "\"flex-nowrap gap-2\"": 3,
               "\"h-12 justify-center\"": 3,
               "\"justify-center items-center\"": 2,
               "\"pt-2 pb-4 pl-4\"": 2,
@@ -5988,11 +5991,11 @@
               "\"mt-5\"": 2,
               "\"pr-1\"": 2,
               "\"py-5 px-4\"": 2,
+              "\"self-start rounded-md bg-success-muted px-2 py-0.5\"": 2,
               "\"self-center\"": 2,
               "\"px-4 pt-3 pb-1\"": 2,
               "\"px-4 mt-3\"": 2,
               "\"flex-1 gap-0.5\"": 2,
-              "\"gap-0.5\"": 2,
               "\"px-4 py-3 gap-4\"": 2,
               "\"pt-3 pb-9\"": 2,
               "\"pt-4 mx-4 flex gap-4\"": 2,
@@ -6026,21 +6029,24 @@
               "\"px-6 pb-6\"": 2,
               "\"flex-1 min-h-0\"": 2,
               "\"bg-muted rounded h-[18px] w-24\"": 2,
-              "\"px-4 pt-4 gap-4\"": 2,
+              "\"gap-2 mb-3\"": 2,
               "\"py-4 items-center\"": 2,
+              "\"p-4 gap-3\"": 2,
               "\"w-full max-w-md\"": 2,
+              "\"bg-muted rounded-xl p-4 gap-2\"": 2,
               "\"py-6 gap-3\"": 2,
-              "\"gap-1.5\"": 2,
+              "\"py-1 px-4\"": 2,
+              "\"flex-1 border-b border-border-muted\"": 2,
               "\"gap-4 p-4\"": 2,
               "\"w-full py-3\"": 2,
               "\"bg-muted rounded-full items-center justify-center size-10\"": 2,
-              "\"py-1 px-4\"": 2,
-              "\"flex-1 border-b border-border-muted\"": 2,
-              "\"gap-2 mt-2\"": 2,
+              "\"gap-1.5\"": 2,
+              "\"bg-success-muted rounded-[6px] px-1.5\"": 2,
+              "\"h-3 rounded-full bg-muted overflow-hidden\"": 2,
+              "\"h-full rounded-full bg-success-default\"": 2,
               "\"w-full mb-2\"": 2,
               "\"flex-col items-center justify-center w-full\"": 2,
               "\"w-full gap-2\"": 2,
-              "\"min-w-0 flex-1\"": 2,
               "\"gap-2 items-center\"": 2,
               "\"gap-4 flex-col p-4\"": 2,
               "\"gap-3 px-4\"": 2,
@@ -6054,8 +6060,6 @@
               "\"flex-col items-start px-0.5\"": 2,
               "\"flex-1 justify-center px-1\"": 2,
               "\"p-4 border-b border-border-muted\"": 2,
-              "\"self-start\"": 2,
-              "\"rounded-full bg-background-default px-2 py-0.5\"": 2,
               "\"relative gap-2\"": 2,
               "\"px-4 py-4 bg-default\"": 2,
               "\"mx-2 flex-1\"": 2,
@@ -6166,21 +6170,22 @@
               "\"flex-1 px-6 pb-8\"": 1,
               "\"px-1 py-2\"": 1,
               "\"px-4 pt-6 pb-3 gap-3\"": 1,
+              "\"flex-row items-center px-4 py-2\"": 1,
               "\"px-4 pt-6 gap-2\"": 1,
               "\"min-w-0 flex-1 gap-0.5\"": 1,
               "\"shrink-0 gap-0.5\"": 1,
               "\"px-4 my-3\"": 1,
-              "\"self-start rounded-md bg-success-muted px-2 py-0.5\"": 1,
               "\"bg-muted rounded-xl p-4 gap-4\"": 1,
               "\"bg-muted rounded-xl size-[78px] justify-center\"": 1,
               "\"flex-wrap gap-2 mt-4\"": 1,
               "\"px-4 pt-3\"": 1,
               "\"mt-3 gap-4\"": 1,
+              "\"gap-0.5 flex-1\"": 1,
               "\"px-4 pt-4 bg-default\"": 1,
               "\"gap-2 flex-1 justify-center\"": 1,
               "\"mx-4 my-3 rounded-2xl bg-muted overflow-hidden\"": 1,
               "\"p-4 gap-2\"": 1,
-              "\"h-[202px]\"": 1,
+              "\"h-[200px]\"": 1,
               "\"p-4 gap-4\"": 1,
               "\"rounded bg-muted px-1.5\"": 1,
               "\"h-2 w-full rounded-full bg-success-muted overflow-hidden\"": 1,
@@ -6352,17 +6357,18 @@
               "\"self-center px-4\"": 1,
               "\"items-center justify-center py-12\"": 1,
               "\"mb-4 gap-2\"": 1,
-              "\"gap-2 mb-3\"": 1,
-              "\"gap-2 mb-4 px-4\"": 1,
+              "\"gap-2 px-4 mb-1\"": 1,
               "\"px-4 pt-4 pb-1\"": 1,
               "\"px-4 pb-2 gap-3\"": 1,
               "\"px-4 pt-4 gap-3\"": 1,
               "\"px-4 pt-8\"": 1,
-              "\"p-4 gap-3\"": 1,
               "\"relative w-full overflow-hidden\"": 1,
               "\"absolute right-4 top-0 z-10\"": 1,
               "\"w-full gap-6 items-center px-4\"": 1,
               "\"items-center gap-1 w-full px-4\"": 1,
+              "\"border border-border-default rounded-full px-3 py-1 gap-1\"": 1,
+              "\"px-4 gap-2 mb-1\"": 1,
+              "\"px-4 gap-0.5 mb-2\"": 1,
               "\"py-4 flex-1 gap-4\"": 1,
               "\"flex-row items-start\"": 1,
               "\"w-[78px] h-[78px] rounded-lg bg-muted overflow-hidden items-center justify-center\"": 1,
@@ -6370,19 +6376,22 @@
               "\"gap-3 px-4 pb-6\"": 1,
               "\"flex flex-row gap-1 items-center justify-center\"": 1,
               "\"w-6 h-6 rounded-full\"": 1,
-              "\"bg-muted rounded-[6px] px-1.5\"": 1,
-              "\"bg-warning-muted rounded-[6px] px-1.5\"": 1,
+              "{`py-2 px-4 ${rowBg}`}": 1,
+              "\"rounded-xl bg-muted p-4 gap-3\"": 1,
+              "\"min-w-0 flex-1 shrink gap-0.5\"": 1,
               "\"rounded-xl overflow-hidden h-50 bg-muted\"": 1,
+              "\"h-50 rounded-xl overflow-hidden bg-muted\"": 1,
               "\"p-4 flex-1\"": 1,
+              "\"min-w-0 flex-1 shrink\"": 1,
               "\"gap-3 p-4\"": 1,
+              "\"mt-1 w-full\"": 1,
               "\"rounded-full px-4 py-2 gap-1\"": 1,
               "\"bg-muted rounded-xl p-4 gap-3\"": 1,
-              "{`py-2 px-4 ${rowBg}`}": 1,
+              "\"gap-0.5\"": 1,
+              "\"bg-muted rounded-[6px] px-1.5\"": 1,
+              "\"bg-warning-muted rounded-[6px] px-1.5\"": 1,
               "\"gap-2 mb-2 px-4\"": 1,
               "\"justify-end mb-4\"": 1,
-              "\"bg-success-muted rounded-[6px] px-1.5\"": 1,
-              "\"h-3 rounded-full bg-muted overflow-hidden\"": 1,
-              "\"h-full rounded-full bg-success-default\"": 1,
               "\"flex-1 px-6 pt-3\"": 1,
               "\"flex-row\"": 1,
               "\"flex-1 flex-shrink\"": 1,
@@ -6482,8 +6491,8 @@
               "\"bg-muted rounded self-start min-w-[22px] px-1.5 py-0.5\"": 1,
               "\"rounded self-start px-1.5 py-0.5\"": 1,
               "{`rounded min-w-[22px] px-1.5 gap-1 shrink-0 ${twBg}`}": 1,
-              "{`w-10 h-10 rounded-full bg-white border border-muted mr-4 overflow-hidden ite...}": 1,
-              "\"w-10 h-10 mr-4 items-center justify-center\"": 1,
+              "\"w-10 h-10 rounded-full border border-muted mr-4 overflow-hidden items-center justify-center\"": 1,
+              "\"ml-3 flex-row items-center gap-3\"": 1,
               "\"flex-1 flex-row items-center\"": 1,
               "\"flex-col gap-1 mt-2 mb-6\"": 1,
               "{`rounded-[10px] min-h-[210px] flex-row flex-wrap w-full px-4 ${!isFirstInput ...}": 1,
@@ -6567,8 +6576,9 @@
               "\"flex-1 justify-center ml-5\"": 1,
               "{`w-[${TOP_TRADER_CARD_WIDTH}px] h-auto rounded-2xl bg-muted p-4 overflow-hidd...}": 1,
               "\"w-full gap-0.5\"": 1,
-              "\"w-[280px] h-[248px] rounded-2xl bg-background-muted overflow-hidden\"": 1,
+              "\"self-start rounded-full bg-background-default px-2 py-0.5\"": 1,
               "\"flex-wrap gap-1\"": 1,
+              "\"rounded-full bg-background-default px-2 py-0.5\"": 1,
               "\"rounded-xl w-full\"": 1,
               "{`rounded-xl bg-background-muted ${twClassName}`}": 1,
               "\"mt-1.5\"": 1,
@@ -6576,6 +6586,7 @@
               "\"gap-2 mt-2 mb-4 bg-background-section rounded-lg p-4\"": 1,
               "\"flex-1 w-full pt-20\"": 1,
               "\"w-full mt-[80px]\"": 1,
+              "\"self-start\"": 1,
               "\"relative flex-col gap-0.5 w-full\"": 1,
               "\"flex-1 justify-between\"": 1,
               "\"flex-1 flex-col gap-4\"": 1,
@@ -6654,16 +6665,24 @@
               "\"px-4 mb-2\"": 1,
               "\"mr-3\"": 1,
               "\"flex-1 h-[46px]\"": 1,
-              "\"mt-3 flex-row items-center gap-2 px-4\"": 1,
+              "\"mt-2 mb-2 flex-row items-center gap-2 px-4\"": 1,
               "\"rounded-lg items-center justify-center h-8 w-8 border border-muted bg-section\"": 1,
-              "{isHidden ? 'hidden' : undefined}": 1,
               "\"px-4 pb-3 gap-3\"": 1,
+              "\"rounded-full\"": 1,
               "\"h-12 gap-3 rounded-full border border-border-muted bg-muted px-4\"": 1,
-              "\"py-2 bg-default\"": 1,
+              "\"-mx-4 mb-7\"": 1,
+              "{`rounded-2xl overflow-hidden ${ !isLastItem ? 'pr-3' : '' }`}": 1,
+              "\"-mx-4 mb-2\"": 1,
+              "\"-mx-4 bg-transparent mt-3 mb-9\"": 1,
+              "\"mt-2 mb-9\"": 1,
               "\"mb-7 -mx-4\"": 1,
-              "\"-mx-4 mb-9\"": 1,
-              "\"-mx-4 mb-6\"": 1,
-              "{`rounded-2xl overflow-hidden ${!isLastItem ? 'pr-4' : ''}`}": 1,
+              "{`-mx-4 mt-3 ${compactSectionTail ? 'mb-7' : 'mb-9'}`}": 1,
+              "\"bg-transparent\"": 1,
+              "\"py-2 bg-default\"": 1,
+              "\"h-[220px] w-full overflow-hidden rounded-2xl\"": 1,
+              "\"items-center py-8\"": 1,
+              "\"mt-3 mb-9\"": 1,
+              "\"mb-9\"": 1,
               "\"flex-1 items-center pt-12\"": 1,
               "\"flex-row bg-info-muted rounded-lg p-3 mb-6 w-full\"": 1,
               "\"flex-row justify-between items-center mb-2\"": 1,
@@ -6688,31 +6707,32 @@
             }
           },
           "flexDirection": {
-            "count": 503,
+            "count": 529,
             "values": {
-              "{BoxFlexDirection.Row}": 425,
-              "{BoxFlexDirection.Column}": 78
+              "{BoxFlexDirection.Row}": 448,
+              "{BoxFlexDirection.Column}": 81
             }
           },
           "alignItems": {
-            "count": 478,
+            "count": 497,
             "values": {
-              "{BoxAlignItems.Center}": 417,
-              "{BoxAlignItems.Start}": 40,
-              "{BoxAlignItems.End}": 16,
+              "{BoxAlignItems.Center}": 433,
+              "{BoxAlignItems.Start}": 41,
+              "{BoxAlignItems.End}": 18,
               "{typeof title === 'string' ? BoxAlignItems.Center : BoxAlignItems.Start}": 2,
               "{typeof description === 'string' ? BoxAlignItems.Center : BoxAlignItems.Start}": 2,
               "{BoxAlignItems.Stretch}": 1
             }
           },
           "testID": {
-            "count": 290,
+            "count": 309,
             "values": {
               "{testID}": 53,
               "{ONDO_PRIZE_POOL_TEST_IDS.CONTAINER}": 3,
+              "{PERPS_PRIZE_POOL_TEST_IDS.CONTAINER}": 3,
               "\"price-chart-loading\"": 2,
               "\"onboarding-step-actions\"": 2,
-              "{CAMPAIGN_STATS_SUMMARY_TEST_IDS.NOT_ELIGIBLE_BANNER}": 2,
+              "{ONDO_CAMPAIGN_STATS_SUMMARY_TEST_IDS.NOT_ELIGIBLE_BANNER}": 2,
               "\"progress-indicator-container\"": 2,
               "{REWARDS_VIEW_SELECTORS.TIER_REWARD_ICON}": 2,
               "\"rewards-settings-bulk-link-progress\"": 2,
@@ -6770,6 +6790,8 @@
               "{MoneyActivityViewTestIds.EMPTY_LIST}": 1,
               "{MoneyHomeViewTestIds.CONTAINER}": 1,
               "{MoneyHowItWorksViewTestIds.CONTAINER}": 1,
+              "{MoneyPotentialEarningsViewTestIds.CONTAINER}": 1,
+              "{MoneyAccountHomeRowTestIds.APY_TAG}": 1,
               "{MoneyActionButtonRowTestIds.CONTAINER}": 1,
               "{MoneyActivityListTestIds.CONTAINER}": 1,
               "{MoneyBalanceSummaryTestIds.CONTAINER}": 1,
@@ -6824,22 +6846,26 @@
               "{ProtectWalletModalSelectorsIDs.CONTAINER}": 1,
               "{CAMPAIGN_MECHANICS_TEST_IDS.HOW_IT_WORKS_SECTION}": 1,
               "{CAMPAIGN_MECHANICS_TEST_IDS.NOTES_SECTION}": 1,
+              "{PERPS_CAMPAIGN_LEADERBOARD_TEST_IDS.TOTAL_PARTICIPANTS}": 1,
+              "{PERPS_CAMPAIGN_STATS_VIEW_TEST_IDS.QUALIFIED_CARD}": 1,
+              "{PERPS_CAMPAIGN_STATS_VIEW_TEST_IDS.QUALIFY_FOR_RANK_CARD}": 1,
               "{REWARDS_VIEW_SELECTORS.TOP_BENEFIT_DETAILS}": 1,
               "{REWARDS_VIEW_SELECTORS.TOP_BENEFIT_SECTION}": 1,
               "{CAMPAIGN_ENDED_STATS_TEST_IDS.CONTAINER}": 1,
               "{CAMPAIGN_HOW_IT_WORKS_TEST_IDS.CONTAINER}": 1,
               "{`${CAMPAIGN_HOW_IT_WORKS_TEST_IDS.STEP}-${stepIndex}`}": 1,
               "{`${CAMPAIGN_HOW_IT_WORKS_TEST_IDS.STEP_INDEX}-${stepIndex}`}": 1,
-              "{CAMPAIGN_STATS_SUMMARY_TEST_IDS.CONTAINER}": 1,
+              "{`${CAMPAIGN_LEADERBOARD_SHARED_TEST_IDS.ENTRY_ROW}-${entry.rank}`}": 1,
+              "{CAMPAIGN_LEADERBOARD_SHARED_TEST_IDS.LOADING}": 1,
+              "{CAMPAIGN_LEADERBOARD_SHARED_TEST_IDS.NEIGHBOR_SEPARATOR}": 1,
+              "{`campaign-reminder-${campaign.id}`}": 1,
               "{CAMPAIGN_STATUS_TEST_IDS.CONTAINER}": 1,
               "{CAMPAIGN_STATUS_TEST_IDS.STATUS_LABEL}": 1,
               "{CAMPAIGN_STATUS_TEST_IDS.DATE_LABEL}": 1,
               "\"campaign-tile-status-label\"": 1,
               "{REWARDS_VIEW_SELECTORS.CAMPAIGNS_PREVIEW}": 1,
               "{LEADERBOARD_POSITION_HEADER_TEST_IDS.CONTAINER}": 1,
-              "{`${CAMPAIGN_LEADERBOARD_TEST_IDS.ENTRY_ROW}-${entry.rank}`}": 1,
-              "{CAMPAIGN_LEADERBOARD_TEST_IDS.LOADING}": 1,
-              "{CAMPAIGN_LEADERBOARD_TEST_IDS.NEIGHBOR_SEPARATOR}": 1,
+              "{ONDO_CAMPAIGN_STATS_SUMMARY_TEST_IDS.CONTAINER}": 1,
               "{CAMPAIGN_LEADERBOARD_TEST_IDS.CONTAINER}": 1,
               "{CAMPAIGN_LEADERBOARD_TEST_IDS.LIST}": 1,
               "{ONDO_PORTFOLIO_TEST_IDS.ERROR}": 1,
@@ -6848,6 +6874,14 @@
               "{ONDO_PORTFOLIO_TEST_IDS.CONTAINER}": 1,
               "{ONDO_PRIZE_POOL_TEST_IDS.MAX_BADGE}": 1,
               "{ONDO_PRIZE_POOL_TEST_IDS.PROGRESS_BAR}": 1,
+              "{PERPS_CAMPAIGN_STATS_SUMMARY_TEST_IDS.CONTAINER}": 1,
+              "{PERPS_CAMPAIGN_STATS_SUMMARY_TEST_IDS.QUALIFIED_CARD}": 1,
+              "{PERPS_CAMPAIGN_STATS_SUMMARY_TEST_IDS.QUALIFY_FOR_RANK_CARD}": 1,
+              "{PERPS_CAMPAIGN_LEADERBOARD_TEST_IDS.CONTAINER}": 1,
+              "{PERPS_CAMPAIGN_LEADERBOARD_TEST_IDS.LIST}": 1,
+              "{PERPS_PRIZE_POOL_TEST_IDS.MAX_BADGE}": 1,
+              "{PERPS_PRIZE_POOL_TEST_IDS.PROGRESS_BAR}": 1,
+              "{PERPS_STATS_HEADER_TEST_IDS.CONTAINER}": 1,
               "{REWARDS_VIEW_SELECTORS.EARN_REWARDS_PREVIEW}": 1,
               "{REWARDS_VIEW_SELECTORS.CLAIM_MODAL_LINEA_TOKENS_LOADED}": 1,
               "{REWARDS_VIEW_SELECTORS.CLAIM_MODAL_LINEA_TOKENS_DEFAULT_TITLE}": 1,
@@ -6882,7 +6916,6 @@
               "\"bonus-code-bottom-sheet\"": 1,
               "{REWARDS_VIEW_SELECTORS.TAB_CONTENT_ACTIVITY}": 1,
               "{SRPListSelectorsIDs.SRP_LIST}": 1,
-              "\"site-logo-fallback\"": 1,
               "{TokenOverviewSelectorsIDs.CONTAINER}": 1,
               "{WalletViewSelectorsIDs.TOKENS_CONTAINER_LIST}": 1,
               "{WalletViewSelectorsIDs.TOKENS_CONTAINER}": 1,
@@ -6928,19 +6961,22 @@
               "{TEXTFIELD_TEST_ID}": 1,
               "{TEXTFIELD_STARTACCESSORY_TEST_ID}": 1,
               "{TEXTFIELD_ENDACCESSORY_TEST_ID}": 1,
+              "\"explore-page-v1\"": 1,
               "\"empty-error-trending-state\"": 1,
               "\"empty-search-result-state\"": 1,
-              "\"explore-view-search-input\"": 1,
+              "{TrendingViewSelectorsIDs.EXPLORE_VIEW_SEARCH_INPUT}": 1,
+              "{testIdPrefix}": 1,
+              "\"all-sports-empty-state\"": 1,
               "{`recipient-avatar-${recipient.address}`}": 1
             }
           },
           "justifyContent": {
-            "count": 231,
+            "count": 236,
             "values": {
-              "{BoxJustifyContent.Between}": 113,
-              "{BoxJustifyContent.Center}": 78,
+              "{BoxJustifyContent.Between}": 116,
+              "{BoxJustifyContent.Center}": 79,
               "{BoxJustifyContent.Start}": 22,
-              "{BoxJustifyContent.End}": 12,
+              "{BoxJustifyContent.End}": 13,
               "{BoxJustifyContent.SpaceBetween}": 2,
               "{titleLineCount >= 2 ? undefined : BoxJustifyContent.Center}": 1,
               "{BoxJustifyContent.FlexEnd}": 1,
@@ -6949,12 +6985,12 @@
             }
           },
           "gap": {
-            "count": 181,
+            "count": 180,
             "values": {
               "0": 2,
               "1": 39,
-              "2": 38,
-              "3": 54,
+              "2": 39,
+              "3": 52,
               "4": 36,
               "5": 1,
               "6": 5,
@@ -6965,7 +7001,7 @@
             }
           },
           "style": {
-            "count": 167,
+            "count": 170,
             "values": {
               "{styles.container}": 9,
               "{tw.style('flex-1 flex-shrink mr-2 -mt-1')}": 3,
@@ -6973,6 +7009,7 @@
               "{{ aspectRatio: 851 / 540 }}": 2,
               "{tw.style( 'rounded-xl relative overflow-hidden border border-muted bg-default...}": 2,
               "{tw.style('w-full bg-background-default', { height })}": 2,
+              "{[styles.safeArea, { paddingTop: insets.top }]}": 2,
               "{styles.periodOptionsGrid}": 2,
               "{styles.banner}": 2,
               "{styles.textContainer}": 2,
@@ -6981,6 +7018,7 @@
               "{{ paddingTop: insets.top + 12 }}": 2,
               "{{ paddingTop: insets.top + 8 }}": 2,
               "{tw.style('flex-row items-center gap-3 h-12', twClassName)}": 2,
+              "{{ width: progressPercent }}": 2,
               "{tw.style('mb-2 flex-1')}": 2,
               "{tw.style('px-4 py-3')}": 2,
               "{tw.style('flex-1 p-4', { backgroundColor: mockTheme.colors.background.default...}": 2,
@@ -7019,8 +7057,7 @@
               "{{ paddingBottom: insets.bottom }}": 1,
               "{styles.overflowHidden}": 1,
               "{[ styles.safeArea, { paddingTop: insets.top, backgroundColor: colors.backgrou...}": 1,
-              "{[styles.safeArea, { paddingTop: insets.top }]}": 1,
-              "{[ localStyles.safeArea, { paddingTop: insets.top, backgroundColor: colors.bac...}": 1,
+              "{[ localStyles.safeArea, { paddingTop: insets.top, backgroundColor: themeColor...}": 1,
               "{localStyles.headerSpacer}": 1,
               "{{ paddingBottom: insets.bottom + 16 }}": 1,
               "{{ width: `${percent}%` }}": 1,
@@ -7067,7 +7104,6 @@
               "{tw.style(!showSkip && 'opacity-0')}": 1,
               "{styles.heroBox}": 1,
               "{CELL_STYLE}": 1,
-              "{{ width: progressPercent }}": 1,
               "{[tw.style('rounded-lg overflow-hidden'), styles.avatar]}": 1,
               "{tw.style( 'w-[12px] h-[12px] rounded-full', index === currentStep - 1 ? activ...}": 1,
               "{tw.style( 'h-[12px] rounded-xl', index === currentStep - 1 ? `w-[23px] ${acti...}": 1,
@@ -7104,11 +7140,12 @@
               "{{ width: foxSize, height: foxSize, padding: foxPadding, }}": 1,
               "{tw.style( 'flex-row items-center rounded-xl h-12 border px-4 bg-muted', isDis...}": 1,
               "{tw.style('flex-row justify-center px-4 pt-1', { paddingBottom: insets.bottom, })}": 1,
-              "{tw.style({ width: CARD_WIDTH, minHeight: CARD_HEIGHT })}": 1
+              "{tw.style({ width: CARD_WIDTH, minHeight: CARD_HEIGHT })}": 1,
+              "{tw.style('overflow-hidden rounded-full border border-muted')}": 1
             }
           },
           "key": {
-            "count": 47,
+            "count": 53,
             "values": {
               "{index}": 5,
               "{key}": 4,
@@ -7139,15 +7176,21 @@
               "{`${nft.address}-${nft.tokenId}`}": 1,
               "{`empty-${rowIndex}-${i}`}": 1,
               "{asset.sourceAssetId}": 1,
-              "{section.id}": 1,
+              "\"now\"": 1,
+              "\"macro\"": 1,
+              "\"rwas\"": 1,
+              "\"crypto\"": 1,
+              "\"sports\"": 1,
+              "\"dapps\"": 1,
+              "{`all-sports-skeleton-${i}`}": 1,
               "{`${item.name}-${actionItem.buttonLabel}-${index}`}": 1,
               "{walletName}": 1
             }
           },
           "paddingHorizontal": {
-            "count": 29,
+            "count": 30,
             "values": {
-              "2": 2,
+              "2": 3,
               "4": 20,
               "5": 1,
               "6": 2,
@@ -7167,9 +7210,9 @@
             }
           },
           "backgroundColor": {
-            "count": 16,
+            "count": 17,
             "values": {
-              "{BoxBackgroundColor.BackgroundMuted}": 6,
+              "{BoxBackgroundColor.BackgroundMuted}": 7,
               "{BoxBackgroundColor.BackgroundDefault}": 3,
               "{BoxBackgroundColor.BackgroundSection}": 3,
               "{selected ? BoxBackgroundColor.BackgroundMuted : BoxBackgroundColor.Background...}": 1,
@@ -7178,10 +7221,23 @@
               "{BoxBackgroundColor.PrimaryMuted}": 1
             }
           },
-          "padding": {
-            "count": 13,
+          "[spread]": {
+            "count": 12,
             "values": {
-              "4": 13
+              "{props}": 4,
+              "{boxWrapperProps}": 2,
+              "{{ tabLabel: strings('trending.tabs.now') } as TabViewProps}": 1,
+              "{{ tabLabel: strings('trending.tabs.macro'), } as TabViewProps}": 1,
+              "{{ tabLabel: strings('trending.tabs.rwas') } as TabViewProps}": 1,
+              "{{ tabLabel: strings('trending.tabs.crypto'), } as TabViewProps}": 1,
+              "{{ tabLabel: strings('trending.tabs.sports'), } as TabViewProps}": 1,
+              "{{ tabLabel: strings('trending.tabs.dapps'), } as TabViewProps}": 1
+            }
+          },
+          "padding": {
+            "count": 12,
+            "values": {
+              "4": 12
             }
           },
           "paddingBottom": {
@@ -7193,11 +7249,11 @@
             }
           },
           "marginBottom": {
-            "count": 10,
+            "count": 11,
             "values": {
               "2": 4,
               "4": 3,
-              "5": 1,
+              "5": 2,
               "8": 2
             }
           },
@@ -7222,18 +7278,11 @@
               "{(e) => handlePillLayout(market.id, e.nativeEvent.layout.x)}": 1
             }
           },
-          "[spread]": {
-            "count": 6,
-            "values": {
-              "{props}": 4,
-              "{boxWrapperProps}": 2
-            }
-          },
           "paddingVertical": {
-            "count": 6,
+            "count": 7,
             "values": {
               "1": 1,
-              "2": 3,
+              "2": 4,
               "3": 2
             }
           },

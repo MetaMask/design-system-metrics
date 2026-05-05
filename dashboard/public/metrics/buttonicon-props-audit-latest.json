@@ -1,9 +1,9 @@
 {
   "component": "ButtonIcon",
-  "generatedAt": "2026-05-01T15:43:44.727Z",
+  "generatedAt": "2026-05-05T16:15:31.766Z",
   "projects": {
     "extension": {
-      "filesScanned": 3104,
+      "filesScanned": 3114,
       "targetComponent": "ButtonIcon",
       "mmds": {
         "totalInstances": 91,
@@ -1277,18 +1277,18 @@
       }
     },
     "mobile": {
-      "filesScanned": 6139,
+      "filesScanned": 6234,
       "targetComponent": "ButtonIcon",
       "mmds": {
-        "totalInstances": 67,
-        "filesCount": 50,
+        "totalInstances": 70,
+        "filesCount": 52,
         "props": {
           "iconName": {
-            "count": 66,
+            "count": 69,
             "values": {
-              "{IconName.ArrowLeft}": 21,
+              "{IconName.ArrowLeft}": 22,
               "{IconName.Close}": 17,
-              "{IconName.Info}": 7,
+              "{IconName.Info}": 8,
               "{IconName.Copy}": 2,
               "{IconName.Add}": 2,
               "{IconName.Notification}": 2,
@@ -1305,21 +1305,22 @@
               "{IconNameDS.Details}": 1,
               "{linkButtonIconName}": 1,
               "{showPassword ? IconName.Eye : IconName.EyeSlash}": 1,
-              "{DsIconName.Close}": 1
+              "{DsIconName.Close}": 1,
+              "{MMDSIconName.Clock}": 1
             }
           },
           "onPress": {
-            "count": 65,
+            "count": 68,
             "values": {
               "{onClose}": 7,
               "{() => navigation.goBack()}": 4,
+              "{handleBackPress}": 4,
               "{handleBack}": 4,
               "{onBackPress}": 3,
-              "{handleBackPress}": 3,
+              "{onInfoPress}": 3,
               "{handleCancel}": 2,
               "{handleClose}": 2,
               "{handleInfoPress}": 2,
-              "{onInfoPress}": 2,
               "{handleGoBack}": 2,
               "{navigationPop}": 2,
               "{() => navigation.pop()}": 2,
@@ -1350,19 +1351,20 @@
               "{onToggleShowPassword}": 1,
               "{handleNotificationPreferencesPress}": 1,
               "{onBack}": 1,
-              "{handleNotificationPress}": 1
+              "{handleNotificationPress}": 1,
+              "{handleActivityPress}": 1
             }
           },
           "size": {
-            "count": 55,
+            "count": 58,
             "values": {
-              "{ButtonIconSize.Md}": 38,
-              "{ButtonIconSize.Lg}": 9,
-              "{ButtonIconSize.Sm}": 8
+              "{ButtonIconSize.Md}": 40,
+              "{ButtonIconSize.Sm}": 9,
+              "{ButtonIconSize.Lg}": 9
             }
           },
           "testID": {
-            "count": 45,
+            "count": 47,
             "values": {
               "{CommonSelectorsIDs.BACK_ARROW_BUTTON}": 3,
               "{WalletViewSelectorsIDs.WALLET_HAMBURGER_MENU_BUTTON}": 2,
@@ -1375,10 +1377,11 @@
               "{`carousel-slide-${slide.id}-close-button`}": 1,
               "{LoginViewSelectors.DEVICE_AUTHENTICATION_ICON}": 1,
               "{ASSET_OVERVIEW_CLAIM_BONUS_TEST_IDS.INFO_BUTTON}": 1,
-              "{ConvertTokenRowTestIds.EDIT_BUTTON}": 1,
+              "{MusdConversionAssetRowTestIds.EDIT_BUTTON}": 1,
               "{MoneyActivityViewTestIds.BACK_BUTTON}": 1,
               "{MoneyHowItWorksViewTestIds.BACK_BUTTON}": 1,
               "{MoneyBalanceSummaryTestIds.APY_INFO_BUTTON}": 1,
+              "{MoneySectionHeaderTestIds.INFO_BUTTON}": 1,
               "{NetworksViewSelectorsIDs.CLOSE_ICON}": 1,
               "{`${testID}${PREDICT_GAME_DETAILS_FOOTER_TEST_IDS.INFO_BUTTON}`}": 1,
               "{testID ? `${testID}-close-button` : undefined}": 1,
@@ -1405,17 +1408,18 @@
               "\"quick-buy-close-button\"": 1,
               "{backButtonTestID}": 1,
               "{TraderProfileViewSelectorsIDs.BACK_BUTTON}": 1,
-              "{TraderProfileViewSelectorsIDs.NOTIFICATION_BUTTON}": 1
+              "{TraderProfileViewSelectorsIDs.NOTIFICATION_BUTTON}": 1,
+              "{WalletViewSelectorsIDs.WALLET_ACTIVITY_BUTTON}": 1
             }
           },
           "iconProps": {
-            "count": 25,
+            "count": 27,
             "values": {
+              "{{ color: IconColor.IconAlternative }}": 7,
               "{{ color: IconColor.IconDefault }}": 7,
-              "{{ color: IconColor.IconAlternative }}": 6,
+              "{{ color: MMDSIconColor.IconDefault, }}": 3,
               "{{ color: MMDSIconColor.IconDefault }}": 2,
               "{{ color: IconColor.IconDefault, }}": 2,
-              "{{ color: MMDSIconColor.IconDefault, }}": 2,
               "{iconColor && { color: iconColor }}": 1,
               "{{ size: IconSize.Sm }}": 1,
               "{{ color: IconColor.IconDefault, size: IconSize.Sm }}": 1,
@@ -1442,11 +1446,22 @@
             }
           },
           "hitSlop": {
-            "count": 6,
+            "count": 7,
             "values": {
-              "{touchAreaSlop}": 3,
+              "{touchAreaSlop}": 4,
               "{{ top: 8, bottom: 8, left: 8, right: 8 }}": 2,
               "{hitSlop}": 1
+            }
+          },
+          "accessibilityLabel": {
+            "count": 7,
+            "values": {
+              "\"Back\"": 2,
+              "{strings('money.apy_info_label')}": 1,
+              "{infoAccessibilityLabel}": 1,
+              "{strings( 'rewards.ondo_campaign_winning.close_a11y', )}": 1,
+              "{isCopied ? 'Copied' : 'Copy'}": 1,
+              "\"Go back\"": 1
             }
           },
           "isDisabled": {
@@ -1458,16 +1473,6 @@
               "{!value}": 1,
               "{isLoading}": 1,
               "{accountGroup.optedOutAccounts.length === 0 || isBulkLinkRunning}": 1
-            }
-          },
-          "accessibilityLabel": {
-            "count": 6,
-            "values": {
-              "\"Back\"": 2,
-              "{strings('money.apy_info_label')}": 1,
-              "{strings( 'rewards.ondo_campaign_winning.close_a11y', )}": 1,
-              "{isCopied ? 'Copied' : 'Copy'}": 1,
-              "\"Go back\"": 1
             }
           },
           "twClassName": {
@@ -1758,15 +1763,15 @@
         }
       },
       "overall": {
-        "totalInstances": 140,
-        "filesCount": 107,
+        "totalInstances": 143,
+        "filesCount": 109,
         "props": {
           "iconName": {
-            "count": 139,
+            "count": 142,
             "values": {
-              "{IconName.ArrowLeft}": 45,
+              "{IconName.ArrowLeft}": 46,
               "{IconName.Close}": 35,
-              "{IconName.Info}": 14,
+              "{IconName.Info}": 15,
               "{IconName.Add}": 4,
               "{IconName.ArrowDown}": 4,
               "{IconName.ArrowRight}": 3,
@@ -1797,28 +1802,29 @@
               "{showPassword ? IconName.Eye : IconName.EyeSlash}": 1,
               "{IconName.Export}": 1,
               "{DsIconName.Close}": 1,
+              "{MMDSIconName.Clock}": 1,
               "{iconName}": 1,
               "{copied ? IconName.CopySuccess : IconName.Copy}": 1,
               "{buttonIcon}": 1
             }
           },
           "onPress": {
-            "count": 136,
+            "count": 139,
             "values": {
               "{onClose}": 8,
+              "{handleBackPress}": 8,
               "{handleBack}": 8,
-              "{handleBackPress}": 7,
               "{handleClosePress}": 6,
               "{() => navigation.goBack()}": 6,
               "{handleClose}": 4,
               "{onBackPress}": 4,
+              "{onInfoPress}": 3,
               "{onBack}": 3,
               "{handleClear}": 2,
               "{handleCancel}": 2,
               "{navigateToHome}": 2,
               "{handleInfoPress}": 2,
               "{withMetaMetrics(onDisplayAnnualRateTooltip, { event: MetaMetricsEvents.TOOLTI...}": 2,
-              "{onInfoPress}": 2,
               "{handleGoBack}": 2,
               "{navigationPop}": 2,
               "{() => navigation.pop()}": 2,
@@ -1880,6 +1886,7 @@
               "{() => !isNotificationEnabled ? navigation.navigate(Routes.WALLET.HOME) : navi...}": 1,
               "{handleNotificationPreferencesPress}": 1,
               "{handleNotificationPress}": 1,
+              "{handleActivityPress}": 1,
               "{copyMessage}": 1,
               "{() => setTooltipVisible(false)}": 1,
               "{handleLeftPress}": 1,
@@ -1889,14 +1896,14 @@
             }
           },
           "size": {
-            "count": 110,
+            "count": 113,
             "values": {
-              "{ButtonIconSize.Md}": 38,
+              "{ButtonIconSize.Md}": 40,
               "{ButtonIconSizes.Md}": 24,
               "{ButtonIconSizes.Lg}": 15,
               "{ButtonIconSizes.Sm}": 12,
+              "{ButtonIconSize.Sm}": 9,
               "{ButtonIconSize.Lg}": 9,
-              "{ButtonIconSize.Sm}": 8,
               "{TooltipSizes.Sm}": 1,
               "{TooltipSizes.Md}": 1,
               "{iconSize}": 1,
@@ -1904,7 +1911,7 @@
             }
           },
           "testID": {
-            "count": 98,
+            "count": 100,
             "values": {
               "{CHECKOUT_TEST_IDS.CLOSE_BUTTON}": 4,
               "{CommonSelectorsIDs.BACK_ARROW_BUTTON}": 3,
@@ -1932,10 +1939,11 @@
               "{ASSET_OVERVIEW_CLAIM_BONUS_TEST_IDS.INFO_BUTTON}": 1,
               "\"annual-rate-tooltip\"": 1,
               "{INPUT_DISPLAY_TEST_IDS.LENDING_MAX_SAFE_WITHDRAWAL_TOOLTIP_ICON}": 1,
-              "{ConvertTokenRowTestIds.EDIT_BUTTON}": 1,
+              "{MusdConversionAssetRowTestIds.EDIT_BUTTON}": 1,
               "{MoneyActivityViewTestIds.BACK_BUTTON}": 1,
               "{MoneyHowItWorksViewTestIds.BACK_BUTTON}": 1,
               "{MoneyBalanceSummaryTestIds.APY_INFO_BUTTON}": 1,
+              "{MoneySectionHeaderTestIds.INFO_BUTTON}": 1,
               "{NetworksViewSelectorsIDs.CLOSE_ICON}": 1,
               "{PerpsOrderBookViewSelectorsIDs.BACK_BUTTON}": 1,
               "{PerpsPositionsViewSelectorsIDs.BACK_BUTTON}": 1,
@@ -1982,6 +1990,7 @@
               "{backButtonTestID}": 1,
               "{TraderProfileViewSelectorsIDs.BACK_BUTTON}": 1,
               "{TraderProfileViewSelectorsIDs.NOTIFICATION_BUTTON}": 1,
+              "{WalletViewSelectorsIDs.WALLET_ACTIVITY_BUTTON}": 1,
               "{`${tooltipTestId}-open-btn`}": 1,
               "{testID ?? 'copyButtonTestId'}": 1,
               "{`${title}-navbar-back-button`}": 1,
@@ -2037,13 +2046,13 @@
             }
           },
           "iconProps": {
-            "count": 25,
+            "count": 27,
             "values": {
+              "{{ color: IconColor.IconAlternative }}": 7,
               "{{ color: IconColor.IconDefault }}": 7,
-              "{{ color: IconColor.IconAlternative }}": 6,
+              "{{ color: MMDSIconColor.IconDefault, }}": 3,
               "{{ color: MMDSIconColor.IconDefault }}": 2,
               "{{ color: IconColor.IconDefault, }}": 2,
-              "{{ color: MMDSIconColor.IconDefault, }}": 2,
               "{iconColor && { color: iconColor }}": 1,
               "{{ size: IconSize.Sm }}": 1,
               "{{ color: IconColor.IconDefault, size: IconSize.Sm }}": 1,
@@ -2053,13 +2062,14 @@
             }
           },
           "accessibilityLabel": {
-            "count": 17,
+            "count": 18,
             "values": {
               "{strings( 'stake.accessibility_labels.stake_annual_rate_tooltip', )}": 2,
               "\"Back\"": 2,
               "{strings('bridge.approval_tooltip_title')}": 1,
               "{strings('earn.receive_tooltip')}": 1,
               "{strings('money.apy_info_label')}": 1,
+              "{infoAccessibilityLabel}": 1,
               "\"Close\"": 1,
               "{strings( 'app_settings.fiat_on_ramp.edit_activation_key', )}": 1,
               "\"Delete activation key\"": 1,
@@ -2080,10 +2090,10 @@
             }
           },
           "hitSlop": {
-            "count": 10,
+            "count": 11,
             "values": {
+              "{touchAreaSlop}": 4,
               "{{ top: 8, bottom: 8, left: 8, right: 8 }}": 3,
-              "{touchAreaSlop}": 3,
               "{{ top: 20, bottom: 20, left: 20, right: 20 }}": 2,
               "{hitSlop}": 1,
               "{styles.hitSlop}": 1

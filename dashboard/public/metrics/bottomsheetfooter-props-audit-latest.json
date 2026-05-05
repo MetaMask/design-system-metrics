@@ -1,9 +1,9 @@
 {
   "component": "BottomSheetFooter",
-  "generatedAt": "2026-05-01T15:41:25.562Z",
+  "generatedAt": "2026-05-05T16:13:06.919Z",
   "projects": {
     "extension": {
-      "filesScanned": 3104,
+      "filesScanned": 3114,
       "targetComponent": "BottomSheetFooter",
       "mmds": {
         "totalInstances": 0,
@@ -23,17 +23,19 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 6139,
+      "filesScanned": 6234,
       "targetComponent": "BottomSheetFooter",
       "mmds": {
-        "totalInstances": 8,
-        "filesCount": 7,
+        "totalInstances": 10,
+        "filesCount": 9,
         "props": {
           "primaryButtonProps": {
-            "count": 8,
+            "count": 10,
             "values": {
               "{{ children: strings('bridge.cancel'), onPress: handleClose, isDisabled: loadi...}": 2,
               "{{ children: strings('bridge.got_it'), onPress: handleClose, testID: 'footer-p...}": 1,
+              "{{ size: ButtonSize.Lg, children: strings('money.apy_tooltip.learn_more'), onP...}": 1,
+              "{{ size: ButtonSize.Lg, children: strings('browser.got_it'), onPress: handleGo...}": 1,
               "{{ children: strings('perps.tooltips.got_it_button'), onPress: handleGotItPres...}": 1,
               "{{ children: strings('perps.deposit.quote_expired_modal.get_new_quote'), onPre...}": 1,
               "{{ children: strings('rwa.unavailable.button'), onPress: closeSheet, }}": 1,
@@ -57,6 +59,13 @@
               "{cancelButtonProps}": 1
             }
           },
+          "twClassName": {
+            "count": 3,
+            "values": {
+              "\"px-4 pt-6 pb-6\"": 2,
+              "\"px-4 pt-6\"": 1
+            }
+          },
           "buttonsAlignment": {
             "count": 2,
             "values": {
@@ -67,12 +76,6 @@
             "count": 1,
             "values": {
               "\"perps-tooltip-bottom-sheet-footer\"": 1
-            }
-          },
-          "twClassName": {
-            "count": 1,
-            "values": {
-              "\"px-4 pt-6\"": 1
             }
           }
         }
@@ -142,8 +145,8 @@
         }
       },
       "overall": {
-        "totalInstances": 53,
-        "filesCount": 51,
+        "totalInstances": 55,
+        "filesCount": 53,
         "props": {
           "buttonPropsArray": {
             "count": 45,
@@ -205,10 +208,12 @@
             }
           },
           "primaryButtonProps": {
-            "count": 8,
+            "count": 10,
             "values": {
               "{{ children: strings('bridge.cancel'), onPress: handleClose, isDisabled: loadi...}": 2,
               "{{ children: strings('bridge.got_it'), onPress: handleClose, testID: 'footer-p...}": 1,
+              "{{ size: ButtonSize.Lg, children: strings('money.apy_tooltip.learn_more'), onP...}": 1,
+              "{{ size: ButtonSize.Lg, children: strings('browser.got_it'), onPress: handleGo...}": 1,
               "{{ children: strings('perps.tooltips.got_it_button'), onPress: handleGotItPres...}": 1,
               "{{ children: strings('perps.deposit.quote_expired_modal.get_new_quote'), onPre...}": 1,
               "{{ children: strings('rwa.unavailable.button'), onPress: closeSheet, }}": 1,
@@ -223,16 +228,17 @@
               "{cancelButtonProps}": 1
             }
           },
+          "twClassName": {
+            "count": 3,
+            "values": {
+              "\"px-4 pt-6 pb-6\"": 2,
+              "\"px-4 pt-6\"": 1
+            }
+          },
           "testID": {
             "count": 1,
             "values": {
               "\"perps-tooltip-bottom-sheet-footer\"": 1
-            }
-          },
-          "twClassName": {
-            "count": 1,
-            "values": {
-              "\"px-4 pt-6\"": 1
             }
           }
         }
