@@ -1,16 +1,16 @@
 {
   "component": "Button",
-  "generatedAt": "2026-05-01T15:42:50.854Z",
+  "generatedAt": "2026-05-05T08:09:16.087Z",
   "projects": {
     "extension": {
-      "filesScanned": 3104,
+      "filesScanned": 3117,
       "targetComponent": "Button",
       "mmds": {
         "totalInstances": 190,
         "filesCount": 120,
         "props": {
           "onClick": {
-            "count": 183,
+            "count": 182,
             "values": {
               "{onClose}": 8,
               "{() => setIsOpen(true)}": 8,
@@ -117,7 +117,6 @@
               "{handleClosePosition}": 1,
               "{() => handleOpenOrder('long')}": 1,
               "{() => handleOpenOrder('short')}": 1,
-              "{handlePrimaryAction}": 1,
               "{() => onCancel()}": 1,
               "{() => onConfirm()}": 1,
               "{handleDeleteDraft}": 1,
@@ -436,6 +435,12 @@
               "{brand.testIdPrefix ? { 'data-testid': `${brand.testIdPrefix}-learn-more-btn` ...}": 1
             }
           },
+          "type": {
+            "count": 5,
+            "values": {
+              "\"submit\"": 5
+            }
+          },
           "endIconName": {
             "count": 4,
             "values": {
@@ -450,12 +455,6 @@
             "values": {
               "{{ variant: TextVariant.BodySm, }}": 3,
               "{{ variant: DsTextVariant.BodySm, }}": 1
-            }
-          },
-          "type": {
-            "count": 4,
-            "values": {
-              "\"submit\"": 4
             }
           },
           "key": {
@@ -613,14 +612,14 @@
               "{() => updateArgs({ isShowingModal: true, isError: false })}": 1,
               "{() => updateArgs({ isShowingModal: true, isError: true })}": 1,
               "{handleOpenCreateSolanaAccountModal}": 1,
-              "{onDelete}": 1,
-              "{handleResetAnnouncementClick}": 1,
-              "{handleResetOnboardingClick}": 1,
               "{() => { dispatch(openDeleteMetaMetricsDataModal()); }}": 1,
               "{(event) => { event.preventDefault(); this.context.trackEvent({ category: Meta...}": 1,
               "{() => { navigate(SECURITY_PASSWORD_CHANGE_ROUTE); }}": 1,
               "{() => { getEnvironmentType() === ENVIRONMENT_TYPE_POPUP ? global.platform.ope...}": 1,
               "{() => this.setState({ showDataCollectionDisclaimer: false })}": 1,
+              "{onDelete}": 1,
+              "{handleResetAnnouncementClick}": 1,
+              "{handleResetOnboardingClick}": 1,
               "{handleViewTransactionLinkClick}": 1,
               "{onCloseExtension}": 1,
               "{onViewActivity}": 1,
@@ -734,10 +733,10 @@
               "\"error-page-try-again-button\"": 1,
               "\"notifications-list-read-all-button\"": 1,
               "\"create-solana-account\"": 1,
-              "{testId}": 1,
               "\"delete-metametrics-data-button\"": 1,
               "\"reveal-seed-words\"": 1,
               "\"change-password-button\"": 1,
+              "{testId}": 1,
               "\"remove-snap-button\"": 1,
               "\"import-tokens-import-button\"": 1,
               "\"update-transaction-settings-button\"": 1
@@ -1046,7 +1045,7 @@
         "filesCount": 230,
         "props": {
           "onClick": {
-            "count": 339,
+            "count": 338,
             "values": {
               "{onClose}": 14,
               "{onClick}": 11,
@@ -1234,9 +1233,6 @@
               "{handleClosePosition}": 1,
               "{() => handleOpenOrder('long')}": 1,
               "{() => handleOpenOrder('short')}": 1,
-              "{handlePrimaryAction}": 1,
-              "{handleResetAnnouncementClick}": 1,
-              "{handleResetOnboardingClick}": 1,
               "{() => onCancel()}": 1,
               "{() => onConfirm()}": 1,
               "{() => { dispatch(openDeleteMetaMetricsDataModal()); }}": 1,
@@ -1257,6 +1253,8 @@
               "{() => { openRewardsOnboardingModal(); }}": 1,
               "{async () => handleLinkRewardToShieldSubscription( displayedShieldSubscription...}": 1,
               "{() => { navigate(TRANSACTION_SHIELD_CLAIM_ROUTES.BASE); }}": 1,
+              "{handleResetAnnouncementClick}": 1,
+              "{handleResetOnboardingClick}": 1,
               "{handleDeleteActivity}": 1,
               "{deleteActivityData}": 1,
               "{() => isDataDeletionInProgress ? setShowDeletionInProgressModal(true) : setSh...}": 1,
@@ -1465,7 +1463,6 @@
               "\"submit-order-button\"": 1,
               "\"perps-withdraw-cancel\"": 1,
               "\"perps-withdraw-submit\"": 1,
-              "{testId}": 1,
               "\"change-password-warning-cancel\"": 1,
               "\"change-password-warning-confirm\"": 1,
               "\"verify-current-password-button\"": 1,
@@ -1481,6 +1478,7 @@
               "\"shield-tx-membership-cancel-button\"": 1,
               "\"shield-detail-payment-method-button\"": 1,
               "\"shield-detail-submit-case-button\"": 1,
+              "{testId}": 1,
               "\"developer-options-delete-activity-and-nonce-data\"": 1,
               "\"delete-activity-and-nonce-data-button\"": 1,
               "\"advanced-setting-state-logs-button\"": 1,
@@ -1704,6 +1702,19 @@
               "{!hasValidInputs || isSubmitting}": 1
             }
           },
+          "type": {
+            "count": 14,
+            "values": {
+              "\"submit\"": 7,
+              "\"button\"": 1,
+              "{type}": 1,
+              "button": 1,
+              "{ButtonVariant.Secondary}": 1,
+              "\"secondary\"": 1,
+              "\"primary\"": 1,
+              "\"link\"": 1
+            }
+          },
           "isLoading": {
             "count": 13,
             "values": {
@@ -1716,19 +1727,6 @@
               "{isClaiming || isClaimInFlight}": 1,
               "{isLoading && !isDisabled}": 1,
               "{loading}": 1
-            }
-          },
-          "type": {
-            "count": 13,
-            "values": {
-              "\"submit\"": 6,
-              "\"button\"": 1,
-              "{type}": 1,
-              "button": 1,
-              "{ButtonVariant.Secondary}": 1,
-              "\"secondary\"": 1,
-              "\"primary\"": 1,
-              "\"link\"": 1
             }
           },
           "isDanger": {
@@ -1974,14 +1972,14 @@
       }
     },
     "mobile": {
-      "filesScanned": 6139,
+      "filesScanned": 6215,
       "targetComponent": "Button",
       "mmds": {
-        "totalInstances": 365,
-        "filesCount": 237,
+        "totalInstances": 367,
+        "filesCount": 239,
         "props": {
           "onPress": {
-            "count": 365,
+            "count": 367,
             "values": {
               "{handleContinue}": 12,
               "{handleClose}": 11,
@@ -2069,6 +2067,8 @@
               "{() => setFilter(MoneyActivityFilter.Deposits)}": 1,
               "{() => setFilter(MoneyActivityFilter.Transfers)}": 1,
               "{handleGoBack}": 1,
+              "{handleGetStartedPress}": 1,
+              "{handleAddPress}": 1,
               "{onAddMoneyPress}": 1,
               "{onLinkPress}": 1,
               "{onAddPress}": 1,
@@ -2235,10 +2235,10 @@
             }
           },
           "variant": {
-            "count": 351,
+            "count": 353,
             "values": {
-              "{ButtonVariant.Primary}": 177,
-              "{ButtonVariant.Secondary}": 137,
+              "{ButtonVariant.Primary}": 178,
+              "{ButtonVariant.Secondary}": 138,
               "{ButtonVariant.Tertiary}": 19,
               "{confirmAction.variant || ButtonVariant.Primary}": 5,
               "{trader.isFollowing ? ButtonVariant.Secondary : ButtonVariant.Primary}": 2,
@@ -2256,10 +2256,10 @@
             }
           },
           "size": {
-            "count": 302,
+            "count": 304,
             "values": {
               "{ButtonSize.Lg}": 199,
-              "{ButtonSize.Md}": 45,
+              "{ButtonSize.Md}": 47,
               "{ButtonBaseSize.Lg}": 24,
               "{ButtonSizeRNDesignSystem.Lg}": 10,
               "{ButtonSize.Sm}": 8,
@@ -2274,7 +2274,7 @@
             }
           },
           "testID": {
-            "count": 224,
+            "count": 226,
             "values": {
               "{testID}": 5,
               "{CAMPAIGN_CTA_TEST_IDS.CTA_BUTTON}": 4,
@@ -2320,7 +2320,7 @@
               "{ASSET_OVERVIEW_CLAIM_BONUS_TEST_IDS.CLAIM_BUTTON}": 1,
               "{EARN_LENDING_BALANCE_TEST_IDS.WITHDRAW_BUTTON}": 1,
               "{EARN_LENDING_BALANCE_TEST_IDS.DEPOSIT_BUTTON}": 1,
-              "{ConvertTokenRowTestIds.MAX_BUTTON}": 1,
+              "{MusdConversionAssetRowTestIds.MAX_BUTTON}": 1,
               "{TronStakingButtonsTestIds.UNSTAKE_BUTTON}": 1,
               "{TronStakingButtonsTestIds.STAKE_MORE_BUTTON}": 1,
               "{TronStakingCtaTestIds.EARN_BUTTON}": 1,
@@ -2332,6 +2332,8 @@
               "{MoneyActivityViewTestIds.FILTER_DEPOSITS}": 1,
               "{MoneyActivityViewTestIds.FILTER_TRANSFERS}": 1,
               "{MoneyHowItWorksViewTestIds.SOUNDS_GOOD_BUTTON}": 1,
+              "{MoneyAccountHomeRowTestIds.GET_STARTED_BUTTON}": 1,
+              "{MoneyAccountHomeRowTestIds.ADD_BUTTON}": 1,
               "{MoneyActivityListTestIds.VIEW_ALL_BUTTON}": 1,
               "{MoneyConvertStablecoinsTestIds.LEARN_MORE_CTA}": 1,
               "{MoneyFooterTestIds.ADD_MONEY_BUTTON}": 1,
@@ -3435,11 +3437,11 @@
         }
       },
       "overall": {
-        "totalInstances": 558,
-        "filesCount": 354,
+        "totalInstances": 560,
+        "filesCount": 356,
         "props": {
           "onPress": {
-            "count": 557,
+            "count": 559,
             "values": {
               "{handleContinue}": 16,
               "{handleSubmit}": 13,
@@ -3573,6 +3575,8 @@
               "{() => setFilter(MoneyActivityFilter.Deposits)}": 1,
               "{() => setFilter(MoneyActivityFilter.Transfers)}": 1,
               "{handleGoBack}": 1,
+              "{handleGetStartedPress}": 1,
+              "{handleAddPress}": 1,
               "{onAddMoneyPress}": 1,
               "{onLinkPress}": 1,
               "{onAddPress}": 1,
@@ -3810,10 +3814,10 @@
             }
           },
           "variant": {
-            "count": 519,
+            "count": 521,
             "values": {
-              "{ButtonVariant.Primary}": 177,
-              "{ButtonVariant.Secondary}": 137,
+              "{ButtonVariant.Primary}": 178,
+              "{ButtonVariant.Secondary}": 138,
               "{ButtonVariants.Primary}": 79,
               "{ButtonVariants.Secondary}": 61,
               "{ButtonVariants.Link}": 22,
@@ -3840,10 +3844,10 @@
             }
           },
           "size": {
-            "count": 465,
+            "count": 467,
             "values": {
               "{ButtonSize.Lg}": 331,
-              "{ButtonSize.Md}": 58,
+              "{ButtonSize.Md}": 60,
               "{ButtonBaseSize.Lg}": 24,
               "{ButtonSize.Sm}": 16,
               "{ButtonSizeRNDesignSystem.Lg}": 10,
@@ -3864,7 +3868,7 @@
             }
           },
           "testID": {
-            "count": 306,
+            "count": 308,
             "values": {
               "{testID}": 6,
               "{CAMPAIGN_CTA_TEST_IDS.CTA_BUTTON}": 4,
@@ -3936,7 +3940,7 @@
               "{EARN_LENDING_BALANCE_TEST_IDS.WITHDRAW_BUTTON}": 1,
               "{EARN_LENDING_BALANCE_TEST_IDS.DEPOSIT_BUTTON}": 1,
               "{WalletViewSelectorsIDs.EARN_EARNINGS_HISTORY_BUTTON}": 1,
-              "{ConvertTokenRowTestIds.MAX_BUTTON}": 1,
+              "{MusdConversionAssetRowTestIds.MAX_BUTTON}": 1,
               "{TronStakingButtonsTestIds.UNSTAKE_BUTTON}": 1,
               "{TronStakingButtonsTestIds.STAKE_MORE_BUTTON}": 1,
               "{TronStakingCtaTestIds.EARN_BUTTON}": 1,
@@ -3948,6 +3952,8 @@
               "{MoneyActivityViewTestIds.FILTER_DEPOSITS}": 1,
               "{MoneyActivityViewTestIds.FILTER_TRANSFERS}": 1,
               "{MoneyHowItWorksViewTestIds.SOUNDS_GOOD_BUTTON}": 1,
+              "{MoneyAccountHomeRowTestIds.GET_STARTED_BUTTON}": 1,
+              "{MoneyAccountHomeRowTestIds.ADD_BUTTON}": 1,
               "{MoneyActivityListTestIds.VIEW_ALL_BUTTON}": 1,
               "{MoneyConvertStablecoinsTestIds.LEARN_MORE_CTA}": 1,
               "{MoneyFooterTestIds.ADD_MONEY_BUTTON}": 1,
