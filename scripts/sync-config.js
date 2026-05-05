@@ -175,7 +175,42 @@ async function sync(options = {}) {
     console.log();
   }
 
-  // Step 8: Write config (unless --dry-run)
+  // Step 8: Auto-update migration-targets.json based on MMDS availability
+  const MIGRATION_TARGETS_PATH = path.join(REPO_ROOT, 'metrics', 'migration-targets.json');
+  try {
+    const targetsContent = await fs.readFile(MIGRATION_TARGETS_PATH, 'utf8');
+    const targets = JSON.parse(targetsContent);
+    const reactSet = new Set(mmdsComponents.react.map(c => c.toLowerCase()));
+    const reactNativeSet = new Set(mmdsComponents.reactNative.map(c => c.toLowerCase()));
+
+    let targetsChanged = 0;
+    for (const [project, componentSet] of [['extension', reactSet], ['mobile', reactNativeSet]]) {
+      if (!targets[project]?.components) continue;
+      for (const entry of targets[project].components) {
+        if (entry.status === 'to_do' && componentSet.has(entry.name.toLowerCase())) {
+          entry.status = 'complete';
+          targetsChanged++;
+          console.log(`  ✓ migration-targets: [${project}] ${entry.name} → complete (now in MMDS)`);
+        }
+      }
+    }
+
+    if (targetsChanged > 0) {
+      targets.generatedAt = new Date().toISOString();
+      if (!dryRun) {
+        await fs.writeFile(MIGRATION_TARGETS_PATH, JSON.stringify(targets, null, 2));
+        console.log(`\n✅ migration-targets.json updated (${targetsChanged} component(s) marked complete)\n`);
+      } else {
+        console.log(`\n🔍 DRY RUN - Would mark ${targetsChanged} component(s) complete in migration-targets.json\n`);
+      }
+    } else {
+      console.log('  ℹ️  migration-targets.json already up to date\n');
+    }
+  } catch (err) {
+    console.warn('  ⚠️  Could not update migration-targets.json:', err.message, '\n');
+  }
+
+  // Step 9: Write config (unless --dry-run)
   if (dryRun) {
     console.log('🔍 DRY RUN - No changes written to config.json\n');
   } else {
