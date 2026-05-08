@@ -1,25 +1,28 @@
 {
   "component": "TextButton",
-  "generatedAt": "2026-05-01T15:48:19.173Z",
+  "generatedAt": "2026-05-08T15:59:57.106Z",
   "projects": {
     "extension": {
-      "filesScanned": 3104,
+      "filesScanned": 3137,
       "targetComponent": "TextButton",
       "mmds": {
-        "totalInstances": 63,
-        "filesCount": 37,
+        "totalInstances": 71,
+        "filesCount": 42,
         "props": {
           "className": {
-            "count": 36,
+            "count": 44,
             "values": {
               "\"inline\"": 5,
               "\"min-w-0\"": 5,
+              "\"text-center\"": 4,
               "\"w-full hover:bg-transparent active:bg-transparent\"": 3,
               "\"hover:bg-transparent active:bg-transparent w-fit\"": 3,
+              "\"mt-2 flex w-full justify-start text-left\"": 2,
               "\"text-primary-default\"": 2,
               "\"hw-list-pagination__button\"": 2,
               "\"hw-connect__msg-link\"": 2,
               "\"text-text-alternative hover:text-text-alternative hover:decoration-text-alternative hover:bg-transparent\"": 2,
+              "\"text-center mt-4\"": 1,
               "\"min-w-0 hover:bg-transparent active:bg-transparent\"": 1,
               "\"hover:bg-transparent active:bg-transparent whitespace-nowrap\"": 1,
               "\"!text-inherit !font-normal underline underline-offset-2 [text-decoration-skip-ink:none] cursor-pointer hover:!text-inherit hover:!font-normal hover:![text-decoration-color:inherit] hover:!underline-offset-2 hover:!cursor-pointer\"": 1,
@@ -31,16 +34,20 @@
               "\"hover:bg-transparent\"": 1,
               "\"hover:bg-transparent active:bg-transparent w-full text-center\"": 1,
               "\"justify-start flex\"": 1,
+              "\"w-full\"": 1,
               "\"mb-4\"": 1
             }
           },
           "onClick": {
-            "count": 34,
+            "count": 42,
             "values": {
+              "{() => setShowPasskeyTroubleshootModal(true)}": 3,
               "{handleClick}": 3,
               "{onLearnMore}": 3,
               "{onClickFindTransactionHash}": 2,
               "{handleContactSupportTrackEvent}": 2,
+              "{handleUseVerifyPassword}": 1,
+              "{handleStillHavingTrouble}": 1,
               "{openTermsOfUse}": 1,
               "{openLearnMore}": 1,
               "{(event: React.MouseEvent) => { event.stopPropagation(); trackEvent({ category...}": 1,
@@ -59,18 +66,21 @@
               "{() => { dispatch( toggleNetworkMenu({ isAddingNewNetwork: true, }), ); }}": 1,
               "{handleOnShowSrpDetailsModal}": 1,
               "{handleRemindLater}": 1,
+              "{handleMaybeLater}": 1,
               "{() => { trackEvent( { category: MetaMetricsEventCategory.Onboarding, event: M...}": 1,
+              "{toggleVisitSupportDataConsentModal}": 1,
               "{() => { navigate(TRANSACTION_SHIELD_MANAGE_PLAN_ROUTE); }}": 1,
               "{() => { handleViewFullBenefitsClicked(); }}": 1,
-              "{toggleVisitSupportDataConsentModal}": 1,
+              "{() => setShowTroubleshootModal(true)}": 1,
+              "{handleUsePassword}": 1,
               "{this.onForgotPasswordOrLoginWithDiffMethods}": 1,
               "{() => { this.context.trackEvent( { category: MetaMetricsEventCategory.Navigat...}": 1
             }
           },
           "asChild": {
-            "count": 33,
+            "count": 34,
             "values": {
-              "true (shorthand)": 33
+              "true (shorthand)": 34
             }
           },
           "key": {
@@ -99,10 +109,13 @@
             }
           },
           "data-testid": {
-            "count": 19,
+            "count": 26,
             "values": {
               "\"confirm-info-row-display-name\"": 2,
               "\"market-closed-modal-learn-more\"": 1,
+              "\"change-password-passkey-verifying-open-full-screen\"": 1,
+              "\"change-password-verify-passkey-use-password\"": 1,
+              "\"change-password-passkey-toggle-open-full-screen\"": 1,
               "\"add-rewards-account-button\"": 1,
               "{`srp-list-show-accounts-${index}`}": 1,
               "\"change-in-settings-link\"": 1,
@@ -116,8 +129,12 @@
               "\"reveal-seed-copy-button\"": 1,
               "\"manage-default-settings\"": 1,
               "\"recovery-phrase-remind-later\"": 1,
+              "\"passkey-maybe-later-button\"": 1,
+              "\"security-passkey-sidepanel-continue-full-screen\"": 1,
               "\"shield-detail-manage-plan-button\"": 1,
               "\"shield-detail-view-benefits-button\"": 1,
+              "\"unlock-passkey-troubleshoot-button\"": 1,
+              "\"unlock-use-password-button\"": 1,
               "\"unlock-forgot-password-button\"": 1
             }
           },
@@ -127,6 +144,19 @@
               "{TextButtonSize.BodyMd}": 10,
               "{TextButtonSize.BodySm}": 7,
               "{TextButtonSize.BodyXs}": 1
+            }
+          },
+          "color": {
+            "count": 10,
+            "values": {
+              "{TextColor.PrimaryDefault}": 9,
+              "{isRehydrationFlow ? TextColor.TextDefault : TextColor.PrimaryDefault}": 1
+            }
+          },
+          "type": {
+            "count": 8,
+            "values": {
+              "\"button\"": 8
             }
           },
           "[spread]": {
@@ -146,13 +176,6 @@
             "values": {
               "{{ variant: TextVariant.BodyMd, }}": 1,
               "{{ variant: TextVariant.BodySm }}": 1
-            }
-          },
-          "color": {
-            "count": 2,
-            "values": {
-              "{TextColor.PrimaryDefault}": 1,
-              "{isRehydrationFlow ? TextColor.TextDefault : TextColor.PrimaryDefault}": 1
             }
           },
           "isDisabled": {
@@ -196,12 +219,6 @@
             "count": 1,
             "values": {
               "{isLoading}": 1
-            }
-          },
-          "type": {
-            "count": 1,
-            "values": {
-              "\"button\"": 1
             }
           }
         }
@@ -249,6 +266,9 @@
               "{() => { onClose(); navigate( `${SECURITY_ROUTE}#auto-detect-tokens`, ); }}": 1,
               "{() => { global.platform.openTab({ url: ZENDESK_URLS.UNKNOWN_NETWORK, }); }}": 1,
               "{handleLearnMoreClick}": 1,
+              "{() => { setName(suggestedName); }}": 1,
+              "{() => { const chainIdHex = toHex(chainId); if (chainIdHex) { dispatch( setEdi...}": 1,
+              "{() => { setTicker(suggestedTicker); }}": 1,
               "{() => onClick()}": 1,
               "{() => onMaxButtonClick(balanceAmount)}": 1,
               "{() => { dispatch(setWasTxDeclined(false)); }}": 1,
@@ -256,9 +276,6 @@
               "{onSwitch}": 1,
               "{updateToMax}": 1,
               "{dismissAlert}": 1,
-              "{() => { setName(suggestedName); }}": 1,
-              "{() => { const chainIdHex = toHex(chainId); if (chainIdHex) { dispatch( setEdi...}": 1,
-              "{() => { setTicker(suggestedTicker); }}": 1,
               "{() => { trackEvent({ event: 'Clicked \"Gas Fees: Learn More\" Link', category: ...}": 1,
               "{(e) => { e.preventDefault(); dispatch(setTransactionSettingsOpened(true)); }}": 1
             }
@@ -501,16 +518,16 @@
               "{Object.values(checkedChainIds).every((v) => !v)}": 1
             }
           },
-          "title": {
-            "count": 2,
-            "values": {
-              "{address}": 2
-            }
-          },
           "paddingRight": {
             "count": 2,
             "values": {
               "1": 2
+            }
+          },
+          "title": {
+            "count": 2,
+            "values": {
+              "{address}": 2
             }
           },
           "marginTop": {
@@ -558,12 +575,13 @@
         }
       },
       "overall": {
-        "totalInstances": 147,
-        "filesCount": 89,
+        "totalInstances": 155,
+        "filesCount": 94,
         "props": {
           "onClick": {
-            "count": 88,
+            "count": 96,
             "values": {
+              "{() => setShowPasskeyTroubleshootModal(true)}": 3,
               "{handleClick}": 3,
               "{() => { trackEvent({ category: MetaMetricsEventCategory.Navigation, event: Me...}": 3,
               "{onLearnMore}": 3,
@@ -577,11 +595,13 @@
               "{onAlertLinkClick}": 1,
               "{onClickSupportLink}": 1,
               "{(e: { stopPropagation: () => void }) => { e.stopPropagation(); dispatch(showI...}": 1,
+              "{handleUseVerifyPassword}": 1,
               "{() => connectAccount(address)}": 1,
               "{() => this.switchAccount(address)}": 1,
               "{() => { setCustomNonce(nextNonce); }}": 1,
               "{updateRpc}": 1,
               "{switchToInfura}": 1,
+              "{handleStillHavingTrouble}": 1,
               "{() => { global.platform.openTab({ url: ZENDESK_URLS.USER_GUIDE_DAPPS, }); }}": 1,
               "{onConfirm}": 1,
               "{openTermsOfUse}": 1,
@@ -607,6 +627,9 @@
               "{() => { onClose(); navigate( `${SECURITY_ROUTE}#auto-detect-tokens`, ); }}": 1,
               "{(event: React.MouseEvent) => { event.stopPropagation(); trackEvent({ category...}": 1,
               "{() => { global.platform.openTab({ url: ZENDESK_URLS.UNKNOWN_NETWORK, }); }}": 1,
+              "{() => { setName(suggestedName); }}": 1,
+              "{() => { const chainIdHex = toHex(chainId); if (chainIdHex) { dispatch( setEdi...}": 1,
+              "{() => { setTicker(suggestedTicker); }}": 1,
               "{() => onClick()}": 1,
               "{(e: React.MouseEvent) => { e.stopPropagation(); trackEvent({ category: MetaMe...}": 1,
               "{() => navigate(SECURITY_ROUTE)}": 1,
@@ -628,15 +651,15 @@
               "{() => { dispatch( toggleNetworkMenu({ isAddingNewNetwork: true, }), ); }}": 1,
               "{handleOnShowSrpDetailsModal}": 1,
               "{handleRemindLater}": 1,
+              "{handleMaybeLater}": 1,
               "{() => { trackEvent( { category: MetaMetricsEventCategory.Onboarding, event: M...}": 1,
-              "{() => { setName(suggestedName); }}": 1,
-              "{() => { const chainIdHex = toHex(chainId); if (chainIdHex) { dispatch( setEdi...}": 1,
-              "{() => { setTicker(suggestedTicker); }}": 1,
+              "{toggleVisitSupportDataConsentModal}": 1,
               "{() => { navigate(TRANSACTION_SHIELD_MANAGE_PLAN_ROUTE); }}": 1,
               "{() => { handleViewFullBenefitsClicked(); }}": 1,
-              "{toggleVisitSupportDataConsentModal}": 1,
               "{() => { trackEvent({ event: 'Clicked \"Gas Fees: Learn More\" Link', category: ...}": 1,
               "{(e) => { e.preventDefault(); dispatch(setTransactionSettingsOpened(true)); }}": 1,
+              "{() => setShowTroubleshootModal(true)}": 1,
+              "{handleUsePassword}": 1,
               "{this.onForgotPasswordOrLoginWithDiffMethods}": 1,
               "{() => { this.context.trackEvent( { category: MetaMetricsEventCategory.Navigat...}": 1
             }
@@ -657,13 +680,15 @@
             }
           },
           "className": {
-            "count": 52,
+            "count": 60,
             "values": {
               "\"inline\"": 5,
               "\"min-w-0\"": 5,
+              "\"text-center\"": 4,
               "\"snap-ui-renderer__link\"": 3,
               "\"w-full hover:bg-transparent active:bg-transparent\"": 3,
               "\"hover:bg-transparent active:bg-transparent w-fit\"": 3,
+              "\"mt-2 flex w-full justify-start text-left\"": 2,
               "\"connected-accounts-list__account-status-link\"": 2,
               "\"text-primary-default\"": 2,
               "\"confirm-add-suggested-nft__nft-name\"": 2,
@@ -671,6 +696,7 @@
               "\"hw-connect__msg-link\"": 2,
               "\"text-text-alternative hover:text-text-alternative hover:decoration-text-alternative hover:bg-transparent\"": 2,
               "\"nft-default__button\"": 1,
+              "\"text-center mt-4\"": 1,
               "\"min-w-0 hover:bg-transparent active:bg-transparent\"": 1,
               "\"hover:bg-transparent active:bg-transparent whitespace-nowrap\"": 1,
               "\"customize-nonce-modal__link\"": 1,
@@ -690,7 +716,53 @@
               "\"hover:bg-transparent\"": 1,
               "\"hover:bg-transparent active:bg-transparent w-full text-center\"": 1,
               "\"justify-start flex\"": 1,
+              "\"w-full\"": 1,
               "\"mb-4\"": 1
+            }
+          },
+          "data-testid": {
+            "count": 47,
+            "values": {
+              "\"edit\"": 5,
+              "\"confirm-info-row-display-name\"": 2,
+              "\"multichain-account-menu-popover-add-account\"": 2,
+              "\"multichain-account-menu-popover-add-solana-account\"": 2,
+              "\"confirm-alert-modal-review-all-alerts\"": 1,
+              "\"alert-provider-report-link\"": 1,
+              "\"market-closed-modal-learn-more\"": 1,
+              "\"change-password-passkey-verifying-open-full-screen\"": 1,
+              "\"change-password-verify-passkey-use-password\"": 1,
+              "\"change-password-passkey-toggle-open-full-screen\"": 1,
+              "\"customize-nonce-reset\"": 1,
+              "\"add-rewards-account-button\"": 1,
+              "\"portfolio-link\"": 1,
+              "\"multichain-account-menu-popover-add-btc-account\"": 1,
+              "\"multichain-account-menu-popover-add-tron-account\"": 1,
+              "\"multichain-account-menu-popover-import-srp\"": 1,
+              "\"multichain-account-menu-popover-add-imported-account\"": 1,
+              "\"multichain-account-menu-popover-add-watch-only-account\"": 1,
+              "\"connected-site-popover-network-button\"": 1,
+              "\"add-new-account-button\"": 1,
+              "{`srp-list-show-accounts-${index}`}": 1,
+              "\"change-in-settings-link\"": 1,
+              "\"basic-functionality-off-review-in-settings\"": 1,
+              "\"basic-functionality-off-go-home\"": 1,
+              "{`switch_account-${name}`}": 1,
+              "\"hw-list-pagination__prev-button\"": 1,
+              "\"hardware-forget-device-button\"": 1,
+              "\"reveal-seed-quiz-intro-learn-more\"": 1,
+              "\"reveal-seed-quiz-learn-more\"": 1,
+              "\"reveal-seed-quiz-footer-learn-more\"": 1,
+              "\"reveal-seed-copy-button\"": 1,
+              "\"manage-default-settings\"": 1,
+              "\"recovery-phrase-remind-later\"": 1,
+              "\"passkey-maybe-later-button\"": 1,
+              "\"security-passkey-sidepanel-continue-full-screen\"": 1,
+              "\"shield-detail-manage-plan-button\"": 1,
+              "\"shield-detail-view-benefits-button\"": 1,
+              "\"unlock-passkey-troubleshoot-button\"": 1,
+              "\"unlock-use-password-button\"": 1,
+              "\"unlock-forgot-password-button\"": 1
             }
           },
           "key": {
@@ -731,42 +803,10 @@
               "\"import-account\"": 1
             }
           },
-          "data-testid": {
-            "count": 40,
+          "asChild": {
+            "count": 34,
             "values": {
-              "\"edit\"": 5,
-              "\"confirm-info-row-display-name\"": 2,
-              "\"multichain-account-menu-popover-add-account\"": 2,
-              "\"multichain-account-menu-popover-add-solana-account\"": 2,
-              "\"confirm-alert-modal-review-all-alerts\"": 1,
-              "\"alert-provider-report-link\"": 1,
-              "\"market-closed-modal-learn-more\"": 1,
-              "\"customize-nonce-reset\"": 1,
-              "\"add-rewards-account-button\"": 1,
-              "\"portfolio-link\"": 1,
-              "\"multichain-account-menu-popover-add-btc-account\"": 1,
-              "\"multichain-account-menu-popover-add-tron-account\"": 1,
-              "\"multichain-account-menu-popover-import-srp\"": 1,
-              "\"multichain-account-menu-popover-add-imported-account\"": 1,
-              "\"multichain-account-menu-popover-add-watch-only-account\"": 1,
-              "\"connected-site-popover-network-button\"": 1,
-              "\"add-new-account-button\"": 1,
-              "{`srp-list-show-accounts-${index}`}": 1,
-              "\"change-in-settings-link\"": 1,
-              "\"basic-functionality-off-review-in-settings\"": 1,
-              "\"basic-functionality-off-go-home\"": 1,
-              "{`switch_account-${name}`}": 1,
-              "\"hw-list-pagination__prev-button\"": 1,
-              "\"hardware-forget-device-button\"": 1,
-              "\"reveal-seed-quiz-intro-learn-more\"": 1,
-              "\"reveal-seed-quiz-learn-more\"": 1,
-              "\"reveal-seed-quiz-footer-learn-more\"": 1,
-              "\"reveal-seed-copy-button\"": 1,
-              "\"manage-default-settings\"": 1,
-              "\"recovery-phrase-remind-later\"": 1,
-              "\"shield-detail-manage-plan-button\"": 1,
-              "\"shield-detail-view-benefits-button\"": 1,
-              "\"unlock-forgot-password-button\"": 1
+              "true (shorthand)": 34
             }
           },
           "href": {
@@ -802,16 +842,19 @@
               "{ZENDESK_URLS.SWAPS_USER_GUIDE}": 1
             }
           },
-          "asChild": {
-            "count": 33,
-            "values": {
-              "true (shorthand)": 33
-            }
-          },
           "target": {
             "count": 24,
             "values": {
               "\"_blank\"": 24
+            }
+          },
+          "color": {
+            "count": 19,
+            "values": {
+              "{TextColor.PrimaryDefault}": 9,
+              "{TextColor.primaryDefault}": 8,
+              "{TextColor.infoDefault}": 1,
+              "{isRehydrationFlow ? TextColor.TextDefault : TextColor.PrimaryDefault}": 1
             }
           },
           "externalLink": {
@@ -867,15 +910,6 @@
               "{IconName.Eye}": 1
             }
           },
-          "color": {
-            "count": 11,
-            "values": {
-              "{TextColor.primaryDefault}": 8,
-              "{TextColor.PrimaryDefault}": 1,
-              "{TextColor.infoDefault}": 1,
-              "{isRehydrationFlow ? TextColor.TextDefault : TextColor.PrimaryDefault}": 1
-            }
-          },
           "startIconProps": {
             "count": 11,
             "values": {
@@ -892,6 +926,12 @@
               "{{ alignSelf: AlignItems.flexStart, paddingInline: 16, }}": 1,
               "{{ height: '22px', fontSize: '14px', lineHeight: '22px', verticalAlign: 'basel...}": 1,
               "{{ height: 'unset', verticalAlign: 'unset' }}": 1
+            }
+          },
+          "type": {
+            "count": 8,
+            "values": {
+              "\"button\"": 8
             }
           },
           "[spread]": {
@@ -964,6 +1004,12 @@
               "true (shorthand)": 2
             }
           },
+          "paddingRight": {
+            "count": 2,
+            "values": {
+              "1": 2
+            }
+          },
           "title": {
             "count": 2,
             "values": {
@@ -975,12 +1021,6 @@
             "values": {
               "{isFirstPage}": 1,
               "{!phraseRevealed}": 1
-            }
-          },
-          "paddingRight": {
-            "count": 2,
-            "values": {
-              "1": 2
             }
           },
           "endIconProps": {
@@ -1036,12 +1076,6 @@
             "values": {
               "2": 1
             }
-          },
-          "type": {
-            "count": 1,
-            "values": {
-              "\"button\"": 1
-            }
           }
         }
       },
@@ -1050,7 +1084,7 @@
       }
     },
     "mobile": {
-      "filesScanned": 6139,
+      "filesScanned": 6307,
       "targetComponent": "TextButton",
       "mmds": {
         "totalInstances": 6,

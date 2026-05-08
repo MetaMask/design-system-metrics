@@ -1,9 +1,9 @@
 {
   "component": "BadgeWrapper",
-  "generatedAt": "2026-05-01T15:40:56.913Z",
+  "generatedAt": "2026-05-08T15:52:34.429Z",
   "projects": {
     "extension": {
-      "filesScanned": 3104,
+      "filesScanned": 3137,
       "targetComponent": "BadgeWrapper",
       "mmds": {
         "totalInstances": 15,
@@ -297,7 +297,7 @@
       }
     },
     "mobile": {
-      "filesScanned": 6139,
+      "filesScanned": 6307,
       "targetComponent": "BadgeWrapper",
       "mmds": {
         "totalInstances": 8,
@@ -332,24 +332,24 @@
         }
       },
       "deprecated": {
-        "totalInstances": 65,
-        "filesCount": 64,
+        "totalInstances": 67,
+        "filesCount": 65,
         "props": {
           "badgeElement": {
-            "count": 65,
+            "count": 67,
             "values": {
               "{<Badge variant={BadgeVariant.Network} name={networkName} imageSource={network...}": 5,
               "{<Badge testID={'badge-element'} variant={BadgeVariant.Network} imageSource={b...}": 4,
               "{<Badge variant={BadgeVariant.Network} name={networkName} imageSource={getNetw...}": 3,
-              "{<Badge variant={BadgeVariant.Network} imageSource={networkImageSource} />}": 3,
+              "{networkBadgeSource && ( <Badge variant={BadgeVariant.Network} imageSource={ne...}": 3,
+              "{<Badge size={AvatarSize.Xs} variant={BadgeVariant.Network} imageSource={netwo...}": 3,
               "{<Badge variant={BadgeVariant.Network} imageSource={NetworkBadgeSource(chainId...}": 3,
               "{<Badge variant={BadgeVariant.Network} imageSource={NetworkBadgeSource( safeFo...}": 2,
               "{networkBadgeSource ? ( <Badge variant={BadgeVariant.Network} imageSource={net...}": 2,
               "{<Badge variant={BadgeVariant.Network} imageSource={getNetworkImageSource({ ch...}": 2,
-              "{networkBadgeSource && ( <Badge variant={BadgeVariant.Network} imageSource={ne...}": 2,
+              "{<Badge variant={BadgeVariant.Network} imageSource={networkImageSource} isScal...}": 2,
               "{networkImageSource ? ( <BadgeNetwork name={networkName} imageSource={networkI...}": 2,
               "{<Badge variant={BadgeVariant.Network} imageSource={NetworkBadgeSource(asset.c...}": 2,
-              "{<Badge size={AvatarSize.Xs} variant={BadgeVariant.Network} imageSource={netwo...}": 2,
               "{asset.networkBadgeSource ? ( <Badge variant={BadgeVariant.Network} name={asse...}": 2,
               "{<Badge imageSource={networkImage} name={networkName} variant={BadgeVariant.Ne...}": 2,
               "{<Badge variant={BadgeVariant.Network} imageSource={NetworkBadgeSource()} name...}": 1,
@@ -364,6 +364,7 @@
               "{<Badge variant={BadgeVariant.Network} name={networkName} imageSource={ tokenT...}": 1,
               "{<Badge variant={BadgeVariant.Network} imageSource={networkImageSource} size={...}": 1,
               "{<BadgeIcon iconName={props.badgeIcon} iconProps={{ size: IconSize.Lg }} />}": 1,
+              "{<Badge variant={BadgeVariant.Network} imageSource={networkImageSource} />}": 1,
               "{<Badge variant={BadgeVariant.Network} imageSource={NetworkBadgeSource(destTok...}": 1,
               "{<Badge variant={BadgeVariant.Network} imageSource={images.POL} style={tw.styl...}": 1,
               "{networkName && networkImageSource ? ( <BadgeNetwork name={networkName} imageS...}": 1,
@@ -384,19 +385,21 @@
             }
           },
           "badgePosition": {
-            "count": 56,
+            "count": 61,
             "values": {
-              "{BadgePosition.BottomRight}": 54,
+              "{BadgePosition.BottomRight}": 56,
+              "{{ bottom: -4, right: -4 }}": 2,
               "{{ bottom: 5, right: 5, }}": 1,
-              "{BOTTOM_BADGEWRAPPER_BADGEPOSITION}": 1
+              "{BOTTOM_BADGEWRAPPER_BADGEPOSITION}": 1,
+              "{styles.iconBadgePosition}": 1
             }
           },
           "style": {
-            "count": 23,
+            "count": 25,
             "values": {
-              "{styles.badgeWrapper}": 10,
+              "{styles.badgeWrapper}": 11,
               "{tw.style('self-center')}": 4,
-              "{styles.badge}": 3,
+              "{styles.badge}": 4,
               "{styles.remoteImageBadgeWrapper}": 1,
               "{style}": 1,
               "{tw.style('mr-3')}": 1,
@@ -421,24 +424,24 @@
         }
       },
       "overall": {
-        "totalInstances": 73,
-        "filesCount": 72,
+        "totalInstances": 75,
+        "filesCount": 73,
         "props": {
           "badgeElement": {
-            "count": 65,
+            "count": 67,
             "values": {
               "{<Badge variant={BadgeVariant.Network} name={networkName} imageSource={network...}": 5,
               "{<Badge testID={'badge-element'} variant={BadgeVariant.Network} imageSource={b...}": 4,
               "{<Badge variant={BadgeVariant.Network} name={networkName} imageSource={getNetw...}": 3,
-              "{<Badge variant={BadgeVariant.Network} imageSource={networkImageSource} />}": 3,
+              "{networkBadgeSource && ( <Badge variant={BadgeVariant.Network} imageSource={ne...}": 3,
+              "{<Badge size={AvatarSize.Xs} variant={BadgeVariant.Network} imageSource={netwo...}": 3,
               "{<Badge variant={BadgeVariant.Network} imageSource={NetworkBadgeSource(chainId...}": 3,
               "{<Badge variant={BadgeVariant.Network} imageSource={NetworkBadgeSource( safeFo...}": 2,
               "{networkBadgeSource ? ( <Badge variant={BadgeVariant.Network} imageSource={net...}": 2,
               "{<Badge variant={BadgeVariant.Network} imageSource={getNetworkImageSource({ ch...}": 2,
-              "{networkBadgeSource && ( <Badge variant={BadgeVariant.Network} imageSource={ne...}": 2,
+              "{<Badge variant={BadgeVariant.Network} imageSource={networkImageSource} isScal...}": 2,
               "{networkImageSource ? ( <BadgeNetwork name={networkName} imageSource={networkI...}": 2,
               "{<Badge variant={BadgeVariant.Network} imageSource={NetworkBadgeSource(asset.c...}": 2,
-              "{<Badge size={AvatarSize.Xs} variant={BadgeVariant.Network} imageSource={netwo...}": 2,
               "{asset.networkBadgeSource ? ( <Badge variant={BadgeVariant.Network} name={asse...}": 2,
               "{<Badge imageSource={networkImage} name={networkName} variant={BadgeVariant.Ne...}": 2,
               "{<Badge variant={BadgeVariant.Network} imageSource={NetworkBadgeSource()} name...}": 1,
@@ -453,6 +456,7 @@
               "{<Badge variant={BadgeVariant.Network} name={networkName} imageSource={ tokenT...}": 1,
               "{<Badge variant={BadgeVariant.Network} imageSource={networkImageSource} size={...}": 1,
               "{<BadgeIcon iconName={props.badgeIcon} iconProps={{ size: IconSize.Lg }} />}": 1,
+              "{<Badge variant={BadgeVariant.Network} imageSource={networkImageSource} />}": 1,
               "{<Badge variant={BadgeVariant.Network} imageSource={NetworkBadgeSource(destTok...}": 1,
               "{<Badge variant={BadgeVariant.Network} imageSource={images.POL} style={tw.styl...}": 1,
               "{networkName && networkImageSource ? ( <BadgeNetwork name={networkName} imageS...}": 1,
@@ -473,19 +477,21 @@
             }
           },
           "badgePosition": {
-            "count": 56,
+            "count": 61,
             "values": {
-              "{BadgePosition.BottomRight}": 54,
+              "{BadgePosition.BottomRight}": 56,
+              "{{ bottom: -4, right: -4 }}": 2,
               "{{ bottom: 5, right: 5, }}": 1,
-              "{BOTTOM_BADGEWRAPPER_BADGEPOSITION}": 1
+              "{BOTTOM_BADGEWRAPPER_BADGEPOSITION}": 1,
+              "{styles.iconBadgePosition}": 1
             }
           },
           "style": {
-            "count": 23,
+            "count": 25,
             "values": {
-              "{styles.badgeWrapper}": 10,
+              "{styles.badgeWrapper}": 11,
               "{tw.style('self-center')}": 4,
-              "{styles.badge}": 3,
+              "{styles.badge}": 4,
               "{styles.remoteImageBadgeWrapper}": 1,
               "{style}": 1,
               "{tw.style('mr-3')}": 1,
@@ -536,7 +542,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "BadgeWrapper": 65
+        "BadgeWrapper": 67
       }
     }
   }
