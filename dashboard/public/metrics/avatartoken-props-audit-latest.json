@@ -1,18 +1,18 @@
 {
   "component": "AvatarToken",
-  "generatedAt": "2026-05-11T08:47:47.665Z",
+  "generatedAt": "2026-05-15T16:01:44.348Z",
   "projects": {
     "extension": {
-      "filesScanned": 3137,
+      "filesScanned": 3111,
       "targetComponent": "AvatarToken",
       "mmds": {
-        "totalInstances": 22,
-        "filesCount": 17,
+        "totalInstances": 23,
+        "filesCount": 18,
         "props": {
           "src": {
-            "count": 22,
+            "count": 23,
             "values": {
-              "{image}": 4,
+              "{image}": 5,
               "{iconUrl}": 2,
               "{asset.iconUrl ?? undefined}": 2,
               "{resolvedSrc}": 1,
@@ -32,9 +32,9 @@
             }
           },
           "size": {
-            "count": 21,
+            "count": 22,
             "values": {
-              "{AvatarTokenSize.Md}": 5,
+              "{AvatarTokenSize.Md}": 6,
               "{AvatarTokenSize.Xl}": 4,
               "{AvatarTokenSize.Lg}": 4,
               "{AvatarTokenSize.Xs}": 3,
@@ -45,8 +45,9 @@
             }
           },
           "name": {
-            "count": 20,
+            "count": 21,
             "values": {
+              "{symbol}": 2,
               "{token.symbol}": 2,
               "{asset.symbol}": 2,
               "{nativeCurrency}": 2,
@@ -58,7 +59,6 @@
               "{nicknameInput || address}": 1,
               "{coin.symbol}": 1,
               "{getTokenName(asset.name, asset.symbol)}": 1,
-              "{symbol}": 1,
               "{MUSD_SYMBOL}": 1,
               "\"ETH\"": 1,
               "\"UBT\"": 1,
@@ -228,13 +228,13 @@
         }
       },
       "overall": {
-        "totalInstances": 48,
-        "filesCount": 38,
+        "totalInstances": 49,
+        "filesCount": 39,
         "props": {
           "src": {
-            "count": 48,
+            "count": 49,
             "values": {
-              "{image}": 4,
+              "{image}": 5,
               "{tokenImage}": 3,
               "{icon.src}": 2,
               "{iconUrl}": 2,
@@ -276,9 +276,9 @@
             }
           },
           "name": {
-            "count": 41,
+            "count": 42,
             "values": {
-              "{symbol}": 7,
+              "{symbol}": 8,
               "{nativeCurrency}": 3,
               "{token.symbol}": 2,
               "{asset.symbol}": 2,
@@ -311,11 +311,11 @@
             }
           },
           "size": {
-            "count": 37,
+            "count": 38,
             "values": {
+              "{AvatarTokenSize.Md}": 8,
               "{AvatarTokenSize.Xs}": 7,
               "{AvatarTokenSize.Xl}": 7,
-              "{AvatarTokenSize.Md}": 7,
               "{AvatarTokenSize.Lg}": 6,
               "{AvatarTokenSize.Sm}": 4,
               "{size}": 2,
@@ -414,14 +414,14 @@
       }
     },
     "mobile": {
-      "filesScanned": 6312,
+      "filesScanned": 6430,
       "targetComponent": "AvatarToken",
       "mmds": {
-        "totalInstances": 16,
-        "filesCount": 16,
+        "totalInstances": 15,
+        "filesCount": 15,
         "props": {
           "name": {
-            "count": 15,
+            "count": 14,
             "values": {
               "{MUSD_TOKEN.symbol}": 5,
               "{selectedAsset?.symbol}": 1,
@@ -430,43 +430,36 @@
               "{item.symbol}": 1,
               "{symbol}": 1,
               "{position.tokenSymbol}": 1,
-              "{asset.name}": 1,
+              "{name}": 1,
               "{item.name}": 1,
-              "{asset.name || asset.collectionName || 'NFT'}": 1,
-              "{asset.symbol || asset.name || 'Token'}": 1
+              "{asset.name || asset.collectionName || 'NFT'}": 1
             }
           },
           "src": {
-            "count": 14,
+            "count": 13,
             "values": {
               "{MUSD_TOKEN.imageSource as ImageOrSvgSrc}": 3,
               "{MUSD_TOKEN.imageSource as number}": 2,
-              "{asset.image ? { uri: asset.image } : undefined}": 2,
               "{{ uri: selectedAsset?.logo }}": 1,
               "{{ uri: token.logo }}": 1,
               "{sourceToken ? getBridgeTokenImageSource(sourceToken) : undefined}": 1,
               "{getBridgeTokenImageSource(item)}": 1,
               "{src}": 1,
-              "{imageSource ?? undefined}": 1,
-              "{item.icon ? { uri: item.icon } : undefined}": 1
+              "{stableSrc}": 1,
+              "{item.icon ? { uri: item.icon } : undefined}": 1,
+              "{asset.image ? { uri: asset.image } : undefined}": 1
             }
           },
           "size": {
             "count": 13,
             "values": {
-              "{AvatarTokenSize.Lg}": 6,
+              "{AvatarTokenSize.Lg}": 5,
               "{AvatarTokenSize.Md}": 2,
               "{AvatarTokenSize.Xl}": 2,
               "{AvatarTokenSize.Xs}": 1,
               "{AvatarTokenSize.Sm}": 1,
-              "{size}": 1
-            }
-          },
-          "style": {
-            "count": 3,
-            "values": {
-              "{tw.style('w-10 h-10')}": 2,
-              "{tw.style('w-10 h-10 rounded-xl')}": 1
+              "{size}": 1,
+              "{avatarTokenSize}": 1
             }
           },
           "key": {
@@ -474,6 +467,13 @@
             "values": {
               "{selectedAsset?.logo}": 1,
               "{token.logo}": 1
+            }
+          },
+          "style": {
+            "count": 2,
+            "values": {
+              "{tw.style('w-10 h-10')}": 1,
+              "{tw.style('w-10 h-10 rounded-xl')}": 1
             }
           },
           "twClassName": {
@@ -491,13 +491,13 @@
         }
       },
       "deprecated": {
-        "totalInstances": 36,
-        "filesCount": 33,
+        "totalInstances": 33,
+        "filesCount": 31,
         "props": {
           "size": {
-            "count": 36,
+            "count": 33,
             "values": {
-              "{AvatarSize.Lg}": 16,
+              "{AvatarSize.Lg}": 13,
               "{AvatarSize.Md}": 12,
               "{AvatarSize.Sm}": 3,
               "{AvatarSize.Xs}": 2,
@@ -507,12 +507,11 @@
             }
           },
           "name": {
-            "count": 33,
+            "count": 30,
             "values": {
               "{token.symbol}": 5,
-              "{asset.symbol}": 4,
+              "{asset.symbol}": 3,
               "{symbol}": 2,
-              "{MUSD_TOKEN.name}": 2,
               "{iconTitle}": 2,
               "{token.name}": 2,
               "{sessionName}": 2,
@@ -533,16 +532,15 @@
             }
           },
           "imageSource": {
-            "count": 32,
+            "count": 29,
             "values": {
-              "{{ uri: asset.image }}": 3,
-              "{MUSD_TOKEN.imageSource}": 3,
               "{{ uri: token.image }}": 2,
+              "{{ uri: asset.image }}": 2,
               "{{ uri: USDC_TOKEN_ICON_URL }}": 2,
               "{{ uri: token.iconUrl }}": 2,
               "{{ uri: icon }}": 1,
               "{{ uri: imageUri }}": 1,
-              "{getTokenImageSource(token.symbol, token.image)}": 1,
+              "{getTokenImageSource( token.symbol, token.image, token.address, token.chainId, )}": 1,
               "{token.image ? { uri: token.image } : undefined}": 1,
               "{{ uri: tokenIconUrl }}": 1,
               "{{ uri: iconUrl }}": 1,
@@ -550,6 +548,7 @@
               "{{ uri: avatarIconUrl }}": 1,
               "{{ uri: token.image, }}": 1,
               "{{ uri: (tokenToRender as TokenI).image }}": 1,
+              "{MUSD_TOKEN.imageSource}": 1,
               "{{ uri: MUSD_PLACEHOLDER.iconUrl }}": 1,
               "{{ uri: selectedCryptoCurrency?.iconUrl || '', }}": 1,
               "{{ uri: cryptoToken.iconUrl }}": 1,
@@ -599,15 +598,15 @@
         }
       },
       "overall": {
-        "totalInstances": 52,
-        "filesCount": 49,
+        "totalInstances": 48,
+        "filesCount": 46,
         "props": {
           "size": {
-            "count": 49,
+            "count": 46,
             "values": {
-              "{AvatarSize.Lg}": 16,
+              "{AvatarSize.Lg}": 13,
               "{AvatarSize.Md}": 12,
-              "{AvatarTokenSize.Lg}": 6,
+              "{AvatarTokenSize.Lg}": 5,
               "{AvatarSize.Sm}": 3,
               "{AvatarSize.Xs}": 2,
               "{AvatarTokenSize.Md}": 2,
@@ -616,17 +615,17 @@
               "{AvatarSize.Xl}": 1,
               "{AvatarTokenSize.Xs}": 1,
               "{AvatarTokenSize.Sm}": 1,
+              "{avatarTokenSize}": 1,
               "{size === GasFeeTokenIconSize.Md ? AvatarSize.Md : AvatarSize.Xs}": 1
             }
           },
           "name": {
-            "count": 48,
+            "count": 44,
             "values": {
               "{token.symbol}": 6,
               "{MUSD_TOKEN.symbol}": 6,
-              "{asset.symbol}": 4,
+              "{asset.symbol}": 3,
               "{symbol}": 3,
-              "{MUSD_TOKEN.name}": 2,
               "{iconTitle}": 2,
               "{token.name}": 2,
               "{sessionName}": 2,
@@ -643,10 +642,9 @@
               "{sourceToken?.symbol ?? ''}": 1,
               "{item.symbol}": 1,
               "{position.tokenSymbol}": 1,
-              "{asset.name}": 1,
+              "{name}": 1,
               "{item.name}": 1,
               "{asset.name || asset.collectionName || 'NFT'}": 1,
-              "{asset.symbol || asset.name || 'Token'}": 1,
               "{nativeCurrency}": 1,
               "{isUnknownToken ? undefined : displayName}": 1,
               "{inputToken.symbol}": 1,
@@ -654,16 +652,15 @@
             }
           },
           "imageSource": {
-            "count": 32,
+            "count": 29,
             "values": {
-              "{{ uri: asset.image }}": 3,
-              "{MUSD_TOKEN.imageSource}": 3,
               "{{ uri: token.image }}": 2,
+              "{{ uri: asset.image }}": 2,
               "{{ uri: USDC_TOKEN_ICON_URL }}": 2,
               "{{ uri: token.iconUrl }}": 2,
               "{{ uri: icon }}": 1,
               "{{ uri: imageUri }}": 1,
-              "{getTokenImageSource(token.symbol, token.image)}": 1,
+              "{getTokenImageSource( token.symbol, token.image, token.address, token.chainId, )}": 1,
               "{token.image ? { uri: token.image } : undefined}": 1,
               "{{ uri: tokenIconUrl }}": 1,
               "{{ uri: iconUrl }}": 1,
@@ -671,6 +668,7 @@
               "{{ uri: avatarIconUrl }}": 1,
               "{{ uri: token.image, }}": 1,
               "{{ uri: (tokenToRender as TokenI).image }}": 1,
+              "{MUSD_TOKEN.imageSource}": 1,
               "{{ uri: MUSD_PLACEHOLDER.iconUrl }}": 1,
               "{{ uri: selectedCryptoCurrency?.iconUrl || '', }}": 1,
               "{{ uri: cryptoToken.iconUrl }}": 1,
@@ -684,18 +682,18 @@
             }
           },
           "src": {
-            "count": 14,
+            "count": 13,
             "values": {
               "{MUSD_TOKEN.imageSource as ImageOrSvgSrc}": 3,
               "{MUSD_TOKEN.imageSource as number}": 2,
-              "{asset.image ? { uri: asset.image } : undefined}": 2,
               "{{ uri: selectedAsset?.logo }}": 1,
               "{{ uri: token.logo }}": 1,
               "{sourceToken ? getBridgeTokenImageSource(sourceToken) : undefined}": 1,
               "{getBridgeTokenImageSource(item)}": 1,
               "{src}": 1,
-              "{imageSource ?? undefined}": 1,
-              "{item.icon ? { uri: item.icon } : undefined}": 1
+              "{stableSrc}": 1,
+              "{item.icon ? { uri: item.icon } : undefined}": 1,
+              "{asset.image ? { uri: asset.image } : undefined}": 1
             }
           },
           "testID": {
@@ -712,12 +710,12 @@
             }
           },
           "style": {
-            "count": 7,
+            "count": 6,
             "values": {
-              "{tw.style('w-10 h-10')}": 2,
               "{styles.receiveTokenIcon}": 1,
               "{styles.networkAvatar}": 1,
               "{customStyles().style}": 1,
+              "{tw.style('w-10 h-10')}": 1,
               "{tw.style('w-10 h-10 rounded-xl')}": 1,
               "{styles.avatarToken}": 1
             }
@@ -756,7 +754,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "AvatarToken": 36
+        "AvatarToken": 33
       }
     }
   }

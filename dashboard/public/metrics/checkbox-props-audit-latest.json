@@ -1,9 +1,9 @@
 {
   "component": "Checkbox",
-  "generatedAt": "2026-05-11T08:53:44.999Z",
+  "generatedAt": "2026-05-15T16:07:18.030Z",
   "projects": {
     "extension": {
-      "filesScanned": 3137,
+      "filesScanned": 3111,
       "targetComponent": "Checkbox",
       "mmds": {
         "totalInstances": 10,
@@ -115,14 +115,14 @@
         }
       },
       "deprecated": {
-        "totalInstances": 24,
-        "filesCount": 16,
+        "totalInstances": 20,
+        "filesCount": 14,
         "props": {
           "isChecked": {
-            "count": 23,
+            "count": 19,
             "values": {
-              "{checked}": 5,
               "{selectedChainIds.includes(network.caipChainId)}": 4,
+              "{checked}": 3,
               "true (shorthand)": 2,
               "{checkedChainIds[chainId]}": 2,
               "{isConfirmed}": 1,
@@ -131,17 +131,15 @@
               "{userAgree}": 1,
               "{value}": 1,
               "{isTermsOfUseChecked}": 1,
-              "{isSelectedAccount}": 1,
-              "{selectedAccountAddresses.some( (selectedAccountAddress) => isEqualCaseInsensi...}": 1,
               "{selectedAccountGroupsSet.has( groupId as AccountGroupId, )}": 1,
               "{skipDeepLinkInterstitialChecked}": 1
             }
           },
           "label": {
-            "count": 10,
+            "count": 8,
             "values": {
-              "{t('selectAll')}": 4,
               "{label}": 2,
+              "{t('selectAll')}": 2,
               "{label ?? t('alertModalAcknowledge')}": 1,
               "{termsOfUse}": 1,
               "{<Text as=\"span\"> Install{' '} <Text as=\"span\" fontWeight={FontWeight.Medium}>...}": 1,
@@ -159,22 +157,6 @@
               "{() => { handleToggleAllNetworks(); }}": 1,
               "{() => { handleAccountClickToUse(groupId as AccountGroupId); }}": 1,
               "{onRemindMeStateChanged}": 1
-            }
-          },
-          "onClick": {
-            "count": 5,
-            "values": {
-              "{() => (allAreSelected() ? deselectAll() : selectAll())}": 2,
-              "{onClick}": 1,
-              "{() => allAreSelected() ? deselectAll() : selectAll()}": 1,
-              "{() => (allAreSelected ? deselectAll() : selectAll())}": 1
-            }
-          },
-          "isIndeterminate": {
-            "count": 5,
-            "values": {
-              "{isIndeterminate}": 4,
-              "{Object.values(checkedChainIds).every((v) => v)}": 1
             }
           },
           "data-testid": {
@@ -195,10 +177,19 @@
               "\"dont-remind-me-checkbox\"": 1
             }
           },
-          "gap": {
+          "onClick": {
             "count": 3,
             "values": {
-              "4": 3
+              "{onClick}": 1,
+              "{() => (allAreSelected() ? deselectAll() : selectAll())}": 1,
+              "{() => (allAreSelected ? deselectAll() : selectAll())}": 1
+            }
+          },
+          "isIndeterminate": {
+            "count": 3,
+            "values": {
+              "{isIndeterminate}": 2,
+              "{Object.values(checkedChainIds).every((v) => v)}": 1
             }
           },
           "alignItems": {
@@ -225,6 +216,12 @@
             "count": 2,
             "values": {
               "{chainId}": 2
+            }
+          },
+          "gap": {
+            "count": 2,
+            "values": {
+              "4": 2
             }
           },
           "marginRight": {
@@ -260,14 +257,14 @@
         }
       },
       "overall": {
-        "totalInstances": 34,
-        "filesCount": 26,
+        "totalInstances": 30,
+        "filesCount": 24,
         "props": {
           "isChecked": {
-            "count": 23,
+            "count": 19,
             "values": {
-              "{checked}": 5,
               "{selectedChainIds.includes(network.caipChainId)}": 4,
+              "{checked}": 3,
               "true (shorthand)": 2,
               "{checkedChainIds[chainId]}": 2,
               "{isConfirmed}": 1,
@@ -276,28 +273,8 @@
               "{userAgree}": 1,
               "{value}": 1,
               "{isTermsOfUseChecked}": 1,
-              "{isSelectedAccount}": 1,
-              "{selectedAccountAddresses.some( (selectedAccountAddress) => isEqualCaseInsensi...}": 1,
               "{selectedAccountGroupsSet.has( groupId as AccountGroupId, )}": 1,
               "{skipDeepLinkInterstitialChecked}": 1
-            }
-          },
-          "label": {
-            "count": 18,
-            "values": {
-              "{t('selectAll')}": 4,
-              "{label}": 3,
-              "{label ?? t('alertModalAcknowledge')}": 1,
-              "{t('basicConfigurationModalCheckbox')}": 1,
-              "{<> {isSocialLoginFlow ? t('passwordTermsWarningSocial') : t('passwordTermsWar...}": 1,
-              "{termsOfUse}": 1,
-              "{<Text as=\"span\"> Install{' '} <Text as=\"span\" fontWeight={FontWeight.Medium}>...}": 1,
-              "{t('termsOfUseAgreeText')}": 1,
-              "{t('defiReferralCheckboxLabel')}": 1,
-              "{<Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItems.Center} c...}": 1,
-              "{<Text asChild variant={TextVariant.BodySm} color={TextColor.TextDefault} > <s...}": 1,
-              "{t('alertModalAcknowledge')}": 1,
-              "\"Enable Stripe Test clocks (for development and testing only)\"": 1
             }
           },
           "onChange": {
@@ -316,6 +293,24 @@
               "{() => setDangerAcknowledged(!dangerAcknowledged)}": 1,
               "{onChange}": 1,
               "{() => setEnableStripeTestClock(!enableStripeTestClock)}": 1
+            }
+          },
+          "label": {
+            "count": 16,
+            "values": {
+              "{label}": 3,
+              "{t('selectAll')}": 2,
+              "{label ?? t('alertModalAcknowledge')}": 1,
+              "{t('basicConfigurationModalCheckbox')}": 1,
+              "{<> {isSocialLoginFlow ? t('passwordTermsWarningSocial') : t('passwordTermsWar...}": 1,
+              "{termsOfUse}": 1,
+              "{<Text as=\"span\"> Install{' '} <Text as=\"span\" fontWeight={FontWeight.Medium}>...}": 1,
+              "{t('termsOfUseAgreeText')}": 1,
+              "{t('defiReferralCheckboxLabel')}": 1,
+              "{<Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItems.Center} c...}": 1,
+              "{<Text asChild variant={TextVariant.BodySm} color={TextColor.TextDefault} > <s...}": 1,
+              "{t('alertModalAcknowledge')}": 1,
+              "\"Enable Stripe Test clocks (for development and testing only)\"": 1
             }
           },
           "id": {
@@ -362,16 +357,6 @@
               "\"deep-link-checkbox\"": 1
             }
           },
-          "onClick": {
-            "count": 6,
-            "values": {
-              "{() => (allAreSelected() ? deselectAll() : selectAll())}": 2,
-              "{onClick}": 1,
-              "{() => allAreSelected() ? deselectAll() : selectAll()}": 1,
-              "{() => (allAreSelected ? deselectAll() : selectAll())}": 1,
-              "{stopClickPropagation}": 1
-            }
-          },
           "className": {
             "count": 5,
             "values": {
@@ -392,11 +377,13 @@
               "{isDisabled}": 1
             }
           },
-          "isIndeterminate": {
-            "count": 5,
+          "onClick": {
+            "count": 4,
             "values": {
-              "{isIndeterminate}": 4,
-              "{Object.values(checkedChainIds).every((v) => v)}": 1
+              "{onClick}": 1,
+              "{() => (allAreSelected() ? deselectAll() : selectAll())}": 1,
+              "{() => (allAreSelected ? deselectAll() : selectAll())}": 1,
+              "{stopClickPropagation}": 1
             }
           },
           "inputProps": {
@@ -408,10 +395,11 @@
               "{{ onClick: stopClickPropagation }}": 1
             }
           },
-          "gap": {
+          "isIndeterminate": {
             "count": 3,
             "values": {
-              "4": 3
+              "{isIndeterminate}": 2,
+              "{Object.values(checkedChainIds).every((v) => v)}": 1
             }
           },
           "alignItems": {
@@ -424,6 +412,12 @@
             "count": 2,
             "values": {
               "{chainId}": 2
+            }
+          },
+          "gap": {
+            "count": 2,
+            "values": {
+              "4": 2
             }
           },
           "labelProps": {
@@ -466,29 +460,37 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "Checkbox": 24
+        "Checkbox": 20
       }
     },
     "mobile": {
-      "filesScanned": 6312,
+      "filesScanned": 6430,
       "targetComponent": "Checkbox",
       "mmds": {
-        "totalInstances": 3,
-        "filesCount": 3,
+        "totalInstances": 4,
+        "filesCount": 4,
         "props": {
-          "onChange": {
-            "count": 3,
+          "isSelected": {
+            "count": 4,
             "values": {
+              "{isSelected}": 3,
+              "{isCheckboxChecked}": 1
+            }
+          },
+          "onChange": {
+            "count": 4,
+            "values": {
+              "{() => onTokenPress(token)}": 1,
               "{setSelection}": 1,
               "{setIsCheckboxChecked}": 1,
               "{toggleSelection}": 1
             }
           },
-          "isSelected": {
+          "accessibilityLabel": {
             "count": 3,
             "values": {
-              "{isSelected}": 2,
-              "{isCheckboxChecked}": 1
+              "{ChoosePasswordSelectorsIDs.I_UNDERSTAND_CHECKBOX_ID}": 2,
+              "{`${token.symbol} ${strings( 'bridge.batch_sell_checkbox_label', )}`}": 1
             }
           },
           "testID": {
@@ -496,12 +498,6 @@
             "values": {
               "{ChoosePasswordSelectorsIDs.I_UNDERSTAND_CHECKBOX_ID}": 2,
               "{LEARN_MORE_BOTTOM_SHEET_TEST_IDS.CHECKBOX}": 1
-            }
-          },
-          "accessibilityLabel": {
-            "count": 2,
-            "values": {
-              "{ChoosePasswordSelectorsIDs.I_UNDERSTAND_CHECKBOX_ID}": 2
             }
           },
           "label": {
@@ -643,8 +639,8 @@
         }
       },
       "overall": {
-        "totalInstances": 19,
-        "filesCount": 16,
+        "totalInstances": 20,
+        "filesCount": 17,
         "props": {
           "onPress": {
             "count": 16,
@@ -724,25 +720,27 @@
               "{tw.style('flex items-start')}": 1
             }
           },
-          "onChange": {
-            "count": 3,
+          "isSelected": {
+            "count": 4,
             "values": {
+              "{isSelected}": 3,
+              "{isCheckboxChecked}": 1
+            }
+          },
+          "onChange": {
+            "count": 4,
+            "values": {
+              "{() => onTokenPress(token)}": 1,
               "{setSelection}": 1,
               "{setIsCheckboxChecked}": 1,
               "{toggleSelection}": 1
             }
           },
-          "isSelected": {
-            "count": 3,
-            "values": {
-              "{isSelected}": 2,
-              "{isCheckboxChecked}": 1
-            }
-          },
           "accessibilityLabel": {
-            "count": 3,
+            "count": 4,
             "values": {
               "{ChoosePasswordSelectorsIDs.I_UNDERSTAND_CHECKBOX_ID}": 2,
+              "{`${token.symbol} ${strings( 'bridge.batch_sell_checkbox_label', )}`}": 1,
               "{ConnectedAccountsSelectorsIDs.SELECT_ALL_NETWORKS_BUTTON}": 1
             }
           },

@@ -1,9 +1,9 @@
 {
   "component": "Card",
-  "generatedAt": "2026-05-11T08:53:15.390Z",
+  "generatedAt": "2026-05-15T16:06:51.094Z",
   "projects": {
     "extension": {
-      "filesScanned": 3137,
+      "filesScanned": 3111,
       "targetComponent": "Card",
       "mmds": {
         "totalInstances": 0,
@@ -23,12 +23,39 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 6312,
+      "filesScanned": 6430,
       "targetComponent": "Card",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 2,
+        "filesCount": 2,
+        "props": {
+          "onPress": {
+            "count": 2,
+            "values": {
+              "{handlePress}": 2
+            }
+          },
+          "testID": {
+            "count": 2,
+            "values": {
+              "{testID}": 1,
+              "{getPerpsMarketRowItemSelector.rowItem(market.symbol)}": 1
+            }
+          },
+          "touchableOpacityProps": {
+            "count": 2,
+            "values": {
+              "{{ activeOpacity: 0.7 }}": 2
+            }
+          },
+          "twClassName": {
+            "count": 2,
+            "values": {
+              "\"py-3 px-0 border-0 rounded-none bg-transparent\"": 1,
+              "{`flex-row justify-between items-center border-0 rounded-none bg-transparent p...}": 1
+            }
+          }
+        }
       },
       "deprecated": {
         "totalInstances": 9,
@@ -60,8 +87,8 @@
         }
       },
       "overall": {
-        "totalInstances": 9,
-        "filesCount": 8,
+        "totalInstances": 11,
+        "filesCount": 10,
         "props": {
           "style": {
             "count": 9,
@@ -81,9 +108,30 @@
             }
           },
           "testID": {
-            "count": 1,
+            "count": 3,
             "values": {
+              "{testID}": 1,
+              "{getPerpsMarketRowItemSelector.rowItem(market.symbol)}": 1,
               "\"account-card\"": 1
+            }
+          },
+          "onPress": {
+            "count": 2,
+            "values": {
+              "{handlePress}": 2
+            }
+          },
+          "touchableOpacityProps": {
+            "count": 2,
+            "values": {
+              "{{ activeOpacity: 0.7 }}": 2
+            }
+          },
+          "twClassName": {
+            "count": 2,
+            "values": {
+              "\"py-3 px-0 border-0 rounded-none bg-transparent\"": 1,
+              "{`flex-row justify-between items-center border-0 rounded-none bg-transparent p...}": 1
             }
           }
         }

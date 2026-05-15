@@ -1,9 +1,9 @@
 {
   "component": "HeaderBase",
-  "generatedAt": "2026-05-11T08:54:15.175Z",
+  "generatedAt": "2026-05-15T16:07:45.103Z",
   "projects": {
     "extension": {
-      "filesScanned": 3137,
+      "filesScanned": 3111,
       "targetComponent": "HeaderBase",
       "mmds": {
         "totalInstances": 0,
@@ -177,11 +177,11 @@
       }
     },
     "mobile": {
-      "filesScanned": 6312,
+      "filesScanned": 6430,
       "targetComponent": "HeaderBase",
       "mmds": {
-        "totalInstances": 4,
-        "filesCount": 4,
+        "totalInstances": 5,
+        "filesCount": 5,
         "props": {
           "twClassName": {
             "count": 4,
@@ -198,6 +198,13 @@
               "{<ButtonIcon size={ButtonIconSize.Md} onPress={handleBackPress} iconName={Icon...}": 1,
               "{<ButtonIcon testID={EditAccountNameIds.BACK_BUTTON} iconName={IconName.ArrowL...}": 1,
               "{<ButtonIcon testID={AccountDetailsIds.BACK_BUTTON} iconName={IconName.ArrowLe...}": 1
+            }
+          },
+          "style": {
+            "count": 2,
+            "values": {
+              "{tw`p-4`}": 1,
+              "{styles.header}": 1
             }
           },
           "testID": {
@@ -224,34 +231,33 @@
               "{[ { iconName: IconName.MoreVertical, onPress: onMenuPress, accessibilityLabel...}": 1
             }
           },
-          "style": {
+          "startButtonIconProps": {
             "count": 1,
             "values": {
-              "{tw`p-4`}": 1
+              "{{ testID: WalletDetailsIds.BACK_BUTTON, iconName: IconName.ArrowLeft, size: B...}": 1
             }
           }
         }
       },
       "deprecated": {
-        "totalInstances": 10,
-        "filesCount": 10,
+        "totalInstances": 9,
+        "filesCount": 9,
         "props": {
           "style": {
-            "count": 9,
+            "count": 8,
             "values": {
-              "{styles.header}": 6,
+              "{styles.header}": 5,
               "{tw`p-4`}": 2,
               "{style}": 1
             }
           },
           "startAccessory": {
-            "count": 8,
+            "count": 7,
             "values": {
               "{<ButtonLink testID={AccountDetailsIds.BACK_BUTTON} labelTextVariant={TextVari...}": 2,
               "{<ButtonIcon style={styles.headerLeftButton} onPress={() => navigation.pop()} ...}": 1,
               "{<ButtonIcon size={ButtonIconSizes.Lg} onPress={handleBackPress} iconName={Ico...}": 1,
               "{<ButtonLink labelTextVariant={TextVariant.BodyMDMedium} label={<Icon name={Ic...}": 1,
-              "{<ButtonLink testID={WalletDetailsIds.BACK_BUTTON} labelTextVariant={TextVaria...}": 1,
               "{<ButtonIcon size={ButtonIconSizes.Md} onPress={handleBackPress} iconName={Ico...}": 1,
               "{<PreviousButton onBackButtonClick={onBack} selectedIndex={selectedIndex} />}": 1
             }
@@ -290,14 +296,13 @@
         "filesCount": 14,
         "props": {
           "startAccessory": {
-            "count": 11,
+            "count": 10,
             "values": {
               "{<ButtonLink testID={AccountDetailsIds.BACK_BUTTON} labelTextVariant={TextVari...}": 2,
               "{<ButtonIcon style={styles.headerLeftButton} onPress={() => navigation.pop()} ...}": 1,
               "{<ButtonIcon size={ButtonIconSize.Md} onPress={handleBackPress} iconName={Icon...}": 1,
               "{<ButtonIcon size={ButtonIconSizes.Lg} onPress={handleBackPress} iconName={Ico...}": 1,
               "{<ButtonLink labelTextVariant={TextVariant.BodyMDMedium} label={<Icon name={Ic...}": 1,
-              "{<ButtonLink testID={WalletDetailsIds.BACK_BUTTON} labelTextVariant={TextVaria...}": 1,
               "{<ButtonIcon testID={EditAccountNameIds.BACK_BUTTON} iconName={IconName.ArrowL...}": 1,
               "{<ButtonIcon testID={AccountDetailsIds.BACK_BUTTON} iconName={IconName.ArrowLe...}": 1,
               "{<ButtonIcon size={ButtonIconSizes.Md} onPress={handleBackPress} iconName={Ico...}": 1,
@@ -360,6 +365,12 @@
               "{[ { iconName: IconName.MoreVertical, onPress: onMenuPress, accessibilityLabel...}": 1
             }
           },
+          "startButtonIconProps": {
+            "count": 1,
+            "values": {
+              "{{ testID: WalletDetailsIds.BACK_BUTTON, iconName: IconName.ArrowLeft, size: B...}": 1
+            }
+          },
           "[spread]": {
             "count": 1,
             "values": {
@@ -369,7 +380,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "HeaderBase": 10
+        "HeaderBase": 9
       }
     }
   }

@@ -1,21 +1,20 @@
 {
   "component": "AvatarAccount",
-  "generatedAt": "2026-05-11T08:44:43.902Z",
+  "generatedAt": "2026-05-15T15:58:52.134Z",
   "projects": {
     "extension": {
-      "filesScanned": 3137,
+      "filesScanned": 3111,
       "targetComponent": "AvatarAccount",
       "mmds": {
-        "totalInstances": 10,
-        "filesCount": 10,
+        "totalInstances": 9,
+        "filesCount": 9,
         "props": {
           "address": {
-            "count": 9,
+            "count": 8,
             "values": {
               "{selectedAccount?.address}": 2,
               "{member.avatarValue}": 1,
               "\"0x7830c87C02e56AFf27FA8Ab1241711331FA86F43\"": 1,
-              "{acc.address}": 1,
               "{CHAOS_ACCOUNT.address}": 1,
               "{seedAddresses?.[acc.id] ?? ''}": 1,
               "\"0x5CfE73b6021E818B776b421B1c4Db2474086a7e1\"": 1,
@@ -23,19 +22,19 @@
             }
           },
           "variant": {
-            "count": 7,
+            "count": 6,
             "values": {
               "{variant}": 2,
-              "{avatarAccountVariant}": 2,
+              "{avatarAccountVariant}": 1,
               "{AvatarAccountVariant.Maskicon}": 1,
               "{currentVariant}": 1,
               "{value}": 1
             }
           },
           "size": {
-            "count": 7,
+            "count": 6,
             "values": {
-              "{AvatarAccountSize.Xs}": 3,
+              "{AvatarAccountSize.Xs}": 2,
               "{AvatarAccountSize.Md}": 2,
               "{AvatarAccountSize.Sm}": 2
             }
@@ -44,12 +43,6 @@
             "count": 1,
             "values": {
               "{props}": 1
-            }
-          },
-          "borderStyle": {
-            "count": 1,
-            "values": {
-              "{BorderStyle.none}": 1
             }
           },
           "shape": {
@@ -66,16 +59,15 @@
         "props": {}
       },
       "overall": {
-        "totalInstances": 10,
-        "filesCount": 10,
+        "totalInstances": 9,
+        "filesCount": 9,
         "props": {
           "address": {
-            "count": 9,
+            "count": 8,
             "values": {
               "{selectedAccount?.address}": 2,
               "{member.avatarValue}": 1,
               "\"0x7830c87C02e56AFf27FA8Ab1241711331FA86F43\"": 1,
-              "{acc.address}": 1,
               "{CHAOS_ACCOUNT.address}": 1,
               "{seedAddresses?.[acc.id] ?? ''}": 1,
               "\"0x5CfE73b6021E818B776b421B1c4Db2474086a7e1\"": 1,
@@ -83,19 +75,19 @@
             }
           },
           "variant": {
-            "count": 7,
+            "count": 6,
             "values": {
               "{variant}": 2,
-              "{avatarAccountVariant}": 2,
+              "{avatarAccountVariant}": 1,
               "{AvatarAccountVariant.Maskicon}": 1,
               "{currentVariant}": 1,
               "{value}": 1
             }
           },
           "size": {
-            "count": 7,
+            "count": 6,
             "values": {
-              "{AvatarAccountSize.Xs}": 3,
+              "{AvatarAccountSize.Xs}": 2,
               "{AvatarAccountSize.Md}": 2,
               "{AvatarAccountSize.Sm}": 2
             }
@@ -104,12 +96,6 @@
             "count": 1,
             "values": {
               "{props}": 1
-            }
-          },
-          "borderStyle": {
-            "count": 1,
-            "values": {
-              "{BorderStyle.none}": 1
             }
           },
           "shape": {
@@ -123,12 +109,31 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 6312,
+      "filesScanned": 6430,
       "targetComponent": "AvatarAccount",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 1,
+        "filesCount": 1,
+        "props": {
+          "style": {
+            "count": 1,
+            "values": {
+              "{styles.avatar}": 1
+            }
+          },
+          "address": {
+            "count": 1,
+            "values": {
+              "{formattedAddress}": 1
+            }
+          },
+          "size": {
+            "count": 1,
+            "values": {
+              "{AvatarAccountSize.Md}": 1
+            }
+          }
+        }
       },
       "deprecated": {
         "totalInstances": 11,
@@ -177,8 +182,8 @@
         }
       },
       "overall": {
-        "totalInstances": 11,
-        "filesCount": 9,
+        "totalInstances": 12,
+        "filesCount": 10,
         "props": {
           "type": {
             "count": 11,
@@ -202,7 +207,7 @@
             }
           },
           "size": {
-            "count": 10,
+            "count": 11,
             "values": {
               "{diameter}": 3,
               "{AvatarSize.Md}": 2,
@@ -210,7 +215,8 @@
               "{AvatarSize.Xs}": 1,
               "{avatarSize}": 1,
               "{AvatarSize.Lg}": 1,
-              "{AvatarSize.Sm}": 1
+              "{AvatarSize.Sm}": 1,
+              "{AvatarAccountSize.Md}": 1
             }
           },
           "testID": {
@@ -218,6 +224,18 @@
             "values": {
               "{SNAP_UI_AVATAR_TEST_ID}": 1,
               "{`rewards-account-group-avatar-${accountGroup.id}`}": 1
+            }
+          },
+          "style": {
+            "count": 1,
+            "values": {
+              "{styles.avatar}": 1
+            }
+          },
+          "address": {
+            "count": 1,
+            "values": {
+              "{formattedAddress}": 1
             }
           }
         }
