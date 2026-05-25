@@ -1,6 +1,6 @@
 {
   "project": "extension",
-  "date": "2026-05-18",
+  "date": "2026-05-25",
   "teams": [
     "@MetaMask/accounts-engineers",
     "@MetaMask/confirmations",
@@ -14,14 +14,14 @@
     "@MetaMask/web3auth"
   ],
   "summary": {
-    "filesScanned": 1525,
-    "totalJSXUsages": 9089,
+    "filesScanned": 1534,
+    "totalJSXUsages": 9124,
     "trackedDeprecated": 3508,
-    "trackedMMDS": 2779,
-    "untrackedTotal": 2802,
+    "trackedMMDS": 2784,
+    "untrackedTotal": 2832,
     "uniqueUntrackedComponents": 101,
     "replaceableNow": 41,
-    "replaceableInstances": 546,
+    "replaceableInstances": 551,
     "futureDSCandidates": 60,
     "codeOwnerBreakdown": {
       "@MetaMask/swaps-engineers": {
@@ -41,13 +41,13 @@
       },
       "@MetaMask/accounts-engineers": {
         "replaceableComponents": 9,
-        "futureDSComponents": 10,
-        "replaceableInstances": 51
+        "futureDSComponents": 11,
+        "replaceableInstances": 55
       },
       "@MetaMask/core-extension-ux": {
         "replaceableComponents": 17,
         "futureDSComponents": 20,
-        "replaceableInstances": 75
+        "replaceableInstances": 76
       },
       "@MetaMask/web3auth": {
         "replaceableComponents": 9,
@@ -164,8 +164,8 @@
     },
     {
       "component": "Header",
-      "instances": 38,
-      "fileCount": 38,
+      "instances": 40,
+      "fileCount": 39,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/multichain/pages/page",
       "importSources": [
@@ -195,8 +195,8 @@
         }
       ],
       "codeOwners": [
-        "@unknown",
         "@MetaMask/accounts-engineers",
+        "@unknown",
         "@MetaMask/core-extension-ux",
         "@MetaMask/confirmations",
         "@MetaMask/swaps-engineers"
@@ -209,7 +209,7 @@
         "@MetaMask/core-platform": 1,
         "@MetaMask/web3auth": 1,
         "@MetaMask/core-extension-ux": 6,
-        "@MetaMask/accounts-engineers": 11,
+        "@MetaMask/accounts-engineers": 13,
         "@MetaMask/confirmations": 3,
         "@MetaMask/metamask-assets": 1
       }
@@ -252,8 +252,8 @@
     },
     {
       "component": "Content",
-      "instances": 32,
-      "fileCount": 30,
+      "instances": 34,
+      "fileCount": 31,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/multichain/pages/page",
       "importSources": [
@@ -285,7 +285,7 @@
         "@MetaMask/swaps-engineers": 3,
         "@MetaMask/core-platform": 2,
         "@MetaMask/web3auth": 2,
-        "@MetaMask/accounts-engineers": 10,
+        "@MetaMask/accounts-engineers": 12,
         "@MetaMask/core-extension-ux": 4,
         "@MetaMask/metamask-assets": 2
       }
@@ -755,6 +755,35 @@
       }
     },
     {
+      "component": "TransactionStatusLabel",
+      "instances": 10,
+      "fileCount": 7,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "app/transaction-status-label/transaction-status-label",
+      "importSources": [
+        "../../app/transaction-status-label/transaction-status-label",
+        "../transaction-status-label/transaction-status-label"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Label",
+          "confidence": "high"
+        },
+        {
+          "component": "BadgeStatus",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/core-extension-ux",
+        "@unknown"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/core-extension-ux": 9,
+        "@unknown": 1
+      }
+    },
+    {
       "component": "SnapAuthorshipHeader",
       "instances": 9,
       "fileCount": 9,
@@ -789,35 +818,6 @@
         "@unknown": 4,
         "@MetaMask/core-platform": 4,
         "@MetaMask/confirmations": 1
-      }
-    },
-    {
-      "component": "TransactionStatusLabel",
-      "instances": 9,
-      "fileCount": 6,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "app/transaction-status-label/transaction-status-label",
-      "importSources": [
-        "../../app/transaction-status-label/transaction-status-label",
-        "../transaction-status-label/transaction-status-label"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Label",
-          "confidence": "high"
-        },
-        {
-          "component": "BadgeStatus",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@MetaMask/core-extension-ux",
-        "@unknown"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/core-extension-ux": 8,
-        "@unknown": 1
       }
     },
     {
@@ -1486,7 +1486,7 @@
     },
     {
       "component": "ConfirmInfoRow",
-      "instances": 71,
+      "instances": 73,
       "fileCount": 42,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/app/confirm/info/row/row",
@@ -1510,7 +1510,7 @@
         "@MetaMask/perps"
       ],
       "codeOwnerBreakdown": {
-        "@MetaMask/confirmations": 65,
+        "@MetaMask/confirmations": 67,
         "@MetaMask/perps": 1,
         "@unknown": 5
       }
@@ -1538,8 +1538,8 @@
     },
     {
       "component": "Row",
-      "instances": 41,
-      "fileCount": 12,
+      "instances": 42,
+      "fileCount": 13,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "layout",
       "importSources": [
@@ -1552,13 +1552,13 @@
         "@MetaMask/swaps-engineers"
       ],
       "codeOwnerBreakdown": {
-        "@MetaMask/swaps-engineers": 41
+        "@MetaMask/swaps-engineers": 42
       }
     },
     {
       "component": "Page",
-      "instances": 34,
-      "fileCount": 34,
+      "instances": 36,
+      "fileCount": 35,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/multichain/pages/page",
       "importSources": [
@@ -1584,7 +1584,7 @@
         "@MetaMask/swaps-engineers": 2,
         "@MetaMask/core-platform": 2,
         "@MetaMask/web3auth": 1,
-        "@MetaMask/accounts-engineers": 12,
+        "@MetaMask/accounts-engineers": 14,
         "@MetaMask/confirmations": 1,
         "@MetaMask/core-extension-ux": 4,
         "@MetaMask/metamask-assets": 2
@@ -1805,8 +1805,8 @@
       "canonicalSource": "components/ui/icon/preloader/preloader-icon.component",
       "importSources": [
         "../../components/ui/icon/preloader/preloader-icon.component",
-        "../../ui/icon/preloader",
         "../icon/preloader/preloader-icon.component",
+        "../../ui/icon/preloader",
         "../../ui/icon/preloader/preloader-icon.component",
         "../../../ui/icon/preloader/preloader-icon.component",
         "../../../../../components/ui/icon/preloader",
@@ -1823,8 +1823,8 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/notifications": 1,
-        "@MetaMask/accounts-engineers": 4,
         "@unknown": 1,
+        "@MetaMask/accounts-engineers": 4,
         "@MetaMask/core-extension-ux": 2,
         "@MetaMask/core-platform": 1,
         "@MetaMask/confirmations": 6
@@ -2156,6 +2156,31 @@
       }
     },
     {
+      "component": "RiveComponent",
+      "instances": 9,
+      "fileCount": 9,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "(local)",
+      "importSources": [
+        "(local or re-export)"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/web3auth",
+        "@MetaMask/accounts-engineers",
+        "@unknown",
+        "@MetaMask/perps",
+        "@MetaMask/confirmations"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/web3auth": 5,
+        "@MetaMask/accounts-engineers": 1,
+        "@unknown": 1,
+        "@MetaMask/perps": 1,
+        "@MetaMask/confirmations": 1
+      }
+    },
+    {
       "component": "SettingsToggleItem",
       "instances": 9,
       "fileCount": 9,
@@ -2226,29 +2251,6 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/confirmations": 9
-      }
-    },
-    {
-      "component": "RiveComponent",
-      "instances": 8,
-      "fileCount": 8,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "(local)",
-      "importSources": [
-        "(local or re-export)"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@MetaMask/web3auth",
-        "@unknown",
-        "@MetaMask/perps",
-        "@MetaMask/confirmations"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/web3auth": 5,
-        "@unknown": 1,
-        "@MetaMask/perps": 1,
-        "@MetaMask/confirmations": 1
       }
     },
     {
@@ -2345,6 +2347,23 @@
       }
     },
     {
+      "component": "GatorPermissionDetailRow",
+      "instances": 7,
+      "fileCount": 1,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "gator-permission-detail-row",
+      "importSources": [
+        "./gator-permission-detail-row"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/core-extension-ux"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/core-extension-ux": 7
+      }
+    },
+    {
       "component": "SigningInWithRow",
       "instances": 7,
       "fileCount": 7,
@@ -2361,30 +2380,6 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/confirmations": 7
-      }
-    },
-    {
-      "component": "VirtualizedList",
-      "instances": 6,
-      "fileCount": 5,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/ui/virtualized-list/virtualized-list",
-      "importSources": [
-        "../../components/ui/virtualized-list/virtualized-list",
-        "../../ui/virtualized-list/virtualized-list",
-        "../../../ui/virtualized-list/virtualized-list",
-        "../../../../ui/virtualized-list/virtualized-list"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@MetaMask/metamask-assets",
-        "@unknown",
-        "@MetaMask/accounts-engineers"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 2,
-        "@MetaMask/accounts-engineers": 1,
-        "@MetaMask/metamask-assets": 3
       }
     },
     {
@@ -2468,6 +2463,30 @@
       "codeOwnerBreakdown": {
         "@unknown": 2,
         "@MetaMask/swaps-engineers": 3
+      }
+    },
+    {
+      "component": "VirtualizedList",
+      "instances": 5,
+      "fileCount": 5,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/ui/virtualized-list/virtualized-list",
+      "importSources": [
+        "../../components/ui/virtualized-list/virtualized-list",
+        "../../ui/virtualized-list/virtualized-list",
+        "../../../ui/virtualized-list/virtualized-list",
+        "../../../../ui/virtualized-list/virtualized-list"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/metamask-assets",
+        "@unknown",
+        "@MetaMask/accounts-engineers"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 1,
+        "@MetaMask/accounts-engineers": 1,
+        "@MetaMask/metamask-assets": 3
       }
     },
     {
@@ -2611,6 +2630,29 @@
       }
     },
     {
+      "component": "NftItem",
+      "instances": 5,
+      "fileCount": 5,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/multichain/nft-item",
+      "importSources": [
+        "../nft-item",
+        "../../../../multichain/nft-item",
+        "../../../../../../../components/multichain/nft-item"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/metamask-assets",
+        "@MetaMask/core-extension-ux",
+        "@MetaMask/confirmations"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/core-extension-ux": 1,
+        "@MetaMask/metamask-assets": 3,
+        "@MetaMask/confirmations": 1
+      }
+    },
+    {
       "component": "NotificationDetail",
       "instances": 5,
       "fileCount": 5,
@@ -2645,29 +2687,6 @@
       }
     },
     {
-      "component": "NftItem",
-      "instances": 5,
-      "fileCount": 5,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/multichain/nft-item",
-      "importSources": [
-        "../nft-item",
-        "../../../../multichain/nft-item",
-        "../../../../../../../components/multichain/nft-item"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@MetaMask/metamask-assets",
-        "@MetaMask/core-extension-ux",
-        "@MetaMask/confirmations"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/core-extension-ux": 1,
-        "@MetaMask/metamask-assets": 3,
-        "@MetaMask/confirmations": 1
-      }
-    },
-    {
       "component": "SimulationDetailsLayout",
       "instances": 5,
       "fileCount": 2,
@@ -2683,23 +2702,6 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/confirmations": 5
-      }
-    },
-    {
-      "component": "GatorPermissionDetailRow",
-      "instances": 5,
-      "fileCount": 1,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "gator-permission-detail-row",
-      "importSources": [
-        "./gator-permission-detail-row"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@MetaMask/core-extension-ux"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/core-extension-ux": 5
       }
     },
     {

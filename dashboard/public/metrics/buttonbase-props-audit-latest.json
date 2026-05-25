@@ -1,21 +1,20 @@
 {
   "component": "ButtonBase",
-  "generatedAt": "2026-05-18T08:02:52.424Z",
+  "generatedAt": "2026-05-25T09:38:50.689Z",
   "projects": {
     "extension": {
-      "filesScanned": 3111,
+      "filesScanned": 3144,
       "targetComponent": "ButtonBase",
       "mmds": {
-        "totalInstances": 30,
+        "totalInstances": 31,
         "filesCount": 19,
         "props": {
           "className": {
-            "count": 30,
+            "count": 31,
             "values": {
               "\"h-auto flex-1 flex-col justify-center rounded-lg bg-muted py-4 hover:bg-muted-hover active:bg-muted-pressed\"": 4,
               "{twMerge( // Reset ButtonBase defaults for card layout 'justify-start rounded-...}": 2,
               "\"w-full justify-between text-left rounded-none px-3 py-2 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 2,
-              "\"bg-transparent hover:bg-transparent active:bg-transparent p-0 min-w-0 h-auto\"": 2,
               "\"flex items-center justify-start gap-1 rounded-lg bg-background-muted px-3 py-2 hover:bg-hover active:opacity-70\"": 2,
               "{`w-full justify-between text-left rounded-none px-4 min-w-0 h-[46px] active:b...}": 2,
               "{longTabStyles}": 1,
@@ -27,7 +26,10 @@
               "{twMerge( 'py-1.5 h-auto min-w-12 rounded-lg flex items-center gap-1 bg-transp...}": 1,
               "\"w-full flex flex-row justify-between items-center px-4 py-3 bg-transparent rounded-none hover:bg-hover active:bg-pressed\"": 1,
               "{twMerge(CARD_STYLES)}": 1,
+              "\"w-full flex flex-row justify-between items-center pt-4 pb-2 bg-transparent rounded-none hover:bg-hover active:bg-pressed\"": 1,
+              "\"w-full flex flex-row justify-between items-center px-4 pt-4 mb-2 bg-transparent rounded-none hover:bg-hover active:bg-pressed\"": 1,
               "\"w-full px-0 h-[62px] rounded-none bg-transparent hover:bg-hover active:bg-pressed\"": 1,
+              "\"flex-1 justify-start rounded-none min-w-0 h-auto text-left cursor-pointer gap-4 px-4 py-3 bg-transparent\"": 1,
               "{twMerge( 'justify-start rounded-none min-w-0 h-auto text-left cursor-pointer'...}": 1,
               "\"rounded-lg w-full bg-muted\"": 1,
               "{`w-full justify-between text-left rounded-none px-3 py-2 min-w-0 h-auto activ...}": 1,
@@ -37,9 +39,9 @@
             }
           },
           "onClick": {
-            "count": 26,
+            "count": 27,
             "values": {
-              "{handleClick}": 4,
+              "{handleClick}": 5,
               "{handleSeeAll}": 2,
               "{() => handleDirectionClick('long')}": 1,
               "{() => handleDirectionClick('short')}": 1,
@@ -124,7 +126,7 @@
           "aria-label": {
             "count": 3,
             "values": {
-              "{t('perpsSeeAll')}": 2,
+              "{`${t('perpsRecentActivity')}, ${t('perpsSeeAll')}`}": 2,
               "{t('back')}": 1
             }
           },
@@ -146,6 +148,12 @@
             "count": 1,
             "values": {
               "{{ color: TextColor.PrimaryDefault, fontWeight: FontWeight.Medium, variant: Te...}": 1
+            }
+          },
+          "style": {
+            "count": 1,
+            "values": {
+              "{{ paddingLeft: 0, paddingRight: 0 }}": 1
             }
           },
           "color": {
@@ -344,7 +352,7 @@
             "count": 3,
             "values": {
               "{IconName.Filter}": 1,
-              "{IconName.Add}": 1,
+              "{isTokenManagementFilterEnabled ? IconName.MoreVertical : IconName.Add}": 1,
               "{IconName.MoreVertical}": 1
             }
           },
@@ -453,17 +461,16 @@
         }
       },
       "overall": {
-        "totalInstances": 42,
+        "totalInstances": 43,
         "filesCount": 28,
         "props": {
           "className": {
-            "count": 40,
+            "count": 41,
             "values": {
               "\"h-auto flex-1 flex-col justify-center rounded-lg bg-muted py-4 hover:bg-muted-hover active:bg-muted-pressed\"": 4,
               "\"asset-list-control-bar__button\"": 3,
               "{twMerge( // Reset ButtonBase defaults for card layout 'justify-start rounded-...}": 2,
               "\"w-full justify-between text-left rounded-none px-3 py-2 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 2,
-              "\"bg-transparent hover:bg-transparent active:bg-transparent p-0 min-w-0 h-auto\"": 2,
               "\"flex items-center justify-start gap-1 rounded-lg bg-background-muted px-3 py-2 hover:bg-hover active:opacity-70\"": 2,
               "{`w-full justify-between text-left rounded-none px-4 min-w-0 h-[46px] active:b...}": 2,
               "\"asset-list-control-bar__button asset-list-control-bar__network_control\"": 1,
@@ -476,7 +483,10 @@
               "{twMerge( 'py-1.5 h-auto min-w-12 rounded-lg flex items-center gap-1 bg-transp...}": 1,
               "\"w-full flex flex-row justify-between items-center px-4 py-3 bg-transparent rounded-none hover:bg-hover active:bg-pressed\"": 1,
               "{twMerge(CARD_STYLES)}": 1,
+              "\"w-full flex flex-row justify-between items-center pt-4 pb-2 bg-transparent rounded-none hover:bg-hover active:bg-pressed\"": 1,
+              "\"w-full flex flex-row justify-between items-center px-4 pt-4 mb-2 bg-transparent rounded-none hover:bg-hover active:bg-pressed\"": 1,
               "\"w-full px-0 h-[62px] rounded-none bg-transparent hover:bg-hover active:bg-pressed\"": 1,
+              "\"flex-1 justify-start rounded-none min-w-0 h-auto text-left cursor-pointer gap-4 px-4 py-3 bg-transparent\"": 1,
               "{twMerge( 'justify-start rounded-none min-w-0 h-auto text-left cursor-pointer'...}": 1,
               "{className ? classnames('snap-ui-renderer__selector-item', className) : 'snap-...}": 1,
               "{className ? classnames('snap-ui-renderer__selector', className) : 'snap-ui-re...}": 1,
@@ -492,9 +502,9 @@
             }
           },
           "onClick": {
-            "count": 38,
+            "count": 39,
             "values": {
-              "{handleClick}": 5,
+              "{handleClick}": 6,
               "{onClick}": 3,
               "{handleSeeAll}": 2,
               "{handleNetworkManager}": 1,
@@ -674,7 +684,7 @@
             "count": 4,
             "values": {
               "{IconName.Filter}": 2,
-              "{IconName.Add}": 1,
+              "{isTokenManagementFilterEnabled ? IconName.MoreVertical : IconName.Add}": 1,
               "{IconName.MoreVertical}": 1
             }
           },
@@ -682,6 +692,14 @@
             "count": 4,
             "values": {
               "true (shorthand)": 4
+            }
+          },
+          "style": {
+            "count": 4,
+            "values": {
+              "{{ justifyContent: 'inherit', textAlign: 'inherit', height: 'inherit', minHeig...}": 2,
+              "{{ paddingLeft: 0, paddingRight: 0 }}": 1,
+              "{AccountMenuStyle}": 1
             }
           },
           "borderRadius": {
@@ -712,7 +730,7 @@
           "aria-label": {
             "count": 3,
             "values": {
-              "{t('perpsSeeAll')}": 2,
+              "{`${t('perpsRecentActivity')}, ${t('perpsSeeAll')}`}": 2,
               "{t('back')}": 1
             }
           },
@@ -728,13 +746,6 @@
             "values": {
               "2": 2,
               "3": 1
-            }
-          },
-          "style": {
-            "count": 3,
-            "values": {
-              "{{ justifyContent: 'inherit', textAlign: 'inherit', height: 'inherit', minHeig...}": 2,
-              "{AccountMenuStyle}": 1
             }
           },
           "alignItems": {
@@ -850,21 +861,22 @@
       }
     },
     "mobile": {
-      "filesScanned": 6443,
+      "filesScanned": 6529,
       "targetComponent": "ButtonBase",
       "mmds": {
-        "totalInstances": 10,
+        "totalInstances": 11,
         "filesCount": 6,
         "props": {
           "onPress": {
-            "count": 10,
+            "count": 11,
             "values": {
               "{onContactSupport}": 1,
               "{() => onChange('energy')}": 1,
               "{() => onChange('bandwidth')}": 1,
               "{onPress}": 1,
+              "{() => onBuyPress(upToken)}": 1,
+              "{() => onBuyPress(downToken)}": 1,
               "{() => toggleWalletExpanded(walletId)}": 1,
-              "{() => handleEarningWayPress(wayToEarn)}": 1,
               "{() => openLink(metadata.externalLinks.homepage || '', 'website')}": 1,
               "{() => openLink( `https://x.com/${metadata.externalLinks.twitterPage}`, 'twitt...}": 1,
               "{() => openLink( `https://t.me/${metadata.externalLinks.telegramChannelId}`, '...}": 1,
@@ -872,13 +884,26 @@
             }
           },
           "twClassName": {
-            "count": 8,
+            "count": 9,
             "values": {
               "{(pressed) => `rounded-lg bg-muted px-3 ${pressed ? 'opacity-70' : ''}`}": 4,
               "\"w-full rounded-xl bg-muted mt-6\"": 1,
               "\"flex-1 self-stretch h-full min-h-12 rounded-xl bg-muted px-1 py-3\"": 1,
-              "\"bg-background-default\"": 1,
-              "\"h-auto px-4 py-3 bg-inherit\"": 1
+              "\"h-10 flex-1 rounded-lg bg-success-muted\"": 1,
+              "\"h-10 flex-1 rounded-lg bg-error-muted\"": 1,
+              "\"bg-background-default\"": 1
+            }
+          },
+          "testID": {
+            "count": 7,
+            "values": {
+              "{AccessRestrictedModalSelectorsIDs.CONTACT_SUPPORT_BUTTON}": 1,
+              "{testIDEnergy}": 1,
+              "{testIDBandwidth}": 1,
+              "{testID}": 1,
+              "{PredictCryptoUpDownMarketCardSelectorsIDs.UP_BUTTON}": 1,
+              "{PredictCryptoUpDownMarketCardSelectorsIDs.DOWN_BUTTON}": 1,
+              "{`show-more-button-${walletId}`}": 1
             }
           },
           "size": {
@@ -895,16 +920,6 @@
               "{IconName.Flash}": 1,
               "{IconName.Connect}": 1,
               "{IconName.X}": 1
-            }
-          },
-          "testID": {
-            "count": 5,
-            "values": {
-              "{AccessRestrictedModalSelectorsIDs.CONTACT_SUPPORT_BUTTON}": 1,
-              "{testIDEnergy}": 1,
-              "{testIDBandwidth}": 1,
-              "{testID}": 1,
-              "{`show-more-button-${walletId}`}": 1
             }
           },
           "startIconProps": {
@@ -937,6 +952,13 @@
             "values": {
               "{energyLabel}": 1,
               "{bandwidthLabel}": 1
+            }
+          },
+          "disabled": {
+            "count": 2,
+            "values": {
+              "{!upToken || !isMarketOpen}": 1,
+              "{!downToken || !isMarketOpen}": 1
             }
           }
         }
@@ -1067,11 +1089,11 @@
         }
       },
       "overall": {
-        "totalInstances": 20,
+        "totalInstances": 21,
         "filesCount": 15,
         "props": {
           "onPress": {
-            "count": 20,
+            "count": 21,
             "values": {
               "{handlePress}": 2,
               "{onPress}": 2,
@@ -1082,9 +1104,10 @@
               "{() => onChange('bandwidth')}": 1,
               "{() => tryPerpsNow()}": 1,
               "{handleApply}": 1,
+              "{() => onBuyPress(upToken)}": 1,
+              "{() => onBuyPress(downToken)}": 1,
               "{() => handleGetStarted()}": 1,
               "{() => toggleWalletExpanded(walletId)}": 1,
-              "{() => handleEarningWayPress(wayToEarn)}": 1,
               "{() => openLink(metadata.externalLinks.homepage || '', 'website')}": 1,
               "{() => openLink( `https://x.com/${metadata.externalLinks.twitterPage}`, 'twitt...}": 1,
               "{() => openLink( `https://t.me/${metadata.externalLinks.telegramChannelId}`, '...}": 1,
@@ -1094,7 +1117,7 @@
             }
           },
           "testID": {
-            "count": 14,
+            "count": 16,
             "values": {
               "{testID}": 2,
               "\"snap-ui-renderer__selector-item\"": 1,
@@ -1105,6 +1128,8 @@
               "{testIDBandwidth}": 1,
               "{PerpsGTMModalSelectorsIDs.PERPS_TRY_NOW_BUTTON}": 1,
               "{testID ? `${testID}-apply-button` : undefined}": 1,
+              "{PredictCryptoUpDownMarketCardSelectorsIDs.UP_BUTTON}": 1,
+              "{PredictCryptoUpDownMarketCardSelectorsIDs.DOWN_BUTTON}": 1,
               "{PREDICT_GTM_MODAL_TEST_IDS.GET_STARTED_BUTTON}": 1,
               "{`show-more-button-${walletId}`}": 1,
               "{networkFilterTestId}": 1,
@@ -1152,13 +1177,14 @@
             }
           },
           "twClassName": {
-            "count": 8,
+            "count": 9,
             "values": {
               "{(pressed) => `rounded-lg bg-muted px-3 ${pressed ? 'opacity-70' : ''}`}": 4,
               "\"w-full rounded-xl bg-muted mt-6\"": 1,
               "\"flex-1 self-stretch h-full min-h-12 rounded-xl bg-muted px-1 py-3\"": 1,
-              "\"bg-background-default\"": 1,
-              "\"h-auto px-4 py-3 bg-inherit\"": 1
+              "\"h-10 flex-1 rounded-lg bg-success-muted\"": 1,
+              "\"h-10 flex-1 rounded-lg bg-error-muted\"": 1,
+              "\"bg-background-default\"": 1
             }
           },
           "width": {
@@ -1199,6 +1225,15 @@
               "0.2": 1
             }
           },
+          "disabled": {
+            "count": 4,
+            "values": {
+              "{!upToken || !isMarketOpen}": 1,
+              "{!downToken || !isMarketOpen}": 1,
+              "{isDisabled}": 1,
+              "false": 1
+            }
+          },
           "startIconProps": {
             "count": 4,
             "values": {
@@ -1235,13 +1270,6 @@
             "values": {
               "{energyLabel}": 1,
               "{bandwidthLabel}": 1
-            }
-          },
-          "disabled": {
-            "count": 2,
-            "values": {
-              "{isDisabled}": 1,
-              "false": 1
             }
           },
           "[spread]": {

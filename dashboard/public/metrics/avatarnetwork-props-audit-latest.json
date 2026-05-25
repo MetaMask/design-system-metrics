@@ -1,9 +1,9 @@
 {
   "component": "AvatarNetwork",
-  "generatedAt": "2026-05-18T07:58:13.350Z",
+  "generatedAt": "2026-05-25T09:35:11.131Z",
   "projects": {
     "extension": {
-      "filesScanned": 3111,
+      "filesScanned": 3144,
       "targetComponent": "AvatarNetwork",
       "mmds": {
         "totalInstances": 26,
@@ -529,7 +529,7 @@
       }
     },
     "mobile": {
-      "filesScanned": 6443,
+      "filesScanned": 6529,
       "targetComponent": "AvatarNetwork",
       "mmds": {
         "totalInstances": 4,
@@ -579,38 +579,36 @@
         }
       },
       "deprecated": {
-        "totalInstances": 14,
-        "filesCount": 12,
+        "totalInstances": 13,
+        "filesCount": 11,
         "props": {
           "imageSource": {
-            "count": 14,
+            "count": 13,
             "values": {
               "{networkImageSource}": 4,
               "{imageSource}": 3,
               "{networkImage}": 2,
               "{getNetworkImageSource({ chainId: cardNetworkInfos.base.caipChainId, })}": 1,
               "{getNetworkImageSource({ chainId: cardNetworkInfos.solana.caipChainId, })}": 1,
-              "{getNetworkImageSource({ chainId: network.chainId, })}": 1,
               "{item.imageSource}": 1,
               "{networkConfiguration.rpcPrefs.imageSource || (networkConfiguration.rpcPrefs.i...}": 1
             }
           },
           "size": {
-            "count": 12,
+            "count": 11,
             "values": {
-              "{AvatarSize.Xs}": 7,
+              "{AvatarSize.Xs}": 6,
               "{AvatarSize.Md}": 3,
               "{AvatarSize.Sm}": 2
             }
           },
           "name": {
-            "count": 11,
+            "count": 10,
             "values": {
               "{displayName}": 2,
               "\"Base\"": 1,
               "\"Solana\"": 1,
               "{depositNetworkName ?? networkName}": 1,
-              "{network.name}": 1,
               "{nativeCurrency}": 1,
               "{formHook.form.nickname}": 1,
               "{item.name}": 1,
@@ -650,20 +648,20 @@
         }
       },
       "overall": {
-        "totalInstances": 18,
-        "filesCount": 16,
+        "totalInstances": 17,
+        "filesCount": 15,
         "props": {
           "size": {
-            "count": 16,
+            "count": 15,
             "values": {
-              "{AvatarSize.Xs}": 7,
+              "{AvatarSize.Xs}": 6,
               "{AvatarNetworkSize.Xs}": 4,
               "{AvatarSize.Md}": 3,
               "{AvatarSize.Sm}": 2
             }
           },
           "name": {
-            "count": 15,
+            "count": 14,
             "values": {
               "{displayName}": 3,
               "{label}": 2,
@@ -671,7 +669,6 @@
               "\"Base\"": 1,
               "\"Solana\"": 1,
               "{depositNetworkName ?? networkName}": 1,
-              "{network.name}": 1,
               "{nativeCurrency}": 1,
               "{formHook.form.nickname}": 1,
               "{item.name}": 1,
@@ -680,14 +677,13 @@
             }
           },
           "imageSource": {
-            "count": 14,
+            "count": 13,
             "values": {
               "{networkImageSource}": 4,
               "{imageSource}": 3,
               "{networkImage}": 2,
               "{getNetworkImageSource({ chainId: cardNetworkInfos.base.caipChainId, })}": 1,
               "{getNetworkImageSource({ chainId: cardNetworkInfos.solana.caipChainId, })}": 1,
-              "{getNetworkImageSource({ chainId: network.chainId, })}": 1,
               "{item.imageSource}": 1,
               "{networkConfiguration.rpcPrefs.imageSource || (networkConfiguration.rpcPrefs.i...}": 1
             }
@@ -746,7 +742,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "AvatarNetwork": 14
+        "AvatarNetwork": 13
       }
     }
   }
