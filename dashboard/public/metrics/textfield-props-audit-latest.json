@@ -1,9 +1,9 @@
 {
   "component": "TextField",
-  "generatedAt": "2026-05-18T08:08:31.434Z",
+  "generatedAt": "2026-05-26T09:14:34.746Z",
   "projects": {
     "extension": {
-      "filesScanned": 3111,
+      "filesScanned": 3144,
       "targetComponent": "TextField",
       "mmds": {
         "totalInstances": 0,
@@ -11,19 +11,789 @@
         "props": {}
       },
       "deprecated": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 30,
+        "filesCount": 22,
+        "props": {
+          "value": {
+            "count": 29,
+            "values": {
+              "{amount}": 2,
+              "{inputValue}": 2,
+              "{password}": 2,
+              "{searchQuery}": 2,
+              "{marginAmount}": 1,
+              "{displayedTokenValue}": 1,
+              "{percentInputValue}": 1,
+              "{takeProfitPrice}": 1,
+              "{isTpPercentFocused ? rawTpPercent : tpPercent}": 1,
+              "{stopLossPrice}": 1,
+              "{isSlPercentFocused ? rawSlPercent : slPercent}": 1,
+              "{isUsdInputFocused ? rawInput : displayValue}": 1,
+              "{limitPrice}": 1,
+              "{editingTpPrice}": 1,
+              "{isTpPercentFocused ? rawTpPercent : (tpPresetPercent ?? editingTpPercent)}": 1,
+              "{editingSlPrice}": 1,
+              "{isSlPercentFocused ? rawSlPercent : (slPresetPercent ?? editingSlPercent)}": 1,
+              "{referralCode}": 1,
+              "{confirmationInput}": 1,
+              "{word.word}": 1,
+              "{customSpendingCapInputValue}": 1,
+              "{hexData}": 1,
+              "{to}": 1,
+              "{ipfsURL}": 1,
+              "{wordToDisplay}": 1
+            }
+          },
+          "onChange": {
+            "count": 29,
+            "values": {
+              "{handleAmountChange}": 2,
+              "{(e: React.ChangeEvent<HTMLInputElement>) => { const { value } = e.target; if ...}": 2,
+              "{onChange}": 2,
+              "{handleTokenAmountChange}": 1,
+              "{handlePercentInputChange}": 1,
+              "{handleTpPriceChange}": 1,
+              "{handleTpPercentChange}": 1,
+              "{handleSlPriceChange}": 1,
+              "{handleSlPercentChange}": 1,
+              "{handleUsdInputChange}": 1,
+              "{handleInputChange}": 1,
+              "{handlePriceChange}": 1,
+              "{handleTpPercentInputChange}": 1,
+              "{handleSlPercentInputChange}": 1,
+              "{(e) => handleReferralCodeChange(e.target.value)}": 1,
+              "{(e: { target: { value: string } }) => { setConfirmationInput(e.target.value);...}": 1,
+              "{(e: React.ChangeEvent<HTMLInputElement>) => handleChange(word.id, e.target.va...}": 1,
+              "{handlePasswordChange}": 1,
+              "{(e) => { e.preventDefault(); e.stopPropagation(); const cleanedValue = saniti...}": 1,
+              "{(e) => { handleCustomSlippage(e, e.target.value); }}": 1,
+              "{(e) => { setSearchQuery(e.target.value); }}": 1,
+              "{(e) => setSearchQuery(e.target.value)}": 1,
+              "{(event) => setCustomSpendingCapInputValue(event.target.value)}": 1,
+              "{onToChange}": 1,
+              "{(event) => onPasswordChange(event.target.value)}": 1,
+              "{(e) => { handleIPFSChange(e.target.value); }}": 1
+            }
+          },
+          "inputProps": {
+            "count": 23,
+            "values": {
+              "{{ inputMode: 'decimal' }}": 4,
+              "{{ inputMode: 'decimal', }}": 4,
+              "{{ onKeyDown: handleInputEnterKey }}": 4,
+              "{{ inputMode: 'decimal', size: 10, onKeyDown: (event: React.KeyboardEvent<HTML...}": 1,
+              "{{ inputMode: 'numeric', style: { textAlign: 'right', paddingLeft: '8px' }, }}": 1,
+              "{{ inputMode: 'numeric', style: { textAlign: 'right' }, onKeyDown: handleInput...}": 1,
+              "{{ 'data-testid': 'remove-snap-confirmation-input', }}": 1,
+              "{{ ref: (el) => { if (el) { srpRefs.current[word.id] = el; } }, }}": 1,
+              "{{ disableStateStyles: true, textAlign: TextAlign.Start, style: { fontWeight: ...}": 1,
+              "{{ disableStateStyles: true, textVariant: TextVariant.bodyMd, paddingRight: 2,...}": 1,
+              "{{ disableStateStyles: true, }}": 1,
+              "{{ 'data-testid': 'custom-spending-cap-input' }}": 1,
+              "{{ 'data-testid': 'input-password', }}": 1,
+              "{{ 'data-testid': 'ipfs-input' }}": 1
+            }
+          },
+          "size": {
+            "count": 22,
+            "values": {
+              "{TextFieldSize.Md}": 10,
+              "{TextFieldSize.Sm}": 6,
+              "{TextFieldSize.Lg}": 6
+            }
+          },
+          "placeholder": {
+            "count": 22,
+            "values": {
+              "\"0.00\"": 7,
+              "\"0\"": 7,
+              "{usdPlaceholder}": 1,
+              "{t('rewardsOnboardingReferralCodePlaceholder')}": 1,
+              "{t('password')}": 1,
+              "{t('enterTokenNameOrAddress')}": 1,
+              "{(isDestinationSolana ? t('destinationAccountPickerSearchPlaceholderToSolana')...}": 1,
+              "{`${formattedSpendingCap} ${tokenSymbol}`}": 1,
+              "{t('hexDataPlaceholder')}": 1,
+              "{t('recipientPlaceholderText')}": 1
+            }
+          },
+          "borderRadius": {
+            "count": 18,
+            "values": {
+              "{BorderRadius.MD}": 15,
+              "{BorderRadius.XL}": 3
+            }
+          },
+          "borderWidth": {
+            "count": 17,
+            "values": {
+              "0": 16,
+              "1": 1
+            }
+          },
+          "backgroundColor": {
+            "count": 17,
+            "values": {
+              "{BackgroundColor.backgroundMuted}": 16,
+              "{BackgroundColor.backgroundSubsection}": 1
+            }
+          },
+          "className": {
+            "count": 17,
+            "values": {
+              "\"w-full\"": 15,
+              "\"amount-input\"": 1,
+              "{isWarning ? '!border-warning-default' : undefined}": 1
+            }
+          },
+          "onBlur": {
+            "count": 16,
+            "values": {
+              "{handleTpPriceBlur}": 2,
+              "{handleTpPercentBlur}": 2,
+              "{handleSlPriceBlur}": 2,
+              "{handleSlPercentBlur}": 2,
+              "{handleAmountBlur}": 1,
+              "{handleTokenBlur}": 1,
+              "{handlePercentInputBlur}": 1,
+              "{handleUsdInputBlur}": 1,
+              "{handleInputBlur}": 1,
+              "{handlePriceBlur}": 1,
+              "{() => { setWordInactive(word.id); checkForInvalidWords(); }}": 1,
+              "{() => { // If the user clicks outside the input, show the custom button setSh...}": 1
+            }
+          },
+          "onFocus": {
+            "count": 15,
+            "values": {
+              "{(event: React.FocusEvent<HTMLInputElement>) => event.target.select()}": 4,
+              "{handleNumericFocusSelectAll}": 2,
+              "{handleTpPercentFocus}": 2,
+              "{handleSlPercentFocus}": 2,
+              "{handleTokenFocus}": 1,
+              "{handleUsdInputFocus}": 1,
+              "{handleInputFocus}": 1,
+              "{() => { onWordFocus(word.id); }}": 1,
+              "{() => { setShowCustomInput(true); }}": 1
+            }
+          },
+          "endAccessory": {
+            "count": 13,
+            "values": {
+              "{<Text variant={TextVariant.BodySm} color={TextColor.TextAlternative} > % </Text>}": 3,
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > % </Text>}": 2,
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > {getDi...}": 1,
+              "{<Text variant={TextVariant.BodySm} color={TextColor.TextAlternative} > x </Text>}": 1,
+              "{<ButtonBase type=\"button\" size={ButtonBaseSize.Sm} onClick={handleMidClick} c...}": 1,
+              "{renderReferralIcon()}": 1,
+              "{<Text variant={TextVariant.bodyMd}>%</Text>}": 1,
+              "{<Box display={Display.Flex}> <Text> {fiatMode ? fiatCurrencyName?.toUpperCase...}": 1,
+              "{recipients.length > 0 ? ( <ButtonIcon ariaLabel=\"Open recipient modal\" data-t...}": 1,
+              "{<ButtonIcon type=\"button\" iconName={showPassword ? IconName.Eye : IconName.Ey...}": 1
+            }
+          },
+          "data-testid": {
+            "count": 12,
+            "values": {
+              "\"perps-edit-margin-amount-input\"": 1,
+              "\"amount-input-field\"": 1,
+              "\"amount-input-token-field\"": 1,
+              "\"balance-percent-input\"": 1,
+              "\"tp-price-input\"": 1,
+              "\"tp-percent-input\"": 1,
+              "\"sl-price-input\"": 1,
+              "\"sl-percent-input\"": 1,
+              "\"close-amount-value\"": 1,
+              "\"leverage-input\"": 1,
+              "\"limit-price-input\"": 1,
+              "\"destination-account-picker-modal-search-input\"": 1
+            }
+          },
+          "startAccessory": {
+            "count": 12,
+            "values": {
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > $ </Text>}": 5,
+              "{<Text variant={TextVariant.BodySm} color={TextColor.TextAlternative} > $ </Text>}": 2,
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative}> $ </Text>}": 1,
+              "{<Text color={TextColor.TextAlternative} textAlign={TextAlign.Left} className=...}": 1,
+              "{<Icon color={IconColor.IconAlternative} name={IconName.Search} size={IconSize...}": 1,
+              "{<Icon name={IconName.Search} size={IconSize.Md} />}": 1,
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} classNam...}": 1
+            }
+          },
+          "testId": {
+            "count": 11,
+            "values": {
+              "\"perps-update-tpsl-tp-price-input\"": 1,
+              "\"perps-update-tpsl-tp-percent-input\"": 1,
+              "\"perps-update-tpsl-sl-price-input\"": 1,
+              "\"perps-update-tpsl-sl-percent-input\"": 1,
+              "{`import-srp__srp-word-${index}`}": 1,
+              "\"multichain-private-key-password-input\"": 1,
+              "\"bridge__tx-settings-modal-custom-input\"": 1,
+              "bridge-asset-picker-search-input": 1,
+              "\"send-amount-input\"": 1,
+              "\"recipient-address-input\"": 1,
+              "{`recovery-phrase-chip-${index}`}": 1
+            }
+          },
+          "error": {
+            "count": 8,
+            "values": {
+              "{referralCodeIsError}": 1,
+              "{error}": 1,
+              "{!word.active && misSpelledWordsList().includes(word.word)}": 1,
+              "{wrongPassword}": 1,
+              "{Boolean(amountError)}": 1,
+              "{Boolean(hexDataError)}": 1,
+              "{isHardError}": 1,
+              "{Boolean(error)}": 1
+            }
+          },
+          "disabled": {
+            "count": 7,
+            "values": {
+              "{isSaving}": 5,
+              "{optinLoading}": 1,
+              "true (shorthand)": 1
+            }
+          },
+          "autoFocus": {
+            "count": 7,
+            "values": {
+              "true (shorthand)": 4,
+              "{autoFocus}": 2,
+              "true": 1
+            }
+          },
+          "type": {
+            "count": 7,
+            "values": {
+              "{TextFieldType.Password}": 2,
+              "{TextFieldType.Text}": 2,
+              "{word.active || misSpelledWordsList().includes(word.word) ? TextFieldType.Text...}": 1,
+              "{TextFieldType.Number}": 1,
+              "{showPassword ? TextFieldType.Text : TextFieldType.Password}": 1
+            }
+          },
+          "inputRef": {
+            "count": 6,
+            "values": {
+              "{usdInputRef}": 1,
+              "{tokenInputRef}": 1,
+              "{tpPercentInputRef}": 1,
+              "{slPercentInputRef}": 1,
+              "{referralInputRef}": 1,
+              "{inputRef}": 1
+            }
+          },
+          "width": {
+            "count": 5,
+            "values": {
+              "{BlockSize.Full}": 5
+            }
+          },
+          "style": {
+            "count": 5,
+            "values": {
+              "{{ width: '100%' }}": 2,
+              "{{ flex: 1, minWidth: 0, opacity: isAmountReadOnly && amountFieldProps?.value ...}": 1,
+              "{{ minHeight: 48, paddingRight: 8, outline: 'none', borderColor: BorderColor.b...}": 1,
+              "{{ minHeight: 48, marginBottom: 12, outline: 'none', }}": 1
+            }
+          },
+          "onPaste": {
+            "count": 4,
+            "values": {
+              "{(e: React.ClipboardEvent<HTMLInputElement>) => { e.preventDefault(); }}": 1,
+              "{(e: React.ClipboardEvent<HTMLInputElement>) => { e.preventDefault(); const cl...}": 1,
+              "{(e: React.ClipboardEvent<HTMLInputElement>) => { handleCustomSlippage(e, e.cl...}": 1,
+              "{setAmountInputMethodPasted}": 1
+            }
+          },
+          "key": {
+            "count": 2,
+            "values": {
+              "{word.id}": 1,
+              "{index}": 1
+            }
+          },
+          "onKeyDown": {
+            "count": 2,
+            "values": {
+              "{(e: React.KeyboardEvent<HTMLInputElement>) => { if (e.key === 'Enter' || e.ke...}": 1,
+              "{(e: React.KeyboardEvent<HTMLInputElement>) => { // Only allows digits and dec...}": 1
+            }
+          },
+          "borderColor": {
+            "count": 2,
+            "values": {
+              "{BorderColor.borderMuted}": 2
+            }
+          },
+          "marginInline": {
+            "count": 2,
+            "values": {
+              "4": 2
+            }
+          },
+          "paddingRight": {
+            "count": 2,
+            "values": {
+              "3": 2
+            }
+          },
+          "autoCapitalize": {
+            "count": 1,
+            "values": {
+              "\"characters\"": 1
+            }
+          },
+          "display": {
+            "count": 1,
+            "values": {
+              "{Display.Flex}": 1
+            }
+          },
+          "onKeyPress": {
+            "count": 1,
+            "values": {
+              "{(e?: React.KeyboardEvent<HTMLDivElement>) => { if (e) { // Only allow numbers...}": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{amountFieldProps}": 1
+            }
+          },
+          "color": {
+            "count": 1,
+            "values": {
+              "{TextColor.textAlternative}": 1
+            }
+          },
+          "onInput": {
+            "count": 1,
+            "values": {
+              "{setAmountInputMethodManual}": 1
+            }
+          },
+          "ref": {
+            "count": 1,
+            "values": {
+              "{recipientInputRef}": 1
+            }
+          },
+          "id": {
+            "count": 1,
+            "values": {
+              "\"password-box\"": 1
+            }
+          },
+          "readOnly": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          }
+        }
       },
       "overall": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 30,
+        "filesCount": 22,
+        "props": {
+          "value": {
+            "count": 29,
+            "values": {
+              "{amount}": 2,
+              "{inputValue}": 2,
+              "{password}": 2,
+              "{searchQuery}": 2,
+              "{marginAmount}": 1,
+              "{displayedTokenValue}": 1,
+              "{percentInputValue}": 1,
+              "{takeProfitPrice}": 1,
+              "{isTpPercentFocused ? rawTpPercent : tpPercent}": 1,
+              "{stopLossPrice}": 1,
+              "{isSlPercentFocused ? rawSlPercent : slPercent}": 1,
+              "{isUsdInputFocused ? rawInput : displayValue}": 1,
+              "{limitPrice}": 1,
+              "{editingTpPrice}": 1,
+              "{isTpPercentFocused ? rawTpPercent : (tpPresetPercent ?? editingTpPercent)}": 1,
+              "{editingSlPrice}": 1,
+              "{isSlPercentFocused ? rawSlPercent : (slPresetPercent ?? editingSlPercent)}": 1,
+              "{referralCode}": 1,
+              "{confirmationInput}": 1,
+              "{word.word}": 1,
+              "{customSpendingCapInputValue}": 1,
+              "{hexData}": 1,
+              "{to}": 1,
+              "{ipfsURL}": 1,
+              "{wordToDisplay}": 1
+            }
+          },
+          "onChange": {
+            "count": 29,
+            "values": {
+              "{handleAmountChange}": 2,
+              "{(e: React.ChangeEvent<HTMLInputElement>) => { const { value } = e.target; if ...}": 2,
+              "{onChange}": 2,
+              "{handleTokenAmountChange}": 1,
+              "{handlePercentInputChange}": 1,
+              "{handleTpPriceChange}": 1,
+              "{handleTpPercentChange}": 1,
+              "{handleSlPriceChange}": 1,
+              "{handleSlPercentChange}": 1,
+              "{handleUsdInputChange}": 1,
+              "{handleInputChange}": 1,
+              "{handlePriceChange}": 1,
+              "{handleTpPercentInputChange}": 1,
+              "{handleSlPercentInputChange}": 1,
+              "{(e) => handleReferralCodeChange(e.target.value)}": 1,
+              "{(e: { target: { value: string } }) => { setConfirmationInput(e.target.value);...}": 1,
+              "{(e: React.ChangeEvent<HTMLInputElement>) => handleChange(word.id, e.target.va...}": 1,
+              "{handlePasswordChange}": 1,
+              "{(e) => { e.preventDefault(); e.stopPropagation(); const cleanedValue = saniti...}": 1,
+              "{(e) => { handleCustomSlippage(e, e.target.value); }}": 1,
+              "{(e) => { setSearchQuery(e.target.value); }}": 1,
+              "{(e) => setSearchQuery(e.target.value)}": 1,
+              "{(event) => setCustomSpendingCapInputValue(event.target.value)}": 1,
+              "{onToChange}": 1,
+              "{(event) => onPasswordChange(event.target.value)}": 1,
+              "{(e) => { handleIPFSChange(e.target.value); }}": 1
+            }
+          },
+          "inputProps": {
+            "count": 23,
+            "values": {
+              "{{ inputMode: 'decimal' }}": 4,
+              "{{ inputMode: 'decimal', }}": 4,
+              "{{ onKeyDown: handleInputEnterKey }}": 4,
+              "{{ inputMode: 'decimal', size: 10, onKeyDown: (event: React.KeyboardEvent<HTML...}": 1,
+              "{{ inputMode: 'numeric', style: { textAlign: 'right', paddingLeft: '8px' }, }}": 1,
+              "{{ inputMode: 'numeric', style: { textAlign: 'right' }, onKeyDown: handleInput...}": 1,
+              "{{ 'data-testid': 'remove-snap-confirmation-input', }}": 1,
+              "{{ ref: (el) => { if (el) { srpRefs.current[word.id] = el; } }, }}": 1,
+              "{{ disableStateStyles: true, textAlign: TextAlign.Start, style: { fontWeight: ...}": 1,
+              "{{ disableStateStyles: true, textVariant: TextVariant.bodyMd, paddingRight: 2,...}": 1,
+              "{{ disableStateStyles: true, }}": 1,
+              "{{ 'data-testid': 'custom-spending-cap-input' }}": 1,
+              "{{ 'data-testid': 'input-password', }}": 1,
+              "{{ 'data-testid': 'ipfs-input' }}": 1
+            }
+          },
+          "size": {
+            "count": 22,
+            "values": {
+              "{TextFieldSize.Md}": 10,
+              "{TextFieldSize.Sm}": 6,
+              "{TextFieldSize.Lg}": 6
+            }
+          },
+          "placeholder": {
+            "count": 22,
+            "values": {
+              "\"0.00\"": 7,
+              "\"0\"": 7,
+              "{usdPlaceholder}": 1,
+              "{t('rewardsOnboardingReferralCodePlaceholder')}": 1,
+              "{t('password')}": 1,
+              "{t('enterTokenNameOrAddress')}": 1,
+              "{(isDestinationSolana ? t('destinationAccountPickerSearchPlaceholderToSolana')...}": 1,
+              "{`${formattedSpendingCap} ${tokenSymbol}`}": 1,
+              "{t('hexDataPlaceholder')}": 1,
+              "{t('recipientPlaceholderText')}": 1
+            }
+          },
+          "borderRadius": {
+            "count": 18,
+            "values": {
+              "{BorderRadius.MD}": 15,
+              "{BorderRadius.XL}": 3
+            }
+          },
+          "borderWidth": {
+            "count": 17,
+            "values": {
+              "0": 16,
+              "1": 1
+            }
+          },
+          "backgroundColor": {
+            "count": 17,
+            "values": {
+              "{BackgroundColor.backgroundMuted}": 16,
+              "{BackgroundColor.backgroundSubsection}": 1
+            }
+          },
+          "className": {
+            "count": 17,
+            "values": {
+              "\"w-full\"": 15,
+              "\"amount-input\"": 1,
+              "{isWarning ? '!border-warning-default' : undefined}": 1
+            }
+          },
+          "onBlur": {
+            "count": 16,
+            "values": {
+              "{handleTpPriceBlur}": 2,
+              "{handleTpPercentBlur}": 2,
+              "{handleSlPriceBlur}": 2,
+              "{handleSlPercentBlur}": 2,
+              "{handleAmountBlur}": 1,
+              "{handleTokenBlur}": 1,
+              "{handlePercentInputBlur}": 1,
+              "{handleUsdInputBlur}": 1,
+              "{handleInputBlur}": 1,
+              "{handlePriceBlur}": 1,
+              "{() => { setWordInactive(word.id); checkForInvalidWords(); }}": 1,
+              "{() => { // If the user clicks outside the input, show the custom button setSh...}": 1
+            }
+          },
+          "onFocus": {
+            "count": 15,
+            "values": {
+              "{(event: React.FocusEvent<HTMLInputElement>) => event.target.select()}": 4,
+              "{handleNumericFocusSelectAll}": 2,
+              "{handleTpPercentFocus}": 2,
+              "{handleSlPercentFocus}": 2,
+              "{handleTokenFocus}": 1,
+              "{handleUsdInputFocus}": 1,
+              "{handleInputFocus}": 1,
+              "{() => { onWordFocus(word.id); }}": 1,
+              "{() => { setShowCustomInput(true); }}": 1
+            }
+          },
+          "endAccessory": {
+            "count": 13,
+            "values": {
+              "{<Text variant={TextVariant.BodySm} color={TextColor.TextAlternative} > % </Text>}": 3,
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > % </Text>}": 2,
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > {getDi...}": 1,
+              "{<Text variant={TextVariant.BodySm} color={TextColor.TextAlternative} > x </Text>}": 1,
+              "{<ButtonBase type=\"button\" size={ButtonBaseSize.Sm} onClick={handleMidClick} c...}": 1,
+              "{renderReferralIcon()}": 1,
+              "{<Text variant={TextVariant.bodyMd}>%</Text>}": 1,
+              "{<Box display={Display.Flex}> <Text> {fiatMode ? fiatCurrencyName?.toUpperCase...}": 1,
+              "{recipients.length > 0 ? ( <ButtonIcon ariaLabel=\"Open recipient modal\" data-t...}": 1,
+              "{<ButtonIcon type=\"button\" iconName={showPassword ? IconName.Eye : IconName.Ey...}": 1
+            }
+          },
+          "data-testid": {
+            "count": 12,
+            "values": {
+              "\"perps-edit-margin-amount-input\"": 1,
+              "\"amount-input-field\"": 1,
+              "\"amount-input-token-field\"": 1,
+              "\"balance-percent-input\"": 1,
+              "\"tp-price-input\"": 1,
+              "\"tp-percent-input\"": 1,
+              "\"sl-price-input\"": 1,
+              "\"sl-percent-input\"": 1,
+              "\"close-amount-value\"": 1,
+              "\"leverage-input\"": 1,
+              "\"limit-price-input\"": 1,
+              "\"destination-account-picker-modal-search-input\"": 1
+            }
+          },
+          "startAccessory": {
+            "count": 12,
+            "values": {
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > $ </Text>}": 5,
+              "{<Text variant={TextVariant.BodySm} color={TextColor.TextAlternative} > $ </Text>}": 2,
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative}> $ </Text>}": 1,
+              "{<Text color={TextColor.TextAlternative} textAlign={TextAlign.Left} className=...}": 1,
+              "{<Icon color={IconColor.IconAlternative} name={IconName.Search} size={IconSize...}": 1,
+              "{<Icon name={IconName.Search} size={IconSize.Md} />}": 1,
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} classNam...}": 1
+            }
+          },
+          "testId": {
+            "count": 11,
+            "values": {
+              "\"perps-update-tpsl-tp-price-input\"": 1,
+              "\"perps-update-tpsl-tp-percent-input\"": 1,
+              "\"perps-update-tpsl-sl-price-input\"": 1,
+              "\"perps-update-tpsl-sl-percent-input\"": 1,
+              "{`import-srp__srp-word-${index}`}": 1,
+              "\"multichain-private-key-password-input\"": 1,
+              "\"bridge__tx-settings-modal-custom-input\"": 1,
+              "bridge-asset-picker-search-input": 1,
+              "\"send-amount-input\"": 1,
+              "\"recipient-address-input\"": 1,
+              "{`recovery-phrase-chip-${index}`}": 1
+            }
+          },
+          "error": {
+            "count": 8,
+            "values": {
+              "{referralCodeIsError}": 1,
+              "{error}": 1,
+              "{!word.active && misSpelledWordsList().includes(word.word)}": 1,
+              "{wrongPassword}": 1,
+              "{Boolean(amountError)}": 1,
+              "{Boolean(hexDataError)}": 1,
+              "{isHardError}": 1,
+              "{Boolean(error)}": 1
+            }
+          },
+          "disabled": {
+            "count": 7,
+            "values": {
+              "{isSaving}": 5,
+              "{optinLoading}": 1,
+              "true (shorthand)": 1
+            }
+          },
+          "autoFocus": {
+            "count": 7,
+            "values": {
+              "true (shorthand)": 4,
+              "{autoFocus}": 2,
+              "true": 1
+            }
+          },
+          "type": {
+            "count": 7,
+            "values": {
+              "{TextFieldType.Password}": 2,
+              "{TextFieldType.Text}": 2,
+              "{word.active || misSpelledWordsList().includes(word.word) ? TextFieldType.Text...}": 1,
+              "{TextFieldType.Number}": 1,
+              "{showPassword ? TextFieldType.Text : TextFieldType.Password}": 1
+            }
+          },
+          "inputRef": {
+            "count": 6,
+            "values": {
+              "{usdInputRef}": 1,
+              "{tokenInputRef}": 1,
+              "{tpPercentInputRef}": 1,
+              "{slPercentInputRef}": 1,
+              "{referralInputRef}": 1,
+              "{inputRef}": 1
+            }
+          },
+          "width": {
+            "count": 5,
+            "values": {
+              "{BlockSize.Full}": 5
+            }
+          },
+          "style": {
+            "count": 5,
+            "values": {
+              "{{ width: '100%' }}": 2,
+              "{{ flex: 1, minWidth: 0, opacity: isAmountReadOnly && amountFieldProps?.value ...}": 1,
+              "{{ minHeight: 48, paddingRight: 8, outline: 'none', borderColor: BorderColor.b...}": 1,
+              "{{ minHeight: 48, marginBottom: 12, outline: 'none', }}": 1
+            }
+          },
+          "onPaste": {
+            "count": 4,
+            "values": {
+              "{(e: React.ClipboardEvent<HTMLInputElement>) => { e.preventDefault(); }}": 1,
+              "{(e: React.ClipboardEvent<HTMLInputElement>) => { e.preventDefault(); const cl...}": 1,
+              "{(e: React.ClipboardEvent<HTMLInputElement>) => { handleCustomSlippage(e, e.cl...}": 1,
+              "{setAmountInputMethodPasted}": 1
+            }
+          },
+          "key": {
+            "count": 2,
+            "values": {
+              "{word.id}": 1,
+              "{index}": 1
+            }
+          },
+          "onKeyDown": {
+            "count": 2,
+            "values": {
+              "{(e: React.KeyboardEvent<HTMLInputElement>) => { if (e.key === 'Enter' || e.ke...}": 1,
+              "{(e: React.KeyboardEvent<HTMLInputElement>) => { // Only allows digits and dec...}": 1
+            }
+          },
+          "borderColor": {
+            "count": 2,
+            "values": {
+              "{BorderColor.borderMuted}": 2
+            }
+          },
+          "marginInline": {
+            "count": 2,
+            "values": {
+              "4": 2
+            }
+          },
+          "paddingRight": {
+            "count": 2,
+            "values": {
+              "3": 2
+            }
+          },
+          "autoCapitalize": {
+            "count": 1,
+            "values": {
+              "\"characters\"": 1
+            }
+          },
+          "display": {
+            "count": 1,
+            "values": {
+              "{Display.Flex}": 1
+            }
+          },
+          "onKeyPress": {
+            "count": 1,
+            "values": {
+              "{(e?: React.KeyboardEvent<HTMLDivElement>) => { if (e) { // Only allow numbers...}": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{amountFieldProps}": 1
+            }
+          },
+          "color": {
+            "count": 1,
+            "values": {
+              "{TextColor.textAlternative}": 1
+            }
+          },
+          "onInput": {
+            "count": 1,
+            "values": {
+              "{setAmountInputMethodManual}": 1
+            }
+          },
+          "ref": {
+            "count": 1,
+            "values": {
+              "{recipientInputRef}": 1
+            }
+          },
+          "id": {
+            "count": 1,
+            "values": {
+              "\"password-box\"": 1
+            }
+          },
+          "readOnly": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          }
+        }
       },
-      "deprecatedByLegacyComponent": {}
+      "deprecatedByLegacyComponent": {
+        "TextField": 30
+      }
     },
     "mobile": {
-      "filesScanned": 6443,
+      "filesScanned": 6533,
       "targetComponent": "TextField",
       "mmds": {
         "totalInstances": 13,
@@ -60,7 +830,7 @@
               "{{ autoCapitalize: 'none', numberOfLines: 1, keyboardType: 'number-pad', textC...}": 1,
               "{{ autoCapitalize: 'none', autoComplete: 'username', numberOfLines: 1, returnK...}": 1,
               "{{ autoCapitalize: 'none', autoComplete: 'password', numberOfLines: 1, maxLeng...}": 1,
-              "{{ autoCapitalize: 'characters', maxLength: 6, testID: 'referral-input', }}": 1,
+              "{{ autoCapitalize: 'characters', testID: 'referral-input', }}": 1,
               "{{ secureTextEntry: true, onSubmitEditing: tryUnlock, testID: ManualBackUpStep...}": 1,
               "{{ secureTextEntry: true, onSubmitEditing: reauthenticateWithPassword, testID:...}": 1,
               "{{ secureTextEntry: !showPassword, autoCapitalize: 'none', onSubmitEditing: on...}": 1
@@ -95,7 +865,7 @@
             "count": 7,
             "values": {
               "{!!error}": 3,
-              "{referralCode.length >= 6 && !referralCodeIsValid && !isValidatingReferralCode...}": 1,
+              "{referralCodeReadyForValidation && !referralCodeIsValid && !isValidatingReferr...}": 1,
               "{isPasswordTooShort}": 1,
               "{checkError()}": 1,
               "{isPasswordTooShort()}": 1
@@ -146,10 +916,10 @@
             "count": 42,
             "values": {
               "{email}": 4,
+              "{inputValue}": 3,
               "{value}": 2,
               "{formatDateForDisplay(value, type)}": 2,
               "{displayedAmount}": 2,
-              "{inputValue}": 2,
               "{confirmCode}": 2,
               "{password}": 2,
               "{accountName}": 2,
@@ -166,7 +936,6 @@
               "{activationKey}": 1,
               "{telegram}": 1,
               "{hasReferredByCode ? (referredByCode ?? '') : inputCode}": 1,
-              "{bonusCode}": 1,
               "{confirmPassword}": 1,
               "{nickname}": 1,
               "{chainId}": 1,
@@ -203,8 +972,8 @@
               "{EnterEmailSelectorsIDs.EMAIL_INPUT}": 1,
               "{REWARDS_VIEW_SELECTORS.CLAIM_MODAL_EMAIL_INPUT}": 1,
               "{REWARDS_VIEW_SELECTORS.CLAIM_MODAL_TELEGRAM_INPUT}": 1,
+              "\"opt-out-confirmation-input\"": 1,
               "\"referred-by-code-input\"": 1,
-              "\"bonus-code-input\"": 1,
               "{AddNewAccountIds.NAME_INPUT}": 1,
               "{EditAccountNameSelectorIDs.ACCOUNT_NAME_INPUT}": 1,
               "\"input\"": 1,
@@ -225,6 +994,7 @@
               "{handleTextChange}": 3,
               "{handleChange}": 2,
               "{handleEmailChange}": 2,
+              "{setInputValue}": 2,
               "{onBlockExplorerUrlChange}": 2,
               "{onInputChange}": 1,
               "{handleConfirmCodeChange}": 1,
@@ -242,8 +1012,6 @@
               "{setActivationKey}": 1,
               "{setTelegram}": 1,
               "{hasReferredByCode ? undefined : handleInputChange}": 1,
-              "{setInputValue}": 1,
-              "{(text: string) => { clearApplyBonusCodeError(); setBonusCode(text); }}": 1,
               "{(newName: string) => { setAccountName(newName); }}": 1,
               "{onChangeName}": 1,
               "{onPasswordChange}": 1,
@@ -259,9 +1027,9 @@
           "autoCapitalize": {
             "count": 33,
             "values": {
-              "\"none\"": 17,
+              "\"none\"": 18,
               "none": 14,
-              "\"characters\"": 2
+              "\"characters\"": 1
             }
           },
           "placeholder": {
@@ -274,9 +1042,9 @@
               "{strings('app_settings.fiat_on_ramp.add_label')}": 1,
               "{strings( 'app_settings.fiat_on_ramp.paste_or_type_activation_key', )}": 1,
               "{strings('rewards.metal_card_claim.telegram_placeholder')}": 1,
+              "{strings('rewards.optout.modal.confirm_phrase')}": 1,
               "{strings('rewards.referred_by_code.input_placeholder')}": 1,
               "{inputPlaceholder}": 1,
-              "{strings('rewards.bonus_code.input_placeholder')}": 1,
               "{accountName}": 1,
               "{formatAddress(selectedAccount?.address, 'mid')}": 1,
               "{strings('app_settings.network_name_label')}": 1,
@@ -310,25 +1078,6 @@
               "\"off\"": 1
             }
           },
-          "isError": {
-            "count": 16,
-            "values": {
-              "{verifyIsError}": 2,
-              "{!!nameError}": 2,
-              "{isSSNTouched && isSSNError}": 1,
-              "{debouncedEmail.length > 0 && isEmailError}": 1,
-              "{debouncedPassword.length > 0 && isPasswordError}": 1,
-              "{emailValidationError}": 1,
-              "{showClientValidationError || Boolean(applyReferralCodeError)}": 1,
-              "{showValidationError || Boolean(applyBonusCodeError)}": 1,
-              "{isPasswordTooShort}": 1,
-              "{isError}": 1,
-              "{hasInvalidUrl}": 1,
-              "{!!warningName}": 1,
-              "{!!warningChainId}": 1,
-              "{!!warningSymbol}": 1
-            }
-          },
           "isDisabled": {
             "count": 15,
             "values": {
@@ -343,15 +1092,22 @@
               "{isAnyModalVisible || !addMode}": 1
             }
           },
-          "maxLength": {
+          "isError": {
             "count": 15,
             "values": {
-              "9": 1,
-              "12": 1,
-              "255": 9,
-              "{CODE_LENGTH}": 2,
-              "{REFERRAL_CODE_LENGTH}": 1,
-              "{BONUS_CODE_MAX_LENGTH}": 1
+              "{verifyIsError}": 2,
+              "{!!nameError}": 2,
+              "{isSSNTouched && isSSNError}": 1,
+              "{debouncedEmail.length > 0 && isEmailError}": 1,
+              "{debouncedPassword.length > 0 && isPasswordError}": 1,
+              "{emailValidationError}": 1,
+              "{showClientValidationError || Boolean(applyReferralCodeError)}": 1,
+              "{isPasswordTooShort}": 1,
+              "{isError}": 1,
+              "{hasInvalidUrl}": 1,
+              "{!!warningName}": 1,
+              "{!!warningChainId}": 1,
+              "{!!warningSymbol}": 1
             }
           },
           "ref": {
@@ -392,6 +1148,21 @@
               "{ChoosePasswordSelectorsIDs.CONFIRM_PASSWORD_INPUT_ID}": 1
             }
           },
+          "maxLength": {
+            "count": 13,
+            "values": {
+              "9": 1,
+              "12": 1,
+              "255": 9,
+              "{CODE_LENGTH}": 2
+            }
+          },
+          "autoCorrect": {
+            "count": 12,
+            "values": {
+              "false": 12
+            }
+          },
           "onSubmitEditing": {
             "count": 12,
             "values": {
@@ -404,12 +1175,6 @@
               "{jumpToSymbol}": 1,
               "{jumpBlockExplorerURL}": 1,
               "{jumpToChainId}": 1
-            }
-          },
-          "autoCorrect": {
-            "count": 11,
-            "values": {
-              "false": 11
             }
           },
           "keyboardAppearance": {
@@ -458,18 +1223,6 @@
               "next": 2
             }
           },
-          "endAccessory": {
-            "count": 7,
-            "values": {
-              "{value ? ( <ButtonIcon onPress={handleClear} iconName={IconName.Close} size={B...}": 1,
-              "{<TouchableOpacity onPress={() => setIsPasswordVisible(!isPasswordVisible)} te...}": 1,
-              "{renderIcon()}": 1,
-              "{renderInputIcon()}": 1,
-              "{<Icon name={ showPasswordIndex.includes(0) ? IconName.Eye : IconName.EyeSlash...}": 1,
-              "{<Icon name={ showPasswordIndex.includes(1) ? IconName.Eye : IconName.EyeSlash...}": 1,
-              "{renderEndAccessory}": 1
-            }
-          },
           "style": {
             "count": 7,
             "values": {
@@ -485,6 +1238,17 @@
             "values": {
               "{placeholderTextColor}": 6,
               "{colors.text.default}": 1
+            }
+          },
+          "endAccessory": {
+            "count": 6,
+            "values": {
+              "{value ? ( <ButtonIcon onPress={handleClear} iconName={IconName.Close} size={B...}": 1,
+              "{<TouchableOpacity onPress={() => setIsPasswordVisible(!isPasswordVisible)} te...}": 1,
+              "{renderIcon()}": 1,
+              "{<Icon name={ showPasswordIndex.includes(0) ? IconName.Eye : IconName.EyeSlash...}": 1,
+              "{<Icon name={ showPasswordIndex.includes(1) ? IconName.Eye : IconName.EyeSlash...}": 1,
+              "{renderEndAccessory}": 1
             }
           },
           "[spread]": {
@@ -634,11 +1398,11 @@
               "{password}": 10,
               "{email}": 5,
               "{confirmCode}": 3,
+              "{inputValue}": 3,
               "{confirmPassword}": 3,
               "{value}": 2,
               "{formatDateForDisplay(value, type)}": 2,
               "{displayedAmount}": 2,
-              "{inputValue}": 2,
               "{accountName}": 2,
               "{blockExplorerUrlForm}": 2,
               "{firstName}": 1,
@@ -654,7 +1418,6 @@
               "{telegram}": 1,
               "{referralCode}": 1,
               "{hasReferredByCode ? (referredByCode ?? '') : inputCode}": 1,
-              "{bonusCode}": 1,
               "{nickname}": 1,
               "{chainId}": 1,
               "{ticker}": 1,
@@ -673,6 +1436,7 @@
               "{handleEmailChange}": 3,
               "{handleTextChange}": 3,
               "{handleChange}": 2,
+              "{setInputValue}": 2,
               "{onBlockExplorerUrlChange}": 2,
               "{handleOtpValueChange}": 1,
               "{onInputChange}": 1,
@@ -691,8 +1455,6 @@
               "{setTelegram}": 1,
               "{handleReferralCodeChange}": 1,
               "{hasReferredByCode ? undefined : handleInputChange}": 1,
-              "{setInputValue}": 1,
-              "{(text: string) => { clearApplyBonusCodeError(); setBonusCode(text); }}": 1,
               "{(newName: string) => { setAccountName(newName); }}": 1,
               "{setConfirmPasswordValue}": 1,
               "{onChangeName}": 1,
@@ -731,8 +1493,8 @@
               "{EnterEmailSelectorsIDs.EMAIL_INPUT}": 1,
               "{REWARDS_VIEW_SELECTORS.CLAIM_MODAL_EMAIL_INPUT}": 1,
               "{REWARDS_VIEW_SELECTORS.CLAIM_MODAL_TELEGRAM_INPUT}": 1,
+              "\"opt-out-confirmation-input\"": 1,
               "\"referred-by-code-input\"": 1,
-              "\"bonus-code-input\"": 1,
               "{AddNewAccountIds.NAME_INPUT}": 1,
               "{EditAccountNameSelectorIDs.ACCOUNT_NAME_INPUT}": 1,
               "\"input\"": 1,
@@ -750,9 +1512,9 @@
           "autoCapitalize": {
             "count": 33,
             "values": {
-              "\"none\"": 17,
+              "\"none\"": 18,
               "none": 14,
-              "\"characters\"": 2
+              "\"characters\"": 1
             }
           },
           "placeholder": {
@@ -767,9 +1529,9 @@
               "{strings( 'app_settings.fiat_on_ramp.paste_or_type_activation_key', )}": 1,
               "{strings('rewards.metal_card_claim.telegram_placeholder')}": 1,
               "{strings('rewards.onboarding.referral_placeholder')}": 1,
+              "{strings('rewards.optout.modal.confirm_phrase')}": 1,
               "{strings('rewards.referred_by_code.input_placeholder')}": 1,
               "{inputPlaceholder}": 1,
-              "{strings('rewards.bonus_code.input_placeholder')}": 1,
               "{accountName}": 1,
               "{formatAddress(selectedAccount?.address, 'mid')}": 1,
               "{strings('manual_backup_step_1.password')}": 1,
@@ -787,7 +1549,7 @@
             }
           },
           "isError": {
-            "count": 23,
+            "count": 22,
             "values": {
               "{!!error}": 3,
               "{verifyIsError}": 2,
@@ -797,9 +1559,8 @@
               "{debouncedEmail.length > 0 && isEmailError}": 1,
               "{debouncedPassword.length > 0 && isPasswordError}": 1,
               "{emailValidationError}": 1,
-              "{referralCode.length >= 6 && !referralCodeIsValid && !isValidatingReferralCode...}": 1,
+              "{referralCodeReadyForValidation && !referralCodeIsValid && !isValidatingReferr...}": 1,
               "{showClientValidationError || Boolean(applyReferralCodeError)}": 1,
-              "{showValidationError || Boolean(applyBonusCodeError)}": 1,
               "{checkError()}": 1,
               "{isError}": 1,
               "{hasInvalidUrl}": 1,
@@ -848,36 +1609,6 @@
               "\"off\"": 1
             }
           },
-          "endAccessory": {
-            "count": 15,
-            "values": {
-              "{<TouchableOpacity onPress={() => setIsPasswordVisible(!isPasswordVisible)} te...}": 2,
-              "{value ? ( <ButtonIcon onPress={handleClear} iconName={IconName.Close} size={B...}": 1,
-              "{renderReferralIcon()}": 1,
-              "{renderIcon()}": 1,
-              "{renderInputIcon()}": 1,
-              "{<TouchableOpacity testID={ ChoosePasswordSelectorsIDs.NEW_PASSWORD_SHOW_ICON_...}": 1,
-              "{<TouchableOpacity testID={ ChoosePasswordSelectorsIDs.CONFIRM_PASSWORD_SHOW_I...}": 1,
-              "{<Icon name={ showPasswordIndex.includes(0) ? IconName.Eye : IconName.EyeSlash...}": 1,
-              "{<Icon name={ showPasswordIndex.includes(1) ? IconName.Eye : IconName.EyeSlash...}": 1,
-              "{capabilities ? ( <DeviceAuthenticationButton disabled={loading} onPress={unlo...}": 1,
-              "{<TouchableOpacity onPress={() => toggleShowPassword(0)}> <Icon name={ showPas...}": 1,
-              "{<TouchableOpacity onPress={() => toggleShowPassword(1)}> <Icon name={ showPas...}": 1,
-              "{<ButtonIcon iconName={showPassword ? IconName.Eye : IconName.EyeSlash} onPres...}": 1,
-              "{renderEndAccessory}": 1
-            }
-          },
-          "maxLength": {
-            "count": 15,
-            "values": {
-              "9": 1,
-              "12": 1,
-              "255": 9,
-              "{CODE_LENGTH}": 2,
-              "{REFERRAL_CODE_LENGTH}": 1,
-              "{BONUS_CODE_MAX_LENGTH}": 1
-            }
-          },
           "ref": {
             "count": 14,
             "values": {
@@ -889,6 +1620,24 @@
               "{inputChainId}": 1,
               "{inputSymbol}": 1,
               "{inputNameRpcURL}": 1
+            }
+          },
+          "endAccessory": {
+            "count": 14,
+            "values": {
+              "{<TouchableOpacity onPress={() => setIsPasswordVisible(!isPasswordVisible)} te...}": 2,
+              "{value ? ( <ButtonIcon onPress={handleClear} iconName={IconName.Close} size={B...}": 1,
+              "{renderReferralIcon()}": 1,
+              "{renderIcon()}": 1,
+              "{<TouchableOpacity testID={ ChoosePasswordSelectorsIDs.NEW_PASSWORD_SHOW_ICON_...}": 1,
+              "{<TouchableOpacity testID={ ChoosePasswordSelectorsIDs.CONFIRM_PASSWORD_SHOW_I...}": 1,
+              "{<Icon name={ showPasswordIndex.includes(0) ? IconName.Eye : IconName.EyeSlash...}": 1,
+              "{<Icon name={ showPasswordIndex.includes(1) ? IconName.Eye : IconName.EyeSlash...}": 1,
+              "{capabilities ? ( <DeviceAuthenticationButton disabled={loading} onPress={unlo...}": 1,
+              "{<TouchableOpacity onPress={() => toggleShowPassword(0)}> <Icon name={ showPas...}": 1,
+              "{<TouchableOpacity onPress={() => toggleShowPassword(1)}> <Icon name={ showPas...}": 1,
+              "{<ButtonIcon iconName={showPassword ? IconName.Eye : IconName.EyeSlash} onPres...}": 1,
+              "{renderEndAccessory}": 1
             }
           },
           "numberOfLines": {
@@ -925,10 +1674,25 @@
               "{{ autoCapitalize: 'none', numberOfLines: 1, keyboardType: 'number-pad', textC...}": 1,
               "{{ autoCapitalize: 'none', autoComplete: 'username', numberOfLines: 1, returnK...}": 1,
               "{{ autoCapitalize: 'none', autoComplete: 'password', numberOfLines: 1, maxLeng...}": 1,
-              "{{ autoCapitalize: 'characters', maxLength: 6, testID: 'referral-input', }}": 1,
+              "{{ autoCapitalize: 'characters', testID: 'referral-input', }}": 1,
               "{{ secureTextEntry: true, onSubmitEditing: tryUnlock, testID: ManualBackUpStep...}": 1,
               "{{ secureTextEntry: true, onSubmitEditing: reauthenticateWithPassword, testID:...}": 1,
               "{{ secureTextEntry: !showPassword, autoCapitalize: 'none', onSubmitEditing: on...}": 1
+            }
+          },
+          "maxLength": {
+            "count": 13,
+            "values": {
+              "9": 1,
+              "12": 1,
+              "255": 9,
+              "{CODE_LENGTH}": 2
+            }
+          },
+          "autoCorrect": {
+            "count": 12,
+            "values": {
+              "false": 12
             }
           },
           "autoFocus": {
@@ -962,12 +1726,6 @@
               "{handleNameBlur}": 1,
               "{handleChainIdBlur}": 1,
               "{handleSymbolBlur}": 1
-            }
-          },
-          "autoCorrect": {
-            "count": 11,
-            "values": {
-              "false": 11
             }
           },
           "keyboardAppearance": {

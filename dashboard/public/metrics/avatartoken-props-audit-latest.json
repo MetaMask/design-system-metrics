@@ -1,20 +1,21 @@
 {
   "component": "AvatarToken",
-  "generatedAt": "2026-05-18T07:58:40.803Z",
+  "generatedAt": "2026-05-26T09:04:25.243Z",
   "projects": {
     "extension": {
-      "filesScanned": 3111,
+      "filesScanned": 3144,
       "targetComponent": "AvatarToken",
       "mmds": {
-        "totalInstances": 23,
-        "filesCount": 18,
+        "totalInstances": 24,
+        "filesCount": 19,
         "props": {
           "src": {
-            "count": 23,
+            "count": 24,
             "values": {
               "{image}": 5,
               "{iconUrl}": 2,
               "{asset.iconUrl ?? undefined}": 2,
+              "{token.imageUrl}": 1,
               "{resolvedSrc}": 1,
               "{coin.src}": 1,
               "{getAssetImageUrl(token.address, chainIdHex) ?? token.image ?? ''}": 1,
@@ -32,9 +33,9 @@
             }
           },
           "size": {
-            "count": 22,
+            "count": 23,
             "values": {
-              "{AvatarTokenSize.Md}": 6,
+              "{AvatarTokenSize.Md}": 7,
               "{AvatarTokenSize.Xl}": 4,
               "{AvatarTokenSize.Lg}": 4,
               "{AvatarTokenSize.Xs}": 3,
@@ -45,10 +46,10 @@
             }
           },
           "name": {
-            "count": 21,
+            "count": 22,
             "values": {
+              "{token.symbol}": 3,
               "{symbol}": 2,
-              "{token.symbol}": 2,
               "{asset.symbol}": 2,
               "{nativeCurrency}": 2,
               "\"USDC\"": 2,
@@ -66,19 +67,27 @@
             }
           },
           "className": {
-            "count": 4,
+            "count": 5,
             "values": {
+              "{classnames(className)}": 1,
               "\"hide-token-confirmation__identicon\"": 1,
-              "{className}": 1,
+              "{twMerge(bgClass, className)}": 1,
               "\"nickname-popover__identicon\"": 1,
               "\"update-nickname__content__indenticon\"": 1
             }
           },
           "data-testid": {
-            "count": 2,
+            "count": 3,
             "values": {
+              "\"activity-list-item-avatar-token\"": 1,
               "{`perps-token-logo-${sanitizedSymbol}`}": 1,
               "\"token-insights-icon\"": 1
+            }
+          },
+          "fallbackText": {
+            "count": 1,
+            "values": {
+              "{token.fallbackName.charAt(0)}": 1
             }
           },
           "hasBorder": {
@@ -228,11 +237,11 @@
         }
       },
       "overall": {
-        "totalInstances": 49,
-        "filesCount": 39,
+        "totalInstances": 50,
+        "filesCount": 40,
         "props": {
           "src": {
-            "count": 49,
+            "count": 50,
             "values": {
               "{image}": 5,
               "{tokenImage}": 3,
@@ -240,6 +249,7 @@
               "{iconUrl}": 2,
               "{asset.iconUrl ?? undefined}": 2,
               "{source}": 2,
+              "{token.imageUrl}": 1,
               "{avatarTokenSrc}": 1,
               "{results[i]?.iconUrl}": 1,
               "{musdIconUrl}": 1,
@@ -276,11 +286,11 @@
             }
           },
           "name": {
-            "count": 42,
+            "count": 43,
             "values": {
               "{symbol}": 8,
+              "{token.symbol}": 3,
               "{nativeCurrency}": 3,
-              "{token.symbol}": 2,
               "{asset.symbol}": 2,
               "\"USDC\"": 2,
               "{symbol || address}": 1,
@@ -311,9 +321,9 @@
             }
           },
           "size": {
-            "count": 38,
+            "count": 39,
             "values": {
-              "{AvatarTokenSize.Md}": 8,
+              "{AvatarTokenSize.Md}": 9,
               "{AvatarTokenSize.Xs}": 7,
               "{AvatarTokenSize.Xl}": 7,
               "{AvatarTokenSize.Lg}": 6,
@@ -324,22 +334,23 @@
               "{TOKEN_ICON_SIZE_MAP[size]}": 1
             }
           },
+          "className": {
+            "count": 7,
+            "values": {
+              "\"notification-detail-asset__icon\"": 2,
+              "{classnames(className)}": 1,
+              "\"hide-token-confirmation__identicon\"": 1,
+              "{twMerge(bgClass, className)}": 1,
+              "\"nickname-popover__identicon\"": 1,
+              "\"update-nickname__content__indenticon\"": 1
+            }
+          },
           "borderColor": {
             "count": 7,
             "values": {
               "{BorderColor.borderMuted}": 4,
               "{BorderColor.backgroundDefault}": 2,
               "{borderColor}": 1
-            }
-          },
-          "className": {
-            "count": 6,
-            "values": {
-              "\"notification-detail-asset__icon\"": 2,
-              "\"hide-token-confirmation__identicon\"": 1,
-              "{className}": 1,
-              "\"nickname-popover__identicon\"": 1,
-              "\"update-nickname__content__indenticon\"": 1
             }
           },
           "backgroundColor": {
@@ -352,8 +363,9 @@
             }
           },
           "data-testid": {
-            "count": 3,
+            "count": 4,
             "values": {
+              "\"activity-list-item-avatar-token\"": 1,
               "{`perps-token-logo-${sanitizedSymbol}`}": 1,
               "\"avatar-token\"": 1,
               "\"token-insights-icon\"": 1
@@ -369,6 +381,12 @@
             "count": 2,
             "values": {
               "2": 2
+            }
+          },
+          "fallbackText": {
+            "count": 1,
+            "values": {
+              "{token.fallbackName.charAt(0)}": 1
             }
           },
           "borderRadius": {
@@ -414,18 +432,19 @@
       }
     },
     "mobile": {
-      "filesScanned": 6443,
+      "filesScanned": 6533,
       "targetComponent": "AvatarToken",
       "mmds": {
-        "totalInstances": 18,
-        "filesCount": 18,
+        "totalInstances": 19,
+        "filesCount": 19,
         "props": {
           "name": {
-            "count": 17,
+            "count": 18,
             "values": {
               "{MUSD_TOKEN.symbol}": 5,
               "{token.symbol}": 3,
               "{selectedDestinationToken?.symbol ?? UNKNOWN_DESTINATION_TOKEN_SYMBOL}": 1,
+              "{sourceToken.tokenSymbol}": 1,
               "{selectedAsset?.symbol}": 1,
               "{sourceToken?.symbol ?? ''}": 1,
               "{item.symbol}": 1,
@@ -437,12 +456,13 @@
             }
           },
           "src": {
-            "count": 16,
+            "count": 17,
             "values": {
               "{MUSD_TOKEN.imageSource as ImageOrSvgSrc}": 3,
               "{token.image ? { uri: token.image } : undefined}": 2,
               "{MUSD_TOKEN.imageSource as number}": 2,
               "{selectedDestinationToken?.image ? { uri: selectedDestinationToken.image } : u...}": 1,
+              "{sourceToken.image ? { uri: sourceToken.image } : undefined}": 1,
               "{{ uri: selectedAsset?.logo }}": 1,
               "{{ uri: token.logo }}": 1,
               "{sourceToken ? getBridgeTokenImageSource(sourceToken) : undefined}": 1,
@@ -454,11 +474,11 @@
             }
           },
           "size": {
-            "count": 16,
+            "count": 17,
             "values": {
               "{AvatarTokenSize.Lg}": 6,
+              "{AvatarTokenSize.Sm}": 3,
               "{AvatarTokenSize.Md}": 3,
-              "{AvatarTokenSize.Sm}": 2,
               "{AvatarTokenSize.Xl}": 2,
               "{AvatarTokenSize.Xs}": 1,
               "{size}": 1,
@@ -477,6 +497,12 @@
             "values": {
               "{tw.style('w-10 h-10')}": 1,
               "{tw.style('w-10 h-10 rounded-xl')}": 1
+            }
+          },
+          "testID": {
+            "count": 1,
+            "values": {
+              "{`${BatchSellFinalReviewModalSelectorsIDs.SOURCE_TOKEN_AVATAR}-${sourceToken.k...}": 1
             }
           },
           "twClassName": {
@@ -601,18 +627,18 @@
         }
       },
       "overall": {
-        "totalInstances": 51,
-        "filesCount": 49,
+        "totalInstances": 52,
+        "filesCount": 50,
         "props": {
           "size": {
-            "count": 49,
+            "count": 50,
             "values": {
               "{AvatarSize.Lg}": 13,
               "{AvatarSize.Md}": 12,
               "{AvatarTokenSize.Lg}": 6,
               "{AvatarSize.Sm}": 3,
+              "{AvatarTokenSize.Sm}": 3,
               "{AvatarTokenSize.Md}": 3,
-              "{AvatarTokenSize.Sm}": 2,
               "{AvatarSize.Xs}": 2,
               "{AvatarTokenSize.Xl}": 2,
               "{size}": 2,
@@ -623,7 +649,7 @@
             }
           },
           "name": {
-            "count": 47,
+            "count": 48,
             "values": {
               "{token.symbol}": 8,
               "{MUSD_TOKEN.symbol}": 6,
@@ -633,6 +659,7 @@
               "{token.name}": 2,
               "{sessionName}": 2,
               "{selectedDestinationToken?.symbol ?? UNKNOWN_DESTINATION_TOKEN_SYMBOL}": 1,
+              "{sourceToken.tokenSymbol}": 1,
               "{selectedToken.symbol ?? ''}": 1,
               "{avatarName}": 1,
               "{(tokenToRender as TokenI).symbol ?? ''}": 1,
@@ -686,12 +713,13 @@
             }
           },
           "src": {
-            "count": 16,
+            "count": 17,
             "values": {
               "{MUSD_TOKEN.imageSource as ImageOrSvgSrc}": 3,
               "{token.image ? { uri: token.image } : undefined}": 2,
               "{MUSD_TOKEN.imageSource as number}": 2,
               "{selectedDestinationToken?.image ? { uri: selectedDestinationToken.image } : u...}": 1,
+              "{sourceToken.image ? { uri: sourceToken.image } : undefined}": 1,
               "{{ uri: selectedAsset?.logo }}": 1,
               "{{ uri: token.logo }}": 1,
               "{sourceToken ? getBridgeTokenImageSource(sourceToken) : undefined}": 1,
@@ -703,8 +731,9 @@
             }
           },
           "testID": {
-            "count": 8,
+            "count": 9,
             "values": {
+              "{`${BatchSellFinalReviewModalSelectorsIDs.SOURCE_TOKEN_AVATAR}-${sourceToken.k...}": 1,
               "{isNative ? `network-logo-${token.symbol}` : `token-logo-${token.symbol}`}": 1,
               "{testId}": 1,
               "{EARN_LENDING_BALANCE_TEST_IDS.RECEIPT_TOKEN_BALANCE_ASSET_LOGO}": 1,

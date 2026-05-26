@@ -1,9 +1,9 @@
 {
   "component": "AvatarFavicon",
-  "generatedAt": "2026-05-18T07:56:50.007Z",
+  "generatedAt": "2026-05-26T09:02:29.815Z",
   "projects": {
     "extension": {
-      "filesScanned": 3111,
+      "filesScanned": 3144,
       "targetComponent": "AvatarFavicon",
       "mmds": {
         "totalInstances": 2,
@@ -209,12 +209,25 @@
       }
     },
     "mobile": {
-      "filesScanned": 6443,
+      "filesScanned": 6533,
       "targetComponent": "AvatarFavicon",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 1,
+        "filesCount": 1,
+        "props": {
+          "src": {
+            "count": 1,
+            "values": {
+              "{faviconSource}": 1
+            }
+          },
+          "size": {
+            "count": 1,
+            "values": {
+              "{AvatarFaviconSize.Sm}": 1
+            }
+          }
+        }
       },
       "deprecated": {
         "totalInstances": 6,
@@ -257,8 +270,8 @@
         }
       },
       "overall": {
-        "totalInstances": 6,
-        "filesCount": 6,
+        "totalInstances": 7,
+        "filesCount": 7,
         "props": {
           "imageSource": {
             "count": 6,
@@ -269,11 +282,12 @@
             }
           },
           "size": {
-            "count": 4,
+            "count": 5,
             "values": {
               "{AvatarSize.Md}": 2,
               "{AvatarSize.Xl}": 1,
-              "{avatarSize as unknown as AvatarSize}": 1
+              "{avatarSize as unknown as AvatarSize}": 1,
+              "{AvatarFaviconSize.Sm}": 1
             }
           },
           "style": {
@@ -292,6 +306,12 @@
             "count": 1,
             "values": {
               "{props}": 1
+            }
+          },
+          "src": {
+            "count": 1,
+            "values": {
+              "{faviconSource}": 1
             }
           }
         }
