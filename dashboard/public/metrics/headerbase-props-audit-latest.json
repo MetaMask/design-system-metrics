@@ -1,9 +1,9 @@
 {
   "component": "HeaderBase",
-  "generatedAt": "2026-05-26T16:37:26.336Z",
+  "generatedAt": "2026-06-01T10:15:15.599Z",
   "projects": {
     "extension": {
-      "filesScanned": 3152,
+      "filesScanned": 3160,
       "targetComponent": "HeaderBase",
       "mmds": {
         "totalInstances": 0,
@@ -177,11 +177,11 @@
       }
     },
     "mobile": {
-      "filesScanned": 6546,
+      "filesScanned": 6564,
       "targetComponent": "HeaderBase",
       "mmds": {
-        "totalInstances": 5,
-        "filesCount": 5,
+        "totalInstances": 7,
+        "filesCount": 7,
         "props": {
           "twClassName": {
             "count": 4,
@@ -192,6 +192,20 @@
               "\"flex-row items-center px-4\"": 1
             }
           },
+          "style": {
+            "count": 4,
+            "values": {
+              "{styles.header}": 3,
+              "{tw`p-4`}": 1
+            }
+          },
+          "titleTestID": {
+            "count": 3,
+            "values": {
+              "{HEADER_BASE_TITLE_TEST_ID}": 2,
+              "{MoneyHeaderTestIds.TITLE}": 1
+            }
+          },
           "startAccessory": {
             "count": 3,
             "values": {
@@ -200,11 +214,12 @@
               "{<ButtonIcon testID={AccountDetailsIds.BACK_BUTTON} iconName={IconName.ArrowLe...}": 1
             }
           },
-          "style": {
-            "count": 2,
+          "startButtonIconProps": {
+            "count": 3,
             "values": {
-              "{tw`p-4`}": 1,
-              "{styles.header}": 1
+              "{{ testID: AccountDetailsIds.BACK_BUTTON, iconName: IconName.ArrowLeft, onPres...}": 1,
+              "{{ testID: SwitchAccountModalSelectorIDs.SMART_ACCOUNT_BACK_BUTTON, iconName: ...}": 1,
+              "{{ testID: WalletDetailsIds.BACK_BUTTON, iconName: IconName.ArrowLeft, size: B...}": 1
             }
           },
           "testID": {
@@ -219,45 +234,32 @@
               "{HeaderBaseVariant.Display}": 1
             }
           },
-          "titleTestID": {
-            "count": 1,
-            "values": {
-              "{MoneyHeaderTestIds.TITLE}": 1
-            }
-          },
           "endButtonIconProps": {
             "count": 1,
             "values": {
               "{[ { iconName: IconName.MoreVertical, onPress: onMenuPress, accessibilityLabel...}": 1
             }
-          },
-          "startButtonIconProps": {
-            "count": 1,
-            "values": {
-              "{{ testID: WalletDetailsIds.BACK_BUTTON, iconName: IconName.ArrowLeft, size: B...}": 1
-            }
           }
         }
       },
       "deprecated": {
-        "totalInstances": 9,
-        "filesCount": 9,
+        "totalInstances": 7,
+        "filesCount": 7,
         "props": {
           "style": {
-            "count": 8,
+            "count": 6,
             "values": {
-              "{styles.header}": 5,
+              "{styles.header}": 3,
               "{tw`p-4`}": 2,
               "{style}": 1
             }
           },
           "startAccessory": {
-            "count": 7,
+            "count": 5,
             "values": {
-              "{<ButtonLink testID={AccountDetailsIds.BACK_BUTTON} labelTextVariant={TextVari...}": 2,
               "{<ButtonIcon style={styles.headerLeftButton} onPress={() => navigation.pop()} ...}": 1,
               "{<ButtonIcon size={ButtonIconSizes.Lg} onPress={handleBackPress} iconName={Ico...}": 1,
-              "{<ButtonLink labelTextVariant={TextVariant.BodyMDMedium} label={<Icon name={Ic...}": 1,
+              "{<ButtonLink testID={AccountDetailsIds.BACK_BUTTON} labelTextVariant={TextVari...}": 1,
               "{<ButtonIcon size={ButtonIconSizes.Md} onPress={handleBackPress} iconName={Ico...}": 1,
               "{<PreviousButton onBackButtonClick={onBack} selectedIndex={selectedIndex} />}": 1
             }
@@ -295,20 +297,6 @@
         "totalInstances": 14,
         "filesCount": 14,
         "props": {
-          "startAccessory": {
-            "count": 10,
-            "values": {
-              "{<ButtonLink testID={AccountDetailsIds.BACK_BUTTON} labelTextVariant={TextVari...}": 2,
-              "{<ButtonIcon style={styles.headerLeftButton} onPress={() => navigation.pop()} ...}": 1,
-              "{<ButtonIcon size={ButtonIconSize.Md} onPress={handleBackPress} iconName={Icon...}": 1,
-              "{<ButtonIcon size={ButtonIconSizes.Lg} onPress={handleBackPress} iconName={Ico...}": 1,
-              "{<ButtonLink labelTextVariant={TextVariant.BodyMDMedium} label={<Icon name={Ic...}": 1,
-              "{<ButtonIcon testID={EditAccountNameIds.BACK_BUTTON} iconName={IconName.ArrowL...}": 1,
-              "{<ButtonIcon testID={AccountDetailsIds.BACK_BUTTON} iconName={IconName.ArrowLe...}": 1,
-              "{<ButtonIcon size={ButtonIconSizes.Md} onPress={handleBackPress} iconName={Ico...}": 1,
-              "{<PreviousButton onBackButtonClick={onBack} selectedIndex={selectedIndex} />}": 1
-            }
-          },
           "style": {
             "count": 10,
             "values": {
@@ -326,6 +314,19 @@
               "\"flex-row items-center px-4\"": 1
             }
           },
+          "startAccessory": {
+            "count": 8,
+            "values": {
+              "{<ButtonIcon style={styles.headerLeftButton} onPress={() => navigation.pop()} ...}": 1,
+              "{<ButtonIcon size={ButtonIconSize.Md} onPress={handleBackPress} iconName={Icon...}": 1,
+              "{<ButtonIcon size={ButtonIconSizes.Lg} onPress={handleBackPress} iconName={Ico...}": 1,
+              "{<ButtonLink testID={AccountDetailsIds.BACK_BUTTON} labelTextVariant={TextVari...}": 1,
+              "{<ButtonIcon testID={EditAccountNameIds.BACK_BUTTON} iconName={IconName.ArrowL...}": 1,
+              "{<ButtonIcon testID={AccountDetailsIds.BACK_BUTTON} iconName={IconName.ArrowLe...}": 1,
+              "{<ButtonIcon size={ButtonIconSizes.Md} onPress={handleBackPress} iconName={Ico...}": 1,
+              "{<PreviousButton onBackButtonClick={onBack} selectedIndex={selectedIndex} />}": 1
+            }
+          },
           "endAccessory": {
             "count": 4,
             "values": {
@@ -333,6 +334,21 @@
               "{<ButtonIcon onPress={triggerClose} iconName={IconName.Close} iconColor={IconC...}": 1,
               "{<ButtonIcon iconName={IconName.Close} size={ButtonIconSizes.Md} onPress={goBa...}": 1,
               "{<NextButton alertsLength={arrLength} onNextButtonClick={onForward} selectedIn...}": 1
+            }
+          },
+          "titleTestID": {
+            "count": 3,
+            "values": {
+              "{HEADER_BASE_TITLE_TEST_ID}": 2,
+              "{MoneyHeaderTestIds.TITLE}": 1
+            }
+          },
+          "startButtonIconProps": {
+            "count": 3,
+            "values": {
+              "{{ testID: AccountDetailsIds.BACK_BUTTON, iconName: IconName.ArrowLeft, onPres...}": 1,
+              "{{ testID: SwitchAccountModalSelectorIDs.SMART_ACCOUNT_BACK_BUTTON, iconName: ...}": 1,
+              "{{ testID: WalletDetailsIds.BACK_BUTTON, iconName: IconName.ArrowLeft, size: B...}": 1
             }
           },
           "includesTopInset": {
@@ -353,22 +369,10 @@
               "{HeaderBaseVariant.Display}": 1
             }
           },
-          "titleTestID": {
-            "count": 1,
-            "values": {
-              "{MoneyHeaderTestIds.TITLE}": 1
-            }
-          },
           "endButtonIconProps": {
             "count": 1,
             "values": {
               "{[ { iconName: IconName.MoreVertical, onPress: onMenuPress, accessibilityLabel...}": 1
-            }
-          },
-          "startButtonIconProps": {
-            "count": 1,
-            "values": {
-              "{{ testID: WalletDetailsIds.BACK_BUTTON, iconName: IconName.ArrowLeft, size: B...}": 1
             }
           },
           "[spread]": {
@@ -380,7 +384,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "HeaderBase": 9
+        "HeaderBase": 7
       }
     }
   }

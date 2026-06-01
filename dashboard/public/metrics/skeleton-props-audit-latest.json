@@ -1,21 +1,54 @@
 {
   "component": "Skeleton",
-  "generatedAt": "2026-05-26T16:39:43.808Z",
+  "generatedAt": "2026-06-01T10:17:39.900Z",
   "projects": {
     "extension": {
-      "filesScanned": 3152,
+      "filesScanned": 3160,
       "targetComponent": "Skeleton",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 7,
+        "filesCount": 6,
+        "props": {
+          "hideChildren": {
+            "count": 7,
+            "values": {
+              "true (shorthand)": 3,
+              "{!anyEnabledNetworksAreAvailable && (isZeroAmount(total) || currency === undef...}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(token.balance)}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(secondaryDisplayText) && seco...}": 1
+            }
+          },
+          "className": {
+            "count": 5,
+            "values": {
+              "\"mb-1\"": 2,
+              "\"asset-chart__skeleton rounded-lg\"": 1,
+              "\"mb-1 rounded-lg\"": 1,
+              "\"rounded-lg\"": 1
+            }
+          },
+          "width": {
+            "count": 2,
+            "values": {
+              "\"25%\"": 1,
+              "\"33%\"": 1
+            }
+          },
+          "data-testid": {
+            "count": 1,
+            "values": {
+              "\"account-group-balance-skeleton\"": 1
+            }
+          }
+        }
       },
       "deprecated": {
-        "totalInstances": 128,
-        "filesCount": 49,
+        "totalInstances": 121,
+        "filesCount": 43,
         "props": {
           "width": {
-            "count": 63,
+            "count": 61,
             "values": {
               "32": 1,
               "36": 1,
@@ -35,8 +68,6 @@
               "\"200px\"": 3,
               "\"40%\"": 3,
               "\"30%\"": 2,
-              "\"25%\"": 1,
-              "\"33%\"": 1,
               "{labelWidth}": 1,
               "{valueWidth}": 1,
               "\"80px\"": 1,
@@ -68,7 +99,7 @@
             }
           },
           "className": {
-            "count": 55,
+            "count": 54,
             "values": {
               "\"h-4 w-24\"": 4,
               "\"h-12 flex-1\"": 4,
@@ -97,15 +128,14 @@
               "\"h-4 w-32\"": 1,
               "\"h-4 w-36\"": 1,
               "{`shrink-0 ${AVATAR_SIZE_CLASS[size]} ${className ?? ''}`}": 1,
-              "\"asset-chart__skeleton\"": 1,
               "\"h-3 w-8\"": 1,
               "\"w-2/3 h-5\"": 1
             }
           },
           "borderRadius": {
-            "count": 23,
+            "count": 20,
             "values": {
-              "{BorderRadius.LG}": 9,
+              "{BorderRadius.LG}": 6,
               "{BorderRadius.pill}": 6,
               "{BorderRadius.SM}": 3,
               "{BorderRadius.full}": 3,
@@ -127,24 +157,15 @@
             }
           },
           "isLoading": {
-            "count": 11,
+            "count": 7,
             "values": {
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 2,
-              "{!anyEnabledNetworksAreAvailable && (isZeroAmount(total) || currency === undef...}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(token.balance)}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(secondaryDisplayText) && seco...}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(formattedAmountChangeCrossCha...}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(singleDayAmountChange)}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(balanceToDisplay)}": 1,
               "{isLoading}": 1,
               "{!balances || assets[selectedAccount.id] === undefined || assets[selectedAccou...}": 1,
               "{isBalanceLoading}": 1
-            }
-          },
-          "marginBottom": {
-            "count": 5,
-            "values": {
-              "1": 5
             }
           },
           "data-testid": {
@@ -168,6 +189,12 @@
             "count": 3,
             "values": {
               "{skeletonProps}": 3
+            }
+          },
+          "marginBottom": {
+            "count": 2,
+            "values": {
+              "1": 2
             }
           }
         }
@@ -230,7 +257,7 @@
             }
           },
           "className": {
-            "count": 55,
+            "count": 59,
             "values": {
               "\"h-4 w-24\"": 4,
               "\"h-12 flex-1\"": 4,
@@ -240,6 +267,7 @@
               "\"h-3 w-20\"": 3,
               "\"h-4 w-16\"": 3,
               "\"h-3 w-12\"": 3,
+              "\"mb-1\"": 2,
               "\"h-4 w-12\"": 2,
               "\"h-10 w-10 shrink-0\"": 2,
               "\"h-[250px] w-full\"": 2,
@@ -259,15 +287,17 @@
               "\"h-4 w-32\"": 1,
               "\"h-4 w-36\"": 1,
               "{`shrink-0 ${AVATAR_SIZE_CLASS[size]} ${className ?? ''}`}": 1,
-              "\"asset-chart__skeleton\"": 1,
+              "\"asset-chart__skeleton rounded-lg\"": 1,
+              "\"mb-1 rounded-lg\"": 1,
+              "\"rounded-lg\"": 1,
               "\"h-3 w-8\"": 1,
               "\"w-2/3 h-5\"": 1
             }
           },
           "borderRadius": {
-            "count": 23,
+            "count": 20,
             "values": {
-              "{BorderRadius.LG}": 9,
+              "{BorderRadius.LG}": 6,
               "{BorderRadius.pill}": 6,
               "{BorderRadius.SM}": 3,
               "{BorderRadius.full}": 3,
@@ -288,14 +318,21 @@
               "{{ flexShrink: 0 }}": 1
             }
           },
-          "isLoading": {
-            "count": 11,
+          "hideChildren": {
+            "count": 7,
             "values": {
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 2,
+              "true (shorthand)": 3,
               "{!anyEnabledNetworksAreAvailable && (isZeroAmount(total) || currency === undef...}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(token.balance)}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(secondaryDisplayText) && seco...}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(secondaryDisplayText) && seco...}": 1
+            }
+          },
+          "isLoading": {
+            "count": 7,
+            "values": {
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(formattedAmountChangeCrossCha...}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(singleDayAmountChange)}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(balanceToDisplay)}": 1,
               "{isLoading}": 1,
@@ -303,15 +340,10 @@
               "{isBalanceLoading}": 1
             }
           },
-          "marginBottom": {
+          "data-testid": {
             "count": 5,
             "values": {
-              "1": 5
-            }
-          },
-          "data-testid": {
-            "count": 4,
-            "values": {
+              "\"account-group-balance-skeleton\"": 1,
               "{`perps-token-logo-${sanitizedSymbol}`}": 1,
               "{`${amountFieldProps.testId}-loading-skeleton`}": 1,
               "\"rewards-loading-skeleton\"": 1,
@@ -331,15 +363,21 @@
             "values": {
               "{skeletonProps}": 3
             }
+          },
+          "marginBottom": {
+            "count": 2,
+            "values": {
+              "1": 2
+            }
           }
         }
       },
       "deprecatedByLegacyComponent": {
-        "Skeleton": 128
+        "Skeleton": 121
       }
     },
     "mobile": {
-      "filesScanned": 6546,
+      "filesScanned": 6564,
       "targetComponent": "Skeleton",
       "mmds": {
         "totalInstances": 102,
