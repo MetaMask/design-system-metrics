@@ -1,16 +1,16 @@
 {
   "component": "Checkbox",
-  "generatedAt": "2026-05-26T16:36:59.057Z",
+  "generatedAt": "2026-06-01T09:17:57.262Z",
   "projects": {
     "extension": {
-      "filesScanned": 3152,
+      "filesScanned": 3160,
       "targetComponent": "Checkbox",
       "mmds": {
-        "totalInstances": 10,
-        "filesCount": 10,
+        "totalInstances": 9,
+        "filesCount": 9,
         "props": {
           "id": {
-            "count": 9,
+            "count": 8,
             "values": {
               "\"basic-configuration-checkbox\"": 1,
               "\"change-password-terms\"": 1,
@@ -18,44 +18,40 @@
               "\"defi-referral-consent-checkbox\"": 1,
               "{`address-${idx}`}": 1,
               "\"create-password-terms\"": 1,
-              "\"dapp-scan-acknowledge-checkbox\"": 1,
               "{id}": 1,
               "\"stripe-test-clocks\"": 1
             }
           },
           "isSelected": {
-            "count": 9,
+            "count": 8,
             "values": {
               "{termsChecked}": 2,
               "{hasAgreed}": 1,
               "{isEnabled}": 1,
               "{isChecked}": 1,
               "{checked}": 1,
-              "{dangerAcknowledged}": 1,
               "{isSelected}": 1,
               "{enableStripeTestClock}": 1
             }
           },
           "onChange": {
-            "count": 9,
+            "count": 8,
             "values": {
               "{toggle}": 4,
               "{() => handleToggle()}": 1,
               "{() => { onAccountChange(value); }}": 1,
-              "{() => setDangerAcknowledged(!dangerAcknowledged)}": 1,
               "{onChange}": 1,
               "{() => setEnableStripeTestClock(!enableStripeTestClock)}": 1
             }
           },
           "label": {
-            "count": 8,
+            "count": 7,
             "values": {
               "{t('basicConfigurationModalCheckbox')}": 1,
               "{<> {isSocialLoginFlow ? t('passwordTermsWarningSocial') : t('passwordTermsWar...}": 1,
               "{t('defiReferralCheckboxLabel')}": 1,
               "{<Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItems.Center} c...}": 1,
               "{<Text asChild variant={TextVariant.BodySm} color={TextColor.TextDefault} > <s...}": 1,
-              "{t('alertModalAcknowledge')}": 1,
               "{label}": 1,
               "\"Enable Stripe Test clocks (for development and testing only)\"": 1
             }
@@ -77,20 +73,19 @@
               "\"items-start\"": 1
             }
           },
-          "inputProps": {
-            "count": 3,
-            "values": {
-              "{{ 'data-testid': 'enforced-simulations-toggle-input' }}": 1,
-              "{{ 'data-testid': 'dapp-scan-acknowledge-checkbox', }}": 1,
-              "{{ onClick: stopClickPropagation }}": 1
-            }
-          },
           "isDisabled": {
             "count": 3,
             "values": {
               "{accountAlreadyConnected}": 1,
               "{loading}": 1,
               "{isDisabled}": 1
+            }
+          },
+          "inputProps": {
+            "count": 2,
+            "values": {
+              "{{ 'data-testid': 'enforced-simulations-toggle-input' }}": 1,
+              "{{ onClick: stopClickPropagation }}": 1
             }
           },
           "labelProps": {
@@ -257,8 +252,8 @@
         }
       },
       "overall": {
-        "totalInstances": 30,
-        "filesCount": 24,
+        "totalInstances": 29,
+        "filesCount": 23,
         "props": {
           "isChecked": {
             "count": 19,
@@ -278,7 +273,7 @@
             }
           },
           "onChange": {
-            "count": 17,
+            "count": 16,
             "values": {
               "{toggle}": 5,
               "{onCheckboxClick}": 1,
@@ -290,13 +285,12 @@
               "{() => handleToggle()}": 1,
               "{() => { onAccountChange(value); }}": 1,
               "{onRemindMeStateChanged}": 1,
-              "{() => setDangerAcknowledged(!dangerAcknowledged)}": 1,
               "{onChange}": 1,
               "{() => setEnableStripeTestClock(!enableStripeTestClock)}": 1
             }
           },
           "label": {
-            "count": 16,
+            "count": 15,
             "values": {
               "{label}": 3,
               "{t('selectAll')}": 2,
@@ -309,12 +303,11 @@
               "{t('defiReferralCheckboxLabel')}": 1,
               "{<Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItems.Center} c...}": 1,
               "{<Text asChild variant={TextVariant.BodySm} color={TextColor.TextDefault} > <s...}": 1,
-              "{t('alertModalAcknowledge')}": 1,
               "\"Enable Stripe Test clocks (for development and testing only)\"": 1
             }
           },
           "id": {
-            "count": 13,
+            "count": 12,
             "values": {
               "\"basic-configuration-checkbox\"": 1,
               "\"change-password-terms\"": 1,
@@ -326,22 +319,8 @@
               "{`address-${idx}`}": 1,
               "\"create-password-terms\"": 1,
               "\"dont-remind-me-checkbox\"": 1,
-              "\"dapp-scan-acknowledge-checkbox\"": 1,
               "{id}": 1,
               "\"stripe-test-clocks\"": 1
-            }
-          },
-          "isSelected": {
-            "count": 9,
-            "values": {
-              "{termsChecked}": 2,
-              "{hasAgreed}": 1,
-              "{isEnabled}": 1,
-              "{isChecked}": 1,
-              "{checked}": 1,
-              "{dangerAcknowledged}": 1,
-              "{isSelected}": 1,
-              "{enableStripeTestClock}": 1
             }
           },
           "data-testid": {
@@ -355,6 +334,18 @@
               "\"enforced-simulations-toggle\"": 1,
               "\"create-password-terms\"": 1,
               "\"deep-link-checkbox\"": 1
+            }
+          },
+          "isSelected": {
+            "count": 8,
+            "values": {
+              "{termsChecked}": 2,
+              "{hasAgreed}": 1,
+              "{isEnabled}": 1,
+              "{isChecked}": 1,
+              "{checked}": 1,
+              "{isSelected}": 1,
+              "{enableStripeTestClock}": 1
             }
           },
           "className": {
@@ -387,11 +378,10 @@
             }
           },
           "inputProps": {
-            "count": 4,
+            "count": 3,
             "values": {
               "{{ borderColor: BorderColor.borderMuted, }}": 1,
               "{{ 'data-testid': 'enforced-simulations-toggle-input' }}": 1,
-              "{{ 'data-testid': 'dapp-scan-acknowledge-checkbox', }}": 1,
               "{{ onClick: stopClickPropagation }}": 1
             }
           },
@@ -464,7 +454,7 @@
       }
     },
     "mobile": {
-      "filesScanned": 6546,
+      "filesScanned": 6564,
       "targetComponent": "Checkbox",
       "mmds": {
         "totalInstances": 4,

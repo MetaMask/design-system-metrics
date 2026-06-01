@@ -1,9 +1,9 @@
 {
   "component": "AvatarToken",
-  "generatedAt": "2026-05-26T16:31:29.143Z",
+  "generatedAt": "2026-06-01T09:12:42.791Z",
   "projects": {
     "extension": {
-      "filesScanned": 3152,
+      "filesScanned": 3160,
       "targetComponent": "AvatarToken",
       "mmds": {
         "totalInstances": 24,
@@ -432,20 +432,19 @@
       }
     },
     "mobile": {
-      "filesScanned": 6546,
+      "filesScanned": 6564,
       "targetComponent": "AvatarToken",
       "mmds": {
-        "totalInstances": 19,
-        "filesCount": 18,
+        "totalInstances": 21,
+        "filesCount": 19,
         "props": {
           "name": {
-            "count": 18,
+            "count": 20,
             "values": {
+              "{token.symbol}": 5,
               "{MUSD_TOKEN.symbol}": 5,
-              "{token.symbol}": 3,
-              "{sourceToken.symbol}": 2,
+              "{sourceToken.symbol}": 3,
               "{selectedDestinationToken?.symbol ?? UNKNOWN_DESTINATION_TOKEN_SYMBOL}": 1,
-              "{sourceToken.tokenSymbol}": 1,
               "{selectedAsset?.symbol}": 1,
               "{symbol}": 1,
               "{position.tokenSymbol}": 1,
@@ -455,12 +454,13 @@
             }
           },
           "src": {
-            "count": 17,
+            "count": 19,
             "values": {
               "{MUSD_TOKEN.imageSource as ImageOrSvgSrc}": 3,
               "{token.image ? { uri: token.image } : undefined}": 2,
               "{MUSD_TOKEN.imageSource as number}": 2,
               "{getBridgeTokenImageSource(sourceToken)}": 2,
+              "{getBridgeTokenImageSource(token)}": 2,
               "{selectedDestinationToken?.image ? { uri: selectedDestinationToken.image } : u...}": 1,
               "{sourceToken.image ? { uri: sourceToken.image } : undefined}": 1,
               "{{ uri: selectedAsset?.logo }}": 1,
@@ -472,11 +472,11 @@
             }
           },
           "size": {
-            "count": 17,
+            "count": 19,
             "values": {
               "{AvatarTokenSize.Lg}": 6,
+              "{AvatarTokenSize.Md}": 5,
               "{AvatarTokenSize.Sm}": 4,
-              "{AvatarTokenSize.Md}": 3,
               "{AvatarTokenSize.Xl}": 2,
               "{size}": 1,
               "{avatarTokenSize}": 1
@@ -499,7 +499,7 @@
           "testID": {
             "count": 1,
             "values": {
-              "{`${BatchSellFinalReviewModalSelectorsIDs.SOURCE_TOKEN_AVATAR}-${sourceToken.k...}": 1
+              "{`${BatchSellFinalReviewModalSelectorsIDs.SOURCE_TOKEN_AVATAR}-${sourceTokenKey}`}": 1
             }
           },
           "twClassName": {
@@ -517,13 +517,13 @@
         }
       },
       "deprecated": {
-        "totalInstances": 33,
-        "filesCount": 31,
+        "totalInstances": 32,
+        "filesCount": 30,
         "props": {
           "size": {
-            "count": 33,
+            "count": 32,
             "values": {
-              "{AvatarSize.Lg}": 13,
+              "{AvatarSize.Lg}": 12,
               "{AvatarSize.Md}": 12,
               "{AvatarSize.Sm}": 3,
               "{AvatarSize.Xs}": 2,
@@ -533,14 +533,14 @@
             }
           },
           "name": {
-            "count": 30,
+            "count": 29,
             "values": {
               "{token.symbol}": 5,
               "{asset.symbol}": 3,
-              "{symbol}": 2,
               "{iconTitle}": 2,
               "{token.name}": 2,
               "{sessionName}": 2,
+              "{symbol}": 1,
               "{selectedToken.symbol ?? ''}": 1,
               "{avatarName}": 1,
               "{(tokenToRender as TokenI).symbol ?? ''}": 1,
@@ -558,7 +558,7 @@
             }
           },
           "imageSource": {
-            "count": 29,
+            "count": 28,
             "values": {
               "{{ uri: token.image }}": 2,
               "{{ uri: asset.image }}": 2,
@@ -568,8 +568,8 @@
               "{{ uri: imageUri }}": 1,
               "{getTokenImageSource( token.symbol, token.image, token.address, token.chainId, )}": 1,
               "{token.image ? { uri: token.image } : undefined}": 1,
-              "{{ uri: tokenIconUrl }}": 1,
               "{{ uri: iconUrl }}": 1,
+              "{{ uri: tokenIconUrl }}": 1,
               "{{ uri: buildTokenIconUrl( item.caipChainId, item.address ?? '', ), }}": 1,
               "{{ uri: avatarIconUrl }}": 1,
               "{{ uri: token.image, }}": 1,
@@ -579,7 +579,6 @@
               "{{ uri: selectedCryptoCurrency?.iconUrl || '', }}": 1,
               "{{ uri: cryptoToken.iconUrl }}": 1,
               "{cryptoIconUrl ? { uri: cryptoIconUrl } : undefined}": 1,
-              "{{ uri: image }}": 1,
               "{{ uri: imageUrl }}": 1,
               "{token ? { uri: token?.image } : networkImage}": 1,
               "{image ? { uri: image } : NetworkBadgeSource(chainId as Hex)}": 1,
@@ -624,18 +623,18 @@
         }
       },
       "overall": {
-        "totalInstances": 52,
+        "totalInstances": 53,
         "filesCount": 49,
         "props": {
           "size": {
-            "count": 50,
+            "count": 51,
             "values": {
-              "{AvatarSize.Lg}": 13,
+              "{AvatarSize.Lg}": 12,
               "{AvatarSize.Md}": 12,
               "{AvatarTokenSize.Lg}": 6,
+              "{AvatarTokenSize.Md}": 5,
               "{AvatarTokenSize.Sm}": 4,
               "{AvatarSize.Sm}": 3,
-              "{AvatarTokenSize.Md}": 3,
               "{AvatarSize.Xs}": 2,
               "{AvatarTokenSize.Xl}": 2,
               "{size}": 2,
@@ -645,18 +644,17 @@
             }
           },
           "name": {
-            "count": 48,
+            "count": 49,
             "values": {
-              "{token.symbol}": 8,
+              "{token.symbol}": 10,
               "{MUSD_TOKEN.symbol}": 6,
               "{asset.symbol}": 3,
-              "{symbol}": 3,
+              "{sourceToken.symbol}": 3,
+              "{symbol}": 2,
               "{iconTitle}": 2,
               "{token.name}": 2,
               "{sessionName}": 2,
-              "{sourceToken.symbol}": 2,
               "{selectedDestinationToken?.symbol ?? UNKNOWN_DESTINATION_TOKEN_SYMBOL}": 1,
-              "{sourceToken.tokenSymbol}": 1,
               "{selectedToken.symbol ?? ''}": 1,
               "{avatarName}": 1,
               "{(tokenToRender as TokenI).symbol ?? ''}": 1,
@@ -678,7 +676,7 @@
             }
           },
           "imageSource": {
-            "count": 29,
+            "count": 28,
             "values": {
               "{{ uri: token.image }}": 2,
               "{{ uri: asset.image }}": 2,
@@ -688,8 +686,8 @@
               "{{ uri: imageUri }}": 1,
               "{getTokenImageSource( token.symbol, token.image, token.address, token.chainId, )}": 1,
               "{token.image ? { uri: token.image } : undefined}": 1,
-              "{{ uri: tokenIconUrl }}": 1,
               "{{ uri: iconUrl }}": 1,
+              "{{ uri: tokenIconUrl }}": 1,
               "{{ uri: buildTokenIconUrl( item.caipChainId, item.address ?? '', ), }}": 1,
               "{{ uri: avatarIconUrl }}": 1,
               "{{ uri: token.image, }}": 1,
@@ -699,7 +697,6 @@
               "{{ uri: selectedCryptoCurrency?.iconUrl || '', }}": 1,
               "{{ uri: cryptoToken.iconUrl }}": 1,
               "{cryptoIconUrl ? { uri: cryptoIconUrl } : undefined}": 1,
-              "{{ uri: image }}": 1,
               "{{ uri: imageUrl }}": 1,
               "{token ? { uri: token?.image } : networkImage}": 1,
               "{image ? { uri: image } : NetworkBadgeSource(chainId as Hex)}": 1,
@@ -708,12 +705,13 @@
             }
           },
           "src": {
-            "count": 17,
+            "count": 19,
             "values": {
               "{MUSD_TOKEN.imageSource as ImageOrSvgSrc}": 3,
               "{token.image ? { uri: token.image } : undefined}": 2,
               "{MUSD_TOKEN.imageSource as number}": 2,
               "{getBridgeTokenImageSource(sourceToken)}": 2,
+              "{getBridgeTokenImageSource(token)}": 2,
               "{selectedDestinationToken?.image ? { uri: selectedDestinationToken.image } : u...}": 1,
               "{sourceToken.image ? { uri: sourceToken.image } : undefined}": 1,
               "{{ uri: selectedAsset?.logo }}": 1,
@@ -727,7 +725,7 @@
           "testID": {
             "count": 9,
             "values": {
-              "{`${BatchSellFinalReviewModalSelectorsIDs.SOURCE_TOKEN_AVATAR}-${sourceToken.k...}": 1,
+              "{`${BatchSellFinalReviewModalSelectorsIDs.SOURCE_TOKEN_AVATAR}-${sourceTokenKey}`}": 1,
               "{isNative ? `network-logo-${token.symbol}` : `token-logo-${token.symbol}`}": 1,
               "{testId}": 1,
               "{EARN_LENDING_BALANCE_TEST_IDS.RECEIPT_TOKEN_BALANCE_ASSET_LOGO}": 1,
@@ -783,7 +781,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "AvatarToken": 33
+        "AvatarToken": 32
       }
     }
   }

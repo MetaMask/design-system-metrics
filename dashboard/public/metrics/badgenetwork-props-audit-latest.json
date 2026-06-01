@@ -1,9 +1,9 @@
 {
   "component": "BadgeNetwork",
-  "generatedAt": "2026-05-26T16:32:23.661Z",
+  "generatedAt": "2026-06-01T09:13:37.482Z",
   "projects": {
     "extension": {
-      "filesScanned": 3152,
+      "filesScanned": 3160,
       "targetComponent": "BadgeNetwork",
       "mmds": {
         "totalInstances": 4,
@@ -49,28 +49,28 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 6546,
+      "filesScanned": 6564,
       "targetComponent": "BadgeNetwork",
       "mmds": {
-        "totalInstances": 1,
-        "filesCount": 1,
+        "totalInstances": 2,
+        "filesCount": 2,
         "props": {
           "src": {
-            "count": 1,
+            "count": 2,
             "values": {
-              "{networkImage}": 1
+              "{networkImage}": 2
             }
           }
         }
       },
       "deprecated": {
-        "totalInstances": 7,
-        "filesCount": 7,
+        "totalInstances": 8,
+        "filesCount": 8,
         "props": {
           "name": {
-            "count": 7,
+            "count": 8,
             "values": {
-              "{networkName}": 3,
+              "{networkName}": 4,
               "{token.network?.shortName}": 1,
               "{normalizedNetworkChainId}": 1,
               "{depositNetworkName ?? networkName}": 1,
@@ -78,23 +78,24 @@
             }
           },
           "imageSource": {
-            "count": 7,
+            "count": 8,
             "values": {
               "{networkImageSource}": 5,
               "{getNetworkImageForToken(token)}": 1,
+              "{NetworkBadgeSource(asset.chainId as `0x${string}`)}": 1,
               "{getNetworkImageSource({ chainId: caipChainId })}": 1
             }
           }
         }
       },
       "overall": {
-        "totalInstances": 8,
-        "filesCount": 8,
+        "totalInstances": 10,
+        "filesCount": 10,
         "props": {
           "name": {
-            "count": 7,
+            "count": 8,
             "values": {
-              "{networkName}": 3,
+              "{networkName}": 4,
               "{token.network?.shortName}": 1,
               "{normalizedNetworkChainId}": 1,
               "{depositNetworkName ?? networkName}": 1,
@@ -102,23 +103,24 @@
             }
           },
           "imageSource": {
-            "count": 7,
+            "count": 8,
             "values": {
               "{networkImageSource}": 5,
               "{getNetworkImageForToken(token)}": 1,
+              "{NetworkBadgeSource(asset.chainId as `0x${string}`)}": 1,
               "{getNetworkImageSource({ chainId: caipChainId })}": 1
             }
           },
           "src": {
-            "count": 1,
+            "count": 2,
             "values": {
-              "{networkImage}": 1
+              "{networkImage}": 2
             }
           }
         }
       },
       "deprecatedByLegacyComponent": {
-        "BadgeNetwork": 7
+        "BadgeNetwork": 8
       }
     }
   }
