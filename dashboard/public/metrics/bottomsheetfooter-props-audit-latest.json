@@ -1,9 +1,9 @@
 {
   "component": "BottomSheetFooter",
-  "generatedAt": "2026-06-02T15:29:03.953Z",
+  "generatedAt": "2026-06-08T09:57:50.974Z",
   "projects": {
     "extension": {
-      "filesScanned": 3162,
+      "filesScanned": 3216,
       "targetComponent": "BottomSheetFooter",
       "mmds": {
         "totalInstances": 0,
@@ -23,14 +23,14 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 6593,
+      "filesScanned": 6637,
       "targetComponent": "BottomSheetFooter",
       "mmds": {
-        "totalInstances": 12,
-        "filesCount": 11,
+        "totalInstances": 13,
+        "filesCount": 12,
         "props": {
           "primaryButtonProps": {
-            "count": 12,
+            "count": 13,
             "values": {
               "{{ children: strings('bridge.cancel'), onPress: handleClose, isDisabled: loadi...}": 2,
               "{{ children: strings('bridge.batch_sell_swap_instead'), onPress: handleSwapIns...}": 1,
@@ -38,6 +38,7 @@
               "{{ size: ButtonSize.Lg, children: strings('money.metamask_card.link_card_sheet...}": 1,
               "{{ children: strings('perps.tooltips.got_it_button'), onPress: handleGotItPres...}": 1,
               "{primaryButtonProps}": 1,
+              "{{ size: ButtonSize.Lg, onPress: handleConfirm, children: strings('perps.order...}": 1,
               "{{ children: strings('perps.deposit.quote_expired_modal.get_new_quote'), onPre...}": 1,
               "{{ children: strings('predict.withdraw.unavailable_got_it'), onPress: closeShe...}": 1,
               "{{ children: strings('rwa.unavailable.button'), onPress: closeSheet, }}": 1,
@@ -85,15 +86,15 @@
         }
       },
       "deprecated": {
-        "totalInstances": 45,
-        "filesCount": 44,
+        "totalInstances": 44,
+        "filesCount": 43,
         "props": {
           "buttonPropsArray": {
-            "count": 45,
+            "count": 44,
             "values": {
-              "{footerButtonProps}": 6,
               "{footerButtons}": 6,
               "{buttons}": 5,
+              "{footerButtonProps}": 5,
               "{[cancelButtonProps, connectButtonProps]}": 2,
               "{[okButtonProps]}": 2,
               "{[cancelButtonProps, deleteButtonProps]}": 2,
@@ -152,11 +153,11 @@
         "filesCount": 55,
         "props": {
           "buttonPropsArray": {
-            "count": 45,
+            "count": 44,
             "values": {
-              "{footerButtonProps}": 6,
               "{footerButtons}": 6,
               "{buttons}": 5,
+              "{footerButtonProps}": 5,
               "{[cancelButtonProps, connectButtonProps]}": 2,
               "{[okButtonProps]}": 2,
               "{[cancelButtonProps, deleteButtonProps]}": 2,
@@ -210,7 +211,7 @@
             }
           },
           "primaryButtonProps": {
-            "count": 12,
+            "count": 13,
             "values": {
               "{{ children: strings('bridge.cancel'), onPress: handleClose, isDisabled: loadi...}": 2,
               "{{ children: strings('bridge.batch_sell_swap_instead'), onPress: handleSwapIns...}": 1,
@@ -218,6 +219,7 @@
               "{{ size: ButtonSize.Lg, children: strings('money.metamask_card.link_card_sheet...}": 1,
               "{{ children: strings('perps.tooltips.got_it_button'), onPress: handleGotItPres...}": 1,
               "{primaryButtonProps}": 1,
+              "{{ size: ButtonSize.Lg, onPress: handleConfirm, children: strings('perps.order...}": 1,
               "{{ children: strings('perps.deposit.quote_expired_modal.get_new_quote'), onPre...}": 1,
               "{{ children: strings('predict.withdraw.unavailable_got_it'), onPress: closeShe...}": 1,
               "{{ children: strings('rwa.unavailable.button'), onPress: closeSheet, }}": 1,
@@ -251,7 +253,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "BottomSheetFooter": 45
+        "BottomSheetFooter": 44
       }
     }
   }

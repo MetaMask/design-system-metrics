@@ -1,9 +1,9 @@
 {
   "component": "AvatarNetwork",
-  "generatedAt": "2026-06-02T15:26:18.958Z",
+  "generatedAt": "2026-06-08T09:54:47.512Z",
   "projects": {
     "extension": {
-      "filesScanned": 3162,
+      "filesScanned": 3216,
       "targetComponent": "AvatarNetwork",
       "mmds": {
         "totalInstances": 26,
@@ -529,33 +529,35 @@
       }
     },
     "mobile": {
-      "filesScanned": 6593,
+      "filesScanned": 6637,
       "targetComponent": "AvatarNetwork",
       "mmds": {
-        "totalInstances": 4,
-        "filesCount": 4,
+        "totalInstances": 5,
+        "filesCount": 5,
         "props": {
           "src": {
-            "count": 4,
+            "count": 5,
             "values": {
               "{getNetworkImageSource({ chainId })}": 1,
               "{imageSource}": 1,
               "{networkImageSource as React.ComponentProps< typeof AvatarNetwork >['src']}": 1,
+              "{networkImageSource}": 1,
               "{imageSource as ImageOrSvgSrc}": 1
             }
           },
           "size": {
-            "count": 4,
+            "count": 5,
             "values": {
-              "{AvatarNetworkSize.Xs}": 4
+              "{AvatarNetworkSize.Xs}": 5
             }
           },
           "name": {
-            "count": 4,
+            "count": 5,
             "values": {
               "{label}": 2,
               "{chain.name}": 1,
-              "{displayName}": 1
+              "{displayName}": 1,
+              "{networkName}": 1
             }
           },
           "shape": {
@@ -579,15 +581,15 @@
         }
       },
       "deprecated": {
-        "totalInstances": 13,
-        "filesCount": 11,
+        "totalInstances": 14,
+        "filesCount": 12,
         "props": {
           "imageSource": {
-            "count": 13,
+            "count": 14,
             "values": {
               "{networkImageSource}": 4,
               "{imageSource}": 3,
-              "{networkImage}": 2,
+              "{networkImage}": 3,
               "{getNetworkImageSource({ chainId: cardNetworkInfos.base.caipChainId, })}": 1,
               "{getNetworkImageSource({ chainId: cardNetworkInfos.solana.caipChainId, })}": 1,
               "{item.imageSource}": 1,
@@ -595,19 +597,20 @@
             }
           },
           "size": {
-            "count": 11,
+            "count": 12,
             "values": {
-              "{AvatarSize.Xs}": 6,
+              "{AvatarSize.Xs}": 7,
               "{AvatarSize.Md}": 3,
               "{AvatarSize.Sm}": 2
             }
           },
           "name": {
-            "count": 10,
+            "count": 11,
             "values": {
               "{displayName}": 2,
               "\"Base\"": 1,
               "\"Solana\"": 1,
+              "{networkName}": 1,
               "{depositNetworkName ?? networkName}": 1,
               "{nativeCurrency}": 1,
               "{formHook.form.nickname}": 1,
@@ -648,23 +651,24 @@
         }
       },
       "overall": {
-        "totalInstances": 17,
-        "filesCount": 15,
+        "totalInstances": 19,
+        "filesCount": 17,
         "props": {
           "size": {
-            "count": 15,
+            "count": 17,
             "values": {
-              "{AvatarSize.Xs}": 6,
-              "{AvatarNetworkSize.Xs}": 4,
+              "{AvatarSize.Xs}": 7,
+              "{AvatarNetworkSize.Xs}": 5,
               "{AvatarSize.Md}": 3,
               "{AvatarSize.Sm}": 2
             }
           },
           "name": {
-            "count": 14,
+            "count": 16,
             "values": {
               "{displayName}": 3,
               "{label}": 2,
+              "{networkName}": 2,
               "{chain.name}": 1,
               "\"Base\"": 1,
               "\"Solana\"": 1,
@@ -677,11 +681,11 @@
             }
           },
           "imageSource": {
-            "count": 13,
+            "count": 14,
             "values": {
               "{networkImageSource}": 4,
               "{imageSource}": 3,
-              "{networkImage}": 2,
+              "{networkImage}": 3,
               "{getNetworkImageSource({ chainId: cardNetworkInfos.base.caipChainId, })}": 1,
               "{getNetworkImageSource({ chainId: cardNetworkInfos.solana.caipChainId, })}": 1,
               "{item.imageSource}": 1,
@@ -700,11 +704,12 @@
             }
           },
           "src": {
-            "count": 4,
+            "count": 5,
             "values": {
               "{getNetworkImageSource({ chainId })}": 1,
               "{imageSource}": 1,
               "{networkImageSource as React.ComponentProps< typeof AvatarNetwork >['src']}": 1,
+              "{networkImageSource}": 1,
               "{imageSource as ImageOrSvgSrc}": 1
             }
           },
@@ -742,7 +747,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "AvatarNetwork": 13
+        "AvatarNetwork": 14
       }
     }
   }

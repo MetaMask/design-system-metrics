@@ -1,16 +1,16 @@
 {
   "component": "ButtonBase",
-  "generatedAt": "2026-06-02T15:30:54.400Z",
+  "generatedAt": "2026-06-08T09:59:50.045Z",
   "projects": {
     "extension": {
-      "filesScanned": 3162,
+      "filesScanned": 3216,
       "targetComponent": "ButtonBase",
       "mmds": {
-        "totalInstances": 31,
-        "filesCount": 19,
+        "totalInstances": 32,
+        "filesCount": 20,
         "props": {
           "className": {
-            "count": 31,
+            "count": 32,
             "values": {
               "\"h-auto flex-1 flex-col justify-center rounded-lg bg-muted py-4 hover:bg-muted-hover active:bg-muted-pressed\"": 4,
               "{twMerge( // Reset ButtonBase defaults for card layout 'justify-start rounded-...}": 2,
@@ -27,6 +27,7 @@
               "{twMerge( 'py-1.5 h-auto min-w-12 rounded-lg flex items-center gap-1 bg-transp...}": 1,
               "{twMerge(CARD_STYLES)}": 1,
               "\"w-full flex flex-row justify-between items-center px-4 py-2 bg-transparent rounded-none hover:bg-hover active:bg-pressed\"": 1,
+              "\"min-w-0 rounded-md border-0 bg-transparent px-1 py-0.5 -mr-1 shadow-none hover:bg-transparent active:bg-transparent focus-visible:bg-transparent disabled:opacity-50\"": 1,
               "\"w-full px-0 h-[62px] rounded-none bg-transparent hover:bg-hover active:bg-pressed\"": 1,
               "\"flex-1 justify-start rounded-none min-w-0 h-auto text-left cursor-pointer gap-4 px-4 py-3 bg-transparent\"": 1,
               "{twMerge( 'justify-start rounded-none min-w-0 h-auto text-left cursor-pointer'...}": 1,
@@ -38,7 +39,7 @@
             }
           },
           "onClick": {
-            "count": 27,
+            "count": 28,
             "values": {
               "{handleClick}": 5,
               "{handleSeeAll}": 2,
@@ -53,6 +54,7 @@
               "{() => setIsMoreModalOpen(true)}": 1,
               "{handleSeeAllPerps}": 1,
               "{() => onClick(symbol)}": 1,
+              "{onCloseAllPositions}": 1,
               "{() => { removeQuizWord(quizWord.word); }}": 1,
               "{handleToggle}": 1,
               "{() => handleSelect(option)}": 1,
@@ -65,7 +67,7 @@
             }
           },
           "data-testid": {
-            "count": 26,
+            "count": 27,
             "values": {
               "{`order-card-${order.orderId}`}": 1,
               "\"direction-tab-long\"": 1,
@@ -80,6 +82,7 @@
               "\"perps-explore-markets-row\"": 1,
               "{testId}": 1,
               "\"perps-market-detail-view-all-activity\"": 1,
+              "\"perps-close-all-positions\"": 1,
               "\"perps-recent-activity-see-all\"": 1,
               "{`position-card-${position.symbol}`}": 1,
               "\"start-new-trade-cta\"": 1,
@@ -104,16 +107,16 @@
               "{value}": 1
             }
           },
+          "size": {
+            "count": 5,
+            "values": {
+              "{ButtonBaseSize.Sm}": 5
+            }
+          },
           "isFullWidth": {
             "count": 4,
             "values": {
               "true (shorthand)": 4
-            }
-          },
-          "size": {
-            "count": 4,
-            "values": {
-              "{ButtonBaseSize.Sm}": 4
             }
           },
           "type": {
@@ -127,6 +130,13 @@
             "values": {
               "{`${t('perpsRecentActivity')}, ${t('perpsSeeAll')}`}": 2,
               "{t('back')}": 1
+            }
+          },
+          "textProps": {
+            "count": 2,
+            "values": {
+              "{{ color: TextColor.PrimaryDefault, fontWeight: FontWeight.Medium, variant: Te...}": 1,
+              "{{ variant: TextVariant.BodySm, color: TextColor.TextAlternative, }}": 1
             }
           },
           "ref": {
@@ -143,10 +153,10 @@
               "{(e) => handleOptionKeyDown(e, index)}": 1
             }
           },
-          "textProps": {
+          "disabled": {
             "count": 1,
             "values": {
-              "{{ color: TextColor.PrimaryDefault, fontWeight: FontWeight.Medium, variant: Te...}": 1
+              "{isCloseAllPending || !onCloseAllPositions}": 1
             }
           },
           "color": {
@@ -454,11 +464,11 @@
         }
       },
       "overall": {
-        "totalInstances": 43,
-        "filesCount": 28,
+        "totalInstances": 44,
+        "filesCount": 29,
         "props": {
           "className": {
-            "count": 41,
+            "count": 42,
             "values": {
               "\"h-auto flex-1 flex-col justify-center rounded-lg bg-muted py-4 hover:bg-muted-hover active:bg-muted-pressed\"": 4,
               "\"asset-list-control-bar__button\"": 3,
@@ -477,6 +487,7 @@
               "{twMerge( 'py-1.5 h-auto min-w-12 rounded-lg flex items-center gap-1 bg-transp...}": 1,
               "{twMerge(CARD_STYLES)}": 1,
               "\"w-full flex flex-row justify-between items-center px-4 py-2 bg-transparent rounded-none hover:bg-hover active:bg-pressed\"": 1,
+              "\"min-w-0 rounded-md border-0 bg-transparent px-1 py-0.5 -mr-1 shadow-none hover:bg-transparent active:bg-transparent focus-visible:bg-transparent disabled:opacity-50\"": 1,
               "\"w-full px-0 h-[62px] rounded-none bg-transparent hover:bg-hover active:bg-pressed\"": 1,
               "\"flex-1 justify-start rounded-none min-w-0 h-auto text-left cursor-pointer gap-4 px-4 py-3 bg-transparent\"": 1,
               "{twMerge( 'justify-start rounded-none min-w-0 h-auto text-left cursor-pointer'...}": 1,
@@ -494,7 +505,7 @@
             }
           },
           "onClick": {
-            "count": 39,
+            "count": 40,
             "values": {
               "{handleClick}": 6,
               "{onClick}": 3,
@@ -513,6 +524,7 @@
               "{() => setIsMoreModalOpen(true)}": 1,
               "{handleSeeAllPerps}": 1,
               "{() => onClick(symbol)}": 1,
+              "{onCloseAllPositions}": 1,
               "{handleModalOpen}": 1,
               "{() => { trace({ name: TraceName.AccountList }); onClick(); }}": 1,
               "{onClickCallback}": 1,
@@ -530,7 +542,7 @@
             }
           },
           "data-testid": {
-            "count": 35,
+            "count": 36,
             "values": {
               "\"address-copy-button-text\"": 2,
               "\"sort-by-networks\"": 1,
@@ -550,6 +562,7 @@
               "\"perps-explore-markets-row\"": 1,
               "{testId}": 1,
               "\"perps-market-detail-view-all-activity\"": 1,
+              "\"perps-close-all-positions\"": 1,
               "\"perps-recent-activity-see-all\"": 1,
               "{`position-card-${position.symbol}`}": 1,
               "\"start-new-trade-cta\"": 1,
@@ -569,9 +582,9 @@
             }
           },
           "size": {
-            "count": 13,
+            "count": 14,
             "values": {
-              "{ButtonBaseSize.Sm}": 10,
+              "{ButtonBaseSize.Sm}": 11,
               "{showAddress ? ButtonBaseSize.Lg : ButtonBaseSize.Sm}": 1,
               "{Size.SM}": 1,
               "{ButtonBaseSize.Md}": 1
@@ -625,6 +638,24 @@
               "{(el) => { optionRefs.current[index] = el; }}": 1
             }
           },
+          "disabled": {
+            "count": 6,
+            "values": {
+              "{disabled}": 4,
+              "{!shouldShowTokensLinks}": 1,
+              "{isCloseAllPending || !onCloseAllPositions}": 1
+            }
+          },
+          "textProps": {
+            "count": 6,
+            "values": {
+              "{{ display: Display.Flex, width: BlockSize.Full, }}": 2,
+              "{{ color: TextColor.PrimaryDefault, fontWeight: FontWeight.Medium, variant: Te...}": 1,
+              "{{ variant: TextVariant.BodySm, color: TextColor.TextAlternative, }}": 1,
+              "{{ display: Display.Flex, alignItems: AlignItems.center, gap: 2, ...textProps, }}": 1,
+              "{{ ellipsis: true, className: 'icon-button__label', }}": 1
+            }
+          },
           "paddingRight": {
             "count": 6,
             "values": {
@@ -645,22 +676,6 @@
             "count": 5,
             "values": {
               "true (shorthand)": 5
-            }
-          },
-          "disabled": {
-            "count": 5,
-            "values": {
-              "{disabled}": 4,
-              "{!shouldShowTokensLinks}": 1
-            }
-          },
-          "textProps": {
-            "count": 5,
-            "values": {
-              "{{ display: Display.Flex, width: BlockSize.Full, }}": 2,
-              "{{ color: TextColor.PrimaryDefault, fontWeight: FontWeight.Medium, variant: Te...}": 1,
-              "{{ display: Display.Flex, alignItems: AlignItems.center, gap: 2, ...textProps, }}": 1,
-              "{{ ellipsis: true, className: 'icon-button__label', }}": 1
             }
           },
           "variant": {
@@ -852,15 +867,16 @@
       }
     },
     "mobile": {
-      "filesScanned": 6593,
+      "filesScanned": 6637,
       "targetComponent": "ButtonBase",
       "mmds": {
-        "totalInstances": 11,
-        "filesCount": 6,
+        "totalInstances": 12,
+        "filesCount": 7,
         "props": {
           "onPress": {
-            "count": 11,
+            "count": 12,
             "values": {
+              "{handleButtonPress}": 1,
               "{onContactSupport}": 1,
               "{() => onChange('energy')}": 1,
               "{() => onChange('bandwidth')}": 1,
@@ -886,8 +902,9 @@
             }
           },
           "testID": {
-            "count": 7,
+            "count": 8,
             "values": {
+              "{CardWelcomeSelectors.VERIFY_ACCOUNT_BUTTON}": 1,
               "{AccessRestrictedModalSelectorsIDs.CONTACT_SUPPORT_BUTTON}": 1,
               "{testIDEnergy}": 1,
               "{testIDBandwidth}": 1,
@@ -898,9 +915,10 @@
             }
           },
           "size": {
-            "count": 7,
+            "count": 8,
             "values": {
               "{ButtonBaseSize.Md}": 6,
+              "{ButtonSize.Lg}": 1,
               "{ButtonBaseSize.Lg}": 1
             }
           },
@@ -913,23 +931,24 @@
               "{IconName.X}": 1
             }
           },
+          "style": {
+            "count": 4,
+            "values": {
+              "{styles.buttonBase}": 2,
+              "{styles.getStartedButton}": 1,
+              "{({ pressed }) => tw.style(pressed && 'bg-background-pressed')}": 1
+            }
+          },
           "startIconProps": {
             "count": 4,
             "values": {
               "{{ color: IconColor.IconDefault, size: IconSize.Sm, }}": 4
             }
           },
-          "style": {
+          "isFullWidth": {
             "count": 3,
             "values": {
-              "{styles.buttonBase}": 2,
-              "{({ pressed }) => tw.style(pressed && 'bg-background-pressed')}": 1
-            }
-          },
-          "isFullWidth": {
-            "count": 2,
-            "values": {
-              "true (shorthand)": 2
+              "true (shorthand)": 3
             }
           },
           "textProps": {
@@ -955,100 +974,86 @@
         }
       },
       "deprecated": {
-        "totalInstances": 10,
-        "filesCount": 9,
+        "totalInstances": 8,
+        "filesCount": 7,
         "props": {
           "label": {
-            "count": 10,
+            "count": 8,
             "values": {
-              "{<Text variant={TextVariant.BodyMDMedium} style={styles.getStartedButtonText} ...}": 2,
               "{buttonContent}": 1,
               "{inlineButtonLabel}": 1,
               "{`${value}`}": 1,
               "{<Text variant={TextVariant.BodyMDMedium} style={styles.tryNowButtonText} > {s...}": 1,
               "{<Text style={styles.applyButtonText}> {strings('perps.sort.apply')} </Text>}": 1,
+              "{<Text variant={TextVariant.BodyMDMedium} style={styles.getStartedButtonText} ...}": 1,
               "{label}": 1,
-              "{renderNetworkLabel()}": 1,
               "{<> <View style={styles.networkManagerWrapper}> {showNetworkFilterAvatar && ( ...}": 1
             }
           },
           "onPress": {
-            "count": 10,
+            "count": 8,
             "values": {
               "{handlePress}": 2,
               "{handleModalOpen}": 1,
-              "{handleButtonPress}": 1,
               "{onPress}": 1,
               "{() => tryPerpsNow()}": 1,
               "{handleApply}": 1,
               "{() => handleGetStarted()}": 1,
-              "{handleFilterControls}": 1,
               "{showFilterControls}": 1
             }
           },
           "style": {
-            "count": 10,
+            "count": 8,
             "values": {
-              "{styles.getStartedButton}": 2,
               "{styles.modalButton}": 1,
               "{styles.button}": 1,
               "{styles.currencyToggleButton}": 1,
               "{styles.tryNowButton}": 1,
               "{styles.applyButton}": 1,
+              "{styles.getStartedButton}": 1,
               "{isHighlighted ? styles.amountHighlighted : styles.amount}": 1,
-              "{isDisabled ? styles.controlButtonDisabled : styles.controlButton}": 1,
               "{styles.controlButton}": 1
             }
           },
           "testID": {
-            "count": 9,
+            "count": 7,
             "values": {
               "\"snap-ui-renderer__selector-item\"": 1,
               "{testID}": 1,
-              "{CardWelcomeSelectors.VERIFY_ACCOUNT_BUTTON}": 1,
               "\"currency-toggle\"": 1,
               "{PerpsGTMModalSelectorsIDs.PERPS_TRY_NOW_BUTTON}": 1,
               "{testID ? `${testID}-apply-button` : undefined}": 1,
               "{PREDICT_GTM_MODAL_TEST_IDS.GET_STARTED_BUTTON}": 1,
-              "{networkFilterTestId}": 1,
               "{WalletViewSelectorsIDs.TOKEN_NETWORK_FILTER}": 1
             }
           },
           "width": {
-            "count": 7,
+            "count": 6,
             "values": {
-              "{ButtonWidthTypes.Full}": 6,
+              "{ButtonWidthTypes.Full}": 5,
               "{ButtonWidthTypes.Auto}": 1
             }
           },
           "size": {
-            "count": 5,
+            "count": 4,
             "values": {
-              "{ButtonSize.Lg}": 3,
+              "{ButtonSize.Lg}": 2,
               "{ButtonSize.Sm}": 1,
               "{ButtonSize.Md}": 1
             }
           },
           "isDisabled": {
-            "count": 4,
+            "count": 3,
             "values": {
               "{disabled}": 2,
-              "{isDisabled}": 1,
               "false": 1
             }
           },
           "endIconName": {
-            "count": 4,
+            "count": 3,
             "values": {
-              "{IconName.ArrowDown}": 3,
+              "{IconName.ArrowDown}": 2,
               "{IconName.SwapVertical}": 1
-            }
-          },
-          "activeOpacity": {
-            "count": 4,
-            "values": {
-              "0.6": 3,
-              "0.2": 1
             }
           },
           "labelColor": {
@@ -1064,11 +1069,10 @@
               "{TextVariant.BodyMDMedium}": 2
             }
           },
-          "disabled": {
+          "activeOpacity": {
             "count": 2,
             "values": {
-              "{isDisabled}": 1,
-              "false": 1
+              "0.6": 2
             }
           },
           "[spread]": {
@@ -1076,15 +1080,21 @@
             "values": {
               "{value === 1 && !isStablecoinLendingEnabled ? { startIconName: IconName.Sparkl...}": 1
             }
+          },
+          "disabled": {
+            "count": 1,
+            "values": {
+              "false": 1
+            }
           }
         }
       },
       "overall": {
-        "totalInstances": 21,
-        "filesCount": 15,
+        "totalInstances": 20,
+        "filesCount": 14,
         "props": {
           "onPress": {
-            "count": 21,
+            "count": 20,
             "values": {
               "{handlePress}": 2,
               "{onPress}": 2,
@@ -1103,12 +1113,11 @@
               "{() => openLink( `https://x.com/${metadata.externalLinks.twitterPage}`, 'twitt...}": 1,
               "{() => openLink( `https://t.me/${metadata.externalLinks.telegramChannelId}`, '...}": 1,
               "{() => openLink(blockExplorerUrl, 'block_explorer')}": 1,
-              "{handleFilterControls}": 1,
               "{showFilterControls}": 1
             }
           },
           "testID": {
-            "count": 16,
+            "count": 15,
             "values": {
               "{testID}": 2,
               "\"snap-ui-renderer__selector-item\"": 1,
@@ -1123,12 +1132,11 @@
               "{PredictCryptoUpDownMarketCardSelectorsIDs.DOWN_BUTTON}": 1,
               "{PREDICT_GTM_MODAL_TEST_IDS.GET_STARTED_BUTTON}": 1,
               "{`show-more-button-${walletId}`}": 1,
-              "{networkFilterTestId}": 1,
               "{WalletViewSelectorsIDs.TOKEN_NETWORK_FILTER}": 1
             }
           },
           "style": {
-            "count": 13,
+            "count": 12,
             "values": {
               "{styles.getStartedButton}": 2,
               "{styles.buttonBase}": 2,
@@ -1139,7 +1147,6 @@
               "{styles.applyButton}": 1,
               "{({ pressed }) => tw.style(pressed && 'bg-background-pressed')}": 1,
               "{isHighlighted ? styles.amountHighlighted : styles.amount}": 1,
-              "{isDisabled ? styles.controlButtonDisabled : styles.controlButton}": 1,
               "{styles.controlButton}": 1
             }
           },
@@ -1153,20 +1160,6 @@
               "{ButtonSize.Md}": 1
             }
           },
-          "label": {
-            "count": 10,
-            "values": {
-              "{<Text variant={TextVariant.BodyMDMedium} style={styles.getStartedButtonText} ...}": 2,
-              "{buttonContent}": 1,
-              "{inlineButtonLabel}": 1,
-              "{`${value}`}": 1,
-              "{<Text variant={TextVariant.BodyMDMedium} style={styles.tryNowButtonText} > {s...}": 1,
-              "{<Text style={styles.applyButtonText}> {strings('perps.sort.apply')} </Text>}": 1,
-              "{label}": 1,
-              "{renderNetworkLabel()}": 1,
-              "{<> <View style={styles.networkManagerWrapper}> {showNetworkFilterAvatar && ( ...}": 1
-            }
-          },
           "twClassName": {
             "count": 9,
             "values": {
@@ -1178,10 +1171,23 @@
               "\"bg-background-default\"": 1
             }
           },
-          "width": {
-            "count": 7,
+          "label": {
+            "count": 8,
             "values": {
-              "{ButtonWidthTypes.Full}": 6,
+              "{buttonContent}": 1,
+              "{inlineButtonLabel}": 1,
+              "{`${value}`}": 1,
+              "{<Text variant={TextVariant.BodyMDMedium} style={styles.tryNowButtonText} > {s...}": 1,
+              "{<Text style={styles.applyButtonText}> {strings('perps.sort.apply')} </Text>}": 1,
+              "{<Text variant={TextVariant.BodyMDMedium} style={styles.getStartedButtonText} ...}": 1,
+              "{label}": 1,
+              "{<> <View style={styles.networkManagerWrapper}> {showNetworkFilterAvatar && ( ...}": 1
+            }
+          },
+          "width": {
+            "count": 6,
+            "values": {
+              "{ButtonWidthTypes.Full}": 5,
               "{ButtonWidthTypes.Auto}": 1
             }
           },
@@ -1194,41 +1200,38 @@
               "{IconName.X}": 1
             }
           },
-          "isDisabled": {
-            "count": 4,
-            "values": {
-              "{disabled}": 2,
-              "{isDisabled}": 1,
-              "false": 1
-            }
-          },
-          "endIconName": {
-            "count": 4,
-            "values": {
-              "{IconName.ArrowDown}": 3,
-              "{IconName.SwapVertical}": 1
-            }
-          },
-          "activeOpacity": {
-            "count": 4,
-            "values": {
-              "0.6": 3,
-              "0.2": 1
-            }
-          },
-          "disabled": {
-            "count": 4,
-            "values": {
-              "{!upToken || !isMarketOpen}": 1,
-              "{!downToken || !isMarketOpen}": 1,
-              "{isDisabled}": 1,
-              "false": 1
-            }
-          },
           "startIconProps": {
             "count": 4,
             "values": {
               "{{ color: IconColor.IconDefault, size: IconSize.Sm, }}": 4
+            }
+          },
+          "isDisabled": {
+            "count": 3,
+            "values": {
+              "{disabled}": 2,
+              "false": 1
+            }
+          },
+          "endIconName": {
+            "count": 3,
+            "values": {
+              "{IconName.ArrowDown}": 2,
+              "{IconName.SwapVertical}": 1
+            }
+          },
+          "isFullWidth": {
+            "count": 3,
+            "values": {
+              "true (shorthand)": 3
+            }
+          },
+          "disabled": {
+            "count": 3,
+            "values": {
+              "{!upToken || !isMarketOpen}": 1,
+              "{!downToken || !isMarketOpen}": 1,
+              "false": 1
             }
           },
           "labelColor": {
@@ -1244,12 +1247,6 @@
               "{TextVariant.BodyMDMedium}": 2
             }
           },
-          "isFullWidth": {
-            "count": 2,
-            "values": {
-              "true (shorthand)": 2
-            }
-          },
           "textProps": {
             "count": 2,
             "values": {
@@ -1263,6 +1260,12 @@
               "{bandwidthLabel}": 1
             }
           },
+          "activeOpacity": {
+            "count": 2,
+            "values": {
+              "0.6": 2
+            }
+          },
           "[spread]": {
             "count": 1,
             "values": {
@@ -1272,7 +1275,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "ButtonBase": 10
+        "ButtonBase": 8
       }
     }
   }

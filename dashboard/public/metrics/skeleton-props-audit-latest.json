@@ -1,28 +1,31 @@
 {
   "component": "Skeleton",
-  "generatedAt": "2026-06-02T15:35:07.112Z",
+  "generatedAt": "2026-06-08T10:04:08.940Z",
   "projects": {
     "extension": {
-      "filesScanned": 3162,
+      "filesScanned": 3216,
       "targetComponent": "Skeleton",
       "mmds": {
-        "totalInstances": 7,
-        "filesCount": 6,
+        "totalInstances": 11,
+        "filesCount": 9,
         "props": {
           "hideChildren": {
-            "count": 7,
+            "count": 11,
             "values": {
               "true (shorthand)": 3,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 2,
               "{!anyEnabledNetworksAreAvailable && (isZeroAmount(total) || currency === undef...}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(token.balance)}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(secondaryDisplayText) && seco...}": 1
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(secondaryDisplayText) && seco...}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(formattedAmountChangeCrossCha...}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(singleDayAmountChange)}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(balanceToDisplay)}": 1
             }
           },
           "className": {
-            "count": 5,
+            "count": 6,
             "values": {
-              "\"mb-1\"": 2,
+              "\"mb-1\"": 3,
               "\"asset-chart__skeleton rounded-lg\"": 1,
               "\"mb-1 rounded-lg\"": 1,
               "\"rounded-lg\"": 1
@@ -44,8 +47,8 @@
         }
       },
       "deprecated": {
-        "totalInstances": 121,
-        "filesCount": 43,
+        "totalInstances": 117,
+        "filesCount": 40,
         "props": {
           "width": {
             "count": 61,
@@ -156,18 +159,6 @@
               "{{ flexShrink: 0 }}": 1
             }
           },
-          "isLoading": {
-            "count": 7,
-            "values": {
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(formattedAmountChangeCrossCha...}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(singleDayAmountChange)}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(balanceToDisplay)}": 1,
-              "{isLoading}": 1,
-              "{!balances || assets[selectedAccount.id] === undefined || assets[selectedAccou...}": 1,
-              "{isBalanceLoading}": 1
-            }
-          },
           "data-testid": {
             "count": 4,
             "values": {
@@ -185,6 +176,14 @@
               "{percentage}": 1
             }
           },
+          "isLoading": {
+            "count": 3,
+            "values": {
+              "{isLoading}": 1,
+              "{!balances || assets[selectedAccount.id] === undefined || assets[selectedAccou...}": 1,
+              "{isBalanceLoading}": 1
+            }
+          },
           "[spread]": {
             "count": 3,
             "values": {
@@ -192,9 +191,9 @@
             }
           },
           "marginBottom": {
-            "count": 2,
+            "count": 1,
             "values": {
-              "1": 2
+              "1": 1
             }
           }
         }
@@ -233,41 +232,18 @@
               "\"32px\"": 1
             }
           },
-          "height": {
-            "count": 60,
-            "values": {
-              "16": 10,
-              "18": 2,
-              "20": 10,
-              "22": 2,
-              "24": 9,
-              "25": 1,
-              "26": 1,
-              "32": 3,
-              "40": 5,
-              "70": 2,
-              "\"32px\"": 3,
-              "\"72px\"": 3,
-              "\"16px\"": 2,
-              "\"20px\"": 2,
-              "\"18px\"": 2,
-              "\"60px\"": 1,
-              "\"40px\"": 1,
-              "\"24px\"": 1
-            }
-          },
           "className": {
-            "count": 59,
+            "count": 60,
             "values": {
               "\"h-4 w-24\"": 4,
               "\"h-12 flex-1\"": 4,
               "\"h-8 w-8 shrink-0\"": 4,
               "\"h-4 w-20\"": 4,
+              "\"mb-1\"": 3,
               "\"h-3 w-16\"": 3,
               "\"h-3 w-20\"": 3,
               "\"h-4 w-16\"": 3,
               "\"h-3 w-12\"": 3,
-              "\"mb-1\"": 2,
               "\"h-4 w-12\"": 2,
               "\"h-10 w-10 shrink-0\"": 2,
               "\"h-[250px] w-full\"": 2,
@@ -292,6 +268,29 @@
               "\"rounded-lg\"": 1,
               "\"h-3 w-8\"": 1,
               "\"w-2/3 h-5\"": 1
+            }
+          },
+          "height": {
+            "count": 60,
+            "values": {
+              "16": 10,
+              "18": 2,
+              "20": 10,
+              "22": 2,
+              "24": 9,
+              "25": 1,
+              "26": 1,
+              "32": 3,
+              "40": 5,
+              "70": 2,
+              "\"32px\"": 3,
+              "\"72px\"": 3,
+              "\"16px\"": 2,
+              "\"20px\"": 2,
+              "\"18px\"": 2,
+              "\"60px\"": 1,
+              "\"40px\"": 1,
+              "\"24px\"": 1
             }
           },
           "borderRadius": {
@@ -319,25 +318,16 @@
             }
           },
           "hideChildren": {
-            "count": 7,
+            "count": 11,
             "values": {
               "true (shorthand)": 3,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 2,
               "{!anyEnabledNetworksAreAvailable && (isZeroAmount(total) || currency === undef...}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(token.balance)}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(secondaryDisplayText) && seco...}": 1
-            }
-          },
-          "isLoading": {
-            "count": 7,
-            "values": {
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(secondaryDisplayText) && seco...}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(formattedAmountChangeCrossCha...}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(singleDayAmountChange)}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(balanceToDisplay)}": 1,
-              "{isLoading}": 1,
-              "{!balances || assets[selectedAccount.id] === undefined || assets[selectedAccou...}": 1,
-              "{isBalanceLoading}": 1
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(balanceToDisplay)}": 1
             }
           },
           "data-testid": {
@@ -358,6 +348,14 @@
               "{percentage}": 1
             }
           },
+          "isLoading": {
+            "count": 3,
+            "values": {
+              "{isLoading}": 1,
+              "{!balances || assets[selectedAccount.id] === undefined || assets[selectedAccou...}": 1,
+              "{isBalanceLoading}": 1
+            }
+          },
           "[spread]": {
             "count": 3,
             "values": {
@@ -365,19 +363,19 @@
             }
           },
           "marginBottom": {
-            "count": 2,
+            "count": 1,
             "values": {
-              "1": 2
+              "1": 1
             }
           }
         }
       },
       "deprecatedByLegacyComponent": {
-        "Skeleton": 121
+        "Skeleton": 117
       }
     },
     "mobile": {
-      "filesScanned": 6593,
+      "filesScanned": 6637,
       "targetComponent": "Skeleton",
       "mmds": {
         "totalInstances": 102,

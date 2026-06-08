@@ -1,14 +1,33 @@
 {
   "component": "AvatarBase",
-  "generatedAt": "2026-06-02T15:24:28.733Z",
+  "generatedAt": "2026-06-08T09:52:49.222Z",
   "projects": {
     "extension": {
-      "filesScanned": 3162,
+      "filesScanned": 3216,
       "targetComponent": "AvatarBase",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 1,
+        "filesCount": 1,
+        "props": {
+          "size": {
+            "count": 1,
+            "values": {
+              "{AvatarBaseSize.Md}": 1
+            }
+          },
+          "fallbackText": {
+            "count": 1,
+            "values": {
+              "{fallbackText}": 1
+            }
+          },
+          "data-testid": {
+            "count": 1,
+            "values": {
+              "\"activity-list-item-avatar-fallback\"": 1
+            }
+          }
+        }
       },
       "deprecated": {
         "totalInstances": 7,
@@ -19,7 +38,7 @@
             "values": {
               "{AvatarBaseSize.Sm}": 2,
               "{IconSize.Lg}": 1,
-              "{avatarSize as unknown as AvatarBaseSize}": 1,
+              "{avatarSize as AvatarBaseSize}": 1,
               "{AvatarBaseSize.Md}": 1,
               "{AvatarBaseSize.Xs}": 1,
               "{AvatarBaseSize.Lg}": 1
@@ -95,16 +114,16 @@
         }
       },
       "overall": {
-        "totalInstances": 7,
-        "filesCount": 6,
+        "totalInstances": 8,
+        "filesCount": 7,
         "props": {
           "size": {
-            "count": 7,
+            "count": 8,
             "values": {
+              "{AvatarBaseSize.Md}": 2,
               "{AvatarBaseSize.Sm}": 2,
               "{IconSize.Lg}": 1,
-              "{avatarSize as unknown as AvatarBaseSize}": 1,
-              "{AvatarBaseSize.Md}": 1,
+              "{avatarSize as AvatarBaseSize}": 1,
               "{AvatarBaseSize.Xs}": 1,
               "{AvatarBaseSize.Lg}": 1
             }
@@ -158,6 +177,18 @@
               "2": 2
             }
           },
+          "fallbackText": {
+            "count": 1,
+            "values": {
+              "{fallbackText}": 1
+            }
+          },
+          "data-testid": {
+            "count": 1,
+            "values": {
+              "\"activity-list-item-avatar-fallback\"": 1
+            }
+          },
           "[spread]": {
             "count": 1,
             "values": {
@@ -183,7 +214,7 @@
       }
     },
     "mobile": {
-      "filesScanned": 6593,
+      "filesScanned": 6637,
       "targetComponent": "AvatarBase",
       "mmds": {
         "totalInstances": 7,

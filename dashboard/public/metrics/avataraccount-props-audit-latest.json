@@ -1,9 +1,9 @@
 {
   "component": "AvatarAccount",
-  "generatedAt": "2026-06-02T15:24:00.625Z",
+  "generatedAt": "2026-06-08T09:52:19.324Z",
   "projects": {
     "extension": {
-      "filesScanned": 3162,
+      "filesScanned": 3216,
       "targetComponent": "AvatarAccount",
       "mmds": {
         "totalInstances": 9,
@@ -109,30 +109,32 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 6593,
+      "filesScanned": 6637,
       "targetComponent": "AvatarAccount",
       "mmds": {
-        "totalInstances": 2,
-        "filesCount": 2,
+        "totalInstances": 3,
+        "filesCount": 3,
         "props": {
           "address": {
-            "count": 2,
+            "count": 3,
             "values": {
               "{account.address}": 1,
-              "{formattedAddress}": 1
+              "{formattedAddress}": 1,
+              "{iconSeedAddress}": 1
             }
           },
           "size": {
-            "count": 2,
+            "count": 3,
             "values": {
-              "{AvatarAccountSize.Xl}": 1,
+              "{AvatarAccountSize.Xl}": 2,
               "{AvatarAccountSize.Md}": 1
             }
           },
           "variant": {
-            "count": 1,
+            "count": 2,
             "values": {
-              "{toAvatarAccountVariant(accountAvatarType)}": 1
+              "{toAvatarAccountVariant(accountAvatarType)}": 1,
+              "{accountAvatarVariant}": 1
             }
           },
           "style": {
@@ -140,13 +142,31 @@
             "values": {
               "{styles.avatar}": 1
             }
+          },
+          "testID": {
+            "count": 1,
+            "values": {
+              "{AccountDetailsIds.ACCOUNT_GROUP_DETAILS_AVATAR}": 1
+            }
           }
         }
       },
       "deprecated": {
-        "totalInstances": 10,
-        "filesCount": 8,
+        "totalInstances": 11,
+        "filesCount": 9,
         "props": {
+          "accountAddress": {
+            "count": 11,
+            "values": {
+              "{selectedAddress}": 4,
+              "{evmAddress || '0x0000000000000000000000000000000000000000'}": 2,
+              "{displayAddress}": 1,
+              "{selectedAccount.address}": 1,
+              "{address}": 1,
+              "{from}": 1,
+              "{evmAddress}": 1
+            }
+          },
           "type": {
             "count": 10,
             "values": {
@@ -156,25 +176,15 @@
               "{AvatarAccountType.JazzIcon}": 1
             }
           },
-          "accountAddress": {
-            "count": 10,
-            "values": {
-              "{selectedAddress}": 4,
-              "{evmAddress || '0x0000000000000000000000000000000000000000'}": 2,
-              "{displayAddress}": 1,
-              "{selectedAccount.address}": 1,
-              "{address}": 1,
-              "{evmAddress}": 1
-            }
-          },
           "size": {
-            "count": 9,
+            "count": 10,
             "values": {
               "{diameter}": 3,
               "{AvatarSize.Md}": 2,
               "{size}": 1,
               "{AvatarSize.Xs}": 1,
               "{avatarSize}": 1,
+              "{AvatarSize.Sm}": 1,
               "{AvatarSize.Lg}": 1
             }
           },
@@ -188,20 +198,33 @@
         }
       },
       "overall": {
-        "totalInstances": 12,
-        "filesCount": 10,
+        "totalInstances": 14,
+        "filesCount": 12,
         "props": {
           "size": {
-            "count": 11,
+            "count": 13,
             "values": {
               "{diameter}": 3,
               "{AvatarSize.Md}": 2,
+              "{AvatarAccountSize.Xl}": 2,
               "{size}": 1,
               "{AvatarSize.Xs}": 1,
               "{avatarSize}": 1,
+              "{AvatarSize.Sm}": 1,
               "{AvatarSize.Lg}": 1,
-              "{AvatarAccountSize.Xl}": 1,
               "{AvatarAccountSize.Md}": 1
+            }
+          },
+          "accountAddress": {
+            "count": 11,
+            "values": {
+              "{selectedAddress}": 4,
+              "{evmAddress || '0x0000000000000000000000000000000000000000'}": 2,
+              "{displayAddress}": 1,
+              "{selectedAccount.address}": 1,
+              "{address}": 1,
+              "{from}": 1,
+              "{evmAddress}": 1
             }
           },
           "type": {
@@ -213,35 +236,27 @@
               "{AvatarAccountType.JazzIcon}": 1
             }
           },
-          "accountAddress": {
-            "count": 10,
-            "values": {
-              "{selectedAddress}": 4,
-              "{evmAddress || '0x0000000000000000000000000000000000000000'}": 2,
-              "{displayAddress}": 1,
-              "{selectedAccount.address}": 1,
-              "{address}": 1,
-              "{evmAddress}": 1
-            }
-          },
           "testID": {
-            "count": 2,
+            "count": 3,
             "values": {
               "{SNAP_UI_AVATAR_TEST_ID}": 1,
-              "{`rewards-account-group-avatar-${accountGroup.id}`}": 1
+              "{`rewards-account-group-avatar-${accountGroup.id}`}": 1,
+              "{AccountDetailsIds.ACCOUNT_GROUP_DETAILS_AVATAR}": 1
             }
           },
           "address": {
-            "count": 2,
+            "count": 3,
             "values": {
               "{account.address}": 1,
-              "{formattedAddress}": 1
+              "{formattedAddress}": 1,
+              "{iconSeedAddress}": 1
             }
           },
           "variant": {
-            "count": 1,
+            "count": 2,
             "values": {
-              "{toAvatarAccountVariant(accountAvatarType)}": 1
+              "{toAvatarAccountVariant(accountAvatarType)}": 1,
+              "{accountAvatarVariant}": 1
             }
           },
           "style": {
@@ -253,7 +268,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "AvatarAccount": 10
+        "AvatarAccount": 11
       }
     }
   }

@@ -1,9 +1,9 @@
 {
   "component": "AvatarToken",
-  "generatedAt": "2026-06-02T15:26:46.526Z",
+  "generatedAt": "2026-06-08T09:55:17.513Z",
   "projects": {
     "extension": {
-      "filesScanned": 3162,
+      "filesScanned": 3216,
       "targetComponent": "AvatarToken",
       "mmds": {
         "totalInstances": 24,
@@ -15,7 +15,7 @@
               "{image}": 5,
               "{iconUrl}": 2,
               "{asset.iconUrl ?? undefined}": 2,
-              "{token.imageUrl}": 1,
+              "{src}": 1,
               "{resolvedSrc}": 1,
               "{coin.src}": 1,
               "{getAssetImageUrl(token.address, chainIdHex) ?? token.image ?? ''}": 1,
@@ -48,11 +48,12 @@
           "name": {
             "count": 22,
             "values": {
-              "{token.symbol}": 3,
               "{symbol}": 2,
+              "{token.symbol}": 2,
               "{asset.symbol}": 2,
               "{nativeCurrency}": 2,
               "\"USDC\"": 2,
+              "{name}": 1,
               "{symbol || address}": 1,
               "{value}": 1,
               "{displaySymbol}": 1,
@@ -84,10 +85,10 @@
               "\"token-insights-icon\"": 1
             }
           },
-          "fallbackText": {
+          "imageProps": {
             "count": 1,
             "values": {
-              "{token.fallbackName.charAt(0)}": 1
+              "{{ className: 'bg-alternative' }}": 1
             }
           },
           "hasBorder": {
@@ -107,6 +108,7 @@
             "values": {
               "{tokenImage}": 3,
               "{icon.src}": 2,
+              "{src}": 2,
               "{avatarTokenSrc}": 1,
               "{results[i]?.iconUrl}": 1,
               "{musdIconUrl}": 1,
@@ -115,13 +117,11 @@
               "{member.avatarValue}": 1,
               "{icon.badge?.src}": 1,
               "{badgeSrc}": 1,
-              "{src}": 1,
               "{sourceTokenIconUrl}": 1,
               "{destinationTokenIconUrl}": 1,
               "{source}": 1,
               "{assetImage}": 1,
               "{image || nativeTokenImage || (asset.assetId && getAssetImageUrl(asset.assetId...}": 1,
-              "{matchedToken?.image}": 1,
               "{cachedSubjectMetadata.iconUrl}": 1,
               "\"/images/logo/metamask-fox.svg\"": 1,
               "{SUPPORTED_PAYMENT_TOKEN_IMAGES[token]}": 1,
@@ -133,7 +133,7 @@
           "name": {
             "count": 21,
             "values": {
-              "{symbol}": 6,
+              "{symbol}": 7,
               "\"mUSD\"": 1,
               "{sendingAsset.symbol}": 1,
               "{member.symbol}": 1,
@@ -142,7 +142,6 @@
               "{destinationTokenSymbol}": 1,
               "{nativeCurrency}": 1,
               "{tokenSymbol !== t('unknown') && tokenSymbol}": 1,
-              "{matchedToken?.symbol}": 1,
               "{cachedSubjectMetadata.name}": 1,
               "\"metamask-fox\"": 1,
               "{token}": 1,
@@ -244,12 +243,12 @@
             "count": 50,
             "values": {
               "{image}": 5,
+              "{src}": 3,
               "{tokenImage}": 3,
               "{icon.src}": 2,
               "{iconUrl}": 2,
               "{asset.iconUrl ?? undefined}": 2,
               "{source}": 2,
-              "{token.imageUrl}": 1,
               "{avatarTokenSrc}": 1,
               "{results[i]?.iconUrl}": 1,
               "{musdIconUrl}": 1,
@@ -259,7 +258,6 @@
               "{member.avatarValue}": 1,
               "{icon.badge?.src}": 1,
               "{badgeSrc}": 1,
-              "{src}": 1,
               "{coin.src}": 1,
               "{getAssetImageUrl(token.address, chainIdHex) ?? token.image ?? ''}": 1,
               "{token.iconUrl}": 1,
@@ -271,7 +269,6 @@
               "{CHAIN_ID_TOKEN_IMAGE_MAP[ transactionMeta.chainId as keyof typeof CHAIN_ID_TO...}": 1,
               "{imageUrl}": 1,
               "{musdTokenImageUrl}": 1,
-              "{matchedToken?.image}": 1,
               "\"https://assets.coingecko.com/coins/images/279/small/ethereum.png\"": 1,
               "\"https://s2.coinmarketcap.com/static/img/coins/64x64/2758.png\"": 1,
               "\"https://s2.coinmarketcap.com/static/img/coins/64x64/6520.png\"": 1,
@@ -288,11 +285,12 @@
           "name": {
             "count": 43,
             "values": {
-              "{symbol}": 8,
-              "{token.symbol}": 3,
+              "{symbol}": 9,
               "{nativeCurrency}": 3,
+              "{token.symbol}": 2,
               "{asset.symbol}": 2,
               "\"USDC\"": 2,
+              "{name}": 1,
               "{symbol || address}": 1,
               "\"mUSD\"": 1,
               "{value}": 1,
@@ -308,7 +306,6 @@
               "{getTokenName(asset.name, asset.symbol)}": 1,
               "{tokenSymbol !== t('unknown') && tokenSymbol}": 1,
               "{MUSD_SYMBOL}": 1,
-              "{matchedToken?.symbol}": 1,
               "\"ETH\"": 1,
               "\"UBT\"": 1,
               "\"HOPR\"": 1,
@@ -383,10 +380,10 @@
               "2": 2
             }
           },
-          "fallbackText": {
+          "imageProps": {
             "count": 1,
             "values": {
-              "{token.fallbackName.charAt(0)}": 1
+              "{{ className: 'bg-alternative' }}": 1
             }
           },
           "borderRadius": {
@@ -432,7 +429,7 @@
       }
     },
     "mobile": {
-      "filesScanned": 6593,
+      "filesScanned": 6637,
       "targetComponent": "AvatarToken",
       "mmds": {
         "totalInstances": 21,
@@ -443,8 +440,9 @@
             "values": {
               "{token.symbol}": 5,
               "{MUSD_TOKEN.symbol}": 5,
-              "{sourceToken.symbol}": 3,
+              "{pickerToken.symbol}": 2,
               "{selectedDestinationToken?.symbol ?? UNKNOWN_DESTINATION_TOKEN_SYMBOL}": 1,
+              "{sourceToken.symbol}": 1,
               "{selectedAsset?.symbol}": 1,
               "{symbol}": 1,
               "{position.tokenSymbol}": 1,
@@ -459,7 +457,7 @@
               "{MUSD_TOKEN.imageSource as ImageOrSvgSrc}": 3,
               "{token.image ? { uri: token.image } : undefined}": 2,
               "{MUSD_TOKEN.imageSource as number}": 2,
-              "{getBridgeTokenImageSource(sourceToken)}": 2,
+              "{getBridgeTokenImageSource(pickerToken)}": 2,
               "{getBridgeTokenImageSource(token)}": 2,
               "{selectedDestinationToken?.image ? { uri: selectedDestinationToken.image } : u...}": 1,
               "{sourceToken.image ? { uri: sourceToken.image } : undefined}": 1,
@@ -474,9 +472,9 @@
           "size": {
             "count": 19,
             "values": {
-              "{AvatarTokenSize.Lg}": 6,
-              "{AvatarTokenSize.Md}": 5,
+              "{AvatarTokenSize.Lg}": 8,
               "{AvatarTokenSize.Sm}": 4,
+              "{AvatarTokenSize.Md}": 3,
               "{AvatarTokenSize.Xl}": 2,
               "{size}": 1,
               "{avatarTokenSize}": 1
@@ -631,10 +629,10 @@
             "values": {
               "{AvatarSize.Lg}": 12,
               "{AvatarSize.Md}": 12,
-              "{AvatarTokenSize.Lg}": 6,
-              "{AvatarTokenSize.Md}": 5,
+              "{AvatarTokenSize.Lg}": 8,
               "{AvatarTokenSize.Sm}": 4,
               "{AvatarSize.Sm}": 3,
+              "{AvatarTokenSize.Md}": 3,
               "{AvatarSize.Xs}": 2,
               "{AvatarTokenSize.Xl}": 2,
               "{size}": 2,
@@ -649,12 +647,13 @@
               "{token.symbol}": 10,
               "{MUSD_TOKEN.symbol}": 6,
               "{asset.symbol}": 3,
-              "{sourceToken.symbol}": 3,
               "{symbol}": 2,
               "{iconTitle}": 2,
               "{token.name}": 2,
               "{sessionName}": 2,
+              "{pickerToken.symbol}": 2,
               "{selectedDestinationToken?.symbol ?? UNKNOWN_DESTINATION_TOKEN_SYMBOL}": 1,
+              "{sourceToken.symbol}": 1,
               "{selectedToken.symbol ?? ''}": 1,
               "{avatarName}": 1,
               "{(tokenToRender as TokenI).symbol ?? ''}": 1,
@@ -710,7 +709,7 @@
               "{MUSD_TOKEN.imageSource as ImageOrSvgSrc}": 3,
               "{token.image ? { uri: token.image } : undefined}": 2,
               "{MUSD_TOKEN.imageSource as number}": 2,
-              "{getBridgeTokenImageSource(sourceToken)}": 2,
+              "{getBridgeTokenImageSource(pickerToken)}": 2,
               "{getBridgeTokenImageSource(token)}": 2,
               "{selectedDestinationToken?.image ? { uri: selectedDestinationToken.image } : u...}": 1,
               "{sourceToken.image ? { uri: sourceToken.image } : undefined}": 1,
