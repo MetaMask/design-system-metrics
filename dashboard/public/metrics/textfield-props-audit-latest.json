@@ -1,9 +1,9 @@
 {
   "component": "TextField",
-  "generatedAt": "2026-06-09T08:24:47.358Z",
+  "generatedAt": "2026-06-15T10:38:03.914Z",
   "projects": {
     "extension": {
-      "filesScanned": 3216,
+      "filesScanned": 3304,
       "targetComponent": "TextField",
       "mmds": {
         "totalInstances": 0,
@@ -11,14 +11,14 @@
         "props": {}
       },
       "deprecated": {
-        "totalInstances": 30,
-        "filesCount": 22,
+        "totalInstances": 31,
+        "filesCount": 23,
         "props": {
           "value": {
-            "count": 29,
+            "count": 30,
             "values": {
+              "{inputValue}": 3,
               "{amount}": 2,
-              "{inputValue}": 2,
               "{password}": 2,
               "{searchQuery}": 2,
               "{marginAmount}": 1,
@@ -45,7 +45,7 @@
             }
           },
           "onChange": {
-            "count": 29,
+            "count": 30,
             "values": {
               "{handleAmountChange}": 2,
               "{(e: React.ChangeEvent<HTMLInputElement>) => { const { value } = e.target; if ...}": 2,
@@ -65,6 +65,7 @@
               "{(e: { target: { value: string } }) => { setConfirmationInput(e.target.value);...}": 1,
               "{(e: React.ChangeEvent<HTMLInputElement>) => handleChange(word.id, e.target.va...}": 1,
               "{handlePasswordChange}": 1,
+              "{(e) => handleCustomInputChange(e, e.target.value)}": 1,
               "{(e) => { e.preventDefault(); e.stopPropagation(); const cleanedValue = saniti...}": 1,
               "{(e) => { handleCustomSlippage(e, e.target.value); }}": 1,
               "{(e) => { setSearchQuery(e.target.value); }}": 1,
@@ -73,6 +74,14 @@
               "{onToChange}": 1,
               "{(event) => onPasswordChange(event.target.value)}": 1,
               "{(e) => { handleIPFSChange(e.target.value); }}": 1
+            }
+          },
+          "size": {
+            "count": 23,
+            "values": {
+              "{TextFieldSize.Md}": 11,
+              "{TextFieldSize.Sm}": 6,
+              "{TextFieldSize.Lg}": 6
             }
           },
           "inputProps": {
@@ -94,14 +103,6 @@
               "{{ 'data-testid': 'ipfs-input' }}": 1
             }
           },
-          "size": {
-            "count": 22,
-            "values": {
-              "{TextFieldSize.Md}": 10,
-              "{TextFieldSize.Sm}": 6,
-              "{TextFieldSize.Lg}": 6
-            }
-          },
           "placeholder": {
             "count": 22,
             "values": {
@@ -118,10 +119,19 @@
             }
           },
           "borderRadius": {
-            "count": 18,
+            "count": 19,
             "values": {
               "{BorderRadius.MD}": 15,
-              "{BorderRadius.XL}": 3
+              "{BorderRadius.XL}": 4
+            }
+          },
+          "className": {
+            "count": 18,
+            "values": {
+              "\"w-full\"": 15,
+              "\"flex-1\"": 1,
+              "\"amount-input\"": 1,
+              "{isWarning ? '!border-warning-default' : undefined}": 1
             }
           },
           "borderWidth": {
@@ -138,16 +148,8 @@
               "{BackgroundColor.backgroundSubsection}": 1
             }
           },
-          "className": {
-            "count": 17,
-            "values": {
-              "\"w-full\"": 15,
-              "\"amount-input\"": 1,
-              "{isWarning ? '!border-warning-default' : undefined}": 1
-            }
-          },
           "onBlur": {
-            "count": 16,
+            "count": 17,
             "values": {
               "{handleTpPriceBlur}": 2,
               "{handleTpPercentBlur}": 2,
@@ -160,11 +162,12 @@
               "{handleInputBlur}": 1,
               "{handlePriceBlur}": 1,
               "{() => { setWordInactive(word.id); checkForInvalidWords(); }}": 1,
+              "{handleCustomInputBlur}": 1,
               "{() => { // If the user clicks outside the input, show the custom button setSh...}": 1
             }
           },
           "onFocus": {
-            "count": 15,
+            "count": 16,
             "values": {
               "{(event: React.FocusEvent<HTMLInputElement>) => event.target.select()}": 4,
               "{handleNumericFocusSelectAll}": 2,
@@ -174,11 +177,12 @@
               "{handleUsdInputFocus}": 1,
               "{handleInputFocus}": 1,
               "{() => { onWordFocus(word.id); }}": 1,
+              "{() => setShowCustomInput(true)}": 1,
               "{() => { setShowCustomInput(true); }}": 1
             }
           },
           "endAccessory": {
-            "count": 13,
+            "count": 14,
             "values": {
               "{<Text variant={TextVariant.BodySm} color={TextColor.TextAlternative} > % </Text>}": 3,
               "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > % </Text>}": 2,
@@ -186,6 +190,7 @@
               "{<Text variant={TextVariant.BodySm} color={TextColor.TextAlternative} > x </Text>}": 1,
               "{<ButtonBase type=\"button\" size={ButtonBaseSize.Sm} onClick={handleMidClick} c...}": 1,
               "{renderReferralIcon()}": 1,
+              "{<Text variant={TextVariant.BodyMd}>%</Text>}": 1,
               "{<Text variant={TextVariant.bodyMd}>%</Text>}": 1,
               "{<Box display={Display.Flex}> <Text> {fiatMode ? fiatCurrencyName?.toUpperCase...}": 1,
               "{recipients.length > 0 ? ( <ButtonIcon ariaLabel=\"Open recipient modal\" data-t...}": 1,
@@ -237,6 +242,14 @@
               "{`recovery-phrase-chip-${index}`}": 1
             }
           },
+          "autoFocus": {
+            "count": 8,
+            "values": {
+              "true (shorthand)": 5,
+              "{autoFocus}": 2,
+              "true": 1
+            }
+          },
           "error": {
             "count": 8,
             "values": {
@@ -250,30 +263,22 @@
               "{Boolean(error)}": 1
             }
           },
+          "type": {
+            "count": 8,
+            "values": {
+              "{TextFieldType.Text}": 3,
+              "{TextFieldType.Password}": 2,
+              "{word.active || misSpelledWordsList().includes(word.word) ? TextFieldType.Text...}": 1,
+              "{TextFieldType.Number}": 1,
+              "{showPassword ? TextFieldType.Text : TextFieldType.Password}": 1
+            }
+          },
           "disabled": {
             "count": 7,
             "values": {
               "{isSaving}": 5,
               "{optinLoading}": 1,
               "true (shorthand)": 1
-            }
-          },
-          "autoFocus": {
-            "count": 7,
-            "values": {
-              "true (shorthand)": 4,
-              "{autoFocus}": 2,
-              "true": 1
-            }
-          },
-          "type": {
-            "count": 7,
-            "values": {
-              "{TextFieldType.Password}": 2,
-              "{TextFieldType.Text}": 2,
-              "{word.active || misSpelledWordsList().includes(word.word) ? TextFieldType.Text...}": 1,
-              "{TextFieldType.Number}": 1,
-              "{showPassword ? TextFieldType.Text : TextFieldType.Password}": 1
             }
           },
           "inputRef": {
@@ -285,6 +290,16 @@
               "{slPercentInputRef}": 1,
               "{referralInputRef}": 1,
               "{inputRef}": 1
+            }
+          },
+          "onPaste": {
+            "count": 5,
+            "values": {
+              "{(e: React.ClipboardEvent<HTMLInputElement>) => { e.preventDefault(); }}": 1,
+              "{(e: React.ClipboardEvent<HTMLInputElement>) => handleCustomInputChange(e, e.c...}": 1,
+              "{(e: React.ClipboardEvent<HTMLInputElement>) => { e.preventDefault(); const cl...}": 1,
+              "{(e: React.ClipboardEvent<HTMLInputElement>) => { handleCustomSlippage(e, e.cl...}": 1,
+              "{setAmountInputMethodPasted}": 1
             }
           },
           "width": {
@@ -302,13 +317,18 @@
               "{{ minHeight: 48, marginBottom: 12, outline: 'none', }}": 1
             }
           },
-          "onPaste": {
-            "count": 4,
+          "onKeyDown": {
+            "count": 3,
             "values": {
-              "{(e: React.ClipboardEvent<HTMLInputElement>) => { e.preventDefault(); }}": 1,
-              "{(e: React.ClipboardEvent<HTMLInputElement>) => { e.preventDefault(); const cl...}": 1,
-              "{(e: React.ClipboardEvent<HTMLInputElement>) => { handleCustomSlippage(e, e.cl...}": 1,
-              "{setAmountInputMethodPasted}": 1
+              "{(e: React.KeyboardEvent<HTMLInputElement>) => { if (e.key === 'Enter' || e.ke...}": 1,
+              "{handleCustomInputKeyDown}": 1,
+              "{(e: React.KeyboardEvent<HTMLInputElement>) => { // Only allows digits and dec...}": 1
+            }
+          },
+          "borderColor": {
+            "count": 3,
+            "values": {
+              "{BorderColor.borderMuted}": 3
             }
           },
           "key": {
@@ -316,19 +336,6 @@
             "values": {
               "{word.id}": 1,
               "{index}": 1
-            }
-          },
-          "onKeyDown": {
-            "count": 2,
-            "values": {
-              "{(e: React.KeyboardEvent<HTMLInputElement>) => { if (e.key === 'Enter' || e.ke...}": 1,
-              "{(e: React.KeyboardEvent<HTMLInputElement>) => { // Only allows digits and dec...}": 1
-            }
-          },
-          "borderColor": {
-            "count": 2,
-            "values": {
-              "{BorderColor.borderMuted}": 2
             }
           },
           "marginInline": {
@@ -400,14 +407,14 @@
         }
       },
       "overall": {
-        "totalInstances": 30,
-        "filesCount": 22,
+        "totalInstances": 31,
+        "filesCount": 23,
         "props": {
           "value": {
-            "count": 29,
+            "count": 30,
             "values": {
+              "{inputValue}": 3,
               "{amount}": 2,
-              "{inputValue}": 2,
               "{password}": 2,
               "{searchQuery}": 2,
               "{marginAmount}": 1,
@@ -434,7 +441,7 @@
             }
           },
           "onChange": {
-            "count": 29,
+            "count": 30,
             "values": {
               "{handleAmountChange}": 2,
               "{(e: React.ChangeEvent<HTMLInputElement>) => { const { value } = e.target; if ...}": 2,
@@ -454,6 +461,7 @@
               "{(e: { target: { value: string } }) => { setConfirmationInput(e.target.value);...}": 1,
               "{(e: React.ChangeEvent<HTMLInputElement>) => handleChange(word.id, e.target.va...}": 1,
               "{handlePasswordChange}": 1,
+              "{(e) => handleCustomInputChange(e, e.target.value)}": 1,
               "{(e) => { e.preventDefault(); e.stopPropagation(); const cleanedValue = saniti...}": 1,
               "{(e) => { handleCustomSlippage(e, e.target.value); }}": 1,
               "{(e) => { setSearchQuery(e.target.value); }}": 1,
@@ -462,6 +470,14 @@
               "{onToChange}": 1,
               "{(event) => onPasswordChange(event.target.value)}": 1,
               "{(e) => { handleIPFSChange(e.target.value); }}": 1
+            }
+          },
+          "size": {
+            "count": 23,
+            "values": {
+              "{TextFieldSize.Md}": 11,
+              "{TextFieldSize.Sm}": 6,
+              "{TextFieldSize.Lg}": 6
             }
           },
           "inputProps": {
@@ -483,14 +499,6 @@
               "{{ 'data-testid': 'ipfs-input' }}": 1
             }
           },
-          "size": {
-            "count": 22,
-            "values": {
-              "{TextFieldSize.Md}": 10,
-              "{TextFieldSize.Sm}": 6,
-              "{TextFieldSize.Lg}": 6
-            }
-          },
           "placeholder": {
             "count": 22,
             "values": {
@@ -507,10 +515,19 @@
             }
           },
           "borderRadius": {
-            "count": 18,
+            "count": 19,
             "values": {
               "{BorderRadius.MD}": 15,
-              "{BorderRadius.XL}": 3
+              "{BorderRadius.XL}": 4
+            }
+          },
+          "className": {
+            "count": 18,
+            "values": {
+              "\"w-full\"": 15,
+              "\"flex-1\"": 1,
+              "\"amount-input\"": 1,
+              "{isWarning ? '!border-warning-default' : undefined}": 1
             }
           },
           "borderWidth": {
@@ -527,16 +544,8 @@
               "{BackgroundColor.backgroundSubsection}": 1
             }
           },
-          "className": {
-            "count": 17,
-            "values": {
-              "\"w-full\"": 15,
-              "\"amount-input\"": 1,
-              "{isWarning ? '!border-warning-default' : undefined}": 1
-            }
-          },
           "onBlur": {
-            "count": 16,
+            "count": 17,
             "values": {
               "{handleTpPriceBlur}": 2,
               "{handleTpPercentBlur}": 2,
@@ -549,11 +558,12 @@
               "{handleInputBlur}": 1,
               "{handlePriceBlur}": 1,
               "{() => { setWordInactive(word.id); checkForInvalidWords(); }}": 1,
+              "{handleCustomInputBlur}": 1,
               "{() => { // If the user clicks outside the input, show the custom button setSh...}": 1
             }
           },
           "onFocus": {
-            "count": 15,
+            "count": 16,
             "values": {
               "{(event: React.FocusEvent<HTMLInputElement>) => event.target.select()}": 4,
               "{handleNumericFocusSelectAll}": 2,
@@ -563,11 +573,12 @@
               "{handleUsdInputFocus}": 1,
               "{handleInputFocus}": 1,
               "{() => { onWordFocus(word.id); }}": 1,
+              "{() => setShowCustomInput(true)}": 1,
               "{() => { setShowCustomInput(true); }}": 1
             }
           },
           "endAccessory": {
-            "count": 13,
+            "count": 14,
             "values": {
               "{<Text variant={TextVariant.BodySm} color={TextColor.TextAlternative} > % </Text>}": 3,
               "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > % </Text>}": 2,
@@ -575,6 +586,7 @@
               "{<Text variant={TextVariant.BodySm} color={TextColor.TextAlternative} > x </Text>}": 1,
               "{<ButtonBase type=\"button\" size={ButtonBaseSize.Sm} onClick={handleMidClick} c...}": 1,
               "{renderReferralIcon()}": 1,
+              "{<Text variant={TextVariant.BodyMd}>%</Text>}": 1,
               "{<Text variant={TextVariant.bodyMd}>%</Text>}": 1,
               "{<Box display={Display.Flex}> <Text> {fiatMode ? fiatCurrencyName?.toUpperCase...}": 1,
               "{recipients.length > 0 ? ( <ButtonIcon ariaLabel=\"Open recipient modal\" data-t...}": 1,
@@ -626,6 +638,14 @@
               "{`recovery-phrase-chip-${index}`}": 1
             }
           },
+          "autoFocus": {
+            "count": 8,
+            "values": {
+              "true (shorthand)": 5,
+              "{autoFocus}": 2,
+              "true": 1
+            }
+          },
           "error": {
             "count": 8,
             "values": {
@@ -639,30 +659,22 @@
               "{Boolean(error)}": 1
             }
           },
+          "type": {
+            "count": 8,
+            "values": {
+              "{TextFieldType.Text}": 3,
+              "{TextFieldType.Password}": 2,
+              "{word.active || misSpelledWordsList().includes(word.word) ? TextFieldType.Text...}": 1,
+              "{TextFieldType.Number}": 1,
+              "{showPassword ? TextFieldType.Text : TextFieldType.Password}": 1
+            }
+          },
           "disabled": {
             "count": 7,
             "values": {
               "{isSaving}": 5,
               "{optinLoading}": 1,
               "true (shorthand)": 1
-            }
-          },
-          "autoFocus": {
-            "count": 7,
-            "values": {
-              "true (shorthand)": 4,
-              "{autoFocus}": 2,
-              "true": 1
-            }
-          },
-          "type": {
-            "count": 7,
-            "values": {
-              "{TextFieldType.Password}": 2,
-              "{TextFieldType.Text}": 2,
-              "{word.active || misSpelledWordsList().includes(word.word) ? TextFieldType.Text...}": 1,
-              "{TextFieldType.Number}": 1,
-              "{showPassword ? TextFieldType.Text : TextFieldType.Password}": 1
             }
           },
           "inputRef": {
@@ -674,6 +686,16 @@
               "{slPercentInputRef}": 1,
               "{referralInputRef}": 1,
               "{inputRef}": 1
+            }
+          },
+          "onPaste": {
+            "count": 5,
+            "values": {
+              "{(e: React.ClipboardEvent<HTMLInputElement>) => { e.preventDefault(); }}": 1,
+              "{(e: React.ClipboardEvent<HTMLInputElement>) => handleCustomInputChange(e, e.c...}": 1,
+              "{(e: React.ClipboardEvent<HTMLInputElement>) => { e.preventDefault(); const cl...}": 1,
+              "{(e: React.ClipboardEvent<HTMLInputElement>) => { handleCustomSlippage(e, e.cl...}": 1,
+              "{setAmountInputMethodPasted}": 1
             }
           },
           "width": {
@@ -691,13 +713,18 @@
               "{{ minHeight: 48, marginBottom: 12, outline: 'none', }}": 1
             }
           },
-          "onPaste": {
-            "count": 4,
+          "onKeyDown": {
+            "count": 3,
             "values": {
-              "{(e: React.ClipboardEvent<HTMLInputElement>) => { e.preventDefault(); }}": 1,
-              "{(e: React.ClipboardEvent<HTMLInputElement>) => { e.preventDefault(); const cl...}": 1,
-              "{(e: React.ClipboardEvent<HTMLInputElement>) => { handleCustomSlippage(e, e.cl...}": 1,
-              "{setAmountInputMethodPasted}": 1
+              "{(e: React.KeyboardEvent<HTMLInputElement>) => { if (e.key === 'Enter' || e.ke...}": 1,
+              "{handleCustomInputKeyDown}": 1,
+              "{(e: React.KeyboardEvent<HTMLInputElement>) => { // Only allows digits and dec...}": 1
+            }
+          },
+          "borderColor": {
+            "count": 3,
+            "values": {
+              "{BorderColor.borderMuted}": 3
             }
           },
           "key": {
@@ -705,19 +732,6 @@
             "values": {
               "{word.id}": 1,
               "{index}": 1
-            }
-          },
-          "onKeyDown": {
-            "count": 2,
-            "values": {
-              "{(e: React.KeyboardEvent<HTMLInputElement>) => { if (e.key === 'Enter' || e.ke...}": 1,
-              "{(e: React.KeyboardEvent<HTMLInputElement>) => { // Only allows digits and dec...}": 1
-            }
-          },
-          "borderColor": {
-            "count": 2,
-            "values": {
-              "{BorderColor.borderMuted}": 2
             }
           },
           "marginInline": {
@@ -789,11 +803,11 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "TextField": 30
+        "TextField": 31
       }
     },
     "mobile": {
-      "filesScanned": 6702,
+      "filesScanned": 6782,
       "targetComponent": "TextField",
       "mmds": {
         "totalInstances": 14,

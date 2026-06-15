@@ -1,13 +1,13 @@
 {
   "component": "TextButton",
-  "generatedAt": "2026-06-09T08:24:22.372Z",
+  "generatedAt": "2026-06-15T10:37:34.628Z",
   "projects": {
     "extension": {
-      "filesScanned": 3216,
+      "filesScanned": 3304,
       "targetComponent": "TextButton",
       "mmds": {
-        "totalInstances": 72,
-        "filesCount": 44,
+        "totalInstances": 73,
+        "filesCount": 45,
         "props": {
           "className": {
             "count": 45,
@@ -38,7 +38,7 @@
             }
           },
           "onClick": {
-            "count": 44,
+            "count": 45,
             "values": {
               "{() => setShowPasskeyTroubleshootModal(true)}": 3,
               "{handleClick}": 3,
@@ -54,6 +54,7 @@
               "{handleMaybeLater}": 1,
               "{(event: React.MouseEvent) => { event.stopPropagation(); trackEvent({ category...}": 1,
               "{(e: React.MouseEvent) => { e.stopPropagation(); trackEvent({ category: MetaMe...}": 1,
+              "{() => { global.platform.openTab({ url: ZENDESK_URLS.ACCOUNT_UPGRADE, }); }}": 1,
               "{() => navigate(PRIVACY_ROUTE)}": 1,
               "{() => navigate(DEFAULT_ROUTE)}": 1,
               "{goToPreviousPage}": 1,
@@ -139,10 +140,10 @@
             }
           },
           "size": {
-            "count": 20,
+            "count": 21,
             "values": {
               "{TextButtonSize.BodyMd}": 11,
-              "{TextButtonSize.BodySm}": 8,
+              "{TextButtonSize.BodySm}": 9,
               "{TextButtonSize.BodyXs}": 1
             }
           },
@@ -178,6 +179,13 @@
               "{{ variant: TextVariant.BodySm }}": 1
             }
           },
+          "style": {
+            "count": 2,
+            "values": {
+              "{{ alignItems: AlignItems.flexStart, }}": 1,
+              "{{ height: '22px', fontSize: '14px', lineHeight: '22px', verticalAlign: 'basel...}": 1
+            }
+          },
           "isDisabled": {
             "count": 2,
             "values": {
@@ -195,12 +203,6 @@
             "count": 2,
             "values": {
               "{{ size: IconSize.Sm, color: IconColor.IconAlternative, }}": 2
-            }
-          },
-          "style": {
-            "count": 1,
-            "values": {
-              "{{ alignItems: AlignItems.flexStart, }}": 1
             }
           },
           "startAccessory": {
@@ -224,13 +226,12 @@
         }
       },
       "deprecated": {
-        "totalInstances": 67,
-        "filesCount": 48,
+        "totalInstances": 66,
+        "filesCount": 47,
         "props": {
           "onClick": {
-            "count": 38,
+            "count": 37,
             "values": {
-              "{() => { global.platform.openTab({ url: ZENDESK_URLS.ACCOUNT_UPGRADE, }); }}": 2,
               "{setModeToEditAccounts}": 2,
               "{onAlertLinkClick}": 1,
               "{onClickSupportLink}": 1,
@@ -262,6 +263,7 @@
               "{() => { dispatch(setWasTxDeclined(false)); }}": 1,
               "{() => { trackEvent( { category: MetaMetricsEventCategory.Home, event: MetaMet...}": 1,
               "{onSwitch}": 1,
+              "{() => { global.platform.openTab({ url: ZENDESK_URLS.ACCOUNT_UPGRADE, }); }}": 1,
               "{updateToMax}": 1,
               "{dismissAlert}": 1,
               "{() => { trackEvent({ event: 'Clicked \"Gas Fees: Learn More\" Link', category: ...}": 1,
@@ -269,14 +271,14 @@
             }
           },
           "size": {
-            "count": 34,
+            "count": 33,
             "values": {
               "{ButtonLinkSize.Inherit}": 20,
               "{ButtonLinkSize.Auto}": 4,
               "{Size.inherit}": 3,
               "{BUTTON_SIZES.INHERIT}": 3,
-              "{ButtonLinkSize.Sm}": 2,
               "{ButtonLinkSize.Lg}": 1,
+              "{ButtonLinkSize.Sm}": 1,
               "{Size.auto}": 1
             }
           },
@@ -313,9 +315,9 @@
             }
           },
           "target": {
-            "count": 24,
+            "count": 23,
             "values": {
-              "\"_blank\"": 24
+              "\"_blank\"": 23
             }
           },
           "key": {
@@ -370,9 +372,9 @@
             }
           },
           "rel": {
-            "count": 15,
+            "count": 14,
             "values": {
-              "\"noopener noreferrer\"": 13,
+              "\"noopener noreferrer\"": 12,
               "\"noreferrer noopener\"": 2
             }
           },
@@ -394,17 +396,6 @@
               "{{ variant: TextVariant.bodyMdMedium }}": 1
             }
           },
-          "style": {
-            "count": 9,
-            "values": {
-              "{{ verticalAlign: 'bottom' }}": 2,
-              "{{ // Prevents the link from taking up the full width of the parent. width: 'f...}": 2,
-              "{{ verticalAlign: 'baseline' }}": 2,
-              "{{ alignSelf: AlignItems.flexStart, paddingInline: 16, }}": 1,
-              "{{ height: '22px', fontSize: '14px', lineHeight: '22px', verticalAlign: 'basel...}": 1,
-              "{{ height: 'unset', verticalAlign: 'unset' }}": 1
-            }
-          },
           "color": {
             "count": 9,
             "values": {
@@ -421,6 +412,16 @@
               "\"customize-nonce-reset\"": 1,
               "\"portfolio-link\"": 1,
               "{`switch_account-${name}`}": 1
+            }
+          },
+          "style": {
+            "count": 8,
+            "values": {
+              "{{ verticalAlign: 'bottom' }}": 2,
+              "{{ // Prevents the link from taking up the full width of the parent. width: 'f...}": 2,
+              "{{ verticalAlign: 'baseline' }}": 2,
+              "{{ alignSelf: AlignItems.flexStart, paddingInline: 16, }}": 1,
+              "{{ height: 'unset', verticalAlign: 'unset' }}": 1
             }
           },
           "display": {
@@ -658,13 +659,13 @@
             "values": {
               "{ButtonLinkSize.Inherit}": 20,
               "{TextButtonSize.BodyMd}": 11,
-              "{TextButtonSize.BodySm}": 8,
+              "{TextButtonSize.BodySm}": 9,
               "{ButtonLinkSize.Auto}": 4,
               "{Size.inherit}": 3,
               "{BUTTON_SIZES.INHERIT}": 3,
-              "{ButtonLinkSize.Sm}": 2,
               "{ButtonLinkSize.Lg}": 1,
               "{TextButtonSize.BodyXs}": 1,
+              "{ButtonLinkSize.Sm}": 1,
               "{Size.auto}": 1
             }
           },
@@ -780,9 +781,9 @@
             }
           },
           "target": {
-            "count": 24,
+            "count": 23,
             "values": {
-              "\"_blank\"": 24
+              "\"_blank\"": 23
             }
           },
           "color": {
@@ -809,9 +810,9 @@
             }
           },
           "rel": {
-            "count": 15,
+            "count": 14,
             "values": {
-              "\"noopener noreferrer\"": 13,
+              "\"noopener noreferrer\"": 12,
               "\"noreferrer noopener\"": 2
             }
           },
@@ -998,11 +999,11 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "ButtonLink": 67
+        "ButtonLink": 66
       }
     },
     "mobile": {
-      "filesScanned": 6702,
+      "filesScanned": 6782,
       "targetComponent": "TextButton",
       "mmds": {
         "totalInstances": 7,

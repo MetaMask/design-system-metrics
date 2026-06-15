@@ -1,16 +1,16 @@
 {
   "component": "ButtonBase",
-  "generatedAt": "2026-06-09T08:19:50.787Z",
+  "generatedAt": "2026-06-15T10:32:12.496Z",
   "projects": {
     "extension": {
-      "filesScanned": 3216,
+      "filesScanned": 3304,
       "targetComponent": "ButtonBase",
       "mmds": {
-        "totalInstances": 32,
-        "filesCount": 20,
+        "totalInstances": 35,
+        "filesCount": 23,
         "props": {
           "className": {
-            "count": 32,
+            "count": 35,
             "values": {
               "\"h-auto flex-1 flex-col justify-center rounded-lg bg-muted py-4 hover:bg-muted-hover active:bg-muted-pressed\"": 4,
               "{twMerge( // Reset ButtonBase defaults for card layout 'justify-start rounded-...}": 2,
@@ -31,6 +31,9 @@
               "\"w-full px-0 h-[62px] rounded-none bg-transparent hover:bg-hover active:bg-pressed\"": 1,
               "\"flex-1 justify-start rounded-none min-w-0 h-auto text-left cursor-pointer gap-4 px-4 py-3 bg-transparent\"": 1,
               "{twMerge( 'justify-start rounded-none min-w-0 h-auto text-left cursor-pointer'...}": 1,
+              "\"text-left rounded-none px-4 py-3 bg-transparent min-w-0 flex w-full items-center h-auto hover:bg-hover active:bg-pressed\"": 1,
+              "{twMerge( 'flex flex-row gap-2 p-2 items-center h-8 rounded-2 shrink-0', isSel...}": 1,
+              "\"flex flex-row items-center gap-1 bg-inherit\"": 1,
               "\"rounded-lg w-full bg-muted\"": 1,
               "{`w-full justify-between text-left rounded-none px-3 py-2 min-w-0 h-auto activ...}": 1,
               "\"rounded-full p-1 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
@@ -39,7 +42,7 @@
             }
           },
           "onClick": {
-            "count": 28,
+            "count": 31,
             "values": {
               "{handleClick}": 5,
               "{handleSeeAll}": 2,
@@ -55,6 +58,9 @@
               "{handleSeeAllPerps}": 1,
               "{() => onClick(symbol)}": 1,
               "{onCloseAllPositions}": 1,
+              "{action.onClick}": 1,
+              "{() => onClick(network.chainId)}": 1,
+              "{() => onClick(order === 'asc' ? 'desc' : 'asc')}": 1,
               "{() => { removeQuizWord(quizWord.word); }}": 1,
               "{handleToggle}": 1,
               "{() => handleSelect(option)}": 1,
@@ -67,7 +73,7 @@
             }
           },
           "data-testid": {
-            "count": 27,
+            "count": 30,
             "values": {
               "{`order-card-${order.orderId}`}": 1,
               "\"direction-tab-long\"": 1,
@@ -87,6 +93,9 @@
               "{`position-card-${position.symbol}`}": 1,
               "\"start-new-trade-cta\"": 1,
               "{`transaction-card-${transaction.id}`}": 1,
+              "{action.testId}": 1,
+              "\"batch-sell-select-network-chip\"": 1,
+              "\"batch-sell-select-sorting-chip\"": 1,
               "{`recovery-phrase-quiz-answered-${actualIdxInSrp}`}": 1,
               "{`${testId}-button`}": 1,
               "{`${testId}-option-${option.id}`}": 1,
@@ -99,10 +108,11 @@
             }
           },
           "key": {
-            "count": 6,
+            "count": 7,
             "values": {
               "{period.value}": 2,
               "{option.id}": 2,
+              "{action.label}": 1,
               "{quizWord.index}": 1,
               "{value}": 1
             }
@@ -211,23 +221,23 @@
             "count": 12,
             "values": {
               "{onClick}": 3,
-              "{handleNetworkManager}": 1,
+              "{handleNetworkFilterClick}": 2,
               "{toggleTokenSortPopover}": 1,
               "{isTokenManagementFilterEnabled ? handleOpenTokenManagement : handleTokenImpor...}": 1,
               "{handleClick}": 1,
               "{handleModalOpen}": 1,
               "{() => { trace({ name: TraceName.AccountList }); onClick(); }}": 1,
               "{onClickCallback}": 1,
-              "{() => setSelectedTimeRange(timeRange)}": 1,
-              "{handleNetworkFilterClick}": 1
+              "{() => setSelectedTimeRange(timeRange)}": 1
             }
           },
           "backgroundColor": {
             "count": 12,
             "values": {
-              "{BackgroundColor.backgroundDefault}": 4,
+              "{BackgroundColor.backgroundDefault}": 3,
               "{BackgroundColor.transparent}": 3,
               "{isTokenSortPopoverOpen ? BackgroundColor.backgroundPressed : BackgroundColor....}": 2,
+              "{isNetworkFilterModalOpen ? BackgroundColor.backgroundPressed : BackgroundColo...}": 1,
               "{selected ? BackgroundColor.primaryMuted : BackgroundColor.transparent}": 1,
               "{BackgroundColor.primaryMuted}": 1,
               "{BackgroundColor.backgroundMuted}": 1
@@ -464,11 +474,11 @@
         }
       },
       "overall": {
-        "totalInstances": 44,
-        "filesCount": 29,
+        "totalInstances": 47,
+        "filesCount": 32,
         "props": {
           "className": {
-            "count": 42,
+            "count": 45,
             "values": {
               "\"h-auto flex-1 flex-col justify-center rounded-lg bg-muted py-4 hover:bg-muted-hover active:bg-muted-pressed\"": 4,
               "\"asset-list-control-bar__button\"": 3,
@@ -493,10 +503,13 @@
               "{twMerge( 'justify-start rounded-none min-w-0 h-auto text-left cursor-pointer'...}": 1,
               "{className ? classnames('snap-ui-renderer__selector-item', className) : 'snap-...}": 1,
               "{className ? classnames('snap-ui-renderer__selector', className) : 'snap-ui-re...}": 1,
+              "\"text-left rounded-none px-4 py-3 bg-transparent min-w-0 flex w-full items-center h-auto hover:bg-hover active:bg-pressed\"": 1,
               "{classnames('multichain-account-picker', className)}": 1,
               "{classnames('multichain-address-copy-button', { 'multichain-address-copy-butto...}": 1,
               "{classNames('icon-button', className)}": 1,
               "{classnames('time-range-button', { 'time-range-button__selected': timeRange ==...}": 1,
+              "{twMerge( 'flex flex-row gap-2 p-2 items-center h-8 rounded-2 shrink-0', isSel...}": 1,
+              "\"flex flex-row items-center gap-1 bg-inherit\"": 1,
               "\"rounded-lg w-full bg-muted\"": 1,
               "{`w-full justify-between text-left rounded-none px-3 py-2 min-w-0 h-auto activ...}": 1,
               "\"rounded-full p-1 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
@@ -505,12 +518,12 @@
             }
           },
           "onClick": {
-            "count": 40,
+            "count": 43,
             "values": {
               "{handleClick}": 6,
               "{onClick}": 3,
+              "{handleNetworkFilterClick}": 2,
               "{handleSeeAll}": 2,
-              "{handleNetworkManager}": 1,
               "{toggleTokenSortPopover}": 1,
               "{isTokenManagementFilterEnabled ? handleOpenTokenManagement : handleTokenImpor...}": 1,
               "{() => handleDirectionClick('long')}": 1,
@@ -526,10 +539,12 @@
               "{() => onClick(symbol)}": 1,
               "{onCloseAllPositions}": 1,
               "{handleModalOpen}": 1,
+              "{action.onClick}": 1,
               "{() => { trace({ name: TraceName.AccountList }); onClick(); }}": 1,
               "{onClickCallback}": 1,
               "{() => setSelectedTimeRange(timeRange)}": 1,
-              "{handleNetworkFilterClick}": 1,
+              "{() => onClick(network.chainId)}": 1,
+              "{() => onClick(order === 'asc' ? 'desc' : 'asc')}": 1,
               "{() => { removeQuizWord(quizWord.word); }}": 1,
               "{handleToggle}": 1,
               "{() => handleSelect(option)}": 1,
@@ -542,7 +557,7 @@
             }
           },
           "data-testid": {
-            "count": 36,
+            "count": 39,
             "values": {
               "\"address-copy-button-text\"": 2,
               "\"sort-by-networks\"": 1,
@@ -568,7 +583,10 @@
               "\"start-new-trade-cta\"": 1,
               "{`transaction-card-${transaction.id}`}": 1,
               "\"snap-ui-renderer__selector-item\"": 1,
+              "{action.testId}": 1,
               "\"account-menu-icon\"": 1,
+              "\"batch-sell-select-network-chip\"": 1,
+              "\"batch-sell-select-sorting-chip\"": 1,
               "\"send-network-filter-toggle\"": 1,
               "{`recovery-phrase-quiz-answered-${actualIdxInSrp}`}": 1,
               "{`${testId}-button`}": 1,
@@ -593,9 +611,10 @@
           "backgroundColor": {
             "count": 12,
             "values": {
-              "{BackgroundColor.backgroundDefault}": 4,
+              "{BackgroundColor.backgroundDefault}": 3,
               "{BackgroundColor.transparent}": 3,
               "{isTokenSortPopoverOpen ? BackgroundColor.backgroundPressed : BackgroundColor....}": 2,
+              "{isNetworkFilterModalOpen ? BackgroundColor.backgroundPressed : BackgroundColo...}": 1,
               "{selected ? BackgroundColor.primaryMuted : BackgroundColor.transparent}": 1,
               "{BackgroundColor.primaryMuted}": 1,
               "{BackgroundColor.backgroundMuted}": 1
@@ -612,10 +631,11 @@
             }
           },
           "key": {
-            "count": 7,
+            "count": 8,
             "values": {
               "{period.value}": 2,
               "{option.id}": 2,
+              "{action.label}": 1,
               "{timeRange}": 1,
               "{quizWord.index}": 1,
               "{value}": 1
@@ -867,7 +887,7 @@
       }
     },
     "mobile": {
-      "filesScanned": 6702,
+      "filesScanned": 6782,
       "targetComponent": "ButtonBase",
       "mmds": {
         "totalInstances": 12,
@@ -887,7 +907,7 @@
               "{() => openLink(metadata.externalLinks.homepage || '', 'website')}": 1,
               "{() => openLink( `https://x.com/${metadata.externalLinks.twitterPage}`, 'twitt...}": 1,
               "{() => openLink( `https://t.me/${metadata.externalLinks.telegramChannelId}`, '...}": 1,
-              "{() => openLink(blockExplorerUrl, 'block_explorer')}": 1
+              "{() => openLink( blockExplorerUrl, 'block_explorer', blockExplorerName || stri...}": 1
             }
           },
           "twClassName": {
@@ -969,6 +989,12 @@
             "values": {
               "{!upToken || !isMarketOpen}": 1,
               "{!downToken || !isMarketOpen}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 1,
+            "values": {
+              "{disabled}": 1
             }
           }
         }
@@ -1112,7 +1138,7 @@
               "{() => openLink(metadata.externalLinks.homepage || '', 'website')}": 1,
               "{() => openLink( `https://x.com/${metadata.externalLinks.twitterPage}`, 'twitt...}": 1,
               "{() => openLink( `https://t.me/${metadata.externalLinks.telegramChannelId}`, '...}": 1,
-              "{() => openLink(blockExplorerUrl, 'block_explorer')}": 1,
+              "{() => openLink( blockExplorerUrl, 'block_explorer', blockExplorerName || stri...}": 1,
               "{showFilterControls}": 1
             }
           },
@@ -1200,17 +1226,17 @@
               "{IconName.X}": 1
             }
           },
+          "isDisabled": {
+            "count": 4,
+            "values": {
+              "{disabled}": 3,
+              "false": 1
+            }
+          },
           "startIconProps": {
             "count": 4,
             "values": {
               "{{ color: IconColor.IconDefault, size: IconSize.Sm, }}": 4
-            }
-          },
-          "isDisabled": {
-            "count": 3,
-            "values": {
-              "{disabled}": 2,
-              "false": 1
             }
           },
           "endIconName": {

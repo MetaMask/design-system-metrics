@@ -1,9 +1,9 @@
 {
   "component": "AvatarAccount",
-  "generatedAt": "2026-06-09T08:13:58.243Z",
+  "generatedAt": "2026-06-15T10:24:44.788Z",
   "projects": {
     "extension": {
-      "filesScanned": 3216,
+      "filesScanned": 3304,
       "targetComponent": "AvatarAccount",
       "mmds": {
         "totalInstances": 9,
@@ -109,35 +109,52 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 6702,
+      "filesScanned": 6782,
       "targetComponent": "AvatarAccount",
       "mmds": {
-        "totalInstances": 4,
-        "filesCount": 4,
+        "totalInstances": 7,
+        "filesCount": 7,
         "props": {
           "address": {
-            "count": 4,
+            "count": 7,
             "values": {
+              "{trader.address}": 2,
               "{selectedAccount.address}": 1,
               "{account.address}": 1,
               "{formattedAddress}": 1,
-              "{iconSeedAddress}": 1
+              "{iconSeedAddress}": 1,
+              "{profile.address}": 1
             }
           },
           "size": {
-            "count": 4,
+            "count": 7,
             "values": {
-              "{AvatarAccountSize.Xl}": 2,
+              "{AvatarAccountSize.Xl}": 3,
+              "{AvatarAccountSize.Lg}": 2,
               "{AvatarBaseSize.Sm}": 1,
               "{AvatarAccountSize.Md}": 1
             }
           },
           "variant": {
-            "count": 3,
+            "count": 6,
             "values": {
+              "{AvatarAccountVariant.Maskicon}": 3,
               "{getAvatarAccountVariant(avatarAccountType)}": 1,
               "{toAvatarAccountVariant(accountAvatarType)}": 1,
               "{accountAvatarVariant}": 1
+            }
+          },
+          "twClassName": {
+            "count": 3,
+            "values": {
+              "\"rounded-full\"": 2,
+              "{`w-[${AVATAR_SIZE}px] h-[${AVATAR_SIZE}px] rounded-full`}": 1
+            }
+          },
+          "maskiconProps": {
+            "count": 1,
+            "values": {
+              "{{ size: AVATAR_SIZE }}": 1
             }
           },
           "style": {
@@ -199,15 +216,16 @@
         }
       },
       "overall": {
-        "totalInstances": 14,
-        "filesCount": 12,
+        "totalInstances": 17,
+        "filesCount": 15,
         "props": {
           "size": {
-            "count": 13,
+            "count": 16,
             "values": {
+              "{AvatarAccountSize.Xl}": 3,
               "{diameter}": 3,
               "{AvatarSize.Md}": 2,
-              "{AvatarAccountSize.Xl}": 2,
+              "{AvatarAccountSize.Lg}": 2,
               "{size}": 1,
               "{AvatarBaseSize.Sm}": 1,
               "{avatarSize}": 1,
@@ -237,12 +255,23 @@
             }
           },
           "address": {
-            "count": 4,
+            "count": 7,
             "values": {
+              "{trader.address}": 2,
               "{selectedAccount.address}": 1,
               "{account.address}": 1,
               "{formattedAddress}": 1,
-              "{iconSeedAddress}": 1
+              "{iconSeedAddress}": 1,
+              "{profile.address}": 1
+            }
+          },
+          "variant": {
+            "count": 6,
+            "values": {
+              "{AvatarAccountVariant.Maskicon}": 3,
+              "{getAvatarAccountVariant(avatarAccountType)}": 1,
+              "{toAvatarAccountVariant(accountAvatarType)}": 1,
+              "{accountAvatarVariant}": 1
             }
           },
           "testID": {
@@ -253,12 +282,17 @@
               "{AccountDetailsIds.ACCOUNT_GROUP_DETAILS_AVATAR}": 1
             }
           },
-          "variant": {
+          "twClassName": {
             "count": 3,
             "values": {
-              "{getAvatarAccountVariant(avatarAccountType)}": 1,
-              "{toAvatarAccountVariant(accountAvatarType)}": 1,
-              "{accountAvatarVariant}": 1
+              "\"rounded-full\"": 2,
+              "{`w-[${AVATAR_SIZE}px] h-[${AVATAR_SIZE}px] rounded-full`}": 1
+            }
+          },
+          "maskiconProps": {
+            "count": 1,
+            "values": {
+              "{{ size: AVATAR_SIZE }}": 1
             }
           },
           "style": {

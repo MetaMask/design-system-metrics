@@ -1,9 +1,9 @@
 {
   "component": "AvatarBase",
-  "generatedAt": "2026-06-09T08:14:22.474Z",
+  "generatedAt": "2026-06-15T10:25:15.083Z",
   "projects": {
     "extension": {
-      "filesScanned": 3216,
+      "filesScanned": 3304,
       "targetComponent": "AvatarBase",
       "mmds": {
         "totalInstances": 1,
@@ -214,38 +214,28 @@
       }
     },
     "mobile": {
-      "filesScanned": 6702,
+      "filesScanned": 6782,
       "targetComponent": "AvatarBase",
       "mmds": {
-        "totalInstances": 7,
-        "filesCount": 7,
+        "totalInstances": 4,
+        "filesCount": 4,
         "props": {
           "size": {
-            "count": 7,
+            "count": 4,
             "values": {
-              "{AvatarBaseSize.Lg}": 3,
               "{mapToAvatarBaseSize(size)}": 1,
-              "{AvatarBaseSize.Xl}": 1,
+              "{AvatarBaseSize.Lg}": 1,
               "{AvatarBaseSize.Md}": 1,
               "{AvatarBaseSize.Sm}": 1
             }
           },
           "fallbackText": {
-            "count": 7,
+            "count": 4,
             "values": {
-              "{trader.username.charAt(0).toUpperCase()}": 2,
               "{showFallback ? fallbackText : undefined}": 1,
               "{username.charAt(0).toUpperCase()}": 1,
               "{traderName.charAt(0).toUpperCase()}": 1,
-              "{fallbackText}": 1,
-              "{profile.name.charAt(0).toUpperCase()}": 1
-            }
-          },
-          "twClassName": {
-            "count": 2,
-            "values": {
-              "{`w-[${size}px] h-[${size}px]`}": 1,
-              "{`w-[${AVATAR_SIZE}px] h-[${AVATAR_SIZE}px]`}": 1
+              "{fallbackText}": 1
             }
           },
           "shape": {
@@ -258,6 +248,12 @@
             "count": 1,
             "values": {
               "{testID}": 1
+            }
+          },
+          "twClassName": {
+            "count": 1,
+            "values": {
+              "{`w-[${size}px] h-[${size}px]`}": 1
             }
           },
           "style": {
@@ -305,31 +301,19 @@
         }
       },
       "overall": {
-        "totalInstances": 11,
-        "filesCount": 10,
+        "totalInstances": 8,
+        "filesCount": 7,
         "props": {
           "size": {
-            "count": 11,
+            "count": 8,
             "values": {
-              "{AvatarBaseSize.Lg}": 3,
               "{AvatarSize.Sm}": 2,
               "{AvatarSize.Xl}": 1,
               "{avatarSize as unknown as AvatarSize}": 1,
               "{mapToAvatarBaseSize(size)}": 1,
-              "{AvatarBaseSize.Xl}": 1,
+              "{AvatarBaseSize.Lg}": 1,
               "{AvatarBaseSize.Md}": 1,
               "{AvatarBaseSize.Sm}": 1
-            }
-          },
-          "fallbackText": {
-            "count": 7,
-            "values": {
-              "{trader.username.charAt(0).toUpperCase()}": 2,
-              "{showFallback ? fallbackText : undefined}": 1,
-              "{username.charAt(0).toUpperCase()}": 1,
-              "{traderName.charAt(0).toUpperCase()}": 1,
-              "{fallbackText}": 1,
-              "{profile.name.charAt(0).toUpperCase()}": 1
             }
           },
           "style": {
@@ -342,19 +326,21 @@
               "{backgroundColor ? ({ backgroundColor } as any) : undefined}": 1
             }
           },
+          "fallbackText": {
+            "count": 4,
+            "values": {
+              "{showFallback ? fallbackText : undefined}": 1,
+              "{username.charAt(0).toUpperCase()}": 1,
+              "{traderName.charAt(0).toUpperCase()}": 1,
+              "{fallbackText}": 1
+            }
+          },
           "testID": {
             "count": 3,
             "values": {
               "\"snap-avatar-fallback\"": 1,
               "{PROGRESS_STEPPER_TEST_IDS.STEP_ICON.LOADING}": 1,
               "{testID}": 1
-            }
-          },
-          "twClassName": {
-            "count": 2,
-            "values": {
-              "{`w-[${size}px] h-[${size}px]`}": 1,
-              "{`w-[${AVATAR_SIZE}px] h-[${AVATAR_SIZE}px]`}": 1
             }
           },
           "[spread]": {
@@ -367,6 +353,12 @@
             "count": 1,
             "values": {
               "{AvatarBaseShape.Circle}": 1
+            }
+          },
+          "twClassName": {
+            "count": 1,
+            "values": {
+              "{`w-[${size}px] h-[${size}px]`}": 1
             }
           }
         }

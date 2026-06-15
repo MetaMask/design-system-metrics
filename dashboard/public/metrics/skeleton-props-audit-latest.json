@@ -1,244 +1,20 @@
 {
   "component": "Skeleton",
-  "generatedAt": "2026-06-09T08:23:31.587Z",
+  "generatedAt": "2026-06-15T10:36:35.960Z",
   "projects": {
     "extension": {
-      "filesScanned": 3216,
+      "filesScanned": 3304,
       "targetComponent": "Skeleton",
       "mmds": {
-        "totalInstances": 11,
-        "filesCount": 9,
+        "totalInstances": 83,
+        "filesCount": 29,
         "props": {
-          "hideChildren": {
-            "count": 11,
-            "values": {
-              "true (shorthand)": 3,
-              "{!anyEnabledNetworksAreAvailable && (isZeroAmount(total) || currency === undef...}": 1,
-              "{isLoading}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(token.balance)}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(secondaryDisplayText) && seco...}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(formattedAmountChangeCrossCha...}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(singleDayAmountChange)}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(balanceToDisplay)}": 1
-            }
-          },
           "className": {
-            "count": 6,
-            "values": {
-              "\"mb-1\"": 3,
-              "\"asset-chart__skeleton rounded-lg\"": 1,
-              "\"mb-1 rounded-lg\"": 1,
-              "\"rounded-lg\"": 1
-            }
-          },
-          "width": {
-            "count": 2,
-            "values": {
-              "\"25%\"": 1,
-              "\"33%\"": 1
-            }
-          },
-          "data-testid": {
-            "count": 1,
-            "values": {
-              "\"account-group-balance-skeleton\"": 1
-            }
-          }
-        }
-      },
-      "deprecated": {
-        "totalInstances": 117,
-        "filesCount": 40,
-        "props": {
-          "width": {
             "count": 61,
             "values": {
-              "32": 1,
-              "36": 1,
-              "40": 4,
-              "48": 2,
-              "60": 2,
-              "72": 1,
-              "80": 4,
-              "90": 1,
-              "100": 2,
-              "128": 2,
-              "\"100%\"": 15,
-              "\"100px\"": 4,
-              "\"50%\"": 3,
-              "\"60px\"": 3,
-              "\"60%\"": 3,
-              "\"200px\"": 3,
-              "\"40%\"": 3,
-              "\"30%\"": 2,
-              "{labelWidth}": 1,
-              "{valueWidth}": 1,
-              "\"80px\"": 1,
-              "\"40px\"": 1,
-              "\"32px\"": 1
-            }
-          },
-          "height": {
-            "count": 60,
-            "values": {
-              "16": 10,
-              "18": 2,
-              "20": 10,
-              "22": 2,
-              "24": 9,
-              "25": 1,
-              "26": 1,
-              "32": 3,
-              "40": 5,
-              "70": 2,
-              "\"32px\"": 3,
-              "\"72px\"": 3,
-              "\"16px\"": 2,
-              "\"20px\"": 2,
-              "\"18px\"": 2,
-              "\"60px\"": 1,
-              "\"40px\"": 1,
-              "\"24px\"": 1
-            }
-          },
-          "className": {
-            "count": 54,
-            "values": {
               "\"h-4 w-24\"": 4,
-              "\"h-12 flex-1\"": 4,
-              "\"h-8 w-8 shrink-0\"": 4,
-              "\"h-4 w-20\"": 4,
-              "\"h-3 w-16\"": 3,
-              "\"h-3 w-20\"": 3,
-              "\"h-4 w-16\"": 3,
-              "\"h-3 w-12\"": 3,
-              "\"h-4 w-12\"": 2,
-              "\"h-10 w-10 shrink-0\"": 2,
-              "\"h-[250px] w-full\"": 2,
-              "\"h-5 w-32\"": 2,
-              "\"h-4 w-28\"": 2,
-              "\"h-[72px] w-full rounded-none\"": 1,
-              "\"h-5 w-36\"": 1,
-              "\"h-4 w-14\"": 1,
-              "\"h-10 w-full\"": 1,
-              "\"h-10 w-40\"": 1,
-              "\"h-5 w-24\"": 1,
-              "\"h-4 w-4\"": 1,
-              "\"h-8 w-10\"": 1,
-              "\"h-5 w-16\"": 1,
-              "\"h-3 w-full\"": 1,
-              "\"h-3 w-3/4\"": 1,
-              "\"h-4 w-32\"": 1,
-              "\"h-4 w-36\"": 1,
-              "{`shrink-0 ${AVATAR_SIZE_CLASS[size]} ${className ?? ''}`}": 1,
-              "\"h-3 w-8\"": 1,
-              "\"w-2/3 h-5\"": 1
-            }
-          },
-          "borderRadius": {
-            "count": 20,
-            "values": {
-              "{BorderRadius.LG}": 6,
-              "{BorderRadius.pill}": 6,
-              "{BorderRadius.SM}": 3,
-              "{BorderRadius.full}": 3,
-              "{BorderRadius.MD}": 2
-            }
-          },
-          "style": {
-            "count": 13,
-            "values": {
-              "{{ marginBottom: 12 }}": 3,
-              "{{ borderRadius: '50%' }}": 2,
-              "{{ marginBottom: '2px' }}": 2,
-              "{{ marginTop: 3, marginBottom: 3 }}": 1,
-              "{{ flex: 1, minWidth: 0 }}": 1,
-              "{{ ...skeletonProps?.style, flexShrink: 0 }}": 1,
-              "{{ marginTop: 32, marginBottom: 10, borderRadius: '50%', justifySelf: 'center'...}": 1,
-              "{{ marginBottom: 20, justifySelf: 'center', alignSelf: 'center' }}": 1,
-              "{{ flexShrink: 0 }}": 1
-            }
-          },
-          "data-testid": {
-            "count": 4,
-            "values": {
-              "{`perps-token-logo-${sanitizedSymbol}`}": 1,
-              "{`${amountFieldProps.testId}-loading-skeleton`}": 1,
-              "\"rewards-loading-skeleton\"": 1,
-              "\"confirmation__info_skeleton\"": 1
-            }
-          },
-          "key": {
-            "count": 3,
-            "values": {
-              "{i}": 1,
-              "{period}": 1,
-              "{percentage}": 1
-            }
-          },
-          "isLoading": {
-            "count": 3,
-            "values": {
-              "{isLoading}": 1,
-              "{!balances || assets[selectedAccount.id] === undefined || assets[selectedAccou...}": 1,
-              "{isBalanceLoading}": 1
-            }
-          },
-          "[spread]": {
-            "count": 3,
-            "values": {
-              "{skeletonProps}": 3
-            }
-          },
-          "marginBottom": {
-            "count": 1,
-            "values": {
-              "1": 1
-            }
-          }
-        }
-      },
-      "overall": {
-        "totalInstances": 128,
-        "filesCount": 49,
-        "props": {
-          "width": {
-            "count": 63,
-            "values": {
-              "32": 1,
-              "36": 1,
-              "40": 4,
-              "48": 2,
-              "60": 2,
-              "72": 1,
-              "80": 4,
-              "90": 1,
-              "100": 2,
-              "128": 2,
-              "\"100%\"": 15,
-              "\"100px\"": 4,
-              "\"50%\"": 3,
-              "\"60px\"": 3,
-              "\"60%\"": 3,
-              "\"200px\"": 3,
-              "\"40%\"": 3,
-              "\"30%\"": 2,
-              "\"25%\"": 1,
-              "\"33%\"": 1,
-              "{labelWidth}": 1,
-              "{valueWidth}": 1,
-              "\"80px\"": 1,
-              "\"40px\"": 1,
-              "\"32px\"": 1
-            }
-          },
-          "className": {
-            "count": 60,
-            "values": {
-              "\"h-4 w-24\"": 4,
-              "\"h-12 flex-1\"": 4,
-              "\"h-8 w-8 shrink-0\"": 4,
+              "\"h-12 flex-1 rounded-lg\"": 4,
+              "\"h-8 w-8 shrink-0 rounded-full\"": 4,
               "\"h-4 w-20\"": 4,
               "\"mb-1\"": 3,
               "\"h-3 w-16\"": 3,
@@ -246,76 +22,56 @@
               "\"h-4 w-16\"": 3,
               "\"h-3 w-12\"": 3,
               "\"h-4 w-12\"": 2,
-              "\"h-10 w-10 shrink-0\"": 2,
-              "\"h-[250px] w-full\"": 2,
+              "\"h-10 w-10 shrink-0 rounded-full\"": 2,
+              "\"h-[250px] w-full rounded-lg\"": 2,
               "\"h-5 w-32\"": 2,
               "\"h-4 w-28\"": 2,
               "\"h-[72px] w-full rounded-none\"": 1,
-              "\"h-5 w-36\"": 1,
-              "\"h-4 w-14\"": 1,
-              "\"h-10 w-full\"": 1,
+              "\"h-5 w-36 rounded\"": 1,
+              "\"h-4 w-14 rounded\"": 1,
+              "\"h-10 w-full rounded-md\"": 1,
               "\"h-10 w-40\"": 1,
               "\"h-5 w-24\"": 1,
-              "\"h-4 w-4\"": 1,
-              "\"h-8 w-10\"": 1,
+              "\"h-4 w-4 rounded\"": 1,
+              "\"h-8 w-10 rounded-md\"": 1,
               "\"h-5 w-16\"": 1,
               "\"h-3 w-full\"": 1,
               "\"h-3 w-3/4\"": 1,
               "\"h-4 w-32\"": 1,
               "\"h-4 w-36\"": 1,
-              "{`shrink-0 ${AVATAR_SIZE_CLASS[size]} ${className ?? ''}`}": 1,
+              "{`shrink-0 rounded-full ${AVATAR_SIZE_CLASS[size]} ${className ?? ''}`}": 1,
               "\"asset-chart__skeleton rounded-lg\"": 1,
               "\"mb-1 rounded-lg\"": 1,
               "\"rounded-lg\"": 1,
               "\"h-3 w-8\"": 1,
+              "\"rounded-full\"": 1,
               "\"w-2/3 h-5\"": 1
             }
           },
-          "height": {
-            "count": 60,
-            "values": {
-              "16": 10,
-              "18": 2,
-              "20": 10,
-              "22": 2,
-              "24": 9,
-              "25": 1,
-              "26": 1,
-              "32": 3,
-              "40": 5,
-              "70": 2,
-              "\"32px\"": 3,
-              "\"72px\"": 3,
-              "\"16px\"": 2,
-              "\"20px\"": 2,
-              "\"18px\"": 2,
-              "\"60px\"": 1,
-              "\"40px\"": 1,
-              "\"24px\"": 1
-            }
-          },
-          "borderRadius": {
+          "width": {
             "count": 20,
             "values": {
-              "{BorderRadius.LG}": 6,
-              "{BorderRadius.pill}": 6,
-              "{BorderRadius.SM}": 3,
-              "{BorderRadius.full}": 3,
-              "{BorderRadius.MD}": 2
+              "40": 1,
+              "80": 2,
+              "100": 1,
+              "128": 1,
+              "\"100%\"": 4,
+              "\"40%\"": 3,
+              "\"60%\"": 2,
+              "\"30%\"": 2,
+              "\"25%\"": 1,
+              "\"33%\"": 1,
+              "{labelWidth}": 1,
+              "{valueWidth}": 1
             }
           },
-          "style": {
-            "count": 13,
+          "height": {
+            "count": 18,
             "values": {
-              "{{ marginBottom: 12 }}": 3,
-              "{{ borderRadius: '50%' }}": 2,
-              "{{ marginBottom: '2px' }}": 2,
-              "{{ marginTop: 3, marginBottom: 3 }}": 1,
-              "{{ flex: 1, minWidth: 0 }}": 1,
-              "{{ ...skeletonProps?.style, flexShrink: 0 }}": 1,
-              "{{ marginTop: 32, marginBottom: 10, borderRadius: '50%', justifySelf: 'center'...}": 1,
-              "{{ marginBottom: 20, justifySelf: 'center', alignSelf: 'center' }}": 1,
-              "{{ flexShrink: 0 }}": 1
+              "16": 5,
+              "20": 7,
+              "40": 5,
+              "70": 1
             }
           },
           "hideChildren": {
@@ -336,25 +92,100 @@
             "count": 5,
             "values": {
               "\"account-group-balance-skeleton\"": 1,
+              "\"perps-recent-activity-skeleton\"": 1,
               "{`perps-token-logo-${sanitizedSymbol}`}": 1,
               "{`${amountFieldProps.testId}-loading-skeleton`}": 1,
-              "\"rewards-loading-skeleton\"": 1,
-              "\"confirmation__info_skeleton\"": 1
+              "\"rewards-loading-skeleton\"": 1
             }
           },
           "key": {
-            "count": 3,
+            "count": 2,
             "values": {
               "{i}": 1,
-              "{period}": 1,
-              "{percentage}": 1
+              "{period}": 1
+            }
+          },
+          "style": {
+            "count": 2,
+            "values": {
+              "{{ flex: 1, minWidth: 0 }}": 1,
+              "{{ flexShrink: 0 }}": 1
+            }
+          }
+        }
+      },
+      "deprecated": {
+        "totalInstances": 51,
+        "filesCount": 25,
+        "props": {
+          "width": {
+            "count": 48,
+            "values": {
+              "32": 1,
+              "36": 1,
+              "40": 3,
+              "48": 2,
+              "60": 2,
+              "72": 1,
+              "80": 5,
+              "90": 1,
+              "100": 1,
+              "120": 1,
+              "128": 1,
+              "\"100%\"": 11,
+              "\"50%\"": 4,
+              "\"100px\"": 4,
+              "\"60px\"": 3,
+              "\"200px\"": 3,
+              "\"60%\"": 1,
+              "\"80px\"": 1,
+              "\"40px\"": 1,
+              "\"32px\"": 1
+            }
+          },
+          "height": {
+            "count": 42,
+            "values": {
+              "16": 5,
+              "18": 2,
+              "20": 3,
+              "22": 2,
+              "24": 9,
+              "25": 1,
+              "26": 1,
+              "32": 3,
+              "70": 1,
+              "\"32px\"": 3,
+              "\"72px\"": 3,
+              "\"16px\"": 2,
+              "\"20px\"": 2,
+              "\"18px\"": 2,
+              "\"60px\"": 1,
+              "\"40px\"": 1,
+              "\"24px\"": 1
+            }
+          },
+          "style": {
+            "count": 11,
+            "values": {
+              "{{ marginBottom: 12 }}": 3,
+              "{{ borderRadius: '50%' }}": 2,
+              "{{ marginBottom: '2px' }}": 2,
+              "{{ marginTop: 3, marginBottom: 3 }}": 1,
+              "{{ ...skeletonProps?.style, flexShrink: 0 }}": 1,
+              "{{ marginTop: 32, marginBottom: 10, borderRadius: '50%', justifySelf: 'center'...}": 1,
+              "{{ marginBottom: 20, justifySelf: 'center', alignSelf: 'center' }}": 1
             }
           },
           "isLoading": {
-            "count": 3,
+            "count": 9,
             "values": {
-              "{isLoading}": 1,
+              "{isLoading}": 3,
               "{!balances || assets[selectedAccount.id] === undefined || assets[selectedAccou...}": 1,
+              "{!quote || quote?.isLoadingQuote}": 1,
+              "{quotesAreFetching && anyEnabledAsset && !atLeastOneQuoteAvailable}": 1,
+              "{showSkeleton}": 1,
+              "{loading}": 1,
               "{isBalanceLoading}": 1
             }
           },
@@ -369,32 +200,227 @@
             "values": {
               "1": 1
             }
+          },
+          "borderRadius": {
+            "count": 1,
+            "values": {
+              "{BorderRadius.full}": 1
+            }
+          },
+          "data-testid": {
+            "count": 1,
+            "values": {
+              "\"confirmation__info_skeleton\"": 1
+            }
+          },
+          "key": {
+            "count": 1,
+            "values": {
+              "{percentage}": 1
+            }
+          }
+        }
+      },
+      "overall": {
+        "totalInstances": 134,
+        "filesCount": 54,
+        "props": {
+          "width": {
+            "count": 68,
+            "values": {
+              "32": 1,
+              "36": 1,
+              "40": 4,
+              "48": 2,
+              "60": 2,
+              "72": 1,
+              "80": 7,
+              "90": 1,
+              "100": 2,
+              "120": 1,
+              "128": 2,
+              "\"100%\"": 15,
+              "\"50%\"": 4,
+              "\"100px\"": 4,
+              "\"60px\"": 3,
+              "\"60%\"": 3,
+              "\"200px\"": 3,
+              "\"40%\"": 3,
+              "\"30%\"": 2,
+              "\"25%\"": 1,
+              "\"33%\"": 1,
+              "{labelWidth}": 1,
+              "{valueWidth}": 1,
+              "\"80px\"": 1,
+              "\"40px\"": 1,
+              "\"32px\"": 1
+            }
+          },
+          "className": {
+            "count": 61,
+            "values": {
+              "\"h-4 w-24\"": 4,
+              "\"h-12 flex-1 rounded-lg\"": 4,
+              "\"h-8 w-8 shrink-0 rounded-full\"": 4,
+              "\"h-4 w-20\"": 4,
+              "\"mb-1\"": 3,
+              "\"h-3 w-16\"": 3,
+              "\"h-3 w-20\"": 3,
+              "\"h-4 w-16\"": 3,
+              "\"h-3 w-12\"": 3,
+              "\"h-4 w-12\"": 2,
+              "\"h-10 w-10 shrink-0 rounded-full\"": 2,
+              "\"h-[250px] w-full rounded-lg\"": 2,
+              "\"h-5 w-32\"": 2,
+              "\"h-4 w-28\"": 2,
+              "\"h-[72px] w-full rounded-none\"": 1,
+              "\"h-5 w-36 rounded\"": 1,
+              "\"h-4 w-14 rounded\"": 1,
+              "\"h-10 w-full rounded-md\"": 1,
+              "\"h-10 w-40\"": 1,
+              "\"h-5 w-24\"": 1,
+              "\"h-4 w-4 rounded\"": 1,
+              "\"h-8 w-10 rounded-md\"": 1,
+              "\"h-5 w-16\"": 1,
+              "\"h-3 w-full\"": 1,
+              "\"h-3 w-3/4\"": 1,
+              "\"h-4 w-32\"": 1,
+              "\"h-4 w-36\"": 1,
+              "{`shrink-0 rounded-full ${AVATAR_SIZE_CLASS[size]} ${className ?? ''}`}": 1,
+              "\"asset-chart__skeleton rounded-lg\"": 1,
+              "\"mb-1 rounded-lg\"": 1,
+              "\"rounded-lg\"": 1,
+              "\"h-3 w-8\"": 1,
+              "\"rounded-full\"": 1,
+              "\"w-2/3 h-5\"": 1
+            }
+          },
+          "height": {
+            "count": 60,
+            "values": {
+              "16": 10,
+              "18": 2,
+              "20": 10,
+              "22": 2,
+              "24": 9,
+              "25": 1,
+              "26": 1,
+              "32": 3,
+              "40": 5,
+              "70": 2,
+              "\"32px\"": 3,
+              "\"72px\"": 3,
+              "\"16px\"": 2,
+              "\"20px\"": 2,
+              "\"18px\"": 2,
+              "\"60px\"": 1,
+              "\"40px\"": 1,
+              "\"24px\"": 1
+            }
+          },
+          "style": {
+            "count": 13,
+            "values": {
+              "{{ marginBottom: 12 }}": 3,
+              "{{ borderRadius: '50%' }}": 2,
+              "{{ marginBottom: '2px' }}": 2,
+              "{{ marginTop: 3, marginBottom: 3 }}": 1,
+              "{{ flex: 1, minWidth: 0 }}": 1,
+              "{{ ...skeletonProps?.style, flexShrink: 0 }}": 1,
+              "{{ marginTop: 32, marginBottom: 10, borderRadius: '50%', justifySelf: 'center'...}": 1,
+              "{{ marginBottom: 20, justifySelf: 'center', alignSelf: 'center' }}": 1,
+              "{{ flexShrink: 0 }}": 1
+            }
+          },
+          "hideChildren": {
+            "count": 11,
+            "values": {
+              "true (shorthand)": 3,
+              "{!anyEnabledNetworksAreAvailable && (isZeroAmount(total) || currency === undef...}": 1,
+              "{isLoading}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(token.balance)}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(secondaryDisplayText) && seco...}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(formattedAmountChangeCrossCha...}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(singleDayAmountChange)}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(balanceToDisplay)}": 1
+            }
+          },
+          "isLoading": {
+            "count": 9,
+            "values": {
+              "{isLoading}": 3,
+              "{!balances || assets[selectedAccount.id] === undefined || assets[selectedAccou...}": 1,
+              "{!quote || quote?.isLoadingQuote}": 1,
+              "{quotesAreFetching && anyEnabledAsset && !atLeastOneQuoteAvailable}": 1,
+              "{showSkeleton}": 1,
+              "{loading}": 1,
+              "{isBalanceLoading}": 1
+            }
+          },
+          "data-testid": {
+            "count": 6,
+            "values": {
+              "\"account-group-balance-skeleton\"": 1,
+              "\"perps-recent-activity-skeleton\"": 1,
+              "{`perps-token-logo-${sanitizedSymbol}`}": 1,
+              "{`${amountFieldProps.testId}-loading-skeleton`}": 1,
+              "\"rewards-loading-skeleton\"": 1,
+              "\"confirmation__info_skeleton\"": 1
+            }
+          },
+          "key": {
+            "count": 3,
+            "values": {
+              "{i}": 1,
+              "{period}": 1,
+              "{percentage}": 1
+            }
+          },
+          "[spread]": {
+            "count": 3,
+            "values": {
+              "{skeletonProps}": 3
+            }
+          },
+          "marginBottom": {
+            "count": 1,
+            "values": {
+              "1": 1
+            }
+          },
+          "borderRadius": {
+            "count": 1,
+            "values": {
+              "{BorderRadius.full}": 1
+            }
           }
         }
       },
       "deprecatedByLegacyComponent": {
-        "Skeleton": 117
+        "Skeleton": 51
       }
     },
     "mobile": {
-      "filesScanned": 6702,
+      "filesScanned": 6782,
       "targetComponent": "Skeleton",
       "mmds": {
-        "totalInstances": 102,
-        "filesCount": 30,
+        "totalInstances": 106,
+        "filesCount": 31,
         "props": {
           "style": {
-            "count": 54,
+            "count": 58,
             "values": {
               "{tw.style('h-48 rounded-xl')}": 4,
               "{tw.style('h-32 rounded-xl')}": 4,
               "{tw.style('rounded-md')}": 2,
               "{tw.style('h-6 w-24 rounded bg-muted')}": 2,
               "{tw.style('h-50 rounded-xl bg-muted')}": 2,
+              "{tw.style('h-8 w-44 rounded-lg')}": 2,
+              "{tw.style('h-12 flex-1 rounded-lg')}": 2,
               "{tw.style('h-36 rounded-2xl')}": 2,
               "{tw.style('h-5 w-20 rounded')}": 2,
               "{tw.style('h-9 w-28 rounded')}": 2,
-              "{tw.style('mt-1 h-4 w-full max-w-xs rounded')}": 2,
               "{styles.skeletonMd}": 2,
               "{tw.style('h-7 w-20 rounded-lg')}": 2,
               "{styles.skeletonTop}": 2,
@@ -407,16 +433,18 @@
               "{tw.style('h-6 w-28 rounded-lg')}": 1,
               "{tw.style('h-12 rounded-lg')}": 1,
               "{tw.style('h-14 rounded-xl')}": 1,
+              "{tw.style('h-16 rounded-2xl')}": 1,
               "{tw.style('h-16 rounded-xl')}": 1,
               "{tw.style('h-10 w-36 rounded-lg')}": 1,
               "{tw.style('h-44 rounded-2xl')}": 1,
-              "{tw.style('h-8 w-44 rounded-lg')}": 1,
               "{tw.style( `h-[108px] w-[${VIP_FEE_TILE_WIDTH}px] rounded-2xl`, )}": 1,
               "{tw.style('h-5 w-8 rounded')}": 1,
               "{tw.style('h-5 w-16 rounded')}": 1,
+              "{tw.style('h-4 w-full max-w-xs rounded')}": 1,
               "{tw.style('h-4 rounded-full')}": 1,
               "{tw.style('h-3 w-40 rounded')}": 1,
               "{tw.style('h-50 rounded-xl')}": 1,
+              "{tw.style('mt-1 h-4 w-full max-w-xs rounded')}": 1,
               "{styles.skeletonLg}": 1,
               "{tw.style('h-28 rounded-xl')}": 1,
               "{tw.style('h-5 w-full rounded-lg')}": 1,
@@ -513,21 +541,22 @@
         "props": {}
       },
       "overall": {
-        "totalInstances": 102,
-        "filesCount": 30,
+        "totalInstances": 106,
+        "filesCount": 31,
         "props": {
           "style": {
-            "count": 54,
+            "count": 58,
             "values": {
               "{tw.style('h-48 rounded-xl')}": 4,
               "{tw.style('h-32 rounded-xl')}": 4,
               "{tw.style('rounded-md')}": 2,
               "{tw.style('h-6 w-24 rounded bg-muted')}": 2,
               "{tw.style('h-50 rounded-xl bg-muted')}": 2,
+              "{tw.style('h-8 w-44 rounded-lg')}": 2,
+              "{tw.style('h-12 flex-1 rounded-lg')}": 2,
               "{tw.style('h-36 rounded-2xl')}": 2,
               "{tw.style('h-5 w-20 rounded')}": 2,
               "{tw.style('h-9 w-28 rounded')}": 2,
-              "{tw.style('mt-1 h-4 w-full max-w-xs rounded')}": 2,
               "{styles.skeletonMd}": 2,
               "{tw.style('h-7 w-20 rounded-lg')}": 2,
               "{styles.skeletonTop}": 2,
@@ -540,16 +569,18 @@
               "{tw.style('h-6 w-28 rounded-lg')}": 1,
               "{tw.style('h-12 rounded-lg')}": 1,
               "{tw.style('h-14 rounded-xl')}": 1,
+              "{tw.style('h-16 rounded-2xl')}": 1,
               "{tw.style('h-16 rounded-xl')}": 1,
               "{tw.style('h-10 w-36 rounded-lg')}": 1,
               "{tw.style('h-44 rounded-2xl')}": 1,
-              "{tw.style('h-8 w-44 rounded-lg')}": 1,
               "{tw.style( `h-[108px] w-[${VIP_FEE_TILE_WIDTH}px] rounded-2xl`, )}": 1,
               "{tw.style('h-5 w-8 rounded')}": 1,
               "{tw.style('h-5 w-16 rounded')}": 1,
+              "{tw.style('h-4 w-full max-w-xs rounded')}": 1,
               "{tw.style('h-4 rounded-full')}": 1,
               "{tw.style('h-3 w-40 rounded')}": 1,
               "{tw.style('h-50 rounded-xl')}": 1,
+              "{tw.style('mt-1 h-4 w-full max-w-xs rounded')}": 1,
               "{styles.skeletonLg}": 1,
               "{tw.style('h-28 rounded-xl')}": 1,
               "{tw.style('h-5 w-full rounded-lg')}": 1,

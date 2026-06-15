@@ -1,14 +1,21 @@
 {
   "component": "HeaderBase",
-  "generatedAt": "2026-06-09T08:21:28.008Z",
+  "generatedAt": "2026-06-15T10:34:09.630Z",
   "projects": {
     "extension": {
-      "filesScanned": 3216,
+      "filesScanned": 3304,
       "targetComponent": "HeaderBase",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 1,
+        "filesCount": 1,
+        "props": {
+          "startAccessory": {
+            "count": 1,
+            "values": {
+              "{<ButtonIcon iconName={IconName.ArrowLeft} ariaLabel={t('back')} size={ButtonI...}": 1
+            }
+          }
+        }
       },
       "deprecated": {
         "totalInstances": 3,
@@ -92,21 +99,21 @@
         }
       },
       "overall": {
-        "totalInstances": 3,
-        "filesCount": 3,
+        "totalInstances": 4,
+        "filesCount": 4,
         "props": {
+          "startAccessory": {
+            "count": 4,
+            "values": {
+              "{<ButtonIcon iconName={IconName.ArrowLeft} ariaLabel={t('back')} size={ButtonI...}": 2,
+              "{startAccessory}": 1,
+              "{<ButtonIcon ariaLabel=\"Back\" iconName={IconName.ArrowLeft} size={ButtonIconSi...}": 1
+            }
+          },
           "padding": {
             "count": 3,
             "values": {
               "4": 3
-            }
-          },
-          "startAccessory": {
-            "count": 3,
-            "values": {
-              "{startAccessory}": 1,
-              "{<ButtonIcon iconName={IconName.ArrowLeft} ariaLabel={t('back')} size={ButtonI...}": 1,
-              "{<ButtonIcon ariaLabel=\"Back\" iconName={IconName.ArrowLeft} size={ButtonIconSi...}": 1
             }
           },
           "endAccessory": {
@@ -177,17 +184,34 @@
       }
     },
     "mobile": {
-      "filesScanned": 6702,
+      "filesScanned": 6782,
       "targetComponent": "HeaderBase",
       "mmds": {
-        "totalInstances": 7,
-        "filesCount": 7,
+        "totalInstances": 10,
+        "filesCount": 10,
         "props": {
           "style": {
+            "count": 7,
+            "values": {
+              "{styles.header}": 6,
+              "{tw`p-4`}": 1
+            }
+          },
+          "twClassName": {
             "count": 5,
             "values": {
-              "{styles.header}": 4,
-              "{tw`p-4`}": 1
+              "\"h-auto\"": 3,
+              "\"m-4 flex-row items-center justify-center\"": 1,
+              "\"flex-row items-center px-4\"": 1
+            }
+          },
+          "startAccessory": {
+            "count": 4,
+            "values": {
+              "{<ButtonIcon style={styles.headerLeftButton} onPress={() => navigation.pop()} ...}": 1,
+              "{<ButtonIcon size={ButtonIconSize.Md} onPress={handleBackPress} iconName={Icon...}": 1,
+              "{<ButtonIcon testID={EditAccountNameIds.BACK_BUTTON} iconName={IconName.ArrowL...}": 1,
+              "{<ButtonIcon testID={AccountDetailsIds.BACK_BUTTON} iconName={IconName.ArrowLe...}": 1
             }
           },
           "startButtonIconProps": {
@@ -199,20 +223,18 @@
               "{{ testID: WalletDetailsIds.BACK_BUTTON, iconName: IconName.ArrowLeft, size: B...}": 1
             }
           },
-          "startAccessory": {
+          "endAccessory": {
             "count": 3,
             "values": {
-              "{<ButtonIcon size={ButtonIconSize.Md} onPress={handleBackPress} iconName={Icon...}": 1,
-              "{<ButtonIcon testID={EditAccountNameIds.BACK_BUTTON} iconName={IconName.ArrowL...}": 1,
-              "{<ButtonIcon testID={AccountDetailsIds.BACK_BUTTON} iconName={IconName.ArrowLe...}": 1
+              "{onRightPress ? ( <ButtonIcon style={styles.headerRightButton} onPress={onRigh...}": 1,
+              "{<ButtonIcon onPress={triggerClose} iconName={IconName.Close} iconColor={IconC...}": 1,
+              "{<ButtonIcon iconName={IconName.Close} size={ButtonIconSizes.Md} onPress={goBa...}": 1
             }
           },
-          "twClassName": {
-            "count": 3,
+          "includesTopInset": {
+            "count": 2,
             "values": {
-              "\"h-auto\"": 1,
-              "\"m-4 flex-row items-center justify-center\"": 1,
-              "\"flex-row items-center px-4\"": 1
+              "true (shorthand)": 2
             }
           },
           "textProps": {
@@ -224,42 +246,25 @@
         }
       },
       "deprecated": {
-        "totalInstances": 4,
-        "filesCount": 4,
+        "totalInstances": 1,
+        "filesCount": 1,
         "props": {
           "endAccessory": {
-            "count": 4,
+            "count": 1,
             "values": {
-              "{onRightPress ? ( <ButtonIcon style={styles.headerRightButton} onPress={onRigh...}": 1,
-              "{<ButtonIcon onPress={triggerClose} iconName={IconName.Close} iconColor={IconC...}": 1,
-              "{<ButtonIcon iconName={IconName.Close} size={ButtonIconSizes.Md} onPress={goBa...}": 1,
               "{<NextButton alertsLength={arrLength} onNextButtonClick={onForward} selectedIn...}": 1
             }
           },
-          "style": {
-            "count": 3,
-            "values": {
-              "{styles.header}": 2,
-              "{style}": 1
-            }
-          },
-          "includesTopInset": {
-            "count": 2,
-            "values": {
-              "true (shorthand)": 2
-            }
-          },
-          "twClassName": {
-            "count": 2,
-            "values": {
-              "\"h-auto\"": 2
-            }
-          },
           "startAccessory": {
-            "count": 2,
+            "count": 1,
             "values": {
-              "{<ButtonIcon style={styles.headerLeftButton} onPress={() => navigation.pop()} ...}": 1,
               "{<PreviousButton onBackButtonClick={onBack} selectedIndex={selectedIndex} />}": 1
+            }
+          },
+          "style": {
+            "count": 1,
+            "values": {
+              "{style}": 1
             }
           },
           "[spread]": {
@@ -339,7 +344,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "HeaderBase": 4
+        "HeaderBase": 1
       }
     }
   }
