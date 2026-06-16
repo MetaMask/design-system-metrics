@@ -1,27 +1,27 @@
 {
   "component": "Box",
-  "generatedAt": "2026-06-09T08:19:03.578Z",
+  "generatedAt": "2026-06-16T08:32:56.919Z",
   "projects": {
     "extension": {
-      "filesScanned": 3216,
+      "filesScanned": 3314,
       "targetComponent": "Box",
       "mmds": {
-        "totalInstances": 1746,
-        "filesCount": 455,
+        "totalInstances": 1807,
+        "filesCount": 476,
         "props": {
           "className": {
-            "count": 991,
+            "count": 1017,
             "values": {
               "\"flex\"": 119,
-              "\"w-full\"": 46,
-              "\"flex w-full\"": 23,
+              "\"w-full\"": 48,
+              "\"flex w-full\"": 22,
+              "\"flex-1\"": 22,
+              "\"flex flex-col\"": 14,
               "\"min-w-0 flex-1\"": 14,
-              "\"flex flex-col\"": 13,
               "\"shrink-0\"": 13,
-              "\"flex-1\"": 11,
+              "\"h-full\"": 10,
               "\"rounded-lg\"": 10,
               "\"overflow-hidden\"": 10,
-              "\"h-full\"": 8,
               "\"flex-1 min-w-0\"": 8,
               "\"flex w-full flex-col\"": 8,
               "\"bg-muted px-4 py-3\"": 7,
@@ -29,6 +29,7 @@
               "\"overflow-hidden rounded-xl\"": 6,
               "\"flex-1 flex flex-col items-center px-6 pt-4 pb-2\"": 6,
               "\"flex flex-col gap-2\"": 6,
+              "\"text-right\"": 6,
               "\"asset-page__divider\"": 6,
               "\"text-left\"": 6,
               "\"ml-2\"": 6,
@@ -38,16 +39,16 @@
               "\"main-container asset__container\"": 5,
               "\"flex-1 flex items-center justify-center w-full\"": 5,
               "\"qr-scanner\"": 5,
-              "\"text-right\"": 5,
               "{`w-full cursor-pointer border-0 p-4 ${ isSelected ? 'bg-muted hover:bg-muted-...}": 5,
               "\"flex gap-4\"": 4,
               "\"flex items-center gap-1\"": 4,
               "{containerClassName}": 4,
+              "\"h-full w-full\"": 4,
               "\"w-full bg-transparent px-4 py-2 hover:bg-hover active:bg-pressed md:px-8\"": 4,
+              "\"inline-flex\"": 3,
               "\"flex size-11 shrink-0 items-center\"": 3,
               "{className}": 3,
               "\"sticky bottom-0 left-0 right-0 bg-default border-t border-muted\"": 3,
-              "\"h-full w-full\"": 3,
               "\"flex rounded-lg\"": 3,
               "\"p-4\"": 3,
               "\"bg-background-default\"": 3,
@@ -62,8 +63,9 @@
               "\"border-t border-muted w-full h-px\"": 3,
               "\"flex items-center justify-between gap-2 px-4 mb-2\"": 3,
               "\"flex-shrink-0\"": 2,
+              "\"qr-code__image\"": 2,
+              "\"qr-code__logo\"": 2,
               "\"flex settings-page__content-row\"": 2,
-              "\"inline-flex\"": 2,
               "\"hold-to-reveal-button__absolute-fill\"": 2,
               "\"privacy-settings__setting__wrapper\"": 2,
               "\"flex items-center justify-center\"": 2,
@@ -78,8 +80,6 @@
               "\"rounded-full\"": 2,
               "{isSaving ? 'flex-1 py-1.5 rounded-lg bg-muted text-center opacity-50 cursor-n...}": 2,
               "\"flex flex-row\"": 2,
-              "\"qr-code__image\"": 2,
-              "\"qr-code__logo\"": 2,
               "\"mt-auto w-full\"": 2,
               "\"flex gap-1\"": 2,
               "\"hidden sm:flex\"": 2,
@@ -136,6 +136,10 @@
               "{classnames({ 'inline-flex rounded-sm': true, 'inline-alert': true, 'inline-al...}": 1,
               "{classnames( 'flex flex-col items-center text-center gap-4 max-w-xs', classNam...}": 1,
               "{classnames( 'flex', `${classPrefix}-overview__primary-balance`, { [`${classPr...}": 1,
+              "\"max-h-[calc(100vh-168px)] overflow-y-auto\"": 1,
+              "\"flex min-w-0 items-center gap-3\"": 1,
+              "\"px-4 pt-2\"": 1,
+              "\"flex items-center justify-center gap-2\"": 1,
               "\"flex h-full w-full [container-name:list-item] [container-type:inline-size]\"": 1,
               "\"flex w-full overflow-hidden grow\"": 1,
               "\"selectable-list-item-wrapper\"": 1,
@@ -159,6 +163,8 @@
               "\"currency-input__skeleton-container\"": 1,
               "\"w-1/2 currency-input__pulsing-bar\"": 1,
               "\"w-1/3 currency-input__pulsing-bar\"": 1,
+              "\"qr-code__wrapper my-2\"": 1,
+              "\"flex flex-1 flex-col items-center justify-center gap-4\"": 1,
               "\"mx-auto w-fit rounded-2xl\"": 1,
               "{classnames('hold-to-reveal-button__absolute-fill', { 'hold-to-reveal-button__...}": 1,
               "\"flex hold-to-reveal-button__lock-icon-container\"": 1,
@@ -216,6 +222,8 @@
               "{`h-3 rounded-xl ${index === currentStep - 1 ? `w-6 ${activeColor}` : 'w-3 h-3...}": 1,
               "\"flex flex-col gap-2 px-4\"": 1,
               "\"bg-error-muted rounded-lg px-3 py-2\"": 1,
+              "\"w-full gap-2\"": 1,
+              "{twMerge( CUSTOM_SLOT_CLASS, isCustomMode ? 'cursor-text gap-1 border border-p...}": 1,
               "\"flex h-8 w-8 shrink-0 rounded-full\"": 1,
               "{twMerge( '[container-name:list-item] [container-type:inline-size]', variantSt...}": 1,
               "\"pr-4 shrink-0\"": 1,
@@ -230,8 +238,6 @@
               "\"bg-error-muted rounded-2xl p-4 gap-4 w-full\"": 1,
               "\"w-8 h-8\"": 1,
               "\"gap-2\"": 1,
-              "\"qr-code__wrapper my-2\"": 1,
-              "\"flex flex-1 flex-col items-center justify-center gap-4\"": 1,
               "w-max rounded-md bg-gradient-to-r from-[#ECB920] to-[65%] to-[#ECBC2D]/[11%] p-[1px] border-1": 1,
               "\"w-max flex flex-row rounded-md bg-warning-inverse\"": 1,
               "\"w-max flex flex-row rounded-md whitespace-nowrap px-2 py-0 gap-1 bg-[#ECBC2D]/[11%]\"": 1,
@@ -255,6 +261,8 @@
               "\"terms-of-use-popup__body\"": 1,
               "\"terms-of-use-popup__scroll-button-container\"": 1,
               "\"terms-of-use-popup__footer flex flex-col mx-4\"": 1,
+              "\"flex flex-col absolute right-0 top-full z-10 mt-4 min-w-[120px] overflow-hidden rounded-lg border border-border-muted bg-background-default shadow-lg\"": 1,
+              "\"flex relative w-full\"": 1,
               "\"wallet-overview__currency-wrapper\"": 1,
               "\"rounded-sm\"": 1,
               "{classnames('multichain-account-list-item flex items-center', { 'multichain-ac...}": 1,
@@ -330,6 +338,8 @@
               "\"flex px-4\"": 1,
               "\"asset__content\"": 1,
               "\"pt-4 sticky top-0 z-10 bg-background-default\"": 1,
+              "\"cursor-pointer bg-transparent border-0 p-0\"": 1,
+              "{twMerge( 'cursor-pointer', selected ? 'bg-muted' : 'hover:bg-muted-hover', )}": 1,
               "\"h-full flex\"": 1,
               "\"multichain-network-list-item__selected-indicator\"": 1,
               "\"prepare-bridge-page__switch-tokens flex\"": 1,
@@ -367,8 +377,7 @@
               "\"min-w-0 flex-1 overflow-hidden\"": 1,
               "\"mt-4 shrink-0\"": 1,
               "\"flex size-10 items-center justify-center\"": 1,
-              "{`flex cursor-pointer ${ selected ? 'bg-background-muted' : 'bg-transparent' }`}": 1,
-              "\"flex w-full flex-col overflow-auto\"": 1,
+              "\"flex min-h-0 w-full flex-1 flex-col overflow-auto\"": 1,
               "\"flex flex-col items-center justify-center\"": 1,
               "\"flex max-w-[218px] flex-col items-center\"": 1,
               "\"flex w-full flex-col px-4 pt-4\"": 1,
@@ -399,7 +408,6 @@
               "\"new-account-wrapper h-full\"": 1,
               "\"create-password h-full w-full\"": 1,
               "\"create-password__terms-container rounded-lg\"": 1,
-              "\"w-full text-left transition-colors hover:bg-muted-hover active:bg-muted-pressed\"": 1,
               "\"flex pt-4 sticky top-0 z-10 bg-background-default\"": 1,
               "\"-m-8\"": 1,
               "\"min-h-screen md:flex md:items-center md:justify-center md:bg-alternative md:py-4\"": 1,
@@ -548,16 +556,16 @@
             }
           },
           "flexDirection": {
-            "count": 835,
+            "count": 865,
             "values": {
-              "{BoxFlexDirection.Column}": 440,
-              "{BoxFlexDirection.Row}": 395
+              "{BoxFlexDirection.Column}": 449,
+              "{BoxFlexDirection.Row}": 416
             }
           },
           "alignItems": {
-            "count": 561,
+            "count": 579,
             "values": {
-              "{BoxAlignItems.Center}": 479,
+              "{BoxAlignItems.Center}": 497,
               "{BoxAlignItems.Start}": 39,
               "{BoxAlignItems.End}": 21,
               "{BoxAlignItems.Stretch}": 14,
@@ -566,13 +574,13 @@
             }
           },
           "gap": {
-            "count": 480,
+            "count": 510,
             "values": {
               "0": 2,
-              "1": 101,
-              "2": 162,
-              "3": 46,
-              "4": 142,
+              "1": 111,
+              "2": 175,
+              "3": 50,
+              "4": 145,
               "5": 2,
               "6": 22,
               "8": 1,
@@ -581,10 +589,10 @@
             }
           },
           "justifyContent": {
-            "count": 351,
+            "count": 353,
             "values": {
-              "{BoxJustifyContent.Between}": 172,
-              "{BoxJustifyContent.Center}": 129,
+              "{BoxJustifyContent.Between}": 173,
+              "{BoxJustifyContent.Center}": 130,
               "{BoxJustifyContent.Start}": 29,
               "{BoxJustifyContent.End}": 15,
               "{BoxJustifyContent.Evenly}": 4,
@@ -593,16 +601,16 @@
             }
           },
           "data-testid": {
-            "count": 254,
+            "count": 266,
             "values": {
               "{dataTestId}": 7,
+              "{testId}": 6,
               "\"perps-tutorial-step-image\"": 6,
-              "{testId}": 5,
               "\"transaction-shield-page\"": 3,
               "{`${classPrefix}-overview__primary-currency`}": 2,
+              "\"qr-code-image\"": 2,
               "{`transaction-card-${transaction.id}`}": 2,
               "\"select-srp-container\"": 2,
-              "\"qr-code-image\"": 2,
               "\"network-loader\"": 2,
               "\"no-connections\"": 2,
               "\"multichain-address-row\"": 2,
@@ -682,6 +690,7 @@
               "\"perps-view\"": 1,
               "\"perps-watchlist\"": 1,
               "\"perps-withdraw-percentage-buttons\"": 1,
+              "\"perps-slippage-config-custom-display\"": 1,
               "\"perps-update-tpsl-estimated-tp-pnl-row\"": 1,
               "\"perps-update-tpsl-estimated-sl-pnl-row\"": 1,
               "{rootTestId(errorType, flowContext)}": 1,
@@ -733,10 +742,18 @@
               "\"musd-position-section\"": 1,
               "\"basic-functionality-off-description\"": 1,
               "\"basic-functionality-off-toggle-row\"": 1,
+              "\"batch-sell-review-page\"": 1,
+              "\"batch-sell-select-page\"": 1,
+              "\"batch-sell-select-asset-list-item\"": 1,
+              "\"batch-sell-select-asset-list\"": 1,
+              "\"batch-sell-select-empty-page\"": 1,
+              "\"batch-sell-select-footer\"": 1,
+              "\"batch-sell-select-header\"": 1,
+              "\"batch-sell-select-network-toolbar\"": 1,
+              "\"batch-sell-select-sorting-toolbar\"": 1,
               "\"transaction-detail-row\"": 1,
               "\"dapp-swap-banner\"": 1,
-              "\"token-icon\"": 1,
-              "\"native-icon\"": 1,
+              "\"selected-gas-fee-token\"": 1,
               "\"free-seven-day-trial\"": 1,
               "{`gas-option-${optionKey}`}": 1,
               "{testID || OUTPUT_AMOUNT_TAG_SELECTOR}": 1,
@@ -746,7 +763,6 @@
               "\"quote-swap-simulation-details\"": 1,
               "\"contact-list-item\"": 1,
               "\"contact-list-item-duplicate-warning\"": 1,
-              "{`network-list-item-${chainId}`}": 1,
               "\"contacts-empty-state\"": 1,
               "\"hw-account-list__item\"": 1,
               "\"create-password\"": 1,
@@ -785,6 +801,7 @@
               "\"market-row-skeleton\"": 1,
               "\"market-list-view\"": 1,
               "\"market-list-filter-sort-row\"": 1,
+              "\"perps-market-list-no-results\"": 1,
               "{`perps-activity-group-${group.date}`}": 1,
               "\"perps-market-detail-page\"": 1,
               "\"perps-market-max-leverage\"": 1,
@@ -792,6 +809,8 @@
               "\"perps-market-detail-chart\"": 1,
               "\"perps-margin-card\"": 1,
               "\"perps-auto-close-row\"": 1,
+              "\"perps-orders-section-header\"": 1,
+              "\"perps-stats-section-header\"": 1,
               "\"perps-learn-basics\"": 1,
               "\"perps-position-cta-buttons\"": 1,
               "\"perps-trade-cta-buttons\"": 1,
@@ -825,15 +844,15 @@
             }
           },
           "paddingBottom": {
-            "count": 140,
+            "count": 142,
             "values": {
               "0": 4,
               "1": 13,
               "2": 39,
               "3": 15,
-              "4": 47,
+              "4": 48,
               "5": 1,
-              "6": 11,
+              "6": 12,
               "8": 3,
               "9": 1,
               "10": 1,
@@ -843,7 +862,7 @@
             }
           },
           "style": {
-            "count": 125,
+            "count": 128,
             "values": {
               "{{ width: '100%' }}": 7,
               "{gatorPermissionDetailRowStyle}": 7,
@@ -908,6 +927,8 @@
               "{{ width: '100%', marginTop: 8, gap: 8 }}": 1,
               "{{ gap: 12, display: 'flex' }}": 1,
               "{{ width: '100%', marginTop: 48 }}": 1,
+              "{{ overflowX: 'auto', }}": 1,
+              "{{ overflowX: 'auto' }}": 1,
               "{{ borderRadius: BorderRadius.pill, position: 'absolute', }}": 1,
               "{{ borderRadius: 12, // eslint-disable-next-line @metamask/design-tokens/color...}": 1,
               "{{ position: 'absolute', top: '-20px', right: 'calc(50% - 20px)', border: '2px...}": 1,
@@ -917,6 +938,7 @@
               "{{ width: '2rem', height: '2rem' }}": 1,
               "{{ boxShadow: '0 -4px 16px -8px var(--color-shadow-default)' }}": 1,
               "{{ width: '48px' }}": 1,
+              "{{ cursor: hasMoreThanOneGasFeeTokenToChooseFrom ? 'pointer' : 'default', }}": 1,
               "{{ color: 'var(--color-primary-default)', backgroundColor: 'var(--color-primar...}": 1,
               "{{ borderTop: '1px solid var(--color-border-muted)', }}": 1,
               "{{ cursor: 'not-allowed' }}": 1,
@@ -936,13 +958,13 @@
             }
           },
           "paddingTop": {
-            "count": 125,
+            "count": 126,
             "values": {
               "0": 2,
               "1": 9,
               "2": 24,
               "3": 22,
-              "4": 47,
+              "4": 48,
               "5": 1,
               "6": 3,
               "8": 6,
@@ -957,21 +979,32 @@
             }
           },
           "padding": {
-            "count": 117,
+            "count": 123,
             "values": {
               "0": 2,
               "1": 7,
-              "2": 14,
+              "2": 18,
               "3": 14,
-              "4": 72,
+              "4": 74,
               "6": 5,
               "10": 1,
               "{customDetails ? 0 : 2}": 1,
               "{isSettingsPage ? 0 : 4}": 1
             }
           },
+          "paddingLeft": {
+            "count": 105,
+            "values": {
+              "1": 1,
+              "2": 8,
+              "3": 1,
+              "4": 87,
+              "5": 3,
+              "6": 5
+            }
+          },
           "backgroundColor": {
-            "count": 104,
+            "count": 103,
             "values": {
               "{BoxBackgroundColor.BackgroundDefault}": 32,
               "{BoxBackgroundColor.BackgroundMuted}": 16,
@@ -998,40 +1031,28 @@
               "{isSelected ? BoxBackgroundColor.PrimaryMuted : undefined}": 1,
               "{showBackground ? BoxBackgroundColor.BackgroundAlternative : undefined}": 1,
               "{dotBackgroundColor}": 1,
-              "{isSelected ? BoxBackgroundColor.BackgroundMuted : undefined}": 1,
               "{isQuizWord ? BoxBackgroundColor.BackgroundDefault : BoxBackgroundColor.Backgr...}": 1,
               "{selectedPaymentMethod === PAYMENT_TYPES.byCrypto ? BoxBackgroundColor.Primary...}": 1,
               "{selectedPaymentMethod === PAYMENT_TYPES.byCard ? BoxBackgroundColor.PrimaryMu...}": 1
             }
           },
-          "paddingLeft": {
-            "count": 104,
-            "values": {
-              "1": 1,
-              "2": 8,
-              "3": 1,
-              "4": 86,
-              "5": 3,
-              "6": 5
-            }
-          },
           "paddingRight": {
-            "count": 97,
+            "count": 99,
             "values": {
               "2": 7,
-              "3": 1,
-              "4": 84,
+              "3": 2,
+              "4": 85,
               "5": 3,
               "6": 2
             }
           },
           "marginBottom": {
-            "count": 96,
+            "count": 97,
             "values": {
               "0": 1,
               "1": 5,
               "2": 20,
-              "3": 14,
+              "3": 15,
               "4": 41,
               "5": 6,
               "6": 4,
@@ -1043,13 +1064,13 @@
             }
           },
           "marginTop": {
-            "count": 81,
+            "count": 82,
             "values": {
               "0": 1,
               "1": 5,
               "2": 25,
               "3": 4,
-              "4": 26,
+              "4": 27,
               "5": 6,
               "6": 10,
               "12": 2,
@@ -1058,11 +1079,11 @@
             }
           },
           "onClick": {
-            "count": 68,
+            "count": 70,
             "values": {
               "{onClick}": 9,
               "{() => handleSelect(value)}": 5,
-              "{handleClick}": 3,
+              "{handleClick}": 4,
               "{handleConvert}": 2,
               "{(e: React.MouseEvent) => e.stopPropagation()}": 2,
               "{handleBackClick}": 2,
@@ -1079,17 +1100,18 @@
               "{handleDisplayNameClick}": 1,
               "{handleCreateMultichainAccountClick}": 1,
               "{handleDefaultAddressClick}": 1,
+              "{(event) => event.stopPropagation()}": 1,
               "{togglePopover}": 1,
               "{item.onClick}": 1,
               "{displayDefaultAddress ? handleDefaultAddressClick : undefined}": 1,
               "{handleCopyClick}": 1,
               "{handleSrpBackupClick}": 1,
               "{() => { handleCopy(checksummedAddress); trackEvent({ category: MetaMetricsEve...}": 1,
+              "{() => onClick(assetId)}": 1,
               "{(e: React.MouseEvent) => { e.stopPropagation(); handleCopyAddress(); }}": 1,
               "{updateSwapToSelectedQuote}": 1,
               "{() => onClick?.()}": 1,
               "{onSelect}": 1,
-              "{() => { onSelect?.(chainId); onClose(); }}": 1,
               "{option.onClick}": 1,
               "{async () => { await dispatch(addNetwork(network, { setActive: false })); disp...}": 1,
               "{isInteractive ? () => checkboxRef.current?.toggle() : undefined}": 1,
@@ -1113,11 +1135,12 @@
             }
           },
           "key": {
-            "count": 56,
+            "count": 58,
             "values": {
               "{index}": 6,
               "{value}": 5,
               "{network.chainId}": 4,
+              "{section.key}": 3,
               "{key}": 2,
               "{selectedAlert.key}": 1,
               "{`${selectedAlert.key}-detail-${index}`}": 1,
@@ -1142,7 +1165,6 @@
               "{`${token.address}-${token.chainId}`}": 1,
               "{`confirm-add-suggested-nft__nft-single-${id}`}": 1,
               "{`${address}-${tokenId}`}": 1,
-              "{chainId}": 1,
               "{account.address}": 1,
               "{type}": 1,
               "{step.titleKey}": 1,
@@ -1167,12 +1189,12 @@
             }
           },
           "paddingHorizontal": {
-            "count": 27,
+            "count": 34,
             "values": {
               "0": 1,
               "1": 1,
-              "2": 6,
-              "4": 18,
+              "2": 7,
+              "4": 24,
               "{rootPaddingHorizontal}": 1
             }
           },
@@ -1199,10 +1221,20 @@
               "4": 11
             }
           },
-          "ref": {
-            "count": 16,
+          "borderColor": {
+            "count": 18,
             "values": {
-              "{containerRef}": 4,
+              "{BoxBorderColor.BorderMuted}": 11,
+              "{BoxBorderColor.BorderDefault}": 4,
+              "{BoxBorderColor.Transparent}": 1,
+              "{BorderColor.borderDefault}": 1,
+              "{isTargetIndex ? BoxBorderColor.PrimaryDefault : BoxBorderColor.BorderMuted}": 1
+            }
+          },
+          "ref": {
+            "count": 17,
+            "values": {
+              "{containerRef}": 5,
               "{ref}": 2,
               "{sectionRef}": 1,
               "{scrollContainerRef}": 1,
@@ -1216,21 +1248,19 @@
               "{setSettingsRootRef}": 1
             }
           },
-          "borderColor": {
+          "flexWrap": {
             "count": 16,
             "values": {
-              "{BoxBorderColor.BorderMuted}": 9,
-              "{BoxBorderColor.BorderDefault}": 4,
-              "{BoxBorderColor.Transparent}": 1,
-              "{BorderColor.borderDefault}": 1,
-              "{isTargetIndex ? BoxBorderColor.PrimaryDefault : BoxBorderColor.BorderMuted}": 1
+              "{BoxFlexWrap.Wrap}": 12,
+              "{BoxFlexWrap.NoWrap}": 4
             }
           },
-          "flexWrap": {
-            "count": 15,
+          "paddingVertical": {
+            "count": 14,
             "values": {
-              "{BoxFlexWrap.Wrap}": 11,
-              "{BoxFlexWrap.NoWrap}": 4
+              "1": 2,
+              "2": 2,
+              "3": 10
             }
           },
           "marginRight": {
@@ -1252,25 +1282,19 @@
               "{isInWatchlist ? t('perpsRemoveFromFavorites') : t('perpsAddToFavorites')}": 1
             }
           },
+          "marginHorizontal": {
+            "count": 11,
+            "values": {
+              "2": 1,
+              "4": 7,
+              "5": 3
+            }
+          },
           "tabIndex": {
             "count": 10,
             "values": {
               "0": 9,
               "{isInteractive ? 0 : undefined}": 1
-            }
-          },
-          "marginHorizontal": {
-            "count": 10,
-            "values": {
-              "4": 7,
-              "5": 3
-            }
-          },
-          "paddingVertical": {
-            "count": 8,
-            "values": {
-              "1": 2,
-              "3": 6
             }
           },
           "role": {
@@ -1285,9 +1309,9 @@
             }
           },
           "borderWidth": {
-            "count": 5,
+            "count": 7,
             "values": {
-              "1": 3,
+              "1": 5,
               "2": 1,
               "{isTargetIndex ? 2 : 1}": 1
             }
@@ -1323,11 +1347,11 @@
               "{() => setIsHovered(false)}": 1
             }
           },
-          "id": {
-            "count": 2,
+          "margin": {
+            "count": 3,
             "values": {
-              "{`backup-and-sync-features-toggles-${section.id}`}": 1,
-              "\"backup-and-sync-toggle\"": 1
+              "0": 1,
+              "2": 2
             }
           },
           "dangerouslySetInnerHTML": {
@@ -1336,18 +1360,18 @@
               "{{ // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860...}": 2
             }
           },
+          "id": {
+            "count": 2,
+            "values": {
+              "{`backup-and-sync-features-toggles-${section.id}`}": 1,
+              "\"backup-and-sync-toggle\"": 1
+            }
+          },
           "data-test-id": {
             "count": 2,
             "values": {
               "\"permissions-cell-tooltip\"": 1,
               "\"site-cell-tooltip\"": 1
-            }
-          },
-          "margin": {
-            "count": 2,
-            "values": {
-              "0": 1,
-              "2": 1
             }
           },
           "onKeyPress": {
@@ -1455,15 +1479,15 @@
         }
       },
       "deprecated": {
-        "totalInstances": 736,
-        "filesCount": 248,
+        "totalInstances": 729,
+        "filesCount": 247,
         "props": {
           "display": {
-            "count": 477,
+            "count": 471,
             "values": {
-              "{Display.Flex}": 437,
-              "{Display.InlineFlex}": 15,
+              "{Display.Flex}": 432,
               "{Display.Block}": 15,
+              "{Display.InlineFlex}": 14,
               "{Display.Inline}": 5,
               "{[Display.Flex]}": 2,
               "{isCollapsable && isCollapsed ? Display.None : Display.Flex}": 1,
@@ -1472,19 +1496,19 @@
             }
           },
           "flexDirection": {
-            "count": 256,
+            "count": 251,
             "values": {
-              "{FlexDirection.Column}": 156,
-              "{FlexDirection.Row}": 97,
+              "{FlexDirection.Column}": 152,
+              "{FlexDirection.Row}": 96,
               "{isCollapsible ? FlexDirection.Column : FlexDirection.Row}": 1,
               "{showAvatarAccount ? FlexDirection.Row : FlexDirection.Column}": 1,
               "{FlexDirection.RowReverse}": 1
             }
           },
           "alignItems": {
-            "count": 244,
+            "count": 241,
             "values": {
-              "{AlignItems.center}": 208,
+              "{AlignItems.center}": 205,
               "{AlignItems.flexStart}": 17,
               "{AlignItems.flexEnd}": 10,
               "{AlignItems.baseline}": 4,
@@ -1494,7 +1518,7 @@
             }
           },
           "className": {
-            "count": 212,
+            "count": 211,
             "values": {
               "\"settings-page__content-row\"": 6,
               "\"dropdown-editor__item-dropdown\"": 3,
@@ -1503,7 +1527,6 @@
               "\"token-list__empty-list\"": 2,
               "{classnames('snap-ui-renderer__file-input', { 'snap-ui-renderer__field': label...}": 2,
               "\"min-w-0\"": 2,
-              "\"multichain-asset-picker__network-list\"": 2,
               "{`carousel-container ${className}`}": 2,
               "\"multichain-network-list-menu\"": 2,
               "{`notification-list-item ${ isRead ? '' : 'notification-list-item--unread' }`}": 2,
@@ -1574,6 +1597,7 @@
               "\"tokens-main-view-modal\"": 1,
               "{classnames('multichain-asset-picker-list-item', { 'multichain-asset-picker-li...}": 1,
               "\"multichain-asset-picker-list-item__selected-indicator\"": 1,
+              "\"flex flex-col\"": 1,
               "\"network-picker\"": 1,
               "\"modal-tab__wrapper\"": 1,
               "{classnames('multichain-avatar-group', className)}": 1,
@@ -1685,10 +1709,10 @@
             }
           },
           "justifyContent": {
-            "count": 190,
+            "count": 189,
             "values": {
               "{JustifyContent.spaceBetween}": 85,
-              "{JustifyContent.center}": 82,
+              "{JustifyContent.center}": 81,
               "{JustifyContent.flexEnd}": 13,
               "{JustifyContent.flexStart}": 7,
               "\"center\"": 2,
@@ -1696,19 +1720,19 @@
             }
           },
           "gap": {
-            "count": 128,
+            "count": 125,
             "values": {
               "0": 1,
-              "1": 22,
-              "2": 49,
-              "3": 16,
+              "1": 21,
+              "2": 48,
+              "3": 15,
               "4": 38,
               "6": 1,
               "{showAvatarAccount ? 2 : 0}": 1
             }
           },
           "style": {
-            "count": 123,
+            "count": 121,
             "values": {
               "{{ overflow: 'hidden' }}": 11,
               "{{ marginLeft: 'auto', maxWidth: '100%' }}": 8,
@@ -1774,13 +1798,11 @@
               "{{ position: 'absolute', right: 0 }}": 1,
               "{{ zIndex: 2 }}": 1,
               "{{ marginTop: gasFeeToken ? -8 : 0 }}": 1,
-              "{{ cursor: hasMoreThanOneGasFeeTokenToChooseFrom ? 'pointer' : 'default', padd...}": 1,
               "{{ maxWidth: '100%' }}": 1,
               "{{ zIndex: 2, position: 'relative', }}": 1,
               "{{ /** As a flex child, this ensures the element stretches the full available ...}": 1,
               "{{ overflow: 'auto' }}": 1,
               "{{ cursor: canEdit ? 'pointer' : 'default', padding: canEdit ? '4px 8px' : '0p...}": 1,
-              "{{ cursor: canEdit ? 'pointer' : 'default', }}": 1,
               "{{ flex: 1, height: '100%' }}": 1,
               "{{ minWidth: 0 }}": 1,
               "{{ width: '100%', position: 'relative', overflow: 'hidden' }}": 1,
@@ -1798,9 +1820,9 @@
             }
           },
           "width": {
-            "count": 115,
+            "count": 114,
             "values": {
-              "{BlockSize.Full}": 111,
+              "{BlockSize.Full}": 110,
               "{BlockSize.FiveTwelfths}": 2,
               "{BlockSize.TenTwelfths}": 1,
               "\"full\"": 1
@@ -1813,6 +1835,7 @@
               "\"notifications-list-loading\"": 3,
               "\"simulation-details-layout\"": 3,
               "\"app-header-logo\"": 2,
+              "\"carousel-container\"": 2,
               "{`select-network-item-${network.chainId}`}": 2,
               "\"nft-image\"": 2,
               "\"no-connections\"": 2,
@@ -1858,7 +1881,6 @@
               "\"batch-txs\"": 1,
               "{`gas-fee-token-list-item-${leftPrimary}`}": 1,
               "\"native-toggle\"": 1,
-              "\"selected-gas-fee-token\"": 1,
               "{`advanced-details-${method.name}-params`}": 1,
               "\"network-loader\"": 1,
               "\"custom-amount-info\"": 1,
@@ -1868,7 +1890,6 @@
               "\"percentage-buttons-skeleton\"": 1,
               "\"pay-with-row-skeleton\"": 1,
               "\"pay-with-pill\"": 1,
-              "\"pay-with-row\"": 1,
               "\"receive-row-skeleton\"": 1,
               "\"receive-row\"": 1,
               "\"total-row-skeleton\"": 1,
@@ -1885,10 +1906,10 @@
             }
           },
           "backgroundColor": {
-            "count": 78,
+            "count": 76,
             "values": {
               "{BackgroundColor.backgroundDefault}": 26,
-              "{BackgroundColor.backgroundAlternative}": 11,
+              "{BackgroundColor.backgroundAlternative}": 10,
               "{BackgroundColor.transparent}": 7,
               "{BackgroundColor.primaryDefault}": 6,
               "{BackgroundColor.backgroundSection}": 3,
@@ -1908,17 +1929,16 @@
               "{BackgroundColor.infoDefault}": 1,
               "{BackgroundColor.iconAlternative}": 1,
               "{showAdvancedDetails ? BackgroundColor.infoMuted : BackgroundColor.transparent}": 1,
-              "{hasMoreThanOneGasFeeTokenToChooseFrom ? BackgroundColor.backgroundMuted : Bac...}": 1,
               "{canEdit ? BackgroundColor.backgroundMuted : BackgroundColor.transparent}": 1,
               "{BackgroundColor.backgroundMuted}": 1
             }
           },
           "paddingLeft": {
-            "count": 73,
+            "count": 72,
             "values": {
               "0": 2,
               "1": 2,
-              "2": 12,
+              "2": 11,
               "4": 52,
               "5": 2,
               "6": 1,
@@ -1927,11 +1947,11 @@
             }
           },
           "paddingTop": {
-            "count": 73,
+            "count": 72,
             "values": {
               "0": 5,
               "1": 5,
-              "2": 18,
+              "2": 17,
               "3": 9,
               "4": 22,
               "5": 2,
@@ -1946,11 +1966,11 @@
             }
           },
           "paddingBottom": {
-            "count": 72,
+            "count": 71,
             "values": {
               "0": 2,
               "1": 2,
-              "2": 25,
+              "2": 24,
               "3": 9,
               "4": 19,
               "5": 1,
@@ -1965,13 +1985,13 @@
             }
           },
           "paddingRight": {
-            "count": 71,
+            "count": 70,
             "values": {
               "0": 2,
               "1": 1,
               "2": 9,
               "3": 1,
-              "4": 53,
+              "4": 52,
               "5": 2,
               "6": 1,
               "{isSmall ? 0 : 2}": 1,
@@ -1979,13 +1999,13 @@
             }
           },
           "padding": {
-            "count": 58,
+            "count": 57,
             "values": {
               "0": 4,
               "1": 4,
               "2": 5,
               "3": 4,
-              "4": 37,
+              "4": 36,
               "{!disablePadding || isLoading ? 4 : 0}": 1,
               "{[2, 4]}": 1,
               "{hasHeader || hasHeaderMaybe ? 0 : 4}": 1,
@@ -1993,10 +2013,10 @@
             }
           },
           "borderRadius": {
-            "count": 57,
+            "count": 55,
             "values": {
               "{BorderRadius.LG}": 20,
-              "{BorderRadius.pill}": 16,
+              "{BorderRadius.pill}": 14,
               "{BorderRadius.MD}": 9,
               "{BorderRadius.XL}": 5,
               "{BorderRadius.SM}": 4,
@@ -2028,12 +2048,11 @@
             }
           },
           "onClick": {
-            "count": 39,
+            "count": 37,
             "values": {
               "{onClick}": 12,
-              "{handleClick}": 5,
+              "{handleClick}": 4,
               "{setDropdownOpen}": 2,
-              "{canEdit ? onOpenModal : undefined}": 2,
               "{isSnapUsingThis ? () => null : handleDisplayNameClick}": 1,
               "{openListNetwork}": 1,
               "{onSelectNetwork}": 1,
@@ -2051,7 +2070,8 @@
               "{handleButtonClick}": 1,
               "{onHeaderClick}": 1,
               "{() => onClick(recipient)}": 1,
-              "{() => onClick?.()}": 1
+              "{() => onClick?.()}": 1,
+              "{canEdit ? onOpenModal : undefined}": 1
             }
           },
           "marginBottom": {
@@ -2068,20 +2088,8 @@
               "{marginBottom}": 1
             }
           },
-          "marginLeft": {
-            "count": 25,
-            "values": {
-              "1": 4,
-              "2": 3,
-              "3": 1,
-              "4": 9,
-              "8": 1,
-              "auto": 4,
-              "\"auto\"": 3
-            }
-          },
           "key": {
-            "count": 25,
+            "count": 26,
             "values": {
               "{network.chainId}": 5,
               "{address}": 2,
@@ -2094,6 +2102,7 @@
               "\"account2\"": 1,
               "{`${token.symbol}-${tokenAddress ?? ''}-${token.chainId}`}": 1,
               "{token.address}": 1,
+              "{section.key}": 1,
               "{i}": 1,
               "{itemKey(item)}": 1,
               "{rpcEndpoint.url}": 1,
@@ -2101,6 +2110,18 @@
               "{`${split.str}-${split.confusable.point}`}": 1,
               "{`${split.str}-${split.confusable.similarTo}`}": 1,
               "\"extra-description\"": 1
+            }
+          },
+          "marginLeft": {
+            "count": 24,
+            "values": {
+              "1": 3,
+              "2": 3,
+              "3": 1,
+              "4": 9,
+              "8": 1,
+              "auto": 4,
+              "\"auto\"": 3
             }
           },
           "flexWrap": {
@@ -2279,14 +2300,6 @@
               "auto": 1
             }
           },
-          "paddingInlineStart": {
-            "count": 3,
-            "values": {
-              "1": 1,
-              "4": 1,
-              "8": 1
-            }
-          },
           "title": {
             "count": 3,
             "values": {
@@ -2312,6 +2325,13 @@
             "values": {
               "{(e: React.SyntheticEvent<HTMLImageElement>) => { // Keeping failed-src in DOM...}": 1,
               "{(e: React.SyntheticEvent<HTMLImageElement>) => { const target = e.target as H...}": 1
+            }
+          },
+          "paddingInlineStart": {
+            "count": 2,
+            "values": {
+              "4": 1,
+              "8": 1
             }
           },
           "paddingInlineEnd": {
@@ -2378,22 +2398,22 @@
         }
       },
       "overall": {
-        "totalInstances": 2482,
-        "filesCount": 703,
+        "totalInstances": 2536,
+        "filesCount": 723,
         "props": {
           "className": {
-            "count": 1203,
+            "count": 1228,
             "values": {
               "\"flex\"": 119,
-              "\"w-full\"": 47,
-              "\"flex w-full\"": 23,
+              "\"w-full\"": 49,
+              "\"flex w-full\"": 22,
+              "\"flex-1\"": 22,
+              "\"flex flex-col\"": 15,
               "\"min-w-0 flex-1\"": 14,
-              "\"flex flex-col\"": 13,
               "\"shrink-0\"": 13,
-              "\"flex-1\"": 11,
+              "\"h-full\"": 10,
               "\"rounded-lg\"": 10,
               "\"overflow-hidden\"": 10,
-              "\"h-full\"": 8,
               "\"flex-1 min-w-0\"": 8,
               "\"flex w-full flex-col\"": 8,
               "\"min-w-0\"": 7,
@@ -2403,6 +2423,7 @@
               "\"overflow-hidden rounded-xl\"": 6,
               "\"flex-1 flex flex-col items-center px-6 pt-4 pb-2\"": 6,
               "\"flex flex-col gap-2\"": 6,
+              "\"text-right\"": 6,
               "\"asset-page__divider\"": 6,
               "\"text-left\"": 6,
               "\"ml-2\"": 6,
@@ -2411,19 +2432,19 @@
               "\"flex flex-col w-full\"": 5,
               "\"flex-1 flex items-center justify-center w-full\"": 5,
               "\"qr-scanner\"": 5,
-              "\"text-right\"": 5,
               "{`w-full cursor-pointer border-0 p-4 ${ isSelected ? 'bg-muted hover:bg-muted-...}": 5,
               "\"flex gap-4\"": 4,
               "{className}": 4,
               "\"flex items-center gap-1\"": 4,
               "{containerClassName}": 4,
+              "\"h-full w-full\"": 4,
               "\"w-full bg-transparent px-4 py-2 hover:bg-hover active:bg-pressed md:px-8\"": 4,
               "\"flex-shrink-0\"": 3,
+              "\"inline-flex\"": 3,
               "\"dropdown-editor__item-dropdown\"": 3,
               "\"flex size-11 shrink-0 items-center\"": 3,
               "\"sticky bottom-0 left-0 right-0 bg-default border-t border-muted\"": 3,
               "\"snap-home-menu__item\"": 3,
-              "\"h-full w-full\"": 3,
               "\"flex rounded-lg\"": 3,
               "\"p-4\"": 3,
               "\"simulation-details-layout\"": 3,
@@ -2438,8 +2459,9 @@
               "\"transaction-shield-page__divider my-4\"": 3,
               "\"border-t border-muted w-full h-px\"": 3,
               "\"flex items-center justify-between gap-2 px-4 mb-2\"": 3,
+              "\"qr-code__image\"": 2,
+              "\"qr-code__logo\"": 2,
               "\"flex settings-page__content-row\"": 2,
-              "\"inline-flex\"": 2,
               "\"hold-to-reveal-button__absolute-fill\"": 2,
               "\"privacy-settings__setting__wrapper\"": 2,
               "\"token-list__empty-list\"": 2,
@@ -2456,15 +2478,12 @@
               "\"gap-1\"": 2,
               "{isSaving ? 'flex-1 py-1.5 rounded-lg bg-muted text-center opacity-50 cursor-n...}": 2,
               "\"flex flex-row\"": 2,
-              "\"qr-code__image\"": 2,
-              "\"qr-code__logo\"": 2,
               "\"mt-auto w-full\"": 2,
               "{classnames('snap-ui-renderer__file-input', { 'snap-ui-renderer__field': label...}": 2,
               "\"flex gap-1\"": 2,
               "\"flex w-full gap-2 items-center\"": 2,
               "\"hidden sm:flex\"": 2,
               "\"network-indicator\"": 2,
-              "\"multichain-asset-picker__network-list\"": 2,
               "{classnames('multichain-avatar-group', className)}": 2,
               "{`carousel-container ${className}`}": 2,
               "\"mx-4\"": 2,
@@ -2534,6 +2553,10 @@
               "\"asset-list-control-bar\"": 1,
               "\"asset-list-control-bar__buttons\"": 1,
               "\"nfts-tab__link\"": 1,
+              "\"max-h-[calc(100vh-168px)] overflow-y-auto\"": 1,
+              "\"flex min-w-0 items-center gap-3\"": 1,
+              "\"px-4 pt-2\"": 1,
+              "\"flex items-center justify-center gap-2\"": 1,
               "\"flex h-full w-full [container-name:list-item] [container-type:inline-size]\"": 1,
               "\"flex w-full overflow-hidden grow\"": 1,
               "\"selectable-list-item-wrapper\"": 1,
@@ -2563,6 +2586,8 @@
               "\"currency-input__skeleton-container\"": 1,
               "\"w-1/2 currency-input__pulsing-bar\"": 1,
               "\"w-1/3 currency-input__pulsing-bar\"": 1,
+              "\"qr-code__wrapper my-2\"": 1,
+              "\"flex flex-1 flex-col items-center justify-center gap-4\"": 1,
               "\"mx-auto w-fit rounded-2xl\"": 1,
               "{classnames('hold-to-reveal-button__absolute-fill', { 'hold-to-reveal-button__...}": 1,
               "\"flex hold-to-reveal-button__lock-icon-container\"": 1,
@@ -2622,6 +2647,8 @@
               "{`h-3 rounded-xl ${index === currentStep - 1 ? `w-6 ${activeColor}` : 'w-3 h-3...}": 1,
               "\"flex flex-col gap-2 px-4\"": 1,
               "\"bg-error-muted rounded-lg px-3 py-2\"": 1,
+              "\"w-full gap-2\"": 1,
+              "{twMerge( CUSTOM_SLOT_CLASS, isCustomMode ? 'cursor-text gap-1 border border-p...}": 1,
               "\"flex h-8 w-8 shrink-0 rounded-full\"": 1,
               "{twMerge( '[container-name:list-item] [container-type:inline-size]', variantSt...}": 1,
               "\"pr-4 shrink-0\"": 1,
@@ -2636,8 +2663,6 @@
               "\"bg-error-muted rounded-2xl p-4 gap-4 w-full\"": 1,
               "\"w-8 h-8\"": 1,
               "\"gap-2\"": 1,
-              "\"qr-code__wrapper my-2\"": 1,
-              "\"flex flex-1 flex-col items-center justify-center gap-4\"": 1,
               "w-max rounded-md bg-gradient-to-r from-[#ECB920] to-[65%] to-[#ECBC2D]/[11%] p-[1px] border-1": 1,
               "\"w-max flex flex-row rounded-md bg-warning-inverse\"": 1,
               "\"w-max flex flex-row rounded-md whitespace-nowrap px-2 py-0 gap-1 bg-[#ECBC2D]/[11%]\"": 1,
@@ -2692,6 +2717,8 @@
               "\"terms-of-use-popup__body\"": 1,
               "\"terms-of-use-popup__scroll-button-container\"": 1,
               "\"terms-of-use-popup__footer flex flex-col mx-4\"": 1,
+              "\"flex flex-col absolute right-0 top-full z-10 mt-4 min-w-[120px] overflow-hidden rounded-lg border border-border-muted bg-background-default shadow-lg\"": 1,
+              "\"flex relative w-full\"": 1,
               "\"wallet-overview__currency-wrapper\"": 1,
               "\"rounded-sm\"": 1,
               "{classnames('multichain-account-list-item flex items-center', { 'multichain-ac...}": 1,
@@ -2836,6 +2863,8 @@
               "\"flex px-4\"": 1,
               "\"asset__content\"": 1,
               "\"pt-4 sticky top-0 z-10 bg-background-default\"": 1,
+              "\"cursor-pointer bg-transparent border-0 p-0\"": 1,
+              "{twMerge( 'cursor-pointer', selected ? 'bg-muted' : 'hover:bg-muted-hover', )}": 1,
               "\"h-full flex\"": 1,
               "\"multichain-network-list-item__selected-indicator\"": 1,
               "\"prepare-bridge-page__switch-tokens flex\"": 1,
@@ -2889,8 +2918,7 @@
               "\"min-w-0 flex-1 overflow-hidden\"": 1,
               "\"mt-4 shrink-0\"": 1,
               "\"flex size-10 items-center justify-center\"": 1,
-              "{`flex cursor-pointer ${ selected ? 'bg-background-muted' : 'bg-transparent' }`}": 1,
-              "\"flex w-full flex-col overflow-auto\"": 1,
+              "\"flex min-h-0 w-full flex-1 flex-col overflow-auto\"": 1,
               "\"flex flex-col items-center justify-center\"": 1,
               "\"flex max-w-[218px] flex-col items-center\"": 1,
               "\"flex w-full flex-col px-4 pt-4\"": 1,
@@ -2921,7 +2949,6 @@
               "\"new-account-wrapper h-full\"": 1,
               "\"create-password h-full w-full\"": 1,
               "\"create-password__terms-container rounded-lg\"": 1,
-              "\"w-full text-left transition-colors hover:bg-muted-hover active:bg-muted-pressed\"": 1,
               "\"flex pt-4 sticky top-0 z-10 bg-background-default\"": 1,
               "\"-m-8\"": 1,
               "\"min-h-screen md:flex md:items-center md:justify-center md:bg-alternative md:py-4\"": 1,
@@ -3096,22 +3123,22 @@
             }
           },
           "flexDirection": {
-            "count": 1091,
+            "count": 1116,
             "values": {
-              "{BoxFlexDirection.Column}": 440,
-              "{BoxFlexDirection.Row}": 395,
-              "{FlexDirection.Column}": 156,
-              "{FlexDirection.Row}": 97,
+              "{BoxFlexDirection.Column}": 449,
+              "{BoxFlexDirection.Row}": 416,
+              "{FlexDirection.Column}": 152,
+              "{FlexDirection.Row}": 96,
               "{isCollapsible ? FlexDirection.Column : FlexDirection.Row}": 1,
               "{showAvatarAccount ? FlexDirection.Row : FlexDirection.Column}": 1,
               "{FlexDirection.RowReverse}": 1
             }
           },
           "alignItems": {
-            "count": 805,
+            "count": 820,
             "values": {
-              "{BoxAlignItems.Center}": 479,
-              "{AlignItems.center}": 208,
+              "{BoxAlignItems.Center}": 497,
+              "{AlignItems.center}": 205,
               "{BoxAlignItems.Start}": 39,
               "{BoxAlignItems.End}": 21,
               "{AlignItems.flexStart}": 17,
@@ -3126,13 +3153,13 @@
             }
           },
           "gap": {
-            "count": 608,
+            "count": 635,
             "values": {
               "0": 3,
-              "1": 123,
-              "2": 211,
-              "3": 62,
-              "4": 180,
+              "1": 132,
+              "2": 223,
+              "3": 65,
+              "4": 183,
               "5": 2,
               "6": 23,
               "8": 1,
@@ -3142,12 +3169,12 @@
             }
           },
           "justifyContent": {
-            "count": 541,
+            "count": 542,
             "values": {
-              "{BoxJustifyContent.Between}": 172,
-              "{BoxJustifyContent.Center}": 129,
+              "{BoxJustifyContent.Between}": 173,
+              "{BoxJustifyContent.Center}": 130,
               "{JustifyContent.spaceBetween}": 85,
-              "{JustifyContent.center}": 82,
+              "{JustifyContent.center}": 81,
               "{BoxJustifyContent.Start}": 29,
               "{BoxJustifyContent.End}": 15,
               "{JustifyContent.flexEnd}": 13,
@@ -3160,11 +3187,11 @@
             }
           },
           "display": {
-            "count": 477,
+            "count": 471,
             "values": {
-              "{Display.Flex}": 437,
-              "{Display.InlineFlex}": 15,
+              "{Display.Flex}": 432,
               "{Display.Block}": 15,
+              "{Display.InlineFlex}": 14,
               "{Display.Inline}": 5,
               "{[Display.Flex]}": 2,
               "{isCollapsable && isCollapsed ? Display.None : Display.Flex}": 1,
@@ -3173,10 +3200,10 @@
             }
           },
           "data-testid": {
-            "count": 343,
+            "count": 355,
             "values": {
               "{dataTestId}": 15,
-              "{testId}": 6,
+              "{testId}": 7,
               "\"perps-tutorial-step-image\"": 6,
               "\"no-connections\"": 4,
               "\"network-loader\"": 3,
@@ -3184,15 +3211,15 @@
               "\"simulation-details-layout\"": 3,
               "\"transaction-shield-page\"": 3,
               "{`${classPrefix}-overview__primary-currency`}": 2,
+              "\"qr-code-image\"": 2,
               "\"multichain-token-list-button\"": 2,
               "{`transaction-card-${transaction.id}`}": 2,
               "\"select-srp-container\"": 2,
-              "\"qr-code-image\"": 2,
               "\"activity-list-item\"": 2,
               "\"app-header-logo\"": 2,
               "\"avatar-group\"": 2,
+              "\"carousel-container\"": 2,
               "{`select-network-item-${network.chainId}`}": 2,
-              "{`network-list-item-${chainId}`}": 2,
               "{`popular-network-${network.chainId}`}": 2,
               "\"nft-image\"": 2,
               "\"multichain-address-row\"": 2,
@@ -3274,6 +3301,7 @@
               "\"perps-view\"": 1,
               "\"perps-watchlist\"": 1,
               "\"perps-withdraw-percentage-buttons\"": 1,
+              "\"perps-slippage-config-custom-display\"": 1,
               "\"perps-update-tpsl-estimated-tp-pnl-row\"": 1,
               "\"perps-update-tpsl-estimated-sl-pnl-row\"": 1,
               "{rootTestId(errorType, flowContext)}": 1,
@@ -3306,6 +3334,7 @@
               "\"import-tokens-loading\"": 1,
               "\"import-tokens-no-support\"": 1,
               "\"srp-list\"": 1,
+              "{`network-list-item-${chainId}`}": 1,
               "{name}": 1,
               "{`network-rpc-name-button-${chainId}`}": 1,
               "\"test-add-button\"": 1,
@@ -3348,6 +3377,15 @@
               "\"musd-position-section\"": 1,
               "\"basic-functionality-off-description\"": 1,
               "\"basic-functionality-off-toggle-row\"": 1,
+              "\"batch-sell-review-page\"": 1,
+              "\"batch-sell-select-page\"": 1,
+              "\"batch-sell-select-asset-list-item\"": 1,
+              "\"batch-sell-select-asset-list\"": 1,
+              "\"batch-sell-select-empty-page\"": 1,
+              "\"batch-sell-select-footer\"": 1,
+              "\"batch-sell-select-header\"": 1,
+              "\"batch-sell-select-network-toolbar\"": 1,
+              "\"batch-sell-select-sorting-toolbar\"": 1,
               "\"transaction-detail-row\"": 1,
               "\"nft-asset\"": 1,
               "{`token-asset-${chainId}-${symbol}`}": 1,
@@ -3357,8 +3395,6 @@
               "\"dapp-swap-banner\"": 1,
               "\"confirm-header\"": 1,
               "\"batch-txs\"": 1,
-              "\"token-icon\"": 1,
-              "\"native-icon\"": 1,
               "{`gas-fee-token-list-item-${leftPrimary}`}": 1,
               "\"native-toggle\"": 1,
               "\"selected-gas-fee-token\"": 1,
@@ -3376,7 +3412,6 @@
               "\"enforced-simulations-optional-badge\"": 1,
               "\"pay-with-row-skeleton\"": 1,
               "\"pay-with-pill\"": 1,
-              "\"pay-with-row\"": 1,
               "\"receive-row-skeleton\"": 1,
               "\"receive-row\"": 1,
               "\"total-row-skeleton\"": 1,
@@ -3429,6 +3464,7 @@
               "\"market-row-skeleton\"": 1,
               "\"market-list-view\"": 1,
               "\"market-list-filter-sort-row\"": 1,
+              "\"perps-market-list-no-results\"": 1,
               "{`perps-activity-group-${group.date}`}": 1,
               "\"perps-market-detail-page\"": 1,
               "\"perps-market-max-leverage\"": 1,
@@ -3436,6 +3472,8 @@
               "\"perps-market-detail-chart\"": 1,
               "\"perps-margin-card\"": 1,
               "\"perps-auto-close-row\"": 1,
+              "\"perps-orders-section-header\"": 1,
+              "\"perps-stats-section-header\"": 1,
               "\"perps-learn-basics\"": 1,
               "\"perps-position-cta-buttons\"": 1,
               "\"perps-trade-cta-buttons\"": 1,
@@ -3469,7 +3507,7 @@
             }
           },
           "style": {
-            "count": 248,
+            "count": 249,
             "values": {
               "{{ overflow: 'hidden' }}": 13,
               "{{ flex: 1 }}": 9,
@@ -3577,6 +3615,8 @@
               "{{ width: '100%', marginTop: 8, gap: 8 }}": 1,
               "{{ gap: 12, display: 'flex' }}": 1,
               "{{ width: '100%', marginTop: 48 }}": 1,
+              "{{ overflowX: 'auto', }}": 1,
+              "{{ overflowX: 'auto' }}": 1,
               "{{ borderRadius: BorderRadius.pill, position: 'absolute', }}": 1,
               "{{ borderRadius: 12, // eslint-disable-next-line @metamask/design-tokens/color...}": 1,
               "{{ position: 'absolute', top: '-20px', right: 'calc(50% - 20px)', border: '2px...}": 1,
@@ -3600,7 +3640,7 @@
               "{{ zIndex: 2 }}": 1,
               "{{ marginTop: gasFeeToken ? -8 : 0 }}": 1,
               "{{ width: '48px' }}": 1,
-              "{{ cursor: hasMoreThanOneGasFeeTokenToChooseFrom ? 'pointer' : 'default', padd...}": 1,
+              "{{ cursor: hasMoreThanOneGasFeeTokenToChooseFrom ? 'pointer' : 'default', }}": 1,
               "{{ color: 'var(--color-primary-default)', backgroundColor: 'var(--color-primar...}": 1,
               "{{ borderTop: '1px solid var(--color-border-muted)', }}": 1,
               "{{ maxWidth: '100%' }}": 1,
@@ -3608,7 +3648,6 @@
               "{{ /** As a flex child, this ensures the element stretches the full available ...}": 1,
               "{{ overflow: 'auto' }}": 1,
               "{{ cursor: canEdit ? 'pointer' : 'default', padding: canEdit ? '4px 8px' : '0p...}": 1,
-              "{{ cursor: canEdit ? 'pointer' : 'default', }}": 1,
               "{{ flex: 1, height: '100%' }}": 1,
               "{{ width: '100%', position: 'relative', overflow: 'hidden' }}": 1,
               "{{ display: 'flex', flexDirection: 'column', height: '592px', width: '360px', ...}": 1,
@@ -3637,15 +3676,15 @@
             }
           },
           "paddingBottom": {
-            "count": 212,
+            "count": 213,
             "values": {
               "0": 6,
               "1": 15,
-              "2": 64,
+              "2": 63,
               "3": 24,
-              "4": 66,
+              "4": 67,
               "5": 2,
-              "6": 12,
+              "6": 13,
               "8": 8,
               "9": 1,
               "10": 1,
@@ -3663,9 +3702,9 @@
             "values": {
               "0": 7,
               "1": 14,
-              "2": 42,
+              "2": 41,
               "3": 31,
-              "4": 69,
+              "4": 70,
               "5": 3,
               "6": 6,
               "8": 8,
@@ -3683,13 +3722,31 @@
               "{hasDuplicates ? 4 : 0}": 1
             }
           },
+          "padding": {
+            "count": 180,
+            "values": {
+              "0": 6,
+              "1": 11,
+              "2": 23,
+              "3": 18,
+              "4": 110,
+              "6": 5,
+              "10": 1,
+              "{customDetails ? 0 : 2}": 1,
+              "{!disablePadding || isLoading ? 4 : 0}": 1,
+              "{isSettingsPage ? 0 : 4}": 1,
+              "{[2, 4]}": 1,
+              "{hasHeader || hasHeaderMaybe ? 0 : 4}": 1,
+              "{[4, 2, 4, 4]}": 1
+            }
+          },
           "backgroundColor": {
-            "count": 182,
+            "count": 179,
             "values": {
               "{BoxBackgroundColor.BackgroundDefault}": 32,
               "{BackgroundColor.backgroundDefault}": 26,
               "{BoxBackgroundColor.BackgroundMuted}": 16,
-              "{BackgroundColor.backgroundAlternative}": 11,
+              "{BackgroundColor.backgroundAlternative}": 10,
               "{BoxBackgroundColor.BackgroundSection}": 9,
               "{BoxBackgroundColor.BackgroundAlternative}": 7,
               "{BackgroundColor.transparent}": 7,
@@ -3729,12 +3786,10 @@
               "{BoxBackgroundColor.PrimaryMuted}": 1,
               "{BackgroundColor.iconAlternative}": 1,
               "{showAdvancedDetails ? BackgroundColor.infoMuted : BackgroundColor.transparent}": 1,
-              "{hasMoreThanOneGasFeeTokenToChooseFrom ? BackgroundColor.backgroundMuted : Bac...}": 1,
               "{isSelected ? BoxBackgroundColor.PrimaryMuted : undefined}": 1,
               "{showBackground ? BoxBackgroundColor.BackgroundAlternative : undefined}": 1,
               "{canEdit ? BackgroundColor.backgroundMuted : BackgroundColor.transparent}": 1,
               "{dotBackgroundColor}": 1,
-              "{isSelected ? BoxBackgroundColor.BackgroundMuted : undefined}": 1,
               "{BackgroundColor.backgroundMuted}": 1,
               "{isQuizWord ? BoxBackgroundColor.BackgroundDefault : BoxBackgroundColor.Backgr...}": 1,
               "{selectedPaymentMethod === PAYMENT_TYPES.byCrypto ? BoxBackgroundColor.Primary...}": 1,
@@ -3746,40 +3801,22 @@
             "values": {
               "0": 2,
               "1": 3,
-              "2": 20,
+              "2": 19,
               "3": 1,
-              "4": 138,
+              "4": 139,
               "5": 5,
               "6": 6,
               "8": 1,
               "{isSmall ? 0 : 2}": 1
             }
           },
-          "padding": {
-            "count": 175,
-            "values": {
-              "0": 6,
-              "1": 11,
-              "2": 19,
-              "3": 18,
-              "4": 109,
-              "6": 5,
-              "10": 1,
-              "{customDetails ? 0 : 2}": 1,
-              "{!disablePadding || isLoading ? 4 : 0}": 1,
-              "{isSettingsPage ? 0 : 4}": 1,
-              "{[2, 4]}": 1,
-              "{hasHeader || hasHeaderMaybe ? 0 : 4}": 1,
-              "{[4, 2, 4, 4]}": 1
-            }
-          },
           "paddingRight": {
-            "count": 168,
+            "count": 169,
             "values": {
               "0": 2,
               "1": 1,
               "2": 16,
-              "3": 2,
+              "3": 3,
               "4": 137,
               "5": 5,
               "6": 3,
@@ -3788,13 +3825,13 @@
             }
           },
           "marginTop": {
-            "count": 135,
+            "count": 136,
             "values": {
               "0": 1,
               "1": 11,
               "2": 32,
               "3": 5,
-              "4": 50,
+              "4": 51,
               "5": 6,
               "6": 16,
               "8": 1,
@@ -3808,12 +3845,12 @@
             }
           },
           "marginBottom": {
-            "count": 122,
+            "count": 123,
             "values": {
               "0": 3,
               "1": 7,
               "2": 22,
-              "3": 14,
+              "3": 15,
               "4": 54,
               "5": 6,
               "6": 6,
@@ -3828,9 +3865,9 @@
             }
           },
           "width": {
-            "count": 119,
+            "count": 118,
             "values": {
-              "{BlockSize.Full}": 115,
+              "{BlockSize.Full}": 114,
               "{BlockSize.FiveTwelfths}": 2,
               "{BlockSize.TenTwelfths}": 1,
               "\"full\"": 1
@@ -3846,7 +3883,6 @@
               "{handleConvert}": 2,
               "{(e: React.MouseEvent) => e.stopPropagation()}": 2,
               "{() => onClick?.()}": 2,
-              "{canEdit ? onOpenModal : undefined}": 2,
               "{handleBackClick}": 2,
               "{() => handleBackClick()}": 2,
               "{isSnapUsingThis ? () => null : handleDisplayNameClick}": 1,
@@ -3876,6 +3912,7 @@
               "{handleDisplayNameClick}": 1,
               "{handleCreateMultichainAccountClick}": 1,
               "{handleDefaultAddressClick}": 1,
+              "{(event) => event.stopPropagation()}": 1,
               "{togglePopover}": 1,
               "{item.onClick}": 1,
               "{displayDefaultAddress ? handleDefaultAddressClick : undefined}": 1,
@@ -3883,11 +3920,12 @@
               "{handleSrpBackupClick}": 1,
               "{onHeaderClick}": 1,
               "{() => { handleCopy(checksummedAddress); trackEvent({ category: MetaMetricsEve...}": 1,
+              "{() => onClick(assetId)}": 1,
               "{(e: React.MouseEvent) => { e.stopPropagation(); handleCopyAddress(); }}": 1,
               "{() => onClick(recipient)}": 1,
               "{updateSwapToSelectedQuote}": 1,
+              "{canEdit ? onOpenModal : undefined}": 1,
               "{onSelect}": 1,
-              "{() => { onSelect?.(chainId); onClose(); }}": 1,
               "{option.onClick}": 1,
               "{async () => { await dispatch(addNetwork(network, { setActive: false })); disp...}": 1,
               "{isInteractive ? () => checkboxRef.current?.toggle() : undefined}": 1,
@@ -3911,11 +3949,12 @@
             }
           },
           "key": {
-            "count": 81,
+            "count": 84,
             "values": {
               "{network.chainId}": 9,
               "{index}": 6,
               "{value}": 5,
+              "{section.key}": 4,
               "{id}": 3,
               "{key}": 2,
               "{i}": 2,
@@ -3955,7 +3994,6 @@
               "{alert.key}": 1,
               "{`${split.str}-${split.confusable.point}`}": 1,
               "{`${split.str}-${split.confusable.similarTo}`}": 1,
-              "{chainId}": 1,
               "{account.address}": 1,
               "\"extra-description\"": 1,
               "{type}": 1,
@@ -3974,10 +4012,10 @@
             }
           },
           "borderRadius": {
-            "count": 58,
+            "count": 56,
             "values": {
               "{BorderRadius.LG}": 20,
-              "{BorderRadius.pill}": 17,
+              "{BorderRadius.pill}": 15,
               "{BorderRadius.MD}": 9,
               "{BorderRadius.XL}": 5,
               "{BorderRadius.SM}": 4,
@@ -3991,10 +4029,16 @@
               "{BlockSize.Min}": 2
             }
           },
-          "marginLeft": {
-            "count": 44,
+          "asChild": {
+            "count": 43,
             "values": {
-              "1": 6,
+              "true (shorthand)": 43
+            }
+          },
+          "marginLeft": {
+            "count": 43,
+            "values": {
+              "1": 5,
               "2": 6,
               "3": 4,
               "4": 20,
@@ -4003,18 +4047,12 @@
               "\"auto\"": 3
             }
           },
-          "asChild": {
-            "count": 43,
-            "values": {
-              "true (shorthand)": 43
-            }
-          },
           "borderColor": {
-            "count": 40,
+            "count": 42,
             "values": {
+              "{BoxBorderColor.BorderMuted}": 11,
               "{BorderColor.borderDefault}": 11,
               "{BorderColor.borderMuted}": 9,
-              "{BoxBorderColor.BorderMuted}": 9,
               "{BoxBorderColor.BorderDefault}": 4,
               "{isTransactionsRedesign ? BorderColor.transparent : BorderColor.borderDefault}": 2,
               "{badgeBorderColor}": 1,
@@ -4025,10 +4063,10 @@
             }
           },
           "flexWrap": {
-            "count": 39,
+            "count": 40,
             "values": {
               "{FlexWrap.Wrap}": 18,
-              "{BoxFlexWrap.Wrap}": 11,
+              "{BoxFlexWrap.Wrap}": 12,
               "{FlexWrap.NoWrap}": 6,
               "{BoxFlexWrap.NoWrap}": 4
             }
@@ -4059,11 +4097,11 @@
             }
           },
           "ref": {
-            "count": 36,
+            "count": 37,
             "values": {
               "{ref}": 9,
+              "{containerRef}": 5,
               "{setBoxRef}": 4,
-              "{containerRef}": 4,
               "{dropdownRef}": 2,
               "{sectionRef}": 1,
               "{contentRef}": 1,
@@ -4084,6 +4122,16 @@
               "{setSettingsRootRef}": 1
             }
           },
+          "paddingHorizontal": {
+            "count": 34,
+            "values": {
+              "0": 1,
+              "1": 1,
+              "2": 7,
+              "4": 24,
+              "{rootPaddingHorizontal}": 1
+            }
+          },
           "marginRight": {
             "count": 28,
             "values": {
@@ -4095,20 +4143,10 @@
               "auto": 2
             }
           },
-          "paddingHorizontal": {
-            "count": 27,
-            "values": {
-              "0": 1,
-              "1": 1,
-              "2": 6,
-              "4": 18,
-              "{rootPaddingHorizontal}": 1
-            }
-          },
           "borderWidth": {
-            "count": 17,
+            "count": 19,
             "values": {
-              "1": 14,
+              "1": 16,
               "2": 2,
               "{isTargetIndex ? 2 : 1}": 1
             }
@@ -4130,6 +4168,14 @@
               "{TextAlign.Center}": 5,
               "{TextAlign.Right}": 4,
               "{TextAlign.End}": 1
+            }
+          },
+          "paddingVertical": {
+            "count": 14,
+            "values": {
+              "1": 2,
+              "2": 2,
+              "3": 10
             }
           },
           "borderStyle": {
@@ -4157,6 +4203,14 @@
               "{isInWatchlist ? t('perpsRemoveFromFavorites') : t('perpsAddToFavorites')}": 1
             }
           },
+          "marginHorizontal": {
+            "count": 11,
+            "values": {
+              "2": 1,
+              "4": 7,
+              "5": 3
+            }
+          },
           "paddingInline": {
             "count": 10,
             "values": {
@@ -4166,28 +4220,14 @@
               "{noPadding ? 0 : 2}": 1
             }
           },
-          "marginHorizontal": {
+          "margin": {
             "count": 10,
             "values": {
-              "4": 7,
-              "5": 3
-            }
-          },
-          "margin": {
-            "count": 9,
-            "values": {
               "0": 2,
-              "2": 2,
+              "2": 3,
               "4": 2,
               "{isTransactionsRedesign ? null : 4}": 2,
               "\"auto\"": 1
-            }
-          },
-          "paddingVertical": {
-            "count": 8,
-            "values": {
-              "1": 2,
-              "3": 6
             }
           },
           "role": {
@@ -4299,12 +4339,10 @@
               "auto": 1
             }
           },
-          "paddingInlineStart": {
-            "count": 3,
+          "dangerouslySetInnerHTML": {
+            "count": 2,
             "values": {
-              "1": 1,
-              "4": 1,
-              "8": 1
+              "{{ // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860...}": 2
             }
           },
           "onKeyPress": {
@@ -4312,12 +4350,6 @@
             "values": {
               "{(e: React.KeyboardEvent) => { if (e.key === 'Enter' || e.key === ' ') { handl...}": 1,
               "{(event) => { if (event.key === 'Enter') { onClick(); } }}": 1
-            }
-          },
-          "dangerouslySetInnerHTML": {
-            "count": 2,
-            "values": {
-              "{{ // TODO: Fix in https://github.com/MetaMask/metamask-extension/issues/31860...}": 2
             }
           },
           "FlexDirection": {
@@ -4338,6 +4370,13 @@
             "values": {
               "{(e: React.SyntheticEvent<HTMLImageElement>) => { // Keeping failed-src in DOM...}": 1,
               "{(e: React.SyntheticEvent<HTMLImageElement>) => { const target = e.target as H...}": 1
+            }
+          },
+          "paddingInlineStart": {
+            "count": 2,
+            "values": {
+              "4": 1,
+              "8": 1
             }
           },
           "paddingInlineEnd": {
@@ -4459,74 +4498,72 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "Box": 736
+        "Box": 729
       }
     },
     "mobile": {
-      "filesScanned": 6702,
+      "filesScanned": 6785,
       "targetComponent": "Box",
       "mmds": {
-        "totalInstances": 2477,
-        "filesCount": 638,
+        "totalInstances": 2556,
+        "filesCount": 652,
         "props": {
           "twClassName": {
-            "count": 1974,
+            "count": 2029,
             "values": {
-              "\"flex-1\"": 167,
-              "\"gap-1\"": 50,
-              "\"gap-2\"": 43,
-              "\"w-full\"": 42,
-              "\"px-4\"": 39,
-              "\"gap-3\"": 39,
-              "\"p-4\"": 22,
+              "\"flex-1\"": 174,
+              "\"gap-1\"": 51,
+              "\"px-4\"": 45,
+              "\"gap-2\"": 45,
+              "\"w-full\"": 44,
+              "\"gap-3\"": 38,
+              "\"p-4\"": 23,
+              "\"flex-1 bg-default\"": 21,
               "\"gap-4\"": 20,
-              "\"flex-1 bg-default\"": 19,
               "\"mb-4\"": 18,
-              "\"flex-1 px-4\"": 16,
+              "\"flex-1 px-4\"": 17,
               "\"px-4 pb-4\"": 15,
               "\"px-4 py-3\"": 15,
               "\"flex-1 min-w-0\"": 13,
-              "\"py-3\"": 12,
-              "\"my-1 border-b border-border-muted\"": 12,
+              "\"my-1 border-b border-border-muted\"": 13,
+              "\"gap-6\"": 12,
+              "\"px-4 py-2\"": 11,
+              "\"py-3\"": 11,
               "\"py-4\"": 11,
-              "\"px-4 py-4\"": 9,
               "\"h-px bg-border-muted\"": 9,
               "\"items-end\"": 9,
-              "\"px-4 py-2\"": 9,
-              "\"gap-6\"": 9,
-              "\"p-4 mb-2\"": 9,
               "\"min-w-0 flex-1\"": 8,
               "\"px-4 pb-3\"": 8,
               "\"mt-2\"": 8,
+              "\"px-4 py-4\"": 8,
               "\"mb-6\"": 8,
               "\"p-4 items-center\"": 8,
+              "\"py-2\"": 8,
+              "\"pt-3\"": 8,
               "\"w-10\"": 8,
               "\"flex-row items-center gap-1\"": 8,
               "\"px-4 pt-4\"": 8,
               "\"bg-muted rounded-xl p-4 mt-2 gap-2\"": 8,
               "\"pb-4\"": 7,
               "\"mb-2\"": 7,
-              "\"py-2\"": 7,
               "\"w-full flex-1\"": 7,
+              "\"flex-1 gap-2\"": 7,
+              "\"p-4 mb-2\"": 7,
+              "\"px-4 pt-2\"": 6,
               "\"mt-3\"": 6,
               "\"px-4 pb-6\"": 6,
               "\"mt-4\"": 6,
               "\"pr-3\"": 6,
               "\"h-px bg-border-muted my-5\"": 6,
-              "\"pt-3\"": 6,
               "\"flex-1 gap-1\"": 6,
               "\"w-full gap-2\"": 6,
-              "\"flex-1 gap-2\"": 6,
               "\"mt-4 border-b border-border-muted\"": 6,
               "\"gap-2 mt-2\"": 6,
               "\"mt-6\"": 5,
-              "\"px-4 pt-2\"": 5,
               "\"px-2 py-2\"": 5,
               "\"py-1\"": 5,
-              "\"flex-row gap-2\"": 5,
               "\"ml-3\"": 5,
               "\"gap-2.5\"": 5,
-              "\"border-t border-muted\"": 4,
               "\"w-full gap-3\"": 4,
               "\"flex-row items-center p-4\"": 4,
               "\"flex-row items-center gap-2 shrink min-w-0\"": 4,
@@ -4536,10 +4573,10 @@
               "\"px-4 py-3 gap-3\"": 4,
               "\"px-5 py-2\"": 4,
               "\"w-full h-full bg-muted\"": 4,
-              "\"flex-1 justify-center items-center\"": 4,
+              "\"flex-1 justify-center items-center p-8\"": 4,
               "\"pb-3\"": 4,
-              "\"my-2 items-center justify-center rounded-xl bg-muted py-8 px-4\"": 4,
               "\"px-4 pt-4 gap-4\"": 4,
+              "\"bg-muted rounded-xl p-4 gap-2\"": 4,
               "\"flex-1 gap-4\"": 4,
               "\"gap-4 flex-col px-4\"": 4,
               "\"gap-3 px-4\"": 4,
@@ -4556,22 +4593,25 @@
               "\"mx-4 mt-2\"": 3,
               "\"flex-col\"": 3,
               "\"flex flex-1 items-center justify-center\"": 3,
-              "\"pt-2 pb-4\"": 3,
               "\"flex-1 items-center justify-center\"": 3,
               "\"mt-1\"": 3,
               "\"bg-default\"": 3,
-              "\"px-4 py-6\"": 3,
+              "\"gap-0.5\"": 3,
               "\"px-4 py-3 gap-4\"": 3,
               "\"px-4 pt-2 pb-4\"": 3,
               "\"gap-3 mt-4\"": 3,
               "\"w-10 h-10 rounded-lg bg-muted overflow-hidden\"": 3,
               "\"absolute inset-0\"": 3,
-              "\"flex-row\"": 3,
-              "\"flex-1 justify-center items-center p-8\"": 3,
+              "\"border-t border-muted\"": 3,
+              "\"flex-row gap-2\"": 3,
+              "\"flex-row items-start gap-4 py-2\"": 3,
+              "\"items-end gap-2\"": 3,
+              "\"my-2 items-center justify-center rounded-xl bg-muted py-8 px-4\"": 3,
               "\"-mx-4\"": 3,
+              "\"flex-row\"": 3,
               "\"px-3 pt-4 pb-8\"": 3,
               "\"gap-2 mb-3\"": 3,
-              "\"px-4 gap-0.5 mb-2\"": 3,
+              "\"p-4 gap-3\"": 3,
               "\"flex-1 w-full\"": 3,
               "\"gap-4 w-full\"": 3,
               "\"gap-1 flex-row items-center\"": 3,
@@ -4584,10 +4624,16 @@
               "\"flex-1 min-w-0 mr-3\"": 3,
               "\"h-12 justify-center\"": 3,
               "\"justify-center items-center\"": 2,
+              "\"mb-3 gap-2\"": 2,
+              "\"flex-1 px-6\"": 2,
+              "\"px-4 py-3 border-b border-muted\"": 2,
+              "\"flex-1 mr-3\"": 2,
+              "\"rounded-[10px] px-3 py-2 items-center\"": 2,
               "\"flex-1 pr-6\"": 2,
               "\"border-t border-muted px-4 pb-4 pt-3\"": 2,
               "\"min-w-0 flex-1 gap-0.5\"": 2,
               "\"pt-2 pb-4 pl-4\"": 2,
+              "\"px-4 pb-2\"": 2,
               "\"pt-2\"": 2,
               "\"w-full mt-4\"": 2,
               "\"flex-row items-center gap-2\"": 2,
@@ -4602,6 +4648,7 @@
               "\"flex flex-col items-center justify-center gap-2\"": 2,
               "\"w-full mt-2\"": 2,
               "\"px-4 py-2 items-start\"": 2,
+              "\"pt-2 pb-4\"": 2,
               "\"gap-4 flex-1\"": 2,
               "\"flex-1 items-stretch gap-4 mb-6\"": 2,
               "\"flex flex-row gap-3\"": 2,
@@ -4609,6 +4656,7 @@
               "\"px-5\"": 2,
               "\"px-4 items-center\"": 2,
               "\"h-10 w-10 rounded-full bg-muted mr-4 items-center justify-center\"": 2,
+              "\"h-10 w-10\"": 2,
               "\"px-4 pt-4 pb-3\"": 2,
               "\"pr-1\"": 2,
               "\"bg-background-muted rounded-xl\"": 2,
@@ -4619,12 +4667,13 @@
               "\"self-center\"": 2,
               "\"px-4 pt-3 pb-1\"": 2,
               "\"justify-between\"": 2,
-              "\"py-3 gap-3\"": 2,
+              "\"flex-row gap-2 items-center\"": 2,
               "\"pt-3 pb-9\"": 2,
               "\"pt-4 mx-4 flex gap-4\"": 2,
               "\"ml-1\"": 2,
               "\"gap-1.5\"": 2,
               "\"bg-section rounded-xl p-4 h-full justify-between\"": 2,
+              "\"mb-3\"": 2,
               "\"mb-1\"": 2,
               "\"h-10 w-10 items-center justify-center rounded-full bg-muted mr-3 overflow-hidden mt-1\"": 2,
               "\"items-end ml-3\"": 2,
@@ -4634,6 +4683,7 @@
               "\"flex-1 mx-4\"": 2,
               "\"flex-row items-start py-4\"": 2,
               "\"flex-1 pr-4 gap-1\"": 2,
+              "\"w-full justify-center items-center\"": 2,
               "{`h-[${CHART_HEIGHT}px] justify-center items-center`}": 2,
               "\"items-start py-2 gap-4 w-full\"": 2,
               "\"pt-1\"": 2,
@@ -4641,8 +4691,6 @@
               "\"w-10 h-10 self-start mt-1\"": 2,
               "\"h-px bg-default\"": 2,
               "\"gap-3 py-4\"": 2,
-              "\"flex-row items-start gap-4 py-2\"": 2,
-              "\"items-end gap-2\"": 2,
               "\"flex-row items-center justify-between px-4 py-3\"": 2,
               "\"gap-3 flex-1 min-w-0\"": 2,
               "\"w-full gap-4 p-4\"": 2,
@@ -4651,6 +4699,7 @@
               "\"text-center mt-2\"": 2,
               "\"pt-4 px-4 pb-6 flex-col gap-4\"": 2,
               "\"flex-row justify-between items-center\"": 2,
+              "\"absolute inset-0 z-50\"": 2,
               "\"rounded-2xl overflow-hidden\"": 2,
               "\"w-full border-t border-muted\"": 2,
               "\"px-2 py-0.5 rounded bg-muted\"": 2,
@@ -4660,10 +4709,11 @@
               "\"px-6 pb-6\"": 2,
               "\"flex-1 min-h-0\"": 2,
               "\"bg-muted rounded h-[18px] w-24\"": 2,
-              "\"p-4 gap-3\"": 2,
               "\"p-4 gap-4\"": 2,
               "\"px-4 gap-2 mb-1\"": 2,
-              "\"bg-muted rounded-xl p-4 gap-2\"": 2,
+              "\"px-4 gap-0.5 mb-2\"": 2,
+              "\"gap-3 py-1\"": 2,
+              "\"pt-3 pb-1\"": 2,
               "\"gap-2 px-4\"": 2,
               "\"gap-4 px-4\"": 2,
               "\"px-4 gap-4\"": 2,
@@ -4676,6 +4726,8 @@
               "\"w-full mb-2\"": 2,
               "\"flex-col items-center justify-center w-full\"": 2,
               "\"flex-1 flex-col\"": 2,
+              "\"flex-1 items-center justify-center px-4 py-4 mt-24\"": 2,
+              "\"gap-[18px] px-4 pb-[18px]\"": 2,
               "\"gap-y-1\"": 2,
               "\"flex-row items-center flex-1\"": 2,
               "\"pt-[2px]\"": 2,
@@ -4685,7 +4737,6 @@
               "\"flex-1 h-16\"": 2,
               "\"flex-1 ml-5 justify-center\"": 2,
               "\"pt-4 px-4\"": 2,
-              "\"px-4 mt-3\"": 2,
               "\"flex-row items-center h-14 px-2\"": 2,
               "\"absolute inset-0 items-center justify-center\"": 2,
               "\"p-4 border-b border-border-muted\"": 2,
@@ -4694,7 +4745,9 @@
               "\"min-w-0 flex-1 pl-4\"": 2,
               "\"relative gap-2\"": 2,
               "\"px-4 py-4 bg-default\"": 2,
+              "\"flex-1 justify-center items-center\"": 2,
               "\"mx-2 flex-1\"": 2,
+              "\"px-4 py-6\"": 2,
               "\"mt-6 mb-4\"": 2,
               "\"mx-4 rounded-xl overflow-hidden border border-border-muted\"": 2,
               "\"mx-4 mt-4 p-4 gap-4 rounded-xl bg-background-muted\"": 2,
@@ -4710,7 +4763,6 @@
               "\"p-5 pb-0\"": 2,
               "\"px-4 pt-6 pb-4\"": 2,
               "\"pt-2 pb-3\"": 2,
-              "\"rounded-full bg-muted px-3 py-1\"": 2,
               "\"flex-col pt-9 pb-24 justify-center items-center gap-3 flex-1\"": 2,
               "\"rounded-2xl bg-background-muted overflow-hidden flex-1 mt-4\"": 2,
               "\"w-full px-4 pb-2\"": 2,
@@ -4721,6 +4773,9 @@
               "\"relative items-center justify-center\"": 1,
               "\"items-center justify-center rounded-full bg-muted\"": 1,
               "\"w-full bg-default p-4 mt-4 mb-4\"": 1,
+              "\"flex-1 justify-center px-4 pb-4\"": 1,
+              "\"mb-3 px-2\"": 1,
+              "\"mx-4 border border-muted rounded-xl p-1\"": 1,
               "{`rounded-2xl ${props?.twClassName ?? ''}`}": 1,
               "\"flex-col justify-center items-center gap-3 flex-1\"": 1,
               "\"items-center mb-4\"": 1,
@@ -4730,7 +4785,8 @@
               "\"gap-2 px-4 py-2\"": 1,
               "\"min-w-0\"": 1,
               "\"flex-1 px-4 py-4\"": 1,
-              "\"pt-4 pl-4\"": 1,
+              "\"py-4 pl-4\"": 1,
+              "\"border-t border-muted mx-4\"": 1,
               "\"border-t border-muted pt-2\"": 1,
               "\"mt-4 px-4 pb-4\"": 1,
               "\"gap-2 mb-3 w-full\"": 1,
@@ -4769,7 +4825,6 @@
               "\"gap-3 mt-6\"": 1,
               "{` h-[90px] rounded-lg ${isSelected ? 'bg-text-default' : 'bg-background-muted...}": 1,
               "\"p-4 rounded-2xl bg-background-muted gap-3\"": 1,
-              "\"px-4 pb-2\"": 1,
               "{isCurrentPriority ? 'border-l-4 border-primary-default bg-background-muted' : ''}": 1,
               "\"py-2 px-4 flex flex-col gap-3\"": 1,
               "\"w-full flex-row justify-end -mt-2\"": 1,
@@ -4802,10 +4857,9 @@
               "\"rounded-xl\"": 1,
               "\"mt-1 rounded-lg bg-error-muted px-3 py-2 gap-2\"": 1,
               "\"absolute left-0 right-0 items-center justify-center\"": 1,
+              "\"h-32\"": 1,
               "\"mt-8 w-full\"": 1,
-              "\"flex-1 px-6\"": 1,
               "\"mt-6 w-full\"": 1,
-              "\"h-10 w-10\"": 1,
               "\"w-full overflow-hidden rounded-lg bg-muted\"": 1,
               "\"w-8 self-stretch\"": 1,
               "\"h-8 w-8 rounded-full\"": 1,
@@ -4832,21 +4886,21 @@
               "\"px-4 pt-6 pb-2 gap-2\"": 1,
               "\"shrink-0 gap-0.5\"": 1,
               "\"px-4 my-3\"": 1,
-              "\"py-8\"": 1,
               "\"flex-1 gap-1 pr-3\"": 1,
-              "\"mb-2 gap-2\"": 1,
               "\"bg-muted rounded-xl p-4 gap-4\"": 1,
               "\"bg-muted rounded-xl size-[78px] justify-center\"": 1,
               "\"flex-wrap gap-2 mt-4\"": 1,
+              "\"px-4 pt-6 pb-3\"": 1,
               "\"mt-5 gap-4\"": 1,
               "\"px-4 pb-2 gap-4 items-center\"": 1,
               "\"gap-2 items-center\"": 1,
               "\"self-start gap-1 rounded bg-muted px-1.5\"": 1,
               "\"gap-2 flex-1 justify-center\"": 1,
+              "\"pt-3 gap-3\"": 1,
               "\"gap-3 flex-1\"": 1,
               "\"gap-1 flex-1\"": 1,
-              "\"pb-4 mx-4 mt-3\"": 1,
-              "\"rounded bg-muted px-1.5\"": 1,
+              "\"pb-7 mx-4 mt-3\"": 1,
+              "\"rounded bg-primary-muted px-1.5\"": 1,
               "\"shrink-0 pt-1\"": 1,
               "\"mt-3 mb-3 gap-3\"": 1,
               "\"py-3 border-b border-muted\"": 1,
@@ -4872,14 +4926,12 @@
               "\"w-full border-b border-muted\"": 1,
               "\"gap-3 px-4 pt-1 pb-3\"": 1,
               "\"flex-1 gap-1.5\"": 1,
-              "\"px-4 gap-2 mb-2\"": 1,
+              "\"px-4 gap-2 mb-3\"": 1,
               "\"flex-1 items-center justify-center bg-error-muted\"": 1,
               "\"bg-default rounded-lg\"": 1,
               "\"overflow-hidden rounded-lg\"": 1,
-              "\"mb-3\"": 1,
               "\"w-6 h-6 rounded-lg bg-muted overflow-hidden\"": 1,
               "\"mt-1 gap-1\"": 1,
-              "\"mb-3 gap-2\"": 1,
               "\"flex-1 items-end\"": 1,
               "\"mt-3 gap-2\"": 1,
               "\"flex-row justify-center items-center gap-2 mt-3\"": 1,
@@ -4894,10 +4946,10 @@
               "\"px-6 pb-8\"": 1,
               "\"px-6\"": 1,
               "\"px-4 gap-3\"": 1,
-              "\"px-4 py-3 border-b border-muted\"": 1,
               "{containerTwClassName}": 1,
               "{explicitHeight ? undefined : 'flex-1'}": 1,
-              "\"px-4 pt-5 gap-4\"": 1,
+              "\"px-8 gap-2\"": 1,
+              "\"px-4 pt-3 gap-4\"": 1,
               "\"px-4 pt-1\"": 1,
               "\"px-4 pb-8\"": 1,
               "\"h-[104px] w-full\"": 1,
@@ -4962,8 +5014,6 @@
               "\"flex-col gap-2\"": 1,
               "\"h-px bg-border-muted my-2\"": 1,
               "\"flex-row justify-between items-center gap-2\"": 1,
-              "\"items-center gap-[2px]\"": 1,
-              "\"relative h-6 w-6 items-center justify-center\"": 1,
               "\"w-full p-4 mb-4 gap-3 bg-background-muted rounded-xl justify-between\"": 1,
               "\"flex-row items-start gap-4\"": 1,
               "\"items-end justify-end ml-auto shrink-0\"": 1,
@@ -4995,8 +5045,10 @@
               "{`rounded-full py-2 pl-[9px] pr-[16px] mt-2 ${!canEdit ? '' : 'bg-muted'} mx-a...}": 1,
               "\"gap-2 py-1\"": 1,
               "\"flex-1 relative overflow-hidden\"": 1,
-              "\"absolute inset-0 z-50\"": 1,
+              "\"pt-2 pb-2\"": 1,
               "\"my-2\"": 1,
+              "\"items-center gap-[2px]\"": 1,
+              "\"relative h-6 w-6 items-center justify-center\"": 1,
               "\"px-3 gap-4\"": 1,
               "\"px-3\"": 1,
               "\"px-3 py-8 items-center justify-center gap-2\"": 1,
@@ -5061,7 +5113,10 @@
               "\"px-4 pt-4 gap-3\"": 1,
               "\"px-4 pt-8\"": 1,
               "\"border border-border-default rounded-full px-3 py-1 gap-1\"": 1,
+              "\"bg-muted rounded px-1.5 py-0\"": 1,
+              "\"my-4 border-b border-border-muted\"": 1,
               "\"py-4 flex-1 gap-4\"": 1,
+              "\"items-center justify-between rounded-2xl border px-4 py-3\"": 1,
               "\"mx-4 rounded-2xl overflow-hidden bg-section\"": 1,
               "\"flex-row items-start\"": 1,
               "\"w-[78px] h-[78px] rounded-lg bg-muted overflow-hidden items-center justify-center\"": 1,
@@ -5070,6 +5125,7 @@
               "\"flex flex-row gap-1 items-center justify-center\"": 1,
               "\"w-6 h-6 rounded-full\"": 1,
               "{`py-2 px-4 ${rowBg}`}": 1,
+              "\"gap-2 mt-2 mb-1\"": 1,
               "\"flex-1 gap-0.5\"": 1,
               "\"bg-success-muted rounded-[6px] px-1.5\"": 1,
               "\"h-full rounded-full bg-success-default\"": 1,
@@ -5083,7 +5139,6 @@
               "\"w-full py-3\"": 1,
               "\"bg-muted rounded-full items-center justify-center size-10\"": 1,
               "\"rounded-full px-4 py-2 gap-1\"": 1,
-              "\"gap-0.5\"": 1,
               "\"bg-muted rounded-[6px] px-1.5\"": 1,
               "\"bg-warning-muted rounded-[6px] px-1.5\"": 1,
               "\"gap-2 mb-2 px-4\"": 1,
@@ -5091,7 +5146,6 @@
               "\"flex-1 min-w-0 pr-2\"": 1,
               "\"mt-4 px-4 w-full flex-row items-center\"": 1,
               "\"h-10 w-10 rounded-full bg-muted\"": 1,
-              "\"gap-3 py-1\"": 1,
               "\"flex-1 px-6 pt-3\"": 1,
               "\"flex-1 flex-shrink\"": 1,
               "\"border-b border-border-muted my-2\"": 1,
@@ -5114,6 +5168,7 @@
               "{isLast ? 'mb-12' : undefined}": 1,
               "\"flex-col gap-1\"": 1,
               "\"w-full min-h-12 bg-muted rounded-lg px-4 py-1 border border-solid border-muted\"": 1,
+              "\"ml-2\"": 1,
               "\"gap-6 mt-2\"": 1,
               "{`flex-row items-center ${compact ? 'py-2' : 'py-3 px-4'} gap-4 ${ isLast || c...}": 1,
               "{`h-10 w-10 rounded-full bg-muted items-center justify-center`}": 1,
@@ -5130,6 +5185,7 @@
               "\"h-[24px] items-center\"": 1,
               "\"rounded-[4px] bg-default\"": 1,
               "\"filter blur-sm max-w-min w-min flex flex-row rounded-sm whitespace-nowrap px-2 py-0 gap-1 bg-warning-default bg-opacity-10 items-center\"": 1,
+              "\"py-3 gap-3\"": 1,
               "\"mb-6 gap-2\"": 1,
               "\"gap-4 flex-col py-4 px-4\"": 1,
               "\"px-4 gap-2 pt-2\"": 1,
@@ -5155,8 +5211,6 @@
               "\"absolute inset-0 justify-center items-center\"": 1,
               "\"bg-section rounded-2xl p-4\"": 1,
               "\"absolute\"": 1,
-              "\"flex-1 items-center justify-center px-4 py-4 mt-24\"": 1,
-              "\"gap-[18px] px-4 pb-[18px]\"": 1,
               "{isLast ? undefined : 'border-background-default border-b-4'}": 1,
               "\"gap-2 px-4 pb-5\"": 1,
               "{`flex-1${!isRiveReady ? ' opacity-0' : ''}`}": 1,
@@ -5244,6 +5298,7 @@
               "\"mt-4 mb-3\"": 1,
               "\"mt-3 gap-1\"": 1,
               "\"flex-wrap mt-4 gap-2\"": 1,
+              "\"px-4 mt-3\"": 1,
               "\"flex-1 bg-background-default pt-[30px]\"": 1,
               "\"bg-background-default\"": 1,
               "\"mt-2 bg-section rounded-lg p-4\"": 1,
@@ -5341,7 +5396,6 @@
               "{`${horizontalPaddingClassName} py-6`}": 1,
               "\"ml-4\"": 1,
               "{`px-4 py-4${disabled ? ' opacity-50' : ''}`}": 1,
-              "\"flex-1 mr-3\"": 1,
               "{`${withHorizontalPadding ? 'px-4' : ''} pt-4 pb-2`}": 1,
               "\"bg-error-muted rounded-2xl pl-6 pr-4 py-3\"": 1,
               "\"px-4 pt-3 pb-4\"": 1,
@@ -5350,11 +5404,12 @@
               "\"pb-5\"": 1,
               "\"mt-2 items-center\"": 1,
               "{`px-4 py-2 ${isSelected ? 'bg-muted' : ''}`}": 1,
-              "{isHighPriceImpact ? 'rounded-full bg-error-muted px-3 py-1' : 'rounded-full b...}": 1,
+              "{isHighPriceImpact ? 'rounded-md bg-error-muted px-3 py-1' : 'rounded-md bg-mu...}": 1,
               "\"h-14 px-2\"": 1,
+              "\"rounded-full bg-muted px-3 py-1\"": 1,
               "\"border border-muted rounded-xl p-1\"": 1,
-              "{`rounded-[10px] px-3 py-1 ${tradeMode === 'buy' ? 'bg-muted' : ''}`}": 1,
-              "{`rounded-[10px] px-3 py-1 ${tradeMode === 'sell' ? 'bg-muted' : ''} ${!hasSel...}": 1,
+              "\"rounded-lg px-4 py-1\"": 1,
+              "{`rounded-lg px-4 py-1 ${!hasSellableBalance ? 'opacity-40' : ''}`}": 1,
               "{`flex-1 items-center justify-center px-2 py-1 rounded ${ isActive ? 'bg-muted...}": 1,
               "\"mx-4 my-3\"": 1,
               "\"max-w-full\"": 1,
@@ -5427,16 +5482,16 @@
             }
           },
           "flexDirection": {
-            "count": 628,
+            "count": 645,
             "values": {
-              "{BoxFlexDirection.Row}": 530,
+              "{BoxFlexDirection.Row}": 547,
               "{BoxFlexDirection.Column}": 98
             }
           },
           "alignItems": {
-            "count": 592,
+            "count": 607,
             "values": {
-              "{BoxAlignItems.Center}": 522,
+              "{BoxAlignItems.Center}": 537,
               "{BoxAlignItems.Start}": 43,
               "{BoxAlignItems.End}": 20,
               "{BoxAlignItems.Stretch}": 4,
@@ -5446,16 +5501,17 @@
             }
           },
           "testID": {
-            "count": 405,
+            "count": 425,
             "values": {
               "{testID}": 65,
+              "{PerpsWatchlistSelectorsIDs.SECTION}": 3,
               "{CAMPAIGN_PRIZE_POOL_TEST_IDS.CONTAINER}": 3,
               "\"price-chart-loading\"": 2,
               "\"onboarding-step-actions\"": 2,
               "{MoneyMetaMaskCardTestIds.LINK_CONTAINER}": 2,
               "{PREDICT_PORTFOLIO_TEST_IDS.SUMMARY}": 2,
               "{ONDO_CAMPAIGN_STATS_SUMMARY_TEST_IDS.NOT_ELIGIBLE_BANNER}": 2,
-              "{PREDICT_THE_PITCH_LEADERBOARD_TEST_IDS.TOTAL_PARTICIPANTS}": 2,
+              "{PREDICT_THE_PITCH_PORTFOLIO_TEST_IDS.LOADING}": 2,
               "\"progress-indicator-container\"": 2,
               "{REWARDS_VIEW_SELECTORS.TIER_REWARD_ICON}": 2,
               "\"rewards-settings-bulk-link-progress\"": 2,
@@ -5470,6 +5526,10 @@
               "{hasInsufficientData ? 'price-chart-insufficient-data' : 'price-chart-no-data'}": 1,
               "\"resource-ring-container\"": 1,
               "\"resource-ring-icon-container\"": 1,
+              "{CreatePriceAlertTestIds.TARGET_PRICE_INPUT}": 1,
+              "{CreatePriceAlertTestIds.UNDER_DEVELOPMENT}": 1,
+              "{`${ManagePriceAlertsTestIds.ALERT_ITEM_PREFIX}-${item.id}`}": 1,
+              "{CreatePriceAlertTestIds.ALERT_TYPE_TOGGLE}": 1,
               "\"basic-functionality-empty-state\"": 1,
               "\"basic-functionality-empty-state-icon-container\"": 1,
               "{BRAZE_BANNER_TEST_IDS.CONTAINER}": 1,
@@ -5482,6 +5542,7 @@
               "{BatchSellFinalReviewModalSelectorsIDs.NETWORK_FEE_ROW}": 1,
               "{`${BatchSellQuoteDetailsModalSelectorsIDs.QUOTE_ROW}-${rowKey}`}": 1,
               "{BridgeTrendingTokensSectionTestIds.SECTION}": 1,
+              "{PostTradeBottomSheetTestIds.SUGGESTIONS_SECTION}": 1,
               "\"bridge-rewards-row\"": 1,
               "{BridgeViewSelectorsIDs.QUOTE_DETAILS_SKELETON}": 1,
               "\"quote-details-card-loading-row\"": 1,
@@ -5534,7 +5595,6 @@
               "{MoneyActivityListTestIds.CONTAINER}": 1,
               "{MoneyActivityLoadingTestIds.CONTAINER}": 1,
               "{MoneyBalanceCardTestIds.BALANCE_ERROR}": 1,
-              "{MoneyBalanceSummaryTestIds.BALANCE_ERROR}": 1,
               "{MoneyBalanceSummaryTestIds.CONTAINER}": 1,
               "{MoneyCondensedInfoCardsTestIds.CONTAINER}": 1,
               "{MoneyConvertStablecoinsTestIds.FEATURE_TAGS}": 1,
@@ -5568,6 +5628,7 @@
               "{PREDICT_BALANCE_TEST_IDS.SKELETON}": 1,
               "{PREDICT_BALANCE_TEST_IDS.CARD}": 1,
               "\"predict-crypto-up-down-chart-container\"": 1,
+              "\"predict-crypto-up-down-chart-connection-error\"": 1,
               "{PredictCryptoUpDownDetailsSelectorsIDs.TITLE_SECTION}": 1,
               "{PredictCryptoUpDownDetailsSelectorsIDs.PRICE_SUMMARY}": 1,
               "{PredictCryptoUpDownMarketCardSelectorsIDs.SPARKLINE}": 1,
@@ -5583,9 +5644,6 @@
               "{`${testID}${PREDICT_HOME_SKELETON_TEST_IDS.ITEM}${index}`}": 1,
               "{PredictOrderRetrySheetSelectorsIDs.CONTAINER}": 1,
               "{`${testID}${PREDICT_PICKS_FOR_CARD_TEST_IDS.SEPARATOR}`}": 1,
-              "{PREDICT_PORTFOLIO_TEST_IDS.ACTIONS}": 1,
-              "{PREDICT_PORTFOLIO_TEST_IDS.MODULE}": 1,
-              "{PREDICT_PORTFOLIO_TEST_IDS.SECONDARY_LINE}": 1,
               "{PredictPositionsEmptySelectorsIDs.ICON}": 1,
               "{PREDICT_POSITIONS_HEADER_TEST_IDS.MARKETS_WON_CARD}": 1,
               "{PredictPositionsHistoryListSelectorsIDs.CONTAINER}": 1,
@@ -5599,8 +5657,13 @@
               "{baseTestID}": 1,
               "{getPredictFeedSelector.emptyState(category)}": 1,
               "{PredictMarketListSelectorsIDs.CONTAINER}": 1,
+              "{PredictFeedViewSelectorsIDs.ERROR_STATE}": 1,
+              "{PredictFeedViewSelectorsIDs.EMPTY_STATE}": 1,
               "{PredictHomeSelectorsIDs.CONTAINER}": 1,
               "{PredictHomeSelectorsIDs.TITLE_SECTION}": 1,
+              "{PREDICT_PORTFOLIO_TEST_IDS.ACTIONS}": 1,
+              "{PredictHomeSelectorsIDs.PORTFOLIO_MODULE}": 1,
+              "{PREDICT_PORTFOLIO_TEST_IDS.SECONDARY_LINE}": 1,
               "{PredictMarketDetailsSelectorsIDs.MARKET_UNAVAILABLE}": 1,
               "{PredictMarketDetailsSelectorsIDs.TAB_BAR}": 1,
               "{PredictMarketDetailsSelectorsIDs.ABOUT_TAB_CONTENT}": 1,
@@ -5621,6 +5684,18 @@
               "{PERPS_CAMPAIGN_STATS_VIEW_TEST_IDS.QUALIFIED_CARD}": 1,
               "{PERPS_CAMPAIGN_STATS_VIEW_TEST_IDS.QUALIFY_FOR_RANK_CARD}": 1,
               "{PREDICT_THE_PITCH_CAMPAIGN_DETAILS_VIEW_TEST_IDS.HOW_IT_WORKS}": 1,
+              "{PREDICT_THE_PITCH_LEADERBOARD_TEST_IDS.TOTAL_PARTICIPANTS}": 1,
+              "{testIds.POSITIONS}": 1,
+              "{testIds.OPEN_SECTION}": 1,
+              "{testIds.DIVIDER}": 1,
+              "{testIds.CLOSED_SECTION}": 1,
+              "{PREDICT_THE_PITCH_CAMPAIGN_STATS_VIEW_TEST_IDS.QUALIFIED_CARD}": 1,
+              "{PREDICT_THE_PITCH_CAMPAIGN_STATS_VIEW_TEST_IDS.QUALIFY_FOR_RANK_CARD}": 1,
+              "{REWARDS_VIP_REFEREE_VIEW_TEST_IDS.SKELETON}": 1,
+              "{REWARDS_VIP_REFEREE_VIEW_TEST_IDS.REFERRED_BY_CARD}": 1,
+              "{REWARDS_VIP_REFEREE_VIEW_TEST_IDS.POINTS}": 1,
+              "{REWARDS_VIP_REFEREE_VIEW_TEST_IDS.SWAPS_VOLUME}": 1,
+              "{REWARDS_VIP_REFEREE_VIEW_TEST_IDS.PERPS_VOLUME}": 1,
               "{REWARDS_VIP_TIERS_VIEW_TEST_IDS.SKELETON}": 1,
               "{REWARDS_VIP_TIERS_VIEW_TEST_IDS.LIST}": 1,
               "{REWARDS_VIP_VIEW_TEST_IDS.SKELETON}": 1,
@@ -5653,13 +5728,11 @@
               "{PERPS_CAMPAIGN_STATS_SUMMARY_TEST_IDS.CONTAINER}": 1,
               "{PERPS_CAMPAIGN_STATS_SUMMARY_TEST_IDS.QUALIFIED_CARD}": 1,
               "{PERPS_CAMPAIGN_STATS_SUMMARY_TEST_IDS.QUALIFY_FOR_RANK_CARD}": 1,
-              "{PERPS_CAMPAIGN_ENDED_STATS_TEST_IDS.CONTAINER}": 1,
               "{PERPS_CAMPAIGN_LEADERBOARD_TEST_IDS.CONTAINER}": 1,
               "{PERPS_CAMPAIGN_LEADERBOARD_TEST_IDS.LIST}": 1,
               "{PERPS_CAMPAIGN_LEADERBOARD_TEST_IDS.POWERED_BY}": 1,
               "{PREDICT_THE_PITCH_LEADERBOARD_TEST_IDS.CONTAINER}": 1,
               "{PREDICT_THE_PITCH_LEADERBOARD_TEST_IDS.LIST}": 1,
-              "{PREDICT_THE_PITCH_PORTFOLIO_TEST_IDS.LOADING}": 1,
               "{PREDICT_THE_PITCH_PORTFOLIO_TEST_IDS.CONTAINER}": 1,
               "{PREDICT_THE_PITCH_STATS_SUMMARY_TEST_IDS.CONTAINER}": 1,
               "{REWARDS_VIEW_SELECTORS.EARN_REWARDS_PREVIEW}": 1,
@@ -5774,10 +5847,10 @@
             }
           },
           "justifyContent": {
-            "count": 272,
+            "count": 281,
             "values": {
-              "{BoxJustifyContent.Between}": 125,
-              "{BoxJustifyContent.Center}": 105,
+              "{BoxJustifyContent.Between}": 129,
+              "{BoxJustifyContent.Center}": 110,
               "{BoxJustifyContent.Start}": 21,
               "{BoxJustifyContent.End}": 15,
               "{BoxJustifyContent.SpaceBetween}": 2,
@@ -5787,31 +5860,15 @@
               "{BoxJustifyContent.Around}": 1
             }
           },
-          "gap": {
-            "count": 217,
-            "values": {
-              "0": 2,
-              "1": 57,
-              "2": 58,
-              "3": 48,
-              "4": 41,
-              "5": 1,
-              "6": 2,
-              "8": 3,
-              "{chip.imageSource ? 2 : undefined}": 1,
-              "{gap}": 1,
-              "{isMedium ? 4 : 6}": 1,
-              "{isMedium ? 6 : 8}": 1,
-              "{isMedium ? 3 : 4}": 1
-            }
-          },
           "style": {
-            "count": 204,
+            "count": 213,
             "values": {
-              "{styles.container}": 10,
+              "{styles.container}": 11,
               "{styles.banner}": 4,
               "{tw.style('flex-1 flex-shrink mr-2 -mt-1')}": 3,
               "{styles.textContainer}": 3,
+              "{sectionStyle}": 3,
+              "{contentContainerStyle}": 3,
               "{{ paddingTop: currentPaddingTop }}": 3,
               "{styles.content}": 2,
               "{{ aspectRatio: 851 / 540 }}": 2,
@@ -5822,7 +5879,7 @@
               "{styles.periodOptionsGrid}": 2,
               "{styles.titleRow}": 2,
               "{styles.searchBarContainer}": 2,
-              "{tw.style('mb-6 border-t border-muted')}": 2,
+              "{style}": 2,
               "{styles.ohlcRow}": 2,
               "{{ paddingTop: insets.top + 12 }}": 2,
               "{{ backgroundColor: colors.background.default }}": 2,
@@ -5886,18 +5943,17 @@
               "{styles.contentRow}": 1,
               "{styles.contentContainer}": 1,
               "{styles.progress}": 1,
-              "{style}": 1,
               "{styles.durationButtonsContainer}": 1,
               "{{ height }}": 1,
               "{{ height, width: '100%', minHeight: height }}": 1,
               "{styles.ohlcLegend}": 1,
               "{tw.style( { width: cardWidth, height: CARD_HEIGHT }, idx < markets.length - 1...}": 1,
+              "{{ height: chartHeight }}": 1,
               "{tw.style({ backgroundColor: accentColor })}": 1,
               "{tw.style( { top: targetLabelTop }, { backgroundColor: colors.background.secti...}": 1,
               "{tw.style( { top: targetLabelTop + 30 }, { backgroundColor: colors.background....}": 1,
               "{{ backgroundColor: seriesItem.color, }}": 1,
               "{{ minHeight: loadingContainerMinHeight }}": 1,
-              "{{ minHeight: windowHeight - stickyHeaderY }}": 1,
               "{{ paddingBottom: Math.max(insets.bottom, 16) }}": 1,
               "{tw.style({ width: CARD_WIDTH, height: CARD_HEIGHT })}": 1,
               "{{ width: size, height: size / 2 }}": 1,
@@ -5910,6 +5966,7 @@
               "{tw.style('absolute inset-0 z-20', { paddingTop: insets.top, backgroundColor: ...}": 1,
               "{containerStyle as any}": 1,
               "{tw.style('overflow-hidden rounded-lg', { width: size, height: size, })}": 1,
+              "{topInset > 0 ? { paddingTop: topInset } : undefined}": 1,
               "{tw.style('z-20', { backgroundColor: colors.background.default, })}": 1,
               "{tw.style( { width: cardWidth, minHeight: CARD_HEIGHT }, !isLastItem && { marg...}": 1,
               "{{ paddingTop: insetsTop + 12 }}": 1,
@@ -5922,6 +5979,7 @@
               "{{ paddingBottom: safeAreaInsets.bottom }}": 1,
               "{tw.style(!showSkip && 'opacity-0')}": 1,
               "{{ height: heroHeight }}": 1,
+              "{referredByCardStyle}": 1,
               "{{ width: progressPercent }}": 1,
               "{CELL_STYLE}": 1,
               "{tw.style('self-start')}": 1,
@@ -5965,6 +6023,7 @@
               "{{ backgroundColor: colors.text.default }}": 1,
               "{styles.setting}": 1,
               "{lockedHeight !== null ? { height: lockedHeight } : undefined}": 1,
+              "{styles.row}": 1,
               "{{ width: foxSize, height: foxSize, padding: foxPadding, }}": 1,
               "{tw.style( 'flex-row items-center rounded-xl h-12 border px-4 bg-muted', isDis...}": 1,
               "{tw.style('flex-row justify-center px-4 pt-1', { paddingBottom: insets.bottom, })}": 1,
@@ -5974,10 +6033,27 @@
               "{index === activeIndex ? tw.style('w-6 h-2 rounded-full bg-icon-default') : tw...}": 1
             }
           },
-          "key": {
-            "count": 55,
+          "gap": {
+            "count": 210,
             "values": {
-              "{index}": 8,
+              "0": 2,
+              "1": 56,
+              "2": 59,
+              "3": 43,
+              "4": 42,
+              "5": 1,
+              "6": 2,
+              "{chip.imageSource ? 2 : undefined}": 1,
+              "{gap}": 1,
+              "{isMedium ? 4 : 6}": 1,
+              "{isMedium ? 6 : 8}": 1,
+              "{isMedium ? 3 : 4}": 1
+            }
+          },
+          "key": {
+            "count": 58,
+            "values": {
+              "{index}": 9,
               "{key}": 4,
               "{tag.label}": 3,
               "{i}": 2,
@@ -5998,6 +6074,8 @@
               "{`${outcome.id}`}": 1,
               "{`${button.label}-${button.variant}`}": 1,
               "{market.id}": 1,
+              "{`open-header-${item.dateKey}`}": 1,
+              "{`closed-header-${item.dateKey}`}": 1,
               "{`step-${stepIndex}`}": 1,
               "{`${key}-li-${i}`}": 1,
               "{`rewards-settings-skeleton-${index}`}": 1,
@@ -6019,14 +6097,23 @@
             }
           },
           "paddingHorizontal": {
-            "count": 43,
+            "count": 47,
             "values": {
               "2": 4,
-              "4": 32,
+              "4": 36,
               "5": 1,
               "6": 2,
               "10": 2,
               "{paddingHorizontal}": 2
+            }
+          },
+          "paddingBottom": {
+            "count": 34,
+            "values": {
+              "2": 1,
+              "3": 20,
+              "4": 11,
+              "6": 2
             }
           },
           "backgroundColor": {
@@ -6044,39 +6131,28 @@
             }
           },
           "paddingTop": {
-            "count": 27,
+            "count": 23,
             "values": {
               "1": 3,
               "2": 10,
               "3": 6,
               "4": 3,
-              "6": 2,
-              "8": 3
+              "8": 1
             }
           },
-          "paddingBottom": {
-            "count": 20,
+          "padding": {
+            "count": 15,
             "values": {
-              "2": 1,
-              "3": 5,
-              "4": 12,
-              "6": 2
+              "4": 15
             }
           },
           "marginBottom": {
-            "count": 14,
+            "count": 13,
             "values": {
               "2": 5,
               "4": 3,
               "5": 2,
-              "6": 1,
               "8": 3
-            }
-          },
-          "padding": {
-            "count": 13,
-            "values": {
-              "4": 13
             }
           },
           "[spread]": {
@@ -6100,8 +6176,19 @@
               "3": 4
             }
           },
-          "onLayout": {
+          "pointerEvents": {
             "count": 12,
+            "values": {
+              "\"box-none\"": 4,
+              "\"none\"": 4,
+              "{isPositionsTabActive ? 'auto' : 'none'}": 1,
+              "{isHistoryTabActive ? 'auto' : 'none'}": 1,
+              "{isOptionsAvailable ? 'auto' : 'none'}": 1,
+              "{isVisible ? 'auto' : 'none'}": 1
+            }
+          },
+          "onLayout": {
+            "count": 11,
             "values": {
               "{handleLayout}": 2,
               "{handleContainerLayout}": 1,
@@ -6109,29 +6196,17 @@
               "{(e) => setTitleSectionHeight(e.nativeEvent.layout.height)}": 1,
               "{(layoutEvent) => { const { height } = layoutEvent.nativeEvent.layout; onLayou...}": 1,
               "{explicitHeight ? undefined : (e) => setMeasuredHeight(e.nativeEvent.layout.he...}": 1,
-              "{handleStickyHeaderLayout}": 1,
               "{(e) => handlePillLayout(market.id, e.nativeEvent.layout.x)}": 1,
               "{handleTitleLayout}": 1,
               "{(e) => { setProgressTrackWidth(e.nativeEvent.layout.width); }}": 1,
               "{handleContentLayout}": 1
             }
           },
-          "pointerEvents": {
-            "count": 11,
-            "values": {
-              "\"none\"": 4,
-              "\"box-none\"": 3,
-              "{isPositionsTabActive ? 'auto' : 'none'}": 1,
-              "{isHistoryTabActive ? 'auto' : 'none'}": 1,
-              "{isOptionsAvailable ? 'auto' : 'none'}": 1,
-              "{isVisible ? 'auto' : 'none'}": 1
-            }
-          },
           "marginTop": {
-            "count": 9,
+            "count": 8,
             "values": {
               "0": 1,
-              "1": 2,
+              "1": 1,
               "2": 1,
               "4": 3,
               "{marginTop}": 2
@@ -6263,67 +6338,65 @@
         "props": {}
       },
       "overall": {
-        "totalInstances": 2477,
-        "filesCount": 638,
+        "totalInstances": 2556,
+        "filesCount": 652,
         "props": {
           "twClassName": {
-            "count": 1974,
+            "count": 2029,
             "values": {
-              "\"flex-1\"": 167,
-              "\"gap-1\"": 50,
-              "\"gap-2\"": 43,
-              "\"w-full\"": 42,
-              "\"px-4\"": 39,
-              "\"gap-3\"": 39,
-              "\"p-4\"": 22,
+              "\"flex-1\"": 174,
+              "\"gap-1\"": 51,
+              "\"px-4\"": 45,
+              "\"gap-2\"": 45,
+              "\"w-full\"": 44,
+              "\"gap-3\"": 38,
+              "\"p-4\"": 23,
+              "\"flex-1 bg-default\"": 21,
               "\"gap-4\"": 20,
-              "\"flex-1 bg-default\"": 19,
               "\"mb-4\"": 18,
-              "\"flex-1 px-4\"": 16,
+              "\"flex-1 px-4\"": 17,
               "\"px-4 pb-4\"": 15,
               "\"px-4 py-3\"": 15,
               "\"flex-1 min-w-0\"": 13,
-              "\"py-3\"": 12,
-              "\"my-1 border-b border-border-muted\"": 12,
+              "\"my-1 border-b border-border-muted\"": 13,
+              "\"gap-6\"": 12,
+              "\"px-4 py-2\"": 11,
+              "\"py-3\"": 11,
               "\"py-4\"": 11,
-              "\"px-4 py-4\"": 9,
               "\"h-px bg-border-muted\"": 9,
               "\"items-end\"": 9,
-              "\"px-4 py-2\"": 9,
-              "\"gap-6\"": 9,
-              "\"p-4 mb-2\"": 9,
               "\"min-w-0 flex-1\"": 8,
               "\"px-4 pb-3\"": 8,
               "\"mt-2\"": 8,
+              "\"px-4 py-4\"": 8,
               "\"mb-6\"": 8,
               "\"p-4 items-center\"": 8,
+              "\"py-2\"": 8,
+              "\"pt-3\"": 8,
               "\"w-10\"": 8,
               "\"flex-row items-center gap-1\"": 8,
               "\"px-4 pt-4\"": 8,
               "\"bg-muted rounded-xl p-4 mt-2 gap-2\"": 8,
               "\"pb-4\"": 7,
               "\"mb-2\"": 7,
-              "\"py-2\"": 7,
               "\"w-full flex-1\"": 7,
+              "\"flex-1 gap-2\"": 7,
+              "\"p-4 mb-2\"": 7,
+              "\"px-4 pt-2\"": 6,
               "\"mt-3\"": 6,
               "\"px-4 pb-6\"": 6,
               "\"mt-4\"": 6,
               "\"pr-3\"": 6,
               "\"h-px bg-border-muted my-5\"": 6,
-              "\"pt-3\"": 6,
               "\"flex-1 gap-1\"": 6,
               "\"w-full gap-2\"": 6,
-              "\"flex-1 gap-2\"": 6,
               "\"mt-4 border-b border-border-muted\"": 6,
               "\"gap-2 mt-2\"": 6,
               "\"mt-6\"": 5,
-              "\"px-4 pt-2\"": 5,
               "\"px-2 py-2\"": 5,
               "\"py-1\"": 5,
-              "\"flex-row gap-2\"": 5,
               "\"ml-3\"": 5,
               "\"gap-2.5\"": 5,
-              "\"border-t border-muted\"": 4,
               "\"w-full gap-3\"": 4,
               "\"flex-row items-center p-4\"": 4,
               "\"flex-row items-center gap-2 shrink min-w-0\"": 4,
@@ -6333,10 +6406,10 @@
               "\"px-4 py-3 gap-3\"": 4,
               "\"px-5 py-2\"": 4,
               "\"w-full h-full bg-muted\"": 4,
-              "\"flex-1 justify-center items-center\"": 4,
+              "\"flex-1 justify-center items-center p-8\"": 4,
               "\"pb-3\"": 4,
-              "\"my-2 items-center justify-center rounded-xl bg-muted py-8 px-4\"": 4,
               "\"px-4 pt-4 gap-4\"": 4,
+              "\"bg-muted rounded-xl p-4 gap-2\"": 4,
               "\"flex-1 gap-4\"": 4,
               "\"gap-4 flex-col px-4\"": 4,
               "\"gap-3 px-4\"": 4,
@@ -6353,22 +6426,25 @@
               "\"mx-4 mt-2\"": 3,
               "\"flex-col\"": 3,
               "\"flex flex-1 items-center justify-center\"": 3,
-              "\"pt-2 pb-4\"": 3,
               "\"flex-1 items-center justify-center\"": 3,
               "\"mt-1\"": 3,
               "\"bg-default\"": 3,
-              "\"px-4 py-6\"": 3,
+              "\"gap-0.5\"": 3,
               "\"px-4 py-3 gap-4\"": 3,
               "\"px-4 pt-2 pb-4\"": 3,
               "\"gap-3 mt-4\"": 3,
               "\"w-10 h-10 rounded-lg bg-muted overflow-hidden\"": 3,
               "\"absolute inset-0\"": 3,
-              "\"flex-row\"": 3,
-              "\"flex-1 justify-center items-center p-8\"": 3,
+              "\"border-t border-muted\"": 3,
+              "\"flex-row gap-2\"": 3,
+              "\"flex-row items-start gap-4 py-2\"": 3,
+              "\"items-end gap-2\"": 3,
+              "\"my-2 items-center justify-center rounded-xl bg-muted py-8 px-4\"": 3,
               "\"-mx-4\"": 3,
+              "\"flex-row\"": 3,
               "\"px-3 pt-4 pb-8\"": 3,
               "\"gap-2 mb-3\"": 3,
-              "\"px-4 gap-0.5 mb-2\"": 3,
+              "\"p-4 gap-3\"": 3,
               "\"flex-1 w-full\"": 3,
               "\"gap-4 w-full\"": 3,
               "\"gap-1 flex-row items-center\"": 3,
@@ -6381,10 +6457,16 @@
               "\"flex-1 min-w-0 mr-3\"": 3,
               "\"h-12 justify-center\"": 3,
               "\"justify-center items-center\"": 2,
+              "\"mb-3 gap-2\"": 2,
+              "\"flex-1 px-6\"": 2,
+              "\"px-4 py-3 border-b border-muted\"": 2,
+              "\"flex-1 mr-3\"": 2,
+              "\"rounded-[10px] px-3 py-2 items-center\"": 2,
               "\"flex-1 pr-6\"": 2,
               "\"border-t border-muted px-4 pb-4 pt-3\"": 2,
               "\"min-w-0 flex-1 gap-0.5\"": 2,
               "\"pt-2 pb-4 pl-4\"": 2,
+              "\"px-4 pb-2\"": 2,
               "\"pt-2\"": 2,
               "\"w-full mt-4\"": 2,
               "\"flex-row items-center gap-2\"": 2,
@@ -6399,6 +6481,7 @@
               "\"flex flex-col items-center justify-center gap-2\"": 2,
               "\"w-full mt-2\"": 2,
               "\"px-4 py-2 items-start\"": 2,
+              "\"pt-2 pb-4\"": 2,
               "\"gap-4 flex-1\"": 2,
               "\"flex-1 items-stretch gap-4 mb-6\"": 2,
               "\"flex flex-row gap-3\"": 2,
@@ -6406,6 +6489,7 @@
               "\"px-5\"": 2,
               "\"px-4 items-center\"": 2,
               "\"h-10 w-10 rounded-full bg-muted mr-4 items-center justify-center\"": 2,
+              "\"h-10 w-10\"": 2,
               "\"px-4 pt-4 pb-3\"": 2,
               "\"pr-1\"": 2,
               "\"bg-background-muted rounded-xl\"": 2,
@@ -6416,12 +6500,13 @@
               "\"self-center\"": 2,
               "\"px-4 pt-3 pb-1\"": 2,
               "\"justify-between\"": 2,
-              "\"py-3 gap-3\"": 2,
+              "\"flex-row gap-2 items-center\"": 2,
               "\"pt-3 pb-9\"": 2,
               "\"pt-4 mx-4 flex gap-4\"": 2,
               "\"ml-1\"": 2,
               "\"gap-1.5\"": 2,
               "\"bg-section rounded-xl p-4 h-full justify-between\"": 2,
+              "\"mb-3\"": 2,
               "\"mb-1\"": 2,
               "\"h-10 w-10 items-center justify-center rounded-full bg-muted mr-3 overflow-hidden mt-1\"": 2,
               "\"items-end ml-3\"": 2,
@@ -6431,6 +6516,7 @@
               "\"flex-1 mx-4\"": 2,
               "\"flex-row items-start py-4\"": 2,
               "\"flex-1 pr-4 gap-1\"": 2,
+              "\"w-full justify-center items-center\"": 2,
               "{`h-[${CHART_HEIGHT}px] justify-center items-center`}": 2,
               "\"items-start py-2 gap-4 w-full\"": 2,
               "\"pt-1\"": 2,
@@ -6438,8 +6524,6 @@
               "\"w-10 h-10 self-start mt-1\"": 2,
               "\"h-px bg-default\"": 2,
               "\"gap-3 py-4\"": 2,
-              "\"flex-row items-start gap-4 py-2\"": 2,
-              "\"items-end gap-2\"": 2,
               "\"flex-row items-center justify-between px-4 py-3\"": 2,
               "\"gap-3 flex-1 min-w-0\"": 2,
               "\"w-full gap-4 p-4\"": 2,
@@ -6448,6 +6532,7 @@
               "\"text-center mt-2\"": 2,
               "\"pt-4 px-4 pb-6 flex-col gap-4\"": 2,
               "\"flex-row justify-between items-center\"": 2,
+              "\"absolute inset-0 z-50\"": 2,
               "\"rounded-2xl overflow-hidden\"": 2,
               "\"w-full border-t border-muted\"": 2,
               "\"px-2 py-0.5 rounded bg-muted\"": 2,
@@ -6457,10 +6542,11 @@
               "\"px-6 pb-6\"": 2,
               "\"flex-1 min-h-0\"": 2,
               "\"bg-muted rounded h-[18px] w-24\"": 2,
-              "\"p-4 gap-3\"": 2,
               "\"p-4 gap-4\"": 2,
               "\"px-4 gap-2 mb-1\"": 2,
-              "\"bg-muted rounded-xl p-4 gap-2\"": 2,
+              "\"px-4 gap-0.5 mb-2\"": 2,
+              "\"gap-3 py-1\"": 2,
+              "\"pt-3 pb-1\"": 2,
               "\"gap-2 px-4\"": 2,
               "\"gap-4 px-4\"": 2,
               "\"px-4 gap-4\"": 2,
@@ -6473,6 +6559,8 @@
               "\"w-full mb-2\"": 2,
               "\"flex-col items-center justify-center w-full\"": 2,
               "\"flex-1 flex-col\"": 2,
+              "\"flex-1 items-center justify-center px-4 py-4 mt-24\"": 2,
+              "\"gap-[18px] px-4 pb-[18px]\"": 2,
               "\"gap-y-1\"": 2,
               "\"flex-row items-center flex-1\"": 2,
               "\"pt-[2px]\"": 2,
@@ -6482,7 +6570,6 @@
               "\"flex-1 h-16\"": 2,
               "\"flex-1 ml-5 justify-center\"": 2,
               "\"pt-4 px-4\"": 2,
-              "\"px-4 mt-3\"": 2,
               "\"flex-row items-center h-14 px-2\"": 2,
               "\"absolute inset-0 items-center justify-center\"": 2,
               "\"p-4 border-b border-border-muted\"": 2,
@@ -6491,7 +6578,9 @@
               "\"min-w-0 flex-1 pl-4\"": 2,
               "\"relative gap-2\"": 2,
               "\"px-4 py-4 bg-default\"": 2,
+              "\"flex-1 justify-center items-center\"": 2,
               "\"mx-2 flex-1\"": 2,
+              "\"px-4 py-6\"": 2,
               "\"mt-6 mb-4\"": 2,
               "\"mx-4 rounded-xl overflow-hidden border border-border-muted\"": 2,
               "\"mx-4 mt-4 p-4 gap-4 rounded-xl bg-background-muted\"": 2,
@@ -6507,7 +6596,6 @@
               "\"p-5 pb-0\"": 2,
               "\"px-4 pt-6 pb-4\"": 2,
               "\"pt-2 pb-3\"": 2,
-              "\"rounded-full bg-muted px-3 py-1\"": 2,
               "\"flex-col pt-9 pb-24 justify-center items-center gap-3 flex-1\"": 2,
               "\"rounded-2xl bg-background-muted overflow-hidden flex-1 mt-4\"": 2,
               "\"w-full px-4 pb-2\"": 2,
@@ -6518,6 +6606,9 @@
               "\"relative items-center justify-center\"": 1,
               "\"items-center justify-center rounded-full bg-muted\"": 1,
               "\"w-full bg-default p-4 mt-4 mb-4\"": 1,
+              "\"flex-1 justify-center px-4 pb-4\"": 1,
+              "\"mb-3 px-2\"": 1,
+              "\"mx-4 border border-muted rounded-xl p-1\"": 1,
               "{`rounded-2xl ${props?.twClassName ?? ''}`}": 1,
               "\"flex-col justify-center items-center gap-3 flex-1\"": 1,
               "\"items-center mb-4\"": 1,
@@ -6527,7 +6618,8 @@
               "\"gap-2 px-4 py-2\"": 1,
               "\"min-w-0\"": 1,
               "\"flex-1 px-4 py-4\"": 1,
-              "\"pt-4 pl-4\"": 1,
+              "\"py-4 pl-4\"": 1,
+              "\"border-t border-muted mx-4\"": 1,
               "\"border-t border-muted pt-2\"": 1,
               "\"mt-4 px-4 pb-4\"": 1,
               "\"gap-2 mb-3 w-full\"": 1,
@@ -6566,7 +6658,6 @@
               "\"gap-3 mt-6\"": 1,
               "{` h-[90px] rounded-lg ${isSelected ? 'bg-text-default' : 'bg-background-muted...}": 1,
               "\"p-4 rounded-2xl bg-background-muted gap-3\"": 1,
-              "\"px-4 pb-2\"": 1,
               "{isCurrentPriority ? 'border-l-4 border-primary-default bg-background-muted' : ''}": 1,
               "\"py-2 px-4 flex flex-col gap-3\"": 1,
               "\"w-full flex-row justify-end -mt-2\"": 1,
@@ -6599,10 +6690,9 @@
               "\"rounded-xl\"": 1,
               "\"mt-1 rounded-lg bg-error-muted px-3 py-2 gap-2\"": 1,
               "\"absolute left-0 right-0 items-center justify-center\"": 1,
+              "\"h-32\"": 1,
               "\"mt-8 w-full\"": 1,
-              "\"flex-1 px-6\"": 1,
               "\"mt-6 w-full\"": 1,
-              "\"h-10 w-10\"": 1,
               "\"w-full overflow-hidden rounded-lg bg-muted\"": 1,
               "\"w-8 self-stretch\"": 1,
               "\"h-8 w-8 rounded-full\"": 1,
@@ -6629,21 +6719,21 @@
               "\"px-4 pt-6 pb-2 gap-2\"": 1,
               "\"shrink-0 gap-0.5\"": 1,
               "\"px-4 my-3\"": 1,
-              "\"py-8\"": 1,
               "\"flex-1 gap-1 pr-3\"": 1,
-              "\"mb-2 gap-2\"": 1,
               "\"bg-muted rounded-xl p-4 gap-4\"": 1,
               "\"bg-muted rounded-xl size-[78px] justify-center\"": 1,
               "\"flex-wrap gap-2 mt-4\"": 1,
+              "\"px-4 pt-6 pb-3\"": 1,
               "\"mt-5 gap-4\"": 1,
               "\"px-4 pb-2 gap-4 items-center\"": 1,
               "\"gap-2 items-center\"": 1,
               "\"self-start gap-1 rounded bg-muted px-1.5\"": 1,
               "\"gap-2 flex-1 justify-center\"": 1,
+              "\"pt-3 gap-3\"": 1,
               "\"gap-3 flex-1\"": 1,
               "\"gap-1 flex-1\"": 1,
-              "\"pb-4 mx-4 mt-3\"": 1,
-              "\"rounded bg-muted px-1.5\"": 1,
+              "\"pb-7 mx-4 mt-3\"": 1,
+              "\"rounded bg-primary-muted px-1.5\"": 1,
               "\"shrink-0 pt-1\"": 1,
               "\"mt-3 mb-3 gap-3\"": 1,
               "\"py-3 border-b border-muted\"": 1,
@@ -6669,14 +6759,12 @@
               "\"w-full border-b border-muted\"": 1,
               "\"gap-3 px-4 pt-1 pb-3\"": 1,
               "\"flex-1 gap-1.5\"": 1,
-              "\"px-4 gap-2 mb-2\"": 1,
+              "\"px-4 gap-2 mb-3\"": 1,
               "\"flex-1 items-center justify-center bg-error-muted\"": 1,
               "\"bg-default rounded-lg\"": 1,
               "\"overflow-hidden rounded-lg\"": 1,
-              "\"mb-3\"": 1,
               "\"w-6 h-6 rounded-lg bg-muted overflow-hidden\"": 1,
               "\"mt-1 gap-1\"": 1,
-              "\"mb-3 gap-2\"": 1,
               "\"flex-1 items-end\"": 1,
               "\"mt-3 gap-2\"": 1,
               "\"flex-row justify-center items-center gap-2 mt-3\"": 1,
@@ -6691,10 +6779,10 @@
               "\"px-6 pb-8\"": 1,
               "\"px-6\"": 1,
               "\"px-4 gap-3\"": 1,
-              "\"px-4 py-3 border-b border-muted\"": 1,
               "{containerTwClassName}": 1,
               "{explicitHeight ? undefined : 'flex-1'}": 1,
-              "\"px-4 pt-5 gap-4\"": 1,
+              "\"px-8 gap-2\"": 1,
+              "\"px-4 pt-3 gap-4\"": 1,
               "\"px-4 pt-1\"": 1,
               "\"px-4 pb-8\"": 1,
               "\"h-[104px] w-full\"": 1,
@@ -6759,8 +6847,6 @@
               "\"flex-col gap-2\"": 1,
               "\"h-px bg-border-muted my-2\"": 1,
               "\"flex-row justify-between items-center gap-2\"": 1,
-              "\"items-center gap-[2px]\"": 1,
-              "\"relative h-6 w-6 items-center justify-center\"": 1,
               "\"w-full p-4 mb-4 gap-3 bg-background-muted rounded-xl justify-between\"": 1,
               "\"flex-row items-start gap-4\"": 1,
               "\"items-end justify-end ml-auto shrink-0\"": 1,
@@ -6792,8 +6878,10 @@
               "{`rounded-full py-2 pl-[9px] pr-[16px] mt-2 ${!canEdit ? '' : 'bg-muted'} mx-a...}": 1,
               "\"gap-2 py-1\"": 1,
               "\"flex-1 relative overflow-hidden\"": 1,
-              "\"absolute inset-0 z-50\"": 1,
+              "\"pt-2 pb-2\"": 1,
               "\"my-2\"": 1,
+              "\"items-center gap-[2px]\"": 1,
+              "\"relative h-6 w-6 items-center justify-center\"": 1,
               "\"px-3 gap-4\"": 1,
               "\"px-3\"": 1,
               "\"px-3 py-8 items-center justify-center gap-2\"": 1,
@@ -6858,7 +6946,10 @@
               "\"px-4 pt-4 gap-3\"": 1,
               "\"px-4 pt-8\"": 1,
               "\"border border-border-default rounded-full px-3 py-1 gap-1\"": 1,
+              "\"bg-muted rounded px-1.5 py-0\"": 1,
+              "\"my-4 border-b border-border-muted\"": 1,
               "\"py-4 flex-1 gap-4\"": 1,
+              "\"items-center justify-between rounded-2xl border px-4 py-3\"": 1,
               "\"mx-4 rounded-2xl overflow-hidden bg-section\"": 1,
               "\"flex-row items-start\"": 1,
               "\"w-[78px] h-[78px] rounded-lg bg-muted overflow-hidden items-center justify-center\"": 1,
@@ -6867,6 +6958,7 @@
               "\"flex flex-row gap-1 items-center justify-center\"": 1,
               "\"w-6 h-6 rounded-full\"": 1,
               "{`py-2 px-4 ${rowBg}`}": 1,
+              "\"gap-2 mt-2 mb-1\"": 1,
               "\"flex-1 gap-0.5\"": 1,
               "\"bg-success-muted rounded-[6px] px-1.5\"": 1,
               "\"h-full rounded-full bg-success-default\"": 1,
@@ -6880,7 +6972,6 @@
               "\"w-full py-3\"": 1,
               "\"bg-muted rounded-full items-center justify-center size-10\"": 1,
               "\"rounded-full px-4 py-2 gap-1\"": 1,
-              "\"gap-0.5\"": 1,
               "\"bg-muted rounded-[6px] px-1.5\"": 1,
               "\"bg-warning-muted rounded-[6px] px-1.5\"": 1,
               "\"gap-2 mb-2 px-4\"": 1,
@@ -6888,7 +6979,6 @@
               "\"flex-1 min-w-0 pr-2\"": 1,
               "\"mt-4 px-4 w-full flex-row items-center\"": 1,
               "\"h-10 w-10 rounded-full bg-muted\"": 1,
-              "\"gap-3 py-1\"": 1,
               "\"flex-1 px-6 pt-3\"": 1,
               "\"flex-1 flex-shrink\"": 1,
               "\"border-b border-border-muted my-2\"": 1,
@@ -6911,6 +7001,7 @@
               "{isLast ? 'mb-12' : undefined}": 1,
               "\"flex-col gap-1\"": 1,
               "\"w-full min-h-12 bg-muted rounded-lg px-4 py-1 border border-solid border-muted\"": 1,
+              "\"ml-2\"": 1,
               "\"gap-6 mt-2\"": 1,
               "{`flex-row items-center ${compact ? 'py-2' : 'py-3 px-4'} gap-4 ${ isLast || c...}": 1,
               "{`h-10 w-10 rounded-full bg-muted items-center justify-center`}": 1,
@@ -6927,6 +7018,7 @@
               "\"h-[24px] items-center\"": 1,
               "\"rounded-[4px] bg-default\"": 1,
               "\"filter blur-sm max-w-min w-min flex flex-row rounded-sm whitespace-nowrap px-2 py-0 gap-1 bg-warning-default bg-opacity-10 items-center\"": 1,
+              "\"py-3 gap-3\"": 1,
               "\"mb-6 gap-2\"": 1,
               "\"gap-4 flex-col py-4 px-4\"": 1,
               "\"px-4 gap-2 pt-2\"": 1,
@@ -6952,8 +7044,6 @@
               "\"absolute inset-0 justify-center items-center\"": 1,
               "\"bg-section rounded-2xl p-4\"": 1,
               "\"absolute\"": 1,
-              "\"flex-1 items-center justify-center px-4 py-4 mt-24\"": 1,
-              "\"gap-[18px] px-4 pb-[18px]\"": 1,
               "{isLast ? undefined : 'border-background-default border-b-4'}": 1,
               "\"gap-2 px-4 pb-5\"": 1,
               "{`flex-1${!isRiveReady ? ' opacity-0' : ''}`}": 1,
@@ -7041,6 +7131,7 @@
               "\"mt-4 mb-3\"": 1,
               "\"mt-3 gap-1\"": 1,
               "\"flex-wrap mt-4 gap-2\"": 1,
+              "\"px-4 mt-3\"": 1,
               "\"flex-1 bg-background-default pt-[30px]\"": 1,
               "\"bg-background-default\"": 1,
               "\"mt-2 bg-section rounded-lg p-4\"": 1,
@@ -7138,7 +7229,6 @@
               "{`${horizontalPaddingClassName} py-6`}": 1,
               "\"ml-4\"": 1,
               "{`px-4 py-4${disabled ? ' opacity-50' : ''}`}": 1,
-              "\"flex-1 mr-3\"": 1,
               "{`${withHorizontalPadding ? 'px-4' : ''} pt-4 pb-2`}": 1,
               "\"bg-error-muted rounded-2xl pl-6 pr-4 py-3\"": 1,
               "\"px-4 pt-3 pb-4\"": 1,
@@ -7147,11 +7237,12 @@
               "\"pb-5\"": 1,
               "\"mt-2 items-center\"": 1,
               "{`px-4 py-2 ${isSelected ? 'bg-muted' : ''}`}": 1,
-              "{isHighPriceImpact ? 'rounded-full bg-error-muted px-3 py-1' : 'rounded-full b...}": 1,
+              "{isHighPriceImpact ? 'rounded-md bg-error-muted px-3 py-1' : 'rounded-md bg-mu...}": 1,
               "\"h-14 px-2\"": 1,
+              "\"rounded-full bg-muted px-3 py-1\"": 1,
               "\"border border-muted rounded-xl p-1\"": 1,
-              "{`rounded-[10px] px-3 py-1 ${tradeMode === 'buy' ? 'bg-muted' : ''}`}": 1,
-              "{`rounded-[10px] px-3 py-1 ${tradeMode === 'sell' ? 'bg-muted' : ''} ${!hasSel...}": 1,
+              "\"rounded-lg px-4 py-1\"": 1,
+              "{`rounded-lg px-4 py-1 ${!hasSellableBalance ? 'opacity-40' : ''}`}": 1,
               "{`flex-1 items-center justify-center px-2 py-1 rounded ${ isActive ? 'bg-muted...}": 1,
               "\"mx-4 my-3\"": 1,
               "\"max-w-full\"": 1,
@@ -7224,16 +7315,16 @@
             }
           },
           "flexDirection": {
-            "count": 628,
+            "count": 645,
             "values": {
-              "{BoxFlexDirection.Row}": 530,
+              "{BoxFlexDirection.Row}": 547,
               "{BoxFlexDirection.Column}": 98
             }
           },
           "alignItems": {
-            "count": 592,
+            "count": 607,
             "values": {
-              "{BoxAlignItems.Center}": 522,
+              "{BoxAlignItems.Center}": 537,
               "{BoxAlignItems.Start}": 43,
               "{BoxAlignItems.End}": 20,
               "{BoxAlignItems.Stretch}": 4,
@@ -7243,16 +7334,17 @@
             }
           },
           "testID": {
-            "count": 405,
+            "count": 425,
             "values": {
               "{testID}": 65,
+              "{PerpsWatchlistSelectorsIDs.SECTION}": 3,
               "{CAMPAIGN_PRIZE_POOL_TEST_IDS.CONTAINER}": 3,
               "\"price-chart-loading\"": 2,
               "\"onboarding-step-actions\"": 2,
               "{MoneyMetaMaskCardTestIds.LINK_CONTAINER}": 2,
               "{PREDICT_PORTFOLIO_TEST_IDS.SUMMARY}": 2,
               "{ONDO_CAMPAIGN_STATS_SUMMARY_TEST_IDS.NOT_ELIGIBLE_BANNER}": 2,
-              "{PREDICT_THE_PITCH_LEADERBOARD_TEST_IDS.TOTAL_PARTICIPANTS}": 2,
+              "{PREDICT_THE_PITCH_PORTFOLIO_TEST_IDS.LOADING}": 2,
               "\"progress-indicator-container\"": 2,
               "{REWARDS_VIEW_SELECTORS.TIER_REWARD_ICON}": 2,
               "\"rewards-settings-bulk-link-progress\"": 2,
@@ -7267,6 +7359,10 @@
               "{hasInsufficientData ? 'price-chart-insufficient-data' : 'price-chart-no-data'}": 1,
               "\"resource-ring-container\"": 1,
               "\"resource-ring-icon-container\"": 1,
+              "{CreatePriceAlertTestIds.TARGET_PRICE_INPUT}": 1,
+              "{CreatePriceAlertTestIds.UNDER_DEVELOPMENT}": 1,
+              "{`${ManagePriceAlertsTestIds.ALERT_ITEM_PREFIX}-${item.id}`}": 1,
+              "{CreatePriceAlertTestIds.ALERT_TYPE_TOGGLE}": 1,
               "\"basic-functionality-empty-state\"": 1,
               "\"basic-functionality-empty-state-icon-container\"": 1,
               "{BRAZE_BANNER_TEST_IDS.CONTAINER}": 1,
@@ -7279,6 +7375,7 @@
               "{BatchSellFinalReviewModalSelectorsIDs.NETWORK_FEE_ROW}": 1,
               "{`${BatchSellQuoteDetailsModalSelectorsIDs.QUOTE_ROW}-${rowKey}`}": 1,
               "{BridgeTrendingTokensSectionTestIds.SECTION}": 1,
+              "{PostTradeBottomSheetTestIds.SUGGESTIONS_SECTION}": 1,
               "\"bridge-rewards-row\"": 1,
               "{BridgeViewSelectorsIDs.QUOTE_DETAILS_SKELETON}": 1,
               "\"quote-details-card-loading-row\"": 1,
@@ -7331,7 +7428,6 @@
               "{MoneyActivityListTestIds.CONTAINER}": 1,
               "{MoneyActivityLoadingTestIds.CONTAINER}": 1,
               "{MoneyBalanceCardTestIds.BALANCE_ERROR}": 1,
-              "{MoneyBalanceSummaryTestIds.BALANCE_ERROR}": 1,
               "{MoneyBalanceSummaryTestIds.CONTAINER}": 1,
               "{MoneyCondensedInfoCardsTestIds.CONTAINER}": 1,
               "{MoneyConvertStablecoinsTestIds.FEATURE_TAGS}": 1,
@@ -7365,6 +7461,7 @@
               "{PREDICT_BALANCE_TEST_IDS.SKELETON}": 1,
               "{PREDICT_BALANCE_TEST_IDS.CARD}": 1,
               "\"predict-crypto-up-down-chart-container\"": 1,
+              "\"predict-crypto-up-down-chart-connection-error\"": 1,
               "{PredictCryptoUpDownDetailsSelectorsIDs.TITLE_SECTION}": 1,
               "{PredictCryptoUpDownDetailsSelectorsIDs.PRICE_SUMMARY}": 1,
               "{PredictCryptoUpDownMarketCardSelectorsIDs.SPARKLINE}": 1,
@@ -7380,9 +7477,6 @@
               "{`${testID}${PREDICT_HOME_SKELETON_TEST_IDS.ITEM}${index}`}": 1,
               "{PredictOrderRetrySheetSelectorsIDs.CONTAINER}": 1,
               "{`${testID}${PREDICT_PICKS_FOR_CARD_TEST_IDS.SEPARATOR}`}": 1,
-              "{PREDICT_PORTFOLIO_TEST_IDS.ACTIONS}": 1,
-              "{PREDICT_PORTFOLIO_TEST_IDS.MODULE}": 1,
-              "{PREDICT_PORTFOLIO_TEST_IDS.SECONDARY_LINE}": 1,
               "{PredictPositionsEmptySelectorsIDs.ICON}": 1,
               "{PREDICT_POSITIONS_HEADER_TEST_IDS.MARKETS_WON_CARD}": 1,
               "{PredictPositionsHistoryListSelectorsIDs.CONTAINER}": 1,
@@ -7396,8 +7490,13 @@
               "{baseTestID}": 1,
               "{getPredictFeedSelector.emptyState(category)}": 1,
               "{PredictMarketListSelectorsIDs.CONTAINER}": 1,
+              "{PredictFeedViewSelectorsIDs.ERROR_STATE}": 1,
+              "{PredictFeedViewSelectorsIDs.EMPTY_STATE}": 1,
               "{PredictHomeSelectorsIDs.CONTAINER}": 1,
               "{PredictHomeSelectorsIDs.TITLE_SECTION}": 1,
+              "{PREDICT_PORTFOLIO_TEST_IDS.ACTIONS}": 1,
+              "{PredictHomeSelectorsIDs.PORTFOLIO_MODULE}": 1,
+              "{PREDICT_PORTFOLIO_TEST_IDS.SECONDARY_LINE}": 1,
               "{PredictMarketDetailsSelectorsIDs.MARKET_UNAVAILABLE}": 1,
               "{PredictMarketDetailsSelectorsIDs.TAB_BAR}": 1,
               "{PredictMarketDetailsSelectorsIDs.ABOUT_TAB_CONTENT}": 1,
@@ -7418,6 +7517,18 @@
               "{PERPS_CAMPAIGN_STATS_VIEW_TEST_IDS.QUALIFIED_CARD}": 1,
               "{PERPS_CAMPAIGN_STATS_VIEW_TEST_IDS.QUALIFY_FOR_RANK_CARD}": 1,
               "{PREDICT_THE_PITCH_CAMPAIGN_DETAILS_VIEW_TEST_IDS.HOW_IT_WORKS}": 1,
+              "{PREDICT_THE_PITCH_LEADERBOARD_TEST_IDS.TOTAL_PARTICIPANTS}": 1,
+              "{testIds.POSITIONS}": 1,
+              "{testIds.OPEN_SECTION}": 1,
+              "{testIds.DIVIDER}": 1,
+              "{testIds.CLOSED_SECTION}": 1,
+              "{PREDICT_THE_PITCH_CAMPAIGN_STATS_VIEW_TEST_IDS.QUALIFIED_CARD}": 1,
+              "{PREDICT_THE_PITCH_CAMPAIGN_STATS_VIEW_TEST_IDS.QUALIFY_FOR_RANK_CARD}": 1,
+              "{REWARDS_VIP_REFEREE_VIEW_TEST_IDS.SKELETON}": 1,
+              "{REWARDS_VIP_REFEREE_VIEW_TEST_IDS.REFERRED_BY_CARD}": 1,
+              "{REWARDS_VIP_REFEREE_VIEW_TEST_IDS.POINTS}": 1,
+              "{REWARDS_VIP_REFEREE_VIEW_TEST_IDS.SWAPS_VOLUME}": 1,
+              "{REWARDS_VIP_REFEREE_VIEW_TEST_IDS.PERPS_VOLUME}": 1,
               "{REWARDS_VIP_TIERS_VIEW_TEST_IDS.SKELETON}": 1,
               "{REWARDS_VIP_TIERS_VIEW_TEST_IDS.LIST}": 1,
               "{REWARDS_VIP_VIEW_TEST_IDS.SKELETON}": 1,
@@ -7450,13 +7561,11 @@
               "{PERPS_CAMPAIGN_STATS_SUMMARY_TEST_IDS.CONTAINER}": 1,
               "{PERPS_CAMPAIGN_STATS_SUMMARY_TEST_IDS.QUALIFIED_CARD}": 1,
               "{PERPS_CAMPAIGN_STATS_SUMMARY_TEST_IDS.QUALIFY_FOR_RANK_CARD}": 1,
-              "{PERPS_CAMPAIGN_ENDED_STATS_TEST_IDS.CONTAINER}": 1,
               "{PERPS_CAMPAIGN_LEADERBOARD_TEST_IDS.CONTAINER}": 1,
               "{PERPS_CAMPAIGN_LEADERBOARD_TEST_IDS.LIST}": 1,
               "{PERPS_CAMPAIGN_LEADERBOARD_TEST_IDS.POWERED_BY}": 1,
               "{PREDICT_THE_PITCH_LEADERBOARD_TEST_IDS.CONTAINER}": 1,
               "{PREDICT_THE_PITCH_LEADERBOARD_TEST_IDS.LIST}": 1,
-              "{PREDICT_THE_PITCH_PORTFOLIO_TEST_IDS.LOADING}": 1,
               "{PREDICT_THE_PITCH_PORTFOLIO_TEST_IDS.CONTAINER}": 1,
               "{PREDICT_THE_PITCH_STATS_SUMMARY_TEST_IDS.CONTAINER}": 1,
               "{REWARDS_VIEW_SELECTORS.EARN_REWARDS_PREVIEW}": 1,
@@ -7571,10 +7680,10 @@
             }
           },
           "justifyContent": {
-            "count": 272,
+            "count": 281,
             "values": {
-              "{BoxJustifyContent.Between}": 125,
-              "{BoxJustifyContent.Center}": 105,
+              "{BoxJustifyContent.Between}": 129,
+              "{BoxJustifyContent.Center}": 110,
               "{BoxJustifyContent.Start}": 21,
               "{BoxJustifyContent.End}": 15,
               "{BoxJustifyContent.SpaceBetween}": 2,
@@ -7584,31 +7693,15 @@
               "{BoxJustifyContent.Around}": 1
             }
           },
-          "gap": {
-            "count": 217,
-            "values": {
-              "0": 2,
-              "1": 57,
-              "2": 58,
-              "3": 48,
-              "4": 41,
-              "5": 1,
-              "6": 2,
-              "8": 3,
-              "{chip.imageSource ? 2 : undefined}": 1,
-              "{gap}": 1,
-              "{isMedium ? 4 : 6}": 1,
-              "{isMedium ? 6 : 8}": 1,
-              "{isMedium ? 3 : 4}": 1
-            }
-          },
           "style": {
-            "count": 204,
+            "count": 213,
             "values": {
-              "{styles.container}": 10,
+              "{styles.container}": 11,
               "{styles.banner}": 4,
               "{tw.style('flex-1 flex-shrink mr-2 -mt-1')}": 3,
               "{styles.textContainer}": 3,
+              "{sectionStyle}": 3,
+              "{contentContainerStyle}": 3,
               "{{ paddingTop: currentPaddingTop }}": 3,
               "{styles.content}": 2,
               "{{ aspectRatio: 851 / 540 }}": 2,
@@ -7619,7 +7712,7 @@
               "{styles.periodOptionsGrid}": 2,
               "{styles.titleRow}": 2,
               "{styles.searchBarContainer}": 2,
-              "{tw.style('mb-6 border-t border-muted')}": 2,
+              "{style}": 2,
               "{styles.ohlcRow}": 2,
               "{{ paddingTop: insets.top + 12 }}": 2,
               "{{ backgroundColor: colors.background.default }}": 2,
@@ -7683,18 +7776,17 @@
               "{styles.contentRow}": 1,
               "{styles.contentContainer}": 1,
               "{styles.progress}": 1,
-              "{style}": 1,
               "{styles.durationButtonsContainer}": 1,
               "{{ height }}": 1,
               "{{ height, width: '100%', minHeight: height }}": 1,
               "{styles.ohlcLegend}": 1,
               "{tw.style( { width: cardWidth, height: CARD_HEIGHT }, idx < markets.length - 1...}": 1,
+              "{{ height: chartHeight }}": 1,
               "{tw.style({ backgroundColor: accentColor })}": 1,
               "{tw.style( { top: targetLabelTop }, { backgroundColor: colors.background.secti...}": 1,
               "{tw.style( { top: targetLabelTop + 30 }, { backgroundColor: colors.background....}": 1,
               "{{ backgroundColor: seriesItem.color, }}": 1,
               "{{ minHeight: loadingContainerMinHeight }}": 1,
-              "{{ minHeight: windowHeight - stickyHeaderY }}": 1,
               "{{ paddingBottom: Math.max(insets.bottom, 16) }}": 1,
               "{tw.style({ width: CARD_WIDTH, height: CARD_HEIGHT })}": 1,
               "{{ width: size, height: size / 2 }}": 1,
@@ -7707,6 +7799,7 @@
               "{tw.style('absolute inset-0 z-20', { paddingTop: insets.top, backgroundColor: ...}": 1,
               "{containerStyle as any}": 1,
               "{tw.style('overflow-hidden rounded-lg', { width: size, height: size, })}": 1,
+              "{topInset > 0 ? { paddingTop: topInset } : undefined}": 1,
               "{tw.style('z-20', { backgroundColor: colors.background.default, })}": 1,
               "{tw.style( { width: cardWidth, minHeight: CARD_HEIGHT }, !isLastItem && { marg...}": 1,
               "{{ paddingTop: insetsTop + 12 }}": 1,
@@ -7719,6 +7812,7 @@
               "{{ paddingBottom: safeAreaInsets.bottom }}": 1,
               "{tw.style(!showSkip && 'opacity-0')}": 1,
               "{{ height: heroHeight }}": 1,
+              "{referredByCardStyle}": 1,
               "{{ width: progressPercent }}": 1,
               "{CELL_STYLE}": 1,
               "{tw.style('self-start')}": 1,
@@ -7762,6 +7856,7 @@
               "{{ backgroundColor: colors.text.default }}": 1,
               "{styles.setting}": 1,
               "{lockedHeight !== null ? { height: lockedHeight } : undefined}": 1,
+              "{styles.row}": 1,
               "{{ width: foxSize, height: foxSize, padding: foxPadding, }}": 1,
               "{tw.style( 'flex-row items-center rounded-xl h-12 border px-4 bg-muted', isDis...}": 1,
               "{tw.style('flex-row justify-center px-4 pt-1', { paddingBottom: insets.bottom, })}": 1,
@@ -7771,10 +7866,27 @@
               "{index === activeIndex ? tw.style('w-6 h-2 rounded-full bg-icon-default') : tw...}": 1
             }
           },
-          "key": {
-            "count": 55,
+          "gap": {
+            "count": 210,
             "values": {
-              "{index}": 8,
+              "0": 2,
+              "1": 56,
+              "2": 59,
+              "3": 43,
+              "4": 42,
+              "5": 1,
+              "6": 2,
+              "{chip.imageSource ? 2 : undefined}": 1,
+              "{gap}": 1,
+              "{isMedium ? 4 : 6}": 1,
+              "{isMedium ? 6 : 8}": 1,
+              "{isMedium ? 3 : 4}": 1
+            }
+          },
+          "key": {
+            "count": 58,
+            "values": {
+              "{index}": 9,
               "{key}": 4,
               "{tag.label}": 3,
               "{i}": 2,
@@ -7795,6 +7907,8 @@
               "{`${outcome.id}`}": 1,
               "{`${button.label}-${button.variant}`}": 1,
               "{market.id}": 1,
+              "{`open-header-${item.dateKey}`}": 1,
+              "{`closed-header-${item.dateKey}`}": 1,
               "{`step-${stepIndex}`}": 1,
               "{`${key}-li-${i}`}": 1,
               "{`rewards-settings-skeleton-${index}`}": 1,
@@ -7816,14 +7930,23 @@
             }
           },
           "paddingHorizontal": {
-            "count": 43,
+            "count": 47,
             "values": {
               "2": 4,
-              "4": 32,
+              "4": 36,
               "5": 1,
               "6": 2,
               "10": 2,
               "{paddingHorizontal}": 2
+            }
+          },
+          "paddingBottom": {
+            "count": 34,
+            "values": {
+              "2": 1,
+              "3": 20,
+              "4": 11,
+              "6": 2
             }
           },
           "backgroundColor": {
@@ -7841,39 +7964,28 @@
             }
           },
           "paddingTop": {
-            "count": 27,
+            "count": 23,
             "values": {
               "1": 3,
               "2": 10,
               "3": 6,
               "4": 3,
-              "6": 2,
-              "8": 3
+              "8": 1
             }
           },
-          "paddingBottom": {
-            "count": 20,
+          "padding": {
+            "count": 15,
             "values": {
-              "2": 1,
-              "3": 5,
-              "4": 12,
-              "6": 2
+              "4": 15
             }
           },
           "marginBottom": {
-            "count": 14,
+            "count": 13,
             "values": {
               "2": 5,
               "4": 3,
               "5": 2,
-              "6": 1,
               "8": 3
-            }
-          },
-          "padding": {
-            "count": 13,
-            "values": {
-              "4": 13
             }
           },
           "[spread]": {
@@ -7897,8 +8009,19 @@
               "3": 4
             }
           },
-          "onLayout": {
+          "pointerEvents": {
             "count": 12,
+            "values": {
+              "\"box-none\"": 4,
+              "\"none\"": 4,
+              "{isPositionsTabActive ? 'auto' : 'none'}": 1,
+              "{isHistoryTabActive ? 'auto' : 'none'}": 1,
+              "{isOptionsAvailable ? 'auto' : 'none'}": 1,
+              "{isVisible ? 'auto' : 'none'}": 1
+            }
+          },
+          "onLayout": {
+            "count": 11,
             "values": {
               "{handleLayout}": 2,
               "{handleContainerLayout}": 1,
@@ -7906,29 +8029,17 @@
               "{(e) => setTitleSectionHeight(e.nativeEvent.layout.height)}": 1,
               "{(layoutEvent) => { const { height } = layoutEvent.nativeEvent.layout; onLayou...}": 1,
               "{explicitHeight ? undefined : (e) => setMeasuredHeight(e.nativeEvent.layout.he...}": 1,
-              "{handleStickyHeaderLayout}": 1,
               "{(e) => handlePillLayout(market.id, e.nativeEvent.layout.x)}": 1,
               "{handleTitleLayout}": 1,
               "{(e) => { setProgressTrackWidth(e.nativeEvent.layout.width); }}": 1,
               "{handleContentLayout}": 1
             }
           },
-          "pointerEvents": {
-            "count": 11,
-            "values": {
-              "\"none\"": 4,
-              "\"box-none\"": 3,
-              "{isPositionsTabActive ? 'auto' : 'none'}": 1,
-              "{isHistoryTabActive ? 'auto' : 'none'}": 1,
-              "{isOptionsAvailable ? 'auto' : 'none'}": 1,
-              "{isVisible ? 'auto' : 'none'}": 1
-            }
-          },
           "marginTop": {
-            "count": 9,
+            "count": 8,
             "values": {
               "0": 1,
-              "1": 2,
+              "1": 1,
               "2": 1,
               "4": 3,
               "{marginTop}": 2

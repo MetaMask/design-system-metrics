@@ -1,24 +1,26 @@
 {
   "component": "AvatarToken",
-  "generatedAt": "2026-06-09T08:16:18.590Z",
+  "generatedAt": "2026-06-16T08:30:03.974Z",
   "projects": {
     "extension": {
-      "filesScanned": 3216,
+      "filesScanned": 3314,
       "targetComponent": "AvatarToken",
       "mmds": {
-        "totalInstances": 24,
-        "filesCount": 19,
+        "totalInstances": 28,
+        "filesCount": 23,
         "props": {
           "src": {
-            "count": 24,
+            "count": 28,
             "values": {
               "{image}": 5,
+              "{asset.iconUrl ?? undefined}": 4,
               "{iconUrl}": 2,
-              "{asset.iconUrl ?? undefined}": 2,
               "{src}": 1,
               "{resolvedSrc}": 1,
               "{coin.src}": 1,
               "{getAssetImageUrl(token.address, chainIdHex) ?? token.image ?? ''}": 1,
+              "{selectedAsset.image ?? undefined}": 1,
+              "{iconUrl ?? undefined}": 1,
               "{token.iconUrl}": 1,
               "{asset.image}": 1,
               "{source}": 1,
@@ -33,24 +35,25 @@
             }
           },
           "size": {
-            "count": 23,
+            "count": 27,
             "values": {
-              "{AvatarTokenSize.Md}": 7,
+              "{AvatarTokenSize.Md}": 9,
+              "{AvatarTokenSize.Lg}": 5,
               "{AvatarTokenSize.Xl}": 4,
-              "{AvatarTokenSize.Lg}": 4,
               "{AvatarTokenSize.Xs}": 3,
-              "{size === GasFeeTokenIconSize.Md ? AvatarTokenSize.Md : AvatarTokenSize.Xs}": 2,
+              "{AvatarTokenSize.Sm}": 2,
               "{size}": 1,
               "{MUSD_CONVERT_LIST_TOKEN_SIZE}": 1,
-              "{AvatarTokenSize.Sm}": 1
+              "{avatarSize}": 1,
+              "{size === GasFeeTokenIconSize.Md ? AvatarTokenSize.Md : AvatarTokenSize.Xs}": 1
             }
           },
           "name": {
-            "count": 22,
+            "count": 26,
             "values": {
-              "{symbol}": 2,
+              "{symbol}": 3,
+              "{asset.symbol}": 3,
               "{token.symbol}": 2,
-              "{asset.symbol}": 2,
               "{nativeCurrency}": 2,
               "\"USDC\"": 2,
               "{name}": 1,
@@ -60,6 +63,8 @@
               "{nickname || address}": 1,
               "{nicknameInput || address}": 1,
               "{coin.symbol}": 1,
+              "{selectedAsset.symbol}": 1,
+              "{asset.name}": 1,
               "{getTokenName(asset.name, asset.symbol)}": 1,
               "{MUSD_SYMBOL}": 1,
               "\"ETH\"": 1,
@@ -78,11 +83,13 @@
             }
           },
           "data-testid": {
-            "count": 3,
+            "count": 5,
             "values": {
               "\"activity-list-item-avatar-token\"": 1,
               "{`perps-token-logo-${sanitizedSymbol}`}": 1,
-              "\"token-insights-icon\"": 1
+              "\"token-insights-icon\"": 1,
+              "\"token-icon\"": 1,
+              "\"native-icon\"": 1
             }
           },
           "imageProps": {
@@ -236,18 +243,18 @@
         }
       },
       "overall": {
-        "totalInstances": 50,
-        "filesCount": 40,
+        "totalInstances": 54,
+        "filesCount": 44,
         "props": {
           "src": {
-            "count": 50,
+            "count": 54,
             "values": {
               "{image}": 5,
+              "{asset.iconUrl ?? undefined}": 4,
               "{src}": 3,
               "{tokenImage}": 3,
               "{icon.src}": 2,
               "{iconUrl}": 2,
-              "{asset.iconUrl ?? undefined}": 2,
               "{source}": 2,
               "{avatarTokenSrc}": 1,
               "{results[i]?.iconUrl}": 1,
@@ -260,6 +267,8 @@
               "{badgeSrc}": 1,
               "{coin.src}": 1,
               "{getAssetImageUrl(token.address, chainIdHex) ?? token.image ?? ''}": 1,
+              "{selectedAsset.image ?? undefined}": 1,
+              "{iconUrl ?? undefined}": 1,
               "{token.iconUrl}": 1,
               "{sourceTokenIconUrl}": 1,
               "{destinationTokenIconUrl}": 1,
@@ -283,12 +292,12 @@
             }
           },
           "name": {
-            "count": 43,
+            "count": 47,
             "values": {
-              "{symbol}": 9,
+              "{symbol}": 10,
+              "{asset.symbol}": 3,
               "{nativeCurrency}": 3,
               "{token.symbol}": 2,
-              "{asset.symbol}": 2,
               "\"USDC\"": 2,
               "{name}": 1,
               "{symbol || address}": 1,
@@ -301,6 +310,8 @@
               "{nickname || address}": 1,
               "{nicknameInput || address}": 1,
               "{coin.symbol}": 1,
+              "{selectedAsset.symbol}": 1,
+              "{asset.name}": 1,
               "{sourceTokenSymbol}": 1,
               "{destinationTokenSymbol}": 1,
               "{getTokenName(asset.name, asset.symbol)}": 1,
@@ -318,16 +329,17 @@
             }
           },
           "size": {
-            "count": 39,
+            "count": 43,
             "values": {
-              "{AvatarTokenSize.Md}": 9,
+              "{AvatarTokenSize.Md}": 11,
               "{AvatarTokenSize.Xs}": 7,
               "{AvatarTokenSize.Xl}": 7,
-              "{AvatarTokenSize.Lg}": 6,
-              "{AvatarTokenSize.Sm}": 4,
+              "{AvatarTokenSize.Lg}": 7,
+              "{AvatarTokenSize.Sm}": 5,
               "{size}": 2,
-              "{size === GasFeeTokenIconSize.Md ? AvatarTokenSize.Md : AvatarTokenSize.Xs}": 2,
               "{MUSD_CONVERT_LIST_TOKEN_SIZE}": 1,
+              "{avatarSize}": 1,
+              "{size === GasFeeTokenIconSize.Md ? AvatarTokenSize.Md : AvatarTokenSize.Xs}": 1,
               "{TOKEN_ICON_SIZE_MAP[size]}": 1
             }
           },
@@ -350,6 +362,17 @@
               "{borderColor}": 1
             }
           },
+          "data-testid": {
+            "count": 6,
+            "values": {
+              "\"activity-list-item-avatar-token\"": 1,
+              "{`perps-token-logo-${sanitizedSymbol}`}": 1,
+              "\"avatar-token\"": 1,
+              "\"token-insights-icon\"": 1,
+              "\"token-icon\"": 1,
+              "\"native-icon\"": 1
+            }
+          },
           "backgroundColor": {
             "count": 5,
             "values": {
@@ -357,15 +380,6 @@
               "{BackgroundColor.backgroundSection}": 1,
               "{BackgroundColor.transparent}": 1,
               "{tokenSymbol === t('unknown') ? BackgroundColor.overlayDefault : BackgroundCol...}": 1
-            }
-          },
-          "data-testid": {
-            "count": 4,
-            "values": {
-              "\"activity-list-item-avatar-token\"": 1,
-              "{`perps-token-logo-${sanitizedSymbol}`}": 1,
-              "\"avatar-token\"": 1,
-              "\"token-insights-icon\"": 1
             }
           },
           "showHalo": {
@@ -429,19 +443,19 @@
       }
     },
     "mobile": {
-      "filesScanned": 6702,
+      "filesScanned": 6785,
       "targetComponent": "AvatarToken",
       "mmds": {
-        "totalInstances": 24,
+        "totalInstances": 22,
         "filesCount": 22,
         "props": {
           "name": {
-            "count": 23,
+            "count": 21,
             "values": {
-              "{token.symbol}": 5,
               "{MUSD_TOKEN.symbol}": 5,
+              "{token.symbol}": 4,
               "{symbol}": 2,
-              "{pickerToken.symbol}": 2,
+              "{asset.symbol}": 1,
               "{selectedDestinationToken?.symbol ?? UNKNOWN_DESTINATION_TOKEN_SYMBOL}": 1,
               "{sourceToken.symbol}": 1,
               "{selectedToken.symbol ?? ''}": 1,
@@ -454,13 +468,12 @@
             }
           },
           "src": {
-            "count": 22,
+            "count": 20,
             "values": {
               "{MUSD_TOKEN.imageSource as ImageOrSvgSrc}": 3,
+              "{source}": 2,
               "{token.image ? { uri: token.image } : undefined}": 2,
               "{MUSD_TOKEN.imageSource as number}": 2,
-              "{getBridgeTokenImageSource(pickerToken)}": 2,
-              "{getBridgeTokenImageSource(token)}": 2,
               "{selectedDestinationToken?.image ? { uri: selectedDestinationToken.image } : u...}": 1,
               "{sourceToken.image ? { uri: sourceToken.image } : undefined}": 1,
               "{{ uri: iconUrl }}": 1,
@@ -475,15 +488,31 @@
             }
           },
           "size": {
-            "count": 22,
+            "count": 20,
             "values": {
-              "{AvatarTokenSize.Lg}": 8,
-              "{AvatarTokenSize.Sm}": 5,
-              "{AvatarTokenSize.Md}": 4,
+              "{AvatarTokenSize.Lg}": 9,
+              "{AvatarTokenSize.Sm}": 3,
+              "{AvatarTokenSize.Md}": 2,
               "{AvatarTokenSize.Xl}": 2,
+              "{size}": 2,
               "{AvatarBaseSize.Sm}": 1,
-              "{size}": 1,
               "{avatarTokenSize}": 1
+            }
+          },
+          "key": {
+            "count": 4,
+            "values": {
+              "{uniqueSourceImageKey}": 2,
+              "{selectedAsset?.logo}": 1,
+              "{token.logo}": 1
+            }
+          },
+          "imageOrSvgProps": {
+            "count": 3,
+            "values": {
+              "{{ imageProps: { onError, testID: 'token-avatar-image' }, }}": 1,
+              "{{ imageProps: { onError, testID: QUICK_BUY_TOKEN_ICON_AVATAR_TEST_ID }, }}": 1,
+              "{{ onImageError: handleImageError, onSvgError: handleImageError, }}": 1
             }
           },
           "testID": {
@@ -491,13 +520,6 @@
             "values": {
               "{`${BatchSellFinalReviewModalSelectorsIDs.SOURCE_TOKEN_AVATAR}-${sourceTokenKey}`}": 1,
               "\"token-avatar-image\"": 1
-            }
-          },
-          "key": {
-            "count": 2,
-            "values": {
-              "{selectedAsset?.logo}": 1,
-              "{token.logo}": 1
             }
           },
           "style": {
@@ -512,23 +534,17 @@
             "values": {
               "\"bg-background-hover\"": 1
             }
-          },
-          "imageOrSvgProps": {
-            "count": 1,
-            "values": {
-              "{{ onImageError: handleImageError, onSvgError: handleImageError, }}": 1
-            }
           }
         }
       },
       "deprecated": {
-        "totalInstances": 29,
-        "filesCount": 27,
+        "totalInstances": 28,
+        "filesCount": 26,
         "props": {
           "size": {
-            "count": 29,
+            "count": 28,
             "values": {
-              "{AvatarSize.Lg}": 12,
+              "{AvatarSize.Lg}": 11,
               "{AvatarSize.Md}": 11,
               "{AvatarSize.Sm}": 2,
               "{AvatarSize.Xs}": 1,
@@ -538,10 +554,10 @@
             }
           },
           "name": {
-            "count": 27,
+            "count": 26,
             "values": {
               "{token.symbol}": 5,
-              "{asset.symbol}": 3,
+              "{asset.symbol}": 2,
               "{iconTitle}": 2,
               "{token.name}": 2,
               "{sessionName}": 2,
@@ -561,14 +577,13 @@
             }
           },
           "imageSource": {
-            "count": 25,
+            "count": 24,
             "values": {
               "{{ uri: token.image }}": 2,
               "{{ uri: asset.image }}": 2,
               "{{ uri: USDC_TOKEN_ICON_URL }}": 2,
               "{{ uri: token.iconUrl }}": 2,
               "{{ uri: icon }}": 1,
-              "{{ uri: imageUri }}": 1,
               "{getTokenImageSource( token.symbol, token.image, token.address, token.chainId, )}": 1,
               "{token.image ? { uri: token.image } : undefined}": 1,
               "{{ uri: avatarIconUrl }}": 1,
@@ -623,20 +638,20 @@
         }
       },
       "overall": {
-        "totalInstances": 53,
-        "filesCount": 49,
+        "totalInstances": 50,
+        "filesCount": 48,
         "props": {
           "size": {
-            "count": 51,
+            "count": 48,
             "values": {
-              "{AvatarSize.Lg}": 12,
+              "{AvatarSize.Lg}": 11,
               "{AvatarSize.Md}": 11,
-              "{AvatarTokenSize.Lg}": 8,
-              "{AvatarTokenSize.Sm}": 5,
-              "{AvatarTokenSize.Md}": 4,
+              "{AvatarTokenSize.Lg}": 9,
+              "{AvatarTokenSize.Sm}": 3,
+              "{size}": 3,
               "{AvatarSize.Sm}": 2,
+              "{AvatarTokenSize.Md}": 2,
               "{AvatarTokenSize.Xl}": 2,
-              "{size}": 2,
               "{AvatarBaseSize.Sm}": 1,
               "{AvatarSize.Xs}": 1,
               "{AvatarSize.Xl}": 1,
@@ -645,16 +660,15 @@
             }
           },
           "name": {
-            "count": 50,
+            "count": 47,
             "values": {
-              "{token.symbol}": 10,
+              "{token.symbol}": 9,
               "{MUSD_TOKEN.symbol}": 6,
               "{asset.symbol}": 3,
               "{symbol}": 2,
               "{iconTitle}": 2,
               "{token.name}": 2,
               "{sessionName}": 2,
-              "{pickerToken.symbol}": 2,
               "{selectedDestinationToken?.symbol ?? UNKNOWN_DESTINATION_TOKEN_SYMBOL}": 1,
               "{sourceToken.symbol}": 1,
               "{selectedToken.symbol ?? ''}": 1,
@@ -679,14 +693,13 @@
             }
           },
           "imageSource": {
-            "count": 25,
+            "count": 24,
             "values": {
               "{{ uri: token.image }}": 2,
               "{{ uri: asset.image }}": 2,
               "{{ uri: USDC_TOKEN_ICON_URL }}": 2,
               "{{ uri: token.iconUrl }}": 2,
               "{{ uri: icon }}": 1,
-              "{{ uri: imageUri }}": 1,
               "{getTokenImageSource( token.symbol, token.image, token.address, token.chainId, )}": 1,
               "{token.image ? { uri: token.image } : undefined}": 1,
               "{{ uri: avatarIconUrl }}": 1,
@@ -705,13 +718,12 @@
             }
           },
           "src": {
-            "count": 22,
+            "count": 20,
             "values": {
               "{MUSD_TOKEN.imageSource as ImageOrSvgSrc}": 3,
+              "{source}": 2,
               "{token.image ? { uri: token.image } : undefined}": 2,
               "{MUSD_TOKEN.imageSource as number}": 2,
-              "{getBridgeTokenImageSource(pickerToken)}": 2,
-              "{getBridgeTokenImageSource(token)}": 2,
               "{selectedDestinationToken?.image ? { uri: selectedDestinationToken.image } : u...}": 1,
               "{sourceToken.image ? { uri: sourceToken.image } : undefined}": 1,
               "{{ uri: iconUrl }}": 1,
@@ -751,17 +763,26 @@
               "{styles.avatarToken}": 1
             }
           },
+          "key": {
+            "count": 4,
+            "values": {
+              "{uniqueSourceImageKey}": 2,
+              "{selectedAsset?.logo}": 1,
+              "{token.logo}": 1
+            }
+          },
           "isHaloEnabled": {
             "count": 4,
             "values": {
               "true (shorthand)": 4
             }
           },
-          "key": {
-            "count": 2,
+          "imageOrSvgProps": {
+            "count": 3,
             "values": {
-              "{selectedAsset?.logo}": 1,
-              "{token.logo}": 1
+              "{{ imageProps: { onError, testID: 'token-avatar-image' }, }}": 1,
+              "{{ imageProps: { onError, testID: QUICK_BUY_TOKEN_ICON_AVATAR_TEST_ID }, }}": 1,
+              "{{ onImageError: handleImageError, onSvgError: handleImageError, }}": 1
             }
           },
           "isIpfsGatewayCheckBypassed": {
@@ -775,17 +796,11 @@
             "values": {
               "\"bg-background-hover\"": 1
             }
-          },
-          "imageOrSvgProps": {
-            "count": 1,
-            "values": {
-              "{{ onImageError: handleImageError, onSvgError: handleImageError, }}": 1
-            }
           }
         }
       },
       "deprecatedByLegacyComponent": {
-        "AvatarToken": 29
+        "AvatarToken": 28
       }
     }
   }
