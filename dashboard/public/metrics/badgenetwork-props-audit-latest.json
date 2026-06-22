@@ -1,9 +1,9 @@
 {
   "component": "BadgeNetwork",
-  "generatedAt": "2026-06-16T16:21:51.832Z",
+  "generatedAt": "2026-06-22T10:21:54.407Z",
   "projects": {
     "extension": {
-      "filesScanned": 3321,
+      "filesScanned": 3345,
       "targetComponent": "BadgeNetwork",
       "mmds": {
         "totalInstances": 4,
@@ -49,7 +49,7 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 6833,
+      "filesScanned": 6893,
       "targetComponent": "BadgeNetwork",
       "mmds": {
         "totalInstances": 4,
@@ -75,7 +75,7 @@
               "{token.network?.shortName}": 1,
               "{normalizedNetworkChainId}": 1,
               "{depositNetworkName ?? networkName}": 1,
-              "{position.chain}": 1
+              "{networkBadge.name}": 1
             }
           },
           "imageSource": {
@@ -84,7 +84,7 @@
               "{networkImageSource}": 5,
               "{getNetworkImageForToken(token)}": 1,
               "{NetworkBadgeSource(asset.chainId as `0x${string}`)}": 1,
-              "{getNetworkImageSource({ chainId: caipChainId })}": 1
+              "{networkBadge.imageSource}": 1
             }
           }
         }
@@ -100,7 +100,7 @@
               "{token.network?.shortName}": 1,
               "{normalizedNetworkChainId}": 1,
               "{depositNetworkName ?? networkName}": 1,
-              "{position.chain}": 1
+              "{networkBadge.name}": 1
             }
           },
           "imageSource": {
@@ -109,7 +109,7 @@
               "{networkImageSource}": 5,
               "{getNetworkImageForToken(token)}": 1,
               "{NetworkBadgeSource(asset.chainId as `0x${string}`)}": 1,
-              "{getNetworkImageSource({ chainId: caipChainId })}": 1
+              "{networkBadge.imageSource}": 1
             }
           },
           "src": {

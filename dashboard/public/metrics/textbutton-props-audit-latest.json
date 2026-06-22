@@ -1,13 +1,13 @@
 {
   "component": "TextButton",
-  "generatedAt": "2026-06-16T16:31:04.363Z",
+  "generatedAt": "2026-06-22T10:31:00.756Z",
   "projects": {
     "extension": {
-      "filesScanned": 3321,
+      "filesScanned": 3345,
       "targetComponent": "TextButton",
       "mmds": {
-        "totalInstances": 73,
-        "filesCount": 45,
+        "totalInstances": 75,
+        "filesCount": 47,
         "props": {
           "className": {
             "count": 45,
@@ -80,9 +80,34 @@
             }
           },
           "asChild": {
-            "count": 33,
+            "count": 35,
             "values": {
-              "true (shorthand)": 33
+              "true (shorthand)": 35
+            }
+          },
+          "key": {
+            "count": 27,
+            "values": {
+              "\"terms-link\"": 3,
+              "\"need-help-link\"": 3,
+              "\"terms\"": 2,
+              "\"u2f-error-1\"": 2,
+              "\"here-link\"": 2,
+              "\"learnMore\"": 1,
+              "\"import-token-fake-token-warning\"": 1,
+              "\"shield-footer-agreement-button\"": 1,
+              "\"link\"": 1,
+              "\"defi-referral-partner-terms\"": 1,
+              "\"u2f-error-2\"": 1,
+              "\"learn-scam-risk\"": 1,
+              "\"secret-recovery-phrase\"": 1,
+              "\"srp-learn-srp\"": 1,
+              "\"walletReadyLearn\"": 1,
+              "\"seedPhraseReviewDetails\"": 1,
+              "\"loginErrorGenericDescription\"": 1,
+              "\"onboardingLoginFooterTermsOfUse\"": 1,
+              "\"onboardingLoginFooterPrivacyNotice\"": 1,
+              "\"import-account\"": 1
             }
           },
           "data-testid": {
@@ -115,35 +140,11 @@
               "\"unlock-forgot-password-button\"": 1
             }
           },
-          "key": {
-            "count": 26,
-            "values": {
-              "\"terms-link\"": 3,
-              "\"need-help-link\"": 3,
-              "\"terms\"": 2,
-              "\"u2f-error-1\"": 2,
-              "\"here-link\"": 2,
-              "\"learnMore\"": 1,
-              "\"import-token-fake-token-warning\"": 1,
-              "\"shield-footer-agreement-button\"": 1,
-              "\"link\"": 1,
-              "\"u2f-error-2\"": 1,
-              "\"learn-scam-risk\"": 1,
-              "\"secret-recovery-phrase\"": 1,
-              "\"srp-learn-srp\"": 1,
-              "\"walletReadyLearn\"": 1,
-              "\"seedPhraseReviewDetails\"": 1,
-              "\"loginErrorGenericDescription\"": 1,
-              "\"onboardingLoginFooterTermsOfUse\"": 1,
-              "\"onboardingLoginFooterPrivacyNotice\"": 1,
-              "\"import-account\"": 1
-            }
-          },
           "size": {
-            "count": 21,
+            "count": 22,
             "values": {
               "{TextButtonSize.BodyMd}": 11,
-              "{TextButtonSize.BodySm}": 9,
+              "{TextButtonSize.BodySm}": 10,
               "{TextButtonSize.BodyXs}": 1
             }
           },
@@ -226,11 +227,11 @@
         }
       },
       "deprecated": {
-        "totalInstances": 66,
-        "filesCount": 47,
+        "totalInstances": 65,
+        "filesCount": 46,
         "props": {
           "onClick": {
-            "count": 37,
+            "count": 36,
             "values": {
               "{setModeToEditAccounts}": 2,
               "{onAlertLinkClick}": 1,
@@ -254,7 +255,6 @@
               "{() => { dispatch(showImportNftsModal({ tokenAddress: address })); onClose(); }}": 1,
               "{() => { onClose(); navigate( `${ASSETS_ROUTE}#autodetect-tokens`, ); }}": 1,
               "{() => { global.platform.openTab({ url: ZENDESK_URLS.UNKNOWN_NETWORK, }); }}": 1,
-              "{handleLearnMoreClick}": 1,
               "{() => { setName(suggestedName); }}": 1,
               "{() => { const chainIdHex = toHex(chainId); if (chainIdHex) { dispatch( setEdi...}": 1,
               "{() => { setTicker(suggestedTicker); }}": 1,
@@ -271,10 +271,10 @@
             }
           },
           "size": {
-            "count": 33,
+            "count": 32,
             "values": {
               "{ButtonLinkSize.Inherit}": 20,
-              "{ButtonLinkSize.Auto}": 4,
+              "{ButtonLinkSize.Auto}": 3,
               "{Size.inherit}": 3,
               "{BUTTON_SIZES.INHERIT}": 3,
               "{ButtonLinkSize.Lg}": 1,
@@ -340,13 +340,6 @@
               "\"gas-fees-learn-more\"": 1
             }
           },
-          "externalLink": {
-            "count": 16,
-            "values": {
-              "true (shorthand)": 15,
-              "{!isMetaMaskUrl}": 1
-            }
-          },
           "as": {
             "count": 16,
             "values": {
@@ -369,6 +362,13 @@
               "\"import-tokens-modal__button-link\"": 1,
               "\"import-tokens-modal__nft-address-error-link\"": 1,
               "\"import-tokens-modal__autodetect\"": 1
+            }
+          },
+          "externalLink": {
+            "count": 15,
+            "values": {
+              "true (shorthand)": 14,
+              "{!isMetaMaskUrl}": 1
             }
           },
           "rel": {
@@ -535,16 +535,15 @@
         }
       },
       "overall": {
-        "totalInstances": 139,
-        "filesCount": 91,
+        "totalInstances": 140,
+        "filesCount": 92,
         "props": {
           "onClick": {
-            "count": 82,
+            "count": 81,
             "values": {
               "{() => setShowPasskeyTroubleshootModal(true)}": 3,
               "{handleClick}": 3,
               "{onLearnMore}": 3,
-              "{handleLearnMoreClick}": 2,
               "{() => { global.platform.openTab({ url: ZENDESK_URLS.ACCOUNT_UPGRADE, }); }}": 2,
               "{setModeToEditAccounts}": 2,
               "{onClickFindTransactionHash}": 2,
@@ -598,6 +597,7 @@
               "{() => setToggleSrpDetailsModal(true)}": 1,
               "{onCopy}": 1,
               "{handleSrpClick}": 1,
+              "{handleLearnMoreClick}": 1,
               "{() => navigate(ONBOARDING_PRIVACY_SETTINGS_ROUTE)}": 1,
               "{() => { dispatch( toggleNetworkMenu({ isAddingNewNetwork: true, }), ); }}": 1,
               "{handleOnShowSrpDetailsModal}": 1,
@@ -659,8 +659,8 @@
             "values": {
               "{ButtonLinkSize.Inherit}": 20,
               "{TextButtonSize.BodyMd}": 11,
-              "{TextButtonSize.BodySm}": 9,
-              "{ButtonLinkSize.Auto}": 4,
+              "{TextButtonSize.BodySm}": 10,
+              "{ButtonLinkSize.Auto}": 3,
               "{Size.inherit}": 3,
               "{BUTTON_SIZES.INHERIT}": 3,
               "{ButtonLinkSize.Lg}": 1,
@@ -670,7 +670,7 @@
             }
           },
           "key": {
-            "count": 43,
+            "count": 44,
             "values": {
               "\"terms-link\"": 3,
               "\"link\"": 3,
@@ -693,6 +693,7 @@
               "\"token-detection-announcement\"": 1,
               "{origin}": 1,
               "\"shield-footer-agreement-button\"": 1,
+              "\"defi-referral-partner-terms\"": 1,
               "\"u2f-error-2\"": 1,
               "\"learn-scam-risk\"": 1,
               "\"secret-recovery-phrase\"": 1,
@@ -704,6 +705,12 @@
               "\"onboardingLoginFooterPrivacyNotice\"": 1,
               "\"gas-fees-learn-more\"": 1,
               "\"import-account\"": 1
+            }
+          },
+          "asChild": {
+            "count": 35,
+            "values": {
+              "true (shorthand)": 35
             }
           },
           "data-testid": {
@@ -740,12 +747,6 @@
               "\"unlock-passkey-troubleshoot-button\"": 1,
               "\"unlock-use-password-button\"": 1,
               "\"unlock-forgot-password-button\"": 1
-            }
-          },
-          "asChild": {
-            "count": 33,
-            "values": {
-              "true (shorthand)": 33
             }
           },
           "href": {
@@ -795,18 +796,18 @@
               "{isRehydrationFlow ? TextColor.TextDefault : TextColor.PrimaryDefault}": 1
             }
           },
-          "externalLink": {
-            "count": 16,
-            "values": {
-              "true (shorthand)": 15,
-              "{!isMetaMaskUrl}": 1
-            }
-          },
           "as": {
             "count": 16,
             "values": {
               "\"a\"": 13,
               "\"button\"": 3
+            }
+          },
+          "externalLink": {
+            "count": 15,
+            "values": {
+              "true (shorthand)": 14,
+              "{!isMetaMaskUrl}": 1
             }
           },
           "rel": {
@@ -999,11 +1000,11 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "ButtonLink": 66
+        "ButtonLink": 65
       }
     },
     "mobile": {
-      "filesScanned": 6833,
+      "filesScanned": 6893,
       "targetComponent": "TextButton",
       "mmds": {
         "totalInstances": 7,

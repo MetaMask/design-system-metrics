@@ -1,18 +1,18 @@
 {
   "component": "ButtonIcon",
-  "generatedAt": "2026-06-16T16:25:56.673Z",
+  "generatedAt": "2026-06-22T10:26:01.419Z",
   "projects": {
     "extension": {
-      "filesScanned": 3321,
+      "filesScanned": 3345,
       "targetComponent": "ButtonIcon",
       "mmds": {
-        "totalInstances": 105,
-        "filesCount": 70,
+        "totalInstances": 107,
+        "filesCount": 71,
         "props": {
           "iconName": {
-            "count": 105,
+            "count": 107,
             "values": {
-              "{IconName.ArrowLeft}": 40,
+              "{IconName.ArrowLeft}": 41,
               "{IconName.Close}": 19,
               "{IconName.ArrowRight}": 12,
               "{copied ? IconName.CopySuccess : IconName.Copy}": 3,
@@ -33,6 +33,7 @@
               "{iconName}": 1,
               "{selectedAddress || input ? IconName.Close : IconName.Scan}": 1,
               "{IconName.Export}": 1,
+              "{IconName.Setting}": 1,
               "{IconName.Copy}": 1,
               "{IconName.Global}": 1,
               "{IconName.Menu}": 1,
@@ -43,11 +44,11 @@
             }
           },
           "ariaLabel": {
-            "count": 105,
+            "count": 107,
             "values": {
               "{t('back')}": 32,
               "{t('close')}": 14,
-              "{t('back') as string}": 3,
+              "{t('back') as string}": 4,
               "{showPassword ? t('passwordToggleHide') : t('passwordToggleShow')}": 2,
               "\"Edit account name\"": 2,
               "{t('next')}": 2,
@@ -78,6 +79,7 @@
               "\"Close recipient modal\"": 1,
               "{t(selectedAddress || input ? 'close' : 'scanQrCode')}": 1,
               "{t('genericExplorerView', [blockExplorerDomain]) as string}": 1,
+              "{t('settings') as string}": 1,
               "\"Switch Account\"": 1,
               "\"Copy\"": 1,
               "\"Network\"": 1,
@@ -101,22 +103,22 @@
             }
           },
           "size": {
-            "count": 93,
+            "count": 95,
             "values": {
-              "{ButtonIconSize.Md}": 66,
+              "{ButtonIconSize.Md}": 68,
               "{ButtonIconSize.Sm}": 22,
               "{ButtonIconSize.Lg}": 4,
               "{iconSize}": 1
             }
           },
           "onClick": {
-            "count": 82,
+            "count": 84,
             "values": {
               "{handleBack}": 15,
               "{onClose}": 8,
               "{() => navigate(PREVIOUS_ROUTE)}": 8,
+              "{onBack}": 6,
               "{handleClose}": 5,
-              "{onBack}": 5,
               "{handleClick}": 2,
               "{handleBackButtonClick}": 2,
               "{() => { navigate(DEFAULT_ROUTE); }}": 2,
@@ -145,6 +147,7 @@
               "{onCopy}": 1,
               "{() => handleCopy(checkSummedAddress)}": 1,
               "{() => { trackEvent({ category: MetaMetricsEventCategory.Accounts, event: 'Cli...}": 1,
+              "{onSettingsClick}": 1,
               "{onTogglePasswordVisibility}": 1,
               "{handleSkip}": 1,
               "{handleSubmit}": 1,
@@ -156,7 +159,7 @@
             }
           },
           "data-testid": {
-            "count": 69,
+            "count": 71,
             "values": {
               "\"back-button\"": 5,
               "\"hardware-connect-close-btn\"": 2,
@@ -187,6 +190,8 @@
               "\"contacts-back-button\"": 1,
               "\"edit-contact-back-button\"": 1,
               "\"edit-contact-close-button\"": 1,
+              "\"select-hardware-accounts-page-back-button\"": 1,
+              "\"select-hardware-accounts-page-settings-button\"": 1,
               "\"create-password-back-button\"": 1,
               "\"custom-token-import-back-button\"": 1,
               "\"custom-token-import-close-button\"": 1,
@@ -306,13 +311,13 @@
         }
       },
       "deprecated": {
-        "totalInstances": 99,
-        "filesCount": 67,
+        "totalInstances": 100,
+        "filesCount": 68,
         "props": {
           "iconName": {
-            "count": 99,
+            "count": 100,
             "values": {
-              "{IconName.ArrowLeft}": 23,
+              "{IconName.ArrowLeft}": 24,
               "{IconName.Close}": 19,
               "{IconName.Export}": 9,
               "{IconName.MoreVertical}": 6,
@@ -342,9 +347,9 @@
             }
           },
           "ariaLabel": {
-            "count": 93,
+            "count": 94,
             "values": {
-              "{t('back')}": 12,
+              "{t('back')}": 13,
               "\"Back\"": 11,
               "{t('close')}": 9,
               "\"redirect\"": 3,
@@ -397,9 +402,9 @@
             }
           },
           "size": {
-            "count": 90,
+            "count": 91,
             "values": {
-              "{ButtonIconSize.Sm}": 41,
+              "{ButtonIconSize.Sm}": 42,
               "{ButtonIconSize.Md}": 41,
               "{IconSize.Sm}": 4,
               "{Size.SM}": 2,
@@ -408,7 +413,7 @@
             }
           },
           "onClick": {
-            "count": 85,
+            "count": 86,
             "values": {
               "{handleBack}": 6,
               "{handleClick}": 3,
@@ -452,6 +457,7 @@
               "{onBack}": 1,
               "{() => setAssetOptionsOpen(true)}": 1,
               "{() => { setIsSettingsModalOpen(true); }}": 1,
+              "{() => contentRef.current?.handleClose()}": 1,
               "{() => { const previousDestAmount = unvalidatedQuote?.toTokenAmount?.amount; d...}": 1,
               "{() => { activeQuote && dispatch( trackUnifiedSwapBridgeEvent( UnifiedSwapBrid...}": 1,
               "{onOpenSlippageModal}": 1,
@@ -707,13 +713,13 @@
         }
       },
       "overall": {
-        "totalInstances": 204,
-        "filesCount": 137,
+        "totalInstances": 207,
+        "filesCount": 139,
         "props": {
           "iconName": {
-            "count": 204,
+            "count": 207,
             "values": {
-              "{IconName.ArrowLeft}": 63,
+              "{IconName.ArrowLeft}": 65,
               "{IconName.Close}": 38,
               "{IconName.ArrowRight}": 16,
               "{IconName.Export}": 10,
@@ -724,10 +730,10 @@
               "{addressCopied ? IconName.CopySuccess : IconName.Copy}": 3,
               "{IconName.ArrowDown}": 3,
               "{IconName.Add}": 3,
+              "{IconName.Setting}": 3,
               "{IconName.Danger}": 2,
               "{isDropdownOpen ? IconName.ArrowUp : IconName.ArrowDown}": 2,
               "{IconName.Customize}": 2,
-              "{IconName.Setting}": 2,
               "{IconName.SwapVertical}": 2,
               "{IconName.Arrow2Down}": 2,
               "\"arrow-left\"": 2,
@@ -760,19 +766,19 @@
             }
           },
           "ariaLabel": {
-            "count": 198,
+            "count": 201,
             "values": {
-              "{t('back')}": 44,
+              "{t('back')}": 45,
               "{t('close')}": 23,
               "\"Back\"": 13,
               "{t('edit')}": 4,
+              "{t('back') as string}": 4,
               "{t('next')}": 3,
               "\"redirect\"": 3,
               "\"copy\"": 3,
               "\"\"": 3,
               "{title}": 3,
               "\"Close\"": 3,
-              "{t('back') as string}": 3,
               "\"copy-button\"": 2,
               "\"expand\"": 2,
               "{t('options')}": 2,
@@ -834,6 +840,7 @@
               "{t(userInput ? 'close' : 'scanQrCode')}": 1,
               "{t(selectedAddress || input ? 'close' : 'scanQrCode')}": 1,
               "{t('genericExplorerView', [blockExplorerDomain]) as string}": 1,
+              "{t('settings') as string}": 1,
               "\"Switch Account\"": 1,
               "\"Copy\"": 1,
               "\"Network\"": 1,
@@ -857,10 +864,10 @@
             }
           },
           "size": {
-            "count": 183,
+            "count": 186,
             "values": {
-              "{ButtonIconSize.Md}": 107,
-              "{ButtonIconSize.Sm}": 63,
+              "{ButtonIconSize.Md}": 109,
+              "{ButtonIconSize.Sm}": 64,
               "{ButtonIconSize.Lg}": 5,
               "{IconSize.Sm}": 4,
               "{Size.SM}": 2,
@@ -869,12 +876,12 @@
             }
           },
           "onClick": {
-            "count": 167,
+            "count": 170,
             "values": {
               "{handleBack}": 21,
               "{onClose}": 10,
               "{() => navigate(PREVIOUS_ROUTE)}": 9,
-              "{onBack}": 6,
+              "{onBack}": 7,
               "{handleClick}": 5,
               "{handleClose}": 5,
               "{() => navigate(DEFAULT_ROUTE)}": 3,
@@ -931,6 +938,7 @@
               "{() => onAssetDeleteClick(asset)}": 1,
               "{onOpenPriceImpactWarningModal}": 1,
               "{() => { setIsSettingsModalOpen(true); }}": 1,
+              "{() => contentRef.current?.handleClose()}": 1,
               "{(e: React.MouseEvent) => { e.stopPropagation(); e.preventDefault(); navigateT...}": 1,
               "{() => { const previousDestAmount = unvalidatedQuote?.toTokenAmount?.amount; d...}": 1,
               "{() => { activeQuote && dispatch( trackUnifiedSwapBridgeEvent( UnifiedSwapBrid...}": 1,
@@ -960,6 +968,7 @@
               "{onCopy}": 1,
               "{() => handleCopy(checkSummedAddress)}": 1,
               "{() => { trackEvent({ category: MetaMetricsEventCategory.Accounts, event: 'Cli...}": 1,
+              "{onSettingsClick}": 1,
               "{() => clearNewNetworkAdded?.()}": 1,
               "{() => clearEditedNetwork?.()}": 1,
               "{() => setNewTokensImported('')}": 1,
@@ -977,7 +986,7 @@
             }
           },
           "data-testid": {
-            "count": 123,
+            "count": 125,
             "values": {
               "\"back-button\"": 7,
               "\"nft-address-copy\"": 3,
@@ -1049,6 +1058,8 @@
               "\"contacts-back-button\"": 1,
               "\"edit-contact-back-button\"": 1,
               "\"edit-contact-close-button\"": 1,
+              "\"select-hardware-accounts-page-back-button\"": 1,
+              "\"select-hardware-accounts-page-settings-button\"": 1,
               "\"create-password-back-button\"": 1,
               "\"custom-token-import-back-button\"": 1,
               "\"custom-token-import-close-button\"": 1,
@@ -1303,27 +1314,27 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "ButtonIcon": 99
+        "ButtonIcon": 100
       }
     },
     "mobile": {
-      "filesScanned": 6833,
+      "filesScanned": 6893,
       "targetComponent": "ButtonIcon",
       "mmds": {
-        "totalInstances": 94,
-        "filesCount": 71,
+        "totalInstances": 91,
+        "filesCount": 69,
         "props": {
           "iconName": {
-            "count": 93,
+            "count": 90,
             "values": {
-              "{IconName.ArrowLeft}": 23,
+              "{IconName.ArrowLeft}": 21,
               "{IconName.Close}": 20,
               "{IconName.Info}": 13,
               "{IconName.Add}": 3,
               "{IconName.ArrowRight}": 3,
-              "{IconName.Notification}": 3,
               "{IconName.Copy}": 2,
               "{IconName.Minus}": 2,
+              "{IconName.Notification}": 2,
               "{MMDSIconName.Menu}": 2,
               "{IconName.Trash}": 1,
               "{IconName.Customize}": 1,
@@ -1350,21 +1361,20 @@
             }
           },
           "onPress": {
-            "count": 91,
+            "count": 88,
             "values": {
               "{onClose}": 9,
               "{handleBackPress}": 7,
               "{handleInfoPress}": 4,
               "{onBackPress}": 3,
               "{onInfoPress}": 3,
-              "{handleBack}": 3,
               "{onBack}": 3,
               "{handleCancel}": 2,
               "{handleClose}": 2,
               "{handleGoBack}": 2,
               "{navigationPop}": 2,
               "{onDismiss}": 2,
-              "{() => navigation.goBack()}": 2,
+              "{handleBack}": 2,
               "{handleHamburgerPress}": 2,
               "{handleOnPress}": 1,
               "{() => handleDeleteAlert(item.id)}": 1,
@@ -1402,27 +1412,27 @@
               "{goToAddToken}": 1,
               "{handleSortControls}": 1,
               "{hideWhySecureWallet}": 1,
+              "{() => navigation.goBack()}": 1,
               "{handleClosePress}": 1,
               "{showWhatIsSeedPhrase}": 1,
               "{isAligning ? undefined : handleClose}": 1,
               "{handleBackClick}": 1,
               "{onToggleShowPassword}": 1,
               "{handleNotificationPreferencesPress}": 1,
-              "{handleNotificationPress}": 1,
               "{handleActivityPress}": 1,
               "{onForward}": 1
             }
           },
           "size": {
-            "count": 79,
+            "count": 76,
             "values": {
-              "{ButtonIconSize.Md}": 56,
+              "{ButtonIconSize.Md}": 53,
               "{ButtonIconSize.Sm}": 15,
               "{ButtonIconSize.Lg}": 8
             }
           },
           "testID": {
-            "count": 73,
+            "count": 70,
             "values": {
               "{CommonSelectorsIDs.BACK_ARROW_BUTTON}": 2,
               "\"back-button\"": 2,
@@ -1481,15 +1491,12 @@
               "{LEARN_MORE_BOTTOM_SHEET_TEST_IDS.BACK_BUTTON}": 1,
               "{LEARN_MORE_BOTTOM_SHEET_TEST_IDS.CLOSE_BUTTON}": 1,
               "{MULTICHAIN_ACCOUNTS_INTRO_MODAL_TEST_IDS.CLOSE_BUTTON}": 1,
-              "{EditAccountNameIds.BACK_BUTTON}": 1,
               "{AccountDetailsIds.BACK_BUTTON}": 1,
               "{TopTradersViewSelectorsIDs.BACK_BUTTON}": 1,
               "{TopTradersViewSelectorsIDs.NOTIFICATION_BUTTON}": 1,
               "\"quick-buy-sub-screen-back-button\"": 1,
               "\"quick-buy-sub-screen-close-button\"": 1,
               "{backButtonTestID}": 1,
-              "{TraderProfileViewSelectorsIDs.BACK_BUTTON}": 1,
-              "{TraderProfileViewSelectorsIDs.NOTIFICATION_BUTTON}": 1,
               "{WalletViewSelectorsIDs.WALLET_ACTIVITY_BUTTON}": 1,
               "\"whats-happening-detail-back-button\"": 1,
               "\"send-alert-modal-nav-back\"": 1,
@@ -1653,11 +1660,11 @@
         }
       },
       "deprecated": {
-        "totalInstances": 65,
-        "filesCount": 51,
+        "totalInstances": 64,
+        "filesCount": 50,
         "props": {
           "iconName": {
-            "count": 65,
+            "count": 64,
             "values": {
               "{IconName.ArrowLeft}": 20,
               "{IconName.Close}": 17,
@@ -1676,13 +1683,12 @@
               "{ComponentLibraryIconName.Trash}": 1,
               "{ComponentLibraryIconName.SwapHorizontal}": 1,
               "{IconName.Export}": 1,
-              "{iconName}": 1,
               "{copied ? IconName.CopySuccess : IconName.Copy}": 1,
               "{buttonIcon}": 1
             }
           },
           "onPress": {
-            "count": 63,
+            "count": 62,
             "values": {
               "{handleBack}": 4,
               "{handleClosePress}": 4,
@@ -1695,7 +1701,6 @@
               "{() => navigation.goBack()}": 2,
               "{handleClose}": 2,
               "{() => bottomSheetRef.current?.onCloseBottomSheet()}": 2,
-              "{handlePress}": 2,
               "{onBackButtonClick}": 2,
               "{() => setHasValueModalOpen(false)}": 2,
               "{handleTooltipPress}": 1,
@@ -1723,6 +1728,7 @@
               "{onClose}": 1,
               "{goBack}": 1,
               "{() => { if (this.state.editable) { this.setOpenNetworkSelector(true); } }}": 1,
+              "{handlePress}": 1,
               "{copyMessage}": 1,
               "{() => setTooltipVisible(false)}": 1,
               "{handleLeftPress}": 1,
@@ -1732,7 +1738,7 @@
             }
           },
           "iconColor": {
-            "count": 50,
+            "count": 49,
             "values": {
               "{IconColor.Default}": 34,
               "{IconColor.Alternative}": 3,
@@ -1741,12 +1747,12 @@
               "{IconColor.Muted}": 2,
               "{IconColor.Primary}": 2,
               "{IconColor.Error}": 2,
-              "{iconColor}": 2,
-              "{colors.icon.alternative}": 1
+              "{colors.icon.alternative}": 1,
+              "{iconColor}": 1
             }
           },
           "testID": {
-            "count": 47,
+            "count": 46,
             "values": {
               "{CHECKOUT_TEST_IDS.CLOSE_BUTTON}": 4,
               "\"snap-ui-address-input__clear-button\"": 2,
@@ -1780,7 +1786,6 @@
               "{ImportTokenViewSelectorsIDs.SELECT_NETWORK_BUTTON}": 1,
               "{AccountConnectMaliciousWarningSelectorsIDs.CLOSE_BUTTON}": 1,
               "{KEYRING_ACCOUNT_LIST_ITEM_BUTTON}": 1,
-              "{`${tooltipTestId}-open-btn`}": 1,
               "{testID ?? 'copyButtonTestId'}": 1,
               "{tooltipTestId ?? 'tooltipTestId'}": 1,
               "\"flat-nav-header-back-button\"": 1,
@@ -1791,19 +1796,18 @@
             }
           },
           "size": {
-            "count": 47,
+            "count": 46,
             "values": {
               "{ButtonIconSizes.Md}": 18,
               "{ButtonIconSizes.Lg}": 13,
               "{ButtonIconSizes.Sm}": 12,
               "{TooltipSizes.Sm}": 1,
               "{TooltipSizes.Md}": 1,
-              "{iconSize}": 1,
               "{size}": 1
             }
           },
           "style": {
-            "count": 14,
+            "count": 13,
             "values": {
               "{styles.iconButton}": 2,
               "{styles.valueModalHeaderIcon}": 2,
@@ -1812,7 +1816,6 @@
               "{styles.resultActionButton}": 1,
               "{{ ...styles.resultActionButton, ...(swapsEnabled ? {} : styles.hiddenButton), }}": 1,
               "{styles.buttonIcon}": 1,
-              "{iconStyle}": 1,
               "{styles.backIcon}": 1,
               "{styles.left}": 1,
               "{styles.backButton}": 1,
@@ -1849,19 +1852,18 @@
               "{styles.hitSlop}": 1
             }
           },
-          "disabled": {
-            "count": 4,
-            "values": {
-              "{isLoadingKeys}": 2,
-              "{!swapsEnabled}": 1,
-              "{disabled}": 1
-            }
-          },
           "isDisabled": {
             "count": 3,
             "values": {
               "{disabled}": 2,
               "{isDeletingWallet}": 1
+            }
+          },
+          "disabled": {
+            "count": 3,
+            "values": {
+              "{isLoadingKeys}": 2,
+              "{!swapsEnabled}": 1
             }
           },
           "onPressIn": {
@@ -1873,24 +1875,23 @@
         }
       },
       "overall": {
-        "totalInstances": 159,
-        "filesCount": 122,
+        "totalInstances": 155,
+        "filesCount": 119,
         "props": {
           "iconName": {
-            "count": 158,
+            "count": 154,
             "values": {
-              "{IconName.ArrowLeft}": 43,
+              "{IconName.ArrowLeft}": 41,
               "{IconName.Close}": 37,
               "{IconName.Info}": 19,
               "{IconName.Add}": 5,
               "{IconName.ArrowRight}": 5,
               "{IconName.ArrowDown}": 4,
-              "{IconName.Notification}": 3,
               "{IconName.Copy}": 2,
               "{IconName.Trash}": 2,
               "{IconName.Minus}": 2,
               "{IconName.Edit}": 2,
-              "{iconName}": 2,
+              "{IconName.Notification}": 2,
               "{MMDSIconName.Menu}": 2,
               "{IconName.Customize}": 1,
               "{IconName.RemoveMinus}": 1,
@@ -1905,6 +1906,7 @@
               "{IconName.Expand}": 1,
               "{IconName.Share}": 1,
               "{IconName.SwapHorizontal}": 1,
+              "{iconName}": 1,
               "{IconName.UserCircleAdd}": 1,
               "{IconName.Setting}": 1,
               "{isCopied ? IconName.Confirmation : IconName.Copy}": 1,
@@ -1925,19 +1927,18 @@
             }
           },
           "onPress": {
-            "count": 154,
+            "count": 150,
             "values": {
               "{onClose}": 10,
               "{handleBackPress}": 8,
-              "{handleBack}": 7,
+              "{handleBack}": 6,
               "{onBack}": 5,
               "{handleClosePress}": 5,
               "{handleClose}": 4,
               "{handleInfoPress}": 4,
               "{onBackPress}": 4,
-              "{() => navigation.goBack()}": 4,
               "{onInfoPress}": 3,
-              "{handlePress}": 3,
+              "{() => navigation.goBack()}": 3,
               "{handleClear}": 2,
               "{handleCancel}": 2,
               "{navigateToHome}": 2,
@@ -1948,6 +1949,7 @@
               "{onPress}": 2,
               "{() => { navigate(Routes.MODAL.ROOT_MODAL_FLOW, { screen: Routes.SHEET.CONNECT...}": 2,
               "{onDismiss}": 2,
+              "{handlePress}": 2,
               "{() => bottomSheetRef.current?.onCloseBottomSheet()}": 2,
               "{handleHamburgerPress}": 2,
               "{onBackButtonClick}": 2,
@@ -2012,7 +2014,6 @@
               "{onToggleShowPassword}": 1,
               "{() => { if (this.state.editable) { this.setOpenNetworkSelector(true); } }}": 1,
               "{handleNotificationPreferencesPress}": 1,
-              "{handleNotificationPress}": 1,
               "{handleActivityPress}": 1,
               "{copyMessage}": 1,
               "{() => setTooltipVisible(false)}": 1,
@@ -2024,9 +2025,9 @@
             }
           },
           "size": {
-            "count": 126,
+            "count": 122,
             "values": {
-              "{ButtonIconSize.Md}": 56,
+              "{ButtonIconSize.Md}": 53,
               "{ButtonIconSizes.Md}": 18,
               "{ButtonIconSize.Sm}": 15,
               "{ButtonIconSizes.Lg}": 13,
@@ -2034,12 +2035,11 @@
               "{ButtonIconSize.Lg}": 8,
               "{TooltipSizes.Sm}": 1,
               "{TooltipSizes.Md}": 1,
-              "{iconSize}": 1,
               "{size}": 1
             }
           },
           "testID": {
-            "count": 120,
+            "count": 116,
             "values": {
               "{CHECKOUT_TEST_IDS.CLOSE_BUTTON}": 4,
               "\"back-button\"": 3,
@@ -2128,7 +2128,6 @@
               "{LEARN_MORE_BOTTOM_SHEET_TEST_IDS.CLOSE_BUTTON}": 1,
               "{MULTICHAIN_ACCOUNTS_INTRO_MODAL_TEST_IDS.CLOSE_BUTTON}": 1,
               "{AccountConnectMaliciousWarningSelectorsIDs.CLOSE_BUTTON}": 1,
-              "{EditAccountNameIds.BACK_BUTTON}": 1,
               "{AccountDetailsIds.BACK_BUTTON}": 1,
               "{KEYRING_ACCOUNT_LIST_ITEM_BUTTON}": 1,
               "{TopTradersViewSelectorsIDs.BACK_BUTTON}": 1,
@@ -2136,11 +2135,8 @@
               "\"quick-buy-sub-screen-back-button\"": 1,
               "\"quick-buy-sub-screen-close-button\"": 1,
               "{backButtonTestID}": 1,
-              "{TraderProfileViewSelectorsIDs.BACK_BUTTON}": 1,
-              "{TraderProfileViewSelectorsIDs.NOTIFICATION_BUTTON}": 1,
               "{WalletViewSelectorsIDs.WALLET_ACTIVITY_BUTTON}": 1,
               "\"whats-happening-detail-back-button\"": 1,
-              "{`${tooltipTestId}-open-btn`}": 1,
               "{testID ?? 'copyButtonTestId'}": 1,
               "{tooltipTestId ?? 'tooltipTestId'}": 1,
               "\"flat-nav-header-back-button\"": 1,
@@ -2152,7 +2148,7 @@
             }
           },
           "iconColor": {
-            "count": 52,
+            "count": 51,
             "values": {
               "{IconColor.Default}": 36,
               "{IconColor.Alternative}": 3,
@@ -2161,8 +2157,8 @@
               "{IconColor.Muted}": 2,
               "{IconColor.Primary}": 2,
               "{IconColor.Error}": 2,
-              "{iconColor}": 2,
-              "{colors.icon.alternative}": 1
+              "{colors.icon.alternative}": 1,
+              "{iconColor}": 1
             }
           },
           "iconProps": {
@@ -2220,7 +2216,7 @@
             }
           },
           "style": {
-            "count": 26,
+            "count": 25,
             "values": {
               "{innerStyles.accessories}": 2,
               "{styles.iconButton}": 2,
@@ -2240,7 +2236,6 @@
               "{{ ...styles.resultActionButton, ...(swapsEnabled ? {} : styles.hiddenButton), }}": 1,
               "{inlineHeaderStyles.leftButton}": 1,
               "{styles.buttonIcon}": 1,
-              "{iconStyle}": 1,
               "{styles.backIcon}": 1,
               "{styles.left}": 1,
               "{styles.backButton}": 1,
@@ -2280,21 +2275,20 @@
               "{styles.hitSlop}": 1
             }
           },
-          "disabled": {
-            "count": 6,
-            "values": {
-              "{isLoadingKeys}": 2,
-              "{!subscriptionId}": 1,
-              "{!swapsEnabled}": 1,
-              "{isAligning}": 1,
-              "{disabled}": 1
-            }
-          },
           "variant": {
             "count": 5,
             "values": {
               "{ButtonIconVariant.Filled}": 3,
               "{ButtonIconVariant.Floating}": 2
+            }
+          },
+          "disabled": {
+            "count": 5,
+            "values": {
+              "{isLoadingKeys}": 2,
+              "{!subscriptionId}": 1,
+              "{!swapsEnabled}": 1,
+              "{isAligning}": 1
             }
           },
           "twClassName": {
@@ -2347,7 +2341,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "ButtonIcon": 65
+        "ButtonIcon": 64
       }
     }
   }
