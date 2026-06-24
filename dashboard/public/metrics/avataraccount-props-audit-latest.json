@@ -1,9 +1,9 @@
 {
   "component": "AvatarAccount",
-  "generatedAt": "2026-06-16T16:17:51.119Z",
+  "generatedAt": "2026-06-24T07:36:19.179Z",
   "projects": {
     "extension": {
-      "filesScanned": 3321,
+      "filesScanned": 3350,
       "targetComponent": "AvatarAccount",
       "mmds": {
         "totalInstances": 9,
@@ -109,52 +109,57 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 6833,
+      "filesScanned": 6825,
       "targetComponent": "AvatarAccount",
       "mmds": {
-        "totalInstances": 7,
-        "filesCount": 7,
+        "totalInstances": 5,
+        "filesCount": 5,
         "props": {
           "address": {
-            "count": 7,
+            "count": 5,
             "values": {
-              "{trader.address}": 2,
               "{selectedAccount.address}": 1,
+              "{address ?? ''}": 1,
               "{account.address}": 1,
               "{formattedAddress}": 1,
-              "{iconSeedAddress}": 1,
-              "{profile.address}": 1
+              "{iconSeedAddress}": 1
             }
           },
           "size": {
-            "count": 7,
+            "count": 5,
             "values": {
-              "{AvatarAccountSize.Xl}": 3,
-              "{AvatarAccountSize.Lg}": 2,
+              "{AvatarAccountSize.Xl}": 2,
               "{AvatarBaseSize.Sm}": 1,
+              "{toAvatarAccountSize(size)}": 1,
               "{AvatarAccountSize.Md}": 1
             }
           },
           "variant": {
-            "count": 6,
+            "count": 4,
             "values": {
-              "{AvatarAccountVariant.Maskicon}": 3,
               "{getAvatarAccountVariant(avatarAccountType)}": 1,
+              "{AvatarAccountVariant.Maskicon}": 1,
               "{toAvatarAccountVariant(accountAvatarType)}": 1,
               "{accountAvatarVariant}": 1
             }
           },
-          "twClassName": {
-            "count": 3,
+          "testID": {
+            "count": 2,
             "values": {
-              "\"rounded-full\"": 2,
-              "{`w-[${AVATAR_SIZE}px] h-[${AVATAR_SIZE}px] rounded-full`}": 1
+              "{testID}": 1,
+              "{AccountDetailsIds.ACCOUNT_GROUP_DETAILS_AVATAR}": 1
+            }
+          },
+          "twClassName": {
+            "count": 1,
+            "values": {
+              "{`w-[${size}px] h-[${size}px] rounded-full`}": 1
             }
           },
           "maskiconProps": {
             "count": 1,
             "values": {
-              "{{ size: AVATAR_SIZE }}": 1
+              "{{ size }}": 1
             }
           },
           "style": {
@@ -162,26 +167,20 @@
             "values": {
               "{styles.avatar}": 1
             }
-          },
-          "testID": {
-            "count": 1,
-            "values": {
-              "{AccountDetailsIds.ACCOUNT_GROUP_DETAILS_AVATAR}": 1
-            }
           }
         }
       },
       "deprecated": {
-        "totalInstances": 12,
+        "totalInstances": 13,
         "filesCount": 10,
         "props": {
           "accountAddress": {
-            "count": 12,
+            "count": 13,
             "values": {
               "{selectedAddress}": 4,
+              "{address}": 2,
               "{evmAddress || '0x0000000000000000000000000000000000000000'}": 2,
               "{displayAddress}": 1,
-              "{address}": 1,
               "{from}": 1,
               "{evmAddress}": 1,
               "{avatarAddress}": 1,
@@ -189,9 +188,9 @@
             }
           },
           "size": {
-            "count": 11,
+            "count": 12,
             "values": {
-              "{AvatarSize.Sm}": 3,
+              "{AvatarSize.Sm}": 4,
               "{diameter}": 3,
               "{AvatarSize.Md}": 2,
               "{size}": 1,
@@ -218,31 +217,31 @@
         }
       },
       "overall": {
-        "totalInstances": 19,
-        "filesCount": 17,
+        "totalInstances": 18,
+        "filesCount": 15,
         "props": {
           "size": {
-            "count": 18,
+            "count": 17,
             "values": {
-              "{AvatarSize.Sm}": 3,
-              "{AvatarAccountSize.Xl}": 3,
+              "{AvatarSize.Sm}": 4,
               "{diameter}": 3,
               "{AvatarSize.Md}": 2,
-              "{AvatarAccountSize.Lg}": 2,
+              "{AvatarAccountSize.Xl}": 2,
               "{size}": 1,
               "{AvatarBaseSize.Sm}": 1,
               "{avatarSize}": 1,
               "{AvatarSize.Lg}": 1,
+              "{toAvatarAccountSize(size)}": 1,
               "{AvatarAccountSize.Md}": 1
             }
           },
           "accountAddress": {
-            "count": 12,
+            "count": 13,
             "values": {
               "{selectedAddress}": 4,
+              "{address}": 2,
               "{evmAddress || '0x0000000000000000000000000000000000000000'}": 2,
               "{displayAddress}": 1,
-              "{address}": 1,
               "{from}": 1,
               "{evmAddress}": 1,
               "{avatarAddress}": 1,
@@ -259,44 +258,43 @@
             }
           },
           "address": {
-            "count": 7,
+            "count": 5,
             "values": {
-              "{trader.address}": 2,
               "{selectedAccount.address}": 1,
+              "{address ?? ''}": 1,
               "{account.address}": 1,
               "{formattedAddress}": 1,
-              "{iconSeedAddress}": 1,
-              "{profile.address}": 1
+              "{iconSeedAddress}": 1
+            }
+          },
+          "testID": {
+            "count": 4,
+            "values": {
+              "{SNAP_UI_AVATAR_TEST_ID}": 1,
+              "{`rewards-account-group-avatar-${accountGroup.id}`}": 1,
+              "{testID}": 1,
+              "{AccountDetailsIds.ACCOUNT_GROUP_DETAILS_AVATAR}": 1
             }
           },
           "variant": {
-            "count": 6,
+            "count": 4,
             "values": {
-              "{AvatarAccountVariant.Maskicon}": 3,
               "{getAvatarAccountVariant(avatarAccountType)}": 1,
+              "{AvatarAccountVariant.Maskicon}": 1,
               "{toAvatarAccountVariant(accountAvatarType)}": 1,
               "{accountAvatarVariant}": 1
             }
           },
-          "testID": {
-            "count": 3,
-            "values": {
-              "{SNAP_UI_AVATAR_TEST_ID}": 1,
-              "{`rewards-account-group-avatar-${accountGroup.id}`}": 1,
-              "{AccountDetailsIds.ACCOUNT_GROUP_DETAILS_AVATAR}": 1
-            }
-          },
           "twClassName": {
-            "count": 3,
+            "count": 1,
             "values": {
-              "\"rounded-full\"": 2,
-              "{`w-[${AVATAR_SIZE}px] h-[${AVATAR_SIZE}px] rounded-full`}": 1
+              "{`w-[${size}px] h-[${size}px] rounded-full`}": 1
             }
           },
           "maskiconProps": {
             "count": 1,
             "values": {
-              "{{ size: AVATAR_SIZE }}": 1
+              "{{ size }}": 1
             }
           },
           "style": {
@@ -308,7 +306,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "AvatarAccount": 12
+        "AvatarAccount": 13
       }
     }
   }

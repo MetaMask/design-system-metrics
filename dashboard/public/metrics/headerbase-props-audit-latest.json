@@ -1,9 +1,9 @@
 {
   "component": "HeaderBase",
-  "generatedAt": "2026-06-16T16:27:27.409Z",
+  "generatedAt": "2026-06-24T07:46:06.225Z",
   "projects": {
     "extension": {
-      "filesScanned": 3321,
+      "filesScanned": 3350,
       "targetComponent": "HeaderBase",
       "mmds": {
         "totalInstances": 1,
@@ -184,11 +184,11 @@
       }
     },
     "mobile": {
-      "filesScanned": 6833,
+      "filesScanned": 6825,
       "targetComponent": "HeaderBase",
       "mmds": {
-        "totalInstances": 10,
-        "filesCount": 10,
+        "totalInstances": 9,
+        "filesCount": 9,
         "props": {
           "style": {
             "count": 7,
@@ -198,20 +198,10 @@
             }
           },
           "twClassName": {
-            "count": 5,
-            "values": {
-              "\"h-auto\"": 3,
-              "\"m-4 flex-row items-center justify-center\"": 1,
-              "\"flex-row items-center px-4\"": 1
-            }
-          },
-          "startAccessory": {
             "count": 4,
             "values": {
-              "{<ButtonIcon style={styles.headerLeftButton} onPress={() => navigation.pop()} ...}": 1,
-              "{<ButtonIcon size={ButtonIconSize.Md} onPress={handleBackPress} iconName={Icon...}": 1,
-              "{<ButtonIcon testID={EditAccountNameIds.BACK_BUTTON} iconName={IconName.ArrowL...}": 1,
-              "{<ButtonIcon testID={AccountDetailsIds.BACK_BUTTON} iconName={IconName.ArrowLe...}": 1
+              "\"h-auto\"": 3,
+              "\"flex-row items-center px-4\"": 1
             }
           },
           "startButtonIconProps": {
@@ -223,18 +213,26 @@
               "{{ testID: WalletDetailsIds.BACK_BUTTON, iconName: IconName.ArrowLeft, size: B...}": 1
             }
           },
+          "includesTopInset": {
+            "count": 3,
+            "values": {
+              "true (shorthand)": 3
+            }
+          },
+          "startAccessory": {
+            "count": 3,
+            "values": {
+              "{<ButtonIcon style={styles.headerLeftButton} onPress={() => navigation.pop()} ...}": 1,
+              "{<ButtonIcon size={ButtonIconSize.Md} onPress={handleBackPress} iconName={Icon...}": 1,
+              "{<ButtonIcon testID={AccountDetailsIds.BACK_BUTTON} iconName={IconName.ArrowLe...}": 1
+            }
+          },
           "endAccessory": {
             "count": 3,
             "values": {
               "{onRightPress ? ( <ButtonIcon style={styles.headerRightButton} onPress={onRigh...}": 1,
               "{<ButtonIcon onPress={triggerClose} iconName={IconName.Close} iconColor={IconC...}": 1,
               "{<ButtonIcon iconName={IconName.Close} size={ButtonIconSizes.Md} onPress={goBa...}": 1
-            }
-          },
-          "includesTopInset": {
-            "count": 2,
-            "values": {
-              "true (shorthand)": 2
             }
           },
           "textProps": {
@@ -276,8 +274,8 @@
         }
       },
       "overall": {
-        "totalInstances": 11,
-        "filesCount": 11,
+        "totalInstances": 10,
+        "filesCount": 10,
         "props": {
           "style": {
             "count": 8,
@@ -288,19 +286,17 @@
             }
           },
           "twClassName": {
-            "count": 5,
+            "count": 4,
             "values": {
               "\"h-auto\"": 3,
-              "\"m-4 flex-row items-center justify-center\"": 1,
               "\"flex-row items-center px-4\"": 1
             }
           },
           "startAccessory": {
-            "count": 5,
+            "count": 4,
             "values": {
               "{<ButtonIcon style={styles.headerLeftButton} onPress={() => navigation.pop()} ...}": 1,
               "{<ButtonIcon size={ButtonIconSize.Md} onPress={handleBackPress} iconName={Icon...}": 1,
-              "{<ButtonIcon testID={EditAccountNameIds.BACK_BUTTON} iconName={IconName.ArrowL...}": 1,
               "{<ButtonIcon testID={AccountDetailsIds.BACK_BUTTON} iconName={IconName.ArrowLe...}": 1,
               "{<PreviousButton onBackButtonClick={onBack} selectedIndex={selectedIndex} />}": 1
             }
@@ -324,9 +320,9 @@
             }
           },
           "includesTopInset": {
-            "count": 2,
+            "count": 3,
             "values": {
-              "true (shorthand)": 2
+              "true (shorthand)": 3
             }
           },
           "textProps": {

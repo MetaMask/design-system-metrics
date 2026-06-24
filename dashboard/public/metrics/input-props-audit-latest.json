@@ -1,9 +1,9 @@
 {
   "component": "Input",
-  "generatedAt": "2026-06-16T16:28:27.986Z",
+  "generatedAt": "2026-06-24T07:47:07.365Z",
   "projects": {
     "extension": {
-      "filesScanned": 3321,
+      "filesScanned": 3350,
       "targetComponent": "Input",
       "mmds": {
         "totalInstances": 2,
@@ -196,48 +196,156 @@
       }
     },
     "mobile": {
-      "filesScanned": 6833,
+      "filesScanned": 6825,
       "targetComponent": "Input",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
-      },
-      "deprecated": {
-        "totalInstances": 4,
-        "filesCount": 4,
+        "totalInstances": 5,
+        "filesCount": 2,
         "props": {
-          "testID": {
-            "count": 4,
+          "isStateStylesDisabled": {
+            "count": 5,
             "values": {
-              "{`snap-ui-renderer__date-time-picker--${type}-input`}": 1,
-              "\"input-stepper-input\"": 1,
-              "{`${testID}-input`}": 1,
-              "{AddNewAccountIds.NAME_INPUT}": 1
+              "true (shorthand)": 5
             }
           },
-          "value": {
-            "count": 4,
+          "twClassName": {
+            "count": 5,
             "values": {
-              "{formatDateForDisplay(value, type)}": 1,
-              "{displayedAmount}": 1,
-              "{primaryAmountDisplayValue}": 1,
-              "{accountName}": 1
-            }
-          },
-          "placeholder": {
-            "count": 4,
-            "values": {
-              "{placeholder}": 2,
-              "\"0\"": 1,
-              "{accountName}": 1
+              "\"bg-transparent border-0\"": 4,
+              "\"flex-1 bg-transparent border-0\"": 1
             }
           },
           "style": {
+            "count": 5,
+            "values": {
+              "{styles.input}": 4,
+              "{tw.style('flex-1 text-base text-default')}": 1
+            }
+          },
+          "value": {
+            "count": 5,
+            "values": {
+              "{takeProfitPrice}": 1,
+              "{formattedTakeProfitPercentage}": 1,
+              "{stopLossPrice}": 1,
+              "{formattedStopLossPercentage}": 1,
+              "{searchQuery}": 1
+            }
+          },
+          "onChangeText": {
+            "count": 5,
+            "values": {
+              "{(text) => { const digitCount = (text.match(/\\d/g) || []).length; if (digitCou...}": 4,
+              "{onSearchQueryChange}": 1
+            }
+          },
+          "placeholder": {
+            "count": 5,
+            "values": {
+              "{strings('perps.tpsl.trigger_price_placeholder')}": 2,
+              "{strings('perps.tpsl.profit_roe_placeholder')}": 1,
+              "{strings('perps.tpsl.loss_roe_placeholder')}": 1,
+              "{strings('perps.search_by_token_symbol')}": 1
+            }
+          },
+          "placeholderTextColor": {
+            "count": 5,
+            "values": {
+              "{colors.text.muted}": 5
+            }
+          },
+          "ref": {
+            "count": 4,
+            "values": {
+              "{takeProfitPriceRef}": 1,
+              "{takeProfitPercentageRef}": 1,
+              "{stopLossPriceRef}": 1,
+              "{stopLossPercentageRef}": 1
+            }
+          },
+          "showSoftInputOnFocus": {
+            "count": 4,
+            "values": {
+              "false": 4
+            }
+          },
+          "isDisabled": {
+            "count": 4,
+            "values": {
+              "{inputsDisabled}": 4
+            }
+          },
+          "onFocus": {
+            "count": 4,
+            "values": {
+              "{() => { handleInputFocus('takeProfitPrice'); }}": 1,
+              "{() => { handleInputFocus('takeProfitPercentage'); }}": 1,
+              "{() => { handleInputFocus('stopLossPrice'); }}": 1,
+              "{() => { handleInputFocus('stopLossPercentage'); }}": 1
+            }
+          },
+          "onBlur": {
+            "count": 4,
+            "values": {
+              "{() => { if ( programmaticDismissInputRef.current !== 'takeProfitPrice' ) { ha...}": 1,
+              "{() => { if ( programmaticDismissInputRef.current !== 'takeProfitPercentage' )...}": 1,
+              "{() => { if ( programmaticDismissInputRef.current !== 'stopLossPrice' ) { hand...}": 1,
+              "{() => { if ( programmaticDismissInputRef.current !== 'stopLossPercentage' ) {...}": 1
+            }
+          },
+          "selectionColor": {
+            "count": 4,
+            "values": {
+              "{colors.primary.default}": 4
+            }
+          },
+          "cursorColor": {
+            "count": 4,
+            "values": {
+              "{colors.primary.default}": 4
+            }
+          },
+          "testID": {
             "count": 3,
             "values": {
-              "{styles.input}": 2,
-              "{styles.accountInput}": 1
+              "{PerpsTPSLViewSelectorsIDs.TAKE_PROFIT_PRICE_INPUT}": 1,
+              "{PerpsTPSLViewSelectorsIDs.STOP_LOSS_PRICE_INPUT}": 1,
+              "{testID ? `${testID}-search-bar` : undefined}": 1
+            }
+          },
+          "autoFocus": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          }
+        }
+      },
+      "deprecated": {
+        "totalInstances": 3,
+        "filesCount": 3,
+        "props": {
+          "testID": {
+            "count": 3,
+            "values": {
+              "{`snap-ui-renderer__date-time-picker--${type}-input`}": 1,
+              "\"input-stepper-input\"": 1,
+              "{`${testID}-input`}": 1
+            }
+          },
+          "value": {
+            "count": 3,
+            "values": {
+              "{formatDateForDisplay(value, type)}": 1,
+              "{displayedAmount}": 1,
+              "{primaryAmountDisplayValue}": 1
+            }
+          },
+          "placeholder": {
+            "count": 3,
+            "values": {
+              "{placeholder}": 2,
+              "\"0\"": 1
             }
           },
           "showSoftInputOnFocus": {
@@ -257,6 +365,12 @@
             "values": {
               "true (shorthand)": 1,
               "false": 1
+            }
+          },
+          "style": {
+            "count": 2,
+            "values": {
+              "{styles.input}": 2
             }
           },
           "selection": {
@@ -325,88 +439,148 @@
             "count": 1,
             "values": {
               "{() => { onBlur?.(); }}": 1
-            }
-          },
-          "textVariant": {
-            "count": 1,
-            "values": {
-              "{TextVariant.BodyMDMedium}": 1
-            }
-          },
-          "onChangeText": {
-            "count": 1,
-            "values": {
-              "{(newName: string) => { setAccountName(newName); }}": 1
-            }
-          },
-          "placeholderTextColor": {
-            "count": 1,
-            "values": {
-              "{colors.text.default}": 1
-            }
-          },
-          "onSubmitEditing": {
-            "count": 1,
-            "values": {
-              "{onSubmit}": 1
             }
           }
         }
       },
       "overall": {
-        "totalInstances": 4,
-        "filesCount": 4,
+        "totalInstances": 8,
+        "filesCount": 5,
         "props": {
-          "testID": {
-            "count": 4,
-            "values": {
-              "{`snap-ui-renderer__date-time-picker--${type}-input`}": 1,
-              "\"input-stepper-input\"": 1,
-              "{`${testID}-input`}": 1,
-              "{AddNewAccountIds.NAME_INPUT}": 1
-            }
-          },
           "value": {
-            "count": 4,
+            "count": 8,
             "values": {
               "{formatDateForDisplay(value, type)}": 1,
               "{displayedAmount}": 1,
               "{primaryAmountDisplayValue}": 1,
-              "{accountName}": 1
+              "{takeProfitPrice}": 1,
+              "{formattedTakeProfitPercentage}": 1,
+              "{stopLossPrice}": 1,
+              "{formattedStopLossPercentage}": 1,
+              "{searchQuery}": 1
             }
           },
           "placeholder": {
-            "count": 4,
+            "count": 8,
             "values": {
               "{placeholder}": 2,
+              "{strings('perps.tpsl.trigger_price_placeholder')}": 2,
               "\"0\"": 1,
-              "{accountName}": 1
+              "{strings('perps.tpsl.profit_roe_placeholder')}": 1,
+              "{strings('perps.tpsl.loss_roe_placeholder')}": 1,
+              "{strings('perps.search_by_token_symbol')}": 1
             }
           },
           "style": {
-            "count": 3,
+            "count": 7,
             "values": {
-              "{styles.input}": 2,
-              "{styles.accountInput}": 1
+              "{styles.input}": 6,
+              "{tw.style('flex-1 text-base text-default')}": 1
+            }
+          },
+          "testID": {
+            "count": 6,
+            "values": {
+              "{`snap-ui-renderer__date-time-picker--${type}-input`}": 1,
+              "\"input-stepper-input\"": 1,
+              "{`${testID}-input`}": 1,
+              "{PerpsTPSLViewSelectorsIDs.TAKE_PROFIT_PRICE_INPUT}": 1,
+              "{PerpsTPSLViewSelectorsIDs.STOP_LOSS_PRICE_INPUT}": 1,
+              "{testID ? `${testID}-search-bar` : undefined}": 1
+            }
+          },
+          "isStateStylesDisabled": {
+            "count": 6,
+            "values": {
+              "true (shorthand)": 6
             }
           },
           "showSoftInputOnFocus": {
-            "count": 2,
+            "count": 6,
             "values": {
-              "false": 2
+              "false": 6
+            }
+          },
+          "ref": {
+            "count": 5,
+            "values": {
+              "{inputRef}": 1,
+              "{takeProfitPriceRef}": 1,
+              "{takeProfitPercentageRef}": 1,
+              "{stopLossPriceRef}": 1,
+              "{stopLossPercentageRef}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 5,
+            "values": {
+              "{inputsDisabled}": 4,
+              "false": 1
+            }
+          },
+          "onFocus": {
+            "count": 5,
+            "values": {
+              "{() => { onFocus?.(); onInputPress?.(); }}": 1,
+              "{() => { handleInputFocus('takeProfitPrice'); }}": 1,
+              "{() => { handleInputFocus('takeProfitPercentage'); }}": 1,
+              "{() => { handleInputFocus('stopLossPrice'); }}": 1,
+              "{() => { handleInputFocus('stopLossPercentage'); }}": 1
+            }
+          },
+          "onBlur": {
+            "count": 5,
+            "values": {
+              "{() => { onBlur?.(); }}": 1,
+              "{() => { if ( programmaticDismissInputRef.current !== 'takeProfitPrice' ) { ha...}": 1,
+              "{() => { if ( programmaticDismissInputRef.current !== 'takeProfitPercentage' )...}": 1,
+              "{() => { if ( programmaticDismissInputRef.current !== 'stopLossPrice' ) { hand...}": 1,
+              "{() => { if ( programmaticDismissInputRef.current !== 'stopLossPercentage' ) {...}": 1
+            }
+          },
+          "twClassName": {
+            "count": 5,
+            "values": {
+              "\"bg-transparent border-0\"": 4,
+              "\"flex-1 bg-transparent border-0\"": 1
+            }
+          },
+          "onChangeText": {
+            "count": 5,
+            "values": {
+              "{(text) => { const digitCount = (text.match(/\\d/g) || []).length; if (digitCou...}": 4,
+              "{onSearchQueryChange}": 1
+            }
+          },
+          "placeholderTextColor": {
+            "count": 5,
+            "values": {
+              "{colors.text.muted}": 5
+            }
+          },
+          "selectionColor": {
+            "count": 4,
+            "values": {
+              "{colors.primary.default}": 4
+            }
+          },
+          "cursorColor": {
+            "count": 4,
+            "values": {
+              "{colors.primary.default}": 4
+            }
+          },
+          "autoFocus": {
+            "count": 3,
+            "values": {
+              "true (shorthand)": 2,
+              "false": 1
             }
           },
           "caretHidden": {
             "count": 2,
             "values": {
               "false": 2
-            }
-          },
-          "autoFocus": {
-            "count": 2,
-            "values": {
-              "true (shorthand)": 1,
-              "false": 1
             }
           },
           "selection": {
@@ -423,12 +597,6 @@
               "{tokenType === TokenInputAreaType.Source ? onSelectionChange : undefined}": 1
             }
           },
-          "isStateStylesDisabled": {
-            "count": 1,
-            "values": {
-              "true (shorthand)": 1
-            }
-          },
           "readOnly": {
             "count": 1,
             "values": {
@@ -439,18 +607,6 @@
             "count": 1,
             "values": {
               "\"none\"": 1
-            }
-          },
-          "ref": {
-            "count": 1,
-            "values": {
-              "{inputRef}": 1
-            }
-          },
-          "isDisabled": {
-            "count": 1,
-            "values": {
-              "false": 1
             }
           },
           "isReadonly": {
@@ -464,47 +620,11 @@
             "values": {
               "{() => { onInputPress?.(); }}": 1
             }
-          },
-          "onFocus": {
-            "count": 1,
-            "values": {
-              "{() => { onFocus?.(); onInputPress?.(); }}": 1
-            }
-          },
-          "onBlur": {
-            "count": 1,
-            "values": {
-              "{() => { onBlur?.(); }}": 1
-            }
-          },
-          "textVariant": {
-            "count": 1,
-            "values": {
-              "{TextVariant.BodyMDMedium}": 1
-            }
-          },
-          "onChangeText": {
-            "count": 1,
-            "values": {
-              "{(newName: string) => { setAccountName(newName); }}": 1
-            }
-          },
-          "placeholderTextColor": {
-            "count": 1,
-            "values": {
-              "{colors.text.default}": 1
-            }
-          },
-          "onSubmitEditing": {
-            "count": 1,
-            "values": {
-              "{onSubmit}": 1
-            }
           }
         }
       },
       "deprecatedByLegacyComponent": {
-        "Input": 4
+        "Input": 3
       }
     }
   }
