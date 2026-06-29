@@ -1,9 +1,9 @@
 {
   "component": "BadgeWrapper",
-  "generatedAt": "2026-06-24T15:41:59.699Z",
+  "generatedAt": "2026-06-29T09:52:56.737Z",
   "projects": {
     "extension": {
-      "filesScanned": 3352,
+      "filesScanned": 3382,
       "targetComponent": "BadgeWrapper",
       "mmds": {
         "totalInstances": 15,
@@ -299,23 +299,25 @@
       }
     },
     "mobile": {
-      "filesScanned": 6839,
+      "filesScanned": 6917,
       "targetComponent": "BadgeWrapper",
       "mmds": {
-        "totalInstances": 10,
-        "filesCount": 10,
+        "totalInstances": 13,
+        "filesCount": 12,
         "props": {
           "position": {
-            "count": 10,
+            "count": 13,
             "values": {
-              "{BadgeWrapperPosition.BottomRight}": 8,
+              "{BadgeWrapperPosition.BottomRight}": 11,
               "{BadgeWrapperPosition.TopRight}": 2
             }
           },
           "badge": {
-            "count": 10,
+            "count": 13,
             "values": {
               "{networkImage ? <BadgeNetwork src={networkImage} /> : null}": 3,
+              "{<BadgeNetwork src={networkImage} />}": 2,
+              "{<BadgeNetwork src={ networkImageSource as React.ComponentProps< typeof BadgeN...}": 1,
               "{item.caipChainId ? ( <BadgeNetwork src={getNetworkImageSource({ chainId: safe...}": 1,
               "{!hasViewedCardButton && variant.showBadge ? ( <BadgeStatus testID={WalletView...}": 1,
               "{srcChainHex ? ( <Badge variant={BadgeVariant.Network} size={AvatarSize.Xs} is...}": 1,
@@ -352,20 +354,22 @@
         "props": {}
       },
       "overall": {
-        "totalInstances": 10,
-        "filesCount": 10,
+        "totalInstances": 13,
+        "filesCount": 12,
         "props": {
           "position": {
-            "count": 10,
+            "count": 13,
             "values": {
-              "{BadgeWrapperPosition.BottomRight}": 8,
+              "{BadgeWrapperPosition.BottomRight}": 11,
               "{BadgeWrapperPosition.TopRight}": 2
             }
           },
           "badge": {
-            "count": 10,
+            "count": 13,
             "values": {
               "{networkImage ? <BadgeNetwork src={networkImage} /> : null}": 3,
+              "{<BadgeNetwork src={networkImage} />}": 2,
+              "{<BadgeNetwork src={ networkImageSource as React.ComponentProps< typeof BadgeN...}": 1,
               "{item.caipChainId ? ( <BadgeNetwork src={getNetworkImageSource({ chainId: safe...}": 1,
               "{!hasViewedCardButton && variant.showBadge ? ( <BadgeStatus testID={WalletView...}": 1,
               "{srcChainHex ? ( <Badge variant={BadgeVariant.Network} size={AvatarSize.Xs} is...}": 1,

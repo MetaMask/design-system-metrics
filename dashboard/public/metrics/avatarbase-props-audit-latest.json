@@ -1,9 +1,9 @@
 {
   "component": "AvatarBase",
-  "generatedAt": "2026-06-24T15:37:37.474Z",
+  "generatedAt": "2026-06-29T09:49:17.648Z",
   "projects": {
     "extension": {
-      "filesScanned": 3352,
+      "filesScanned": 3382,
       "targetComponent": "AvatarBase",
       "mmds": {
         "totalInstances": 1,
@@ -214,28 +214,31 @@
       }
     },
     "mobile": {
-      "filesScanned": 6839,
+      "filesScanned": 6917,
       "targetComponent": "AvatarBase",
       "mmds": {
-        "totalInstances": 1,
-        "filesCount": 1,
+        "totalInstances": 3,
+        "filesCount": 3,
         "props": {
           "size": {
-            "count": 1,
+            "count": 3,
             "values": {
+              "{AvatarBaseSize.Xl}": 2,
               "{mapToAvatarBaseSize(size)}": 1
             }
           },
           "shape": {
-            "count": 1,
+            "count": 3,
             "values": {
-              "{AvatarBaseShape.Circle}": 1
+              "{AvatarBaseShape.Circle}": 3
             }
           },
           "fallbackText": {
-            "count": 1,
+            "count": 3,
             "values": {
-              "{showFallback ? fallbackText : undefined}": 1
+              "{showFallback ? fallbackText : undefined}": 1,
+              "{showFallback ? displaySymbol.substring(0, 2) : undefined}": 1,
+              "\"US\"": 1
             }
           },
           "testID": {
@@ -295,9 +298,19 @@
         }
       },
       "overall": {
-        "totalInstances": 5,
-        "filesCount": 4,
+        "totalInstances": 7,
+        "filesCount": 6,
         "props": {
+          "size": {
+            "count": 7,
+            "values": {
+              "{AvatarSize.Sm}": 2,
+              "{AvatarBaseSize.Xl}": 2,
+              "{AvatarSize.Xl}": 1,
+              "{avatarSize as unknown as AvatarSize}": 1,
+              "{mapToAvatarBaseSize(size)}": 1
+            }
+          },
           "style": {
             "count": 5,
             "values": {
@@ -308,15 +321,6 @@
               "{backgroundColor ? ({ backgroundColor } as any) : undefined}": 1
             }
           },
-          "size": {
-            "count": 5,
-            "values": {
-              "{AvatarSize.Sm}": 2,
-              "{AvatarSize.Xl}": 1,
-              "{avatarSize as unknown as AvatarSize}": 1,
-              "{mapToAvatarBaseSize(size)}": 1
-            }
-          },
           "testID": {
             "count": 3,
             "values": {
@@ -325,22 +329,24 @@
               "{testID}": 1
             }
           },
+          "shape": {
+            "count": 3,
+            "values": {
+              "{AvatarBaseShape.Circle}": 3
+            }
+          },
+          "fallbackText": {
+            "count": 3,
+            "values": {
+              "{showFallback ? fallbackText : undefined}": 1,
+              "{showFallback ? displaySymbol.substring(0, 2) : undefined}": 1,
+              "\"US\"": 1
+            }
+          },
           "[spread]": {
             "count": 1,
             "values": {
               "{props}": 1
-            }
-          },
-          "shape": {
-            "count": 1,
-            "values": {
-              "{AvatarBaseShape.Circle}": 1
-            }
-          },
-          "fallbackText": {
-            "count": 1,
-            "values": {
-              "{showFallback ? fallbackText : undefined}": 1
             }
           },
           "twClassName": {

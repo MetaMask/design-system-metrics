@@ -1,13 +1,13 @@
 {
   "component": "Skeleton",
-  "generatedAt": "2026-06-24T15:48:56.852Z",
+  "generatedAt": "2026-06-29T09:58:48.834Z",
   "projects": {
     "extension": {
-      "filesScanned": 3352,
+      "filesScanned": 3382,
       "targetComponent": "Skeleton",
       "mmds": {
-        "totalInstances": 82,
-        "filesCount": 28,
+        "totalInstances": 111,
+        "filesCount": 41,
         "props": {
           "className": {
             "count": 60,
@@ -48,29 +48,67 @@
             }
           },
           "width": {
-            "count": 20,
+            "count": 49,
             "values": {
-              "40": 1,
-              "80": 2,
-              "100": 1,
-              "128": 1,
-              "\"100%\"": 4,
+              "40": 4,
+              "48": 2,
+              "60": 1,
+              "72": 1,
+              "80": 4,
+              "90": 1,
+              "100": 2,
+              "128": 2,
+              "\"100%\"": 8,
+              "\"60px\"": 3,
+              "\"60%\"": 3,
+              "\"200px\"": 3,
               "\"40%\"": 3,
-              "\"60%\"": 2,
+              "\"100px\"": 2,
               "\"30%\"": 2,
+              "\"50%\"": 1,
               "\"25%\"": 1,
               "\"33%\"": 1,
               "{labelWidth}": 1,
-              "{valueWidth}": 1
+              "{valueWidth}": 1,
+              "\"80px\"": 1,
+              "\"40px\"": 1,
+              "\"32px\"": 1
             }
           },
           "height": {
-            "count": 18,
+            "count": 47,
             "values": {
-              "16": 5,
-              "20": 7,
+              "16": 8,
+              "18": 2,
+              "20": 9,
+              "22": 2,
+              "24": 1,
+              "25": 1,
+              "26": 1,
+              "32": 2,
               "40": 5,
-              "70": 1
+              "70": 2,
+              "\"32px\"": 3,
+              "\"72px\"": 3,
+              "\"20px\"": 2,
+              "\"18px\"": 2,
+              "\"16px\"": 1,
+              "\"60px\"": 1,
+              "\"40px\"": 1,
+              "\"24px\"": 1
+            }
+          },
+          "style": {
+            "count": 12,
+            "values": {
+              "{{ marginBottom: 12 }}": 3,
+              "{{ borderRadius: '50%' }}": 2,
+              "{{ marginBottom: '2px' }}": 2,
+              "{{ marginTop: 3, marginBottom: 3 }}": 1,
+              "{{ flex: 1, minWidth: 0 }}": 1,
+              "{{ marginTop: 32, marginBottom: 10, borderRadius: '50%', justifySelf: 'center'...}": 1,
+              "{{ marginBottom: 20, justifySelf: 'center', alignSelf: 'center' }}": 1,
+              "{{ flexShrink: 0 }}": 1
             }
           },
           "hideChildren": {
@@ -88,92 +126,53 @@
             }
           },
           "data-testid": {
-            "count": 5,
+            "count": 8,
             "values": {
               "\"account-group-balance-skeleton\"": 1,
               "\"perps-recent-activity-skeleton\"": 1,
               "{`perps-token-logo-${sanitizedSymbol}`}": 1,
               "{`${amountFieldProps.testId}-loading-skeleton`}": 1,
-              "\"rewards-loading-skeleton\"": 1
+              "\"rewards-loading-skeleton\"": 1,
+              "\"confirmation__info_skeleton\"": 1,
+              "\"confirm-title-skeleton\"": 1,
+              "\"simulation-details-skeleton\"": 1
             }
           },
           "key": {
-            "count": 2,
+            "count": 3,
             "values": {
               "{i}": 1,
-              "{period}": 1
-            }
-          },
-          "style": {
-            "count": 2,
-            "values": {
-              "{{ flex: 1, minWidth: 0 }}": 1,
-              "{{ flexShrink: 0 }}": 1
+              "{period}": 1,
+              "{percentage}": 1
             }
           }
         }
       },
       "deprecated": {
-        "totalInstances": 51,
-        "filesCount": 25,
+        "totalInstances": 22,
+        "filesCount": 12,
         "props": {
           "width": {
-            "count": 48,
+            "count": 19,
             "values": {
               "32": 1,
               "36": 1,
-              "40": 3,
-              "48": 2,
-              "60": 2,
-              "72": 1,
-              "80": 5,
-              "90": 1,
-              "100": 1,
+              "60": 1,
+              "80": 3,
               "120": 1,
-              "128": 1,
-              "\"100%\"": 11,
-              "\"50%\"": 4,
-              "\"100px\"": 4,
-              "\"60px\"": 3,
-              "\"200px\"": 3,
-              "\"60%\"": 1,
-              "\"80px\"": 1,
-              "\"40px\"": 1,
-              "\"32px\"": 1
+              "\"100%\"": 7,
+              "\"50%\"": 3,
+              "\"100px\"": 2
             }
           },
           "height": {
-            "count": 42,
+            "count": 13,
             "values": {
-              "16": 5,
-              "18": 2,
-              "20": 3,
-              "22": 2,
-              "24": 9,
-              "25": 1,
-              "26": 1,
-              "32": 3,
-              "70": 1,
-              "\"32px\"": 3,
-              "\"72px\"": 3,
-              "\"16px\"": 2,
-              "\"20px\"": 2,
-              "\"18px\"": 2,
-              "\"60px\"": 1,
-              "\"40px\"": 1,
-              "\"24px\"": 1
-            }
-          },
-          "style": {
-            "count": 11,
-            "values": {
-              "{{ marginBottom: 12 }}": 3,
-              "{{ borderRadius: '50%' }}": 2,
-              "{{ marginBottom: '2px' }}": 2,
-              "{{ marginTop: 3, marginBottom: 3 }}": 1,
-              "{{ ...skeletonProps?.style, flexShrink: 0 }}": 1,
-              "{{ marginTop: 32, marginBottom: 10, borderRadius: '50%', justifySelf: 'center'...}": 1,
-              "{{ marginBottom: 20, justifySelf: 'center', alignSelf: 'center' }}": 1
+              "16": 2,
+              "20": 1,
+              "24": 8,
+              "32": 1,
+              "\"16px\"": 1
             }
           },
           "isLoading": {
@@ -206,16 +205,10 @@
               "{BorderRadius.full}": 1
             }
           },
-          "data-testid": {
+          "style": {
             "count": 1,
             "values": {
-              "\"confirmation__info_skeleton\"": 1
-            }
-          },
-          "key": {
-            "count": 1,
-            "values": {
-              "{percentage}": 1
+              "{{ ...skeletonProps?.style, flexShrink: 0 }}": 1
             }
           }
         }
@@ -357,14 +350,16 @@
             }
           },
           "data-testid": {
-            "count": 6,
+            "count": 8,
             "values": {
               "\"account-group-balance-skeleton\"": 1,
               "\"perps-recent-activity-skeleton\"": 1,
               "{`perps-token-logo-${sanitizedSymbol}`}": 1,
               "{`${amountFieldProps.testId}-loading-skeleton`}": 1,
               "\"rewards-loading-skeleton\"": 1,
-              "\"confirmation__info_skeleton\"": 1
+              "\"confirmation__info_skeleton\"": 1,
+              "\"confirm-title-skeleton\"": 1,
+              "\"simulation-details-skeleton\"": 1
             }
           },
           "key": {
@@ -396,18 +391,18 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "Skeleton": 51
+        "Skeleton": 22
       }
     },
     "mobile": {
-      "filesScanned": 6839,
+      "filesScanned": 6917,
       "targetComponent": "Skeleton",
       "mmds": {
-        "totalInstances": 136,
-        "filesCount": 30,
+        "totalInstances": 138,
+        "filesCount": 31,
         "props": {
           "style": {
-            "count": 90,
+            "count": 92,
             "values": {
               "{tw.style('h-4 w-24 rounded-lg')}": 6,
               "{tw.style('h-48 rounded-xl')}": 4,
@@ -429,6 +424,8 @@
               "{styles.skeletonMd}": 2,
               "{tw.style('h-7 w-20 rounded-lg')}": 2,
               "{styles.skeletonTop}": 2,
+              "{tw.style('h-10 w-[100px] rounded-md')}": 1,
+              "{tw.style('h-[22px] w-[150px] rounded-md')}": 1,
               "{tw.style('rounded-lg')}": 1,
               "{tw.style('h-[22px] w-[130px] rounded-md')}": 1,
               "{tw.style('h-[22px] w-full rounded-md')}": 1,
@@ -550,11 +547,11 @@
         "props": {}
       },
       "overall": {
-        "totalInstances": 136,
-        "filesCount": 30,
+        "totalInstances": 138,
+        "filesCount": 31,
         "props": {
           "style": {
-            "count": 90,
+            "count": 92,
             "values": {
               "{tw.style('h-4 w-24 rounded-lg')}": 6,
               "{tw.style('h-48 rounded-xl')}": 4,
@@ -576,6 +573,8 @@
               "{styles.skeletonMd}": 2,
               "{tw.style('h-7 w-20 rounded-lg')}": 2,
               "{styles.skeletonTop}": 2,
+              "{tw.style('h-10 w-[100px] rounded-md')}": 1,
+              "{tw.style('h-[22px] w-[150px] rounded-md')}": 1,
               "{tw.style('rounded-lg')}": 1,
               "{tw.style('h-[22px] w-[130px] rounded-md')}": 1,
               "{tw.style('h-[22px] w-full rounded-md')}": 1,

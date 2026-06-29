@@ -1,17 +1,18 @@
 {
   "component": "AvatarIcon",
-  "generatedAt": "2026-06-24T15:39:05.344Z",
+  "generatedAt": "2026-06-29T09:50:30.873Z",
   "projects": {
     "extension": {
-      "filesScanned": 3352,
+      "filesScanned": 3382,
       "targetComponent": "AvatarIcon",
       "mmds": {
-        "totalInstances": 4,
-        "filesCount": 4,
+        "totalInstances": 5,
+        "filesCount": 5,
         "props": {
           "iconName": {
-            "count": 4,
+            "count": 5,
             "values": {
+              "{getDsIconName(iconSrc)}": 1,
               "{icon.name}": 1,
               "{iconName}": 1,
               "{IconName.Global}": 1,
@@ -19,11 +20,19 @@
             }
           },
           "size": {
-            "count": 4,
+            "count": 5,
             "values": {
-              "{AvatarIconSize.Md}": 2,
+              "{AvatarIconSize.Md}": 3,
               "{icon.size}": 1,
               "{AvatarIconSize.Lg}": 1
+            }
+          },
+          "iconProps": {
+            "count": 3,
+            "values": {
+              "{{ color: DsIconColor.IconDefault }}": 1,
+              "{icon.iconProps}": 1,
+              "{{ color: IconColor.PrimaryDefault, }}": 1
             }
           },
           "color": {
@@ -33,16 +42,10 @@
               "{IconColor.PrimaryDefault}": 1
             }
           },
-          "iconProps": {
+          "severity": {
             "count": 2,
             "values": {
-              "{icon.iconProps}": 1,
-              "{{ color: IconColor.PrimaryDefault, }}": 1
-            }
-          },
-          "severity": {
-            "count": 1,
-            "values": {
+              "{AvatarIconSeverity.Neutral}": 1,
               "{icon.severity}": 1
             }
           },
@@ -197,16 +200,17 @@
         }
       },
       "overall": {
-        "totalInstances": 24,
-        "filesCount": 22,
+        "totalInstances": 25,
+        "filesCount": 23,
         "props": {
           "iconName": {
-            "count": 23,
+            "count": 24,
             "values": {
               "{iconName}": 4,
               "{IconName.Arrow2Down}": 3,
               "{IconName.Info}": 2,
               "{IconName.Snaps}": 2,
+              "{getDsIconName(iconSrc)}": 1,
               "{permissionIcon}": 1,
               "{icon.name}": 1,
               "{IconName.Danger}": 1,
@@ -222,9 +226,9 @@
             }
           },
           "size": {
-            "count": 17,
+            "count": 18,
             "values": {
-              "{AvatarIconSize.Md}": 7,
+              "{AvatarIconSize.Md}": 8,
               "{AvatarIconSize.Xl}": 5,
               "{AvatarIconSize.Xs}": 2,
               "{icon.size}": 1,
@@ -278,8 +282,9 @@
             }
           },
           "iconProps": {
-            "count": 6,
+            "count": 7,
             "values": {
+              "{{ color: DsIconColor.IconDefault }}": 1,
               "{{ size: IconSize.Sm, }}": 1,
               "{icon.iconProps}": 1,
               "{{ color: IconColor.infoInverse, }}": 1,
@@ -310,6 +315,13 @@
               "{{ cursor: 'pointer' }}": 3
             }
           },
+          "severity": {
+            "count": 2,
+            "values": {
+              "{AvatarIconSeverity.Neutral}": 1,
+              "{icon.severity}": 1
+            }
+          },
           "borderColor": {
             "count": 2,
             "values": {
@@ -327,12 +339,6 @@
             "values": {
               "{icon}": 1,
               "{iconProps}": 1
-            }
-          },
-          "severity": {
-            "count": 1,
-            "values": {
-              "{icon.severity}": 1
             }
           },
           "marginBottom": {
@@ -354,7 +360,7 @@
       }
     },
     "mobile": {
-      "filesScanned": 6839,
+      "filesScanned": 6917,
       "targetComponent": "AvatarIcon",
       "mmds": {
         "totalInstances": 3,
