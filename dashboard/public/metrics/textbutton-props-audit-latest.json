@@ -1,44 +1,16 @@
 {
   "component": "TextButton",
-  "generatedAt": "2026-06-24T15:49:59.472Z",
+  "generatedAt": "2026-06-30T09:15:01.699Z",
   "projects": {
     "extension": {
-      "filesScanned": 3352,
+      "filesScanned": 3377,
       "targetComponent": "TextButton",
       "mmds": {
-        "totalInstances": 75,
-        "filesCount": 48,
+        "totalInstances": 77,
+        "filesCount": 50,
         "props": {
-          "className": {
-            "count": 45,
-            "values": {
-              "\"inline\"": 7,
-              "\"min-w-0\"": 5,
-              "\"hover:bg-transparent active:bg-transparent w-fit\"": 4,
-              "\"text-center\"": 4,
-              "\"w-full hover:bg-transparent active:bg-transparent\"": 3,
-              "\"mt-2 flex w-full justify-start text-left\"": 2,
-              "\"text-primary-default\"": 2,
-              "\"hw-list-pagination__button\"": 2,
-              "\"text-text-alternative hover:text-text-alternative hover:decoration-text-alternative hover:bg-transparent\"": 2,
-              "\"min-w-0 hover:bg-transparent active:bg-transparent\"": 1,
-              "\"hover:bg-transparent active:bg-transparent whitespace-nowrap\"": 1,
-              "\"!text-inherit !font-normal underline underline-offset-2 [text-decoration-skip-ink:none] cursor-pointer hover:!text-inherit hover:!font-normal hover:![text-decoration-color:inherit] hover:!underline-offset-2 hover:!cursor-pointer\"": 1,
-              "\"text-center mt-4\"": 1,
-              "\"self-center text-alternative\"": 1,
-              "\"w-full\"": 1,
-              "\"srp-list__show-accounts\"": 1,
-              "\"inline font-normal\"": 1,
-              "\"w-full hover:bg-transparent\"": 1,
-              "\"hover:bg-transparent flex justify-center items-center w-full active:bg-transparent\"": 1,
-              "\"hover:bg-transparent\"": 1,
-              "\"hover:bg-transparent active:bg-transparent w-full text-center\"": 1,
-              "\"justify-start flex\"": 1,
-              "\"mb-4\"": 1
-            }
-          },
           "onClick": {
-            "count": 45,
+            "count": 47,
             "values": {
               "{handleClick}": 3,
               "{onLearnMore}": 3,
@@ -72,10 +44,40 @@
               "{handleRemindLater}": 1,
               "{() => { trackEvent( { category: MetaMetricsEventCategory.Onboarding, event: M...}": 1,
               "{toggleVisitSupportDataConsentModal}": 1,
+              "{handleRestart}": 1,
+              "{handleReset}": 1,
               "{() => { navigate(TRANSACTION_SHIELD_MANAGE_PLAN_ROUTE); }}": 1,
               "{() => { handleViewFullBenefitsClicked(); }}": 1,
               "{this.onForgotPasswordOrLoginWithDiffMethods}": 1,
               "{() => { this.ctx.trackEvent( { category: MetaMetricsEventCategory.Navigation,...}": 1
+            }
+          },
+          "className": {
+            "count": 45,
+            "values": {
+              "\"inline\"": 7,
+              "\"min-w-0\"": 5,
+              "\"hover:bg-transparent active:bg-transparent w-fit\"": 4,
+              "\"text-center\"": 4,
+              "\"w-full hover:bg-transparent active:bg-transparent\"": 3,
+              "\"mt-2 flex w-full justify-start text-left\"": 2,
+              "\"text-primary-default\"": 2,
+              "\"hw-list-pagination__button\"": 2,
+              "\"text-text-alternative hover:text-text-alternative hover:decoration-text-alternative hover:bg-transparent\"": 2,
+              "\"min-w-0 hover:bg-transparent active:bg-transparent\"": 1,
+              "\"hover:bg-transparent active:bg-transparent whitespace-nowrap\"": 1,
+              "\"!text-inherit !font-normal underline underline-offset-2 [text-decoration-skip-ink:none] cursor-pointer hover:!text-inherit hover:!font-normal hover:![text-decoration-color:inherit] hover:!underline-offset-2 hover:!cursor-pointer\"": 1,
+              "\"text-center mt-4\"": 1,
+              "\"self-center text-alternative\"": 1,
+              "\"w-full\"": 1,
+              "\"srp-list__show-accounts\"": 1,
+              "\"inline font-normal\"": 1,
+              "\"w-full hover:bg-transparent\"": 1,
+              "\"hover:bg-transparent flex justify-center items-center w-full active:bg-transparent\"": 1,
+              "\"hover:bg-transparent\"": 1,
+              "\"hover:bg-transparent active:bg-transparent w-full text-center\"": 1,
+              "\"justify-start flex\"": 1,
+              "\"mb-4\"": 1
             }
           },
           "asChild": {
@@ -534,11 +536,11 @@
         }
       },
       "overall": {
-        "totalInstances": 140,
-        "filesCount": 93,
+        "totalInstances": 142,
+        "filesCount": 95,
         "props": {
           "onClick": {
-            "count": 81,
+            "count": 83,
             "values": {
               "{handleClick}": 3,
               "{onLearnMore}": 3,
@@ -604,6 +606,8 @@
               "{handleRemindLater}": 1,
               "{() => { trackEvent( { category: MetaMetricsEventCategory.Onboarding, event: M...}": 1,
               "{toggleVisitSupportDataConsentModal}": 1,
+              "{handleRestart}": 1,
+              "{handleReset}": 1,
               "{() => { navigate(TRANSACTION_SHIELD_MANAGE_PLAN_ROUTE); }}": 1,
               "{() => { handleViewFullBenefitsClicked(); }}": 1,
               "{() => { trackEvent({ event: 'Clicked \"Gas Fees: Learn More\" Link', category: ...}": 1,
@@ -1002,27 +1006,29 @@
       }
     },
     "mobile": {
-      "filesScanned": 6839,
+      "filesScanned": 6941,
       "targetComponent": "TextButton",
       "mmds": {
-        "totalInstances": 7,
-        "filesCount": 6,
+        "totalInstances": 8,
+        "filesCount": 7,
         "props": {
           "onPress": {
-            "count": 7,
+            "count": 8,
             "values": {
               "{onLearnMore}": 3,
               "{toggleContent}": 1,
               "{handleHeaderCancelPress}": 1,
+              "{link.onPress}": 1,
               "{handleTermsPress}": 1,
               "{() => navigation.navigate( Routes.REWARDS_ONDO_CAMPAIGN_PORTFOLIO_VIEW, { cam...}": 1
             }
           },
           "testID": {
-            "count": 4,
+            "count": 5,
             "values": {
               "{ExportCredentialsIds.LEARN_MORE_BUTTON}": 3,
-              "{EARN_WITHDRAW_INPUT_VIEW_CANCEL_BUTTON_TEST_ID}": 1
+              "{EARN_WITHDRAW_INPUT_VIEW_CANCEL_BUTTON_TEST_ID}": 1,
+              "{link.testID}": 1
             }
           },
           "twClassName": {
@@ -1046,24 +1052,26 @@
         "props": {}
       },
       "overall": {
-        "totalInstances": 7,
-        "filesCount": 6,
+        "totalInstances": 8,
+        "filesCount": 7,
         "props": {
           "onPress": {
-            "count": 7,
+            "count": 8,
             "values": {
               "{onLearnMore}": 3,
               "{toggleContent}": 1,
               "{handleHeaderCancelPress}": 1,
+              "{link.onPress}": 1,
               "{handleTermsPress}": 1,
               "{() => navigation.navigate( Routes.REWARDS_ONDO_CAMPAIGN_PORTFOLIO_VIEW, { cam...}": 1
             }
           },
           "testID": {
-            "count": 4,
+            "count": 5,
             "values": {
               "{ExportCredentialsIds.LEARN_MORE_BUTTON}": 3,
-              "{EARN_WITHDRAW_INPUT_VIEW_CANCEL_BUTTON_TEST_ID}": 1
+              "{EARN_WITHDRAW_INPUT_VIEW_CANCEL_BUTTON_TEST_ID}": 1,
+              "{link.testID}": 1
             }
           },
           "twClassName": {

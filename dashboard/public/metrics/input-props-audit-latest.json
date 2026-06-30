@@ -1,14 +1,37 @@
 {
   "component": "Input",
-  "generatedAt": "2026-06-24T15:47:24.893Z",
+  "generatedAt": "2026-06-30T09:12:31.567Z",
   "projects": {
     "extension": {
-      "filesScanned": 3352,
+      "filesScanned": 3377,
       "targetComponent": "Input",
       "mmds": {
-        "totalInstances": 2,
-        "filesCount": 1,
+        "totalInstances": 3,
+        "filesCount": 2,
         "props": {
+          "value": {
+            "count": 3,
+            "values": {
+              "{url}": 1,
+              "{name}": 1,
+              "{digit}": 1
+            }
+          },
+          "onChange": {
+            "count": 3,
+            "values": {
+              "{(event: React.ChangeEvent<HTMLInputElement>) => setUrl(event.target.value)}": 1,
+              "{(event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value)}": 1,
+              "{(event) => handleChange(event.target.value, index)}": 1
+            }
+          },
+          "className": {
+            "count": 3,
+            "values": {
+              "\"rounded-xl border border-border-muted bg-background-muted px-4 py-3\"": 2,
+              "\"w-12 h-[54px] rounded-lg border border-muted bg-default text-center text-l-medium\"": 1
+            }
+          },
           "id": {
             "count": 2,
             "values": {
@@ -21,26 +44,6 @@
             "values": {
               "{t('enterRpcUrl')}": 1,
               "{t('enterANameToIdentifyTheUrl')}": 1
-            }
-          },
-          "value": {
-            "count": 2,
-            "values": {
-              "{url}": 1,
-              "{name}": 1
-            }
-          },
-          "onChange": {
-            "count": 2,
-            "values": {
-              "{(event: React.ChangeEvent<HTMLInputElement>) => setUrl(event.target.value)}": 1,
-              "{(event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value)}": 1
-            }
-          },
-          "className": {
-            "count": 2,
-            "values": {
-              "\"rounded-xl border border-border-muted bg-background-muted px-4 py-3\"": 2
             }
           },
           "style": {
@@ -57,9 +60,76 @@
             }
           },
           "autoFocus": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 1,
+              "{index === 0}": 1
+            }
+          },
+          "key": {
             "count": 1,
             "values": {
-              "true (shorthand)": 1
+              "{`verification-code-${index}`}": 1
+            }
+          },
+          "ref": {
+            "count": 1,
+            "values": {
+              "{(ref) => { inputRefs.current[index] = ref; }}": 1
+            }
+          },
+          "onKeyDown": {
+            "count": 1,
+            "values": {
+              "{(event) => handleKeyDown(event, index)}": 1
+            }
+          },
+          "onPaste": {
+            "count": 1,
+            "values": {
+              "{(event) => handlePaste(event, index)}": 1
+            }
+          },
+          "onFocus": {
+            "count": 1,
+            "values": {
+              "{handleFocus}": 1
+            }
+          },
+          "type": {
+            "count": 1,
+            "values": {
+              "\"text\"": 1
+            }
+          },
+          "inputMode": {
+            "count": 1,
+            "values": {
+              "\"numeric\"": 1
+            }
+          },
+          "autoComplete": {
+            "count": 1,
+            "values": {
+              "\"one-time-code\"": 1
+            }
+          },
+          "aria-label": {
+            "count": 1,
+            "values": {
+              "{`${t('enter_verification_code')} ${index + 1}`}": 1
+            }
+          },
+          "maxLength": {
+            "count": 1,
+            "values": {
+              "1": 1
+            }
+          },
+          "isDisabled": {
+            "count": 1,
+            "values": {
+              "{isExpired}": 1
             }
           }
         }
@@ -107,14 +177,15 @@
         }
       },
       "overall": {
-        "totalInstances": 3,
-        "filesCount": 2,
+        "totalInstances": 4,
+        "filesCount": 3,
         "props": {
           "className": {
-            "count": 3,
+            "count": 4,
             "values": {
               "\"rounded-xl border border-border-muted bg-background-muted px-4 py-3\"": 2,
-              "\"dropdown-editor__item-placeholder\"": 1
+              "\"dropdown-editor__item-placeholder\"": 1,
+              "\"w-12 h-[54px] rounded-lg border border-muted bg-default text-center text-l-medium\"": 1
             }
           },
           "placeholder": {
@@ -125,25 +196,27 @@
               "{t('enterANameToIdentifyTheUrl')}": 1
             }
           },
+          "value": {
+            "count": 3,
+            "values": {
+              "{url}": 1,
+              "{name}": 1,
+              "{digit}": 1
+            }
+          },
+          "onChange": {
+            "count": 3,
+            "values": {
+              "{(event: React.ChangeEvent<HTMLInputElement>) => setUrl(event.target.value)}": 1,
+              "{(event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value)}": 1,
+              "{(event) => handleChange(event.target.value, index)}": 1
+            }
+          },
           "id": {
             "count": 2,
             "values": {
               "\"rpcUrl\"": 1,
               "\"rpcName\"": 1
-            }
-          },
-          "value": {
-            "count": 2,
-            "values": {
-              "{url}": 1,
-              "{name}": 1
-            }
-          },
-          "onChange": {
-            "count": 2,
-            "values": {
-              "{(event: React.ChangeEvent<HTMLInputElement>) => setUrl(event.target.value)}": 1,
-              "{(event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value)}": 1
             }
           },
           "style": {
@@ -157,6 +230,13 @@
             "values": {
               "\"rpc-url-input-test\"": 1,
               "\"rpc-name-input-test\"": 1
+            }
+          },
+          "autoFocus": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 1,
+              "{index === 0}": 1
             }
           },
           "readOnly": {
@@ -183,10 +263,70 @@
               "3": 1
             }
           },
-          "autoFocus": {
+          "key": {
             "count": 1,
             "values": {
-              "true (shorthand)": 1
+              "{`verification-code-${index}`}": 1
+            }
+          },
+          "ref": {
+            "count": 1,
+            "values": {
+              "{(ref) => { inputRefs.current[index] = ref; }}": 1
+            }
+          },
+          "onKeyDown": {
+            "count": 1,
+            "values": {
+              "{(event) => handleKeyDown(event, index)}": 1
+            }
+          },
+          "onPaste": {
+            "count": 1,
+            "values": {
+              "{(event) => handlePaste(event, index)}": 1
+            }
+          },
+          "onFocus": {
+            "count": 1,
+            "values": {
+              "{handleFocus}": 1
+            }
+          },
+          "type": {
+            "count": 1,
+            "values": {
+              "\"text\"": 1
+            }
+          },
+          "inputMode": {
+            "count": 1,
+            "values": {
+              "\"numeric\"": 1
+            }
+          },
+          "autoComplete": {
+            "count": 1,
+            "values": {
+              "\"one-time-code\"": 1
+            }
+          },
+          "aria-label": {
+            "count": 1,
+            "values": {
+              "{`${t('enter_verification_code')} ${index + 1}`}": 1
+            }
+          },
+          "maxLength": {
+            "count": 1,
+            "values": {
+              "1": 1
+            }
+          },
+          "isDisabled": {
+            "count": 1,
+            "values": {
+              "{isExpired}": 1
             }
           }
         }
@@ -196,7 +336,7 @@
       }
     },
     "mobile": {
-      "filesScanned": 6839,
+      "filesScanned": 6941,
       "targetComponent": "Input",
       "mmds": {
         "totalInstances": 5,
@@ -287,10 +427,10 @@
           "onBlur": {
             "count": 4,
             "values": {
-              "{() => { if ( programmaticDismissInputRef.current !== 'takeProfitPrice' ) { ha...}": 1,
-              "{() => { if ( programmaticDismissInputRef.current !== 'takeProfitPercentage' )...}": 1,
-              "{() => { if ( programmaticDismissInputRef.current !== 'stopLossPrice' ) { hand...}": 1,
-              "{() => { if ( programmaticDismissInputRef.current !== 'stopLossPercentage' ) {...}": 1
+              "{() => handleInputBlur('takeProfitPrice')}": 1,
+              "{() => handleInputBlur('takeProfitPercentage')}": 1,
+              "{() => handleInputBlur('stopLossPrice')}": 1,
+              "{() => handleInputBlur('stopLossPercentage')}": 1
             }
           },
           "selectionColor": {
@@ -532,10 +672,10 @@
             "count": 5,
             "values": {
               "{() => { onBlur?.(); }}": 1,
-              "{() => { if ( programmaticDismissInputRef.current !== 'takeProfitPrice' ) { ha...}": 1,
-              "{() => { if ( programmaticDismissInputRef.current !== 'takeProfitPercentage' )...}": 1,
-              "{() => { if ( programmaticDismissInputRef.current !== 'stopLossPrice' ) { hand...}": 1,
-              "{() => { if ( programmaticDismissInputRef.current !== 'stopLossPercentage' ) {...}": 1
+              "{() => handleInputBlur('takeProfitPrice')}": 1,
+              "{() => handleInputBlur('takeProfitPercentage')}": 1,
+              "{() => handleInputBlur('stopLossPrice')}": 1,
+              "{() => handleInputBlur('stopLossPercentage')}": 1
             }
           },
           "twClassName": {
