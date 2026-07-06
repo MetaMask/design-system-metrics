@@ -1,6 +1,6 @@
 {
   "project": "extension",
-  "date": "2026-07-01",
+  "date": "2026-07-06",
   "teams": [
     "@MetaMask/accounts-engineers",
     "@MetaMask/confirmations",
@@ -14,14 +14,14 @@
     "@MetaMask/web3auth"
   ],
   "summary": {
-    "filesScanned": 1625,
-    "totalJSXUsages": 9818,
-    "trackedDeprecated": 3001,
-    "trackedMMDS": 3709,
-    "untrackedTotal": 3108,
+    "filesScanned": 1629,
+    "totalJSXUsages": 9838,
+    "trackedDeprecated": 2995,
+    "trackedMMDS": 3727,
+    "untrackedTotal": 3116,
     "uniqueUntrackedComponents": 114,
     "replaceableNow": 48,
-    "replaceableInstances": 650,
+    "replaceableInstances": 652,
     "futureDSCandidates": 66,
     "codeOwnerBreakdown": {
       "@MetaMask/swaps-engineers": {
@@ -916,6 +916,36 @@
       }
     },
     {
+      "component": "NetworksPageFormHeader",
+      "instances": 8,
+      "fileCount": 1,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "(local)",
+      "importSources": [
+        "(local or re-export)"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "HeaderBase",
+          "confidence": "medium"
+        },
+        {
+          "component": "ModalHeader",
+          "confidence": "medium"
+        },
+        {
+          "component": "PopoverHeader",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@unknown"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 8
+      }
+    },
+    {
       "component": "AccountDetailsRow",
       "instances": 8,
       "fileCount": 3,
@@ -1025,36 +1055,6 @@
       }
     },
     {
-      "component": "NetworksPageFormHeader",
-      "instances": 7,
-      "fileCount": 1,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "(local)",
-      "importSources": [
-        "(local or re-export)"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "HeaderBase",
-          "confidence": "medium"
-        },
-        {
-          "component": "ModalHeader",
-          "confidence": "medium"
-        },
-        {
-          "component": "PopoverHeader",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@unknown"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 7
-      }
-    },
-    {
       "component": "AccountName",
       "instances": 7,
       "fileCount": 3,
@@ -1133,6 +1133,28 @@
       }
     },
     {
+      "component": "NetworksPageFormBody",
+      "instances": 6,
+      "fileCount": 1,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "(local)",
+      "importSources": [
+        "(local or re-export)"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "ModalBody",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@unknown"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 6
+      }
+    },
+    {
       "component": "BlockExplorerButton",
       "instances": 6,
       "fileCount": 6,
@@ -1160,6 +1182,38 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/core-extension-ux": 6
+      }
+    },
+    {
+      "component": "TextField",
+      "instances": 6,
+      "fileCount": 4,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "ui/text-field",
+      "importSources": [
+        "../text-field",
+        "../../ui/text-field",
+        "../../../ui/text-field"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "TextField",
+          "confidence": "exact"
+        },
+        {
+          "component": "Text",
+          "confidence": "high"
+        },
+        {
+          "component": "FormTextField",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@unknown"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 6
       }
     },
     {
@@ -1200,38 +1254,6 @@
         "@MetaMask/core-extension-ux": 2,
         "@unknown": 2,
         "@MetaMask/metamask-assets": 1
-      }
-    },
-    {
-      "component": "TextField",
-      "instances": 6,
-      "fileCount": 4,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "ui/text-field",
-      "importSources": [
-        "../text-field",
-        "../../ui/text-field",
-        "../../../ui/text-field"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "TextField",
-          "confidence": "exact"
-        },
-        {
-          "component": "Text",
-          "confidence": "high"
-        },
-        {
-          "component": "FormTextField",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@unknown"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 6
       }
     },
     {
@@ -1411,28 +1433,6 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/perps": 5
-      }
-    },
-    {
-      "component": "NetworksPageFormBody",
-      "instances": 5,
-      "fileCount": 1,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "(local)",
-      "importSources": [
-        "(local or re-export)"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "ModalBody",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@unknown"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 5
       }
     },
     {
@@ -1950,8 +1950,8 @@
       "importSources": [
         "../../components/ui/icon/preloader/preloader-icon.component",
         "../../../components/ui/icon/preloader/preloader-icon.component",
-        "../../ui/icon/preloader",
         "../icon/preloader/preloader-icon.component",
+        "../../ui/icon/preloader",
         "../../ui/icon/preloader/preloader-icon.component",
         "../../../ui/icon/preloader/preloader-icon.component",
         "../../../../../components/ui/icon/preloader",
@@ -1969,8 +1969,8 @@
       "codeOwnerBreakdown": {
         "@MetaMask/notifications": 1,
         "@MetaMask/core-extension-ux": 3,
-        "@MetaMask/accounts-engineers": 4,
         "@unknown": 1,
+        "@MetaMask/accounts-engineers": 4,
         "@MetaMask/core-platform": 1,
         "@MetaMask/confirmations": 6
       }

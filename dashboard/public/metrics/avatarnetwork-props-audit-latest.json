@@ -1,20 +1,20 @@
 {
   "component": "AvatarNetwork",
-  "generatedAt": "2026-07-01T07:07:53.957Z",
+  "generatedAt": "2026-07-06T09:41:29.231Z",
   "projects": {
     "extension": {
-      "filesScanned": 3387,
+      "filesScanned": 3394,
       "targetComponent": "AvatarNetwork",
       "mmds": {
-        "totalInstances": 30,
-        "filesCount": 29,
+        "totalInstances": 31,
+        "filesCount": 30,
         "props": {
           "src": {
-            "count": 30,
+            "count": 31,
             "values": {
               "{networkImageSrc}": 4,
+              "{networkImageUrl}": 4,
               "{networkImage}": 3,
-              "{networkImageUrl}": 3,
               "{networkIcon}": 2,
               "{CHAIN_ID_TO_NETWORK_IMAGE_URL_MAP[network.chainId]}": 2,
               "{iconSrc}": 1,
@@ -36,7 +36,7 @@
             }
           },
           "name": {
-            "count": 29,
+            "count": 30,
             "values": {
               "{networkName}": 9,
               "{network.name}": 5,
@@ -53,22 +53,23 @@
               "{selectedNetworkName}": 1,
               "{fromName}": 1,
               "{toName}": 1,
+              "{displayName}": 1,
               "{arbitrumNetworkName}": 1
             }
           },
           "size": {
-            "count": 26,
+            "count": 27,
             "values": {
               "{AvatarNetworkSize.Xs}": 17,
               "{AvatarNetworkSize.Md}": 4,
               "{AvatarNetworkSize.Lg}": 2,
+              "\"md\"": 2,
               "{size}": 1,
-              "\"md\"": 1,
               "{AvatarNetworkSize.Sm}": 1
             }
           },
           "className": {
-            "count": 14,
+            "count": 15,
             "values": {
               "\"rounded\"": 3,
               "\"rounded-md\"": 3,
@@ -78,6 +79,7 @@
               "\"bg-white\"": 1,
               "\"rounded-lg\"": 1,
               "\"border-0\"": 1,
+              "\"shrink-0 rounded-lg\"": 1,
               "\"box-border border-2 border-default\"": 1
             }
           },
@@ -292,13 +294,13 @@
         }
       },
       "overall": {
-        "totalInstances": 72,
-        "filesCount": 63,
+        "totalInstances": 73,
+        "filesCount": 64,
         "props": {
           "src": {
-            "count": 72,
+            "count": 73,
             "values": {
-              "{networkImageUrl}": 6,
+              "{networkImageUrl}": 7,
               "{networkIcon}": 5,
               "{networkImageSrc}": 4,
               "{networkImageUrl ?? undefined}": 3,
@@ -350,7 +352,7 @@
             }
           },
           "name": {
-            "count": 71,
+            "count": 72,
             "values": {
               "{networkName}": 14,
               "{network.name}": 9,
@@ -390,26 +392,27 @@
               "{selectedNetworkName}": 1,
               "{fromName}": 1,
               "{toName}": 1,
+              "{displayName}": 1,
               "{arbitrumNetworkName}": 1,
               "{NETWORK_TO_NAME_MAP[ selectedToken.chainId as keyof typeof NETWORK_TO_NAME_MAP ]}": 1
             }
           },
           "size": {
-            "count": 68,
+            "count": 69,
             "values": {
               "{AvatarNetworkSize.Xs}": 41,
               "{AvatarNetworkSize.Sm}": 12,
               "{AvatarNetworkSize.Md}": 7,
               "{AvatarNetworkSize.Lg}": 2,
               "{AvatarNetworkSize.Xl}": 2,
+              "\"md\"": 2,
               "{size}": 1,
               "{iconSize as AvatarNetworkSize}": 1,
-              "{NETWORK_BADGE_SIZE_MAP[size]}": 1,
-              "\"md\"": 1
+              "{NETWORK_BADGE_SIZE_MAP[size]}": 1
             }
           },
           "className": {
-            "count": 23,
+            "count": 24,
             "values": {
               "\"rounded-md\"": 4,
               "\"activity-tx__network-badge\"": 3,
@@ -424,6 +427,7 @@
               "\"bg-white\"": 1,
               "\"rounded-lg\"": 1,
               "\"border-0\"": 1,
+              "\"shrink-0 rounded-lg\"": 1,
               "\"box-border border-2 border-default\"": 1
             }
           },
@@ -533,7 +537,7 @@
       }
     },
     "mobile": {
-      "filesScanned": 6953,
+      "filesScanned": 7015,
       "targetComponent": "AvatarNetwork",
       "mmds": {
         "totalInstances": 8,

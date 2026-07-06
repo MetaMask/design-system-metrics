@@ -1,9 +1,9 @@
 {
   "component": "AvatarAccount",
-  "generatedAt": "2026-07-01T07:05:11.474Z",
+  "generatedAt": "2026-07-06T09:38:59.161Z",
   "projects": {
     "extension": {
-      "filesScanned": 3387,
+      "filesScanned": 3394,
       "targetComponent": "AvatarAccount",
       "mmds": {
         "totalInstances": 9,
@@ -109,16 +109,17 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 6953,
+      "filesScanned": 7015,
       "targetComponent": "AvatarAccount",
       "mmds": {
-        "totalInstances": 7,
-        "filesCount": 7,
+        "totalInstances": 8,
+        "filesCount": 8,
         "props": {
           "address": {
-            "count": 7,
+            "count": 8,
             "values": {
               "{address}": 2,
+              "{receivingAddress}": 1,
               "{selectedAccount.address}": 1,
               "{address ?? ''}": 1,
               "{account.address}": 1,
@@ -127,9 +128,9 @@
             }
           },
           "size": {
-            "count": 7,
+            "count": 8,
             "values": {
-              "{AvatarBaseSize.Sm}": 2,
+              "{AvatarBaseSize.Sm}": 3,
               "{AvatarAccountSize.Xl}": 2,
               "{AvatarBaseSize.Lg}": 1,
               "{toAvatarAccountSize(size)}": 1,
@@ -137,10 +138,10 @@
             }
           },
           "variant": {
-            "count": 6,
+            "count": 7,
             "values": {
+              "{getAvatarAccountVariant(avatarAccountType)}": 2,
               "{accountVariant}": 2,
-              "{getAvatarAccountVariant(avatarAccountType)}": 1,
               "{AvatarAccountVariant.Maskicon}": 1,
               "{toAvatarAccountVariant(accountAvatarType)}": 1,
               "{accountAvatarVariant}": 1
@@ -219,15 +220,15 @@
         }
       },
       "overall": {
-        "totalInstances": 19,
-        "filesCount": 16,
+        "totalInstances": 20,
+        "filesCount": 17,
         "props": {
           "size": {
-            "count": 18,
+            "count": 19,
             "values": {
+              "{AvatarBaseSize.Sm}": 3,
               "{diameter}": 3,
               "{AvatarSize.Sm}": 3,
-              "{AvatarBaseSize.Sm}": 2,
               "{AvatarSize.Md}": 2,
               "{AvatarAccountSize.Xl}": 2,
               "{size}": 1,
@@ -260,9 +261,10 @@
             }
           },
           "address": {
-            "count": 7,
+            "count": 8,
             "values": {
               "{address}": 2,
+              "{receivingAddress}": 1,
               "{selectedAccount.address}": 1,
               "{address ?? ''}": 1,
               "{account.address}": 1,
@@ -271,10 +273,10 @@
             }
           },
           "variant": {
-            "count": 6,
+            "count": 7,
             "values": {
+              "{getAvatarAccountVariant(avatarAccountType)}": 2,
               "{accountVariant}": 2,
-              "{getAvatarAccountVariant(avatarAccountType)}": 1,
               "{AvatarAccountVariant.Maskicon}": 1,
               "{toAvatarAccountVariant(accountAvatarType)}": 1,
               "{accountAvatarVariant}": 1
