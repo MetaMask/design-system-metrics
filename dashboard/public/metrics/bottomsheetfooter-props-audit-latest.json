@@ -1,9 +1,9 @@
 {
   "component": "BottomSheetFooter",
-  "generatedAt": "2026-07-13T09:27:30.613Z",
+  "generatedAt": "2026-07-20T09:27:05.577Z",
   "projects": {
     "extension": {
-      "filesScanned": 3458,
+      "filesScanned": 3445,
       "targetComponent": "BottomSheetFooter",
       "mmds": {
         "totalInstances": 0,
@@ -23,16 +23,16 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 7127,
+      "filesScanned": 7241,
       "targetComponent": "BottomSheetFooter",
       "mmds": {
-        "totalInstances": 16,
-        "filesCount": 15,
+        "totalInstances": 19,
+        "filesCount": 18,
         "props": {
           "primaryButtonProps": {
-            "count": 16,
+            "count": 19,
             "values": {
-              "{primaryButtonProps}": 3,
+              "{primaryButtonProps}": 6,
               "{{ children: strings('bridge.cancel'), onPress: handleClose, isDisabled: loadi...}": 2,
               "{{ children: strings('bridge.batch_sell_swap_instead'), onPress: handleSwapIns...}": 1,
               "{footerButtonProps.primaryButtonProps}": 1,
@@ -47,28 +47,28 @@
               "{{ size: ButtonSize.Lg, children: buttonText ?? strings('browser.got_it'), onP...}": 1
             }
           },
-          "twClassName": {
-            "count": 7,
+          "buttonsAlignment": {
+            "count": 8,
             "values": {
-              "\"pt-6\"": 4,
+              "{ButtonsAlignment.Horizontal}": 7,
+              "{ButtonsAlignment.Vertical}": 1
+            }
+          },
+          "twClassName": {
+            "count": 8,
+            "values": {
+              "\"pt-6\"": 5,
               "\"px-4 pt-4 pb-6\"": 1,
               "\"px-4\"": 1,
               "\"px-4 pt-6\"": 1
             }
           },
-          "buttonsAlignment": {
+          "secondaryButtonProps": {
             "count": 6,
             "values": {
-              "{ButtonsAlignment.Horizontal}": 5,
-              "{ButtonsAlignment.Vertical}": 1
-            }
-          },
-          "secondaryButtonProps": {
-            "count": 5,
-            "values": {
               "{{ children: strings('bridge.proceed'), onPress: handleProceed, isDisabled: lo...}": 2,
+              "{secondaryButtonProps}": 2,
               "{footerButtonProps.secondaryButtonProps}": 1,
-              "{secondaryButtonProps}": 1,
               "{cancelButtonProps}": 1
             }
           },
@@ -89,15 +89,15 @@
         }
       },
       "deprecated": {
-        "totalInstances": 43,
-        "filesCount": 42,
+        "totalInstances": 41,
+        "filesCount": 40,
         "props": {
           "buttonPropsArray": {
-            "count": 43,
+            "count": 41,
             "values": {
-              "{footerButtons}": 6,
               "{buttons}": 5,
-              "{footerButtonProps}": 5,
+              "{footerButtons}": 5,
+              "{footerButtonProps}": 4,
               "{[cancelButtonProps, connectButtonProps]}": 2,
               "{[okButtonProps]}": 2,
               "{[cancelButtonProps, deleteButtonProps]}": 2,
@@ -125,17 +125,17 @@
             }
           },
           "buttonsAlignment": {
-            "count": 34,
+            "count": 33,
             "values": {
-              "{ButtonsAlignment.Horizontal}": 31,
+              "{ButtonsAlignment.Horizontal}": 30,
               "{ButtonsAlignment.Vertical}": 3
             }
           },
           "style": {
-            "count": 22,
+            "count": 21,
             "values": {
               "{styles.footer}": 6,
-              "{styles.footerContainer}": 4,
+              "{styles.footerContainer}": 3,
               "{tw.style('px-6')}": 3,
               "{styles.footerPadding}": 2,
               "{styles.footerButtonsContainer}": 1,
@@ -150,15 +150,22 @@
         }
       },
       "overall": {
-        "totalInstances": 59,
-        "filesCount": 57,
+        "totalInstances": 60,
+        "filesCount": 58,
         "props": {
-          "buttonPropsArray": {
-            "count": 43,
+          "buttonsAlignment": {
+            "count": 41,
             "values": {
-              "{footerButtons}": 6,
+              "{ButtonsAlignment.Horizontal}": 37,
+              "{ButtonsAlignment.Vertical}": 4
+            }
+          },
+          "buttonPropsArray": {
+            "count": 41,
+            "values": {
               "{buttons}": 5,
-              "{footerButtonProps}": 5,
+              "{footerButtons}": 5,
+              "{footerButtonProps}": 4,
               "{[cancelButtonProps, connectButtonProps]}": 2,
               "{[okButtonProps]}": 2,
               "{[cancelButtonProps, deleteButtonProps]}": 2,
@@ -185,18 +192,11 @@
               "{[ { variant: ButtonVariants.Secondary, size: ButtonSize.Lg, label: strings('s...}": 1
             }
           },
-          "buttonsAlignment": {
-            "count": 40,
-            "values": {
-              "{ButtonsAlignment.Horizontal}": 36,
-              "{ButtonsAlignment.Vertical}": 4
-            }
-          },
           "style": {
-            "count": 26,
+            "count": 25,
             "values": {
               "{styles.footer}": 8,
-              "{styles.footerContainer}": 4,
+              "{styles.footerContainer}": 3,
               "{tw.style('px-6')}": 3,
               "{styles.footerPadding}": 2,
               "{tw.style('px-4')}": 2,
@@ -210,9 +210,9 @@
             }
           },
           "primaryButtonProps": {
-            "count": 16,
+            "count": 19,
             "values": {
-              "{primaryButtonProps}": 3,
+              "{primaryButtonProps}": 6,
               "{{ children: strings('bridge.cancel'), onPress: handleClose, isDisabled: loadi...}": 2,
               "{{ children: strings('bridge.batch_sell_swap_instead'), onPress: handleSwapIns...}": 1,
               "{footerButtonProps.primaryButtonProps}": 1,
@@ -228,20 +228,20 @@
             }
           },
           "twClassName": {
-            "count": 7,
+            "count": 8,
             "values": {
-              "\"pt-6\"": 4,
+              "\"pt-6\"": 5,
               "\"px-4 pt-4 pb-6\"": 1,
               "\"px-4\"": 1,
               "\"px-4 pt-6\"": 1
             }
           },
           "secondaryButtonProps": {
-            "count": 5,
+            "count": 6,
             "values": {
               "{{ children: strings('bridge.proceed'), onPress: handleProceed, isDisabled: lo...}": 2,
+              "{secondaryButtonProps}": 2,
               "{footerButtonProps.secondaryButtonProps}": 1,
-              "{secondaryButtonProps}": 1,
               "{cancelButtonProps}": 1
             }
           },
@@ -254,7 +254,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "BottomSheetFooter": 43
+        "BottomSheetFooter": 41
       }
     }
   }

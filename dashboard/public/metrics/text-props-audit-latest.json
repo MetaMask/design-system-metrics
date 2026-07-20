@@ -1,20 +1,20 @@
 {
   "component": "Text",
-  "generatedAt": "2026-07-13T09:34:56.296Z",
+  "generatedAt": "2026-07-20T09:35:00.120Z",
   "projects": {
     "extension": {
-      "filesScanned": 3458,
+      "filesScanned": 3445,
       "targetComponent": "Text",
       "mmds": {
-        "totalInstances": 1031,
+        "totalInstances": 1030,
         "filesCount": 356,
         "props": {
           "variant": {
-            "count": 935,
+            "count": 941,
             "values": {
-              "{TextVariant.BodyMd}": 397,
-              "{TextVariant.BodySm}": 317,
-              "{TextVariant.HeadingSm}": 61,
+              "{TextVariant.BodyMd}": 400,
+              "{TextVariant.BodySm}": 319,
+              "{TextVariant.HeadingSm}": 62,
               "{TextVariant.HeadingLg}": 48,
               "{TextVariant.BodyXs}": 46,
               "{TextVariant.HeadingMd}": 22,
@@ -33,11 +33,11 @@
             }
           },
           "color": {
-            "count": 626,
+            "count": 631,
             "values": {
-              "{TextColor.TextAlternative}": 360,
+              "{TextColor.TextAlternative}": 365,
               "{TextColor.TextDefault}": 99,
-              "{TextColor.ErrorDefault}": 40,
+              "{TextColor.ErrorDefault}": 41,
               "{TextColor.SuccessDefault}": 14,
               "{TextColor.InfoInverse}": 13,
               "{TextColor.PrimaryDefault}": 12,
@@ -52,7 +52,6 @@
               "{addressCopied ? TextColor.SuccessDefault : TextColor.TextAlternative}": 3,
               "{isSelected ? TextColor.TextDefault : TextColor.TextAlternative}": 2,
               "{feeTextColor}": 2,
-              "{changeColor}": 2,
               "{getChangeColor(displayChange)}": 2,
               "{isActive ? TextColor.TextDefault : TextColor.TextAlternative}": 1,
               "{getStepTextColor(status)}": 1,
@@ -60,6 +59,7 @@
               "{unrealizedPnl >= 0 ? TextColor.SuccessDefault : TextColor.ErrorDefault}": 1,
               "{marginMode === 'add' ? TextColor.PrimaryInverse : TextColor.TextDefault}": 1,
               "{marginMode === 'remove' ? TextColor.PrimaryInverse : TextColor.TextDefault}": 1,
+              "{changeColor}": 1,
               "{getPnlDisplayColor(estimatedPnlAtTp)}": 1,
               "{getPnlDisplayColor(estimatedPnlAtSl)}": 1,
               "{exceedsMaxSlippage ? TextColor.ErrorDefault : TextColor.TextDefault}": 1,
@@ -96,8 +96,8 @@
           "fontWeight": {
             "count": 358,
             "values": {
-              "{FontWeight.Medium}": 308,
-              "{FontWeight.Bold}": 32,
+              "{FontWeight.Medium}": 306,
+              "{FontWeight.Bold}": 34,
               "{FontWeight.Regular}": 13,
               "{feeTextFontWeight}": 2,
               "{valueFontWeight}": 1,
@@ -106,27 +106,26 @@
             }
           },
           "className": {
-            "count": 227,
+            "count": 222,
             "values": {
               "\"text-center\"": 11,
               "\"mb-4\"": 10,
-              "\"text-s-body-md @compact:text-s-body-sm\"": 8,
               "\"mb-2\"": 8,
               "\"mb-6\"": 7,
               "\"text-left mb-2 w-full\"": 6,
               "\"text-left text-alternative w-full\"": 6,
               "\"mt-4\"": 5,
               "\"w-full\"": 5,
+              "\"text-s-body-md @compact:text-s-body-sm\"": 5,
               "\"flex-1\"": 5,
               "\"mb-1\"": 5,
               "\"flex items-center\"": 4,
               "\"truncate\"": 3,
               "\"leading-5\"": 3,
               "\"font-medium\"": 3,
-              "\"text-text-alternative\"": 3,
-              "\"text-alternative\"": 3,
               "\"px-4 pb-2 pt-4\"": 3,
               "\"min-w-0 flex-1\"": 3,
+              "\"truncate text-left\"": 3,
               "\"px-4 pt-3 pb-2\"": 3,
               "\"transaction-shield-page__membership-text\"": 3,
               "\"text-center text-alternative\"": 2,
@@ -134,15 +133,15 @@
               "\"mt-1\"": 2,
               "\"text-error-default\"": 2,
               "\"mt-2 mb-2\"": 2,
-              "\"font-medium text-s-body-md @compact:text-s-body-sm\"": 2,
-              "\"text-sm text-alternative\"": 2,
               "\"multichain-account-cell__account-name\"": 2,
-              "\"pt-6 px-4 pb-2\"": 2,
+              "\"pt-4 px-4 pb-2\"": 2,
               "\"truncate text-alternative\"": 2,
+              "\"text-alternative\"": 2,
               "\"shrink-0 text-alternative\"": 2,
               "\"text-default font-medium\"": 2,
               "\"mt-2\"": 2,
               "\"flex-1 pb-2 pt-1 hover:text-default\"": 2,
+              "\"text-text-alternative\"": 2,
               "\"recovery-phrase__word-index\"": 2,
               "\"uppercase tracking-wide\"": 2,
               "{classnames('mb-2', { 'opacity-50': disabled, })}": 2,
@@ -150,6 +149,7 @@
               "\"group-hover/tab:text-text-default\"": 1,
               "\"home__new-tokens-imported-notification-title\"": 1,
               "\"home__new-tokens-imported-notification-message\"": 1,
+              "\"min-w-0 truncate\"": 1,
               "{twMerge( 'w-full', direction === 'long' ? 'text-success-default' : 'text-mute...}": 1,
               "{twMerge( 'w-full', direction === 'short' ? 'text-error-default' : 'text-muted...}": 1,
               "\"text-right leading-5\"": 1,
@@ -167,8 +167,6 @@
               "\"pl-4 pr-2 flex-1\"": 1,
               "\"mt-6\"": 1,
               "\"multichain-account-list-item__account-name__button p-0 bg-transparent w-full text-left\"": 1,
-              "\"font-medium truncate text-s-body-md @compact:text-s-body-sm\"": 1,
-              "\"activity-list-item__primary-currency text-s-body-md @compact:text-s-body-sm\"": 1,
               "\"srp-list__account-name\"": 1,
               "\"multichain-account-details__label\"": 1,
               "\"multichain-account-details__value\"": 1,
@@ -176,8 +174,10 @@
               "\"break-all max-w-64\"": 1,
               "\"shrink-0 text-right\"": 1,
               "\"pt-8\"": 1,
+              "\"text-sm text-alternative\"": 1,
               "{twMerge( 'flex align-middle justify-center border-b-2 border-transparent px-0...}": 1,
               "\"flex min-w-0 items-center gap-1 font-medium text-s-body-md @compact:text-s-body-sm\"": 1,
+              "\"font-medium text-s-body-md @compact:text-s-body-sm\"": 1,
               "\"asset-page__balance-heading\"": 1,
               "\"asset-page__details-heading\"": 1,
               "\"asset-page__activity-heading\"": 1,
@@ -217,7 +217,7 @@
               "\"description\"": 1,
               "\"w-max px-2 mx-auto relative z-[1]\"": 1,
               "\"w-full mx-auto pt-8\"": 1,
-              "\"min-w-0 truncate\"": 1,
+              "\"mb-4 text-center\"": 1,
               "\"info-tab__version-number\"": 1,
               "\"flex-1 min-w-0 text-left\"": 1,
               "\"py-2 px-4\"": 1,
@@ -243,18 +243,17 @@
             }
           },
           "data-testid": {
-            "count": 123,
+            "count": 125,
             "values": {
-              "\"transaction-list-item-primary-currency\"": 4,
               "\"confirm-info-row-display-name\"": 2,
               "\"perps-edit-margin-liquidation-distance-value\"": 2,
               "\"tp-validation-error\"": 2,
               "\"sl-validation-error\"": 2,
               "{feeTextTestId}": 2,
               "\"passkey-enrollment-error\"": 2,
-              "\"activity-list-item-action\"": 2,
               "{testId}": 2,
               "\"accounts-list-item-connected-account-name\"": 2,
+              "\"transaction-list-item-primary-currency\"": 2,
               "\"alert-modal__selected-alert\"": 2,
               "\"claim-bonus-error\"": 1,
               "\"claim-bonus-badge\"": 1,
@@ -264,6 +263,7 @@
               "\"perps-close-all-receive-value\"": 1,
               "\"perps-close-summary-margin-value\"": 1,
               "\"perps-close-summary-receive-value\"": 1,
+              "{`market-row-ticker-${market.symbol.replace(/:/gu, '-')}`}": 1,
               "\"perps-current-position-size-value\"": 1,
               "\"amount-input-denomination-unit\"": 1,
               "\"perps-order-summary-slippage-value\"": 1,
@@ -272,7 +272,6 @@
               "{dataTestId ? `${dataTestId}-value` : undefined}": 1,
               "\"perps-balance-actions-total\"": 1,
               "\"perps-balance-actions-available\"": 1,
-              "\"perps-market-card-change\"": 1,
               "\"perps-reverse-est-size-value\"": 1,
               "\"perps-slippage-config-custom-error\"": 1,
               "\"perps-update-tpsl-current-price-value\"": 1,
@@ -300,6 +299,7 @@
               "\"accounts-list-item-plus-more-tooltip\"": 1,
               "\"networks-list-item-plus-more-tooltip\"": 1,
               "{dataTestId}": 1,
+              "\"activity-list-item-action\"": 1,
               "\"transaction-list-item-secondary-currency\"": 1,
               "\"asset-name\"": 1,
               "\"spendable-balance-total-balance\"": 1,
@@ -308,6 +308,7 @@
               "\"spendable-balance-base-reserved\"": 1,
               "\"bridge-asset-symbol\"": 1,
               "\"simple-confirmation-header-title\"": 1,
+              "\"added-protection-network-fee\"": 1,
               "\"smart-account-activation-label\"": 1,
               "\"gas-fee-token-fee\"": 1,
               "\"first-gas-field\"": 1,
@@ -339,6 +340,10 @@
               "\"perps-order-entry-change\"": 1,
               "\"perps-order-submit-error\"": 1,
               "\"perps-withdraw-header-title\"": 1,
+              "\"ramps-build-quote-error\"": 1,
+              "\"ramps-build-quote-provider-label\"": 1,
+              "{`ramps-payment-method-item-delay-${paymentMethod.id}`}": 1,
+              "{`ramps-payment-method-item-limits-${paymentMethod.id}`}": 1,
               "\"supported-languages-section-heading\"": 1,
               "\"community-languages-section-heading\"": 1,
               "\"register-passkey-intro-description\"": 1,
@@ -364,9 +369,9 @@
             }
           },
           "ellipsis": {
-            "count": 37,
+            "count": 36,
             "values": {
-              "true (shorthand)": 37
+              "true (shorthand)": 36
             }
           },
           "style": {
@@ -447,20 +452,20 @@
         }
       },
       "deprecated": {
-        "totalInstances": 896,
-        "filesCount": 309,
+        "totalInstances": 857,
+        "filesCount": 299,
         "props": {
           "variant": {
-            "count": 713,
+            "count": 680,
             "values": {
-              "{TextVariant.bodySm}": 243,
-              "{TextVariant.bodyMd}": 176,
-              "{TextVariant.bodyMdMedium}": 76,
+              "{TextVariant.bodySm}": 242,
+              "{TextVariant.bodyMd}": 151,
+              "{TextVariant.bodyMdMedium}": 74,
               "{TextVariant.headingSm}": 37,
-              "{TextVariant.bodyLgMedium}": 32,
+              "{TextVariant.bodyLgMedium}": 31,
               "{TextVariant.inherit}": 28,
-              "{TextVariant.bodySmMedium}": 27,
-              "{TextVariant.headingMd}": 22,
+              "{TextVariant.bodySmMedium}": 25,
+              "{TextVariant.headingMd}": 20,
               "{TextVariant.bodyXs}": 16,
               "{TextVariant.headingLg}": 15,
               "{TextVariant.bodyMdBold}": 12,
@@ -479,18 +484,17 @@
             }
           },
           "color": {
-            "count": 376,
+            "count": 362,
             "values": {
-              "{TextColor.textAlternative}": 163,
-              "{TextColor.textDefault}": 69,
+              "{TextColor.textAlternative}": 160,
+              "{TextColor.textDefault}": 66,
               "{TextColor.inherit}": 44,
               "{TextColor.errorDefault}": 11,
               "{TextColor.textMuted}": 10,
               "{color}": 9,
               "{TextColor.primaryDefault}": 8,
-              "{Color.textAlternative}": 7,
+              "{Color.textAlternative}": 5,
               "{TextColor.warningDefault}": 4,
-              "{Color.textDefault}": 4,
               "{TextColor.infoInverse}": 4,
               "{Color.textMuted}": 3,
               "{TextColor.errorInverse}": 3,
@@ -499,11 +503,10 @@
               "{valueColor || TextColor.textDefault}": 2,
               "{TextColor.overlayInverse}": 2,
               "{TextColor.successDefault}": 2,
+              "{Color.textDefault}": 2,
               "{textColor}": 2,
               "{isSingleNetworkFilterSelected ? TextColor.primaryDefault : TextColor.textDefault}": 1,
               "{LEFT_TEXT_COLORS[variant] as TextColor}": 1,
-              "{statusColor}": 1,
-              "{getStatusColor(status)}": 1,
               "{isVisible && sensitive ? Color.errorAlternative : TextColor.textAlternative}": 1,
               "{active ? IconColor.infoDefault : IconColor.iconAlternative}": 1,
               "{icon?.props.color}": 1,
@@ -516,8 +519,6 @@
               "{isAmountReadOnly && isEstimatedReturnLow ? TextColor.warningDefault : TextCol...}": 1,
               "{isInsufficientBalance ? TextColor.errorDefault : TextColor.textAlternative}": 1,
               "{getTimerColor(secondsUntilNextRefresh)}": 1,
-              "{stepStatus === StatusTypes.PENDING || stepStatus === StatusTypes.COMPLETE ? T...}": 1,
-              "{status ? STATUS_TO_COLOR_MAP[status] : undefined}": 1,
               "{getStatusTextColor(status)}": 1,
               "{amountError ? TextColor.errorDefault : TextColor.textAlternative}": 1,
               "{isSingleNetworkSelected ? TextColor.primaryDefault : TextColor.textDefault}": 1,
@@ -527,11 +528,11 @@
             }
           },
           "marginBottom": {
-            "count": 177,
+            "count": 176,
             "values": {
               "0": 4,
               "1": 7,
-              "2": 24,
+              "2": 23,
               "3": 3,
               "4": 137,
               "5": 1,
@@ -539,7 +540,7 @@
             }
           },
           "as": {
-            "count": 158,
+            "count": 157,
             "values": {
               "\"h6\"": 49,
               "\"span\"": 48,
@@ -547,7 +548,7 @@
               "\"p\"": 11,
               "\"button\"": 8,
               "\"h4\"": 6,
-              "\"div\"": 6,
+              "\"div\"": 5,
               "\"h2\"": 3,
               "\"h3\"": 2,
               "\"ul\"": 1,
@@ -561,24 +562,21 @@
             }
           },
           "fontWeight": {
-            "count": 128,
+            "count": 110,
             "values": {
-              "{FontWeight.Medium}": 85,
+              "{FontWeight.Medium}": 68,
               "{FontWeight.Bold}": 22,
               "{FontWeight.Normal}": 17,
               "{fontWeight}": 2,
-              "{stepStatus === StatusTypes.PENDING ? FontWeight.Medium : FontWeight.Normal}": 1,
               "\"bold\"": 1
             }
           },
           "data-testid": {
-            "count": 100,
+            "count": 88,
             "values": {
               "\"alert-modal__selected-alert\"": 5,
-              "\"transaction-list-item-primary-currency\"": 3,
               "\"simulation-token-value\"": 3,
               "\"multichain-token-list-item-token-name\"": 2,
-              "\"transaction-list-item-secondary-currency\"": 2,
               "\"account-list-address\"": 2,
               "\"confirmation-text\"": 2,
               "\"individual-fiat-display\"": 2,
@@ -588,16 +586,10 @@
               "\"nft-details__name\"": 1,
               "\"confirm-info-row-display-name\"": 1,
               "\"confirmation__details-origin\"": 1,
-              "\"transaction-source-amount\"": 1,
-              "\"transaction-dest-amount\"": 1,
-              "\"transaction-gas-fee\"": 1,
-              "{dataTestId}": 1,
-              "{`transaction-details-status-${statusKey}`}": 1,
               "\"signature-request-network-display\"": 1,
               "\"selected-account-name\"": 1,
               "\"selected-account-address\"": 1,
               "\"snap-ui-markdown-text\"": 1,
-              "\"activity-list-item-action\"": 1,
               "\"carousel-slide-title\"": 1,
               "\"carousel-slide-description\"": 1,
               "\"multichain-network-menu-popover-no-results\"": 1,
@@ -619,7 +611,6 @@
               "\"network-fees-included-original-amount\"": 1,
               "\"network-fees\"": 1,
               "\"minimum-received\"": 1,
-              "\"bridge-transaction-details-tx-status\"": 1,
               "confirmation-account-details-modal__account-name": 1,
               "\"header-account-name\"": 1,
               "\"header-network-display-name\"": 1,
@@ -664,36 +655,34 @@
             }
           },
           "textAlign": {
-            "count": 97,
+            "count": 86,
             "values": {
-              "{TextAlign.Center}": 73,
-              "{TextAlign.Left}": 8,
-              "{TextAlign.Right}": 8,
+              "{TextAlign.Center}": 69,
+              "{TextAlign.Left}": 6,
               "{TextAlign.End}": 3,
+              "{TextAlign.Right}": 3,
               "\"center\"": 3,
               "{TextAlign.Justify}": 1,
               "{centerTitle ? TextAlign.Center : TextAlign.Start}": 1
             }
           },
           "className": {
-            "count": 72,
+            "count": 67,
             "values": {
               "\"settings-page__security-tab-sub-header__bold\"": 4,
-              "\"text-s-body-md @compact:text-s-body-sm\"": 3,
               "\"settings-page__security-tab-sub-header\"": 3,
               "\"edit-gas-tooltip__container__label\"": 3,
               "\"edit-gas-tooltip__container__value\"": 3,
               "\"connected-accounts-list__account-name\"": 2,
               "\"name__name\"": 2,
               "\"break-all\"": 2,
-              "\"activity-list-item__primary-currency\"": 2,
               "\"carousel-empty-state__text\"": 2,
               "\"confirm-add-suggested-nft__nft-name\"": 2,
               "\"confirm-add-suggested-nft__nft-tokenId\"": 2,
+              "\"text-s-body-md @compact:text-s-body-sm\"": 1,
               "{classnames( 'selectable-list-item', { 'selectable-list-item--selected': Boole...}": 1,
               "\"connected-accounts-list__account-status\"": 1,
               "\"customize-nonce-modal__main-title\"": 1,
-              "\"activity-list-item__primary-currency text-s-body-md @compact:text-s-body-sm\"": 1,
               "\"name__value\"": 1,
               "\"permission-cell__status\"": 1,
               "{classnames('permission-cell__title', { 'permission-cell__title-revoked': revo...}": 1,
@@ -735,9 +724,9 @@
             }
           },
           "ellipsis": {
-            "count": 70,
+            "count": 65,
             "values": {
-              "true (shorthand)": 69,
+              "true (shorthand)": 64,
               "true": 1
             }
           },
@@ -841,9 +830,9 @@
             }
           },
           "display": {
-            "count": 30,
+            "count": 28,
             "values": {
-              "{Display.Flex}": 20,
+              "{Display.Flex}": 18,
               "{Display.Block}": 4,
               "{Display.InlineBlock}": 3,
               "{Display.InlineFlex}": 1,
@@ -886,9 +875,9 @@
             }
           },
           "width": {
-            "count": 16,
+            "count": 15,
             "values": {
-              "{BlockSize.Full}": 7,
+              "{BlockSize.Full}": 6,
               "{BlockSize.Max}": 3,
               "{BlockSize.ThreeFourths}": 2,
               "{BlockSize.FiveSixths}": 1,
@@ -916,14 +905,6 @@
               "{copyEnabled ? 3 : 0}": 1
             }
           },
-          "alignItems": {
-            "count": 12,
-            "values": {
-              "{AlignItems.center}": 10,
-              "{AlignItems.Center}": 1,
-              "{AlignItems.flexStart}": 1
-            }
-          },
           "paddingLeft": {
             "count": 12,
             "values": {
@@ -931,6 +912,13 @@
               "1": 2,
               "2": 1,
               "4": 8
+            }
+          },
+          "alignItems": {
+            "count": 11,
+            "values": {
+              "{AlignItems.center}": 10,
+              "{AlignItems.flexStart}": 1
             }
           },
           "padding": {
@@ -951,10 +939,10 @@
             }
           },
           "paddingRight": {
-            "count": 8,
+            "count": 7,
             "values": {
               "0": 1,
-              "1": 2,
+              "1": 1,
               "4": 5
             }
           },
@@ -989,15 +977,6 @@
               "{BorderRadius.XL}": 4,
               "{BorderRadius.SM}": 1,
               "{BorderRadius.LG}": 1
-            }
-          },
-          "title": {
-            "count": 6,
-            "values": {
-              "\"Primary Currency\"": 2,
-              "{address}": 2,
-              "{snapName}": 1,
-              "{primaryCurrency}": 1
             }
           },
           "fontStyle": {
@@ -1036,6 +1015,13 @@
               "{networkRef}": 1
             }
           },
+          "title": {
+            "count": 3,
+            "values": {
+              "{address}": 2,
+              "{snapName}": 1
+            }
+          },
           "tag": {
             "count": 3,
             "values": {
@@ -1046,12 +1032,6 @@
             "count": 2,
             "values": {
               "2": 2
-            }
-          },
-          "textTransform": {
-            "count": 2,
-            "values": {
-              "{TextTransform.Capitalize}": 2
             }
           },
           "margin": {
@@ -1133,12 +1113,6 @@
               "2": 1
             }
           },
-          "minWidth": {
-            "count": 1,
-            "values": {
-              "{BlockSize.Max}": 1
-            }
-          },
           "dangerouslySetInnerHTML": {
             "count": 1,
             "values": {
@@ -1150,30 +1124,36 @@
             "values": {
               "{TextVariant.bodyMdBold}": 1
             }
+          },
+          "textTransform": {
+            "count": 1,
+            "values": {
+              "{TextTransform.Capitalize}": 1
+            }
           }
         }
       },
       "overall": {
-        "totalInstances": 1927,
-        "filesCount": 662,
+        "totalInstances": 1887,
+        "filesCount": 652,
         "props": {
           "variant": {
-            "count": 1648,
+            "count": 1621,
             "values": {
-              "{TextVariant.BodyMd}": 397,
-              "{TextVariant.BodySm}": 317,
-              "{TextVariant.bodySm}": 244,
-              "{TextVariant.bodyMd}": 176,
-              "{TextVariant.bodyMdMedium}": 76,
-              "{TextVariant.HeadingSm}": 61,
+              "{TextVariant.BodyMd}": 400,
+              "{TextVariant.BodySm}": 319,
+              "{TextVariant.bodySm}": 243,
+              "{TextVariant.bodyMd}": 151,
+              "{TextVariant.bodyMdMedium}": 74,
+              "{TextVariant.HeadingSm}": 62,
               "{TextVariant.HeadingLg}": 48,
               "{TextVariant.BodyXs}": 46,
               "{TextVariant.headingSm}": 37,
-              "{TextVariant.bodyLgMedium}": 32,
+              "{TextVariant.bodyLgMedium}": 31,
               "{TextVariant.inherit}": 28,
-              "{TextVariant.bodySmMedium}": 27,
+              "{TextVariant.bodySmMedium}": 25,
               "{TextVariant.HeadingMd}": 22,
-              "{TextVariant.headingMd}": 22,
+              "{TextVariant.headingMd}": 20,
               "{TextVariant.bodyXs}": 16,
               "{TextVariant.headingLg}": 15,
               "{TextVariant.bodyMdBold}": 12,
@@ -1201,14 +1181,14 @@
             }
           },
           "color": {
-            "count": 1002,
+            "count": 993,
             "values": {
-              "{TextColor.TextAlternative}": 360,
-              "{TextColor.textAlternative}": 163,
+              "{TextColor.TextAlternative}": 365,
+              "{TextColor.textAlternative}": 160,
               "{TextColor.TextDefault}": 99,
-              "{TextColor.textDefault}": 69,
+              "{TextColor.textDefault}": 66,
               "{TextColor.inherit}": 44,
-              "{TextColor.ErrorDefault}": 40,
+              "{TextColor.ErrorDefault}": 41,
               "{TextColor.SuccessDefault}": 14,
               "{TextColor.InfoInverse}": 13,
               "{TextColor.PrimaryDefault}": 12,
@@ -1218,12 +1198,11 @@
               "{color}": 9,
               "{TextColor.primaryDefault}": 8,
               "{TextColor.Inherit}": 8,
-              "{Color.textAlternative}": 7,
               "{TextColor.PrimaryInverse}": 6,
               "{textColor}": 5,
+              "{Color.textAlternative}": 5,
               "{TextColor.warningDefault}": 4,
               "{TextColor.InfoDefault}": 4,
-              "{Color.textDefault}": 4,
               "{TextColor.TextMuted}": 4,
               "{TextColor.infoInverse}": 4,
               "{error ? TextColor.ErrorDefault : TextColor.TextAlternative}": 3,
@@ -1238,18 +1217,17 @@
               "{TextColor.successDefault}": 2,
               "{isSelected ? TextColor.TextDefault : TextColor.TextAlternative}": 2,
               "{feeTextColor}": 2,
-              "{changeColor}": 2,
+              "{Color.textDefault}": 2,
               "{getChangeColor(displayChange)}": 2,
               "{isSingleNetworkFilterSelected ? TextColor.primaryDefault : TextColor.textDefault}": 1,
               "{isActive ? TextColor.TextDefault : TextColor.TextAlternative}": 1,
               "{LEFT_TEXT_COLORS[variant] as TextColor}": 1,
-              "{statusColor}": 1,
-              "{getStatusColor(status)}": 1,
               "{getStepTextColor(status)}": 1,
               "{totalUnrealizedPnl >= 0 ? TextColor.SuccessDefault : TextColor.ErrorDefault}": 1,
               "{unrealizedPnl >= 0 ? TextColor.SuccessDefault : TextColor.ErrorDefault}": 1,
               "{marginMode === 'add' ? TextColor.PrimaryInverse : TextColor.TextDefault}": 1,
               "{marginMode === 'remove' ? TextColor.PrimaryInverse : TextColor.TextDefault}": 1,
+              "{changeColor}": 1,
               "{getPnlDisplayColor(estimatedPnlAtTp)}": 1,
               "{getPnlDisplayColor(estimatedPnlAtSl)}": 1,
               "{exceedsMaxSlippage ? TextColor.ErrorDefault : TextColor.TextDefault}": 1,
@@ -1284,8 +1262,6 @@
               "{selectedChainId ? TextColor.PrimaryDefault : TextColor.TextDefault}": 1,
               "{getTimerColor(secondsUntilNextRefresh)}": 1,
               "{getPriceChangeColor(priceChange24h)}": 1,
-              "{stepStatus === StatusTypes.PENDING || stepStatus === StatusTypes.COMPLETE ? T...}": 1,
-              "{status ? STATUS_TO_COLOR_MAP[status] : undefined}": 1,
               "{getStatusTextColor(status)}": 1,
               "{isSelected ? TextColor.PrimaryDefault : TextColor.TextAlternative}": 1,
               "{amountError ? TextColor.errorDefault : TextColor.textAlternative}": 1,
@@ -1304,28 +1280,27 @@
             }
           },
           "fontWeight": {
-            "count": 486,
+            "count": 468,
             "values": {
-              "{FontWeight.Medium}": 393,
-              "{FontWeight.Bold}": 54,
+              "{FontWeight.Medium}": 374,
+              "{FontWeight.Bold}": 56,
               "{FontWeight.Normal}": 17,
               "{FontWeight.Regular}": 13,
               "{fontWeight}": 3,
               "{feeTextFontWeight}": 2,
               "{valueFontWeight}": 1,
-              "{stepStatus === StatusTypes.PENDING ? FontWeight.Medium : FontWeight.Normal}": 1,
               "\"bold\"": 1,
               "{isSmall ? undefined : FontWeight.Medium}": 1
             }
           },
           "className": {
-            "count": 299,
+            "count": 289,
             "values": {
-              "\"text-s-body-md @compact:text-s-body-sm\"": 11,
               "\"text-center\"": 11,
               "\"mb-4\"": 10,
               "\"mb-2\"": 8,
               "\"mb-6\"": 7,
+              "\"text-s-body-md @compact:text-s-body-sm\"": 6,
               "\"w-full\"": 6,
               "\"text-left mb-2 w-full\"": 6,
               "\"text-left text-alternative w-full\"": 6,
@@ -1338,36 +1313,33 @@
               "\"break-all\"": 3,
               "\"leading-5\"": 3,
               "\"font-medium\"": 3,
-              "\"text-text-alternative\"": 3,
-              "\"text-alternative\"": 3,
               "\"px-4 pb-2 pt-4\"": 3,
               "\"settings-page__security-tab-sub-header\"": 3,
               "\"edit-gas-tooltip__container__label\"": 3,
               "\"edit-gas-tooltip__container__value\"": 3,
               "\"min-w-0 flex-1\"": 3,
+              "\"truncate text-left\"": 3,
               "\"px-4 pt-3 pb-2\"": 3,
               "\"transaction-shield-page__membership-text\"": 3,
               "\"connected-accounts-list__account-name\"": 2,
               "\"text-center text-alternative\"": 2,
-              "\"activity-list-item__primary-currency text-s-body-md @compact:text-s-body-sm\"": 2,
               "\"name__name\"": 2,
               "\"mb-4 mx-auto\"": 2,
               "\"mt-1\"": 2,
               "\"text-error-default\"": 2,
-              "\"activity-list-item__primary-currency\"": 2,
               "\"mt-2 mb-2\"": 2,
-              "\"font-medium text-s-body-md @compact:text-s-body-sm\"": 2,
-              "\"text-sm text-alternative\"": 2,
               "\"carousel-empty-state__text\"": 2,
               "\"multichain-account-cell__account-name\"": 2,
-              "\"pt-6 px-4 pb-2\"": 2,
+              "\"pt-4 px-4 pb-2\"": 2,
               "\"truncate text-alternative\"": 2,
+              "\"text-alternative\"": 2,
               "\"shrink-0 text-alternative\"": 2,
               "\"confirm-add-suggested-nft__nft-name\"": 2,
               "\"confirm-add-suggested-nft__nft-tokenId\"": 2,
               "\"text-default font-medium\"": 2,
               "\"mt-2\"": 2,
               "\"flex-1 pb-2 pt-1 hover:text-default\"": 2,
+              "\"text-text-alternative\"": 2,
               "\"recovery-phrase__word-index\"": 2,
               "\"uppercase tracking-wide\"": 2,
               "{classnames('mb-2', { 'opacity-50': disabled, })}": 2,
@@ -1381,6 +1353,7 @@
               "\"name__value\"": 1,
               "\"permission-cell__status\"": 1,
               "{classnames('permission-cell__title', { 'permission-cell__title-revoked': revo...}": 1,
+              "\"min-w-0 truncate\"": 1,
               "{twMerge( 'w-full', direction === 'long' ? 'text-success-default' : 'text-mute...}": 1,
               "{twMerge( 'w-full', direction === 'short' ? 'text-error-default' : 'text-muted...}": 1,
               "\"text-right leading-5\"": 1,
@@ -1405,7 +1378,6 @@
               "\"mt-6\"": 1,
               "\"multichain-account-list-item__account-name__button p-0 bg-transparent w-full text-left\"": 1,
               "{classnames( 'multichain-account-picker__label w-full', labelProps.className ?...}": 1,
-              "\"font-medium truncate text-s-body-md @compact:text-s-body-sm\"": 1,
               "\"carousel-card__title\"": 1,
               "\"carousel-card__description\"": 1,
               "\"srp-list__account-name\"": 1,
@@ -1433,8 +1405,10 @@
               "{classnames('flex-1', { 'popover-header__title-wrap': wrapTitle, })}": 1,
               "\"qr-code__address-segments\"": 1,
               "\"qr-code__address-inner-segment\"": 1,
+              "\"text-sm text-alternative\"": 1,
               "{twMerge( 'flex align-middle justify-center border-b-2 border-transparent px-0...}": 1,
               "\"flex min-w-0 items-center gap-1 font-medium text-s-body-md @compact:text-s-body-sm\"": 1,
+              "\"font-medium text-s-body-md @compact:text-s-body-sm\"": 1,
               "\"asset-page__balance-heading\"": 1,
               "\"asset-page__details-heading\"": 1,
               "\"asset-page__activity-heading\"": 1,
@@ -1478,7 +1452,7 @@
               "\"w-full mx-auto pt-8\"": 1,
               "\"snap-install__content__permission-description\"": 1,
               "\"snap-update__content__permission-description\"": 1,
-              "\"min-w-0 truncate\"": 1,
+              "\"mb-4 text-center\"": 1,
               "\"multichain-account-list-item__account-name__button\"": 1,
               "\"info-tab__version-number\"": 1,
               "\"flex-1 min-w-0 text-left\"": 1,
@@ -1498,11 +1472,11 @@
             }
           },
           "textAlign": {
-            "count": 227,
+            "count": 216,
             "values": {
-              "{TextAlign.Center}": 165,
-              "{TextAlign.Left}": 35,
-              "{TextAlign.Right}": 19,
+              "{TextAlign.Center}": 161,
+              "{TextAlign.Left}": 33,
+              "{TextAlign.Right}": 14,
               "{TextAlign.End}": 3,
               "\"center\"": 3,
               "{TextAlign.Justify}": 1,
@@ -1510,17 +1484,13 @@
             }
           },
           "data-testid": {
-            "count": 223,
+            "count": 213,
             "values": {
               "\"alert-modal__selected-alert\"": 7,
-              "\"transaction-list-item-primary-currency\"": 7,
               "\"confirm-info-row-display-name\"": 3,
-              "\"transaction-list-item-secondary-currency\"": 3,
               "\"account-list-address\"": 3,
-              "\"activity-list-item-action\"": 3,
               "\"simulation-token-value\"": 3,
               "\"multichain-token-list-item-token-name\"": 2,
-              "{dataTestId}": 2,
               "\"perps-edit-margin-liquidation-distance-value\"": 2,
               "\"tp-validation-error\"": 2,
               "\"sl-validation-error\"": 2,
@@ -1528,6 +1498,7 @@
               "\"passkey-enrollment-error\"": 2,
               "{testId}": 2,
               "\"accounts-list-item-connected-account-name\"": 2,
+              "\"transaction-list-item-primary-currency\"": 2,
               "\"confirmation-text\"": 2,
               "\"individual-fiat-display\"": 2,
               "\"network-filter-all__total\"": 1,
@@ -1535,10 +1506,6 @@
               "\"nft-details__description\"": 1,
               "\"nft-details__name\"": 1,
               "\"confirmation__details-origin\"": 1,
-              "\"transaction-source-amount\"": 1,
-              "\"transaction-dest-amount\"": 1,
-              "\"transaction-gas-fee\"": 1,
-              "{`transaction-details-status-${statusKey}`}": 1,
               "\"claim-bonus-error\"": 1,
               "\"claim-bonus-badge\"": 1,
               "\"musd-convert-link-text\"": 1,
@@ -1548,6 +1515,7 @@
               "\"perps-close-all-receive-value\"": 1,
               "\"perps-close-summary-margin-value\"": 1,
               "\"perps-close-summary-receive-value\"": 1,
+              "{`market-row-ticker-${market.symbol.replace(/:/gu, '-')}`}": 1,
               "\"perps-current-position-size-value\"": 1,
               "\"amount-input-denomination-unit\"": 1,
               "\"perps-order-summary-slippage-value\"": 1,
@@ -1556,7 +1524,6 @@
               "{dataTestId ? `${dataTestId}-value` : undefined}": 1,
               "\"perps-balance-actions-total\"": 1,
               "\"perps-balance-actions-available\"": 1,
-              "\"perps-market-card-change\"": 1,
               "\"perps-reverse-est-size-value\"": 1,
               "\"perps-slippage-config-custom-error\"": 1,
               "\"perps-update-tpsl-current-price-value\"": 1,
@@ -1601,6 +1568,9 @@
               "\"networks-list-item-plus-more-tooltip\"": 1,
               "\"srp_text\"": 1,
               "{`${dataTestId}-text`}": 1,
+              "{dataTestId}": 1,
+              "\"activity-list-item-action\"": 1,
+              "\"transaction-list-item-secondary-currency\"": 1,
               "\"asset-market-cap\"": 1,
               "\"asset-name\"": 1,
               "\"asset-hovered-price\"": 1,
@@ -1612,11 +1582,11 @@
               "\"network-fees-included-original-amount\"": 1,
               "\"network-fees\"": 1,
               "\"minimum-received\"": 1,
-              "\"bridge-transaction-details-tx-status\"": 1,
               "confirmation-account-details-modal__account-name": 1,
               "\"header-account-name\"": 1,
               "\"header-network-display-name\"": 1,
               "\"simple-confirmation-header-title\"": 1,
+              "\"added-protection-network-fee\"": 1,
               "\"smart-account-activation-label\"": 1,
               "\"gas-fee-token-fee\"": 1,
               "\"first-gas-field\"": 1,
@@ -1678,6 +1648,10 @@
               "\"perps-order-entry-change\"": 1,
               "\"perps-order-submit-error\"": 1,
               "\"perps-withdraw-header-title\"": 1,
+              "\"ramps-build-quote-error\"": 1,
+              "\"ramps-build-quote-provider-label\"": 1,
+              "{`ramps-payment-method-item-delay-${paymentMethod.id}`}": 1,
+              "{`ramps-payment-method-item-limits-${paymentMethod.id}`}": 1,
               "\"supported-languages-section-heading\"": 1,
               "\"community-languages-section-heading\"": 1,
               "\"register-passkey-intro-description\"": 1,
@@ -1705,11 +1679,11 @@
             }
           },
           "marginBottom": {
-            "count": 177,
+            "count": 176,
             "values": {
               "0": 4,
               "1": 7,
-              "2": 24,
+              "2": 23,
               "3": 3,
               "4": 137,
               "5": 1,
@@ -1717,7 +1691,7 @@
             }
           },
           "as": {
-            "count": 158,
+            "count": 157,
             "values": {
               "\"h6\"": 49,
               "\"span\"": 48,
@@ -1725,7 +1699,7 @@
               "\"p\"": 11,
               "\"button\"": 8,
               "\"h4\"": 6,
-              "\"div\"": 6,
+              "\"div\"": 5,
               "\"h2\"": 3,
               "\"h3\"": 2,
               "\"ul\"": 1,
@@ -1739,9 +1713,9 @@
             }
           },
           "ellipsis": {
-            "count": 107,
+            "count": 101,
             "values": {
-              "true (shorthand)": 106,
+              "true (shorthand)": 100,
               "true": 1
             }
           },
@@ -1878,9 +1852,9 @@
             }
           },
           "display": {
-            "count": 30,
+            "count": 28,
             "values": {
-              "{Display.Flex}": 20,
+              "{Display.Flex}": 18,
               "{Display.Block}": 4,
               "{Display.InlineBlock}": 3,
               "{Display.InlineFlex}": 1,
@@ -1927,9 +1901,9 @@
             }
           },
           "width": {
-            "count": 16,
+            "count": 15,
             "values": {
-              "{BlockSize.Full}": 7,
+              "{BlockSize.Full}": 6,
               "{BlockSize.Max}": 3,
               "{BlockSize.ThreeFourths}": 2,
               "{BlockSize.FiveSixths}": 1,
@@ -1957,14 +1931,6 @@
               "{copyEnabled ? 3 : 0}": 1
             }
           },
-          "alignItems": {
-            "count": 12,
-            "values": {
-              "{AlignItems.center}": 10,
-              "{AlignItems.Center}": 1,
-              "{AlignItems.flexStart}": 1
-            }
-          },
           "paddingLeft": {
             "count": 12,
             "values": {
@@ -1981,6 +1947,13 @@
               "{OverflowWrap.BreakWord}": 5
             }
           },
+          "alignItems": {
+            "count": 11,
+            "values": {
+              "{AlignItems.center}": 10,
+              "{AlignItems.flexStart}": 1
+            }
+          },
           "padding": {
             "count": 10,
             "values": {
@@ -1989,14 +1962,6 @@
               "4": 1,
               "{[1, 1, 2, 2]}": 3,
               "{[0, 4]}": 1
-            }
-          },
-          "paddingRight": {
-            "count": 8,
-            "values": {
-              "0": 1,
-              "1": 2,
-              "4": 5
             }
           },
           "onClick": {
@@ -2011,19 +1976,19 @@
               "{() => { handleAddressClick(); }}": 1
             }
           },
+          "paddingRight": {
+            "count": 7,
+            "values": {
+              "0": 1,
+              "1": 1,
+              "4": 5
+            }
+          },
           "justifyContent": {
             "count": 7,
             "values": {
               "{JustifyContent.center}": 6,
               "{JustifyContent.spaceBetween}": 1
-            }
-          },
-          "textTransform": {
-            "count": 7,
-            "values": {
-              "{TextTransform.Uppercase}": 4,
-              "{TextTransform.Capitalize}": 2,
-              "{TextTransform.Lowercase}": 1
             }
           },
           "paddingInline": {
@@ -2041,13 +2006,12 @@
               "{BorderRadius.LG}": 1
             }
           },
-          "title": {
+          "textTransform": {
             "count": 6,
             "values": {
-              "\"Primary Currency\"": 2,
-              "{address}": 2,
-              "{snapName}": 1,
-              "{primaryCurrency}": 1
+              "{TextTransform.Uppercase}": 4,
+              "{TextTransform.Lowercase}": 1,
+              "{TextTransform.Capitalize}": 1
             }
           },
           "fontStyle": {
@@ -2084,6 +2048,13 @@
               "{contentRef}": 1,
               "{setBoxRef}": 1,
               "{networkRef}": 1
+            }
+          },
+          "title": {
+            "count": 3,
+            "values": {
+              "{address}": 2,
+              "{snapName}": 1
             }
           },
           "tag": {
@@ -2183,12 +2154,6 @@
               "2": 1
             }
           },
-          "minWidth": {
-            "count": 1,
-            "values": {
-              "{BlockSize.Max}": 1
-            }
-          },
           "dangerouslySetInnerHTML": {
             "count": 1,
             "values": {
@@ -2204,27 +2169,27 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "Text": 896
+        "Text": 857
       }
     },
     "mobile": {
-      "filesScanned": 7127,
+      "filesScanned": 7241,
       "targetComponent": "Text",
       "mmds": {
-        "totalInstances": 2296,
-        "filesCount": 705,
+        "totalInstances": 2335,
+        "filesCount": 725,
         "props": {
           "variant": {
-            "count": 2168,
+            "count": 2207,
             "values": {
-              "{TextVariant.BodyMd}": 1024,
-              "{TextVariant.BodySm}": 624,
-              "{TextVariant.HeadingMd}": 144,
+              "{TextVariant.BodyMd}": 1039,
+              "{TextVariant.BodySm}": 639,
+              "{TextVariant.HeadingMd}": 148,
               "{TextVariant.BodyXs}": 93,
-              "{TextVariant.HeadingSm}": 91,
-              "{TextVariant.HeadingLg}": 70,
-              "{TextVariant.BodyLg}": 42,
-              "{TextVariant.DisplayMd}": 37,
+              "{TextVariant.HeadingSm}": 92,
+              "{TextVariant.HeadingLg}": 74,
+              "{TextVariant.BodyLg}": 41,
+              "{TextVariant.DisplayMd}": 36,
               "{TextVariant.DisplayLg}": 8,
               "{textVariant}": 6,
               "{variant}": 5,
@@ -2233,6 +2198,8 @@
               "{DSTextVariant.BodySm}": 3,
               "{TextVariantDS.BodyMd}": 2,
               "{TextVariantDS.BodySm}": 2,
+              "{priceVariant}": 1,
+              "{changeVariant}": 1,
               "{MDSTextVariant.HeadingMd}": 1,
               "{layout === 'inlineNoSeparator' ? TextVariant.BodySm : undefined}": 1,
               "{isCarousel ? TextVariant.BodyMd : TextVariant.HeadingSm}": 1,
@@ -2245,32 +2212,34 @@
             }
           },
           "color": {
-            "count": 1256,
+            "count": 1289,
             "values": {
-              "{TextColor.TextAlternative}": 614,
-              "{TextColor.TextDefault}": 305,
+              "{TextColor.TextAlternative}": 630,
+              "{TextColor.TextDefault}": 319,
               "{TextColor.ErrorDefault}": 58,
               "{TextColor.SuccessDefault}": 43,
-              "{TextColor.PrimaryDefault}": 41,
-              "{TextColor.TextMuted}": 12,
+              "{TextColor.PrimaryDefault}": 42,
               "{textColor}": 12,
+              "{TextColor.TextMuted}": 11,
               "{TextColor.InfoDefault}": 9,
-              "{TextColor.WarningDefault}": 9,
+              "{TextColor.WarningDefault}": 8,
               "{TextColor.PrimaryInverse}": 8,
               "{TextColor.OverlayInverse}": 6,
-              "{isSelected ? TextColor.PrimaryInverse : TextColor.TextDefault}": 5,
-              "{TextColor.PrimaryAlternative}": 5,
+              "{TextColor.PrimaryAlternative}": 6,
+              "{isSelected ? TextColor.PrimaryInverse : TextColor.TextDefault}": 4,
               "{color}": 4,
               "{isSupported ? TextColor.TextDefault : TextColor.TextAlternative}": 4,
               "{DSTextColor.TextAlternative}": 3,
               "{mutedTextColor}": 3,
               "{isPositive ? TextColor.SuccessDefault : TextColor.TextDefault}": 3,
               "{isDisabled ? TextColor.TextMuted : TextColor.TextDefault}": 3,
+              "{isActive ? TextColor.TextDefault : TextColor.TextAlternative}": 3,
               "{pnlColorClass ? undefined : TextColor.TextAlternative}": 3,
               "{changeTextColor}": 2,
               "{titleColor}": 2,
               "{item.disabled ? TextColor.TextAlternative : undefined}": 2,
               "{isMaliciousDapp && !isAlreadyConnected ? TextColor.ErrorDefault : undefined}": 2,
+              "{changeColor}": 2,
               "{isSelected ? TextColor.TextDefault : TextColor.TextAlternative}": 2,
               "{position.cashPnl < 0 ? TextColor.ErrorDefault : TextColor.SuccessDefault}": 2,
               "{percentPnl > 0 ? TextColor.SuccessDefault : TextColor.ErrorDefault}": 2,
@@ -2280,7 +2249,6 @@
               "{percentPnl >= 0 ? TextColor.SuccessDefault : TextColor.ErrorDefault}": 2,
               "{DSTextColor.TextDefault}": 2,
               "{isPasswordTooShort ? TextColor.ErrorDefault : TextColor.TextAlternative}": 2,
-              "{isActive ? TextColor.TextDefault : TextColor.TextAlternative}": 2,
               "{percentDiff.direction === 'above' ? TextColor.SuccessDefault : TextColor.Erro...}": 1,
               "{pricePercentChangeTextColor}": 1,
               "{fiatTextColor}": 1,
@@ -2293,9 +2261,11 @@
               "{hasRpcMismatch ? TextColor.PrimaryDefault : TextColor.TextDefault}": 1,
               "{isMarketingDisabled ? TextColor.TextMuted : TextColor.TextDefault}": 1,
               "{isMarketingDisabled ? TextColor.TextMuted : TextColor.TextAlternative}": 1,
+              "{priceColor}": 1,
               "{totalPnl < 0 ? TextColor.ErrorDefault : TextColor.SuccessDefault}": 1,
               "{subtitleColor}": 1,
               "{tempLeverage === value ? TextColor.PrimaryInverse : TextColor.TextDefault}": 1,
+              "{isPositiveChange ? TextColor.SuccessDefault : TextColor.ErrorDefault}": 1,
               "{pnlColor}": 1,
               "{MDSTextColor.TextDefault}": 1,
               "{hasWatchlist ? TextColor.TextAlternative : TextColor.TextDefault}": 1,
@@ -2326,7 +2296,6 @@
               "{badge.textColor ?? TextColor.TextDefault}": 1,
               "{severity === 'Malicious' ? DSTextColor.PrimaryInverse : DSTextColor.TextDefault}": 1,
               "{DSTextColor.PrimaryInverse}": 1,
-              "{changeColor}": 1,
               "{getImpactTextColor(item.impact)}": 1,
               "{content.primaryToken?.direction === 'in' ? TextColor.SuccessDefault : TextCol...}": 1,
               "{token.direction === 'in' ? TextColor.SuccessDefault : TextColor.TextDefault}": 1,
@@ -2362,16 +2331,17 @@
             }
           },
           "fontWeight": {
-            "count": 779,
+            "count": 798,
             "values": {
-              "{FontWeight.Medium}": 589,
-              "{FontWeight.Bold}": 143,
-              "{FontWeight.Regular}": 32,
+              "{FontWeight.Medium}": 602,
+              "{FontWeight.Bold}": 144,
+              "{FontWeight.Regular}": 34,
               "{fontWeight}": 3,
-              "{isSelected ? FontWeight.Medium : FontWeight.Regular}": 2,
+              "{isSelected ? FontWeight.Medium : FontWeight.Regular}": 3,
+              "{isActive ? FontWeight.Bold : FontWeight.Regular}": 2,
               "{active ? FontWeight.Bold : FontWeight.Medium}": 1,
               "{isSelected ? FontWeight.Bold : FontWeight.Medium}": 1,
-              "{isActive ? FontWeight.Bold : FontWeight.Regular}": 1,
+              "{changeFontWeight}": 1,
               "{isOverridden ? FontWeight.Medium : FontWeight.Regular}": 1,
               "{isBold ? FontWeight.Bold : undefined}": 1,
               "{'600' as FontWeight}": 1,
@@ -2382,24 +2352,24 @@
             }
           },
           "twClassName": {
-            "count": 578,
+            "count": 594,
             "values": {
-              "\"text-center\"": 72,
+              "\"text-center\"": 78,
               "\"font-medium\"": 44,
               "\"text-alternative\"": 41,
               "\"text-text-alternative\"": 32,
               "\"text-error-default\"": 28,
-              "\"text-default\"": 20,
-              "\"shrink\"": 19,
-              "\"flex-1\"": 13,
+              "\"text-default\"": 22,
+              "\"shrink\"": 20,
+              "\"flex-1\"": 15,
               "\"text-error-default text-center\"": 7,
               "\"mb-2\"": 6,
               "\"mt-2\"": 6,
               "\"text-info-default\"": 6,
               "\"text-primary-default underline\"": 6,
+              "\"text-alternative text-center\"": 6,
               "\"text-text-default\"": 5,
               "\"text-primary-default\"": 5,
-              "\"text-alternative text-center\"": 5,
               "\"mt-1\"": 4,
               "\"text-text-default font-medium self-center shrink\"": 4,
               "\"text-center mb-4\"": 4,
@@ -2562,7 +2532,9 @@
               "\"my-6\"": 1,
               "\"text-default text-center\"": 1,
               "\"text-muted text-center\"": 1,
+              "\"pt-2 text-center\"": 1,
               "\"text-right max-w-[100px] flex-wrap\"": 1,
+              "{allowTwoLineLabel ? 'mt-2 min-h-[40px] w-full text-center' : 'mt-2 w-full tex...}": 1,
               "\"w-[95%]\"": 1,
               "\"leading-[20px]\"": 1,
               "\"ml-2 shrink-0 text-alternative\"": 1,
@@ -2574,6 +2546,8 @@
               "\"text-center p-2\"": 1,
               "\"mt-6\"": 1,
               "\"w-[90%] mb-6\"": 1,
+              "\"flex-1 min-w-0\"": 1,
+              "{item.isPnlPositive ? 'text-success-default' : 'text-error-default'}": 1,
               "{isEntry ? 'text-success-default' : 'text-error-default'}": 1,
               "{pnlValue == null ? undefined : isPnlPositive ? 'text-success-default' : 'text...}": 1,
               "\"shrink leading-none\"": 1,
@@ -2594,20 +2568,20 @@
             }
           },
           "style": {
-            "count": 460,
+            "count": 468,
             "values": {
-              "{styles.desc}": 40,
+              "{styles.desc}": 43,
               "{styles.title}": 35,
-              "{styles.description}": 24,
+              "{styles.description}": 25,
               "{tw.style('font-medium')}": 19,
-              "{styles.heading}": 15,
+              "{styles.heading}": 16,
               "{tw.style('text-pretty')}": 13,
               "{styles.text}": 8,
               "{styles.textSection}": 7,
               "{tw.style('text-center')}": 6,
               "{tw.style('mt-1 text-error-default pb-2')}": 6,
+              "{styles.subHeading}": 6,
               "{tw.style('pb-[3px]')}": 5,
-              "{styles.subHeading}": 5,
               "{styles.subtitle}": 4,
               "{styles.label}": 4,
               "{styles.expectedPnLText}": 4,
@@ -2635,6 +2609,7 @@
               "{styles.warningText}": 2,
               "{styles.textCentred}": 2,
               "{styles.connectionTitle}": 2,
+              "{styles.loadingText}": 2,
               "{{ color: warningStyles.priceColor }}": 2,
               "{{ color: roeValue >= 0 ? theme.colors.success.default : theme.colors.error.de...}": 2,
               "{textStyle}": 2,
@@ -2710,15 +2685,15 @@
               "{item.fill.isPositive ? styles.profitAmount : styles.lossAmount}": 1,
               "{statusStyle}": 1,
               "{item.fundingAmount.isPositive ? styles.profitAmount : styles.lossAmount}": 1,
+              "{styles.price}": 1,
               "{styles.titleText}": 1,
-              "{styles.loadingText}": 1,
               "{getLeverageTextStyle()}": 1,
               "{[warningStyles.textStyle, styles.warningText]}": 1,
               "{styles.emptyPriceInfo}": 1,
               "{styles.quickSelectText}": 1,
+              "{styles.name}": 1,
               "{styles.tradeType}": 1,
               "{styles.emptyText}": 1,
-              "{styles.underline}": 1,
               "{[ styles.durationButtonText, isSelected ? styles.durationButtonTextActive : s...}": 1,
               "{styles.suggestedSubtitle}": 1,
               "{tw.style('flex-1', textStyle)}": 1,
@@ -2810,7 +2785,7 @@
             }
           },
           "testID": {
-            "count": 334,
+            "count": 346,
             "values": {
               "{TransactionPayComponentIDs.PAY_WITH_SYMBOL}": 5,
               "{testID}": 4,
@@ -2933,6 +2908,8 @@
               "{MoneyBalanceSummaryTestIds.BALANCE_NO_ACCOUNT}": 1,
               "{MoneyConvertStablecoinsTestIds.DESCRIPTION}": 1,
               "{MoneyDeeplinkModalTestIds.DESCRIPTION}": 1,
+              "{MoneyEarnBannerTestIds.TITLE}": 1,
+              "{MoneyEarnBannerTestIds.DESCRIPTION}": 1,
               "{MoneyEarnCryptoInfoSheetTestIds.TITLE}": 1,
               "{MoneyEarnCryptoInfoSheetTestIds.BODY}": 1,
               "{MoneyGeoBlockSheetTestIds.BODY}": 1,
@@ -2948,18 +2925,26 @@
               "{MoneySectionHeaderTestIds.TITLE}": 1,
               "{MetaMetricsOptInSelectorsIDs.OPTIN_METRICS_TITLE_ID}": 1,
               "{MetaMetricsOptInSelectorsIDs.OPTIN_METRICS_PRIVACY_POLICY_DESCRIPTION_CONTENT...}": 1,
+              "{PerpsCloseAllPositionsViewSelectorsIDs.EMPTY_STATE}": 1,
+              "{PerpsCloseAllPositionsViewSelectorsIDs.DESCRIPTION}": 1,
+              "{testIDPrice}": 1,
+              "{testIDChange}": 1,
               "{PerpsBottomSheetTooltipSelectorsIDs.CONTENT}": 1,
               "{testIDs?.marginValue}": 1,
-              "{testIDs?.receiveValue}": 1,
               "{PerpsMarketBalanceActionsSelectorsIDs.BALANCE_VALUE}": 1,
               "{testID ? `${testID}-original` : undefined}": 1,
               "{PerpsFlipPositionConfirmSheetSelectorsIDs.EST_SIZE_VALUE}": 1,
               "{testID ? `${testID}-title` : undefined}": 1,
               "{subtitleTestID}": 1,
+              "{PerpsMarketHeaderSelectorsIDs.ASSET_NAME}": 1,
+              "{PerpsMarketHeaderSelectorsIDs.SUBTITLE}": 1,
+              "{getPerpsMarketRowItemSelector.assetLabel( displayMarket.symbol, )}": 1,
+              "{getPerpsMarketRowItemSelector.tickerSuffix( market.symbol, )}": 1,
               "{testID ? `${testID}-direction-text` : undefined}": 1,
-              "{`${testID}-support-link`}": 1,
               "{PerpsWatchlistSelectorsIDs.SUGGESTED_HEADER}": 1,
               "{FEATURED_CAROUSEL_TEST_IDS.CARD_TITLE(index)}": 1,
+              "{FEATURED_CAROUSEL_TEST_IDS.CARD_OUTCOME(index, 0)}": 1,
+              "{FEATURED_CAROUSEL_TEST_IDS.CARD_OUTCOME( index, drawToken ? 2 : 1, )}": 1,
               "{getPredictChipLabelTestId(chip.key)}": 1,
               "{PredictCryptoUpDownPositionsSelectorsIDs.SECTION_HEADER}": 1,
               "\"predict-fak-partial-fill-note\"": 1,
@@ -3115,6 +3100,8 @@
               "{RevealSeedViewSelectorsIDs.PASSWORD_WARNING_ID}": 1,
               "{SDKConnectV2OtpModalSelectors.OTP_CODE}": 1,
               "{SDKConnectV2OtpModalSelectors.COUNTDOWN}": 1,
+              "{getFeedNewPositionTestId(item.id)}": 1,
+              "{SocialTradersTabsViewSelectorsIDs.TITLE}": 1,
               "{TopTradersViewSelectorsIDs.TITLE}": 1,
               "\"price-impact-description\"": 1,
               "\"price-impact-fiat-text\"": 1,
@@ -3132,18 +3119,19 @@
             }
           },
           "numberOfLines": {
-            "count": 210,
+            "count": 225,
             "values": {
-              "1": 188,
+              "1": 202,
               "2": 15,
               "3": 4,
               "{isCarousel ? 2 : undefined}": 1,
               "{isCompact ? 1 : 2}": 1,
-              "{maxLines}": 1
+              "{maxLines}": 1,
+              "{labelNumberOfLines}": 1
             }
           },
           "onPress": {
-            "count": 68,
+            "count": 67,
             "values": {
               "{learnMore}": 4,
               "{handleLink}": 3,
@@ -3169,7 +3157,6 @@
               "{(e) => { e?.stopPropagation?.(); openLearnMore(); }}": 1,
               "{goToDefaultSettings}": 1,
               "{handleTradingViewPress}": 1,
-              "{handleSupportPress}": 1,
               "{paymentMethodsError ? undefined : handleChangeProviderPress}": 1,
               "{handlePaste}": 1,
               "{handleTransakLink}": 1,
@@ -3202,9 +3189,9 @@
             }
           },
           "ellipsizeMode": {
-            "count": 50,
+            "count": 53,
             "values": {
-              "\"tail\"": 41,
+              "\"tail\"": 44,
               "\"clip\"": 4,
               "\"middle\"": 3,
               "\"head\"": 1,
@@ -3251,19 +3238,19 @@
               "0.7": 4
             }
           },
-          "accessibilityRole": {
-            "count": 3,
-            "values": {
-              "\"link\"": 2,
-              "\"none\"": 1
-            }
-          },
           "disabled": {
             "count": 3,
             "values": {
               "{resendCooldown > 0 || otpLoading}": 1,
               "{resendCooldown > 0 || !email || !selectedCountry || emailVerificationIsLoading}": 1,
               "{resendCooldown > 0 || !phoneNumber || !phoneCountryCode || !contactVerificati...}": 1
+            }
+          },
+          "accessibilityRole": {
+            "count": 2,
+            "values": {
+              "\"none\"": 1,
+              "\"link\"": 1
             }
           },
           "allowFontScaling": {
@@ -3312,23 +3299,23 @@
         }
       },
       "deprecated": {
-        "totalInstances": 1107,
-        "filesCount": 359,
+        "totalInstances": 1093,
+        "filesCount": 356,
         "props": {
           "variant": {
-            "count": 878,
+            "count": 863,
             "values": {
-              "{TextVariant.BodyMD}": 291,
-              "{TextVariant.BodySM}": 169,
-              "{TextVariant.BodyMDMedium}": 115,
-              "{TextVariant.HeadingMD}": 62,
-              "{TextVariant.BodyLGMedium}": 54,
-              "{TextVariant.BodySMMedium}": 38,
+              "{TextVariant.BodyMD}": 288,
+              "{TextVariant.BodySM}": 163,
+              "{TextVariant.BodyMDMedium}": 114,
+              "{TextVariant.HeadingMD}": 56,
+              "{TextVariant.BodyLGMedium}": 51,
+              "{TextVariant.BodySMMedium}": 39,
+              "{TextVariant.HeadingLG}": 30,
               "{TextVariant.BodyXS}": 29,
-              "{TextVariant.HeadingLG}": 28,
               "{TextVariant.BodySMBold}": 18,
               "{TextVariant.HeadingSM}": 18,
-              "{TextVariant.BodyMDBold}": 14,
+              "{TextVariant.BodyMDBold}": 15,
               "{TextVariant.DisplayMD}": 12,
               "{LegacyTextVariant.BodyMD}": 6,
               "{TextVariant.BodyXSMedium}": 4,
@@ -3345,13 +3332,13 @@
             }
           },
           "color": {
-            "count": 520,
+            "count": 503,
             "values": {
-              "{TextColor.Alternative}": 258,
-              "{TextColor.Default}": 95,
+              "{TextColor.Alternative}": 247,
+              "{TextColor.Default}": 93,
               "{TextColor.Muted}": 24,
               "{TextColor.Error}": 21,
-              "{TextColor.Success}": 18,
+              "{TextColor.Success}": 17,
               "{TextColor.Primary}": 16,
               "{textColor}": 12,
               "{color}": 5,
@@ -3363,7 +3350,6 @@
               "{changeColor}": 3,
               "{colors.primary.default}": 3,
               "{hasError ? TextColor.Error : TextColor.Default}": 2,
-              "{TextColor.Warning}": 2,
               "{statusColor}": 2,
               "{activationKey.active ? TextColor.Default : TextColor.Muted}": 2,
               "{theme.colors.primary.inverse}": 1,
@@ -3379,12 +3365,11 @@
               "{isOverMaximum.isOverMaximumToken || isOverMaximum.isOverMaximumEth || error ?...}": 1,
               "{display.isIncoming ? TextColor.Success : TextColor.Default}": 1,
               "{detail.textColor}": 1,
+              "{TextColor.Warning}": 1,
               "{selectedInterval === interval.value ? TextColor.Default : TextColor.Muted}": 1,
               "{tagConfig.textColor}": 1,
-              "{isPositiveChange ? TextColor.Success : TextColor.Error}": 1,
               "{fundingRateData.color}": 1,
               "{LegacyTextColor.Default}": 1,
-              "{isTestnet ? TextColor.Warning : TextColor.Alternative}": 1,
               "{pnlColor}": 1,
               "{valueColor || TextColor.Default}": 1,
               "{selectedTimeframe === timeframe ? TextColor.Default : TextColor.Alternative}": 1,
@@ -3407,15 +3392,15 @@
             }
           },
           "style": {
-            "count": 442,
+            "count": 445,
             "values": {
-              "{styles.title}": 20,
-              "{styles.description}": 17,
-              "{styles.subtitle}": 13,
+              "{styles.title}": 21,
+              "{styles.description}": 15,
+              "{styles.subtitle}": 14,
               "{styles.textCenter}": 13,
               "{styles.successText}": 12,
               "{styles.heading}": 11,
-              "{styles.errorText}": 10,
+              "{styles.errorText}": 11,
               "{styles.labelText}": 9,
               "{styles.label}": 8,
               "{styles.desc}": 7,
@@ -3426,6 +3411,7 @@
               "{styles.message}": 6,
               "{styles.linkText}": 4,
               "{styles.keyValuePrimaryText}": 4,
+              "{styles.headerTitle}": 4,
               "{tw.style(!hasPositiveBalance && 'text-disabled')}": 4,
               "{styles.amount}": 4,
               "{styles.messageText}": 4,
@@ -3433,9 +3419,7 @@
               "{textStyle}": 3,
               "{styles.assetName}": 3,
               "{styles.buttonText}": 3,
-              "{styles.headerTitle}": 3,
-              "{styles.loadingText}": 3,
-              "{styles.detailLabel}": 3,
+              "{styles.priceLabel}": 3,
               "{styles.assetAmount}": 3,
               "{styles.disclaimerText}": 3,
               "{valueTextStyle}": 3,
@@ -3456,13 +3440,11 @@
               "{styles.termsText}": 2,
               "{styles.containerFill}": 2,
               "{[styles.buttonText, styles.buttonTextSecondary]}": 2,
-              "{styles.priceLabel}": 2,
+              "{styles.loadingText}": 2,
               "{styles.priceValue}": 2,
-              "{styles.badgeText}": 2,
+              "{styles.detailLabel}": 2,
               "{styles.titleDescription}": 2,
               "{styles.notNowButtonText}": 2,
-              "{styles.name}": 2,
-              "{styles.optionName}": 2,
               "{styles.footerText}": 2,
               "{styles.normal}": 2,
               "{styles.error}": 2,
@@ -3480,6 +3462,7 @@
               "{styles.inputText}": 2,
               "{styles.input}": 2,
               "{styles.labelElementText}": 2,
+              "{styles.warningReasonText}": 2,
               "{styles.qrDescriptionText}": 2,
               "{styles.tipText}": 2,
               "{styles.fallbackAvatarText}": 1,
@@ -3528,6 +3511,7 @@
               "{style}": 1,
               "{Platform.OS === 'android' ? styles.amountValueTokenAndroid : styles.amountVal...}": 1,
               "{styles.maxAmount}": 1,
+              "{styles.badgeText}": 1,
               "{styles.strikethroughText}": 1,
               "{styles.contentText}": 1,
               "{[ styles.intervalTabText, selectedInterval === interval.value ? styles.interv...}": 1,
@@ -3541,9 +3525,9 @@
               "{styles.marketPriceText}": 1,
               "{styles.emptyStateText}": 1,
               "{styles.statisticsTitle}": 1,
-              "{styles.optionTitle}": 1,
               "{styles.activityType}": 1,
               "{styles.activityAmount}": 1,
+              "{styles.name}": 1,
               "{styles.timeLabel}": 1,
               "{styles.percentageText}": 1,
               "{styles.displayValue}": 1,
@@ -3602,6 +3586,7 @@
               "{styles.warningText}": 1,
               "{styles.attributionLink}": 1,
               "{styles.gasFeeTokenListItemSymbolText}": 1,
+              "{styles.optionName}": 1,
               "{styles.estimatedTime}": 1,
               "{styles.valueInFiat}": 1,
               "{styles.nameText}": 1,
@@ -3627,6 +3612,10 @@
               "{styles.addressTextAddress}": 1,
               "{styles.accountNameLabelText}": 1,
               "{styles.contactLabel}": 1,
+              "{styles.optionTitle}": 1,
+              "{styles.optionSubtitle}": 1,
+              "{styles.warningTitle}": 1,
+              "{canProceed ? styles.bypassText : styles.bypassTextDisabled}": 1,
               "{styles.currentAppText}": 1,
               "{styles.qrErrorText}": 1,
               "{styles.tipsHeader}": 1,
@@ -3638,7 +3627,7 @@
             }
           },
           "testID": {
-            "count": 94,
+            "count": 91,
             "values": {
               "{testID}": 5,
               "{WalletViewSelectorsIDs.ACCOUNT_NAME_LABEL_TEXT}": 3,
@@ -3670,11 +3659,8 @@
               "{PerpsWithdrawViewSelectorsIDs.FEE_VALUE}": 1,
               "{PerpsWithdrawViewSelectorsIDs.TIME_VALUE}": 1,
               "{PerpsWithdrawViewSelectorsIDs.RECEIVE_VALUE}": 1,
-              "{testIDPrice}": 1,
-              "{testIDChange}": 1,
               "{PerpsAmountDisplaySelectorsIDs.MAX_LABEL}": 1,
               "{PerpsLoaderSelectorsIDs.TEXT}": 1,
-              "{getPerpsMarketRowItemSelector.assetLabel( displayMarket.symbol, )}": 1,
               "{PerpsMarketDetailsViewSelectorsIDs.STATISTICS_ORACLE_PRICE}": 1,
               "{PerpsMarketTabsSelectorsIDs.ORDERS_EMPTY_TEXT}": 1,
               "{PerpsMarketTabsSelectorsIDs.STATISTICS_ONLY_TITLE}": 1,
@@ -3728,9 +3714,9 @@
             }
           },
           "numberOfLines": {
-            "count": 71,
+            "count": 72,
             "values": {
-              "1": 64,
+              "1": 65,
               "2": 1,
               "{isStackedLayout ? undefined : 2}": 4,
               "{isExpanded ? undefined : numberOfLines}": 1,
@@ -3738,9 +3724,9 @@
             }
           },
           "ellipsizeMode": {
-            "count": 28,
+            "count": 27,
             "values": {
-              "\"tail\"": 23,
+              "\"tail\"": 22,
               "\"middle\"": 3,
               "\"head\"": 1,
               "{ellipsizeMode}": 1
@@ -3863,31 +3849,31 @@
         }
       },
       "overall": {
-        "totalInstances": 3403,
-        "filesCount": 1060,
+        "totalInstances": 3428,
+        "filesCount": 1077,
         "props": {
           "variant": {
-            "count": 3046,
+            "count": 3070,
             "values": {
-              "{TextVariant.BodyMd}": 1024,
-              "{TextVariant.BodySm}": 624,
-              "{TextVariant.BodyMD}": 291,
-              "{TextVariant.BodySM}": 169,
-              "{TextVariant.HeadingMd}": 144,
-              "{TextVariant.BodyMDMedium}": 115,
+              "{TextVariant.BodyMd}": 1039,
+              "{TextVariant.BodySm}": 639,
+              "{TextVariant.BodyMD}": 288,
+              "{TextVariant.BodySM}": 163,
+              "{TextVariant.HeadingMd}": 148,
+              "{TextVariant.BodyMDMedium}": 114,
               "{TextVariant.BodyXs}": 93,
-              "{TextVariant.HeadingSm}": 91,
-              "{TextVariant.HeadingLg}": 70,
-              "{TextVariant.HeadingMD}": 62,
-              "{TextVariant.BodyLGMedium}": 54,
-              "{TextVariant.BodyLg}": 42,
-              "{TextVariant.BodySMMedium}": 38,
-              "{TextVariant.DisplayMd}": 37,
+              "{TextVariant.HeadingSm}": 92,
+              "{TextVariant.HeadingLg}": 74,
+              "{TextVariant.HeadingMD}": 56,
+              "{TextVariant.BodyLGMedium}": 51,
+              "{TextVariant.BodyLg}": 41,
+              "{TextVariant.BodySMMedium}": 39,
+              "{TextVariant.DisplayMd}": 36,
+              "{TextVariant.HeadingLG}": 30,
               "{TextVariant.BodyXS}": 29,
-              "{TextVariant.HeadingLG}": 28,
               "{TextVariant.BodySMBold}": 18,
               "{TextVariant.HeadingSM}": 18,
-              "{TextVariant.BodyMDBold}": 14,
+              "{TextVariant.BodyMDBold}": 15,
               "{TextVariant.DisplayMD}": 12,
               "{textVariant}": 9,
               "{variant}": 9,
@@ -3905,6 +3891,8 @@
               "{stepStatus === StatusTypes.PENDING ? TextVariant.BodyMDMedium : TextVariant.B...}": 1,
               "{primaryText?.variant ?? TextVariant.BodyMDMedium}": 1,
               "{secondaryText?.variant ?? TextVariant.BodySMMedium}": 1,
+              "{priceVariant}": 1,
+              "{changeVariant}": 1,
               "{isBanner ? TextVariant.BodyMD : TextVariant.BodySM}": 1,
               "{MDSTextVariant.HeadingMd}": 1,
               "{layout === 'inlineNoSeparator' ? TextVariant.BodySm : undefined}": 1,
@@ -3919,30 +3907,30 @@
             }
           },
           "color": {
-            "count": 1776,
+            "count": 1792,
             "values": {
-              "{TextColor.TextAlternative}": 614,
-              "{TextColor.TextDefault}": 305,
-              "{TextColor.Alternative}": 258,
-              "{TextColor.Default}": 95,
+              "{TextColor.TextAlternative}": 630,
+              "{TextColor.TextDefault}": 319,
+              "{TextColor.Alternative}": 247,
+              "{TextColor.Default}": 93,
               "{TextColor.ErrorDefault}": 58,
               "{TextColor.SuccessDefault}": 43,
-              "{TextColor.PrimaryDefault}": 41,
+              "{TextColor.PrimaryDefault}": 42,
               "{textColor}": 24,
               "{TextColor.Muted}": 24,
               "{TextColor.Error}": 21,
-              "{TextColor.Success}": 18,
+              "{TextColor.Success}": 17,
               "{TextColor.Primary}": 16,
-              "{TextColor.TextMuted}": 12,
+              "{TextColor.TextMuted}": 11,
               "{color}": 9,
               "{TextColor.InfoDefault}": 9,
-              "{TextColor.WarningDefault}": 9,
+              "{TextColor.WarningDefault}": 8,
               "{TextColor.PrimaryInverse}": 8,
               "{TextColor.OverlayInverse}": 6,
-              "{isSelected ? TextColor.PrimaryInverse : TextColor.TextDefault}": 5,
+              "{TextColor.PrimaryAlternative}": 6,
               "{TextColor.Inverse}": 5,
-              "{TextColor.PrimaryAlternative}": 5,
-              "{changeColor}": 4,
+              "{changeColor}": 5,
+              "{isSelected ? TextColor.PrimaryInverse : TextColor.TextDefault}": 4,
               "{LegacyTextColor.Alternative}": 4,
               "{isSupported ? TextColor.TextDefault : TextColor.TextAlternative}": 4,
               "{colors.text.default}": 4,
@@ -3953,13 +3941,13 @@
               "{isPositive ? TextColor.SuccessDefault : TextColor.TextDefault}": 3,
               "{colors.primary.default}": 3,
               "{isDisabled ? TextColor.TextMuted : TextColor.TextDefault}": 3,
+              "{isActive ? TextColor.TextDefault : TextColor.TextAlternative}": 3,
               "{pnlColorClass ? undefined : TextColor.TextAlternative}": 3,
               "{changeTextColor}": 2,
               "{titleColor}": 2,
               "{item.disabled ? TextColor.TextAlternative : undefined}": 2,
               "{isMaliciousDapp && !isAlreadyConnected ? TextColor.ErrorDefault : undefined}": 2,
               "{hasError ? TextColor.Error : TextColor.Default}": 2,
-              "{TextColor.Warning}": 2,
               "{pnlColor}": 2,
               "{isSelected ? TextColor.TextDefault : TextColor.TextAlternative}": 2,
               "{position.cashPnl < 0 ? TextColor.ErrorDefault : TextColor.SuccessDefault}": 2,
@@ -3973,7 +3961,6 @@
               "{percentPnl >= 0 ? TextColor.SuccessDefault : TextColor.ErrorDefault}": 2,
               "{DSTextColor.TextDefault}": 2,
               "{isPasswordTooShort ? TextColor.ErrorDefault : TextColor.TextAlternative}": 2,
-              "{isActive ? TextColor.TextDefault : TextColor.TextAlternative}": 2,
               "{theme.colors.primary.inverse}": 1,
               "{variant === ButtonVariant.Primary ? theme.colors.primary.inverse : theme.colo...}": 1,
               "{getTextColor()}": 1,
@@ -3999,16 +3986,17 @@
               "{isMarketingDisabled ? TextColor.TextMuted : TextColor.TextDefault}": 1,
               "{isMarketingDisabled ? TextColor.TextMuted : TextColor.TextAlternative}": 1,
               "{detail.textColor}": 1,
+              "{priceColor}": 1,
+              "{TextColor.Warning}": 1,
               "{selectedInterval === interval.value ? TextColor.Default : TextColor.Muted}": 1,
               "{totalPnl < 0 ? TextColor.ErrorDefault : TextColor.SuccessDefault}": 1,
               "{tagConfig.textColor}": 1,
               "{subtitleColor}": 1,
               "{tempLeverage === value ? TextColor.PrimaryInverse : TextColor.TextDefault}": 1,
-              "{isPositiveChange ? TextColor.Success : TextColor.Error}": 1,
+              "{isPositiveChange ? TextColor.SuccessDefault : TextColor.ErrorDefault}": 1,
               "{fundingRateData.color}": 1,
               "{LegacyTextColor.Default}": 1,
               "{MDSTextColor.TextDefault}": 1,
-              "{isTestnet ? TextColor.Warning : TextColor.Alternative}": 1,
               "{hasWatchlist ? TextColor.TextAlternative : TextColor.TextDefault}": 1,
               "{valueColor || TextColor.Default}": 1,
               "{isActive ? TextColor.InfoInverse : TextColor.TextAlternative}": 1,
@@ -4088,16 +4076,16 @@
             }
           },
           "style": {
-            "count": 902,
+            "count": 913,
             "values": {
-              "{styles.title}": 55,
-              "{styles.desc}": 47,
-              "{styles.description}": 41,
-              "{styles.heading}": 26,
+              "{styles.title}": 56,
+              "{styles.desc}": 50,
+              "{styles.description}": 40,
+              "{styles.heading}": 27,
               "{tw.style('font-medium')}": 19,
-              "{styles.subtitle}": 17,
+              "{styles.subtitle}": 18,
               "{styles.text}": 14,
-              "{styles.errorText}": 13,
+              "{styles.errorText}": 14,
               "{styles.textCenter}": 13,
               "{tw.style('text-pretty')}": 13,
               "{styles.label}": 12,
@@ -4111,15 +4099,16 @@
               "{styles.value}": 6,
               "{styles.valueText}": 6,
               "{tw.style('mt-1 text-error-default pb-2')}": 6,
+              "{styles.subHeading}": 6,
               "{textStyle}": 5,
               "{styles.error}": 5,
               "{styles.modalTitle}": 5,
               "{styles.modalText}": 5,
               "{tw.style('pb-[3px]')}": 5,
-              "{styles.subHeading}": 5,
               "{styles.headerText}": 4,
               "{styles.keyValuePrimaryText}": 4,
               "{styles.textCentred}": 4,
+              "{styles.headerTitle}": 4,
               "{styles.loadingText}": 4,
               "{styles.expectedPnLText}": 4,
               "{tw.style(!hasPositiveBalance && 'text-disabled')}": 4,
@@ -4137,8 +4126,7 @@
               "{styles.warningText}": 3,
               "{styles.assetName}": 3,
               "{styles.buttonText}": 3,
-              "{styles.headerTitle}": 3,
-              "{styles.detailLabel}": 3,
+              "{styles.priceLabel}": 3,
               "{styles.assetAmount}": 3,
               "{styles.footerText}": 3,
               "{tw.style({ color: currentPriceAccentColor })}": 3,
@@ -4179,14 +4167,11 @@
               "{styles.containerFill}": 2,
               "{styles.connectionTitle}": 2,
               "{[styles.buttonText, styles.buttonTextSecondary]}": 2,
-              "{styles.priceLabel}": 2,
               "{styles.priceValue}": 2,
-              "{styles.badgeText}": 2,
+              "{styles.detailLabel}": 2,
               "{{ color: warningStyles.priceColor }}": 2,
               "{styles.name}": 2,
               "{styles.emptyText}": 2,
-              "{styles.optionName}": 2,
-              "{styles.underline}": 2,
               "{{ color: roeValue >= 0 ? theme.colors.success.default : theme.colors.error.de...}": 2,
               "{tw.style('flex-1')}": 2,
               "{tw.style({ color: accentColor })}": 2,
@@ -4224,6 +4209,7 @@
               "{styles.checkboxText}": 2,
               "{styles.inputText}": 2,
               "{styles.labelElementText}": 2,
+              "{styles.warningReasonText}": 2,
               "{styles.qrDescriptionText}": 2,
               "{styles.tipText}": 2,
               "{styles.inputTitle}": 1,
@@ -4306,8 +4292,10 @@
               "{tw.style( 'text-[54px] leading-[70px] font-medium mb-2 text-default', withdra...}": 1,
               "{tw.style( 'text-center', // Control visibility - opacity 0 when no error !( (...}": 1,
               "{style}": 1,
+              "{styles.price}": 1,
               "{Platform.OS === 'android' ? styles.amountValueTokenAndroid : styles.amountVal...}": 1,
               "{styles.maxAmount}": 1,
+              "{styles.badgeText}": 1,
               "{styles.contentText}": 1,
               "{[ styles.intervalTabText, selectedInterval === interval.value ? styles.interv...}": 1,
               "{styles.errorTitle}": 1,
@@ -4324,7 +4312,6 @@
               "{styles.emptyStateText}": 1,
               "{styles.statisticsTitle}": 1,
               "{styles.tradeType}": 1,
-              "{styles.optionTitle}": 1,
               "{styles.activityType}": 1,
               "{styles.activityAmount}": 1,
               "{styles.timeLabel}": 1,
@@ -4359,6 +4346,7 @@
               "{styles.accountText}": 1,
               "{{ ...styles.tokenAmount, ...styles.textCenter, }}": 1,
               "{styles.transactionIdFlex}": 1,
+              "{styles.underline}": 1,
               "{styles.methodName}": 1,
               "{styles.regionName}": 1,
               "{styles.supportLink}": 1,
@@ -4455,6 +4443,7 @@
               "{styles.recipientAddress}": 1,
               "{styles.attributionLink}": 1,
               "{styles.gasFeeTokenListItemSymbolText}": 1,
+              "{styles.optionName}": 1,
               "{styles.estimatedTime}": 1,
               "{styles.valueInFiat}": 1,
               "{styles.nameText}": 1,
@@ -4480,6 +4469,10 @@
               "{styles.addressTextAddress}": 1,
               "{styles.accountNameLabelText}": 1,
               "{styles.contactLabel}": 1,
+              "{styles.optionTitle}": 1,
+              "{styles.optionSubtitle}": 1,
+              "{styles.warningTitle}": 1,
+              "{canProceed ? styles.bypassText : styles.bypassTextDisabled}": 1,
               "{styles.currentAppText}": 1,
               "{styles.qrErrorText}": 1,
               "{styles.tipsHeader}": 1,
@@ -4490,16 +4483,17 @@
             }
           },
           "fontWeight": {
-            "count": 779,
+            "count": 798,
             "values": {
-              "{FontWeight.Medium}": 589,
-              "{FontWeight.Bold}": 143,
-              "{FontWeight.Regular}": 32,
+              "{FontWeight.Medium}": 602,
+              "{FontWeight.Bold}": 144,
+              "{FontWeight.Regular}": 34,
               "{fontWeight}": 3,
-              "{isSelected ? FontWeight.Medium : FontWeight.Regular}": 2,
+              "{isSelected ? FontWeight.Medium : FontWeight.Regular}": 3,
+              "{isActive ? FontWeight.Bold : FontWeight.Regular}": 2,
               "{active ? FontWeight.Bold : FontWeight.Medium}": 1,
               "{isSelected ? FontWeight.Bold : FontWeight.Medium}": 1,
-              "{isActive ? FontWeight.Bold : FontWeight.Regular}": 1,
+              "{changeFontWeight}": 1,
               "{isOverridden ? FontWeight.Medium : FontWeight.Regular}": 1,
               "{isBold ? FontWeight.Bold : undefined}": 1,
               "{'600' as FontWeight}": 1,
@@ -4510,24 +4504,24 @@
             }
           },
           "twClassName": {
-            "count": 578,
+            "count": 594,
             "values": {
-              "\"text-center\"": 72,
+              "\"text-center\"": 78,
               "\"font-medium\"": 44,
               "\"text-alternative\"": 41,
               "\"text-text-alternative\"": 32,
               "\"text-error-default\"": 28,
-              "\"text-default\"": 20,
-              "\"shrink\"": 19,
-              "\"flex-1\"": 13,
+              "\"text-default\"": 22,
+              "\"shrink\"": 20,
+              "\"flex-1\"": 15,
               "\"text-error-default text-center\"": 7,
               "\"mb-2\"": 6,
               "\"mt-2\"": 6,
               "\"text-info-default\"": 6,
               "\"text-primary-default underline\"": 6,
+              "\"text-alternative text-center\"": 6,
               "\"text-text-default\"": 5,
               "\"text-primary-default\"": 5,
-              "\"text-alternative text-center\"": 5,
               "\"mt-1\"": 4,
               "\"text-text-default font-medium self-center shrink\"": 4,
               "\"text-center mb-4\"": 4,
@@ -4690,7 +4684,9 @@
               "\"my-6\"": 1,
               "\"text-default text-center\"": 1,
               "\"text-muted text-center\"": 1,
+              "\"pt-2 text-center\"": 1,
               "\"text-right max-w-[100px] flex-wrap\"": 1,
+              "{allowTwoLineLabel ? 'mt-2 min-h-[40px] w-full text-center' : 'mt-2 w-full tex...}": 1,
               "\"w-[95%]\"": 1,
               "\"leading-[20px]\"": 1,
               "\"ml-2 shrink-0 text-alternative\"": 1,
@@ -4702,6 +4698,8 @@
               "\"text-center p-2\"": 1,
               "\"mt-6\"": 1,
               "\"w-[90%] mb-6\"": 1,
+              "\"flex-1 min-w-0\"": 1,
+              "{item.isPnlPositive ? 'text-success-default' : 'text-error-default'}": 1,
               "{isEntry ? 'text-success-default' : 'text-error-default'}": 1,
               "{pnlValue == null ? undefined : isPnlPositive ? 'text-success-default' : 'text...}": 1,
               "\"shrink leading-none\"": 1,
@@ -4722,7 +4720,7 @@
             }
           },
           "testID": {
-            "count": 428,
+            "count": 437,
             "values": {
               "{testID}": 9,
               "{TransactionPayComponentIDs.PAY_WITH_SYMBOL}": 5,
@@ -4863,6 +4861,8 @@
               "{MoneyBalanceSummaryTestIds.BALANCE_NO_ACCOUNT}": 1,
               "{MoneyConvertStablecoinsTestIds.DESCRIPTION}": 1,
               "{MoneyDeeplinkModalTestIds.DESCRIPTION}": 1,
+              "{MoneyEarnBannerTestIds.TITLE}": 1,
+              "{MoneyEarnBannerTestIds.DESCRIPTION}": 1,
               "{MoneyEarnCryptoInfoSheetTestIds.TITLE}": 1,
               "{MoneyEarnCryptoInfoSheetTestIds.BODY}": 1,
               "{MoneyGeoBlockSheetTestIds.BODY}": 1,
@@ -4879,6 +4879,8 @@
               "{MetaMetricsOptInSelectorsIDs.OPTIN_METRICS_TITLE_ID}": 1,
               "{MetaMetricsOptInSelectorsIDs.OPTIN_METRICS_PRIVACY_POLICY_DESCRIPTION_CONTENT...}": 1,
               "{PerpsAdjustMarginViewSelectorsIDs.AVAILABLE_VALUE}": 1,
+              "{PerpsCloseAllPositionsViewSelectorsIDs.EMPTY_STATE}": 1,
+              "{PerpsCloseAllPositionsViewSelectorsIDs.DESCRIPTION}": 1,
               "{getPerpsHeroCardViewSelector.assetSymbol(index)}": 1,
               "{getPerpsHeroCardViewSelector.directionBadgeText(index)}": 1,
               "{getPerpsHeroCardViewSelector.pnlText(index)}": 1,
@@ -4894,23 +4896,26 @@
               "{PerpsAmountDisplaySelectorsIDs.MAX_LABEL}": 1,
               "{PerpsBottomSheetTooltipSelectorsIDs.CONTENT}": 1,
               "{testIDs?.marginValue}": 1,
-              "{testIDs?.receiveValue}": 1,
               "{PerpsMarketBalanceActionsSelectorsIDs.BALANCE_VALUE}": 1,
               "{testID ? `${testID}-original` : undefined}": 1,
               "{PerpsFlipPositionConfirmSheetSelectorsIDs.EST_SIZE_VALUE}": 1,
               "{testID ? `${testID}-title` : undefined}": 1,
               "{subtitleTestID}": 1,
               "{PerpsLoaderSelectorsIDs.TEXT}": 1,
+              "{PerpsMarketHeaderSelectorsIDs.ASSET_NAME}": 1,
+              "{PerpsMarketHeaderSelectorsIDs.SUBTITLE}": 1,
               "{getPerpsMarketRowItemSelector.assetLabel( displayMarket.symbol, )}": 1,
+              "{getPerpsMarketRowItemSelector.tickerSuffix( market.symbol, )}": 1,
               "{testID ? `${testID}-direction-text` : undefined}": 1,
               "{PerpsMarketDetailsViewSelectorsIDs.STATISTICS_ORACLE_PRICE}": 1,
               "{PerpsMarketTabsSelectorsIDs.ORDERS_EMPTY_TEXT}": 1,
               "{PerpsMarketTabsSelectorsIDs.STATISTICS_ONLY_TITLE}": 1,
               "{PerpsPositionCardSelectorsIDs.DIRECTION_VALUE}": 1,
-              "{`${testID}-support-link`}": 1,
               "{PerpsCustomSlippageBottomSheetSelectorsIDs.ERROR}": 1,
               "{PerpsWatchlistSelectorsIDs.SUGGESTED_HEADER}": 1,
               "{FEATURED_CAROUSEL_TEST_IDS.CARD_TITLE(index)}": 1,
+              "{FEATURED_CAROUSEL_TEST_IDS.CARD_OUTCOME(index, 0)}": 1,
+              "{FEATURED_CAROUSEL_TEST_IDS.CARD_OUTCOME( index, drawToken ? 2 : 1, )}": 1,
               "{getPredictChipLabelTestId(chip.key)}": 1,
               "{PredictCryptoUpDownPositionsSelectorsIDs.SECTION_HEADER}": 1,
               "\"predict-fak-partial-fill-note\"": 1,
@@ -5088,6 +5093,8 @@
               "{SNAP_PERMISSIONS_TITLE}": 1,
               "{SNAP_PERMISSIONS_DATE}": 1,
               "{SNAP_VERSION_BADGE_VALUE}": 1,
+              "{getFeedNewPositionTestId(item.id)}": 1,
+              "{SocialTradersTabsViewSelectorsIDs.TITLE}": 1,
               "{TopTradersViewSelectorsIDs.TITLE}": 1,
               "\"price-impact-description\"": 1,
               "\"price-impact-fiat-text\"": 1,
@@ -5128,9 +5135,9 @@
             }
           },
           "numberOfLines": {
-            "count": 281,
+            "count": 297,
             "values": {
-              "1": 252,
+              "1": 267,
               "2": 16,
               "3": 4,
               "{isStackedLayout ? undefined : 2}": 4,
@@ -5138,11 +5145,12 @@
               "{isCarousel ? 2 : undefined}": 1,
               "{isCompact ? 1 : 2}": 1,
               "{maxLines}": 1,
+              "{labelNumberOfLines}": 1,
               "{collapsedSectionAllowMultiline ? undefined : 1}": 1
             }
           },
           "onPress": {
-            "count": 90,
+            "count": 89,
             "values": {
               "{learnMore}": 4,
               "{goToLearnMore}": 3,
@@ -5173,7 +5181,6 @@
               "{(e) => { e?.stopPropagation?.(); openLearnMore(); }}": 1,
               "{goToDefaultSettings}": 1,
               "{handleTradingViewPress}": 1,
-              "{handleSupportPress}": 1,
               "{() => handleExplorerLinkPress(supportLinkUrl as string)}": 1,
               "{paymentMethodsError ? undefined : handleChangeProviderPress}": 1,
               "{handlePaste}": 1,
@@ -5218,9 +5225,9 @@
             }
           },
           "ellipsizeMode": {
-            "count": 78,
+            "count": 80,
             "values": {
-              "\"tail\"": 64,
+              "\"tail\"": 66,
               "\"middle\"": 6,
               "\"clip\"": 4,
               "\"head\"": 2,
@@ -5297,13 +5304,6 @@
               "true (shorthand)": 4
             }
           },
-          "accessibilityRole": {
-            "count": 3,
-            "values": {
-              "\"link\"": 2,
-              "\"none\"": 1
-            }
-          },
           "disabled": {
             "count": 3,
             "values": {
@@ -5316,6 +5316,13 @@
             "count": 3,
             "values": {
               "true (shorthand)": 3
+            }
+          },
+          "accessibilityRole": {
+            "count": 2,
+            "values": {
+              "\"none\"": 1,
+              "\"link\"": 1
             }
           },
           "allowFontScaling": {
@@ -5382,7 +5389,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "Text": 1107
+        "Text": 1093
       }
     }
   }

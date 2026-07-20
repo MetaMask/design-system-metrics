@@ -1,9 +1,9 @@
 {
   "component": "BadgeWrapper",
-  "generatedAt": "2026-07-13T09:27:01.215Z",
+  "generatedAt": "2026-07-20T09:26:32.187Z",
   "projects": {
     "extension": {
-      "filesScanned": 3458,
+      "filesScanned": 3445,
       "targetComponent": "BadgeWrapper",
       "mmds": {
         "totalInstances": 15,
@@ -67,16 +67,14 @@
         }
       },
       "deprecated": {
-        "totalInstances": 18,
-        "filesCount": 16,
+        "totalInstances": 15,
+        "filesCount": 13,
         "props": {
           "badge": {
-            "count": 18,
+            "count": 15,
             "values": {
               "{<AvatarNetwork size={AvatarNetworkSize.Xs} name={allNetworks?.[chainId as Hex...}": 2,
-              "{<AvatarNetwork className=\"activity-tx__network-badge\" data-testid=\"activity-t...}": 2,
               "{badgeIcon}": 2,
-              "{<AvatarNetwork borderColor={BorderColor.backgroundDefault} borderWidth={1} cl...}": 1,
               "{selectedChainId && networkIcon ? ( <AvatarNetwork size={AvatarNetworkSize.Xs}...}": 1,
               "{<AvatarNetwork size={AvatarNetworkSize.Xs} name={networkName} src={networkIco...}": 1,
               "{showConnectedStatus && ( <Box className={classNames('multichain-badge-status_...}": 1,
@@ -90,27 +88,11 @@
               "{<AvatarNetwork size={NETWORK_BADGE_SIZE_MAP[size]} name={networkConfiguration...}": 1
             }
           },
-          "positionObj": {
-            "count": 5,
-            "values": {
-              "{{ right: -4, top: -4 }}": 1,
-              "{{ top: -4, right: -4 }}": 1,
-              "{positionObj}": 1,
-              "{{ bottom: '25%', right: '10%', }}": 1,
-              "{{ bottom: 4, right: 4 }}": 1
-            }
-          },
           "style": {
             "count": 4,
             "values": {
               "{{ alignSelf: 'center' }}": 2,
               "{{ alignSelf: 'center', }}": 2
-            }
-          },
-          "display": {
-            "count": 4,
-            "values": {
-              "{Display.Block}": 4
             }
           },
           "marginRight": {
@@ -119,10 +101,12 @@
               "4": 3
             }
           },
-          "anchorElementShape": {
+          "positionObj": {
             "count": 3,
             "values": {
-              "{BadgeWrapperAnchorElementShape.circular}": 3
+              "{positionObj}": 1,
+              "{{ bottom: '25%', right: '10%', }}": 1,
+              "{{ bottom: 4, right: 4 }}": 1
             }
           },
           "position": {
@@ -153,23 +137,33 @@
               "{classnames('nft-item__badge-wrapper', { 'nft-item__badge-wrapper__clickable':...}": 1,
               "\"multichain-token-list-item__badge\"": 1
             }
+          },
+          "anchorElementShape": {
+            "count": 1,
+            "values": {
+              "{BadgeWrapperAnchorElementShape.circular}": 1
+            }
+          },
+          "display": {
+            "count": 1,
+            "values": {
+              "{Display.Block}": 1
+            }
           }
         }
       },
       "overall": {
-        "totalInstances": 33,
-        "filesCount": 26,
+        "totalInstances": 30,
+        "filesCount": 23,
         "props": {
           "badge": {
-            "count": 33,
+            "count": 30,
             "values": {
               "{<BadgeNetwork name=\"Ethereum\" src=\"https://assets.coingecko.com/coins/images/...}": 4,
               "{<AvatarNetwork size={AvatarNetworkSize.Xs} name={allNetworks?.[chainId as Hex...}": 2,
-              "{<AvatarNetwork className=\"activity-tx__network-badge\" data-testid=\"activity-t...}": 2,
               "{badgeIcon}": 2,
               "{<AvatarNetwork size={AvatarNetworkSize.Xs} name={NETWORK_TO_NAME_MAP[CHAIN_ID...}": 2,
               "{<AvatarNetwork className=\"border-2 border-background-default rounded-md\" styl...}": 1,
-              "{<AvatarNetwork borderColor={BorderColor.backgroundDefault} borderWidth={1} cl...}": 1,
               "{selectedChainId && networkIcon ? ( <AvatarNetwork size={AvatarNetworkSize.Xs}...}": 1,
               "{<AvatarNetwork size={AvatarNetworkSize.Xs} name={networkName} src={networkIco...}": 1,
               "{showConnectedStatus && ( <Box className={classNames('multichain-badge-status_...}": 1,
@@ -208,16 +202,6 @@
               "{{ alignSelf: 'center', }}": 2
             }
           },
-          "positionObj": {
-            "count": 5,
-            "values": {
-              "{{ right: -4, top: -4 }}": 1,
-              "{{ top: -4, right: -4 }}": 1,
-              "{positionObj}": 1,
-              "{{ bottom: '25%', right: '10%', }}": 1,
-              "{{ bottom: 4, right: 4 }}": 1
-            }
-          },
           "badgeContainerProps": {
             "count": 4,
             "values": {
@@ -226,22 +210,18 @@
               "{{ className: 'multichain-send-page__recipient__item__badge', }}": 1
             }
           },
-          "display": {
-            "count": 4,
-            "values": {
-              "{Display.Block}": 4
-            }
-          },
           "marginRight": {
             "count": 3,
             "values": {
               "4": 3
             }
           },
-          "anchorElementShape": {
+          "positionObj": {
             "count": 3,
             "values": {
-              "{BadgeWrapperAnchorElementShape.circular}": 3
+              "{positionObj}": 1,
+              "{{ bottom: '25%', right: '10%', }}": 1,
+              "{{ bottom: 4, right: 4 }}": 1
             }
           },
           "data-testid": {
@@ -272,6 +252,18 @@
               "{token}": 1
             }
           },
+          "anchorElementShape": {
+            "count": 1,
+            "values": {
+              "{BadgeWrapperAnchorElementShape.circular}": 1
+            }
+          },
+          "display": {
+            "count": 1,
+            "values": {
+              "{Display.Block}": 1
+            }
+          },
           "positionXOffset": {
             "count": 1,
             "values": {
@@ -281,11 +273,11 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "BadgeWrapper": 18
+        "BadgeWrapper": 15
       }
     },
     "mobile": {
-      "filesScanned": 7127,
+      "filesScanned": 7241,
       "targetComponent": "BadgeWrapper",
       "mmds": {
         "totalInstances": 14,

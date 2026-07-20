@@ -1,16 +1,16 @@
 {
   "component": "ButtonBase",
-  "generatedAt": "2026-07-13T09:29:29.019Z",
+  "generatedAt": "2026-07-20T09:29:23.030Z",
   "projects": {
     "extension": {
-      "filesScanned": 3458,
+      "filesScanned": 3445,
       "targetComponent": "ButtonBase",
       "mmds": {
-        "totalInstances": 36,
-        "filesCount": 24,
+        "totalInstances": 39,
+        "filesCount": 27,
         "props": {
           "className": {
-            "count": 36,
+            "count": 39,
             "values": {
               "\"h-auto flex-1 flex-col justify-center rounded-lg bg-muted py-4 hover:bg-muted-hover active:bg-muted-pressed\"": 4,
               "{twMerge( // Reset ButtonBase defaults for card layout 'justify-start rounded-...}": 2,
@@ -18,6 +18,7 @@
               "\"w-full flex flex-row justify-between items-center px-4 py-3 bg-transparent rounded-none hover:bg-hover active:bg-pressed\"": 2,
               "\"flex items-center justify-start gap-1 rounded-lg bg-background-muted px-3 py-2 hover:bg-hover active:opacity-70\"": 2,
               "{`w-full justify-between text-left rounded-none px-4 min-w-0 h-[46px] active:b...}": 2,
+              "{twMerge(ROW_STYLES)}": 1,
               "{longTabStyles}": 1,
               "{shortTabStyles}": 1,
               "\"bg-transparent rounded-none px-2 min-w-0 h-auto\"": 1,
@@ -25,7 +26,6 @@
               "{twMerge( 'h-9 min-w-0 rounded-xl bg-muted px-0 py-0 transition-colors hover:b...}": 1,
               "{twMerge( 'py-1.5 h-auto min-w-12 rounded-lg bg-transparent hover:bg-hover act...}": 1,
               "{twMerge( 'py-1.5 h-auto min-w-12 rounded-lg flex items-center gap-1 bg-transp...}": 1,
-              "{twMerge(CARD_STYLES)}": 1,
               "\"w-full flex flex-row justify-between items-center px-4 py-2 bg-transparent rounded-none hover:bg-hover active:bg-pressed\"": 1,
               "\"min-w-0 rounded-md border-0 bg-transparent px-1 py-0.5 -mr-1 shadow-none hover:bg-transparent active:bg-transparent focus-visible:bg-transparent disabled:opacity-50\"": 1,
               "\"w-full px-0 h-[62px] rounded-none bg-transparent hover:bg-hover active:bg-pressed\"": 1,
@@ -38,15 +38,19 @@
               "\"rounded-lg w-full bg-muted\"": 1,
               "{`w-full justify-between text-left rounded-none px-3 py-2 min-w-0 h-auto activ...}": 1,
               "\"rounded-full p-1 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
+              "\"inline-flex items-center gap-2 rounded-full bg-background-alternative px-3 py-2 min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
+              "\"w-full rounded-lg px-4 py-3 min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
+              "\"absolute left-4 top-1/2 -translate-y-1/2 rounded-full p-1 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
               "\"bg-default text-default border border-muted\"": 1,
               "\"w-full bg-muted text-default hover:bg-muted-hover active:bg-muted-pressed\"": 1
             }
           },
           "onClick": {
-            "count": 32,
+            "count": 35,
             "values": {
-              "{handleClick}": 5,
+              "{handleClick}": 6,
               "{handleSeeAll}": 2,
+              "{onClick}": 2,
               "{() => handleDirectionClick('long')}": 1,
               "{() => handleDirectionClick('short')}": 1,
               "{handleMidClick}": 1,
@@ -57,7 +61,6 @@
               "{() => emitPeriodChange(period.value)}": 1,
               "{() => setIsMoreModalOpen(true)}": 1,
               "{handleSeeAllPerps}": 1,
-              "{() => onClick(symbol)}": 1,
               "{onCloseAllPositions}": 1,
               "{action.onClick}": 1,
               "{() => onClick(network.chainId)}": 1,
@@ -70,13 +73,15 @@
               "{() => setPendingField(option.id)}": 1,
               "{() => setPendingDirection(value)}": 1,
               "{handleBack}": 1,
+              "{onBack}": 1,
               "{handleOpenNetworkFilter}": 1,
               "{handleAddCustomToken}": 1
             }
           },
           "data-testid": {
-            "count": 31,
+            "count": 34,
             "values": {
+              "{testId}": 1,
               "{`order-card-${order.orderId}`}": 1,
               "\"direction-tab-long\"": 1,
               "\"direction-tab-short\"": 1,
@@ -88,7 +93,6 @@
               "{`perps-candle-period-${period.value}`}": 1,
               "\"perps-candle-period-more\"": 1,
               "\"perps-explore-markets-row\"": 1,
-              "{testId}": 1,
               "\"perps-market-detail-view-all-activity\"": 1,
               "\"perps-close-all-positions\"": 1,
               "\"perps-recent-activity-see-all\"": 1,
@@ -106,6 +110,9 @@
               "{`sort-field-option-${option.id}`}": 1,
               "{`sort-direction-${value}`}": 1,
               "\"back-button\"": 1,
+              "\"ramps-payment-method-pill\"": 1,
+              "{`ramps-payment-method-item-${paymentMethod.id}`}": 1,
+              "{backButtonTestId}": 1,
               "\"token-management-network-filter\"": 1,
               "\"token-management-add-custom-token-button\"": 1
             }
@@ -132,17 +139,17 @@
               "true (shorthand)": 4
             }
           },
+          "aria-label": {
+            "count": 4,
+            "values": {
+              "{`${t('perpsRecentActivity')}, ${t('perpsSeeAll')}`}": 2,
+              "{t('back')}": 2
+            }
+          },
           "type": {
             "count": 3,
             "values": {
               "\"button\"": 3
-            }
-          },
-          "aria-label": {
-            "count": 3,
-            "values": {
-              "{`${t('perpsRecentActivity')}, ${t('perpsSeeAll')}`}": 2,
-              "{t('back')}": 1
             }
           },
           "ref": {
@@ -171,6 +178,13 @@
             "values": {
               "{handleTriggerKeyDown}": 1,
               "{(e) => handleOptionKeyDown(e, index)}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 2,
+            "values": {
+              "{!onClick}": 1,
+              "{isDisabled}": 1
             }
           },
           "disabled": {
@@ -472,11 +486,11 @@
         }
       },
       "overall": {
-        "totalInstances": 45,
-        "filesCount": 32,
+        "totalInstances": 48,
+        "filesCount": 35,
         "props": {
           "className": {
-            "count": 44,
+            "count": 47,
             "values": {
               "\"h-auto flex-1 flex-col justify-center rounded-lg bg-muted py-4 hover:bg-muted-hover active:bg-muted-pressed\"": 4,
               "{twMerge( // Reset ButtonBase defaults for card layout 'justify-start rounded-...}": 2,
@@ -485,6 +499,7 @@
               "\"flex items-center justify-start gap-1 rounded-lg bg-background-muted px-3 py-2 hover:bg-hover active:opacity-70\"": 2,
               "{`w-full justify-between text-left rounded-none px-4 min-w-0 h-[46px] active:b...}": 2,
               "\"asset-list-control-bar__button asset-list-control-bar__network_control\"": 1,
+              "{twMerge(ROW_STYLES)}": 1,
               "{longTabStyles}": 1,
               "{shortTabStyles}": 1,
               "\"bg-transparent rounded-none px-2 min-w-0 h-auto\"": 1,
@@ -492,7 +507,6 @@
               "{twMerge( 'h-9 min-w-0 rounded-xl bg-muted px-0 py-0 transition-colors hover:b...}": 1,
               "{twMerge( 'py-1.5 h-auto min-w-12 rounded-lg bg-transparent hover:bg-hover act...}": 1,
               "{twMerge( 'py-1.5 h-auto min-w-12 rounded-lg flex items-center gap-1 bg-transp...}": 1,
-              "{twMerge(CARD_STYLES)}": 1,
               "\"w-full flex flex-row justify-between items-center px-4 py-2 bg-transparent rounded-none hover:bg-hover active:bg-pressed\"": 1,
               "\"min-w-0 rounded-md border-0 bg-transparent px-1 py-0.5 -mr-1 shadow-none hover:bg-transparent active:bg-transparent focus-visible:bg-transparent disabled:opacity-50\"": 1,
               "\"w-full px-0 h-[62px] rounded-none bg-transparent hover:bg-hover active:bg-pressed\"": 1,
@@ -512,17 +526,20 @@
               "\"rounded-lg w-full bg-muted\"": 1,
               "{`w-full justify-between text-left rounded-none px-3 py-2 min-w-0 h-auto activ...}": 1,
               "\"rounded-full p-1 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
+              "\"inline-flex items-center gap-2 rounded-full bg-background-alternative px-3 py-2 min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
+              "\"w-full rounded-lg px-4 py-3 min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
+              "\"absolute left-4 top-1/2 -translate-y-1/2 rounded-full p-1 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
               "\"bg-default text-default border border-muted\"": 1,
               "\"w-full bg-muted text-default hover:bg-muted-hover active:bg-muted-pressed\"": 1
             }
           },
           "onClick": {
-            "count": 41,
+            "count": 44,
             "values": {
-              "{handleClick}": 6,
+              "{handleClick}": 7,
+              "{onClick}": 4,
               "{handleNetworkFilterClick}": 2,
               "{handleSeeAll}": 2,
-              "{onClick}": 2,
               "{() => handleDirectionClick('long')}": 1,
               "{() => handleDirectionClick('short')}": 1,
               "{handleMidClick}": 1,
@@ -533,7 +550,6 @@
               "{() => emitPeriodChange(period.value)}": 1,
               "{() => setIsMoreModalOpen(true)}": 1,
               "{handleSeeAllPerps}": 1,
-              "{() => onClick(symbol)}": 1,
               "{onCloseAllPositions}": 1,
               "{handleModalOpen}": 1,
               "{action.onClick}": 1,
@@ -550,15 +566,17 @@
               "{() => setPendingField(option.id)}": 1,
               "{() => setPendingDirection(value)}": 1,
               "{handleBack}": 1,
+              "{onBack}": 1,
               "{handleOpenNetworkFilter}": 1,
               "{handleAddCustomToken}": 1
             }
           },
           "data-testid": {
-            "count": 37,
+            "count": 40,
             "values": {
               "\"address-copy-button-text\"": 2,
               "\"sort-by-networks\"": 1,
+              "{testId}": 1,
               "{`order-card-${order.orderId}`}": 1,
               "\"direction-tab-long\"": 1,
               "\"direction-tab-short\"": 1,
@@ -570,7 +588,6 @@
               "{`perps-candle-period-${period.value}`}": 1,
               "\"perps-candle-period-more\"": 1,
               "\"perps-explore-markets-row\"": 1,
-              "{testId}": 1,
               "\"perps-market-detail-view-all-activity\"": 1,
               "\"perps-close-all-positions\"": 1,
               "\"perps-recent-activity-see-all\"": 1,
@@ -591,6 +608,9 @@
               "{`sort-field-option-${option.id}`}": 1,
               "{`sort-direction-${value}`}": 1,
               "\"back-button\"": 1,
+              "\"ramps-payment-method-pill\"": 1,
+              "{`ramps-payment-method-item-${paymentMethod.id}`}": 1,
+              "{backButtonTestId}": 1,
               "\"token-management-network-filter\"": 1,
               "\"token-management-add-custom-token-button\"": 1
             }
@@ -703,6 +723,13 @@
               "true (shorthand)": 4
             }
           },
+          "aria-label": {
+            "count": 4,
+            "values": {
+              "{`${t('perpsRecentActivity')}, ${t('perpsSeeAll')}`}": 2,
+              "{t('back')}": 2
+            }
+          },
           "endIconName": {
             "count": 4,
             "values": {
@@ -730,13 +757,6 @@
             "count": 3,
             "values": {
               "\"button\"": 3
-            }
-          },
-          "aria-label": {
-            "count": 3,
-            "values": {
-              "{`${t('perpsRecentActivity')}, ${t('perpsSeeAll')}`}": 2,
-              "{t('back')}": 1
             }
           },
           "paddingTop": {
@@ -797,6 +817,13 @@
             "values": {
               "{handleTriggerKeyDown}": 1,
               "{(e) => handleOptionKeyDown(e, index)}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 2,
+            "values": {
+              "{!onClick}": 1,
+              "{isDisabled}": 1
             }
           },
           "marginRight": {
@@ -878,7 +905,7 @@
       }
     },
     "mobile": {
-      "filesScanned": 7127,
+      "filesScanned": 7241,
       "targetComponent": "ButtonBase",
       "mmds": {
         "totalInstances": 12,
