@@ -35,11 +35,40 @@ function normalizeOwnerKey(owner: string): string {
   return owner.replace('@MetaMask/', '').replace(/^@/, '').toLowerCase();
 }
 
+const LEGACY_BAR_FILL = '#e5e7eb';
+
 /** Bar fill based on migration % vs threshold. */
 function barFill(pct: number, threshold: number): string {
   if (pct >= threshold) return '#10b981';
   if (pct >= threshold * 0.7) return '#f59e0b';
   return '#ef4444';
+}
+
+function TooltipMetricRow({
+  color,
+  label,
+  value,
+  swatchClassName,
+  labelClassName,
+}: {
+  color?: string;
+  label: string;
+  value: string;
+  swatchClassName?: string;
+  labelClassName?: string;
+}) {
+  return (
+    <p className="flex items-center gap-2 text-gray-700 dark:text-gray-200">
+      <span
+        className={`inline-block w-2.5 h-2.5 rounded-sm shrink-0 ${swatchClassName ?? ''}`}
+        style={color ? { backgroundColor: color } : undefined}
+        aria-hidden
+      />
+      <span className={labelClassName} style={color ? { color } : undefined}>
+        {label}: {value}
+      </span>
+    </p>
+  );
 }
 
 // ─── Delta computation ────────────────────────────────────────────────────────
@@ -167,11 +196,22 @@ export function CodeOwnerAdoptionChart({
     const onTarget = d.migrationPercentage >= threshold;
     const hasDelta = d.delta4w != null;
     const isFlat = hasDelta && Math.abs(d.delta4w) < 0.5;
+    const mmdsColor = barFill(d.migrationPercentage, threshold);
+
     return (
       <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-3 text-sm min-w-[200px]">
         <p className="font-semibold text-gray-900 dark:text-white mb-1">{d.ownerLabel}</p>
-        <p className="text-blue-600 dark:text-blue-400">MMDS: {d.mmdsInstances.toLocaleString()}</p>
-        <p className="text-orange-600 dark:text-orange-400">Deprecated: {d.deprecatedInstances.toLocaleString()}</p>
+        <TooltipMetricRow
+          color={mmdsColor}
+          label="MMDS"
+          value={d.mmdsInstances.toLocaleString()}
+        />
+        <TooltipMetricRow
+          swatchClassName="bg-gray-200 dark:bg-gray-600"
+          labelClassName="text-gray-600 dark:text-gray-400"
+          label="Legacy"
+          value={d.deprecatedInstances.toLocaleString()}
+        />
         <p className={`mt-1 font-semibold ${onTarget ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-500 dark:text-red-400'}`}>
           Adoption: {d.migrationPercentage.toFixed(1)}%
           {onTarget ? ' ✓' : ` (${(threshold - d.migrationPercentage).toFixed(1)}pp to go)`}
@@ -311,9 +351,9 @@ export function CodeOwnerAdoptionChart({
               <Cell key={i} fill={barFill(entry.migrationPercentage, threshold)} opacity={0.85} />
             ))}
           </Bar>
-          <Bar dataKey="deprecatedInstances" name="Deprecated" stackId="a" fill="#e5e7eb" radius={[0, 2, 2, 0]}>
+          <Bar dataKey="deprecatedInstances" name="Legacy" stackId="a" fill={LEGACY_BAR_FILL} radius={[0, 2, 2, 0]}>
             {chartData.map((_entry, i) => (
-              <Cell key={i} fill="#e5e7eb" className="dark:fill-gray-600" opacity={0.7} />
+              <Cell key={i} fill={LEGACY_BAR_FILL} className="dark:fill-gray-600" opacity={0.7} />
             ))}
             {codeOwnerTimeline && (
               <LabelList dataKey="delta4w" content={DeltaLabel} />
