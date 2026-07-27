@@ -1,9 +1,9 @@
 {
   "component": "Input",
-  "generatedAt": "2026-07-20T09:32:45.319Z",
+  "generatedAt": "2026-07-27T09:31:35.458Z",
   "projects": {
     "extension": {
-      "filesScanned": 3445,
+      "filesScanned": 3470,
       "targetComponent": "Input",
       "mmds": {
         "totalInstances": 3,
@@ -338,12 +338,45 @@
       }
     },
     "mobile": {
-      "filesScanned": 7241,
+      "filesScanned": 7343,
       "targetComponent": "Input",
       "mmds": {
         "totalInstances": 5,
         "filesCount": 2,
         "props": {
+          "value": {
+            "count": 5,
+            "values": {
+              "{value}": 1,
+              "{takeProfitPrice}": 1,
+              "{formattedTakeProfitPercentage}": 1,
+              "{stopLossPrice}": 1,
+              "{formattedStopLossPercentage}": 1
+            }
+          },
+          "onChangeText": {
+            "count": 5,
+            "values": {
+              "{(text) => { const digitCount = (text.match(/\\d/g) || []).length; if (digitCou...}": 4,
+              "{onChangeText}": 1
+            }
+          },
+          "placeholder": {
+            "count": 5,
+            "values": {
+              "{strings('perps.tpsl.trigger_price_placeholder')}": 2,
+              "{placeholder}": 1,
+              "{strings('perps.tpsl.profit_roe_placeholder')}": 1,
+              "{strings('perps.tpsl.loss_roe_placeholder')}": 1
+            }
+          },
+          "placeholderTextColor": {
+            "count": 5,
+            "values": {
+              "{colors.text.muted}": 4,
+              "{tw.color(`text-${placeholderColor}`)}": 1
+            }
+          },
           "isStateStylesDisabled": {
             "count": 5,
             "values": {
@@ -354,46 +387,7 @@
             "count": 5,
             "values": {
               "\"bg-transparent border-0\"": 4,
-              "\"flex-1 bg-transparent border-0\"": 1
-            }
-          },
-          "style": {
-            "count": 5,
-            "values": {
-              "{styles.input}": 4,
-              "{tw.style('flex-1 text-base text-default')}": 1
-            }
-          },
-          "value": {
-            "count": 5,
-            "values": {
-              "{takeProfitPrice}": 1,
-              "{formattedTakeProfitPercentage}": 1,
-              "{stopLossPrice}": 1,
-              "{formattedStopLossPercentage}": 1,
-              "{searchQuery}": 1
-            }
-          },
-          "onChangeText": {
-            "count": 5,
-            "values": {
-              "{(text) => { const digitCount = (text.match(/\\d/g) || []).length; if (digitCou...}": 4,
-              "{onSearchQueryChange}": 1
-            }
-          },
-          "placeholder": {
-            "count": 5,
-            "values": {
-              "{strings('perps.tpsl.trigger_price_placeholder')}": 2,
-              "{strings('perps.tpsl.profit_roe_placeholder')}": 1,
-              "{strings('perps.tpsl.loss_roe_placeholder')}": 1,
-              "{strings('perps.search_by_token_symbol')}": 1
-            }
-          },
-          "placeholderTextColor": {
-            "count": 5,
-            "values": {
-              "{colors.text.muted}": 5
+              "\"flex-1 border-0 bg-transparent p-0 font-medium\"": 1
             }
           },
           "ref": {
@@ -403,6 +397,12 @@
               "{takeProfitPercentageRef}": 1,
               "{stopLossPriceRef}": 1,
               "{stopLossPercentageRef}": 1
+            }
+          },
+          "style": {
+            "count": 4,
+            "values": {
+              "{styles.input}": 4
             }
           },
           "showSoftInputOnFocus": {
@@ -450,15 +450,45 @@
           "testID": {
             "count": 3,
             "values": {
+              "{testID}": 1,
               "{PerpsTPSLViewSelectorsIDs.TAKE_PROFIT_PRICE_INPUT}": 1,
-              "{PerpsTPSLViewSelectorsIDs.STOP_LOSS_PRICE_INPUT}": 1,
-              "{testID ? `${testID}-search-bar` : undefined}": 1
+              "{PerpsTPSLViewSelectorsIDs.STOP_LOSS_PRICE_INPUT}": 1
             }
           },
-          "autoFocus": {
+          "keyboardType": {
             "count": 1,
             "values": {
-              "true (shorthand)": 1
+              "\"decimal-pad\"": 1
+            }
+          },
+          "returnKeyType": {
+            "count": 1,
+            "values": {
+              "\"done\"": 1
+            }
+          },
+          "onSubmitEditing": {
+            "count": 1,
+            "values": {
+              "{Keyboard.dismiss}": 1
+            }
+          },
+          "inputAccessoryViewID": {
+            "count": 1,
+            "values": {
+              "{inputAccessoryViewID}": 1
+            }
+          },
+          "textVariant": {
+            "count": 1,
+            "values": {
+              "{TextVariant.BodySm}": 1
+            }
+          },
+          "accessibilityLabel": {
+            "count": 1,
+            "values": {
+              "{label}": 1
             }
           }
         }
@@ -595,29 +625,21 @@
               "{formatDateForDisplay(value, type)}": 1,
               "{displayedAmount}": 1,
               "{primaryAmountDisplayValue}": 1,
+              "{value}": 1,
               "{takeProfitPrice}": 1,
               "{formattedTakeProfitPercentage}": 1,
               "{stopLossPrice}": 1,
-              "{formattedStopLossPercentage}": 1,
-              "{searchQuery}": 1
+              "{formattedStopLossPercentage}": 1
             }
           },
           "placeholder": {
             "count": 8,
             "values": {
-              "{placeholder}": 2,
+              "{placeholder}": 3,
               "{strings('perps.tpsl.trigger_price_placeholder')}": 2,
               "\"0\"": 1,
               "{strings('perps.tpsl.profit_roe_placeholder')}": 1,
-              "{strings('perps.tpsl.loss_roe_placeholder')}": 1,
-              "{strings('perps.search_by_token_symbol')}": 1
-            }
-          },
-          "style": {
-            "count": 7,
-            "values": {
-              "{styles.input}": 6,
-              "{tw.style('flex-1 text-base text-default')}": 1
+              "{strings('perps.tpsl.loss_roe_placeholder')}": 1
             }
           },
           "testID": {
@@ -626,9 +648,9 @@
               "{`snap-ui-renderer__date-time-picker--${type}-input`}": 1,
               "\"input-stepper-input\"": 1,
               "{`${testID}-input`}": 1,
+              "{testID}": 1,
               "{PerpsTPSLViewSelectorsIDs.TAKE_PROFIT_PRICE_INPUT}": 1,
-              "{PerpsTPSLViewSelectorsIDs.STOP_LOSS_PRICE_INPUT}": 1,
-              "{testID ? `${testID}-search-bar` : undefined}": 1
+              "{PerpsTPSLViewSelectorsIDs.STOP_LOSS_PRICE_INPUT}": 1
             }
           },
           "isStateStylesDisabled": {
@@ -641,6 +663,12 @@
             "count": 6,
             "values": {
               "false": 6
+            }
+          },
+          "style": {
+            "count": 6,
+            "values": {
+              "{styles.input}": 6
             }
           },
           "ref": {
@@ -680,24 +708,25 @@
               "{() => handleInputBlur('stopLossPercentage')}": 1
             }
           },
-          "twClassName": {
-            "count": 5,
-            "values": {
-              "\"bg-transparent border-0\"": 4,
-              "\"flex-1 bg-transparent border-0\"": 1
-            }
-          },
           "onChangeText": {
             "count": 5,
             "values": {
               "{(text) => { const digitCount = (text.match(/\\d/g) || []).length; if (digitCou...}": 4,
-              "{onSearchQueryChange}": 1
+              "{onChangeText}": 1
             }
           },
           "placeholderTextColor": {
             "count": 5,
             "values": {
-              "{colors.text.muted}": 5
+              "{colors.text.muted}": 4,
+              "{tw.color(`text-${placeholderColor}`)}": 1
+            }
+          },
+          "twClassName": {
+            "count": 5,
+            "values": {
+              "\"bg-transparent border-0\"": 4,
+              "\"flex-1 border-0 bg-transparent p-0 font-medium\"": 1
             }
           },
           "selectionColor": {
@@ -712,17 +741,17 @@
               "{colors.primary.default}": 4
             }
           },
-          "autoFocus": {
-            "count": 3,
-            "values": {
-              "true (shorthand)": 2,
-              "false": 1
-            }
-          },
           "caretHidden": {
             "count": 2,
             "values": {
               "false": 2
+            }
+          },
+          "autoFocus": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 1,
+              "false": 1
             }
           },
           "selection": {
@@ -761,6 +790,42 @@
             "count": 1,
             "values": {
               "{() => { onInputPress?.(); }}": 1
+            }
+          },
+          "keyboardType": {
+            "count": 1,
+            "values": {
+              "\"decimal-pad\"": 1
+            }
+          },
+          "returnKeyType": {
+            "count": 1,
+            "values": {
+              "\"done\"": 1
+            }
+          },
+          "onSubmitEditing": {
+            "count": 1,
+            "values": {
+              "{Keyboard.dismiss}": 1
+            }
+          },
+          "inputAccessoryViewID": {
+            "count": 1,
+            "values": {
+              "{inputAccessoryViewID}": 1
+            }
+          },
+          "textVariant": {
+            "count": 1,
+            "values": {
+              "{TextVariant.BodySm}": 1
+            }
+          },
+          "accessibilityLabel": {
+            "count": 1,
+            "values": {
+              "{label}": 1
             }
           }
         }

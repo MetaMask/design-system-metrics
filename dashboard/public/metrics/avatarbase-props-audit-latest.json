@@ -1,18 +1,19 @@
 {
   "component": "AvatarBase",
-  "generatedAt": "2026-07-20T09:21:28.609Z",
+  "generatedAt": "2026-07-27T09:22:05.203Z",
   "projects": {
     "extension": {
-      "filesScanned": 3445,
+      "filesScanned": 3470,
       "targetComponent": "AvatarBase",
       "mmds": {
-        "totalInstances": 1,
-        "filesCount": 1,
+        "totalInstances": 2,
+        "filesCount": 2,
         "props": {
           "size": {
-            "count": 1,
+            "count": 2,
             "values": {
-              "{AvatarBaseSize.Md}": 1
+              "{AvatarBaseSize.Md}": 1,
+              "{AvatarBaseSize.Xs}": 1
             }
           },
           "fallbackText": {
@@ -26,47 +27,48 @@
             "values": {
               "\"activity-list-item-avatar-fallback\"": 1
             }
+          },
+          "className": {
+            "count": 1,
+            "values": {
+              "\"border border-background-default bg-overlay-alternative text-overlay-inverse rounded-md\"": 1
+            }
+          },
+          "style": {
+            "count": 1,
+            "values": {
+              "{{ marginLeft: marginLeftValue, fontSize: 8 }}": 1
+            }
           }
         }
       },
       "deprecated": {
-        "totalInstances": 7,
-        "filesCount": 6,
+        "totalInstances": 6,
+        "filesCount": 5,
         "props": {
           "size": {
-            "count": 7,
+            "count": 6,
             "values": {
               "{AvatarBaseSize.Sm}": 2,
               "{IconSize.Lg}": 1,
               "{avatarSize as AvatarBaseSize}": 1,
               "{AvatarBaseSize.Md}": 1,
-              "{AvatarBaseSize.Xs}": 1,
               "{AvatarBaseSize.Lg}": 1
             }
           },
           "color": {
-            "count": 7,
+            "count": 6,
             "values": {
               "{TextColor.textAlternative}": 4,
-              "{TextColor.primaryDefault}": 2,
-              "{TextColor.overlayInverse}": 1
+              "{TextColor.primaryDefault}": 2
             }
           },
           "backgroundColor": {
-            "count": 6,
+            "count": 5,
             "values": {
               "{BackgroundColor.backgroundAlternative}": 2,
               "{BackgroundColor.primaryMuted}": 2,
-              "{BackgroundColor.overlayAlternative}": 1,
               "{BackgroundColor.backgroundMuted}": 1
-            }
-          },
-          "style": {
-            "count": 5,
-            "values": {
-              "{{ borderWidth: '0px' }}": 3,
-              "{{ borderWidth: '0px', backgroundColor: 'var(--color-background-alternative-ho...}": 1,
-              "{{ marginLeft: marginLeftValue, fontSize: 8 }}": 1
             }
           },
           "display": {
@@ -87,6 +89,13 @@
               "{JustifyContent.center}": 4
             }
           },
+          "style": {
+            "count": 4,
+            "values": {
+              "{{ borderWidth: '0px' }}": 3,
+              "{{ borderWidth: '0px', backgroundColor: 'var(--color-background-alternative-ho...}": 1
+            }
+          },
           "marginRight": {
             "count": 2,
             "values": {
@@ -97,18 +106,6 @@
             "count": 1,
             "values": {
               "{props}": 1
-            }
-          },
-          "borderColor": {
-            "count": 1,
-            "values": {
-              "{BorderColor.backgroundDefault}": 1
-            }
-          },
-          "borderRadius": {
-            "count": 1,
-            "values": {
-              "{BorderRadius.MD}": 1
             }
           }
         }
@@ -129,20 +126,10 @@
             }
           },
           "color": {
-            "count": 7,
-            "values": {
-              "{TextColor.textAlternative}": 4,
-              "{TextColor.primaryDefault}": 2,
-              "{TextColor.overlayInverse}": 1
-            }
-          },
-          "backgroundColor": {
             "count": 6,
             "values": {
-              "{BackgroundColor.backgroundAlternative}": 2,
-              "{BackgroundColor.primaryMuted}": 2,
-              "{BackgroundColor.overlayAlternative}": 1,
-              "{BackgroundColor.backgroundMuted}": 1
+              "{TextColor.textAlternative}": 4,
+              "{TextColor.primaryDefault}": 2
             }
           },
           "style": {
@@ -151,6 +138,14 @@
               "{{ borderWidth: '0px' }}": 3,
               "{{ borderWidth: '0px', backgroundColor: 'var(--color-background-alternative-ho...}": 1,
               "{{ marginLeft: marginLeftValue, fontSize: 8 }}": 1
+            }
+          },
+          "backgroundColor": {
+            "count": 5,
+            "values": {
+              "{BackgroundColor.backgroundAlternative}": 2,
+              "{BackgroundColor.primaryMuted}": 2,
+              "{BackgroundColor.backgroundMuted}": 1
             }
           },
           "display": {
@@ -195,26 +190,20 @@
               "{props}": 1
             }
           },
-          "borderColor": {
+          "className": {
             "count": 1,
             "values": {
-              "{BorderColor.backgroundDefault}": 1
-            }
-          },
-          "borderRadius": {
-            "count": 1,
-            "values": {
-              "{BorderRadius.MD}": 1
+              "\"border border-background-default bg-overlay-alternative text-overlay-inverse rounded-md\"": 1
             }
           }
         }
       },
       "deprecatedByLegacyComponent": {
-        "AvatarBase": 7
+        "AvatarBase": 6
       }
     },
     "mobile": {
-      "filesScanned": 7241,
+      "filesScanned": 7343,
       "targetComponent": "AvatarBase",
       "mmds": {
         "totalInstances": 3,

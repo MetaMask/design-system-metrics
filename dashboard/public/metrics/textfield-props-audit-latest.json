@@ -1,21 +1,94 @@
 {
   "component": "TextField",
-  "generatedAt": "2026-07-20T09:36:07.414Z",
+  "generatedAt": "2026-07-27T09:34:26.611Z",
   "projects": {
     "extension": {
-      "filesScanned": 3445,
+      "filesScanned": 3470,
       "targetComponent": "TextField",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 1,
+        "filesCount": 1,
+        "props": {
+          "size": {
+            "count": 1,
+            "values": {
+              "{TextFieldSize.Md}": 1
+            }
+          },
+          "value": {
+            "count": 1,
+            "values": {
+              "{limitPrice}": 1
+            }
+          },
+          "onChange": {
+            "count": 1,
+            "values": {
+              "{handlePriceChange}": 1
+            }
+          },
+          "onFocus": {
+            "count": 1,
+            "values": {
+              "{(event: React.FocusEvent<HTMLInputElement>) => event.target.select()}": 1
+            }
+          },
+          "onBlur": {
+            "count": 1,
+            "values": {
+              "{handlePriceBlur}": 1
+            }
+          },
+          "placeholder": {
+            "count": 1,
+            "values": {
+              "\"0.00\"": 1
+            }
+          },
+          "className": {
+            "count": 1,
+            "values": {
+              "\"w-full rounded-lg border-0 bg-muted\"": 1
+            }
+          },
+          "data-testid": {
+            "count": 1,
+            "values": {
+              "\"limit-price-input\"": 1
+            }
+          },
+          "autoFocus": {
+            "count": 1,
+            "values": {
+              "{autoFocus}": 1
+            }
+          },
+          "inputProps": {
+            "count": 1,
+            "values": {
+              "{{ inputMode: 'decimal' }}": 1
+            }
+          },
+          "startAccessory": {
+            "count": 1,
+            "values": {
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative}> $ </Text>}": 1
+            }
+          },
+          "endAccessory": {
+            "count": 1,
+            "values": {
+              "{<ButtonBase type=\"button\" size={ButtonBaseSize.Sm} onClick={handleMidClick} c...}": 1
+            }
+          }
+        }
       },
       "deprecated": {
-        "totalInstances": 30,
-        "filesCount": 23,
+        "totalInstances": 29,
+        "filesCount": 22,
         "props": {
           "value": {
-            "count": 29,
+            "count": 28,
             "values": {
               "{inputValue}": 3,
               "{password}": 2,
@@ -28,7 +101,6 @@
               "{stopLossPrice}": 1,
               "{isSlPercentFocused ? rawSlPercent : slPercent}": 1,
               "{isUsdInputFocused ? rawInput : displayValue}": 1,
-              "{limitPrice}": 1,
               "{editingTpPrice}": 1,
               "{isTpPercentFocused ? rawTpPercent : (tpPresetPercent ?? editingTpPercent)}": 1,
               "{editingSlPrice}": 1,
@@ -45,7 +117,7 @@
             }
           },
           "onChange": {
-            "count": 29,
+            "count": 28,
             "values": {
               "{(e: React.ChangeEvent<HTMLInputElement>) => { const { value } = e.target; if ...}": 2,
               "{onChange}": 2,
@@ -58,7 +130,6 @@
               "{handleSlPercentChange}": 1,
               "{handleUsdInputChange}": 1,
               "{handleInputChange}": 1,
-              "{handlePriceChange}": 1,
               "{handleTpPercentInputChange}": 1,
               "{handleSlPercentInputChange}": 1,
               "{(e) => handleReferralCodeChange(e.target.value)}": 1,
@@ -77,22 +148,22 @@
             }
           },
           "size": {
-            "count": 22,
+            "count": 21,
             "values": {
-              "{TextFieldSize.Md}": 10,
+              "{TextFieldSize.Md}": 9,
               "{TextFieldSize.Sm}": 6,
               "{TextFieldSize.Lg}": 6
             }
           },
           "inputProps": {
-            "count": 22,
+            "count": 21,
             "values": {
               "{{ inputMode: 'decimal', }}": 4,
               "{{ onKeyDown: handleInputEnterKey }}": 4,
-              "{{ inputMode: 'decimal' }}": 2,
               "{{ inputMode: 'decimal', size: 10, onKeyDown: (event: React.KeyboardEvent<HTML...}": 1,
               "{{ inputMode: 'decimal', style: { textAlign: 'right' }, }}": 1,
               "{{ inputMode: 'numeric', style: { textAlign: 'right', paddingLeft: '8px' }, }}": 1,
+              "{{ inputMode: 'decimal' }}": 1,
               "{{ inputMode: 'numeric', style: { textAlign: 'right' }, onKeyDown: handleInput...}": 1,
               "{{ 'data-testid': 'remove-snap-confirmation-input', }}": 1,
               "{{ ref: (el) => { if (el) { srpRefs.current[word.id] = el; } }, }}": 1,
@@ -105,9 +176,9 @@
             }
           },
           "placeholder": {
-            "count": 21,
+            "count": 20,
             "values": {
-              "\"0.00\"": 7,
+              "\"0.00\"": 6,
               "\"0\"": 6,
               "{isUsdDenomination ? usdPlaceholder : '0'}": 1,
               "{t('rewardsOnboardingReferralCodePlaceholder')}": 1,
@@ -120,37 +191,37 @@
             }
           },
           "borderRadius": {
-            "count": 18,
+            "count": 17,
             "values": {
-              "{BorderRadius.MD}": 14,
+              "{BorderRadius.MD}": 13,
               "{BorderRadius.XL}": 4
             }
           },
           "className": {
-            "count": 17,
+            "count": 16,
             "values": {
-              "\"w-full\"": 14,
+              "\"w-full\"": 13,
               "\"flex-1\"": 1,
               "\"amount-input\"": 1,
               "{isWarning ? '!border-warning-default' : undefined}": 1
             }
           },
           "borderWidth": {
-            "count": 16,
+            "count": 15,
             "values": {
-              "0": 15,
+              "0": 14,
               "1": 1
             }
           },
           "backgroundColor": {
-            "count": 16,
+            "count": 15,
             "values": {
-              "{BackgroundColor.backgroundMuted}": 15,
+              "{BackgroundColor.backgroundMuted}": 14,
               "{BackgroundColor.backgroundSubsection}": 1
             }
           },
           "onBlur": {
-            "count": 16,
+            "count": 15,
             "values": {
               "{handleTpPriceBlur}": 2,
               "{handleTpPercentBlur}": 2,
@@ -160,16 +231,15 @@
               "{handlePercentInputBlur}": 1,
               "{handleUsdInputBlur}": 1,
               "{handleInputBlur}": 1,
-              "{handlePriceBlur}": 1,
               "{() => { setWordInactive(word.id); checkForInvalidWords(); }}": 1,
               "{handleCustomInputBlur}": 1,
               "{() => { // If the user clicks outside the input, show the custom button setSh...}": 1
             }
           },
           "onFocus": {
-            "count": 15,
+            "count": 14,
             "values": {
-              "{(event: React.FocusEvent<HTMLInputElement>) => event.target.select()}": 4,
+              "{(event: React.FocusEvent<HTMLInputElement>) => event.target.select()}": 3,
               "{handleTpPercentFocus}": 2,
               "{handleSlPercentFocus}": 2,
               "{isUsdDenomination ? handleNumericFocusSelectAll : handleTokenFocus}": 1,
@@ -182,13 +252,12 @@
             }
           },
           "endAccessory": {
-            "count": 14,
+            "count": 13,
             "values": {
               "{<Text variant={TextVariant.BodySm} color={TextColor.TextAlternative} > % </Text>}": 3,
               "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > % </Text>}": 2,
               "{<Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItems.Center} g...}": 1,
               "{<Text variant={TextVariant.BodySm} color={TextColor.TextAlternative} > x </Text>}": 1,
-              "{<ButtonBase type=\"button\" size={ButtonBaseSize.Sm} onClick={handleMidClick} c...}": 1,
               "{renderReferralIcon()}": 1,
               "{<Text variant={TextVariant.BodyMd}>%</Text>}": 1,
               "{<Text variant={TextVariant.bodyMd}>%</Text>}": 1,
@@ -198,32 +267,15 @@
             }
           },
           "startAccessory": {
-            "count": 12,
+            "count": 11,
             "values": {
               "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > $ </Text>}": 4,
               "{<Text variant={TextVariant.BodySm} color={TextColor.TextAlternative} > $ </Text>}": 2,
               "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative}> {t('per...}": 1,
-              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative}> $ </Text>}": 1,
               "{<Text color={TextColor.TextAlternative} textAlign={TextAlign.Left} className=...}": 1,
               "{<Icon color={IconColor.IconAlternative} name={IconName.Search} size={IconSize...}": 1,
               "{<Icon name={IconName.Search} size={IconSize.Md} />}": 1,
               "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} classNam...}": 1
-            }
-          },
-          "data-testid": {
-            "count": 11,
-            "values": {
-              "\"perps-edit-margin-amount-input\"": 1,
-              "\"amount-input-field\"": 1,
-              "\"balance-percent-input\"": 1,
-              "\"tp-price-input\"": 1,
-              "\"tp-percent-input\"": 1,
-              "\"sl-price-input\"": 1,
-              "\"sl-percent-input\"": 1,
-              "\"close-amount-value\"": 1,
-              "\"leverage-input\"": 1,
-              "\"limit-price-input\"": 1,
-              "\"destination-account-picker-modal-search-input\"": 1
             }
           },
           "testId": {
@@ -242,12 +294,19 @@
               "{`recovery-phrase-chip-${index}`}": 1
             }
           },
-          "autoFocus": {
-            "count": 8,
+          "data-testid": {
+            "count": 10,
             "values": {
-              "true (shorthand)": 5,
-              "{autoFocus}": 2,
-              "true": 1
+              "\"perps-edit-margin-amount-input\"": 1,
+              "\"amount-input-field\"": 1,
+              "\"balance-percent-input\"": 1,
+              "\"tp-price-input\"": 1,
+              "\"tp-percent-input\"": 1,
+              "\"sl-price-input\"": 1,
+              "\"sl-percent-input\"": 1,
+              "\"close-amount-value\"": 1,
+              "\"leverage-input\"": 1,
+              "\"destination-account-picker-modal-search-input\"": 1
             }
           },
           "error": {
@@ -279,6 +338,14 @@
               "{isSaving}": 5,
               "{optinLoading}": 1,
               "true (shorthand)": 1
+            }
+          },
+          "autoFocus": {
+            "count": 7,
+            "values": {
+              "true (shorthand)": 5,
+              "{autoFocus}": 1,
+              "true": 1
             }
           },
           "inputRef": {
@@ -515,33 +582,20 @@
             }
           },
           "borderRadius": {
-            "count": 18,
+            "count": 17,
             "values": {
-              "{BorderRadius.MD}": 14,
+              "{BorderRadius.MD}": 13,
               "{BorderRadius.XL}": 4
             }
           },
           "className": {
             "count": 17,
             "values": {
-              "\"w-full\"": 14,
+              "\"w-full\"": 13,
+              "\"w-full rounded-lg border-0 bg-muted\"": 1,
               "\"flex-1\"": 1,
               "\"amount-input\"": 1,
               "{isWarning ? '!border-warning-default' : undefined}": 1
-            }
-          },
-          "borderWidth": {
-            "count": 16,
-            "values": {
-              "0": 15,
-              "1": 1
-            }
-          },
-          "backgroundColor": {
-            "count": 16,
-            "values": {
-              "{BackgroundColor.backgroundMuted}": 15,
-              "{BackgroundColor.backgroundSubsection}": 1
             }
           },
           "onBlur": {
@@ -574,6 +628,20 @@
               "{() => { onWordFocus(word.id); }}": 1,
               "{() => setShowCustomInput(true)}": 1,
               "{() => { setShowCustomInput(true); }}": 1
+            }
+          },
+          "borderWidth": {
+            "count": 15,
+            "values": {
+              "0": 14,
+              "1": 1
+            }
+          },
+          "backgroundColor": {
+            "count": 15,
+            "values": {
+              "{BackgroundColor.backgroundMuted}": 14,
+              "{BackgroundColor.backgroundSubsection}": 1
             }
           },
           "endAccessory": {
@@ -801,44 +869,42 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "TextField": 30
+        "TextField": 29
       }
     },
     "mobile": {
-      "filesScanned": 7241,
+      "filesScanned": 7343,
       "targetComponent": "TextField",
       "mmds": {
-        "totalInstances": 15,
-        "filesCount": 10,
+        "totalInstances": 14,
+        "filesCount": 9,
         "props": {
           "onChangeText": {
-            "count": 15,
+            "count": 14,
             "values": {
               "{onPasswordChange}": 5,
               "{handlePasswordChange}": 3,
               "{handleOtpValueChange}": 1,
               "{handleEmailChange}": 1,
               "{handleReferralCodeChange}": 1,
-              "{setManualQrPayload}": 1,
               "{setConfirmPasswordValue}": 1,
               "{(newName: string) => { setAccountName(newName); if (error) { setError(null); } }}": 1,
               "{setConfirmPassword}": 1
             }
           },
           "value": {
-            "count": 15,
+            "count": 14,
             "values": {
               "{password}": 8,
               "{confirmPassword}": 2,
               "{confirmCode}": 1,
               "{email}": 1,
               "{referralCode}": 1,
-              "{manualQrPayload}": 1,
               "{accountName}": 1
             }
           },
           "inputProps": {
-            "count": 15,
+            "count": 14,
             "values": {
               "{{ secureTextEntry: showPasswordIndex.includes(0), testID: ChoosePasswordSelec...}": 2,
               "{{ secureTextEntry: showPasswordIndex.includes(1), testID: ChoosePasswordSelec...}": 2,
@@ -847,7 +913,6 @@
               "{{ autoCapitalize: 'none', autoComplete: 'username', numberOfLines: 1, returnK...}": 1,
               "{{ autoCapitalize: 'none', autoComplete: 'password', numberOfLines: 1, maxLeng...}": 1,
               "{{ autoCapitalize: 'characters', testID: 'referral-input', }}": 1,
-              "{{ autoCapitalize: 'none', autoCorrect: false, onSubmitEditing: triggerManualQ...}": 1,
               "{{ secureTextEntry: true, onSubmitEditing: tryUnlock, testID: ManualBackUpStep...}": 1,
               "{{ testID: EditAccountNameIds.ACCOUNT_NAME_INPUT, spellCheck: false, keyboardA...}": 1,
               "{{ secureTextEntry: true, onSubmitEditing: reauthenticateWithPassword, testID:...}": 1,
@@ -855,11 +920,10 @@
             }
           },
           "placeholder": {
-            "count": 10,
+            "count": 9,
             "values": {
               "{strings('login.password_placeholder')}": 2,
               "{strings('rewards.onboarding.referral_placeholder')}": 1,
-              "\"Paste QR payload\"": 1,
               "{strings('manual_backup_step_1.password')}": 1,
               "{initialName}": 1,
               "{strings('password_reset.password_title')}": 1,
@@ -892,20 +956,19 @@
               "{<ButtonIcon iconName={showPassword ? IconName.Eye : IconName.EyeSlash} onPres...}": 1
             }
           },
-          "isDisabled": {
-            "count": 5,
-            "values": {
-              "{optinLoading}": 1,
-              "{isBusy}": 1,
-              "{password === ''}": 1,
-              "{loading}": 1,
-              "{disabledInput}": 1
-            }
-          },
           "autoFocus": {
             "count": 4,
             "values": {
               "true (shorthand)": 4
+            }
+          },
+          "isDisabled": {
+            "count": 4,
+            "values": {
+              "{optinLoading}": 1,
+              "{password === ''}": 1,
+              "{loading}": 1,
+              "{disabledInput}": 1
             }
           },
           "inputRef": {
@@ -931,17 +994,18 @@
         }
       },
       "deprecated": {
-        "totalInstances": 43,
+        "totalInstances": 44,
         "filesCount": 28,
         "props": {
           "value": {
-            "count": 40,
+            "count": 41,
             "values": {
               "{inputValue}": 3,
               "{email}": 3,
               "{value}": 2,
               "{formatDateForDisplay(value, type)}": 2,
               "{confirmCode}": 2,
+              "{phoneNumber}": 2,
               "{password}": 2,
               "{blockExplorerUrlForm}": 2,
               "{displayedAmount}": 1,
@@ -953,7 +1017,6 @@
               "{addressLine2}": 1,
               "{city}": 1,
               "{zipCode}": 1,
-              "{phoneNumber}": 1,
               "{label}": 1,
               "{activationKey}": 1,
               "{telegram}": 1,
@@ -971,7 +1034,7 @@
             }
           },
           "testID": {
-            "count": 37,
+            "count": 38,
             "values": {
               "{`${testID}-input`}": 2,
               "{NetworkDetailsViewSelectorsIDs.BLOCK_EXPLORER_INPUT}": 2,
@@ -991,6 +1054,7 @@
               "\"zip-code-input\"": 1,
               "\"set-phone-number-phone-number-input\"": 1,
               "\"signup-email-input\"": 1,
+              "\"signup-immersve-phone-number-input\"": 1,
               "\"signup-password-input\"": 1,
               "{EnterEmailSelectorsIDs.EMAIL_INPUT}": 1,
               "{REWARDS_VIEW_SELECTORS.CLAIM_MODAL_EMAIL_INPUT}": 1,
@@ -1011,9 +1075,10 @@
             }
           },
           "onChangeText": {
-            "count": 35,
+            "count": 36,
             "values": {
               "{handleChange}": 2,
+              "{handlePhoneNumberChange}": 2,
               "{handleEmailChange}": 2,
               "{handleTextChange}": 2,
               "{setInputValue}": 2,
@@ -1028,7 +1093,6 @@
               "{handleAddressLine2Change}": 1,
               "{handleCityChange}": 1,
               "{handleZipCodeChange}": 1,
-              "{handlePhoneNumberChange}": 1,
               "{handlePasswordChange}": 1,
               "{setLabel}": 1,
               "{setActivationKey}": 1,
@@ -1046,10 +1110,10 @@
             }
           },
           "autoCapitalize": {
-            "count": 32,
+            "count": 33,
             "values": {
               "\"none\"": 17,
-              "none": 14,
+              "none": 15,
               "\"characters\"": 1
             }
           },
@@ -1077,25 +1141,50 @@
             }
           },
           "keyboardType": {
-            "count": 16,
+            "count": 17,
             "values": {
               "\"default\"": 6,
               "\"number-pad\"": 3,
               "\"email-address\"": 3,
+              "\"phone-pad\"": 2,
               "{keyboardType}": 1,
               "\"decimal-pad\"": 1,
-              "\"phone-pad\"": 1,
               "\"numbers-and-punctuation\"": 1
             }
           },
           "autoComplete": {
-            "count": 16,
+            "count": 17,
             "values": {
-              "\"one-time-code\"": 11,
+              "\"one-time-code\"": 12,
               "\"new-password\"": 2,
               "{autoComplete}": 1,
               "\"email\"": 1,
               "\"off\"": 1
+            }
+          },
+          "numberOfLines": {
+            "count": 15,
+            "values": {
+              "1": 15
+            }
+          },
+          "accessibilityLabel": {
+            "count": 15,
+            "values": {
+              "{strings( 'card.card_onboarding.set_phone_number.phone_number_label', )}": 2,
+              "{strings( 'card.card_onboarding.confirm_email.code_label', )}": 1,
+              "{strings( 'card.card_onboarding.confirm_phone_number.confirm_code_label', )}": 1,
+              "{strings( 'card.card_onboarding.personal_details.first_name_label', )}": 1,
+              "{strings( 'card.card_onboarding.personal_details.last_name_label', )}": 1,
+              "{strings( 'card.card_onboarding.personal_details.ssn_label', )}": 1,
+              "{strings( 'card.card_onboarding.physical_address.address_line_1_label', )}": 1,
+              "{strings( 'card.card_onboarding.physical_address.address_line_2_label', )}": 1,
+              "{strings( 'card.card_onboarding.physical_address.city_label', )}": 1,
+              "{strings( 'card.card_onboarding.physical_address.zip_code_label', )}": 1,
+              "{strings( 'card.card_onboarding.sign_up.email_label', )}": 1,
+              "{strings( 'card.card_onboarding.sign_up.password_label', )}": 1,
+              "{ChoosePasswordSelectorsIDs.NEW_PASSWORD_INPUT_ID}": 1,
+              "{ChoosePasswordSelectorsIDs.CONFIRM_PASSWORD_INPUT_ID}": 1
             }
           },
           "isError": {
@@ -1104,7 +1193,7 @@
               "{verifyIsError}": 2,
               "{!!nameError}": 2,
               "{isSSNTouched && isSSNError}": 1,
-              "{debouncedEmail.length > 0 && isEmailError}": 1,
+              "{!isImmersveCountry && debouncedEmail.length > 0 && isEmailError}": 1,
               "{debouncedPassword.length > 0 && isPasswordError}": 1,
               "{emailValidationError}": 1,
               "{showClientValidationError || Boolean(applyReferralCodeError)}": 1,
@@ -1130,29 +1219,13 @@
               "{isAnyModalVisible || !addMode}": 1
             }
           },
-          "numberOfLines": {
+          "maxLength": {
             "count": 14,
             "values": {
-              "1": 14
-            }
-          },
-          "accessibilityLabel": {
-            "count": 14,
-            "values": {
-              "{strings( 'card.card_onboarding.confirm_email.code_label', )}": 1,
-              "{strings( 'card.card_onboarding.confirm_phone_number.confirm_code_label', )}": 1,
-              "{strings( 'card.card_onboarding.personal_details.first_name_label', )}": 1,
-              "{strings( 'card.card_onboarding.personal_details.last_name_label', )}": 1,
-              "{strings( 'card.card_onboarding.personal_details.ssn_label', )}": 1,
-              "{strings( 'card.card_onboarding.physical_address.address_line_1_label', )}": 1,
-              "{strings( 'card.card_onboarding.physical_address.address_line_2_label', )}": 1,
-              "{strings( 'card.card_onboarding.physical_address.city_label', )}": 1,
-              "{strings( 'card.card_onboarding.physical_address.zip_code_label', )}": 1,
-              "{strings( 'card.card_onboarding.set_phone_number.phone_number_label', )}": 1,
-              "{strings( 'card.card_onboarding.sign_up.email_label', )}": 1,
-              "{strings( 'card.card_onboarding.sign_up.password_label', )}": 1,
-              "{ChoosePasswordSelectorsIDs.NEW_PASSWORD_INPUT_ID}": 1,
-              "{ChoosePasswordSelectorsIDs.CONFIRM_PASSWORD_INPUT_ID}": 1
+              "9": 1,
+              "12": 1,
+              "255": 10,
+              "{CODE_LENGTH}": 2
             }
           },
           "ref": {
@@ -1168,15 +1241,6 @@
               "{inputNameRpcURL}": 1
             }
           },
-          "maxLength": {
-            "count": 13,
-            "values": {
-              "9": 1,
-              "12": 1,
-              "255": 9,
-              "{CODE_LENGTH}": 2
-            }
-          },
           "autoCorrect": {
             "count": 12,
             "values": {
@@ -1184,10 +1248,11 @@
             }
           },
           "onSubmitEditing": {
-            "count": 11,
+            "count": 12,
             "values": {
               "{handleSubmit}": 3,
               "{handleContinue}": 1,
+              "{handleImmersveContinue}": 1,
               "{jumpToConfirmPassword}": 1,
               "{Keyboard.dismiss}": 1,
               "{handleFormSubmit}": 1,
@@ -1237,9 +1302,9 @@
             }
           },
           "returnKeyType": {
-            "count": 7,
+            "count": 8,
             "values": {
-              "\"done\"": 3,
+              "\"done\"": 4,
               "done": 3,
               "\"next\"": 1
             }
@@ -1403,7 +1468,7 @@
       },
       "overall": {
         "totalInstances": 58,
-        "filesCount": 38,
+        "filesCount": 37,
         "props": {
           "value": {
             "count": 55,
@@ -1415,6 +1480,7 @@
               "{confirmPassword}": 3,
               "{value}": 2,
               "{formatDateForDisplay(value, type)}": 2,
+              "{phoneNumber}": 2,
               "{accountName}": 2,
               "{blockExplorerUrlForm}": 2,
               "{displayedAmount}": 1,
@@ -1426,13 +1492,11 @@
               "{addressLine2}": 1,
               "{city}": 1,
               "{zipCode}": 1,
-              "{phoneNumber}": 1,
               "{label}": 1,
               "{activationKey}": 1,
               "{telegram}": 1,
               "{referralCode}": 1,
               "{hasReferredByCode ? (referredByCode ?? '') : inputCode}": 1,
-              "{manualQrPayload}": 1,
               "{nickname}": 1,
               "{chainId}": 1,
               "{ticker}": 1,
@@ -1450,6 +1514,7 @@
               "{handlePasswordChange}": 4,
               "{handleEmailChange}": 3,
               "{handleChange}": 2,
+              "{handlePhoneNumberChange}": 2,
               "{handleTextChange}": 2,
               "{setInputValue}": 2,
               "{onBlockExplorerUrlChange}": 2,
@@ -1464,13 +1529,11 @@
               "{handleAddressLine2Change}": 1,
               "{handleCityChange}": 1,
               "{handleZipCodeChange}": 1,
-              "{handlePhoneNumberChange}": 1,
               "{setLabel}": 1,
               "{setActivationKey}": 1,
               "{setTelegram}": 1,
               "{handleReferralCodeChange}": 1,
               "{hasReferredByCode ? undefined : handleInputChange}": 1,
-              "{setManualQrPayload}": 1,
               "{setConfirmPasswordValue}": 1,
               "{onChangeName}": 1,
               "{onPasswordConfirmChange}": 1,
@@ -1485,7 +1548,7 @@
             }
           },
           "testID": {
-            "count": 37,
+            "count": 38,
             "values": {
               "{`${testID}-input`}": 2,
               "{NetworkDetailsViewSelectorsIDs.BLOCK_EXPLORER_INPUT}": 2,
@@ -1505,6 +1568,7 @@
               "\"zip-code-input\"": 1,
               "\"set-phone-number-phone-number-input\"": 1,
               "\"signup-email-input\"": 1,
+              "\"signup-immersve-phone-number-input\"": 1,
               "\"signup-password-input\"": 1,
               "{EnterEmailSelectorsIDs.EMAIL_INPUT}": 1,
               "{REWARDS_VIEW_SELECTORS.CLAIM_MODAL_EMAIL_INPUT}": 1,
@@ -1525,15 +1589,15 @@
             }
           },
           "autoCapitalize": {
-            "count": 32,
+            "count": 33,
             "values": {
               "\"none\"": 17,
-              "none": 14,
+              "none": 15,
               "\"characters\"": 1
             }
           },
           "placeholder": {
-            "count": 32,
+            "count": 31,
             "values": {
               "{placeholder}": 3,
               "\"0\"": 2,
@@ -1547,7 +1611,6 @@
               "{strings('rewards.optout.modal.confirm_phrase')}": 1,
               "{strings('rewards.referred_by_code.input_placeholder')}": 1,
               "{inputPlaceholder}": 1,
-              "\"Paste QR payload\"": 1,
               "{formatAddress(selectedAccount?.address, 'mid')}": 1,
               "{strings('manual_backup_step_1.password')}": 1,
               "{initialName}": 1,
@@ -1572,7 +1635,7 @@
               "{!!nameError}": 2,
               "{isPasswordTooShort}": 2,
               "{isSSNTouched && isSSNError}": 1,
-              "{debouncedEmail.length > 0 && isEmailError}": 1,
+              "{!isImmersveCountry && debouncedEmail.length > 0 && isEmailError}": 1,
               "{debouncedPassword.length > 0 && isPasswordError}": 1,
               "{emailValidationError}": 1,
               "{referralCodeReadyForValidation && !referralCodeIsValid && !isValidatingReferr...}": 1,
@@ -1588,7 +1651,7 @@
             }
           },
           "isDisabled": {
-            "count": 19,
+            "count": 18,
             "values": {
               "{disabled}": 3,
               "{isClaimingReward}": 2,
@@ -1599,49 +1662,56 @@
               "{isLoading}": 1,
               "{optinLoading}": 1,
               "{hasReferredByCode}": 1,
-              "{isBusy}": 1,
               "{loading}": 1,
               "{isAnyModalVisible || !addMode}": 1,
               "{disabledInput}": 1
             }
           },
           "keyboardType": {
-            "count": 16,
+            "count": 17,
             "values": {
               "\"default\"": 6,
               "\"number-pad\"": 3,
               "\"email-address\"": 3,
+              "\"phone-pad\"": 2,
               "{keyboardType}": 1,
               "\"decimal-pad\"": 1,
-              "\"phone-pad\"": 1,
               "\"numbers-and-punctuation\"": 1
             }
           },
           "autoComplete": {
-            "count": 16,
+            "count": 17,
             "values": {
-              "\"one-time-code\"": 11,
+              "\"one-time-code\"": 12,
               "\"new-password\"": 2,
               "{autoComplete}": 1,
               "\"email\"": 1,
               "\"off\"": 1
             }
           },
-          "inputProps": {
+          "numberOfLines": {
             "count": 15,
             "values": {
-              "{{ secureTextEntry: showPasswordIndex.includes(0), testID: ChoosePasswordSelec...}": 2,
-              "{{ secureTextEntry: showPasswordIndex.includes(1), testID: ChoosePasswordSelec...}": 2,
-              "{{ testID: LoginViewSelectors.PASSWORD_INPUT, accessibilityLabel: LoginViewSel...}": 2,
-              "{{ autoCapitalize: 'none', numberOfLines: 1, keyboardType: 'number-pad', textC...}": 1,
-              "{{ autoCapitalize: 'none', autoComplete: 'username', numberOfLines: 1, returnK...}": 1,
-              "{{ autoCapitalize: 'none', autoComplete: 'password', numberOfLines: 1, maxLeng...}": 1,
-              "{{ autoCapitalize: 'characters', testID: 'referral-input', }}": 1,
-              "{{ autoCapitalize: 'none', autoCorrect: false, onSubmitEditing: triggerManualQ...}": 1,
-              "{{ secureTextEntry: true, onSubmitEditing: tryUnlock, testID: ManualBackUpStep...}": 1,
-              "{{ testID: EditAccountNameIds.ACCOUNT_NAME_INPUT, spellCheck: false, keyboardA...}": 1,
-              "{{ secureTextEntry: true, onSubmitEditing: reauthenticateWithPassword, testID:...}": 1,
-              "{{ secureTextEntry: !showPassword, autoCapitalize: 'none', onSubmitEditing: on...}": 1
+              "1": 15
+            }
+          },
+          "accessibilityLabel": {
+            "count": 15,
+            "values": {
+              "{strings( 'card.card_onboarding.set_phone_number.phone_number_label', )}": 2,
+              "{strings( 'card.card_onboarding.confirm_email.code_label', )}": 1,
+              "{strings( 'card.card_onboarding.confirm_phone_number.confirm_code_label', )}": 1,
+              "{strings( 'card.card_onboarding.personal_details.first_name_label', )}": 1,
+              "{strings( 'card.card_onboarding.personal_details.last_name_label', )}": 1,
+              "{strings( 'card.card_onboarding.personal_details.ssn_label', )}": 1,
+              "{strings( 'card.card_onboarding.physical_address.address_line_1_label', )}": 1,
+              "{strings( 'card.card_onboarding.physical_address.address_line_2_label', )}": 1,
+              "{strings( 'card.card_onboarding.physical_address.city_label', )}": 1,
+              "{strings( 'card.card_onboarding.physical_address.zip_code_label', )}": 1,
+              "{strings( 'card.card_onboarding.sign_up.email_label', )}": 1,
+              "{strings( 'card.card_onboarding.sign_up.password_label', )}": 1,
+              "{ChoosePasswordSelectorsIDs.NEW_PASSWORD_INPUT_ID}": 1,
+              "{ChoosePasswordSelectorsIDs.CONFIRM_PASSWORD_INPUT_ID}": 1
             }
           },
           "endAccessory": {
@@ -1662,29 +1732,29 @@
               "{renderEndAccessory}": 1
             }
           },
-          "numberOfLines": {
+          "inputProps": {
             "count": 14,
             "values": {
-              "1": 14
+              "{{ secureTextEntry: showPasswordIndex.includes(0), testID: ChoosePasswordSelec...}": 2,
+              "{{ secureTextEntry: showPasswordIndex.includes(1), testID: ChoosePasswordSelec...}": 2,
+              "{{ testID: LoginViewSelectors.PASSWORD_INPUT, accessibilityLabel: LoginViewSel...}": 2,
+              "{{ autoCapitalize: 'none', numberOfLines: 1, keyboardType: 'number-pad', textC...}": 1,
+              "{{ autoCapitalize: 'none', autoComplete: 'username', numberOfLines: 1, returnK...}": 1,
+              "{{ autoCapitalize: 'none', autoComplete: 'password', numberOfLines: 1, maxLeng...}": 1,
+              "{{ autoCapitalize: 'characters', testID: 'referral-input', }}": 1,
+              "{{ secureTextEntry: true, onSubmitEditing: tryUnlock, testID: ManualBackUpStep...}": 1,
+              "{{ testID: EditAccountNameIds.ACCOUNT_NAME_INPUT, spellCheck: false, keyboardA...}": 1,
+              "{{ secureTextEntry: true, onSubmitEditing: reauthenticateWithPassword, testID:...}": 1,
+              "{{ secureTextEntry: !showPassword, autoCapitalize: 'none', onSubmitEditing: on...}": 1
             }
           },
-          "accessibilityLabel": {
+          "maxLength": {
             "count": 14,
             "values": {
-              "{strings( 'card.card_onboarding.confirm_email.code_label', )}": 1,
-              "{strings( 'card.card_onboarding.confirm_phone_number.confirm_code_label', )}": 1,
-              "{strings( 'card.card_onboarding.personal_details.first_name_label', )}": 1,
-              "{strings( 'card.card_onboarding.personal_details.last_name_label', )}": 1,
-              "{strings( 'card.card_onboarding.personal_details.ssn_label', )}": 1,
-              "{strings( 'card.card_onboarding.physical_address.address_line_1_label', )}": 1,
-              "{strings( 'card.card_onboarding.physical_address.address_line_2_label', )}": 1,
-              "{strings( 'card.card_onboarding.physical_address.city_label', )}": 1,
-              "{strings( 'card.card_onboarding.physical_address.zip_code_label', )}": 1,
-              "{strings( 'card.card_onboarding.set_phone_number.phone_number_label', )}": 1,
-              "{strings( 'card.card_onboarding.sign_up.email_label', )}": 1,
-              "{strings( 'card.card_onboarding.sign_up.password_label', )}": 1,
-              "{ChoosePasswordSelectorsIDs.NEW_PASSWORD_INPUT_ID}": 1,
-              "{ChoosePasswordSelectorsIDs.CONFIRM_PASSWORD_INPUT_ID}": 1
+              "9": 1,
+              "12": 1,
+              "255": 10,
+              "{CODE_LENGTH}": 2
             }
           },
           "ref": {
@@ -1707,19 +1777,25 @@
               "false": 2
             }
           },
-          "maxLength": {
-            "count": 13,
-            "values": {
-              "9": 1,
-              "12": 1,
-              "255": 9,
-              "{CODE_LENGTH}": 2
-            }
-          },
           "autoCorrect": {
             "count": 12,
             "values": {
               "false": 12
+            }
+          },
+          "onSubmitEditing": {
+            "count": 12,
+            "values": {
+              "{handleSubmit}": 3,
+              "{handleContinue}": 1,
+              "{handleImmersveContinue}": 1,
+              "{jumpToConfirmPassword}": 1,
+              "{Keyboard.dismiss}": 1,
+              "{handleFormSubmit}": 1,
+              "{jumpToRpcURL}": 1,
+              "{jumpToSymbol}": 1,
+              "{jumpBlockExplorerURL}": 1,
+              "{jumpToChainId}": 1
             }
           },
           "onFocus": {
@@ -1746,20 +1822,6 @@
               "{handleSymbolBlur}": 1
             }
           },
-          "onSubmitEditing": {
-            "count": 11,
-            "values": {
-              "{handleSubmit}": 3,
-              "{handleContinue}": 1,
-              "{jumpToConfirmPassword}": 1,
-              "{Keyboard.dismiss}": 1,
-              "{handleFormSubmit}": 1,
-              "{jumpToRpcURL}": 1,
-              "{jumpToSymbol}": 1,
-              "{jumpBlockExplorerURL}": 1,
-              "{jumpToChainId}": 1
-            }
-          },
           "keyboardAppearance": {
             "count": 10,
             "values": {
@@ -1769,9 +1831,9 @@
             }
           },
           "returnKeyType": {
-            "count": 7,
+            "count": 8,
             "values": {
-              "\"done\"": 3,
+              "\"done\"": 4,
               "done": 3,
               "\"next\"": 1
             }
@@ -1931,7 +1993,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "TextField": 43
+        "TextField": 44
       }
     }
   }

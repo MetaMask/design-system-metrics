@@ -1,16 +1,16 @@
 {
   "component": "Skeleton",
-  "generatedAt": "2026-07-20T09:34:26.226Z",
+  "generatedAt": "2026-07-27T09:33:00.402Z",
   "projects": {
     "extension": {
-      "filesScanned": 3445,
+      "filesScanned": 3470,
       "targetComponent": "Skeleton",
       "mmds": {
-        "totalInstances": 121,
-        "filesCount": 42,
+        "totalInstances": 124,
+        "filesCount": 44,
         "props": {
           "className": {
-            "count": 70,
+            "count": 73,
             "values": {
               "\"h-4 w-24\"": 5,
               "\"h-8 w-8 shrink-0 rounded-full\"": 5,
@@ -19,13 +19,16 @@
               "\"h-4 w-16\"": 4,
               "\"h-3 w-12\"": 4,
               "\"h-4 w-20\"": 4,
-              "\"mb-1\"": 3,
               "\"h-4 w-28\"": 3,
+              "\"mb-1\"": 2,
               "\"h-4 w-12\"": 2,
               "\"h-3 w-16\"": 2,
               "\"h-10 w-10 shrink-0 rounded-full\"": 2,
               "\"h-[250px] w-full rounded-lg\"": 2,
               "\"h-5 w-32\"": 2,
+              "\"rounded\"": 2,
+              "\"h-3.5 w-8\"": 1,
+              "\"h-3.5\"": 1,
               "\"h-[72px] w-full rounded-none\"": 1,
               "\"h-5 w-36 rounded\"": 1,
               "\"h-4 w-14 rounded\"": 1,
@@ -53,13 +56,13 @@
             }
           },
           "width": {
-            "count": 49,
+            "count": 51,
             "values": {
               "40": 4,
               "48": 2,
-              "60": 1,
+              "60": 2,
               "72": 1,
-              "80": 4,
+              "80": 5,
               "90": 1,
               "100": 2,
               "128": 2,
@@ -81,9 +84,9 @@
             }
           },
           "height": {
-            "count": 47,
+            "count": 49,
             "values": {
-              "16": 8,
+              "16": 10,
               "18": 2,
               "20": 9,
               "22": 2,
@@ -120,10 +123,10 @@
             "count": 10,
             "values": {
               "true (shorthand)": 2,
-              "{!anyEnabledNetworksAreAvailable && (isZeroAmount(total) || currency === undef...}": 1,
+              "{isEvm && !anyEnabledNetworksAreAvailable && (isZeroAmount(total) || currency ...}": 1,
               "{isLoading}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(token.balance)}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(secondaryDisplayText) && seco...}": 1,
+              "{token.isFiatLoading || (!anyEnabledNetworksAreAvailable && isZeroAmount(secon...}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(formattedAmountChangeCrossCha...}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(singleDayAmountChange)}": 1,
@@ -131,9 +134,11 @@
             }
           },
           "data-testid": {
-            "count": 8,
+            "count": 10,
             "values": {
               "\"account-group-balance-skeleton\"": 1,
+              "\"multichain-token-list-item-percentage-skeleton\"": 1,
+              "\"multichain-token-list-item-secondary-value-skeleton\"": 1,
               "\"perps-recent-activity-skeleton\"": 1,
               "{`perps-token-logo-${sanitizedSymbol}`}": 1,
               "{`${amountFieldProps.testId}-loading-skeleton`}": 1,
@@ -221,11 +226,11 @@
         }
       },
       "overall": {
-        "totalInstances": 144,
-        "filesCount": 55,
+        "totalInstances": 147,
+        "filesCount": 57,
         "props": {
           "className": {
-            "count": 70,
+            "count": 73,
             "values": {
               "\"h-4 w-24\"": 5,
               "\"h-8 w-8 shrink-0 rounded-full\"": 5,
@@ -234,13 +239,16 @@
               "\"h-4 w-16\"": 4,
               "\"h-3 w-12\"": 4,
               "\"h-4 w-20\"": 4,
-              "\"mb-1\"": 3,
               "\"h-4 w-28\"": 3,
+              "\"mb-1\"": 2,
               "\"h-4 w-12\"": 2,
               "\"h-3 w-16\"": 2,
               "\"h-10 w-10 shrink-0 rounded-full\"": 2,
               "\"h-[250px] w-full rounded-lg\"": 2,
               "\"h-5 w-32\"": 2,
+              "\"rounded\"": 2,
+              "\"h-3.5 w-8\"": 1,
+              "\"h-3.5\"": 1,
               "\"h-[72px] w-full rounded-none\"": 1,
               "\"h-5 w-36 rounded\"": 1,
               "\"h-4 w-14 rounded\"": 1,
@@ -268,15 +276,15 @@
             }
           },
           "width": {
-            "count": 69,
+            "count": 71,
             "values": {
               "32": 1,
               "36": 1,
               "40": 4,
               "48": 2,
-              "60": 2,
+              "60": 3,
               "72": 1,
-              "80": 7,
+              "80": 8,
               "90": 1,
               "100": 2,
               "120": 1,
@@ -300,9 +308,9 @@
             }
           },
           "height": {
-            "count": 61,
+            "count": 63,
             "values": {
-              "16": 10,
+              "16": 12,
               "18": 2,
               "20": 10,
               "22": 2,
@@ -341,14 +349,29 @@
             "count": 10,
             "values": {
               "true (shorthand)": 2,
-              "{!anyEnabledNetworksAreAvailable && (isZeroAmount(total) || currency === undef...}": 1,
+              "{isEvm && !anyEnabledNetworksAreAvailable && (isZeroAmount(total) || currency ...}": 1,
               "{isLoading}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(token.balance)}": 1,
-              "{!anyEnabledNetworksAreAvailable && isZeroAmount(secondaryDisplayText) && seco...}": 1,
+              "{token.isFiatLoading || (!anyEnabledNetworksAreAvailable && isZeroAmount(secon...}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(formattedAmountChangeCrossCha...}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(singleDayAmountChange)}": 1,
               "{!anyEnabledNetworksAreAvailable && isZeroAmount(balanceToDisplay)}": 1
+            }
+          },
+          "data-testid": {
+            "count": 10,
+            "values": {
+              "\"account-group-balance-skeleton\"": 1,
+              "\"multichain-token-list-item-percentage-skeleton\"": 1,
+              "\"multichain-token-list-item-secondary-value-skeleton\"": 1,
+              "\"perps-recent-activity-skeleton\"": 1,
+              "{`perps-token-logo-${sanitizedSymbol}`}": 1,
+              "{`${amountFieldProps.testId}-loading-skeleton`}": 1,
+              "\"rewards-loading-skeleton\"": 1,
+              "\"confirmation__info_skeleton\"": 1,
+              "\"confirm-title-skeleton\"": 1,
+              "\"simulation-details-skeleton\"": 1
             }
           },
           "isLoading": {
@@ -361,19 +384,6 @@
               "{showSkeleton}": 1,
               "{loading}": 1,
               "{isBalanceLoading}": 1
-            }
-          },
-          "data-testid": {
-            "count": 8,
-            "values": {
-              "\"account-group-balance-skeleton\"": 1,
-              "\"perps-recent-activity-skeleton\"": 1,
-              "{`perps-token-logo-${sanitizedSymbol}`}": 1,
-              "{`${amountFieldProps.testId}-loading-skeleton`}": 1,
-              "\"rewards-loading-skeleton\"": 1,
-              "\"confirmation__info_skeleton\"": 1,
-              "\"confirm-title-skeleton\"": 1,
-              "\"simulation-details-skeleton\"": 1
             }
           },
           "key": {
@@ -409,14 +419,14 @@
       }
     },
     "mobile": {
-      "filesScanned": 7241,
+      "filesScanned": 7343,
       "targetComponent": "Skeleton",
       "mmds": {
-        "totalInstances": 139,
-        "filesCount": 31,
+        "totalInstances": 154,
+        "filesCount": 33,
         "props": {
           "style": {
-            "count": 93,
+            "count": 99,
             "values": {
               "{tw.style('h-4 w-24 rounded-lg')}": 6,
               "{tw.style('h-48 rounded-xl')}": 4,
@@ -425,14 +435,15 @@
               "{tw.style('h-6 w-16 rounded-lg')}": 4,
               "{tw.style('rounded-md')}": 3,
               "{tw.style('h-8 w-36 rounded-lg')}": 3,
+              "{tw.style('h-4 w-16 rounded-lg')}": 3,
+              "{tw.style('h-4 w-20 rounded-lg')}": 3,
               "{tw.style('h-6 w-24 rounded bg-muted')}": 2,
               "{tw.style('h-50 rounded-xl bg-muted')}": 2,
               "{tw.style('h-8 w-32 rounded-lg')}": 2,
               "{tw.style('h-4 w-44 rounded-lg')}": 2,
               "{tw.style('h-4 w-28 rounded-lg')}": 2,
               "{tw.style('h-4 w-36 rounded-lg')}": 2,
-              "{tw.style('h-4 w-16 rounded-lg')}": 2,
-              "{tw.style('h-4 w-20 rounded-lg')}": 2,
+              "{tw.style('h-3 w-24 rounded-lg')}": 2,
               "{tw.style('h-5 w-20 rounded')}": 2,
               "{tw.style('h-9 w-28 rounded')}": 2,
               "{styles.skeletonMd}": 2,
@@ -453,6 +464,8 @@
               "{tw.style('h-5 w-40 rounded-lg')}": 1,
               "{tw.style('h-12 w-full rounded-lg')}": 1,
               "{tw.style('h-16 rounded-xl')}": 1,
+              "{tw.style('h-10 w-10 rounded-full')}": 1,
+              "{tw.style('h-3 w-12 rounded-lg')}": 1,
               "{tw.style('h-8 w-8 rounded-lg')}": 1,
               "{tw.style('h-6 w-24 rounded-lg')}": 1,
               "{tw.style('h-4 w-32 rounded-lg')}": 1,
@@ -480,9 +493,10 @@
             }
           },
           "height": {
-            "count": 49,
+            "count": 58,
             "values": {
-              "12": 4,
+              "4": 1,
+              "12": 12,
               "14": 4,
               "16": 10,
               "18": 4,
@@ -497,35 +511,39 @@
             }
           },
           "width": {
-            "count": 48,
+            "count": 57,
             "values": {
               "32": 4,
               "40": 2,
               "50": 1,
+              "52": 2,
               "56": 1,
               "60": 9,
               "80": 8,
               "100": 3,
               "120": 5,
               "160": 4,
-              "\"100%\"": 2,
+              "\"42%\"": 3,
+              "\"32%\"": 3,
+              "\"100%\"": 3,
+              "\"28%\"": 1,
+              "\"48%\"": 1,
               "{iconSize}": 1,
               "\"70%\"": 1,
               "\"50%\"": 1,
               "\"90%\"": 1,
               "\"80%\"": 1,
               "\"38%\"": 1,
-              "\"30%\"": 1,
-              "\"42%\"": 1,
-              "\"32%\"": 1
+              "\"30%\"": 1
             }
           },
           "twClassName": {
-            "count": 16,
+            "count": 18,
             "values": {
-              "\"rounded-full\"": 6,
+              "\"rounded-full\"": 7,
               "\"rounded-lg\"": 4,
               "\"rounded\"": 4,
+              "\"shrink-0\"": 1,
               "\"rounded-full mr-3\"": 1,
               "\"rounded-xl\"": 1
             }
@@ -561,11 +579,11 @@
         "props": {}
       },
       "overall": {
-        "totalInstances": 139,
-        "filesCount": 31,
+        "totalInstances": 154,
+        "filesCount": 33,
         "props": {
           "style": {
-            "count": 93,
+            "count": 99,
             "values": {
               "{tw.style('h-4 w-24 rounded-lg')}": 6,
               "{tw.style('h-48 rounded-xl')}": 4,
@@ -574,14 +592,15 @@
               "{tw.style('h-6 w-16 rounded-lg')}": 4,
               "{tw.style('rounded-md')}": 3,
               "{tw.style('h-8 w-36 rounded-lg')}": 3,
+              "{tw.style('h-4 w-16 rounded-lg')}": 3,
+              "{tw.style('h-4 w-20 rounded-lg')}": 3,
               "{tw.style('h-6 w-24 rounded bg-muted')}": 2,
               "{tw.style('h-50 rounded-xl bg-muted')}": 2,
               "{tw.style('h-8 w-32 rounded-lg')}": 2,
               "{tw.style('h-4 w-44 rounded-lg')}": 2,
               "{tw.style('h-4 w-28 rounded-lg')}": 2,
               "{tw.style('h-4 w-36 rounded-lg')}": 2,
-              "{tw.style('h-4 w-16 rounded-lg')}": 2,
-              "{tw.style('h-4 w-20 rounded-lg')}": 2,
+              "{tw.style('h-3 w-24 rounded-lg')}": 2,
               "{tw.style('h-5 w-20 rounded')}": 2,
               "{tw.style('h-9 w-28 rounded')}": 2,
               "{styles.skeletonMd}": 2,
@@ -602,6 +621,8 @@
               "{tw.style('h-5 w-40 rounded-lg')}": 1,
               "{tw.style('h-12 w-full rounded-lg')}": 1,
               "{tw.style('h-16 rounded-xl')}": 1,
+              "{tw.style('h-10 w-10 rounded-full')}": 1,
+              "{tw.style('h-3 w-12 rounded-lg')}": 1,
               "{tw.style('h-8 w-8 rounded-lg')}": 1,
               "{tw.style('h-6 w-24 rounded-lg')}": 1,
               "{tw.style('h-4 w-32 rounded-lg')}": 1,
@@ -629,9 +650,10 @@
             }
           },
           "height": {
-            "count": 49,
+            "count": 58,
             "values": {
-              "12": 4,
+              "4": 1,
+              "12": 12,
               "14": 4,
               "16": 10,
               "18": 4,
@@ -646,35 +668,39 @@
             }
           },
           "width": {
-            "count": 48,
+            "count": 57,
             "values": {
               "32": 4,
               "40": 2,
               "50": 1,
+              "52": 2,
               "56": 1,
               "60": 9,
               "80": 8,
               "100": 3,
               "120": 5,
               "160": 4,
-              "\"100%\"": 2,
+              "\"42%\"": 3,
+              "\"32%\"": 3,
+              "\"100%\"": 3,
+              "\"28%\"": 1,
+              "\"48%\"": 1,
               "{iconSize}": 1,
               "\"70%\"": 1,
               "\"50%\"": 1,
               "\"90%\"": 1,
               "\"80%\"": 1,
               "\"38%\"": 1,
-              "\"30%\"": 1,
-              "\"42%\"": 1,
-              "\"32%\"": 1
+              "\"30%\"": 1
             }
           },
           "twClassName": {
-            "count": 16,
+            "count": 18,
             "values": {
-              "\"rounded-full\"": 6,
+              "\"rounded-full\"": 7,
               "\"rounded-lg\"": 4,
               "\"rounded\"": 4,
+              "\"shrink-0\"": 1,
               "\"rounded-full mr-3\"": 1,
               "\"rounded-xl\"": 1
             }
