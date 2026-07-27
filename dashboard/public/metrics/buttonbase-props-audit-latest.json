@@ -1,16 +1,16 @@
 {
   "component": "ButtonBase",
-  "generatedAt": "2026-07-20T09:29:23.030Z",
+  "generatedAt": "2026-07-27T09:28:45.388Z",
   "projects": {
     "extension": {
-      "filesScanned": 3445,
+      "filesScanned": 3470,
       "targetComponent": "ButtonBase",
       "mmds": {
-        "totalInstances": 39,
-        "filesCount": 27,
+        "totalInstances": 41,
+        "filesCount": 29,
         "props": {
           "className": {
-            "count": 39,
+            "count": 41,
             "values": {
               "\"h-auto flex-1 flex-col justify-center rounded-lg bg-muted py-4 hover:bg-muted-hover active:bg-muted-pressed\"": 4,
               "{twMerge( // Reset ButtonBase defaults for card layout 'justify-start rounded-...}": 2,
@@ -18,10 +18,12 @@
               "\"w-full flex flex-row justify-between items-center px-4 py-3 bg-transparent rounded-none hover:bg-hover active:bg-pressed\"": 2,
               "\"flex items-center justify-start gap-1 rounded-lg bg-background-muted px-3 py-2 hover:bg-hover active:opacity-70\"": 2,
               "{`w-full justify-between text-left rounded-none px-4 min-w-0 h-[46px] active:b...}": 2,
+              "\"w-full rounded-lg px-4 py-3 min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 2,
               "{twMerge(ROW_STYLES)}": 1,
               "{longTabStyles}": 1,
               "{shortTabStyles}": 1,
               "\"bg-transparent rounded-none px-2 min-w-0 h-auto\"": 1,
+              "{twMerge( 'h-auto min-w-0 rounded-full border-0 px-4 py-1 transition-colors', ...}": 1,
               "{twMerge(rowBaseStyles, balanceRowStyles)}": 1,
               "{twMerge( 'h-9 min-w-0 rounded-xl bg-muted px-0 py-0 transition-colors hover:b...}": 1,
               "{twMerge( 'py-1.5 h-auto min-w-12 rounded-lg bg-transparent hover:bg-hover act...}": 1,
@@ -39,21 +41,21 @@
               "{`w-full justify-between text-left rounded-none px-3 py-2 min-w-0 h-auto activ...}": 1,
               "\"rounded-full p-1 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
               "\"inline-flex items-center gap-2 rounded-full bg-background-alternative px-3 py-2 min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
-              "\"w-full rounded-lg px-4 py-3 min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
               "\"absolute left-4 top-1/2 -translate-y-1/2 rounded-full p-1 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
               "\"bg-default text-default border border-muted\"": 1,
               "\"w-full bg-muted text-default hover:bg-muted-hover active:bg-muted-pressed\"": 1
             }
           },
           "onClick": {
-            "count": 35,
+            "count": 37,
             "values": {
               "{handleClick}": 6,
+              "{onClick}": 3,
               "{handleSeeAll}": 2,
-              "{onClick}": 2,
               "{() => handleDirectionClick('long')}": 1,
               "{() => handleDirectionClick('short')}": 1,
               "{handleMidClick}": 1,
+              "{() => { if (!isSelected) { onOrderTypeChange(type); } }}": 1,
               "{handleToggleDropdown}": 1,
               "{handleAddFunds}": 1,
               "{handleWithdraw}": 1,
@@ -79,13 +81,14 @@
             }
           },
           "data-testid": {
-            "count": 34,
+            "count": 36,
             "values": {
               "{testId}": 1,
               "{`order-card-${order.orderId}`}": 1,
               "\"direction-tab-long\"": 1,
               "\"direction-tab-short\"": 1,
               "\"limit-price-mid-button\"": 1,
+              "{`order-type-${type}`}": 1,
               "\"perps-balance-dropdown-balance\"": 1,
               "\"perps-balance-dropdown-add-funds\"": 1,
               "\"perps-balance-dropdown-withdraw\"": 1,
@@ -112,6 +115,7 @@
               "\"back-button\"": 1,
               "\"ramps-payment-method-pill\"": 1,
               "{`ramps-payment-method-item-${paymentMethod.id}`}": 1,
+              "{`ramps-provider-item-${provider.id}`}": 1,
               "{backButtonTestId}": 1,
               "\"token-management-network-filter\"": 1,
               "\"token-management-add-custom-token-button\"": 1
@@ -139,6 +143,12 @@
               "true (shorthand)": 4
             }
           },
+          "type": {
+            "count": 4,
+            "values": {
+              "\"button\"": 4
+            }
+          },
           "aria-label": {
             "count": 4,
             "values": {
@@ -146,10 +156,12 @@
               "{t('back')}": 2
             }
           },
-          "type": {
+          "textProps": {
             "count": 3,
             "values": {
-              "\"button\"": 3
+              "{{ color: TextColor.PrimaryDefault, fontWeight: FontWeight.Medium, variant: Te...}": 1,
+              "{{ variant: TextVariant.BodySm, color: isSelected ? TextColor.TextDefault : Te...}": 1,
+              "{{ variant: TextVariant.BodySm, color: TextColor.TextAlternative, }}": 1
             }
           },
           "ref": {
@@ -160,11 +172,11 @@
               "{(el) => { optionRefs.current[index] = el; }}": 1
             }
           },
-          "textProps": {
-            "count": 2,
+          "isDisabled": {
+            "count": 3,
             "values": {
-              "{{ color: TextColor.PrimaryDefault, fontWeight: FontWeight.Medium, variant: Te...}": 1,
-              "{{ variant: TextVariant.BodySm, color: TextColor.TextAlternative, }}": 1
+              "{isDisabled}": 2,
+              "{!onClick}": 1
             }
           },
           "startIconName": {
@@ -180,11 +192,10 @@
               "{(e) => handleOptionKeyDown(e, index)}": 1
             }
           },
-          "isDisabled": {
-            "count": 2,
+          "aria-pressed": {
+            "count": 1,
             "values": {
-              "{!onClick}": 1,
-              "{isDisabled}": 1
+              "{isSelected}": 1
             }
           },
           "disabled": {
@@ -486,11 +497,11 @@
         }
       },
       "overall": {
-        "totalInstances": 48,
-        "filesCount": 35,
+        "totalInstances": 50,
+        "filesCount": 37,
         "props": {
           "className": {
-            "count": 47,
+            "count": 49,
             "values": {
               "\"h-auto flex-1 flex-col justify-center rounded-lg bg-muted py-4 hover:bg-muted-hover active:bg-muted-pressed\"": 4,
               "{twMerge( // Reset ButtonBase defaults for card layout 'justify-start rounded-...}": 2,
@@ -498,11 +509,13 @@
               "\"w-full flex flex-row justify-between items-center px-4 py-3 bg-transparent rounded-none hover:bg-hover active:bg-pressed\"": 2,
               "\"flex items-center justify-start gap-1 rounded-lg bg-background-muted px-3 py-2 hover:bg-hover active:opacity-70\"": 2,
               "{`w-full justify-between text-left rounded-none px-4 min-w-0 h-[46px] active:b...}": 2,
+              "\"w-full rounded-lg px-4 py-3 min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 2,
               "\"asset-list-control-bar__button asset-list-control-bar__network_control\"": 1,
               "{twMerge(ROW_STYLES)}": 1,
               "{longTabStyles}": 1,
               "{shortTabStyles}": 1,
               "\"bg-transparent rounded-none px-2 min-w-0 h-auto\"": 1,
+              "{twMerge( 'h-auto min-w-0 rounded-full border-0 px-4 py-1 transition-colors', ...}": 1,
               "{twMerge(rowBaseStyles, balanceRowStyles)}": 1,
               "{twMerge( 'h-9 min-w-0 rounded-xl bg-muted px-0 py-0 transition-colors hover:b...}": 1,
               "{twMerge( 'py-1.5 h-auto min-w-12 rounded-lg bg-transparent hover:bg-hover act...}": 1,
@@ -527,22 +540,22 @@
               "{`w-full justify-between text-left rounded-none px-3 py-2 min-w-0 h-auto activ...}": 1,
               "\"rounded-full p-1 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
               "\"inline-flex items-center gap-2 rounded-full bg-background-alternative px-3 py-2 min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
-              "\"w-full rounded-lg px-4 py-3 min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
               "\"absolute left-4 top-1/2 -translate-y-1/2 rounded-full p-1 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
               "\"bg-default text-default border border-muted\"": 1,
               "\"w-full bg-muted text-default hover:bg-muted-hover active:bg-muted-pressed\"": 1
             }
           },
           "onClick": {
-            "count": 44,
+            "count": 46,
             "values": {
               "{handleClick}": 7,
-              "{onClick}": 4,
+              "{onClick}": 5,
               "{handleNetworkFilterClick}": 2,
               "{handleSeeAll}": 2,
               "{() => handleDirectionClick('long')}": 1,
               "{() => handleDirectionClick('short')}": 1,
               "{handleMidClick}": 1,
+              "{() => { if (!isSelected) { onOrderTypeChange(type); } }}": 1,
               "{handleToggleDropdown}": 1,
               "{handleAddFunds}": 1,
               "{handleWithdraw}": 1,
@@ -572,7 +585,7 @@
             }
           },
           "data-testid": {
-            "count": 40,
+            "count": 42,
             "values": {
               "\"address-copy-button-text\"": 2,
               "\"sort-by-networks\"": 1,
@@ -581,6 +594,7 @@
               "\"direction-tab-long\"": 1,
               "\"direction-tab-short\"": 1,
               "\"limit-price-mid-button\"": 1,
+              "{`order-type-${type}`}": 1,
               "\"perps-balance-dropdown-balance\"": 1,
               "\"perps-balance-dropdown-add-funds\"": 1,
               "\"perps-balance-dropdown-withdraw\"": 1,
@@ -610,6 +624,7 @@
               "\"back-button\"": 1,
               "\"ramps-payment-method-pill\"": 1,
               "{`ramps-payment-method-item-${paymentMethod.id}`}": 1,
+              "{`ramps-provider-item-${provider.id}`}": 1,
               "{backButtonTestId}": 1,
               "\"token-management-network-filter\"": 1,
               "\"token-management-add-custom-token-button\"": 1
@@ -645,6 +660,17 @@
               "{value}": 1
             }
           },
+          "textProps": {
+            "count": 7,
+            "values": {
+              "{{ display: Display.Flex, width: BlockSize.Full, }}": 2,
+              "{{ color: TextColor.PrimaryDefault, fontWeight: FontWeight.Medium, variant: Te...}": 1,
+              "{{ variant: TextVariant.BodySm, color: isSelected ? TextColor.TextDefault : Te...}": 1,
+              "{{ variant: TextVariant.BodySm, color: TextColor.TextAlternative, }}": 1,
+              "{{ display: Display.Flex, alignItems: AlignItems.center, gap: 2, ...textProps, }}": 1,
+              "{{ ellipsis: true, className: 'icon-button__label', }}": 1
+            }
+          },
           "paddingRight": {
             "count": 7,
             "values": {
@@ -670,16 +696,6 @@
               "{TextColor.textAlternative}": 1,
               "{isSingleNetworkSelected ? TextColor.primaryDefault : TextColor.textDefault}": 1,
               "{TextColor.TextAlternative}": 1
-            }
-          },
-          "textProps": {
-            "count": 6,
-            "values": {
-              "{{ display: Display.Flex, width: BlockSize.Full, }}": 2,
-              "{{ color: TextColor.PrimaryDefault, fontWeight: FontWeight.Medium, variant: Te...}": 1,
-              "{{ variant: TextVariant.BodySm, color: TextColor.TextAlternative, }}": 1,
-              "{{ display: Display.Flex, alignItems: AlignItems.center, gap: 2, ...textProps, }}": 1,
-              "{{ ellipsis: true, className: 'icon-button__label', }}": 1
             }
           },
           "ellipsis": {
@@ -723,6 +739,12 @@
               "true (shorthand)": 4
             }
           },
+          "type": {
+            "count": 4,
+            "values": {
+              "\"button\"": 4
+            }
+          },
           "aria-label": {
             "count": 4,
             "values": {
@@ -753,12 +775,6 @@
               "{{ size: IconSize.Md }}": 1
             }
           },
-          "type": {
-            "count": 3,
-            "values": {
-              "\"button\"": 3
-            }
-          },
           "paddingTop": {
             "count": 3,
             "values": {
@@ -784,6 +800,13 @@
             "count": 3,
             "values": {
               "{AlignItems.center}": 3
+            }
+          },
+          "isDisabled": {
+            "count": 3,
+            "values": {
+              "{isDisabled}": 2,
+              "{!onClick}": 1
             }
           },
           "borderColor": {
@@ -819,17 +842,16 @@
               "{(e) => handleOptionKeyDown(e, index)}": 1
             }
           },
-          "isDisabled": {
-            "count": 2,
-            "values": {
-              "{!onClick}": 1,
-              "{isDisabled}": 1
-            }
-          },
           "marginRight": {
             "count": 1,
             "values": {
               "{isFullScreen ? 2 : null}": 1
+            }
+          },
+          "aria-pressed": {
+            "count": 1,
+            "values": {
+              "{isSelected}": 1
             }
           },
           "fontWeight": {
@@ -905,19 +927,23 @@
       }
     },
     "mobile": {
-      "filesScanned": 7241,
+      "filesScanned": 7343,
       "targetComponent": "ButtonBase",
       "mmds": {
-        "totalInstances": 12,
-        "filesCount": 7,
+        "totalInstances": 16,
+        "filesCount": 9,
         "props": {
           "onPress": {
-            "count": 12,
+            "count": 16,
             "values": {
               "{handleButtonPress}": 1,
               "{onContactSupport}": 1,
               "{() => onChange('energy')}": 1,
               "{() => onChange('bandwidth')}": 1,
+              "{onLeveragePress}": 1,
+              "{onOrderTypeButtonPress}": 1,
+              "{onUseMidPricePress}": 1,
+              "{() => handleChange(isPro ? PerpsMode.Lite : PerpsMode.Pro)}": 1,
               "{() => onBuyPress(upToken)}": 1,
               "{() => onBuyPress(downToken)}": 1,
               "{() => toggleWalletExpanded(walletId)}": 1,
@@ -928,32 +954,41 @@
               "{chip.onPress}": 1
             }
           },
-          "size": {
-            "count": 9,
-            "values": {
-              "{ButtonBaseSize.Md}": 7,
-              "{ButtonSize.Lg}": 1,
-              "{ButtonBaseSize.Lg}": 1
-            }
-          },
           "testID": {
-            "count": 8,
+            "count": 12,
             "values": {
               "{CardWelcomeSelectors.VERIFY_ACCOUNT_BUTTON}": 1,
               "{AccessRestrictedModalSelectorsIDs.CONTACT_SUPPORT_BUTTON}": 1,
               "{testIDEnergy}": 1,
               "{testIDBandwidth}": 1,
+              "{ids.LEVERAGE_BUTTON}": 1,
+              "{ids.ORDER_TYPE_BUTTON}": 1,
+              "{ids.MID_PRICE_BUTTON}": 1,
+              "{isPro ? PerpsModeToggleSelectorsIDs.PRO_SEGMENT : PerpsModeToggleSelectorsIDs...}": 1,
               "{PredictCryptoUpDownMarketCardSelectorsIDs.UP_BUTTON}": 1,
               "{PredictCryptoUpDownMarketCardSelectorsIDs.DOWN_BUTTON}": 1,
               "{`show-more-button-${walletId}`}": 1,
               "{suppressTestID ? undefined : chip.testID}": 1
             }
           },
+          "size": {
+            "count": 12,
+            "values": {
+              "{ButtonBaseSize.Md}": 7,
+              "{ButtonBaseSize.Sm}": 3,
+              "{ButtonSize.Lg}": 1,
+              "{ButtonBaseSize.Lg}": 1
+            }
+          },
           "twClassName": {
-            "count": 8,
+            "count": 12,
             "values": {
               "{(pressed) => `rounded-lg bg-muted px-3 ${pressed ? 'opacity-70' : ''}`}": 4,
               "\"w-full rounded-xl bg-muted mt-6\"": 1,
+              "\"rounded-lg bg-muted px-2\"": 1,
+              "\"h-12 w-full bg-transparent px-3\"": 1,
+              "\"h-12 bg-transparent px-0\"": 1,
+              "\"bg-transparent border border-border-muted\"": 1,
               "\"h-10 flex-1 rounded-lg bg-success-muted\"": 1,
               "\"h-10 flex-1 rounded-lg bg-error-muted\"": 1,
               "\"bg-background-default\"": 1
@@ -989,16 +1024,32 @@
             }
           },
           "textProps": {
-            "count": 2,
+            "count": 3,
             "values": {
-              "{{ variant: TextVariant.BodyMd, fontWeight: FontWeight.Medium, }}": 2
+              "{{ variant: TextVariant.BodyMd, fontWeight: FontWeight.Medium, }}": 2,
+              "{{ variant: TextVariant.BodySm }}": 1
             }
           },
           "accessibilityLabel": {
-            "count": 2,
+            "count": 3,
             "values": {
               "{energyLabel}": 1,
-              "{bandwidthLabel}": 1
+              "{bandwidthLabel}": 1,
+              "{strings( 'perps.mode.active_pill_accessibility_label', { mode: currentModeLab...}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 2,
+            "values": {
+              "{!onLeveragePress}": 1,
+              "{!onUseMidPricePress}": 1
+            }
+          },
+          "endIconName": {
+            "count": 2,
+            "values": {
+              "{IconName.ArrowRight}": 1,
+              "{IconName.ArrowDown}": 1
             }
           },
           "disabled": {
@@ -1008,10 +1059,22 @@
               "{!downToken || !isMarketOpen}": 1
             }
           },
-          "endIconName": {
+          "contentWrapperProps": {
             "count": 1,
             "values": {
-              "{IconName.ArrowDown}": 1
+              "{{ twClassName: 'w-full justify-between' }}": 1
+            }
+          },
+          "endIconProps": {
+            "count": 1,
+            "values": {
+              "{{ size: IconSize.Sm, testID: `${ids.ORDER_TYPE_BUTTON}-chevron`, }}": 1
+            }
+          },
+          "accessibilityHint": {
+            "count": 1,
+            "values": {
+              "{strings( 'perps.mode.active_pill_accessibility_hint', { mode: nextModeLabel }, )}": 1
             }
           }
         }
@@ -1026,7 +1089,7 @@
               "{buttonContent}": 1,
               "{inlineButtonLabel}": 1,
               "{`${value}`}": 1,
-              "{<Text variant={TextVariant.BodyMDMedium} style={styles.tryNowButtonText} > {s...}": 1,
+              "{<Text variant={TextVariant.BodyMd} fontWeight={FontWeight.Medium} style={styl...}": 1,
               "{<Text variant={TextVariant.BodyMDMedium} style={styles.getStartedButtonText} ...}": 1,
               "{label}": 1,
               "{<> <View style={styles.networkManagerWrapper}> {showNetworkFilterAvatar && ( ...}": 1
@@ -1129,11 +1192,11 @@
         }
       },
       "overall": {
-        "totalInstances": 19,
-        "filesCount": 13,
+        "totalInstances": 23,
+        "filesCount": 15,
         "props": {
           "onPress": {
-            "count": 19,
+            "count": 23,
             "values": {
               "{handlePress}": 2,
               "{handleModalOpen}": 1,
@@ -1142,7 +1205,11 @@
               "{onPress}": 1,
               "{() => onChange('energy')}": 1,
               "{() => onChange('bandwidth')}": 1,
+              "{onLeveragePress}": 1,
+              "{onOrderTypeButtonPress}": 1,
+              "{onUseMidPricePress}": 1,
               "{() => tryPerpsNow()}": 1,
+              "{() => handleChange(isPro ? PerpsMode.Lite : PerpsMode.Pro)}": 1,
               "{() => onBuyPress(upToken)}": 1,
               "{() => onBuyPress(downToken)}": 1,
               "{() => handleGetStarted()}": 1,
@@ -1156,7 +1223,7 @@
             }
           },
           "testID": {
-            "count": 14,
+            "count": 18,
             "values": {
               "\"snap-ui-renderer__selector-item\"": 1,
               "{testID}": 1,
@@ -1165,7 +1232,11 @@
               "\"currency-toggle\"": 1,
               "{testIDEnergy}": 1,
               "{testIDBandwidth}": 1,
+              "{ids.LEVERAGE_BUTTON}": 1,
+              "{ids.ORDER_TYPE_BUTTON}": 1,
+              "{ids.MID_PRICE_BUTTON}": 1,
               "{PerpsGTMModalSelectorsIDs.PERPS_TRY_NOW_BUTTON}": 1,
+              "{isPro ? PerpsModeToggleSelectorsIDs.PRO_SEGMENT : PerpsModeToggleSelectorsIDs...}": 1,
               "{PredictCryptoUpDownMarketCardSelectorsIDs.UP_BUTTON}": 1,
               "{PredictCryptoUpDownMarketCardSelectorsIDs.DOWN_BUTTON}": 1,
               "{PREDICT_GTM_MODAL_TEST_IDS.GET_STARTED_BUTTON}": 1,
@@ -1175,13 +1246,28 @@
             }
           },
           "size": {
-            "count": 13,
+            "count": 16,
             "values": {
               "{ButtonBaseSize.Md}": 7,
               "{ButtonSize.Lg}": 3,
+              "{ButtonBaseSize.Sm}": 3,
               "{ButtonBaseSize.Lg}": 1,
               "{ButtonSize.Sm}": 1,
               "{ButtonSize.Md}": 1
+            }
+          },
+          "twClassName": {
+            "count": 12,
+            "values": {
+              "{(pressed) => `rounded-lg bg-muted px-3 ${pressed ? 'opacity-70' : ''}`}": 4,
+              "\"w-full rounded-xl bg-muted mt-6\"": 1,
+              "\"rounded-lg bg-muted px-2\"": 1,
+              "\"h-12 w-full bg-transparent px-3\"": 1,
+              "\"h-12 bg-transparent px-0\"": 1,
+              "\"bg-transparent border border-border-muted\"": 1,
+              "\"h-10 flex-1 rounded-lg bg-success-muted\"": 1,
+              "\"h-10 flex-1 rounded-lg bg-error-muted\"": 1,
+              "\"bg-background-default\"": 1
             }
           },
           "style": {
@@ -1198,23 +1284,13 @@
               "{styles.controlButton}": 1
             }
           },
-          "twClassName": {
-            "count": 8,
-            "values": {
-              "{(pressed) => `rounded-lg bg-muted px-3 ${pressed ? 'opacity-70' : ''}`}": 4,
-              "\"w-full rounded-xl bg-muted mt-6\"": 1,
-              "\"h-10 flex-1 rounded-lg bg-success-muted\"": 1,
-              "\"h-10 flex-1 rounded-lg bg-error-muted\"": 1,
-              "\"bg-background-default\"": 1
-            }
-          },
           "label": {
             "count": 7,
             "values": {
               "{buttonContent}": 1,
               "{inlineButtonLabel}": 1,
               "{`${value}`}": 1,
-              "{<Text variant={TextVariant.BodyMDMedium} style={styles.tryNowButtonText} > {s...}": 1,
+              "{<Text variant={TextVariant.BodyMd} fontWeight={FontWeight.Medium} style={styl...}": 1,
               "{<Text variant={TextVariant.BodyMDMedium} style={styles.getStartedButtonText} ...}": 1,
               "{label}": 1,
               "{<> <View style={styles.networkManagerWrapper}> {showNetworkFilterAvatar && ( ...}": 1
@@ -1236,11 +1312,21 @@
               "{IconName.X}": 1
             }
           },
+          "isDisabled": {
+            "count": 5,
+            "values": {
+              "{disabled}": 2,
+              "{!onLeveragePress}": 1,
+              "{!onUseMidPricePress}": 1,
+              "false": 1
+            }
+          },
           "endIconName": {
-            "count": 4,
+            "count": 5,
             "values": {
               "{IconName.ArrowDown}": 3,
-              "{IconName.SwapVertical}": 1
+              "{IconName.SwapVertical}": 1,
+              "{IconName.ArrowRight}": 1
             }
           },
           "startIconProps": {
@@ -1249,17 +1335,25 @@
               "{{ color: IconColor.IconDefault, size: IconSize.Sm, }}": 4
             }
           },
-          "isDisabled": {
-            "count": 3,
-            "values": {
-              "{disabled}": 2,
-              "false": 1
-            }
-          },
           "isFullWidth": {
             "count": 3,
             "values": {
               "true (shorthand)": 3
+            }
+          },
+          "textProps": {
+            "count": 3,
+            "values": {
+              "{{ variant: TextVariant.BodyMd, fontWeight: FontWeight.Medium, }}": 2,
+              "{{ variant: TextVariant.BodySm }}": 1
+            }
+          },
+          "accessibilityLabel": {
+            "count": 3,
+            "values": {
+              "{energyLabel}": 1,
+              "{bandwidthLabel}": 1,
+              "{strings( 'perps.mode.active_pill_accessibility_label', { mode: currentModeLab...}": 1
             }
           },
           "disabled": {
@@ -1283,23 +1377,28 @@
               "{TextVariant.BodyMDMedium}": 2
             }
           },
-          "textProps": {
-            "count": 2,
-            "values": {
-              "{{ variant: TextVariant.BodyMd, fontWeight: FontWeight.Medium, }}": 2
-            }
-          },
-          "accessibilityLabel": {
-            "count": 2,
-            "values": {
-              "{energyLabel}": 1,
-              "{bandwidthLabel}": 1
-            }
-          },
           "activeOpacity": {
             "count": 2,
             "values": {
               "0.6": 2
+            }
+          },
+          "contentWrapperProps": {
+            "count": 1,
+            "values": {
+              "{{ twClassName: 'w-full justify-between' }}": 1
+            }
+          },
+          "endIconProps": {
+            "count": 1,
+            "values": {
+              "{{ size: IconSize.Sm, testID: `${ids.ORDER_TYPE_BUTTON}-chevron`, }}": 1
+            }
+          },
+          "accessibilityHint": {
+            "count": 1,
+            "values": {
+              "{strings( 'perps.mode.active_pill_accessibility_hint', { mode: nextModeLabel }, )}": 1
             }
           },
           "[spread]": {

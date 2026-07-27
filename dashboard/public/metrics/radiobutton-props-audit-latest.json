@@ -1,9 +1,9 @@
 {
   "component": "RadioButton",
-  "generatedAt": "2026-07-20T09:33:52.297Z",
+  "generatedAt": "2026-07-27T09:32:32.098Z",
   "projects": {
     "extension": {
-      "filesScanned": 3445,
+      "filesScanned": 3470,
       "targetComponent": "RadioButton",
       "mmds": {
         "totalInstances": 0,
@@ -23,7 +23,7 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 7241,
+      "filesScanned": 7343,
       "targetComponent": "RadioButton",
       "mmds": {
         "totalInstances": 0,
@@ -31,47 +31,52 @@
         "props": {}
       },
       "deprecated": {
-        "totalInstances": 4,
-        "filesCount": 3,
+        "totalInstances": 5,
+        "filesCount": 4,
         "props": {
           "label": {
-            "count": 4,
+            "count": 5,
             "values": {
               "{option.name}": 1,
               "{<Text variant={TextVariant.BodyMd} twClassName=\"font-medium\"> {title} </Text>}": 1,
+              "{program.name}": 1,
               "{textFirst}": 1,
               "{textSecond}": 1
             }
           },
           "isChecked": {
-            "count": 4,
+            "count": 5,
             "values": {
               "{value === option.value}": 1,
               "{isSelected}": 1,
+              "{selectedCardProgramId === program.id}": 1,
               "{selectedValue === valueFirst}": 1,
               "{selectedValue === valueSecond}": 1
             }
           },
           "onPress": {
-            "count": 4,
+            "count": 5,
             "values": {
               "{() => handleChange(option.value)}": 1,
               "{onPress}": 1,
+              "{() => handleCardProgramSelect(program.id)}": 1,
               "{this.pickFirst}": 1,
               "{this.pickSecond}": 1
             }
           },
           "testID": {
-            "count": 2,
+            "count": 3,
             "values": {
               "\"snap-ui-renderer__radio-button\"": 1,
-              "{testID}": 1
+              "{testID}": 1,
+              "{`signup-card-program-${program.id}`}": 1
             }
           },
           "key": {
-            "count": 1,
+            "count": 2,
             "values": {
-              "{option.value}": 1
+              "{option.value}": 1,
+              "{program.id}": 1
             }
           },
           "isDisabled": {
@@ -83,47 +88,52 @@
         }
       },
       "overall": {
-        "totalInstances": 4,
-        "filesCount": 3,
+        "totalInstances": 5,
+        "filesCount": 4,
         "props": {
           "label": {
-            "count": 4,
+            "count": 5,
             "values": {
               "{option.name}": 1,
               "{<Text variant={TextVariant.BodyMd} twClassName=\"font-medium\"> {title} </Text>}": 1,
+              "{program.name}": 1,
               "{textFirst}": 1,
               "{textSecond}": 1
             }
           },
           "isChecked": {
-            "count": 4,
+            "count": 5,
             "values": {
               "{value === option.value}": 1,
               "{isSelected}": 1,
+              "{selectedCardProgramId === program.id}": 1,
               "{selectedValue === valueFirst}": 1,
               "{selectedValue === valueSecond}": 1
             }
           },
           "onPress": {
-            "count": 4,
+            "count": 5,
             "values": {
               "{() => handleChange(option.value)}": 1,
               "{onPress}": 1,
+              "{() => handleCardProgramSelect(program.id)}": 1,
               "{this.pickFirst}": 1,
               "{this.pickSecond}": 1
             }
           },
           "testID": {
-            "count": 2,
+            "count": 3,
             "values": {
               "\"snap-ui-renderer__radio-button\"": 1,
-              "{testID}": 1
+              "{testID}": 1,
+              "{`signup-card-program-${program.id}`}": 1
             }
           },
           "key": {
-            "count": 1,
+            "count": 2,
             "values": {
-              "{option.value}": 1
+              "{option.value}": 1,
+              "{program.id}": 1
             }
           },
           "isDisabled": {
@@ -135,7 +145,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "RadioButton": 4
+        "RadioButton": 5
       }
     }
   }

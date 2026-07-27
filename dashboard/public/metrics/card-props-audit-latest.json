@@ -1,9 +1,9 @@
 {
   "component": "Card",
-  "generatedAt": "2026-07-20T09:30:30.425Z",
+  "generatedAt": "2026-07-27T09:29:42.906Z",
   "projects": {
     "extension": {
-      "filesScanned": 3445,
+      "filesScanned": 3470,
       "targetComponent": "Card",
       "mmds": {
         "totalInstances": 0,
@@ -23,36 +23,43 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 7241,
+      "filesScanned": 7343,
       "targetComponent": "Card",
       "mmds": {
-        "totalInstances": 2,
-        "filesCount": 2,
+        "totalInstances": 5,
+        "filesCount": 1,
         "props": {
-          "onPress": {
-            "count": 2,
+          "twClassName": {
+            "count": 5,
             "values": {
-              "{handlePress}": 2
+              "\"flex-1 bg-background-section rounded-lg p-3 border-0 gap-1\"": 2,
+              "\"flex-1 flex-row items-center justify-between bg-background-section rounded-lg p-3 border-0\"": 2,
+              "\"flex-row items-center justify-between bg-background-section rounded-lg p-3 border-0 mb-3\"": 1
             }
           },
           "testID": {
-            "count": 2,
+            "count": 5,
             "values": {
-              "{testID}": 1,
-              "{getPerpsMarketRowItemSelector.rowItem(market.symbol)}": 1
+              "{PerpsPositionCardSelectorsIDs.PNL_CARD}": 1,
+              "{PerpsPositionCardSelectorsIDs.RETURN_CARD}": 1,
+              "{PerpsPositionCardSelectorsIDs.SIZE_CONTAINER}": 1,
+              "{PerpsPositionCardSelectorsIDs.MARGIN_CONTAINER}": 1,
+              "{PerpsPositionCardSelectorsIDs.AUTO_CLOSE_TOGGLE}": 1
+            }
+          },
+          "onPress": {
+            "count": 3,
+            "values": {
+              "{handleSizeToggle}": 1,
+              "{onMarginPress}": 1,
+              "{handleAutoCloseButtonPress}": 1
             }
           },
           "touchableOpacityProps": {
             "count": 2,
             "values": {
-              "{{ activeOpacity: 0.7 }}": 2
-            }
-          },
-          "twClassName": {
-            "count": 2,
-            "values": {
-              "\"py-3 px-0 border-0 rounded-none bg-transparent\"": 1,
-              "{`flex-row justify-between items-center border-0 rounded-none bg-transparent p...}": 1
+              "{{ disabled: !onMarginPress }}": 1,
+              "{{ activeOpacity: 0.7, disabled: !onAutoClosePress, }}": 1
             }
           }
         }
@@ -86,8 +93,8 @@
         }
       },
       "overall": {
-        "totalInstances": 10,
-        "filesCount": 9,
+        "totalInstances": 13,
+        "filesCount": 8,
         "props": {
           "style": {
             "count": 8,
@@ -99,37 +106,44 @@
               "{styles.permissionCell}": 1
             }
           },
+          "testID": {
+            "count": 6,
+            "values": {
+              "{PerpsPositionCardSelectorsIDs.PNL_CARD}": 1,
+              "{PerpsPositionCardSelectorsIDs.RETURN_CARD}": 1,
+              "{PerpsPositionCardSelectorsIDs.SIZE_CONTAINER}": 1,
+              "{PerpsPositionCardSelectorsIDs.MARGIN_CONTAINER}": 1,
+              "{PerpsPositionCardSelectorsIDs.AUTO_CLOSE_TOGGLE}": 1,
+              "\"account-card\"": 1
+            }
+          },
+          "twClassName": {
+            "count": 5,
+            "values": {
+              "\"flex-1 bg-background-section rounded-lg p-3 border-0 gap-1\"": 2,
+              "\"flex-1 flex-row items-center justify-between bg-background-section rounded-lg p-3 border-0\"": 2,
+              "\"flex-row items-center justify-between bg-background-section rounded-lg p-3 border-0 mb-3\"": 1
+            }
+          },
           "disabled": {
             "count": 5,
             "values": {
               "true (shorthand)": 5
             }
           },
-          "testID": {
+          "onPress": {
             "count": 3,
             "values": {
-              "{testID}": 1,
-              "{getPerpsMarketRowItemSelector.rowItem(market.symbol)}": 1,
-              "\"account-card\"": 1
-            }
-          },
-          "onPress": {
-            "count": 2,
-            "values": {
-              "{handlePress}": 2
+              "{handleSizeToggle}": 1,
+              "{onMarginPress}": 1,
+              "{handleAutoCloseButtonPress}": 1
             }
           },
           "touchableOpacityProps": {
             "count": 2,
             "values": {
-              "{{ activeOpacity: 0.7 }}": 2
-            }
-          },
-          "twClassName": {
-            "count": 2,
-            "values": {
-              "\"py-3 px-0 border-0 rounded-none bg-transparent\"": 1,
-              "{`flex-row justify-between items-center border-0 rounded-none bg-transparent p...}": 1
+              "{{ disabled: !onMarginPress }}": 1,
+              "{{ activeOpacity: 0.7, disabled: !onAutoClosePress, }}": 1
             }
           }
         }

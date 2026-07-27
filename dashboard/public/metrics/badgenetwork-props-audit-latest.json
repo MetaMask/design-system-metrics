@@ -1,9 +1,9 @@
 {
   "component": "BadgeNetwork",
-  "generatedAt": "2026-07-20T09:25:24.276Z",
+  "generatedAt": "2026-07-27T09:25:24.163Z",
   "projects": {
     "extension": {
-      "filesScanned": 3445,
+      "filesScanned": 3470,
       "targetComponent": "BadgeNetwork",
       "mmds": {
         "totalInstances": 4,
@@ -49,18 +49,20 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 7241,
+      "filesScanned": 7343,
       "targetComponent": "BadgeNetwork",
       "mmds": {
-        "totalInstances": 7,
-        "filesCount": 6,
+        "totalInstances": 9,
+        "filesCount": 8,
         "props": {
           "src": {
-            "count": 7,
+            "count": 9,
             "values": {
               "{networkImage}": 5,
               "{networkImageSource as React.ComponentProps< typeof BadgeNetwork >['src']}": 1,
-              "{getNetworkImageSource({ chainId: safeFormatChainIdToHex( item.caipChainId, ) ...}": 1
+              "{networkBadgeSource as React.ComponentProps< typeof BadgeNetwork >['src']}": 1,
+              "{getNetworkImageSource({ chainId: safeFormatChainIdToHex( item.caipChainId, ) ...}": 1,
+              "{BASE_NETWORK_IMAGE}": 1
             }
           },
           "twClassName": {
@@ -97,15 +99,17 @@
         }
       },
       "overall": {
-        "totalInstances": 14,
-        "filesCount": 13,
+        "totalInstances": 16,
+        "filesCount": 15,
         "props": {
           "src": {
-            "count": 7,
+            "count": 9,
             "values": {
               "{networkImage}": 5,
               "{networkImageSource as React.ComponentProps< typeof BadgeNetwork >['src']}": 1,
-              "{getNetworkImageSource({ chainId: safeFormatChainIdToHex( item.caipChainId, ) ...}": 1
+              "{networkBadgeSource as React.ComponentProps< typeof BadgeNetwork >['src']}": 1,
+              "{getNetworkImageSource({ chainId: safeFormatChainIdToHex( item.caipChainId, ) ...}": 1,
+              "{BASE_NETWORK_IMAGE}": 1
             }
           },
           "name": {

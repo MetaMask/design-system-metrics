@@ -1,9 +1,9 @@
 {
   "component": "Toast",
-  "generatedAt": "2026-07-20T09:36:40.824Z",
+  "generatedAt": "2026-07-27T09:34:54.779Z",
   "projects": {
     "extension": {
-      "filesScanned": 3445,
+      "filesScanned": 3470,
       "targetComponent": "Toast",
       "mmds": {
         "totalInstances": 0,
@@ -23,7 +23,7 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 7241,
+      "filesScanned": 7343,
       "targetComponent": "Toast",
       "mmds": {
         "totalInstances": 0,
@@ -31,30 +31,26 @@
         "props": {}
       },
       "deprecated": {
-        "totalInstances": 163,
-        "filesCount": 100,
+        "totalInstances": 156,
+        "filesCount": 98,
         "props": {
           "style": {
-            "count": 48,
+            "count": 42,
             "values": {
-              "{tw.style('rounded-xl py-2 px-3')}": 8,
+              "{tw.style('rounded-xl py-2 px-3')}": 9,
               "{styles.noNetworkFeeContainer}": 4,
-              "{styles.quoteRow}": 4,
               "{tw.style('my-1')}": 4,
               "{styles.paidByMetaMask}": 2,
               "{styles.actionButtonWrapper}": 2,
-              "{styles.statsRow}": 2,
+              "{tw.style('rounded-md')}": 2,
               "{styles.iconSkeleton}": 2,
               "{styles.tokenNameSkeleton}": 2,
               "{styles.marketStatsSkeleton}": 2,
               "{[ credit && styles.valueIsCredit, debit && styles.valueIsDebit, ]}": 2,
               "{styles.tag}": 1,
-              "{[styles.statsRow, !onOrderBookPress && styles.statsRowFirst]}": 1,
-              "{styles.statsRowLast}": 1,
               "{tw.style('w-full')}": 1,
               "{tw.style('w-full bg-muted')}": 1,
               "{tw.style('w-full', showReducedOpacity && 'opacity-50')}": 1,
-              "{tw.style('rounded-md')}": 1,
               "{tw.style('rounded-full')}": 1,
               "{{ ...styles.cashOutButton, }}": 1,
               "{styles.priceSkeleton}": 1,
@@ -64,52 +60,14 @@
               "{overrides?.headerStyle}": 1
             }
           },
-          "value": {
-            "count": 41,
-            "values": {
-              "{{ label: ( <Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItem...}": 2,
-              "{{ label: isLoading || isEstimating ? ( <Skeleton height={20} width={80} style...}": 2,
-              "{{ label: { text: strings('earn.immediate'), variant: TextVariant.BodyMD, }, }}": 2,
-              "{{ label: ( <ContractTag contractAddress={lendingContractAddress} contractName...}": 2,
-              "{{ label: ( <AccountTag accountAddress={selectedAccount?.address} accountName=...}": 2,
-              "{pricePercentChange1d ?? 0}": 2,
-              "{{ label: ( <Text variant={TextVariant.BodyMD} color={TextColor.Alternative} t...}": 2,
-              "{{ label: ( <TagColored color={TagColor.Success} labelProps={{ variant: TextVa...}": 1,
-              "{{ label: { text: formattedQuoteData.networkFee, variant: TextVariantLegacy.Bo...}": 1,
-              "{{ label: ( <TouchableOpacity onPress={handleSlippagePress} activeOpacity={0.6...}": 1,
-              "{{ label: { text: `${formattedMinToTokenAmount} ${destToken?.symbol}`, variant...}": 1,
-              "{{ label: ( <TouchableOpacity testID=\"price-impact-info-button\" onPress={handl...}": 1,
-              "{{ label: isLoading || isEstimating || !destination.isResolved ? ( <Skeleton h...}": 1,
-              "{{ label: { text: `${earnToken?.experience?.apr}%`, variant: TextVariant.BodyM...}": 1,
-              "{{ label: ( <View style={styles.estAnnualReward}> <Text numberOfLines={1}> { e...}": 1,
-              "{{ label: { text: strings('earn.every_minute'), variant: TextVariant.BodyMD, }, }}": 1,
-              "{{ label: ( <View style={styles.networkRowRight}> <Badge variant={BadgeVariant...}": 1,
-              "{{ label: ( <Text variant={TextVariant.BodyMD} testID={PerpsWithdrawViewSelect...}": 1,
-              "{{ label: { text: marketStats.volume24h, variant: LegacyTextVariant.BodyMD, co...}": 1,
-              "{{ label: { text: marketStats.openInterest, variant: LegacyTextVariant.BodyMD,...}": 1,
-              "{{ label: fundingValueContent, }}": 1,
-              "{{ label: ( <LegacyText variant={LegacyTextVariant.BodyMD} color={LegacyTextCo...}": 1,
-              "{{ label: { text: networkFee, variant: TextVariant.BodyMD, }, }}": 1,
-              "{{ label: { text: metamaskFee, variant: TextVariant.BodyMD, }, }}": 1,
-              "{{ label: { text: estimatedTime, variant: TextVariant.BodyMD, }, }}": 1,
-              "{{ label: { text: rate, variant: TextVariant.BodyMD, }, }}": 1,
-              "{{ label: ( <ContractTag contractAddress={vaultMetadata?.vaultAddress ?? contr...}": 1,
-              "{{ label: ( <View style={styles.networkKeyValueRow}> <Avatar variant={AvatarVa...}": 1,
-              "{{ label: { text: rewardRate, color: TextColor.Success, variant: TextVariant.B...}": 1,
-              "{{ label: ( <View style={styles.estAnnualRewardValue}> <Text color={TextColor....}": 1,
-              "{{ label: { text: strings('stake.12_hours'), variant: TextVariant.BodyMD, }, }}": 1,
-              "{{ label: { text: strings('stake.estimated_unstaking_time'), variant: TextVari...}": 1,
-              "{result.percentChange ?? 0}": 1,
-              "{percentValue}": 1
-            }
-          },
           "testID": {
-            "count": 40,
+            "count": 41,
             "values": {
               "{testID}": 6,
               "{config.testID}": 2,
               "{AccountListBottomSheetSelectorsIDs.ACCOUNT_LIST_ID}": 2,
               "{`${BatchSellTokenSelectSelectorsIDs.NETWORK_PILL}-${chainId}`}": 1,
+              "\"bridge-watchlist-filter-watchlist\"": 1,
               "\"network-pills-more-button\"": 1,
               "\"money-onboarding-card\"": 1,
               "{PerpsOrderBookViewSelectorsIDs.LONG_BUTTON}": 1,
@@ -142,12 +100,13 @@
             }
           },
           "onPress": {
-            "count": 37,
+            "count": 38,
             "values": {
               "{onPress}": 6,
               "{handlePressTokenValue}": 2,
               "{() => handleChainSelect(chainId)}": 1,
               "{() => onChainSelect(chain.chainId)}": 1,
+              "{onWatchlistFilterPress}": 1,
               "{() => onChainSelect(undefined)}": 1,
               "{onMorePress}": 1,
               "{createActionHandler(config)}": 1,
@@ -177,10 +136,40 @@
               "{handlePress}": 1
             }
           },
-          "field": {
-            "count": 37,
+          "value": {
+            "count": 33,
             "values": {
-              "{{ label: ( <View style={styles.labelWithIcon}> <LegacyText variant={LegacyTex...}": 3,
+              "{{ label: ( <Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItem...}": 2,
+              "{{ label: isLoading || isEstimating ? ( <Skeleton height={20} width={80} style...}": 2,
+              "{{ label: { text: strings('earn.immediate'), variant: TextVariant.BodyMD, }, }}": 2,
+              "{{ label: ( <ContractTag contractAddress={lendingContractAddress} contractName...}": 2,
+              "{{ label: ( <AccountTag accountAddress={selectedAccount?.address} accountName=...}": 2,
+              "{pricePercentChange1d ?? 0}": 2,
+              "{{ label: ( <Text variant={TextVariant.BodyMd} color={TextColor.TextAlternativ...}": 2,
+              "{{ label: ( <TagColored color={TagColor.Success} labelProps={{ variant: TextVa...}": 1,
+              "{{ label: { text: formattedQuoteData.networkFee, variant: TextVariantLegacy.Bo...}": 1,
+              "{{ label: ( <TouchableOpacity onPress={handleSlippagePress} activeOpacity={0.6...}": 1,
+              "{{ label: { text: `${formattedMinToTokenAmount} ${destToken?.symbol}`, variant...}": 1,
+              "{{ label: ( <TouchableOpacity testID=\"price-impact-info-button\" onPress={handl...}": 1,
+              "{{ label: isLoading || isEstimating || !destination.isResolved ? ( <Skeleton h...}": 1,
+              "{{ label: { text: `${earnToken?.experience?.apr}%`, variant: TextVariant.BodyM...}": 1,
+              "{{ label: ( <View style={styles.estAnnualReward}> <Text numberOfLines={1}> { e...}": 1,
+              "{{ label: { text: strings('earn.every_minute'), variant: TextVariant.BodyMD, }, }}": 1,
+              "{{ label: ( <View style={styles.networkRowRight}> <Badge variant={BadgeVariant...}": 1,
+              "{{ label: ( <Text variant={TextVariant.BodyMd} testID={PerpsWithdrawViewSelect...}": 1,
+              "{{ label: ( <ContractTag contractAddress={vaultMetadata?.vaultAddress ?? contr...}": 1,
+              "{{ label: ( <View style={styles.networkKeyValueRow}> <Avatar variant={AvatarVa...}": 1,
+              "{{ label: { text: rewardRate, color: TextColor.Success, variant: TextVariant.B...}": 1,
+              "{{ label: ( <View style={styles.estAnnualRewardValue}> <Text color={TextColor....}": 1,
+              "{{ label: { text: strings('stake.12_hours'), variant: TextVariant.BodyMD, }, }}": 1,
+              "{{ label: { text: strings('stake.estimated_unstaking_time'), variant: TextVari...}": 1,
+              "{result.percentChange ?? 0}": 1,
+              "{percentValue}": 1
+            }
+          },
+          "field": {
+            "count": 29,
+            "values": {
               "{{ label: ( <Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItem...}": 2,
               "{{ label: { text: strings('bridge.network_fee'), variant: TextVariantLegacy.Bo...}": 1,
               "{{ label: { text: toSentenceCase(strings('bridge.network_fee')), variant: Text...}": 1,
@@ -200,12 +189,7 @@
               "{{ label: { text: strings('earn.withdrawing_to'), variant: TextVariant.BodyMDM...}": 1,
               "{{ label: { text: strings('earn.protocol'), variant: TextVariant.BodyMDMedium,...}": 1,
               "{{ label: { text: strings('earn.network'), variant: TextVariant.BodyMDMedium, ...}": 1,
-              "{{ label: { text: strings('perps.withdrawal.you_will_receive'), variant: TextV...}": 1,
-              "{{ label: { text: strings('perps.market.24h_volume'), variant: LegacyTextVaria...}": 1,
-              "{{ label: { text: strings('perps.quote.network_fee'), variant: TextVariant.Bod...}": 1,
-              "{{ label: { text: strings('perps.quote.metamask_fee'), variant: TextVariant.Bo...}": 1,
-              "{{ label: { text: strings('perps.quote.estimated_time'), variant: TextVariant....}": 1,
-              "{{ label: { text: strings('perps.quote.rate'), variant: TextVariant.BodyMDMedi...}": 1,
+              "{{ label: ( <Text variant={TextVariant.BodyMd}> {strings('perps.withdrawal.you...}": 1,
               "{{ label: { text: strings('predict.fee_summary.estimated_points'), variant: Le...}": 1,
               "{{ label: { text: primaryLabel } }}": 1,
               "{{ label: { text: secondaryLabel }, }}": 1,
@@ -217,11 +201,12 @@
             }
           },
           "label": {
-            "count": 23,
+            "count": 24,
             "values": {
               "{<Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItems.Center} g...}": 6,
               "{config.label}": 2,
               "{strings('asset_overview.swap')}": 2,
+              "{<Icon name={IconName.StarFilled} size={IconSize.Md} color={ isWatchlistFilter...}": 1,
               "{strings('bridge.all')}": 1,
               "{strings('bridge.more_networks', { count: remainingCount, })}": 1,
               "{allNetworksLabel}": 1,
@@ -238,9 +223,9 @@
             }
           },
           "size": {
-            "count": 23,
+            "count": 24,
             "values": {
-              "{ButtonSize.Md}": 9,
+              "{ButtonSize.Md}": 10,
               "{ButtonSizeHero.Lg}": 5,
               "\"large\"": 3,
               "{ButtonSize.Lg}": 2,
@@ -251,12 +236,12 @@
             }
           },
           "width": {
-            "count": 19,
+            "count": 20,
             "values": {
               "16": 1,
               "52": 1,
               "60": 2,
-              "80": 2,
+              "80": 3,
               "92": 1,
               "120": 2,
               "{iconSize}": 2,
@@ -269,13 +254,13 @@
             }
           },
           "height": {
-            "count": 19,
+            "count": 20,
             "values": {
               "16": 5,
               "18": 3,
               "20": 6,
               "22": 1,
-              "24": 2,
+              "24": 3,
               "{iconSize}": 2
             }
           },
@@ -298,6 +283,15 @@
               "{strings('trending.title')}": 1
             }
           },
+          "color": {
+            "count": 16,
+            "values": {
+              "{TagColor.Success}": 10,
+              "{theme.colors.primary.default}": 3,
+              "{TagColor.Info}": 2,
+              "{theme.colors.primary.inverse}": 1
+            }
+          },
           "isDisabled": {
             "count": 15,
             "values": {
@@ -311,15 +305,6 @@
               "{!isBuyingAvailable}": 1,
               "false": 1,
               "{isNFT || tokenValueMaxPrecision === null}": 1
-            }
-          },
-          "color": {
-            "count": 15,
-            "values": {
-              "{TagColor.Success}": 9,
-              "{theme.colors.primary.default}": 3,
-              "{TagColor.Info}": 2,
-              "{theme.colors.primary.inverse}": 1
             }
           },
           "iconName": {
@@ -338,25 +323,26 @@
               "{IconName.Speedometer}": 1
             }
           },
-          "onBack": {
-            "count": 12,
-            "values": {
-              "{() => navigation.goBack()}": 5,
-              "{handleBack}": 2,
-              "{handleClose}": 2,
-              "{onBack}": 1,
-              "{navigation.goBack}": 1,
-              "{addBackButton ? handleBackPress : undefined}": 1
-            }
-          },
           "isActive": {
-            "count": 10,
+            "count": 11,
             "values": {
               "{isSelected}": 5,
               "false": 2,
-              "{!selectedChainId}": 1,
+              "{isWatchlistFilterActive}": 1,
+              "{!selectedChainId && !isWatchlistFilterActive}": 1,
               "{isActive}": 1,
               "{isAllSelected}": 1
+            }
+          },
+          "onBack": {
+            "count": 11,
+            "values": {
+              "{() => navigation.goBack()}": 5,
+              "{handleClose}": 2,
+              "{onBack}": 1,
+              "{handleBack}": 1,
+              "{navigation.goBack}": 1,
+              "{addBackButton ? handleBackPress : undefined}": 1
             }
           },
           "twClassName": {
@@ -369,6 +355,15 @@
               "\"mb-2\"": 1,
               "\"pl-1 pr-3\"": 1,
               "\"bg-default\"": 1
+            }
+          },
+          "labelProps": {
+            "count": 9,
+            "values": {
+              "{{ variant: TextVariant.BodySM, style: { textTransform: 'none', textAlign: 'ce...}": 5,
+              "{{ variant: TextVariantLegacy.BodySM, style: { textTransform: 'none', textAlig...}": 2,
+              "{{ variant: LegacyTextVariant.BodySM, style: { textTransform: 'none', textAlig...}": 1,
+              "{{ testID: 'paid-by-metamask' }}": 1
             }
           },
           "includesTopInset": {
@@ -388,23 +383,14 @@
               "{pillId}": 1
             }
           },
-          "labelProps": {
-            "count": 8,
-            "values": {
-              "{{ variant: TextVariant.BodySM, style: { textTransform: 'none', textAlign: 'ce...}": 5,
-              "{{ variant: TextVariantLegacy.BodySM, style: { textTransform: 'none', textAlig...}": 2,
-              "{{ variant: LegacyTextVariant.BodySM, style: { textTransform: 'none', textAlig...}": 1
-            }
-          },
           "backButtonProps": {
-            "count": 8,
+            "count": 7,
             "values": {
               "{{ testID: PredictCryptoUpDownDetailsSelectorsIDs.BACK_BUTTON, }}": 1,
               "{{ testID: 'perps-details-back-button' }}": 1,
               "{{ testID: 'perps-leaderboard-back-button' }}": 1,
               "{{ testID: 'perps-stats-back-button' }}": 1,
               "{{ testID: 'predict-the-pitch-stats-back-button' }}": 1,
-              "{{ testID: 'device-added-back-button' }}": 1,
               "{{ testID: NotificationMenuViewSelectorsIDs.CLOSE_BUTTON, }}": 1,
               "{addBackButton ? { testID: `${title}-navbar-back-button` } : undefined}": 1
             }
@@ -467,6 +453,15 @@
               "{icon}": 1
             }
           },
+          "accessibilityLabel": {
+            "count": 4,
+            "values": {
+              "{strings('perps.watchlist.filter_badge_label')}": 1,
+              "{allNetworksLabel}": 1,
+              "{displayName}": 1,
+              "{strings(PILL_LABEL_KEYS[pillId])}": 1
+            }
+          },
           "selectedAccountGroups": {
             "count": 4,
             "values": {
@@ -505,22 +500,6 @@
               "{destToken?.chainId}": 1
             }
           },
-          "isScrollEnabled": {
-            "count": 3,
-            "values": {
-              "{isFullView}": 1,
-              "false": 1,
-              "true (shorthand)": 1
-            }
-          },
-          "scrollViewProps": {
-            "count": 3,
-            "values": {
-              "{isFullView ? scrollViewProps : undefined}": 1,
-              "{{ style: styles.content, testID: PerpsTabViewSelectorsIDs.SCROLL_VIEW, }}": 1,
-              "{{ testID: WalletViewSelectorsIDs.WALLET_SCROLL_VIEW, contentContainerStyle: s...}": 1
-            }
-          },
           "status": {
             "count": 3,
             "values": {
@@ -536,6 +515,20 @@
               "{notificationData}": 1
             }
           },
+          "onDismissComplete": {
+            "count": 3,
+            "values": {
+              "{onDismissComplete}": 2,
+              "{() => setOnboardingNotificationVisible(false)}": 1
+            }
+          },
+          "dismissDuration": {
+            "count": 3,
+            "values": {
+              "4000": 1,
+              "{dismissDuration}": 2
+            }
+          },
           "[spread]": {
             "count": 3,
             "values": {
@@ -548,14 +541,6 @@
               "{ButtonSemanticSeverity.Success}": 1,
               "{ButtonSemanticSeverity.Danger}": 1,
               "{orderForm.direction === 'long' ? ButtonSemanticSeverity.Success : ButtonSeman...}": 1
-            }
-          },
-          "accessibilityLabel": {
-            "count": 3,
-            "values": {
-              "{allNetworksLabel}": 1,
-              "{displayName}": 1,
-              "{strings(PILL_LABEL_KEYS[pillId])}": 1
             }
           },
           "accountGroup": {
@@ -626,6 +611,20 @@
             "count": 2,
             "values": {
               "{setKeyboardAvoidingViewEnabled}": 2
+            }
+          },
+          "isScrollEnabled": {
+            "count": 2,
+            "values": {
+              "{isFullView}": 1,
+              "true (shorthand)": 1
+            }
+          },
+          "scrollViewProps": {
+            "count": 2,
+            "values": {
+              "{isFullView ? scrollViewProps : undefined}": 1,
+              "{{ testID: WalletViewSelectorsIDs.WALLET_SCROLL_VIEW, contentContainerStyle: s...}": 1
             }
           },
           "onHide": {
@@ -844,6 +843,12 @@
             "count": 1,
             "values": {
               "true (shorthand)": 1
+            }
+          },
+          "isVisible": {
+            "count": 1,
+            "values": {
+              "{onboardingNotificationVisible}": 1
             }
           },
           "endContainer": {
@@ -861,30 +866,26 @@
         }
       },
       "overall": {
-        "totalInstances": 163,
-        "filesCount": 100,
+        "totalInstances": 156,
+        "filesCount": 98,
         "props": {
           "style": {
-            "count": 48,
+            "count": 42,
             "values": {
-              "{tw.style('rounded-xl py-2 px-3')}": 8,
+              "{tw.style('rounded-xl py-2 px-3')}": 9,
               "{styles.noNetworkFeeContainer}": 4,
-              "{styles.quoteRow}": 4,
               "{tw.style('my-1')}": 4,
               "{styles.paidByMetaMask}": 2,
               "{styles.actionButtonWrapper}": 2,
-              "{styles.statsRow}": 2,
+              "{tw.style('rounded-md')}": 2,
               "{styles.iconSkeleton}": 2,
               "{styles.tokenNameSkeleton}": 2,
               "{styles.marketStatsSkeleton}": 2,
               "{[ credit && styles.valueIsCredit, debit && styles.valueIsDebit, ]}": 2,
               "{styles.tag}": 1,
-              "{[styles.statsRow, !onOrderBookPress && styles.statsRowFirst]}": 1,
-              "{styles.statsRowLast}": 1,
               "{tw.style('w-full')}": 1,
               "{tw.style('w-full bg-muted')}": 1,
               "{tw.style('w-full', showReducedOpacity && 'opacity-50')}": 1,
-              "{tw.style('rounded-md')}": 1,
               "{tw.style('rounded-full')}": 1,
               "{{ ...styles.cashOutButton, }}": 1,
               "{styles.priceSkeleton}": 1,
@@ -894,52 +895,14 @@
               "{overrides?.headerStyle}": 1
             }
           },
-          "value": {
-            "count": 41,
-            "values": {
-              "{{ label: ( <Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItem...}": 2,
-              "{{ label: isLoading || isEstimating ? ( <Skeleton height={20} width={80} style...}": 2,
-              "{{ label: { text: strings('earn.immediate'), variant: TextVariant.BodyMD, }, }}": 2,
-              "{{ label: ( <ContractTag contractAddress={lendingContractAddress} contractName...}": 2,
-              "{{ label: ( <AccountTag accountAddress={selectedAccount?.address} accountName=...}": 2,
-              "{pricePercentChange1d ?? 0}": 2,
-              "{{ label: ( <Text variant={TextVariant.BodyMD} color={TextColor.Alternative} t...}": 2,
-              "{{ label: ( <TagColored color={TagColor.Success} labelProps={{ variant: TextVa...}": 1,
-              "{{ label: { text: formattedQuoteData.networkFee, variant: TextVariantLegacy.Bo...}": 1,
-              "{{ label: ( <TouchableOpacity onPress={handleSlippagePress} activeOpacity={0.6...}": 1,
-              "{{ label: { text: `${formattedMinToTokenAmount} ${destToken?.symbol}`, variant...}": 1,
-              "{{ label: ( <TouchableOpacity testID=\"price-impact-info-button\" onPress={handl...}": 1,
-              "{{ label: isLoading || isEstimating || !destination.isResolved ? ( <Skeleton h...}": 1,
-              "{{ label: { text: `${earnToken?.experience?.apr}%`, variant: TextVariant.BodyM...}": 1,
-              "{{ label: ( <View style={styles.estAnnualReward}> <Text numberOfLines={1}> { e...}": 1,
-              "{{ label: { text: strings('earn.every_minute'), variant: TextVariant.BodyMD, }, }}": 1,
-              "{{ label: ( <View style={styles.networkRowRight}> <Badge variant={BadgeVariant...}": 1,
-              "{{ label: ( <Text variant={TextVariant.BodyMD} testID={PerpsWithdrawViewSelect...}": 1,
-              "{{ label: { text: marketStats.volume24h, variant: LegacyTextVariant.BodyMD, co...}": 1,
-              "{{ label: { text: marketStats.openInterest, variant: LegacyTextVariant.BodyMD,...}": 1,
-              "{{ label: fundingValueContent, }}": 1,
-              "{{ label: ( <LegacyText variant={LegacyTextVariant.BodyMD} color={LegacyTextCo...}": 1,
-              "{{ label: { text: networkFee, variant: TextVariant.BodyMD, }, }}": 1,
-              "{{ label: { text: metamaskFee, variant: TextVariant.BodyMD, }, }}": 1,
-              "{{ label: { text: estimatedTime, variant: TextVariant.BodyMD, }, }}": 1,
-              "{{ label: { text: rate, variant: TextVariant.BodyMD, }, }}": 1,
-              "{{ label: ( <ContractTag contractAddress={vaultMetadata?.vaultAddress ?? contr...}": 1,
-              "{{ label: ( <View style={styles.networkKeyValueRow}> <Avatar variant={AvatarVa...}": 1,
-              "{{ label: { text: rewardRate, color: TextColor.Success, variant: TextVariant.B...}": 1,
-              "{{ label: ( <View style={styles.estAnnualRewardValue}> <Text color={TextColor....}": 1,
-              "{{ label: { text: strings('stake.12_hours'), variant: TextVariant.BodyMD, }, }}": 1,
-              "{{ label: { text: strings('stake.estimated_unstaking_time'), variant: TextVari...}": 1,
-              "{result.percentChange ?? 0}": 1,
-              "{percentValue}": 1
-            }
-          },
           "testID": {
-            "count": 40,
+            "count": 41,
             "values": {
               "{testID}": 6,
               "{config.testID}": 2,
               "{AccountListBottomSheetSelectorsIDs.ACCOUNT_LIST_ID}": 2,
               "{`${BatchSellTokenSelectSelectorsIDs.NETWORK_PILL}-${chainId}`}": 1,
+              "\"bridge-watchlist-filter-watchlist\"": 1,
               "\"network-pills-more-button\"": 1,
               "\"money-onboarding-card\"": 1,
               "{PerpsOrderBookViewSelectorsIDs.LONG_BUTTON}": 1,
@@ -972,12 +935,13 @@
             }
           },
           "onPress": {
-            "count": 37,
+            "count": 38,
             "values": {
               "{onPress}": 6,
               "{handlePressTokenValue}": 2,
               "{() => handleChainSelect(chainId)}": 1,
               "{() => onChainSelect(chain.chainId)}": 1,
+              "{onWatchlistFilterPress}": 1,
               "{() => onChainSelect(undefined)}": 1,
               "{onMorePress}": 1,
               "{createActionHandler(config)}": 1,
@@ -1007,10 +971,40 @@
               "{handlePress}": 1
             }
           },
-          "field": {
-            "count": 37,
+          "value": {
+            "count": 33,
             "values": {
-              "{{ label: ( <View style={styles.labelWithIcon}> <LegacyText variant={LegacyTex...}": 3,
+              "{{ label: ( <Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItem...}": 2,
+              "{{ label: isLoading || isEstimating ? ( <Skeleton height={20} width={80} style...}": 2,
+              "{{ label: { text: strings('earn.immediate'), variant: TextVariant.BodyMD, }, }}": 2,
+              "{{ label: ( <ContractTag contractAddress={lendingContractAddress} contractName...}": 2,
+              "{{ label: ( <AccountTag accountAddress={selectedAccount?.address} accountName=...}": 2,
+              "{pricePercentChange1d ?? 0}": 2,
+              "{{ label: ( <Text variant={TextVariant.BodyMd} color={TextColor.TextAlternativ...}": 2,
+              "{{ label: ( <TagColored color={TagColor.Success} labelProps={{ variant: TextVa...}": 1,
+              "{{ label: { text: formattedQuoteData.networkFee, variant: TextVariantLegacy.Bo...}": 1,
+              "{{ label: ( <TouchableOpacity onPress={handleSlippagePress} activeOpacity={0.6...}": 1,
+              "{{ label: { text: `${formattedMinToTokenAmount} ${destToken?.symbol}`, variant...}": 1,
+              "{{ label: ( <TouchableOpacity testID=\"price-impact-info-button\" onPress={handl...}": 1,
+              "{{ label: isLoading || isEstimating || !destination.isResolved ? ( <Skeleton h...}": 1,
+              "{{ label: { text: `${earnToken?.experience?.apr}%`, variant: TextVariant.BodyM...}": 1,
+              "{{ label: ( <View style={styles.estAnnualReward}> <Text numberOfLines={1}> { e...}": 1,
+              "{{ label: { text: strings('earn.every_minute'), variant: TextVariant.BodyMD, }, }}": 1,
+              "{{ label: ( <View style={styles.networkRowRight}> <Badge variant={BadgeVariant...}": 1,
+              "{{ label: ( <Text variant={TextVariant.BodyMd} testID={PerpsWithdrawViewSelect...}": 1,
+              "{{ label: ( <ContractTag contractAddress={vaultMetadata?.vaultAddress ?? contr...}": 1,
+              "{{ label: ( <View style={styles.networkKeyValueRow}> <Avatar variant={AvatarVa...}": 1,
+              "{{ label: { text: rewardRate, color: TextColor.Success, variant: TextVariant.B...}": 1,
+              "{{ label: ( <View style={styles.estAnnualRewardValue}> <Text color={TextColor....}": 1,
+              "{{ label: { text: strings('stake.12_hours'), variant: TextVariant.BodyMD, }, }}": 1,
+              "{{ label: { text: strings('stake.estimated_unstaking_time'), variant: TextVari...}": 1,
+              "{result.percentChange ?? 0}": 1,
+              "{percentValue}": 1
+            }
+          },
+          "field": {
+            "count": 29,
+            "values": {
               "{{ label: ( <Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItem...}": 2,
               "{{ label: { text: strings('bridge.network_fee'), variant: TextVariantLegacy.Bo...}": 1,
               "{{ label: { text: toSentenceCase(strings('bridge.network_fee')), variant: Text...}": 1,
@@ -1030,12 +1024,7 @@
               "{{ label: { text: strings('earn.withdrawing_to'), variant: TextVariant.BodyMDM...}": 1,
               "{{ label: { text: strings('earn.protocol'), variant: TextVariant.BodyMDMedium,...}": 1,
               "{{ label: { text: strings('earn.network'), variant: TextVariant.BodyMDMedium, ...}": 1,
-              "{{ label: { text: strings('perps.withdrawal.you_will_receive'), variant: TextV...}": 1,
-              "{{ label: { text: strings('perps.market.24h_volume'), variant: LegacyTextVaria...}": 1,
-              "{{ label: { text: strings('perps.quote.network_fee'), variant: TextVariant.Bod...}": 1,
-              "{{ label: { text: strings('perps.quote.metamask_fee'), variant: TextVariant.Bo...}": 1,
-              "{{ label: { text: strings('perps.quote.estimated_time'), variant: TextVariant....}": 1,
-              "{{ label: { text: strings('perps.quote.rate'), variant: TextVariant.BodyMDMedi...}": 1,
+              "{{ label: ( <Text variant={TextVariant.BodyMd}> {strings('perps.withdrawal.you...}": 1,
               "{{ label: { text: strings('predict.fee_summary.estimated_points'), variant: Le...}": 1,
               "{{ label: { text: primaryLabel } }}": 1,
               "{{ label: { text: secondaryLabel }, }}": 1,
@@ -1047,11 +1036,12 @@
             }
           },
           "label": {
-            "count": 23,
+            "count": 24,
             "values": {
               "{<Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItems.Center} g...}": 6,
               "{config.label}": 2,
               "{strings('asset_overview.swap')}": 2,
+              "{<Icon name={IconName.StarFilled} size={IconSize.Md} color={ isWatchlistFilter...}": 1,
               "{strings('bridge.all')}": 1,
               "{strings('bridge.more_networks', { count: remainingCount, })}": 1,
               "{allNetworksLabel}": 1,
@@ -1068,9 +1058,9 @@
             }
           },
           "size": {
-            "count": 23,
+            "count": 24,
             "values": {
-              "{ButtonSize.Md}": 9,
+              "{ButtonSize.Md}": 10,
               "{ButtonSizeHero.Lg}": 5,
               "\"large\"": 3,
               "{ButtonSize.Lg}": 2,
@@ -1081,12 +1071,12 @@
             }
           },
           "width": {
-            "count": 19,
+            "count": 20,
             "values": {
               "16": 1,
               "52": 1,
               "60": 2,
-              "80": 2,
+              "80": 3,
               "92": 1,
               "120": 2,
               "{iconSize}": 2,
@@ -1099,13 +1089,13 @@
             }
           },
           "height": {
-            "count": 19,
+            "count": 20,
             "values": {
               "16": 5,
               "18": 3,
               "20": 6,
               "22": 1,
-              "24": 2,
+              "24": 3,
               "{iconSize}": 2
             }
           },
@@ -1128,6 +1118,15 @@
               "{strings('trending.title')}": 1
             }
           },
+          "color": {
+            "count": 16,
+            "values": {
+              "{TagColor.Success}": 10,
+              "{theme.colors.primary.default}": 3,
+              "{TagColor.Info}": 2,
+              "{theme.colors.primary.inverse}": 1
+            }
+          },
           "isDisabled": {
             "count": 15,
             "values": {
@@ -1141,15 +1140,6 @@
               "{!isBuyingAvailable}": 1,
               "false": 1,
               "{isNFT || tokenValueMaxPrecision === null}": 1
-            }
-          },
-          "color": {
-            "count": 15,
-            "values": {
-              "{TagColor.Success}": 9,
-              "{theme.colors.primary.default}": 3,
-              "{TagColor.Info}": 2,
-              "{theme.colors.primary.inverse}": 1
             }
           },
           "iconName": {
@@ -1168,25 +1158,26 @@
               "{IconName.Speedometer}": 1
             }
           },
-          "onBack": {
-            "count": 12,
-            "values": {
-              "{() => navigation.goBack()}": 5,
-              "{handleBack}": 2,
-              "{handleClose}": 2,
-              "{onBack}": 1,
-              "{navigation.goBack}": 1,
-              "{addBackButton ? handleBackPress : undefined}": 1
-            }
-          },
           "isActive": {
-            "count": 10,
+            "count": 11,
             "values": {
               "{isSelected}": 5,
               "false": 2,
-              "{!selectedChainId}": 1,
+              "{isWatchlistFilterActive}": 1,
+              "{!selectedChainId && !isWatchlistFilterActive}": 1,
               "{isActive}": 1,
               "{isAllSelected}": 1
+            }
+          },
+          "onBack": {
+            "count": 11,
+            "values": {
+              "{() => navigation.goBack()}": 5,
+              "{handleClose}": 2,
+              "{onBack}": 1,
+              "{handleBack}": 1,
+              "{navigation.goBack}": 1,
+              "{addBackButton ? handleBackPress : undefined}": 1
             }
           },
           "twClassName": {
@@ -1199,6 +1190,15 @@
               "\"mb-2\"": 1,
               "\"pl-1 pr-3\"": 1,
               "\"bg-default\"": 1
+            }
+          },
+          "labelProps": {
+            "count": 9,
+            "values": {
+              "{{ variant: TextVariant.BodySM, style: { textTransform: 'none', textAlign: 'ce...}": 5,
+              "{{ variant: TextVariantLegacy.BodySM, style: { textTransform: 'none', textAlig...}": 2,
+              "{{ variant: LegacyTextVariant.BodySM, style: { textTransform: 'none', textAlig...}": 1,
+              "{{ testID: 'paid-by-metamask' }}": 1
             }
           },
           "includesTopInset": {
@@ -1218,23 +1218,14 @@
               "{pillId}": 1
             }
           },
-          "labelProps": {
-            "count": 8,
-            "values": {
-              "{{ variant: TextVariant.BodySM, style: { textTransform: 'none', textAlign: 'ce...}": 5,
-              "{{ variant: TextVariantLegacy.BodySM, style: { textTransform: 'none', textAlig...}": 2,
-              "{{ variant: LegacyTextVariant.BodySM, style: { textTransform: 'none', textAlig...}": 1
-            }
-          },
           "backButtonProps": {
-            "count": 8,
+            "count": 7,
             "values": {
               "{{ testID: PredictCryptoUpDownDetailsSelectorsIDs.BACK_BUTTON, }}": 1,
               "{{ testID: 'perps-details-back-button' }}": 1,
               "{{ testID: 'perps-leaderboard-back-button' }}": 1,
               "{{ testID: 'perps-stats-back-button' }}": 1,
               "{{ testID: 'predict-the-pitch-stats-back-button' }}": 1,
-              "{{ testID: 'device-added-back-button' }}": 1,
               "{{ testID: NotificationMenuViewSelectorsIDs.CLOSE_BUTTON, }}": 1,
               "{addBackButton ? { testID: `${title}-navbar-back-button` } : undefined}": 1
             }
@@ -1297,6 +1288,15 @@
               "{icon}": 1
             }
           },
+          "accessibilityLabel": {
+            "count": 4,
+            "values": {
+              "{strings('perps.watchlist.filter_badge_label')}": 1,
+              "{allNetworksLabel}": 1,
+              "{displayName}": 1,
+              "{strings(PILL_LABEL_KEYS[pillId])}": 1
+            }
+          },
           "selectedAccountGroups": {
             "count": 4,
             "values": {
@@ -1335,22 +1335,6 @@
               "{destToken?.chainId}": 1
             }
           },
-          "isScrollEnabled": {
-            "count": 3,
-            "values": {
-              "{isFullView}": 1,
-              "false": 1,
-              "true (shorthand)": 1
-            }
-          },
-          "scrollViewProps": {
-            "count": 3,
-            "values": {
-              "{isFullView ? scrollViewProps : undefined}": 1,
-              "{{ style: styles.content, testID: PerpsTabViewSelectorsIDs.SCROLL_VIEW, }}": 1,
-              "{{ testID: WalletViewSelectorsIDs.WALLET_SCROLL_VIEW, contentContainerStyle: s...}": 1
-            }
-          },
           "status": {
             "count": 3,
             "values": {
@@ -1366,6 +1350,20 @@
               "{notificationData}": 1
             }
           },
+          "onDismissComplete": {
+            "count": 3,
+            "values": {
+              "{onDismissComplete}": 2,
+              "{() => setOnboardingNotificationVisible(false)}": 1
+            }
+          },
+          "dismissDuration": {
+            "count": 3,
+            "values": {
+              "4000": 1,
+              "{dismissDuration}": 2
+            }
+          },
           "[spread]": {
             "count": 3,
             "values": {
@@ -1378,14 +1376,6 @@
               "{ButtonSemanticSeverity.Success}": 1,
               "{ButtonSemanticSeverity.Danger}": 1,
               "{orderForm.direction === 'long' ? ButtonSemanticSeverity.Success : ButtonSeman...}": 1
-            }
-          },
-          "accessibilityLabel": {
-            "count": 3,
-            "values": {
-              "{allNetworksLabel}": 1,
-              "{displayName}": 1,
-              "{strings(PILL_LABEL_KEYS[pillId])}": 1
             }
           },
           "accountGroup": {
@@ -1456,6 +1446,20 @@
             "count": 2,
             "values": {
               "{setKeyboardAvoidingViewEnabled}": 2
+            }
+          },
+          "isScrollEnabled": {
+            "count": 2,
+            "values": {
+              "{isFullView}": 1,
+              "true (shorthand)": 1
+            }
+          },
+          "scrollViewProps": {
+            "count": 2,
+            "values": {
+              "{isFullView ? scrollViewProps : undefined}": 1,
+              "{{ testID: WalletViewSelectorsIDs.WALLET_SCROLL_VIEW, contentContainerStyle: s...}": 1
             }
           },
           "onHide": {
@@ -1676,6 +1680,12 @@
               "true (shorthand)": 1
             }
           },
+          "isVisible": {
+            "count": 1,
+            "values": {
+              "{onboardingNotificationVisible}": 1
+            }
+          },
           "endContainer": {
             "count": 1,
             "values": {
@@ -1691,7 +1701,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "BaseNotification": 162,
+        "BaseNotification": 155,
         "Toast": 1
       }
     }

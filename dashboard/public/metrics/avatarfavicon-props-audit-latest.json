@@ -1,18 +1,28 @@
 {
   "component": "AvatarFavicon",
-  "generatedAt": "2026-07-20T09:22:02.451Z",
+  "generatedAt": "2026-07-27T09:22:34.009Z",
   "projects": {
     "extension": {
-      "filesScanned": 3445,
+      "filesScanned": 3470,
       "targetComponent": "AvatarFavicon",
       "mmds": {
-        "totalInstances": 4,
-        "filesCount": 3,
+        "totalInstances": 5,
+        "filesCount": 5,
         "props": {
+          "src": {
+            "count": 5,
+            "values": {
+              "{connectedSubjectsMetadata?.iconUrl}": 2,
+              "{connection.iconUrl}": 1,
+              "{connectedSubjectsMetadata.iconUrl}": 1,
+              "{subjectMetadata[origin]?.iconUrl}": 1
+            }
+          },
           "name": {
             "count": 4,
             "values": {
-              "{connectedSubjectsMetadata?.name}": 3,
+              "{connectedSubjectsMetadata?.name}": 2,
+              "{connectedSubjectsMetadata.name}": 1,
               "{origin}": 1
             }
           },
@@ -23,57 +33,48 @@
               "{AvatarFaviconSize.Md}": 1
             }
           },
-          "src": {
-            "count": 4,
-            "values": {
-              "{connectedSubjectsMetadata?.iconUrl}": 3,
-              "{subjectMetadata[origin]?.iconUrl}": 1
-            }
-          },
           "data-testid": {
-            "count": 1,
+            "count": 2,
             "values": {
-              "\"dapp-connection-control-bar__favicon\"": 1
+              "\"dapp-connection-control-bar__favicon\"": 1,
+              "\"connection-list-item__avatar-favicon\"": 1
             }
           }
         }
       },
       "deprecated": {
-        "totalInstances": 9,
-        "filesCount": 9,
+        "totalInstances": 7,
+        "filesCount": 7,
         "props": {
-          "src": {
-            "count": 9,
-            "values": {
-              "{iconUrl}": 2,
-              "{subject.iconUrl}": 1,
-              "{faviconUrl}": 1,
-              "{connection.iconUrl}": 1,
-              "{connectedSubjectsMetadata.iconUrl}": 1,
-              "{siteImage}": 1,
-              "{toToken.iconUrl ?? undefined}": 1,
-              "{targetSubjectMetadata.iconUrl}": 1
-            }
-          },
           "name": {
-            "count": 8,
+            "count": 7,
             "values": {
               "{title}": 2,
               "{subject.name ?? subject.origin}": 1,
               "{snapName}": 1,
               "{permissionSubject.connection}": 1,
-              "{connectedSubjectsMetadata.name}": 1,
               "{origin}": 1,
               "{blockExplorerToken.symbol}": 1
             }
           },
-          "size": {
+          "src": {
             "count": 7,
             "values": {
+              "{iconUrl}": 2,
+              "{subject.iconUrl}": 1,
+              "{faviconUrl}": 1,
+              "{siteImage}": 1,
+              "{toToken.iconUrl ?? undefined}": 1,
+              "{targetSubjectMetadata.iconUrl}": 1
+            }
+          },
+          "size": {
+            "count": 6,
+            "values": {
               "{AvatarFaviconSize.Md}": 2,
-              "{AvatarFaviconSize.Sm}": 2,
               "{IconSize.Lg}": 1,
               "{avatarSize as AvatarFaviconSize}": 1,
+              "{AvatarFaviconSize.Sm}": 1,
               "{AvatarFaviconSize.Lg}": 1
             }
           },
@@ -82,13 +83,6 @@
             "values": {
               "{BackgroundColor.backgroundAlternative}": 2,
               "{BackgroundColor.backgroundMuted}": 1
-            }
-          },
-          "data-testid": {
-            "count": 2,
-            "values": {
-              "\"connection-list-item__avatar-favicon\"": 1,
-              "{`${dataTestId}-avatar-favicon`}": 1
             }
           },
           "className": {
@@ -114,18 +108,24 @@
             "values": {
               "{{ size: IconSize.Sm, }}": 1
             }
+          },
+          "data-testid": {
+            "count": 1,
+            "values": {
+              "{`${dataTestId}-avatar-favicon`}": 1
+            }
           }
         }
       },
       "overall": {
-        "totalInstances": 13,
+        "totalInstances": 12,
         "filesCount": 12,
         "props": {
           "src": {
-            "count": 13,
+            "count": 12,
             "values": {
-              "{connectedSubjectsMetadata?.iconUrl}": 3,
               "{iconUrl}": 2,
+              "{connectedSubjectsMetadata?.iconUrl}": 2,
               "{subject.iconUrl}": 1,
               "{faviconUrl}": 1,
               "{connection.iconUrl}": 1,
@@ -137,10 +137,10 @@
             }
           },
           "name": {
-            "count": 12,
+            "count": 11,
             "values": {
-              "{connectedSubjectsMetadata?.name}": 3,
               "{title}": 2,
+              "{connectedSubjectsMetadata?.name}": 2,
               "{origin}": 2,
               "{subject.name ?? subject.origin}": 1,
               "{snapName}": 1,
@@ -150,9 +150,9 @@
             }
           },
           "size": {
-            "count": 11,
+            "count": 10,
             "values": {
-              "{AvatarFaviconSize.Sm}": 5,
+              "{AvatarFaviconSize.Sm}": 4,
               "{AvatarFaviconSize.Md}": 3,
               "{IconSize.Lg}": 1,
               "{avatarSize as AvatarFaviconSize}": 1,
@@ -201,11 +201,11 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "AvatarFavicon": 9
+        "AvatarFavicon": 7
       }
     },
     "mobile": {
-      "filesScanned": 7241,
+      "filesScanned": 7343,
       "targetComponent": "AvatarFavicon",
       "mmds": {
         "totalInstances": 1,
