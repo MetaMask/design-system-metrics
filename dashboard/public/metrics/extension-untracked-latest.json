@@ -1,6 +1,6 @@
 {
   "project": "extension",
-  "date": "2026-07-27",
+  "date": "2026-08-03",
   "teams": [
     "@MetaMask/accounts-engineers",
     "@MetaMask/confirmations",
@@ -14,15 +14,15 @@
     "@MetaMask/web3auth"
   ],
   "summary": {
-    "filesScanned": 1628,
-    "totalJSXUsages": 9770,
-    "trackedDeprecated": 2798,
-    "trackedMMDS": 3873,
-    "untrackedTotal": 3099,
-    "uniqueUntrackedComponents": 108,
-    "replaceableNow": 43,
-    "replaceableInstances": 603,
-    "futureDSCandidates": 65,
+    "filesScanned": 1646,
+    "totalJSXUsages": 10023,
+    "trackedDeprecated": 2763,
+    "trackedMMDS": 4076,
+    "untrackedTotal": 3184,
+    "uniqueUntrackedComponents": 112,
+    "replaceableNow": 45,
+    "replaceableInstances": 618,
+    "futureDSCandidates": 67,
     "codeOwnerBreakdown": {
       "@MetaMask/swaps-engineers": {
         "replaceableComponents": 16,
@@ -30,9 +30,9 @@
         "replaceableInstances": 56
       },
       "@MetaMask/core-extension-ux": {
-        "replaceableComponents": 22,
-        "futureDSComponents": 26,
-        "replaceableInstances": 102
+        "replaceableComponents": 24,
+        "futureDSComponents": 27,
+        "replaceableInstances": 103
       },
       "@MetaMask/confirmations": {
         "replaceableComponents": 16,
@@ -62,12 +62,12 @@
       "@MetaMask/accounts-engineers": {
         "replaceableComponents": 10,
         "futureDSComponents": 11,
-        "replaceableInstances": 59
+        "replaceableInstances": 60
       },
       "@MetaMask/metamask-assets": {
-        "replaceableComponents": 6,
+        "replaceableComponents": 8,
         "futureDSComponents": 8,
-        "replaceableInstances": 9
+        "replaceableInstances": 12
       },
       "@MetaMask/money-movement": {
         "replaceableComponents": 0,
@@ -125,6 +125,7 @@
         "../components/send/header",
         "../components/confirm/header",
         "../pages/page",
+        "../../multichain/pages/page",
         "../../../multichain/pages/page",
         "../page",
         "../../page",
@@ -152,10 +153,10 @@
         "@MetaMask/swaps-engineers"
       ],
       "codeOwnerBreakdown": {
-        "@unknown": 15,
+        "@unknown": 16,
         "@MetaMask/perps": 1,
         "@MetaMask/engagement": 1,
-        "@MetaMask/core-extension-ux": 7,
+        "@MetaMask/core-extension-ux": 6,
         "@MetaMask/swaps-engineers": 2,
         "@MetaMask/core-platform": 1,
         "@MetaMask/web3auth": 2,
@@ -217,8 +218,8 @@
     },
     {
       "component": "Content",
-      "instances": 39,
-      "fileCount": 35,
+      "instances": 40,
+      "fileCount": 36,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/multichain/pages/page",
       "importSources": [
@@ -251,7 +252,7 @@
         "@MetaMask/swaps-engineers": 4,
         "@MetaMask/core-platform": 2,
         "@MetaMask/web3auth": 3,
-        "@MetaMask/accounts-engineers": 13,
+        "@MetaMask/accounts-engineers": 14,
         "@MetaMask/core-extension-ux": 4,
         "@MetaMask/metamask-assets": 2
       }
@@ -299,6 +300,7 @@
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/ui/toast/toast",
       "importSources": [
+        "../../components/ui/toast/toast",
         "../../../components/ui/toast/toast",
         "../../ui/toast/toast",
         "(local or re-export)",
@@ -318,15 +320,15 @@
         }
       ],
       "codeOwners": [
-        "@MetaMask/core-extension-ux",
         "@unknown",
+        "@MetaMask/core-extension-ux",
         "@MetaMask/web3auth",
         "@MetaMask/metamask-assets",
         "@MetaMask/perps"
       ],
       "codeOwnerBreakdown": {
-        "@MetaMask/core-extension-ux": 8,
         "@unknown": 8,
+        "@MetaMask/core-extension-ux": 8,
         "@MetaMask/perps": 2,
         "@MetaMask/web3auth": 6,
         "@MetaMask/accounts-engineers": 1,
@@ -408,13 +410,12 @@
     },
     {
       "component": "NetworkListItem",
-      "instances": 21,
-      "fileCount": 16,
+      "instances": 20,
+      "fileCount": 15,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/multichain/network-list-item",
       "importSources": [
         "../../components/multichain/network-list-item",
-        "../../components/multichain",
         "../../../components/multichain",
         "../network-list-item",
         "./network-list-item/network-list-item",
@@ -445,7 +446,7 @@
       ],
       "codeOwnerBreakdown": {
         "@unknown": 4,
-        "@MetaMask/core-extension-ux": 9,
+        "@MetaMask/core-extension-ux": 8,
         "@MetaMask/web3auth": 1,
         "@MetaMask/accounts-engineers": 2,
         "@MetaMask/confirmations": 2,
@@ -883,6 +884,37 @@
       }
     },
     {
+      "component": "IconButton",
+      "instances": 9,
+      "fileCount": 2,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/ui/icon-button/icon-button",
+      "importSources": [
+        "../../../components/ui/icon-button/icon-button",
+        "../../ui/icon-button"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Button",
+          "confidence": "high"
+        },
+        {
+          "component": "Icon",
+          "confidence": "high"
+        },
+        {
+          "component": "AvatarIcon",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@unknown"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 9
+      }
+    },
+    {
       "component": "NetworksPageFormHeader",
       "instances": 8,
       "fileCount": 1,
@@ -937,37 +969,6 @@
       }
     },
     {
-      "component": "IconButton",
-      "instances": 8,
-      "fileCount": 2,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/ui/icon-button/icon-button",
-      "importSources": [
-        "../../../components/ui/icon-button/icon-button",
-        "../../ui/icon-button"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Button",
-          "confidence": "high"
-        },
-        {
-          "component": "Icon",
-          "confidence": "high"
-        },
-        {
-          "component": "AvatarIcon",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@unknown"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 8
-      }
-    },
-    {
       "component": "NotificationDetailBlockExplorerButton",
       "instances": 8,
       "fileCount": 8,
@@ -995,6 +996,41 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/engagement": 8
+      }
+    },
+    {
+      "component": "SectionHeader",
+      "instances": 7,
+      "fileCount": 3,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/ui/section-header",
+      "importSources": [
+        "../../components/ui/section-header",
+        "(local or re-export)"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "HeaderBase",
+          "confidence": "medium"
+        },
+        {
+          "component": "ModalHeader",
+          "confidence": "medium"
+        },
+        {
+          "component": "PopoverHeader",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@unknown",
+        "@MetaMask/core-extension-ux",
+        "@MetaMask/metamask-assets"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/core-extension-ux": 2,
+        "@unknown": 4,
+        "@MetaMask/metamask-assets": 1
       }
     },
     {
@@ -1048,6 +1084,43 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/core-extension-ux": 7
+      }
+    },
+    {
+      "component": "AssetCellBadge",
+      "instances": 7,
+      "fileCount": 7,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/app/assets/asset-list/cells/asset-cell-badge",
+      "importSources": [
+        "../../../components/app/assets/asset-list/cells/asset-cell-badge",
+        "../../app/assets/asset-list/cells/asset-cell-badge",
+        "../asset-list/cells/asset-cell-badge",
+        "../../asset-list/cells/asset-cell-badge"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "BadgeCount",
+          "confidence": "medium"
+        },
+        {
+          "component": "BadgeIcon",
+          "confidence": "medium"
+        },
+        {
+          "component": "BadgeNetwork",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@unknown",
+        "@MetaMask/metamask-assets",
+        "@MetaMask/core-extension-ux"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 4,
+        "@MetaMask/core-extension-ux": 1,
+        "@MetaMask/metamask-assets": 2
       }
     },
     {
@@ -1118,38 +1191,6 @@
       }
     },
     {
-      "component": "TextField",
-      "instances": 6,
-      "fileCount": 4,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "ui/text-field",
-      "importSources": [
-        "../text-field",
-        "../../ui/text-field",
-        "../../../ui/text-field"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "TextField",
-          "confidence": "exact"
-        },
-        {
-          "component": "Text",
-          "confidence": "high"
-        },
-        {
-          "component": "FormTextField",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@unknown"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 6
-      }
-    },
-    {
       "component": "AvatarGroup",
       "instances": 6,
       "fileCount": 6,
@@ -1187,6 +1228,38 @@
         "@MetaMask/core-extension-ux": 2,
         "@unknown": 2,
         "@MetaMask/metamask-assets": 1
+      }
+    },
+    {
+      "component": "TextField",
+      "instances": 6,
+      "fileCount": 4,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "ui/text-field",
+      "importSources": [
+        "../text-field",
+        "../../ui/text-field",
+        "../../../ui/text-field"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "TextField",
+          "confidence": "exact"
+        },
+        {
+          "component": "Text",
+          "confidence": "high"
+        },
+        {
+          "component": "FormTextField",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@unknown"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 6
       }
     },
     {
@@ -1623,8 +1696,8 @@
     },
     {
       "component": "Page",
-      "instances": 43,
-      "fileCount": 41,
+      "instances": 44,
+      "fileCount": 42,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/multichain/pages/page",
       "importSources": [
@@ -1652,7 +1725,7 @@
         "@MetaMask/core-extension-ux": 5,
         "@MetaMask/core-platform": 2,
         "@MetaMask/web3auth": 2,
-        "@MetaMask/accounts-engineers": 15,
+        "@MetaMask/accounts-engineers": 16,
         "@MetaMask/confirmations": 1,
         "@MetaMask/metamask-assets": 2
       }
@@ -1820,8 +1893,8 @@
       "importSources": [
         "../../components/ui/icon/preloader/preloader-icon.component",
         "../../../components/ui/icon/preloader/preloader-icon.component",
-        "../icon/preloader/preloader-icon.component",
         "../../ui/icon/preloader",
+        "../icon/preloader/preloader-icon.component",
         "../../ui/icon/preloader/preloader-icon.component",
         "../../../ui/icon/preloader/preloader-icon.component",
         "../../../../../components/ui/icon/preloader",
@@ -1839,10 +1912,39 @@
       "codeOwnerBreakdown": {
         "@MetaMask/engagement": 1,
         "@MetaMask/core-extension-ux": 3,
-        "@unknown": 1,
         "@MetaMask/accounts-engineers": 4,
+        "@unknown": 1,
         "@MetaMask/core-platform": 1,
         "@MetaMask/confirmations": 6
+      }
+    },
+    {
+      "component": "ScrollContainer",
+      "instances": 15,
+      "fileCount": 13,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "contexts/scroll-container",
+      "importSources": [
+        "../../contexts/scroll-container",
+        "../../../contexts/scroll-container",
+        "../../../../contexts/scroll-container",
+        "../../../../../contexts/scroll-container"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/core-extension-ux",
+        "@unknown",
+        "@MetaMask/money-movement",
+        "@MetaMask/accounts-engineers",
+        "@MetaMask/confirmations"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 3,
+        "@MetaMask/core-extension-ux": 4,
+        "@MetaMask/money-movement": 3,
+        "@MetaMask/accounts-engineers": 2,
+        "@MetaMask/confirmations": 2,
+        "@MetaMask/web3auth": 1
       }
     },
     {
@@ -1860,35 +1962,6 @@
       ],
       "codeOwnerBreakdown": {
         "@unknown": 15
-      }
-    },
-    {
-      "component": "ScrollContainer",
-      "instances": 14,
-      "fileCount": 12,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "contexts/scroll-container",
-      "importSources": [
-        "../../contexts/scroll-container",
-        "../../../contexts/scroll-container",
-        "../../../../contexts/scroll-container",
-        "../../../../../contexts/scroll-container"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@MetaMask/core-extension-ux",
-        "@MetaMask/money-movement",
-        "@unknown",
-        "@MetaMask/accounts-engineers",
-        "@MetaMask/confirmations"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 2,
-        "@MetaMask/core-extension-ux": 4,
-        "@MetaMask/money-movement": 3,
-        "@MetaMask/accounts-engineers": 2,
-        "@MetaMask/confirmations": 2,
-        "@MetaMask/web3auth": 1
       }
     },
     {
@@ -1916,6 +1989,36 @@
         "@unknown": 10,
         "@MetaMask/swaps-engineers": 1,
         "@MetaMask/metamask-assets": 2
+      }
+    },
+    {
+      "component": "PulseLoader",
+      "instances": 13,
+      "fileCount": 13,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/ui/pulse-loader/pulse-loader",
+      "importSources": [
+        "../../../components/ui/pulse-loader",
+        "../../../../components/ui/pulse-loader",
+        "../../../../components/ui/pulse-loader/pulse-loader",
+        "../../../ui/pulse-loader",
+        "../../../ui/pulse-loader/pulse-loader"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/core-extension-ux",
+        "@MetaMask/swaps-engineers",
+        "@unknown",
+        "@MetaMask/core-platform",
+        "@MetaMask/web3auth"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/swaps-engineers": 3,
+        "@unknown": 2,
+        "@MetaMask/web3auth": 1,
+        "@MetaMask/core-extension-ux": 4,
+        "@MetaMask/core-platform": 2,
+        "@MetaMask/metamask-assets": 1
       }
     },
     {
@@ -1977,6 +2080,25 @@
       }
     },
     {
+      "component": "SelectableListItem",
+      "instances": 12,
+      "fileCount": 4,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "asset-list/sort-control/sort-control",
+      "importSources": [
+        "../../asset-list/sort-control/sort-control",
+        "../sort-control/sort-control",
+        "(local or re-export)"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/metamask-assets"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/metamask-assets": 12
+      }
+    },
+    {
       "component": "LoadingScreen",
       "instances": 11,
       "fileCount": 11,
@@ -2001,54 +2123,6 @@
         "@MetaMask/money-movement": 2,
         "@MetaMask/core-extension-ux": 1,
         "@MetaMask/confirmations": 2
-      }
-    },
-    {
-      "component": "PulseLoader",
-      "instances": 11,
-      "fileCount": 11,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/ui/pulse-loader/pulse-loader",
-      "importSources": [
-        "../../../components/ui/pulse-loader",
-        "../../../../components/ui/pulse-loader",
-        "../../../../components/ui/pulse-loader/pulse-loader",
-        "../../../ui/pulse-loader",
-        "../../../ui/pulse-loader/pulse-loader"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@MetaMask/core-extension-ux",
-        "@MetaMask/swaps-engineers",
-        "@MetaMask/core-platform",
-        "@MetaMask/web3auth",
-        "@MetaMask/metamask-assets"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/swaps-engineers": 3,
-        "@MetaMask/web3auth": 1,
-        "@MetaMask/core-extension-ux": 4,
-        "@MetaMask/core-platform": 2,
-        "@MetaMask/metamask-assets": 1
-      }
-    },
-    {
-      "component": "SelectableListItem",
-      "instances": 11,
-      "fileCount": 4,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "asset-list/sort-control/sort-control",
-      "importSources": [
-        "../../asset-list/sort-control/sort-control",
-        "(local or re-export)",
-        "../sort-control/sort-control"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@MetaMask/metamask-assets"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/metamask-assets": 11
       }
     },
     {
@@ -2274,6 +2348,36 @@
       }
     },
     {
+      "component": "VirtualizedList",
+      "instances": 8,
+      "fileCount": 8,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/ui/virtualized-list/virtualized-list",
+      "importSources": [
+        "../../components/ui/virtualized-list/virtualized-list",
+        "../../../components/ui/virtualized-list/virtualized-list",
+        "../../ui/virtualized-list/virtualized-list",
+        "../../../../components/ui/virtualized-list/virtualized-list",
+        "../../../ui/virtualized-list/virtualized-list",
+        "../../../../ui/virtualized-list/virtualized-list"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/metamask-assets",
+        "@unknown",
+        "@MetaMask/core-extension-ux",
+        "@MetaMask/accounts-engineers",
+        "@MetaMask/web3auth"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 2,
+        "@MetaMask/core-extension-ux": 1,
+        "@MetaMask/accounts-engineers": 1,
+        "@MetaMask/web3auth": 1,
+        "@MetaMask/metamask-assets": 3
+      }
+    },
+    {
       "component": "GlobalMenuRouteTransition",
       "instances": 8,
       "fileCount": 1,
@@ -2321,6 +2425,23 @@
       }
     },
     {
+      "component": "SectionDivider",
+      "instances": 8,
+      "fileCount": 2,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "(local)",
+      "importSources": [
+        "(local or re-export)"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@unknown"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 8
+      }
+    },
+    {
       "component": "CurrencyDisplay",
       "instances": 8,
       "fileCount": 6,
@@ -2337,35 +2458,6 @@
       ],
       "codeOwnerBreakdown": {
         "@unknown": 8
-      }
-    },
-    {
-      "component": "VirtualizedList",
-      "instances": 7,
-      "fileCount": 7,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/ui/virtualized-list/virtualized-list",
-      "importSources": [
-        "../../components/ui/virtualized-list/virtualized-list",
-        "../../ui/virtualized-list/virtualized-list",
-        "../../../../components/ui/virtualized-list/virtualized-list",
-        "../../../ui/virtualized-list/virtualized-list",
-        "../../../../ui/virtualized-list/virtualized-list"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@MetaMask/metamask-assets",
-        "@unknown",
-        "@MetaMask/core-extension-ux",
-        "@MetaMask/accounts-engineers",
-        "@MetaMask/web3auth"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 1,
-        "@MetaMask/core-extension-ux": 1,
-        "@MetaMask/accounts-engineers": 1,
-        "@MetaMask/web3auth": 1,
-        "@MetaMask/metamask-assets": 3
       }
     },
     {
@@ -2666,6 +2758,30 @@
       "codeOwnerBreakdown": {
         "@unknown": 2,
         "@MetaMask/core-extension-ux": 3
+      }
+    },
+    {
+      "component": "AssetListControlBar",
+      "instances": 5,
+      "fileCount": 4,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/app/assets/asset-list/asset-list-control-bar/asset-list-control-bar",
+      "importSources": [
+        "../../components/app/assets/asset-list/asset-list-control-bar/asset-list-control-bar",
+        "../../../components/app/assets/asset-list/asset-list-control-bar",
+        "./asset-list-control-bar",
+        "../../asset-list/asset-list-control-bar"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@unknown",
+        "@MetaMask/metamask-assets",
+        "@MetaMask/core-extension-ux"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/core-extension-ux": 1,
+        "@unknown": 2,
+        "@MetaMask/metamask-assets": 2
       }
     },
     {

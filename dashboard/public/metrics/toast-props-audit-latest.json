@@ -1,9 +1,9 @@
 {
   "component": "Toast",
-  "generatedAt": "2026-07-27T09:34:54.779Z",
+  "generatedAt": "2026-08-03T15:23:11.627Z",
   "projects": {
     "extension": {
-      "filesScanned": 3470,
+      "filesScanned": 3520,
       "targetComponent": "Toast",
       "mmds": {
         "totalInstances": 0,
@@ -23,7 +23,7 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 7343,
+      "filesScanned": 7459,
       "targetComponent": "Toast",
       "mmds": {
         "totalInstances": 0,
@@ -31,8 +31,8 @@
         "props": {}
       },
       "deprecated": {
-        "totalInstances": 156,
-        "filesCount": 98,
+        "totalInstances": 155,
+        "filesCount": 97,
         "props": {
           "style": {
             "count": 42,
@@ -61,7 +61,7 @@
             }
           },
           "testID": {
-            "count": 41,
+            "count": 42,
             "values": {
               "{testID}": 6,
               "{config.testID}": 2,
@@ -73,6 +73,7 @@
               "{PerpsOrderBookViewSelectorsIDs.LONG_BUTTON}": 1,
               "{PerpsOrderBookViewSelectorsIDs.SHORT_BUTTON}": 1,
               "{PerpsOrderViewSelectorsIDs.PLACE_ORDER_BUTTON}": 1,
+              "{PerpsProMarketViewSelectorsIDs.POSITIONS_PANEL_TABS}": 1,
               "{tabTestIDs[index]}": 1,
               "{PredictCryptoUpDownDetailsSelectorsIDs.HEADER}": 1,
               "{PredictBuyPreviewSelectorsIDs.PLACE_BET_BUTTON}": 1,
@@ -137,14 +138,13 @@
             }
           },
           "value": {
-            "count": 33,
+            "count": 32,
             "values": {
               "{{ label: ( <Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItem...}": 2,
               "{{ label: isLoading || isEstimating ? ( <Skeleton height={20} width={80} style...}": 2,
               "{{ label: { text: strings('earn.immediate'), variant: TextVariant.BodyMD, }, }}": 2,
               "{{ label: ( <ContractTag contractAddress={lendingContractAddress} contractName...}": 2,
               "{{ label: ( <AccountTag accountAddress={selectedAccount?.address} accountName=...}": 2,
-              "{pricePercentChange1d ?? 0}": 2,
               "{{ label: ( <Text variant={TextVariant.BodyMd} color={TextColor.TextAlternativ...}": 2,
               "{{ label: ( <TagColored color={TagColor.Success} labelProps={{ variant: TextVa...}": 1,
               "{{ label: { text: formattedQuoteData.networkFee, variant: TextVariantLegacy.Bo...}": 1,
@@ -157,6 +157,7 @@
               "{{ label: { text: strings('earn.every_minute'), variant: TextVariant.BodyMD, }, }}": 1,
               "{{ label: ( <View style={styles.networkRowRight}> <Badge variant={BadgeVariant...}": 1,
               "{{ label: ( <Text variant={TextVariant.BodyMd} testID={PerpsWithdrawViewSelect...}": 1,
+              "{pricePercentChange1d ?? 0}": 1,
               "{{ label: ( <ContractTag contractAddress={vaultMetadata?.vaultAddress ?? contr...}": 1,
               "{{ label: ( <View style={styles.networkKeyValueRow}> <Avatar variant={AvatarVa...}": 1,
               "{{ label: { text: rewardRate, color: TextColor.Success, variant: TextVariant.B...}": 1,
@@ -316,7 +317,7 @@
               "{LocalIconName.AttachMoney}": 1,
               "{LocalIconName.QrCode}": 1,
               "{IconName.AttachMoney}": 1,
-              "{IconName.Send}": 1,
+              "{IconName.Arrow2UpRight}": 1,
               "{IconName.Received}": 1,
               "{IconName.Candlestick}": 1,
               "{IconName.Stake}": 1,
@@ -334,6 +335,19 @@
               "{isAllSelected}": 1
             }
           },
+          "twClassName": {
+            "count": 11,
+            "values": {
+              "\"px-4 pt-1 pb-3\"": 3,
+              "\"px-0 mb-2\"": 2,
+              "\"-mx-2\"": 1,
+              "\"w-full\"": 1,
+              "\"px-4 pb-6\"": 1,
+              "\"mb-2\"": 1,
+              "\"pl-1 pr-3\"": 1,
+              "\"bg-default\"": 1
+            }
+          },
           "onBack": {
             "count": 11,
             "values": {
@@ -345,24 +359,12 @@
               "{addBackButton ? handleBackPress : undefined}": 1
             }
           },
-          "twClassName": {
-            "count": 10,
-            "values": {
-              "\"px-4 pt-1 pb-3\"": 3,
-              "\"px-0 mb-2\"": 2,
-              "\"w-full\"": 1,
-              "\"px-4 pb-6\"": 1,
-              "\"mb-2\"": 1,
-              "\"pl-1 pr-3\"": 1,
-              "\"bg-default\"": 1
-            }
-          },
           "labelProps": {
             "count": 9,
             "values": {
-              "{{ variant: TextVariant.BodySM, style: { textTransform: 'none', textAlign: 'ce...}": 5,
+              "{{ variant: TextVariant.BodySM, style: { textTransform: 'none', textAlign: 'ce...}": 4,
               "{{ variant: TextVariantLegacy.BodySM, style: { textTransform: 'none', textAlig...}": 2,
-              "{{ variant: LegacyTextVariant.BodySM, style: { textTransform: 'none', textAlig...}": 1,
+              "{{ variant: LegacyTextVariant.BodySM, style: { textTransform: 'none', textAlig...}": 2,
               "{{ testID: 'paid-by-metamask' }}": 1
             }
           },
@@ -437,15 +439,6 @@
               "{{ testID: NotificationMenuViewSelectorsIDs.TITLE }}": 1
             }
           },
-          "ref": {
-            "count": 4,
-            "values": {
-              "{toastRef}": 1,
-              "{tabsRef}": 1,
-              "{tabsListRef}": 1,
-              "{scrollViewRef}": 1
-            }
-          },
           "avatarAccountType": {
             "count": 4,
             "values": {
@@ -466,8 +459,7 @@
             "count": 4,
             "values": {
               "{selectedAccountGroup ? [selectedAccountGroup] : []}": 2,
-              "{[selectedAccountGroup]}": 1,
-              "{selectedAccountGroups}": 1
+              "{selectedAccountGroups}": 2
             }
           },
           "isLoading": {
@@ -484,6 +476,14 @@
               "{<Text variant={TextVariant.BodyLg} fontWeight={FontWeight.Medium} color={Text...}": 1,
               "{<View style={styles.headerActionButtonsContainer} accessible={false} > {isMon...}": 1,
               "{customRight}": 1
+            }
+          },
+          "ref": {
+            "count": 3,
+            "values": {
+              "{toastRef}": 1,
+              "{tabsListRef}": 1,
+              "{scrollViewRef}": 1
             }
           },
           "showFooter": {
@@ -661,20 +661,6 @@
               "{!preview || isLoading}": 1
             }
           },
-          "onChangeTab": {
-            "count": 2,
-            "values": {
-              "{handleChangeTab}": 1,
-              "{handleTabChange}": 1
-            }
-          },
-          "tabsListContentTwClassName": {
-            "count": 2,
-            "values": {
-              "\"px-0\"": 1,
-              "\"px-0 mt-0\"": 1
-            }
-          },
           "bottomAccessory": {
             "count": 2,
             "values": {
@@ -761,6 +747,24 @@
               "{effectiveCurrentStep}": 1
             }
           },
+          "tabs": {
+            "count": 1,
+            "values": {
+              "{tabs}": 1
+            }
+          },
+          "activeIndex": {
+            "count": 1,
+            "values": {
+              "{activeIndex}": 1
+            }
+          },
+          "onTabPress": {
+            "count": 1,
+            "values": {
+              "{setActiveIndex}": 1
+            }
+          },
           "accessibilityRole": {
             "count": 1,
             "values": {
@@ -795,18 +799,6 @@
             "count": 1,
             "values": {
               "{{ value: searchQuery, onChangeText: onSearchChange, onPressClearButton: () =>...}": 1
-            }
-          },
-          "initialActiveIndex": {
-            "count": 1,
-            "values": {
-              "{TAB_INDEX.PORTFOLIO}": 1
-            }
-          },
-          "tabsBarProps": {
-            "count": 1,
-            "values": {
-              "{{ fillWidth: true, }}": 1
             }
           },
           "icons": {
@@ -857,17 +849,23 @@
               "{<Switch style={styles.switch} value={isEnabled} onValueChange={handleToggleAc...}": 1
             }
           },
-          "onLayout": {
+          "tabsListContentTwClassName": {
             "count": 1,
             "values": {
-              "{isDiscoveryTabsTreatment ? handleWalletHeaderLayout : undefined}": 1
+              "\"px-0 mt-0\"": 1
+            }
+          },
+          "onChangeTab": {
+            "count": 1,
+            "values": {
+              "{handleTabChange}": 1
             }
           }
         }
       },
       "overall": {
-        "totalInstances": 156,
-        "filesCount": 98,
+        "totalInstances": 155,
+        "filesCount": 97,
         "props": {
           "style": {
             "count": 42,
@@ -896,7 +894,7 @@
             }
           },
           "testID": {
-            "count": 41,
+            "count": 42,
             "values": {
               "{testID}": 6,
               "{config.testID}": 2,
@@ -908,6 +906,7 @@
               "{PerpsOrderBookViewSelectorsIDs.LONG_BUTTON}": 1,
               "{PerpsOrderBookViewSelectorsIDs.SHORT_BUTTON}": 1,
               "{PerpsOrderViewSelectorsIDs.PLACE_ORDER_BUTTON}": 1,
+              "{PerpsProMarketViewSelectorsIDs.POSITIONS_PANEL_TABS}": 1,
               "{tabTestIDs[index]}": 1,
               "{PredictCryptoUpDownDetailsSelectorsIDs.HEADER}": 1,
               "{PredictBuyPreviewSelectorsIDs.PLACE_BET_BUTTON}": 1,
@@ -972,14 +971,13 @@
             }
           },
           "value": {
-            "count": 33,
+            "count": 32,
             "values": {
               "{{ label: ( <Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItem...}": 2,
               "{{ label: isLoading || isEstimating ? ( <Skeleton height={20} width={80} style...}": 2,
               "{{ label: { text: strings('earn.immediate'), variant: TextVariant.BodyMD, }, }}": 2,
               "{{ label: ( <ContractTag contractAddress={lendingContractAddress} contractName...}": 2,
               "{{ label: ( <AccountTag accountAddress={selectedAccount?.address} accountName=...}": 2,
-              "{pricePercentChange1d ?? 0}": 2,
               "{{ label: ( <Text variant={TextVariant.BodyMd} color={TextColor.TextAlternativ...}": 2,
               "{{ label: ( <TagColored color={TagColor.Success} labelProps={{ variant: TextVa...}": 1,
               "{{ label: { text: formattedQuoteData.networkFee, variant: TextVariantLegacy.Bo...}": 1,
@@ -992,6 +990,7 @@
               "{{ label: { text: strings('earn.every_minute'), variant: TextVariant.BodyMD, }, }}": 1,
               "{{ label: ( <View style={styles.networkRowRight}> <Badge variant={BadgeVariant...}": 1,
               "{{ label: ( <Text variant={TextVariant.BodyMd} testID={PerpsWithdrawViewSelect...}": 1,
+              "{pricePercentChange1d ?? 0}": 1,
               "{{ label: ( <ContractTag contractAddress={vaultMetadata?.vaultAddress ?? contr...}": 1,
               "{{ label: ( <View style={styles.networkKeyValueRow}> <Avatar variant={AvatarVa...}": 1,
               "{{ label: { text: rewardRate, color: TextColor.Success, variant: TextVariant.B...}": 1,
@@ -1151,7 +1150,7 @@
               "{LocalIconName.AttachMoney}": 1,
               "{LocalIconName.QrCode}": 1,
               "{IconName.AttachMoney}": 1,
-              "{IconName.Send}": 1,
+              "{IconName.Arrow2UpRight}": 1,
               "{IconName.Received}": 1,
               "{IconName.Candlestick}": 1,
               "{IconName.Stake}": 1,
@@ -1169,6 +1168,19 @@
               "{isAllSelected}": 1
             }
           },
+          "twClassName": {
+            "count": 11,
+            "values": {
+              "\"px-4 pt-1 pb-3\"": 3,
+              "\"px-0 mb-2\"": 2,
+              "\"-mx-2\"": 1,
+              "\"w-full\"": 1,
+              "\"px-4 pb-6\"": 1,
+              "\"mb-2\"": 1,
+              "\"pl-1 pr-3\"": 1,
+              "\"bg-default\"": 1
+            }
+          },
           "onBack": {
             "count": 11,
             "values": {
@@ -1180,24 +1192,12 @@
               "{addBackButton ? handleBackPress : undefined}": 1
             }
           },
-          "twClassName": {
-            "count": 10,
-            "values": {
-              "\"px-4 pt-1 pb-3\"": 3,
-              "\"px-0 mb-2\"": 2,
-              "\"w-full\"": 1,
-              "\"px-4 pb-6\"": 1,
-              "\"mb-2\"": 1,
-              "\"pl-1 pr-3\"": 1,
-              "\"bg-default\"": 1
-            }
-          },
           "labelProps": {
             "count": 9,
             "values": {
-              "{{ variant: TextVariant.BodySM, style: { textTransform: 'none', textAlign: 'ce...}": 5,
+              "{{ variant: TextVariant.BodySM, style: { textTransform: 'none', textAlign: 'ce...}": 4,
               "{{ variant: TextVariantLegacy.BodySM, style: { textTransform: 'none', textAlig...}": 2,
-              "{{ variant: LegacyTextVariant.BodySM, style: { textTransform: 'none', textAlig...}": 1,
+              "{{ variant: LegacyTextVariant.BodySM, style: { textTransform: 'none', textAlig...}": 2,
               "{{ testID: 'paid-by-metamask' }}": 1
             }
           },
@@ -1272,15 +1272,6 @@
               "{{ testID: NotificationMenuViewSelectorsIDs.TITLE }}": 1
             }
           },
-          "ref": {
-            "count": 4,
-            "values": {
-              "{toastRef}": 1,
-              "{tabsRef}": 1,
-              "{tabsListRef}": 1,
-              "{scrollViewRef}": 1
-            }
-          },
           "avatarAccountType": {
             "count": 4,
             "values": {
@@ -1301,8 +1292,7 @@
             "count": 4,
             "values": {
               "{selectedAccountGroup ? [selectedAccountGroup] : []}": 2,
-              "{[selectedAccountGroup]}": 1,
-              "{selectedAccountGroups}": 1
+              "{selectedAccountGroups}": 2
             }
           },
           "isLoading": {
@@ -1319,6 +1309,14 @@
               "{<Text variant={TextVariant.BodyLg} fontWeight={FontWeight.Medium} color={Text...}": 1,
               "{<View style={styles.headerActionButtonsContainer} accessible={false} > {isMon...}": 1,
               "{customRight}": 1
+            }
+          },
+          "ref": {
+            "count": 3,
+            "values": {
+              "{toastRef}": 1,
+              "{tabsListRef}": 1,
+              "{scrollViewRef}": 1
             }
           },
           "showFooter": {
@@ -1496,20 +1494,6 @@
               "{!preview || isLoading}": 1
             }
           },
-          "onChangeTab": {
-            "count": 2,
-            "values": {
-              "{handleChangeTab}": 1,
-              "{handleTabChange}": 1
-            }
-          },
-          "tabsListContentTwClassName": {
-            "count": 2,
-            "values": {
-              "\"px-0\"": 1,
-              "\"px-0 mt-0\"": 1
-            }
-          },
           "bottomAccessory": {
             "count": 2,
             "values": {
@@ -1596,6 +1580,24 @@
               "{effectiveCurrentStep}": 1
             }
           },
+          "tabs": {
+            "count": 1,
+            "values": {
+              "{tabs}": 1
+            }
+          },
+          "activeIndex": {
+            "count": 1,
+            "values": {
+              "{activeIndex}": 1
+            }
+          },
+          "onTabPress": {
+            "count": 1,
+            "values": {
+              "{setActiveIndex}": 1
+            }
+          },
           "accessibilityRole": {
             "count": 1,
             "values": {
@@ -1630,18 +1632,6 @@
             "count": 1,
             "values": {
               "{{ value: searchQuery, onChangeText: onSearchChange, onPressClearButton: () =>...}": 1
-            }
-          },
-          "initialActiveIndex": {
-            "count": 1,
-            "values": {
-              "{TAB_INDEX.PORTFOLIO}": 1
-            }
-          },
-          "tabsBarProps": {
-            "count": 1,
-            "values": {
-              "{{ fillWidth: true, }}": 1
             }
           },
           "icons": {
@@ -1692,16 +1682,22 @@
               "{<Switch style={styles.switch} value={isEnabled} onValueChange={handleToggleAc...}": 1
             }
           },
-          "onLayout": {
+          "tabsListContentTwClassName": {
             "count": 1,
             "values": {
-              "{isDiscoveryTabsTreatment ? handleWalletHeaderLayout : undefined}": 1
+              "\"px-0 mt-0\"": 1
+            }
+          },
+          "onChangeTab": {
+            "count": 1,
+            "values": {
+              "{handleTabChange}": 1
             }
           }
         }
       },
       "deprecatedByLegacyComponent": {
-        "BaseNotification": 155,
+        "BaseNotification": 154,
         "Toast": 1
       }
     }
