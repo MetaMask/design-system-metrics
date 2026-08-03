@@ -1,9 +1,9 @@
 {
   "component": "BottomSheetFooter",
-  "generatedAt": "2026-07-27T09:26:49.900Z",
+  "generatedAt": "2026-08-03T09:44:47.742Z",
   "projects": {
     "extension": {
-      "filesScanned": 3470,
+      "filesScanned": 3514,
       "targetComponent": "BottomSheetFooter",
       "mmds": {
         "totalInstances": 0,
@@ -23,23 +23,28 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 7343,
+      "filesScanned": 7458,
       "targetComponent": "BottomSheetFooter",
       "mmds": {
-        "totalInstances": 23,
-        "filesCount": 22,
+        "totalInstances": 29,
+        "filesCount": 27,
         "props": {
           "primaryButtonProps": {
-            "count": 23,
+            "count": 29,
             "values": {
-              "{primaryButtonProps}": 8,
+              "{primaryButtonProps}": 9,
               "{{ children: strings('bridge.cancel'), onPress: handleClose, isDisabled: loadi...}": 2,
               "{{ children: strings('bridge.batch_sell_swap_instead'), onPress: handleSwapIns...}": 1,
               "{footerButtonProps.primaryButtonProps}": 1,
               "{{ children: strings('bridge.got_it'), onPress: handleClose, testID: 'footer-p...}": 1,
               "{{ size: ButtonSize.Lg, children: strings('money.metamask_card.link_card_sheet...}": 1,
+              "{confirmButtonProps}": 1,
+              "{doneButtonProps}": 1,
+              "{setButtonProps}": 1,
               "{{ children: strings('perps.tooltips.got_it_button'), onPress: handleGotItPres...}": 1,
+              "{{ children: strings('perps.add_funds'), onPress: handleAddFundsPress, size: B...}": 1,
               "{{ size: ButtonSize.Lg, onPress: handleConfirm, children: strings('perps.order...}": 1,
+              "{{ children: strings('perps.order.limit_price_modal.set'), onPress: handleConf...}": 1,
               "{{ children: strings('perps.deposit.quote_expired_modal.get_new_quote'), onPre...}": 1,
               "{{ children: strings('predict.withdraw.unavailable_got_it'), onPress: closeShe...}": 1,
               "{{ children: strings('support_consent.confirm'), onPress: handleConfirm, testI...}": 1,
@@ -49,31 +54,32 @@
               "{{ size: ButtonSize.Lg, children: buttonText ?? strings('browser.got_it'), onP...}": 1
             }
           },
-          "twClassName": {
-            "count": 11,
-            "values": {
-              "\"pt-6\"": 6,
-              "\"px-4\"": 2,
-              "\"px-4 pt-4 pb-6\"": 1,
-              "\"pt-4\"": 1,
-              "\"px-4 pt-6\"": 1
-            }
-          },
           "buttonsAlignment": {
-            "count": 10,
+            "count": 12,
             "values": {
-              "{ButtonsAlignment.Horizontal}": 9,
+              "{ButtonsAlignment.Horizontal}": 11,
               "{ButtonsAlignment.Vertical}": 1
             }
           },
+          "twClassName": {
+            "count": 12,
+            "values": {
+              "\"pt-6\"": 6,
+              "\"pt-4\"": 2,
+              "\"px-4\"": 2,
+              "\"px-4 pt-4 pb-6\"": 1,
+              "\"px-4 pt-6\"": 1
+            }
+          },
           "secondaryButtonProps": {
-            "count": 8,
+            "count": 10,
             "values": {
               "{secondaryButtonProps}": 3,
               "{{ children: strings('bridge.proceed'), onPress: handleProceed, isDisabled: lo...}": 2,
+              "{cancelButtonProps}": 2,
               "{footerButtonProps.secondaryButtonProps}": 1,
-              "{{ children: strings('support_consent.reject'), onPress: handleReject, testID:...}": 1,
-              "{cancelButtonProps}": 1
+              "{{ children: strings('perps.withdraw'), onPress: handleWithdrawPress, size: Bu...}": 1,
+              "{{ children: strings('support_consent.reject'), onPress: handleReject, testID:...}": 1
             }
           },
           "style": {
@@ -93,15 +99,15 @@
         }
       },
       "deprecated": {
-        "totalInstances": 40,
-        "filesCount": 39,
+        "totalInstances": 39,
+        "filesCount": 38,
         "props": {
           "buttonPropsArray": {
-            "count": 40,
+            "count": 39,
             "values": {
               "{buttons}": 5,
-              "{footerButtonProps}": 4,
               "{footerButtons}": 4,
+              "{footerButtonProps}": 3,
               "{[cancelButtonProps, connectButtonProps]}": 2,
               "{[okButtonProps]}": 2,
               "{[cancelButtonProps, deleteButtonProps]}": 2,
@@ -154,22 +160,22 @@
         }
       },
       "overall": {
-        "totalInstances": 63,
-        "filesCount": 61,
+        "totalInstances": 68,
+        "filesCount": 65,
         "props": {
           "buttonsAlignment": {
-            "count": 42,
+            "count": 44,
             "values": {
-              "{ButtonsAlignment.Horizontal}": 38,
+              "{ButtonsAlignment.Horizontal}": 40,
               "{ButtonsAlignment.Vertical}": 4
             }
           },
           "buttonPropsArray": {
-            "count": 40,
+            "count": 39,
             "values": {
               "{buttons}": 5,
-              "{footerButtonProps}": 4,
               "{footerButtons}": 4,
+              "{footerButtonProps}": 3,
               "{[cancelButtonProps, connectButtonProps]}": 2,
               "{[okButtonProps]}": 2,
               "{[cancelButtonProps, deleteButtonProps]}": 2,
@@ -196,6 +202,31 @@
               "{[ { variant: ButtonVariants.Secondary, size: ButtonSize.Lg, label: strings('s...}": 1
             }
           },
+          "primaryButtonProps": {
+            "count": 29,
+            "values": {
+              "{primaryButtonProps}": 9,
+              "{{ children: strings('bridge.cancel'), onPress: handleClose, isDisabled: loadi...}": 2,
+              "{{ children: strings('bridge.batch_sell_swap_instead'), onPress: handleSwapIns...}": 1,
+              "{footerButtonProps.primaryButtonProps}": 1,
+              "{{ children: strings('bridge.got_it'), onPress: handleClose, testID: 'footer-p...}": 1,
+              "{{ size: ButtonSize.Lg, children: strings('money.metamask_card.link_card_sheet...}": 1,
+              "{confirmButtonProps}": 1,
+              "{doneButtonProps}": 1,
+              "{setButtonProps}": 1,
+              "{{ children: strings('perps.tooltips.got_it_button'), onPress: handleGotItPres...}": 1,
+              "{{ children: strings('perps.add_funds'), onPress: handleAddFundsPress, size: B...}": 1,
+              "{{ size: ButtonSize.Lg, onPress: handleConfirm, children: strings('perps.order...}": 1,
+              "{{ children: strings('perps.order.limit_price_modal.set'), onPress: handleConf...}": 1,
+              "{{ children: strings('perps.deposit.quote_expired_modal.get_new_quote'), onPre...}": 1,
+              "{{ children: strings('predict.withdraw.unavailable_got_it'), onPress: closeShe...}": 1,
+              "{{ children: strings('support_consent.confirm'), onPress: handleConfirm, testI...}": 1,
+              "{{ children: strings('rwa.unavailable.button'), onPress: closeSheet, }}": 1,
+              "{{ children: strings('share_token.share'), onPress: handleNativeShare, size: B...}": 1,
+              "{deleteButtonProps}": 1,
+              "{{ size: ButtonSize.Lg, children: buttonText ?? strings('browser.got_it'), onP...}": 1
+            }
+          },
           "style": {
             "count": 24,
             "values": {
@@ -213,44 +244,25 @@
               "{tw.style('px-0')}": 1
             }
           },
-          "primaryButtonProps": {
-            "count": 23,
-            "values": {
-              "{primaryButtonProps}": 8,
-              "{{ children: strings('bridge.cancel'), onPress: handleClose, isDisabled: loadi...}": 2,
-              "{{ children: strings('bridge.batch_sell_swap_instead'), onPress: handleSwapIns...}": 1,
-              "{footerButtonProps.primaryButtonProps}": 1,
-              "{{ children: strings('bridge.got_it'), onPress: handleClose, testID: 'footer-p...}": 1,
-              "{{ size: ButtonSize.Lg, children: strings('money.metamask_card.link_card_sheet...}": 1,
-              "{{ children: strings('perps.tooltips.got_it_button'), onPress: handleGotItPres...}": 1,
-              "{{ size: ButtonSize.Lg, onPress: handleConfirm, children: strings('perps.order...}": 1,
-              "{{ children: strings('perps.deposit.quote_expired_modal.get_new_quote'), onPre...}": 1,
-              "{{ children: strings('predict.withdraw.unavailable_got_it'), onPress: closeShe...}": 1,
-              "{{ children: strings('support_consent.confirm'), onPress: handleConfirm, testI...}": 1,
-              "{{ children: strings('rwa.unavailable.button'), onPress: closeSheet, }}": 1,
-              "{{ children: strings('share_token.share'), onPress: handleNativeShare, size: B...}": 1,
-              "{deleteButtonProps}": 1,
-              "{{ size: ButtonSize.Lg, children: buttonText ?? strings('browser.got_it'), onP...}": 1
-            }
-          },
           "twClassName": {
-            "count": 11,
+            "count": 12,
             "values": {
               "\"pt-6\"": 6,
+              "\"pt-4\"": 2,
               "\"px-4\"": 2,
               "\"px-4 pt-4 pb-6\"": 1,
-              "\"pt-4\"": 1,
               "\"px-4 pt-6\"": 1
             }
           },
           "secondaryButtonProps": {
-            "count": 8,
+            "count": 10,
             "values": {
               "{secondaryButtonProps}": 3,
               "{{ children: strings('bridge.proceed'), onPress: handleProceed, isDisabled: lo...}": 2,
+              "{cancelButtonProps}": 2,
               "{footerButtonProps.secondaryButtonProps}": 1,
-              "{{ children: strings('support_consent.reject'), onPress: handleReject, testID:...}": 1,
-              "{cancelButtonProps}": 1
+              "{{ children: strings('perps.withdraw'), onPress: handleWithdrawPress, size: Bu...}": 1,
+              "{{ children: strings('support_consent.reject'), onPress: handleReject, testID:...}": 1
             }
           },
           "testID": {
@@ -262,7 +274,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "BottomSheetFooter": 40
+        "BottomSheetFooter": 39
       }
     }
   }

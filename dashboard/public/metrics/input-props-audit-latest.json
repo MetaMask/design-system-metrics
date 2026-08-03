@@ -1,9 +1,9 @@
 {
   "component": "Input",
-  "generatedAt": "2026-07-27T09:31:35.458Z",
+  "generatedAt": "2026-08-03T09:50:14.476Z",
   "projects": {
     "extension": {
-      "filesScanned": 3470,
+      "filesScanned": 3514,
       "targetComponent": "Input",
       "mmds": {
         "totalInstances": 3,
@@ -338,121 +338,28 @@
       }
     },
     "mobile": {
-      "filesScanned": 7343,
+      "filesScanned": 7458,
       "targetComponent": "Input",
       "mmds": {
-        "totalInstances": 5,
-        "filesCount": 2,
+        "totalInstances": 1,
+        "filesCount": 1,
         "props": {
-          "value": {
-            "count": 5,
+          "ref": {
+            "count": 1,
             "values": {
-              "{value}": 1,
-              "{takeProfitPrice}": 1,
-              "{formattedTakeProfitPercentage}": 1,
-              "{stopLossPrice}": 1,
-              "{formattedStopLossPercentage}": 1
+              "{inputRef}": 1
+            }
+          },
+          "value": {
+            "count": 1,
+            "values": {
+              "{value}": 1
             }
           },
           "onChangeText": {
-            "count": 5,
+            "count": 1,
             "values": {
-              "{(text) => { const digitCount = (text.match(/\\d/g) || []).length; if (digitCou...}": 4,
               "{onChangeText}": 1
-            }
-          },
-          "placeholder": {
-            "count": 5,
-            "values": {
-              "{strings('perps.tpsl.trigger_price_placeholder')}": 2,
-              "{placeholder}": 1,
-              "{strings('perps.tpsl.profit_roe_placeholder')}": 1,
-              "{strings('perps.tpsl.loss_roe_placeholder')}": 1
-            }
-          },
-          "placeholderTextColor": {
-            "count": 5,
-            "values": {
-              "{colors.text.muted}": 4,
-              "{tw.color(`text-${placeholderColor}`)}": 1
-            }
-          },
-          "isStateStylesDisabled": {
-            "count": 5,
-            "values": {
-              "true (shorthand)": 5
-            }
-          },
-          "twClassName": {
-            "count": 5,
-            "values": {
-              "\"bg-transparent border-0\"": 4,
-              "\"flex-1 border-0 bg-transparent p-0 font-medium\"": 1
-            }
-          },
-          "ref": {
-            "count": 4,
-            "values": {
-              "{takeProfitPriceRef}": 1,
-              "{takeProfitPercentageRef}": 1,
-              "{stopLossPriceRef}": 1,
-              "{stopLossPercentageRef}": 1
-            }
-          },
-          "style": {
-            "count": 4,
-            "values": {
-              "{styles.input}": 4
-            }
-          },
-          "showSoftInputOnFocus": {
-            "count": 4,
-            "values": {
-              "false": 4
-            }
-          },
-          "isDisabled": {
-            "count": 4,
-            "values": {
-              "{inputsDisabled}": 4
-            }
-          },
-          "onFocus": {
-            "count": 4,
-            "values": {
-              "{() => { handleInputFocus('takeProfitPrice'); }}": 1,
-              "{() => { handleInputFocus('takeProfitPercentage'); }}": 1,
-              "{() => { handleInputFocus('stopLossPrice'); }}": 1,
-              "{() => { handleInputFocus('stopLossPercentage'); }}": 1
-            }
-          },
-          "onBlur": {
-            "count": 4,
-            "values": {
-              "{() => handleInputBlur('takeProfitPrice')}": 1,
-              "{() => handleInputBlur('takeProfitPercentage')}": 1,
-              "{() => handleInputBlur('stopLossPrice')}": 1,
-              "{() => handleInputBlur('stopLossPercentage')}": 1
-            }
-          },
-          "selectionColor": {
-            "count": 4,
-            "values": {
-              "{colors.primary.default}": 4
-            }
-          },
-          "cursorColor": {
-            "count": 4,
-            "values": {
-              "{colors.primary.default}": 4
-            }
-          },
-          "testID": {
-            "count": 3,
-            "values": {
-              "{testID}": 1,
-              "{PerpsTPSLViewSelectorsIDs.TAKE_PROFIT_PRICE_INPUT}": 1,
-              "{PerpsTPSLViewSelectorsIDs.STOP_LOSS_PRICE_INPUT}": 1
             }
           },
           "keyboardType": {
@@ -479,10 +386,40 @@
               "{inputAccessoryViewID}": 1
             }
           },
+          "placeholder": {
+            "count": 1,
+            "values": {
+              "{placeholder}": 1
+            }
+          },
+          "placeholderTextColor": {
+            "count": 1,
+            "values": {
+              "{tw.color(`text-${placeholderColor}`)}": 1
+            }
+          },
           "textVariant": {
             "count": 1,
             "values": {
               "{TextVariant.BodySm}": 1
+            }
+          },
+          "isStateStylesDisabled": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "twClassName": {
+            "count": 1,
+            "values": {
+              "\"flex-1 border-0 bg-transparent p-0 font-medium\"": 1
+            }
+          },
+          "testID": {
+            "count": 1,
+            "values": {
+              "{testID}": 1
             }
           },
           "accessibilityLabel": {
@@ -616,129 +553,44 @@
         }
       },
       "overall": {
-        "totalInstances": 8,
-        "filesCount": 5,
+        "totalInstances": 4,
+        "filesCount": 4,
         "props": {
-          "value": {
-            "count": 8,
-            "values": {
-              "{formatDateForDisplay(value, type)}": 1,
-              "{displayedAmount}": 1,
-              "{primaryAmountDisplayValue}": 1,
-              "{value}": 1,
-              "{takeProfitPrice}": 1,
-              "{formattedTakeProfitPercentage}": 1,
-              "{stopLossPrice}": 1,
-              "{formattedStopLossPercentage}": 1
-            }
-          },
-          "placeholder": {
-            "count": 8,
-            "values": {
-              "{placeholder}": 3,
-              "{strings('perps.tpsl.trigger_price_placeholder')}": 2,
-              "\"0\"": 1,
-              "{strings('perps.tpsl.profit_roe_placeholder')}": 1,
-              "{strings('perps.tpsl.loss_roe_placeholder')}": 1
-            }
-          },
           "testID": {
-            "count": 6,
+            "count": 4,
             "values": {
               "{`snap-ui-renderer__date-time-picker--${type}-input`}": 1,
               "\"input-stepper-input\"": 1,
               "{`${testID}-input`}": 1,
-              "{testID}": 1,
-              "{PerpsTPSLViewSelectorsIDs.TAKE_PROFIT_PRICE_INPUT}": 1,
-              "{PerpsTPSLViewSelectorsIDs.STOP_LOSS_PRICE_INPUT}": 1
+              "{testID}": 1
+            }
+          },
+          "value": {
+            "count": 4,
+            "values": {
+              "{formatDateForDisplay(value, type)}": 1,
+              "{displayedAmount}": 1,
+              "{primaryAmountDisplayValue}": 1,
+              "{value}": 1
+            }
+          },
+          "placeholder": {
+            "count": 4,
+            "values": {
+              "{placeholder}": 3,
+              "\"0\"": 1
             }
           },
           "isStateStylesDisabled": {
-            "count": 6,
+            "count": 2,
             "values": {
-              "true (shorthand)": 6
+              "true (shorthand)": 2
             }
           },
           "showSoftInputOnFocus": {
-            "count": 6,
+            "count": 2,
             "values": {
-              "false": 6
-            }
-          },
-          "style": {
-            "count": 6,
-            "values": {
-              "{styles.input}": 6
-            }
-          },
-          "ref": {
-            "count": 5,
-            "values": {
-              "{inputRef}": 1,
-              "{takeProfitPriceRef}": 1,
-              "{takeProfitPercentageRef}": 1,
-              "{stopLossPriceRef}": 1,
-              "{stopLossPercentageRef}": 1
-            }
-          },
-          "isDisabled": {
-            "count": 5,
-            "values": {
-              "{inputsDisabled}": 4,
-              "false": 1
-            }
-          },
-          "onFocus": {
-            "count": 5,
-            "values": {
-              "{() => { onFocus?.(); onInputPress?.(); }}": 1,
-              "{() => { handleInputFocus('takeProfitPrice'); }}": 1,
-              "{() => { handleInputFocus('takeProfitPercentage'); }}": 1,
-              "{() => { handleInputFocus('stopLossPrice'); }}": 1,
-              "{() => { handleInputFocus('stopLossPercentage'); }}": 1
-            }
-          },
-          "onBlur": {
-            "count": 5,
-            "values": {
-              "{() => { onBlur?.(); }}": 1,
-              "{() => handleInputBlur('takeProfitPrice')}": 1,
-              "{() => handleInputBlur('takeProfitPercentage')}": 1,
-              "{() => handleInputBlur('stopLossPrice')}": 1,
-              "{() => handleInputBlur('stopLossPercentage')}": 1
-            }
-          },
-          "onChangeText": {
-            "count": 5,
-            "values": {
-              "{(text) => { const digitCount = (text.match(/\\d/g) || []).length; if (digitCou...}": 4,
-              "{onChangeText}": 1
-            }
-          },
-          "placeholderTextColor": {
-            "count": 5,
-            "values": {
-              "{colors.text.muted}": 4,
-              "{tw.color(`text-${placeholderColor}`)}": 1
-            }
-          },
-          "twClassName": {
-            "count": 5,
-            "values": {
-              "\"bg-transparent border-0\"": 4,
-              "\"flex-1 border-0 bg-transparent p-0 font-medium\"": 1
-            }
-          },
-          "selectionColor": {
-            "count": 4,
-            "values": {
-              "{colors.primary.default}": 4
-            }
-          },
-          "cursorColor": {
-            "count": 4,
-            "values": {
-              "{colors.primary.default}": 4
+              "false": 2
             }
           },
           "caretHidden": {
@@ -752,6 +604,12 @@
             "values": {
               "true (shorthand)": 1,
               "false": 1
+            }
+          },
+          "style": {
+            "count": 2,
+            "values": {
+              "{styles.input}": 2
             }
           },
           "selection": {
@@ -768,6 +626,12 @@
               "{tokenType === TokenInputAreaType.Source ? onSelectionChange : undefined}": 1
             }
           },
+          "ref": {
+            "count": 2,
+            "values": {
+              "{inputRef}": 2
+            }
+          },
           "readOnly": {
             "count": 1,
             "values": {
@@ -780,6 +644,12 @@
               "\"none\"": 1
             }
           },
+          "isDisabled": {
+            "count": 1,
+            "values": {
+              "false": 1
+            }
+          },
           "isReadonly": {
             "count": 1,
             "values": {
@@ -790,6 +660,24 @@
             "count": 1,
             "values": {
               "{() => { onInputPress?.(); }}": 1
+            }
+          },
+          "onFocus": {
+            "count": 1,
+            "values": {
+              "{() => { onFocus?.(); onInputPress?.(); }}": 1
+            }
+          },
+          "onBlur": {
+            "count": 1,
+            "values": {
+              "{() => { onBlur?.(); }}": 1
+            }
+          },
+          "onChangeText": {
+            "count": 1,
+            "values": {
+              "{onChangeText}": 1
             }
           },
           "keyboardType": {
@@ -816,10 +704,22 @@
               "{inputAccessoryViewID}": 1
             }
           },
+          "placeholderTextColor": {
+            "count": 1,
+            "values": {
+              "{tw.color(`text-${placeholderColor}`)}": 1
+            }
+          },
           "textVariant": {
             "count": 1,
             "values": {
               "{TextVariant.BodySm}": 1
+            }
+          },
+          "twClassName": {
+            "count": 1,
+            "values": {
+              "\"flex-1 border-0 bg-transparent p-0 font-medium\"": 1
             }
           },
           "accessibilityLabel": {
