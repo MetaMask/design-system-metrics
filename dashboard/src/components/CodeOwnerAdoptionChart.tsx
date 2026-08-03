@@ -280,17 +280,26 @@ export function CodeOwnerAdoptionChart({
         if (!dataRes.ok) throw new Error(`Failed to fetch ${entry.file}`);
         const metrics: MetricsData = await dataRes.json();
 
+        const ownerEntries = Object.entries(metrics.summary.codeOwnerStats || {});
+        // Older snapshots predate per-component maps. Only treat a snapshot as a
+        // usable baseline when at least one owner includes the new fields.
+        const hasComponentMaps = ownerEntries.some(
+          ([, stats]) => stats.mmdsByComponent != null || stats.deprecatedByComponent != null,
+        );
+        if (!hasComponentMaps) {
+          if (!cancelled) setBaselineByOwner(null);
+          return;
+        }
+
         const map: Record<string, OwnerComponentBaseline> = {};
-        for (const [owner, stats] of Object.entries(metrics.summary.codeOwnerStats || {})) {
-          if (stats.mmdsByComponent || stats.deprecatedByComponent) {
-            map[normalizeOwnerKey(owner)] = {
-              mmdsByComponent: stats.mmdsByComponent,
-              deprecatedByComponent: stats.deprecatedByComponent,
-            };
-          }
+        for (const [owner, stats] of ownerEntries) {
+          map[normalizeOwnerKey(owner)] = {
+            mmdsByComponent: stats.mmdsByComponent || {},
+            deprecatedByComponent: stats.deprecatedByComponent || {},
+          };
         }
         if (!cancelled) {
-          setBaselineByOwner(Object.keys(map).length > 0 ? map : null);
+          setBaselineByOwner(map);
         }
       } catch {
         if (!cancelled) setBaselineByOwner(null);
@@ -319,9 +328,21 @@ export function CodeOwnerAdoptionChart({
         delta4w: di?.delta ?? null,
         mmdsInstanceDelta: di?.mmdsInstanceDelta ?? null,
         legacyInstanceDelta: di?.legacyInstanceDelta ?? null,
-        mmdsIncreased: diffComponentCounts(baseline?.mmdsByComponent, stats.mmdsByComponent, 'increased'),
-        legacyIncreased: diffComponentCounts(baseline?.deprecatedByComponent, stats.deprecatedByComponent, 'increased'),
-        legacyReduced: diffComponentCounts(baseline?.deprecatedByComponent, stats.deprecatedByComponent, 'decreased'),
+        mmdsIncreased: diffComponentCounts(
+          baseline ? (baseline.mmdsByComponent || {}) : undefined,
+          stats.mmdsByComponent,
+          'increased',
+        ),
+        legacyIncreased: diffComponentCounts(
+          baseline ? (baseline.deprecatedByComponent || {}) : undefined,
+          stats.deprecatedByComponent,
+          'increased',
+        ),
+        legacyReduced: diffComponentCounts(
+          baseline ? (baseline.deprecatedByComponent || {}) : undefined,
+          stats.deprecatedByComponent,
+          'decreased',
+        ),
         deltaFromDate: di?.fromDate ?? null,
         deltaToDate: di?.toDate ?? null,
         actualWeeks: di?.actualWeeks ?? lookback,
