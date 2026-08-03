@@ -2,19 +2,41 @@ import { useMemo, useState } from 'react';
 import { useUntrackedData, useUntrackedTimeline, useMetricsData } from '../hooks/useMetricsData';
 import { Loading } from '../components/Loading';
 import { ErrorMessage } from '../components/ErrorMessage';
-import type { UntrackedData, UntrackedComponent, UntrackedProjectTimeline } from '../types/metrics';
+import type { CodeOwnerStats, UntrackedData, UntrackedComponent, UntrackedProjectTimeline } from '../types/metrics';
+import {
+  excludedOwnersForProject,
+  formatOwnerLabel,
+  normalizeOwner,
+} from '../constants/codeOwners';
 import { LineChart, Line, BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine } from 'recharts';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const CONFIDENCE_ORDER = { exact: 0, high: 1, medium: 2 } as const;
 const CONFIDENCE_MULTIPLIER = { exact: 3, high: 2, medium: 1 } as const;
+/** Org target for MMDS adoption (includes replaceable one-offs). */
+const ADOPTION_THRESHOLD = 80;
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 type ReplaceSortField = 'priority' | 'instances' | 'fileCount' | 'confidence';
 type CandidateSortField = 'breadth' | 'instances' | 'fileCount';
+type TeamAdoptionSortField = 'adoption' | 'migration' | 'opportunity' | 'gap' | 'team';
 interface SortState<F extends string> { field: F; dir: 'asc' | 'desc' }
+
+interface TeamAdoptionRow {
+  team: string;
+  label: string;
+  mmdsInstances: number;
+  deprecatedInstances: number;
+  migrationPercentage: number;
+  replaceableInstances: number;
+  replaceableComponents: number;
+  adoptionPercentage: number;
+  gapPp: number;
+  ppToTarget: number;
+  onTarget: boolean;
+}
 
 // ─── Filters ─────────────────────────────────────────────────────────────────
 
@@ -38,10 +60,16 @@ function isDSCandidate(row: UntrackedComponent): boolean {
 
 // ─── Scoring ─────────────────────────────────────────────────────────────────
 
+/** Instance count for a component, optionally scoped to one CODEOWNERS team. */
+function instanceCountForTeam(row: UntrackedComponent, teamFilter: string): number {
+  if (!teamFilter) return row.instances;
+  return row.codeOwnerBreakdown?.[teamFilter] ?? 0;
+}
+
 /** Priority = instances × confidence weight. Higher = bigger migration win. */
-function priorityScore(row: UntrackedComponent): number {
+function priorityScore(row: UntrackedComponent, teamFilter = ''): number {
   const conf = row.mmdsMatches[0]?.confidence as keyof typeof CONFIDENCE_MULTIPLIER | undefined;
-  return row.instances * (conf ? (CONFIDENCE_MULTIPLIER[conf] ?? 1) : 1);
+  return instanceCountForTeam(row, teamFilter) * (conf ? (CONFIDENCE_MULTIPLIER[conf] ?? 1) : 1);
 }
 
 /** Unique teams using this component (excluding @unknown). */
@@ -55,13 +83,24 @@ function roadmapScore(row: UntrackedComponent): number {
   return row.instances * Math.max(teamBreadth(row), 1);
 }
 
+function teamOwnsComponent(row: UntrackedComponent, teamFilter: string): boolean {
+  if (!teamFilter) return true;
+  return (row.codeOwnerBreakdown?.[teamFilter] ?? 0) > 0;
+}
+
 // ─── Sorting ─────────────────────────────────────────────────────────────────
 
-function sortReplaceable(rows: UntrackedComponent[], sort: SortState<ReplaceSortField>): UntrackedComponent[] {
+function sortReplaceable(
+  rows: UntrackedComponent[],
+  sort: SortState<ReplaceSortField>,
+  teamFilter = '',
+): UntrackedComponent[] {
   return [...rows].sort((a, b) => {
     let cmp = 0;
-    if (sort.field === 'priority') cmp = priorityScore(a) - priorityScore(b);
-    else if (sort.field === 'instances') cmp = a.instances - b.instances;
+    if (sort.field === 'priority') cmp = priorityScore(a, teamFilter) - priorityScore(b, teamFilter);
+    else if (sort.field === 'instances') {
+      cmp = instanceCountForTeam(a, teamFilter) - instanceCountForTeam(b, teamFilter);
+    }
     else if (sort.field === 'fileCount') cmp = a.fileCount - b.fileCount;
     else if (sort.field === 'confidence') {
       const aO = CONFIDENCE_ORDER[a.mmdsMatches[0]?.confidence as keyof typeof CONFIDENCE_ORDER] ?? 3;
@@ -87,15 +126,104 @@ function sortCandidates(rows: UntrackedComponent[], sort: SortState<CandidateSor
 function filterReplaceableRows(rows: UntrackedComponent[], teamFilter: string, search: string): UntrackedComponent[] {
   return rows
     .filter(isOneoffReplaceable)
-    .filter(row => !teamFilter || (row.codeOwners ?? []).includes(teamFilter))
+    .filter(row => teamOwnsComponent(row, teamFilter))
     .filter(row => !search || row.component.toLowerCase().includes(search.toLowerCase()));
 }
 
 function filterCandidateRows(rows: UntrackedComponent[], teamFilter: string, search: string): UntrackedComponent[] {
   return rows
     .filter(isDSCandidate)
-    .filter(row => !teamFilter || (row.codeOwners ?? []).includes(teamFilter))
+    .filter(row => teamOwnsComponent(row, teamFilter))
     .filter(row => !search || row.component.toLowerCase().includes(search.toLowerCase()));
+}
+
+/**
+ * Per-team adoption scoreboard.
+ * Adoption % = MMDS / (MMDS + Legacy + replaceable local one-off instances).
+ * Candidates (no MMDS match yet) are excluded from the scored denominator.
+ */
+function buildTeamAdoptionRows(
+  replaceableRows: UntrackedComponent[],
+  codeOwnerStats: Record<string, CodeOwnerStats> | undefined,
+  excludedOwners: Set<string>,
+  threshold: number,
+): TeamAdoptionRow[] {
+  const opportunity = new Map<string, { instances: number; components: number }>();
+  for (const row of replaceableRows) {
+    for (const [owner, count] of Object.entries(row.codeOwnerBreakdown ?? {})) {
+      if (owner === '@unknown' || excludedOwners.has(normalizeOwner(owner))) continue;
+      const cur = opportunity.get(owner) ?? { instances: 0, components: 0 };
+      cur.instances += count;
+      cur.components += 1;
+      opportunity.set(owner, cur);
+    }
+  }
+
+  const teams = new Set<string>([
+    ...Object.keys(codeOwnerStats ?? {}),
+    ...opportunity.keys(),
+  ]);
+
+  const rows: TeamAdoptionRow[] = [];
+  for (const team of teams) {
+    if (team === '@unknown' || excludedOwners.has(normalizeOwner(team))) continue;
+
+    const stats = codeOwnerStats?.[team];
+    const mmdsInstances = stats?.mmdsInstances ?? 0;
+    const deprecatedInstances = stats?.deprecatedInstances ?? 0;
+    const opp = opportunity.get(team) ?? { instances: 0, components: 0 };
+    const trackedTotal = mmdsInstances + deprecatedInstances;
+    const adoptionDenom = trackedTotal + opp.instances;
+
+    // Skip teams with no measurable footprint in either scanner.
+    if (adoptionDenom === 0 && (stats?.filesCount ?? 0) === 0) continue;
+
+    const migrationPercentage = trackedTotal > 0
+      ? (mmdsInstances / trackedTotal) * 100
+      : 0;
+    const adoptionPercentage = adoptionDenom > 0
+      ? (mmdsInstances / adoptionDenom) * 100
+      : 0;
+    const gapPp = migrationPercentage - adoptionPercentage;
+    const onTarget = adoptionPercentage >= threshold;
+
+    rows.push({
+      team,
+      label: formatOwnerLabel(team),
+      mmdsInstances,
+      deprecatedInstances,
+      migrationPercentage,
+      replaceableInstances: opp.instances,
+      replaceableComponents: opp.components,
+      adoptionPercentage,
+      gapPp,
+      ppToTarget: threshold - adoptionPercentage,
+      onTarget,
+    });
+  }
+
+  return rows;
+}
+
+function sortTeamAdoptionRows(
+  rows: TeamAdoptionRow[],
+  sort: SortState<TeamAdoptionSortField>,
+): TeamAdoptionRow[] {
+  return [...rows].sort((a, b) => {
+    let cmp = 0;
+    if (sort.field === 'adoption') cmp = a.adoptionPercentage - b.adoptionPercentage;
+    else if (sort.field === 'migration') cmp = a.migrationPercentage - b.migrationPercentage;
+    else if (sort.field === 'opportunity') cmp = a.replaceableInstances - b.replaceableInstances;
+    else if (sort.field === 'gap') cmp = a.gapPp - b.gapPp;
+    else if (sort.field === 'team') cmp = a.label.localeCompare(b.label);
+    return sort.dir === 'desc' ? -cmp : cmp;
+  });
+}
+
+function adoptionBarFill(pct: number, threshold: number): string {
+  if (pct >= threshold) return 'bg-emerald-500';
+  if (pct >= threshold * 0.7) return 'bg-amber-500';
+  return 'bg-red-400';
 }
 
 // ─── URL helpers ──────────────────────────────────────────────────────────────
@@ -126,13 +254,9 @@ function sourceTreeUrl(canonicalSource: string | undefined, project: string): st
 
 // ─── Shared helpers ───────────────────────────────────────────────────────────
 
-function formatTeam(owner: string): string {
-  return owner.replace('@MetaMask/', '').replace(/^@/, '');
-}
-
 function teamsDisplay(codeOwners: string[] | undefined): string {
   if (!codeOwners || codeOwners.length === 0) return '—';
-  const names = codeOwners.filter(o => o !== '@unknown').map(formatTeam);
+  const names = codeOwners.filter(o => o !== '@unknown').map(formatOwnerLabel);
   return names.length > 0 ? names.join(', ') : '—';
 }
 
@@ -270,12 +394,17 @@ function PriorityBar({ score, maxScore }: { score: number; maxScore: number }) {
 
 // ─── Replace Now table ────────────────────────────────────────────────────────
 
-function ReplaceNowTable({ rows, project, search, onSearch, sort, onSort }: {
+function ReplaceNowTable({ rows, project, search, onSearch, sort, onSort, teamFilter }: {
   rows: UntrackedComponent[]; project: string;
   search: string; onSearch: (v: string) => void;
   sort: SortState<ReplaceSortField>; onSort: (f: ReplaceSortField) => void;
+  teamFilter: string;
 }) {
-  const maxPriority = useMemo(() => Math.max(...rows.map(priorityScore), 1), [rows]);
+  const maxPriority = useMemo(
+    () => Math.max(...rows.map(r => priorityScore(r, teamFilter)), 1),
+    [rows, teamFilter],
+  );
+  const teamLabel = teamFilter ? formatOwnerLabel(teamFilter) : '';
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
@@ -286,10 +415,17 @@ function ReplaceNowTable({ rows, project, search, onSearch, sort, onSort }: {
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
               Replace with MMDS today
               {rows.length > 0 && <span className="ml-2 text-sm font-normal text-gray-400">({rows.length})</span>}
+              {teamLabel && (
+                <span className="ml-2 text-sm font-normal text-blue-600 dark:text-blue-400">
+                  · {teamLabel}
+                </span>
+              )}
             </h3>
           </div>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 ml-8">
-            In-repo one-off components with a direct MMDS equivalent. Sorted by migration impact.
+            {teamLabel
+              ? `Replaceable one-offs owned by ${teamLabel}. Instance counts and priority are scoped to this team.`
+              : 'In-repo one-off components with a direct MMDS equivalent. Sorted by migration impact.'}
           </p>
         </div>
         <input
@@ -307,7 +443,12 @@ function ReplaceNowTable({ rows, project, search, onSearch, sort, onSort }: {
               <StaticHeader label="#" className="w-8" />
               <StaticHeader label="Component" />
               <SortHeader label="Priority" field="priority" sortState={sort} onSort={onSort} className="w-36" />
-              <SortHeader label="Instances" field="instances" sortState={sort} onSort={onSort} />
+              <SortHeader
+                label={teamLabel ? 'Team instances' : 'Instances'}
+                field="instances"
+                sortState={sort}
+                onSort={onSort}
+              />
               <SortHeader label="Files" field="fileCount" sortState={sort} onSort={onSort} />
               <StaticHeader label="MMDS Replacement" />
               <SortHeader label="Confidence" field="confidence" sortState={sort} onSort={onSort} />
@@ -318,6 +459,7 @@ function ReplaceNowTable({ rows, project, search, onSearch, sort, onSort }: {
           <tbody className="divide-y divide-gray-100 dark:divide-gray-700/60">
             {rows.map((row, i) => {
               const bestMatch = row.mmdsMatches[0];
+              const instances = instanceCountForTeam(row, teamFilter);
               return (
                 <tr
                   key={row.component}
@@ -326,9 +468,14 @@ function ReplaceNowTable({ rows, project, search, onSearch, sort, onSort }: {
                   <td className="px-4 py-3 text-xs text-gray-400 dark:text-gray-500 tabular-nums">{i + 1}</td>
                   <td className="px-4 py-3 text-sm font-semibold text-gray-900 dark:text-white">{row.component}</td>
                   <td className="px-4 py-3">
-                    <PriorityBar score={priorityScore(row)} maxScore={maxPriority} />
+                    <PriorityBar score={priorityScore(row, teamFilter)} maxScore={maxPriority} />
                   </td>
-                  <td className="px-4 py-3 text-sm tabular-nums text-gray-700 dark:text-gray-300">{row.instances.toLocaleString()}</td>
+                  <td className="px-4 py-3 text-sm tabular-nums text-gray-700 dark:text-gray-300">
+                    {instances.toLocaleString()}
+                    {teamFilter && instances !== row.instances && (
+                      <span className="ml-1 text-xs text-gray-400">/ {row.instances.toLocaleString()}</span>
+                    )}
+                  </td>
                   <td className="px-4 py-3 text-sm tabular-nums text-gray-600 dark:text-gray-400">{row.fileCount}</td>
                   <td className="px-4 py-3 text-sm">
                     {bestMatch ? (
@@ -361,6 +508,177 @@ function ReplaceNowTable({ rows, project, search, onSearch, sort, onSort }: {
                 </td>
               </tr>
             )}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+// ─── Team adoption scoreboard ─────────────────────────────────────────────────
+
+function TeamAdoptionScoreboard({
+  rows,
+  selectedTeam,
+  onSelectTeam,
+  threshold,
+}: {
+  rows: TeamAdoptionRow[];
+  selectedTeam: string;
+  onSelectTeam: (team: string) => void;
+  threshold: number;
+}) {
+  const [sort, setSort] = useState<SortState<TeamAdoptionSortField>>({
+    field: 'opportunity',
+    dir: 'desc',
+  });
+
+  const sorted = useMemo(() => sortTeamAdoptionRows(rows, sort), [rows, sort]);
+  const compliant = rows.filter(r => r.onTarget).length;
+  const withOpportunity = rows.filter(r => r.replaceableInstances > 0).length;
+
+  function toggleSort(field: TeamAdoptionSortField) {
+    setSort(prev =>
+      prev.field === field
+        ? { field, dir: prev.dir === 'desc' ? 'asc' : 'desc' }
+        : { field, dir: field === 'team' ? 'asc' : 'desc' },
+    );
+  }
+
+  if (rows.length === 0) return null;
+
+  return (
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden mb-5">
+      <div className="p-6 pb-4 border-b border-gray-100 dark:border-gray-700 flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+            Team adoption scoreboard
+          </h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 max-w-3xl">
+            <span className="font-medium text-gray-700 dark:text-gray-200">Migration %</span> = MMDS ÷ (MMDS + Legacy).{' '}
+            <span className="font-medium text-gray-700 dark:text-gray-200">Adoption %</span> = MMDS ÷ (MMDS + Legacy + replaceable one-offs).
+            Click a team to filter the tables below.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-4 text-sm">
+          <div className="rounded-md bg-gray-50 dark:bg-gray-900/40 px-3 py-2">
+            <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">≥ {threshold}% adoption</p>
+            <p className="font-semibold text-gray-900 dark:text-white">
+              {compliant} / {rows.length} teams
+              <span className="ml-1.5 text-xs font-normal text-gray-400">
+                ({rows.length > 0 ? Math.round((compliant / rows.length) * 100) : 0}%)
+              </span>
+            </p>
+          </div>
+          <div className="rounded-md bg-gray-50 dark:bg-gray-900/40 px-3 py-2">
+            <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">With replaceable opportunity</p>
+            <p className="font-semibold text-gray-900 dark:text-white">{withOpportunity} teams</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="px-6 py-2.5 border-b border-gray-100 dark:border-gray-700 flex flex-wrap gap-4 text-xs text-gray-500 dark:text-gray-400">
+        <span className="flex items-center gap-1.5">
+          <span className="w-2.5 h-2.5 rounded-sm bg-emerald-500" /> ≥ {threshold}% on target
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="w-2.5 h-2.5 rounded-sm bg-amber-500" /> ≥ {Math.round(threshold * 0.7)}% approaching
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="w-2.5 h-2.5 rounded-sm bg-red-400" /> &lt; {Math.round(threshold * 0.7)}% behind
+        </span>
+        {selectedTeam && (
+          <button
+            type="button"
+            onClick={() => onSelectTeam('')}
+            className="ml-auto text-blue-600 dark:text-blue-400 hover:underline"
+          >
+            Clear team filter ({formatOwnerLabel(selectedTeam)})
+          </button>
+        )}
+      </div>
+
+      <div className="overflow-x-auto">
+        <table className="min-w-full divide-y divide-gray-100 dark:divide-gray-700">
+          <thead className="bg-gray-50 dark:bg-gray-900/40">
+            <tr>
+              <SortHeader label="Team" field="team" sortState={sort} onSort={toggleSort} />
+              <SortHeader label="Migration %" field="migration" sortState={sort} onSort={toggleSort} />
+              <SortHeader label="Adoption %" field="adoption" sortState={sort} onSort={toggleSort} />
+              <SortHeader label="Gap" field="gap" sortState={sort} onSort={toggleSort} />
+              <SortHeader label="Opportunity" field="opportunity" sortState={sort} onSort={toggleSort} />
+              <StaticHeader label="vs target" />
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-100 dark:divide-gray-700/60">
+            {sorted.map((row, i) => {
+              const selected = selectedTeam === row.team;
+              return (
+                <tr
+                  key={row.team}
+                  onClick={() => onSelectTeam(selected ? '' : row.team)}
+                  className={[
+                    'cursor-pointer transition-colors',
+                    selected
+                      ? 'bg-blue-50 dark:bg-blue-900/20'
+                      : i % 2 === 0
+                        ? 'bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700/40'
+                        : 'bg-gray-50/50 dark:bg-gray-800/40 hover:bg-gray-50 dark:hover:bg-gray-700/40',
+                  ].join(' ')}
+                >
+                  <td className="px-4 py-3 text-sm font-semibold text-gray-900 dark:text-white">
+                    {row.label}
+                  </td>
+                  <td className="px-4 py-3 text-sm tabular-nums text-gray-700 dark:text-gray-300">
+                    {row.migrationPercentage.toFixed(1)}%
+                    <span className="ml-1.5 text-xs text-gray-400">
+                      ({row.mmdsInstances.toLocaleString()} / {(row.mmdsInstances + row.deprecatedInstances).toLocaleString()})
+                    </span>
+                  </td>
+                  <td className="px-4 py-3">
+                    <div className="flex items-center gap-2 min-w-[140px]">
+                      <div className="flex-1 h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                        <div
+                          className={`h-full rounded-full ${adoptionBarFill(row.adoptionPercentage, threshold)}`}
+                          style={{ width: `${Math.min(row.adoptionPercentage, 100)}%` }}
+                        />
+                      </div>
+                      <span className={`text-sm tabular-nums font-medium w-14 text-right ${
+                        row.onTarget
+                          ? 'text-emerald-600 dark:text-emerald-400'
+                          : 'text-gray-700 dark:text-gray-300'
+                      }`}>
+                        {row.adoptionPercentage.toFixed(1)}%
+                      </span>
+                    </div>
+                  </td>
+                  <td className="px-4 py-3 text-sm tabular-nums text-amber-600 dark:text-amber-400">
+                    {row.gapPp > 0.05 ? `${row.gapPp.toFixed(1)} pp` : '—'}
+                  </td>
+                  <td className="px-4 py-3 text-sm tabular-nums text-gray-700 dark:text-gray-300">
+                    {row.replaceableInstances > 0 ? (
+                      <>
+                        <span className="font-medium">{row.replaceableInstances.toLocaleString()}</span>
+                        <span className="ml-1 text-xs text-gray-400">
+                          inst · {row.replaceableComponents} components
+                        </span>
+                      </>
+                    ) : (
+                      <span className="text-gray-400">—</span>
+                    )}
+                  </td>
+                  <td className="px-4 py-3 text-sm">
+                    {row.onTarget ? (
+                      <span className="text-emerald-600 dark:text-emerald-400 font-medium">On target ✓</span>
+                    ) : (
+                      <span className="text-red-500 dark:text-red-400">
+                        {row.ppToTarget.toFixed(1)} pp to go
+                      </span>
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
@@ -730,11 +1048,12 @@ function OneoffDeltaSparkline({ timeline, project }: { timeline: UntrackedProjec
 
 // ─── Project section ──────────────────────────────────────────────────────────
 
-function ProjectSection({ data, timeline, migrationPct }: {
+function ProjectSection({ data, timeline, migrationPct, codeOwnerStats }: {
   data: UntrackedData;
   timeline: UntrackedProjectTimeline | null;
   /** Migration % from the main scanner (index.js / timeline.json). Used as the authoritative base. */
   migrationPct: number | null;
+  codeOwnerStats?: Record<string, CodeOwnerStats>;
 }) {
   const [teamFilter, setTeamFilter] = useState('');
   const [replaceSearch, setReplaceSearch] = useState('');
@@ -742,9 +1061,14 @@ function ProjectSection({ data, timeline, migrationPct }: {
   const [replaceSort, setReplaceSort] = useState<SortState<ReplaceSortField>>({ field: 'priority', dir: 'desc' });
   const [candidateSort, setCandidateSort] = useState<SortState<CandidateSortField>>({ field: 'breadth', dir: 'desc' });
 
+  const excludedOwners = useMemo(
+    () => excludedOwnersForProject(data.project),
+    [data.project],
+  );
+
   const teams = useMemo(
-    () => (data.teams ?? []).filter(t => t !== '@unknown'),
-    [data.teams],
+    () => (data.teams ?? []).filter(t => t !== '@unknown' && !excludedOwners.has(normalizeOwner(t))),
+    [data.teams, excludedOwners],
   );
 
   // All counts are strict local-oneoff only
@@ -754,15 +1078,19 @@ function ProjectSection({ data, timeline, migrationPct }: {
   const replaceableInstances = useMemo(() => replaceableRows.reduce((s, r) => s + r.instances, 0), [replaceableRows]);
   const candidateInstances = useMemo(() => candidateRows.reduce((s, r) => s + r.instances, 0), [candidateRows]);
 
+  const teamAdoptionRows = useMemo(
+    () => buildTeamAdoptionRows(replaceableRows, codeOwnerStats, excludedOwners, ADOPTION_THRESHOLD),
+    [replaceableRows, codeOwnerStats, excludedOwners],
+  );
+
   // Migration % comes from the main scanner (index.js / timeline.json) — authoritative source.
-  // Overall adoption extends migration by adding one-off instances to the denominator.
+  // Overall adoption extends migration by adding replaceable one-off instances to the denominator.
   const { trackedMMDS, trackedDeprecated } = data.summary;
   const migrationRate = migrationPct !== null ? migrationPct.toFixed(1) : '—';
 
-  // Overall adoption: MMDS / (MMDS + deprecated + one-off replaceable + one-off candidate instances)
-  // Uses untracked scanner's MMDS/deprecated counts as the best available approximation when
-  // migrationPct is unavailable, otherwise derives from the main scanner total.
-  const trueTotal = trackedMMDS + trackedDeprecated + replaceableInstances + candidateInstances;
+  // Overall adoption (scored KPI): MMDS / (MMDS + deprecated + replaceable local one-offs)
+  // Candidates without an MMDS match are excluded from the org benchmark denominator.
+  const trueTotal = trackedMMDS + trackedDeprecated + replaceableInstances;
   const trueAdoptionRate = trueTotal > 0 ? ((trackedMMDS / trueTotal) * 100).toFixed(1) : '—';
 
   // Gap: how much lower is overall adoption than the migration rate?
@@ -770,16 +1098,18 @@ function ProjectSection({ data, timeline, migrationPct }: {
     ? (migrationPct - parseFloat(trueAdoptionRate)).toFixed(1)
     : '—';
 
+  const adoptionCompliantTeams = teamAdoptionRows.filter(r => r.onTarget).length;
+
   // Teams that actually have local one-off components
   const teamsWithOneoffs = useMemo(() => {
     const owners = new Set<string>();
     [...replaceableRows, ...candidateRows].forEach(row => {
       Object.keys(row.codeOwnerBreakdown ?? {}).forEach(o => {
-        if (o !== '@unknown') owners.add(o);
+        if (o !== '@unknown' && !excludedOwners.has(normalizeOwner(o))) owners.add(o);
       });
     });
     return owners.size;
-  }, [replaceableRows, candidateRows]);
+  }, [replaceableRows, candidateRows, excludedOwners]);
 
   function toggleReplaceSort(field: ReplaceSortField) {
     setReplaceSort(prev =>
@@ -798,7 +1128,11 @@ function ProjectSection({ data, timeline, migrationPct }: {
   }
 
   const filteredReplaceable = useMemo(
-    () => sortReplaceable(filterReplaceableRows(data.replaceableWithMMDS, teamFilter, replaceSearch), replaceSort),
+    () => sortReplaceable(
+      filterReplaceableRows(data.replaceableWithMMDS, teamFilter, replaceSearch),
+      replaceSort,
+      teamFilter,
+    ),
     [data.replaceableWithMMDS, teamFilter, replaceSearch, replaceSort],
   );
 
@@ -824,14 +1158,14 @@ function ProjectSection({ data, timeline, migrationPct }: {
             <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Migration</p>
             <p className="text-2xl font-bold text-gray-900 dark:text-white">{migrationRate}%</p>
             <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">MMDS ÷ (MMDS + deprecated)</p>
-            <p className="text-xs text-gray-400 dark:text-gray-500">Legacy DS → MMDS progress</p>
+            <p className="text-xs text-gray-400 dark:text-gray-500">Legacy DS → MMDS · team target 90%</p>
           </div>
           <div className="text-gray-300 dark:text-gray-600 text-lg">vs</div>
           <div>
-            <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Overall adoption</p>
+            <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Adoption</p>
             <p className="text-2xl font-bold text-amber-600 dark:text-amber-400">{trueAdoptionRate}%</p>
-            <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">MMDS ÷ (MMDS + deprecated + one-offs)</p>
-            <p className="text-xs text-gray-400 dark:text-gray-500">All component usage</p>
+            <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">MMDS ÷ (MMDS + deprecated + replaceable)</p>
+            <p className="text-xs text-gray-400 dark:text-gray-500">Team target {ADOPTION_THRESHOLD}%</p>
           </div>
         </div>
         <div className="flex-1 min-w-[180px] text-sm text-gray-500 dark:text-gray-400 border-l border-gray-200 dark:border-gray-700 pl-5 space-y-1">
@@ -839,9 +1173,9 @@ function ProjectSection({ data, timeline, migrationPct }: {
             <span className="font-semibold text-gray-700 dark:text-gray-200">Migration</span> tracks only the swap from the old deprecated library to MMDS — it ignores custom one-off components entirely.
           </p>
           <p>
-            <span className="font-semibold text-gray-700 dark:text-gray-200">Overall adoption</span> adds those one-offs to the denominator, lowering the rate by{' '}
+            <span className="font-semibold text-gray-700 dark:text-gray-200">Adoption</span> adds replaceable one-offs (MMDS equivalent exists) to the denominator, lowering the rate by{' '}
             <span className="font-semibold text-amber-600 dark:text-amber-400">{adoptionGap} pp</span>.
-            The {replaceableInstances.toLocaleString()} replaceable instances below are what's driving that gap.
+            {' '}{adoptionCompliantTeams} / {teamAdoptionRows.length} teams are at ≥{ADOPTION_THRESHOLD}% adoption.
           </p>
         </div>
       </div>
@@ -861,18 +1195,26 @@ function ProjectSection({ data, timeline, migrationPct }: {
           accent="purple"
         />
         <SummaryCard
-          title="Teams with one-offs"
-          value={teamsWithOneoffs}
-          subtitle="Teams owning replaceable or candidate components"
+          title="Teams ≥80% adoption"
+          value={`${adoptionCompliantTeams}/${teamAdoptionRows.length}`}
+          subtitle={`${teamsWithOneoffs} teams still own replaceable or candidate one-offs`}
           accent="blue"
         />
         <SummaryCard
           title="Adoption gap"
           value={adoptionGap !== '—' ? `${adoptionGap} pp` : '—'}
-          subtitle={`Migration ${migrationRate}% vs overall adoption ${trueAdoptionRate}% — driven by replaceable one-offs`}
+          subtitle={`Migration ${migrationRate}% vs adoption ${trueAdoptionRate}% — driven by replaceable one-offs`}
           accent="amber"
         />
       </div>
+
+      {/* Team adoption scoreboard */}
+      <TeamAdoptionScoreboard
+        rows={teamAdoptionRows}
+        selectedTeam={teamFilter}
+        onSelectTeam={setTeamFilter}
+        threshold={ADOPTION_THRESHOLD}
+      />
 
       {/* Team filter */}
       {teams.length > 0 && (
@@ -884,7 +1226,7 @@ function ProjectSection({ data, timeline, migrationPct }: {
             className="text-sm border border-gray-300 dark:border-gray-600 rounded-md px-3 py-1.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
           >
             <option value="">All teams</option>
-            {teams.map(t => <option key={t} value={t}>{formatTeam(t)}</option>)}
+            {teams.map(t => <option key={t} value={t}>{formatOwnerLabel(t)}</option>)}
           </select>
           {teamFilter && (
             <button
@@ -916,6 +1258,7 @@ function ProjectSection({ data, timeline, migrationPct }: {
           onSearch={setReplaceSearch}
           sort={replaceSort}
           onSort={toggleReplaceSort}
+          teamFilter={teamFilter}
         />
         <DSRoadmapTable
           rows={filteredCandidates}
@@ -927,6 +1270,73 @@ function ProjectSection({ data, timeline, migrationPct }: {
         />
       </div>
     </section>
+  );
+}
+
+// ─── Page header & methodology ────────────────────────────────────────────────
+
+function OneoffMethodologyPanel() {
+  return (
+    <div className="mt-6 w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm overflow-hidden">
+      <div className="px-5 py-4 border-b border-gray-100 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-900/40">
+        <h2 className="text-sm font-semibold text-gray-900 dark:text-white">
+          How one-offs are detected
+        </h2>
+        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+          Static JSX scan — each usage is MMDS, Legacy, or Untracked. This page shows{' '}
+          <span className="font-medium text-gray-700 dark:text-gray-200">local one-offs</span> only.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100 dark:divide-gray-700">
+        <div className="p-5">
+          <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
+            Included
+          </p>
+          <ul className="space-y-1.5 text-sm text-gray-600 dark:text-gray-300">
+            <li>Custom components imported from in-repo paths</li>
+            <li>≥ 5 JSX instances per component</li>
+            <li>Team ownership via CODEOWNERS per file</li>
+          </ul>
+        </div>
+
+        <div className="p-5">
+          <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
+            Excluded
+          </p>
+          <ul className="space-y-1.5 text-sm text-gray-600 dark:text-gray-300">
+            <li>MMDS and legacy component-library usage</li>
+            <li>Platform primitives (react-native, expo)</li>
+            <li>Third-party packages and mixed-source components</li>
+          </ul>
+        </div>
+
+        <div className="p-5">
+          <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
+            Key metrics
+          </p>
+          <ul className="space-y-1.5 text-sm text-gray-600 dark:text-gray-300">
+            <li><span className="font-medium text-gray-700 dark:text-gray-200">Instances</span> — JSX usage count</li>
+            <li><span className="font-medium text-gray-700 dark:text-gray-200">Adoption %</span> — MMDS ÷ (MMDS + Legacy + replaceable one-offs)</li>
+            <li><span className="font-medium text-gray-700 dark:text-gray-200">Priority</span> — instances × match confidence</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="px-5 py-3 border-t border-gray-100 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-900/20 flex flex-wrap gap-x-6 gap-y-1 text-xs text-gray-500 dark:text-gray-400">
+        <span>
+          <span className="font-medium text-emerald-600 dark:text-emerald-400">Replace with MMDS today</span>
+          {' '}— local one-off with a suggested MMDS equivalent (name match)
+        </span>
+        <span>
+          <span className="font-medium text-purple-600 dark:text-purple-400">Introduce to MMDS</span>
+          {' '}— local one-off with no MMDS match yet (DS roadmap signal)
+        </span>
+        <span className="text-gray-400 dark:text-gray-500">
+          Matches are suggestions only — verify props and context before migrating.
+        </span>
+      </div>
+    </div>
   );
 }
 
@@ -973,20 +1383,33 @@ export function UntrackedComponents() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-6">
       <div className="max-w-7xl mx-auto">
         <header className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
             One-off Components
           </h1>
-          <p className="text-gray-500 dark:text-gray-400 max-w-3xl">
-            Custom components built in-repo that bypass the Design System — platform primitives and third-party packages are excluded. Use <span className="font-medium text-gray-700 dark:text-gray-200">Replace with MMDS today</span> to find migration opportunities, and <span className="font-medium text-gray-700 dark:text-gray-200">Introduce to MMDS</span> to inform the DS roadmap.
+          <p className="text-gray-500 dark:text-gray-400">
+            Track custom in-repo components that bypass MMDS. Use the team scoreboard for adoption targets ({ADOPTION_THRESHOLD}%),
+            then work through replaceable one-offs or flag gaps for the DS roadmap.
           </p>
-          <p className="mt-3 text-xs text-gray-400 dark:text-gray-500">
-            <span className="font-medium text-gray-500 dark:text-gray-400">Priority score</span> = instances × confidence weight (exact ×3, strong ×2, partial ×1).{' '}
-            <span className="font-medium text-gray-500 dark:text-gray-400">Breadth signal</span> = instances × unique teams.
-          </p>
+
+          <OneoffMethodologyPanel />
         </header>
 
-        {mobileData && <ProjectSection data={mobileData} timeline={untrackedTimeline?.mobile ?? null} migrationPct={mobileMigrationPct} />}
-        {extensionData && <ProjectSection data={extensionData} timeline={untrackedTimeline?.extension ?? null} migrationPct={extensionMigrationPct} />}
+        {mobileData && (
+          <ProjectSection
+            data={mobileData}
+            timeline={untrackedTimeline?.mobile ?? null}
+            migrationPct={mobileMigrationPct}
+            codeOwnerStats={mobileMetrics?.summary.codeOwnerStats}
+          />
+        )}
+        {extensionData && (
+          <ProjectSection
+            data={extensionData}
+            timeline={untrackedTimeline?.extension ?? null}
+            migrationPct={extensionMigrationPct}
+            codeOwnerStats={extensionMetrics?.summary.codeOwnerStats}
+          />
+        )}
       </div>
     </div>
   );

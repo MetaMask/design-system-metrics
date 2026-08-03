@@ -29,12 +29,17 @@ yarn setup-repos
 yarn sync-config
 yarn start
 yarn start:mobile
+yarn discover:extension
+yarn discover:mobile
+yarn update-untracked-timeline
 yarn update-timeline
 yarn validate-metrics
 yarn slack-report --output metrics/slack-report-YYYY-MM-DD.md
 cp metrics/*.json dashboard/public/metrics/
 cd dashboard && npm ci && npm run build
 ```
+
+Prefer `yarn pipeline` when you want the full weekly sequence (includes discover + untracked timeline).
 
 If generating for a historical date, set `METRICS_DATE=YYYY-MM-DD` when running `yarn start` / `yarn start:mobile`.
 

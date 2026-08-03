@@ -2,15 +2,21 @@
 
 /**
  * Builds untracked-timeline.json from all dated {extension,mobile}-untracked-YYYY-MM-DD.json files.
- * Output: dashboard/public/metrics/untracked-timeline.json
  *
- * Run: node scripts/update-untracked-timeline.js
+ * Reads:  metrics/*-untracked-YYYY-MM-DD.json
+ * Writes: metrics/untracked-timeline.json
+ *         dashboard/public/metrics/untracked-timeline.json (when that dir exists)
+ *
+ * Run: yarn update-untracked-timeline
+ *      (also invoked by yarn pipeline)
  */
 
 const fs = require('fs');
 const path = require('path');
 
-const METRICS_DIR = path.join(__dirname, '../dashboard/public/metrics');
+const ROOT = path.join(__dirname, '..');
+const METRICS_DIR = path.join(ROOT, 'metrics');
+const DASHBOARD_METRICS_DIR = path.join(ROOT, 'dashboard', 'public', 'metrics');
 const OUTPUT_FILE = path.join(METRICS_DIR, 'untracked-timeline.json');
 
 /** Filter a replaceableWithMMDS array to strict local-oneoff only. */
@@ -46,6 +52,7 @@ function extractEntry(filePath) {
 
   const trackedMMDS = d.summary?.trackedMMDS ?? 0;
   const trackedDeprecated = d.summary?.trackedDeprecated ?? 0;
+  // Timeline keeps candidates in the denominator for historical continuity.
   const trueTotal = trackedMMDS + trackedDeprecated + replaceableInstances + candidateInstances;
   const trueAdoption = trueTotal > 0 ? parseFloat(((trackedMMDS / trueTotal) * 100).toFixed(2)) : null;
 
@@ -99,14 +106,26 @@ function buildProjectTimeline(project) {
 
 console.log('Building untracked timeline…');
 
+if (!fs.existsSync(METRICS_DIR)) {
+  console.error(`Metrics directory not found: ${METRICS_DIR}`);
+  process.exit(1);
+}
+
 const timeline = {
   generatedAt: new Date().toISOString(),
   extension: buildProjectTimeline('extension'),
   mobile: buildProjectTimeline('mobile'),
 };
 
+fs.mkdirSync(METRICS_DIR, { recursive: true });
 fs.writeFileSync(OUTPUT_FILE, JSON.stringify(timeline, null, 2));
-
 console.log(`✓ Wrote ${OUTPUT_FILE}`);
+
+if (fs.existsSync(DASHBOARD_METRICS_DIR)) {
+  const dashboardOut = path.join(DASHBOARD_METRICS_DIR, 'untracked-timeline.json');
+  fs.writeFileSync(dashboardOut, JSON.stringify(timeline, null, 2));
+  console.log(`✓ Wrote ${dashboardOut}`);
+}
+
 console.log(`  Extension: ${timeline.extension.dates.length} data points`);
 console.log(`  Mobile:    ${timeline.mobile.dates.length} data points`);

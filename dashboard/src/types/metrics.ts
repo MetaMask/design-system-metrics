@@ -1,9 +1,9 @@
 export interface ComponentMetrics {
-  name: string;
+  replacementComponent: string;
+  legacyComponents: string[];
+  legacyInstances: number;
   mmdsInstances: number;
-  deprecatedInstances: number;
   totalInstances: number;
-  replacement: string | null;
   migrationPercentage: string;
 }
 
@@ -13,6 +13,10 @@ export interface CodeOwnerStats {
   totalInstances: number;
   migrationPercentage: string;
   filesCount: number;
+  /** MMDS instance counts keyed by tracked component name. */
+  mmdsByComponent?: Record<string, number>;
+  /** Legacy (deprecated) instance counts keyed by tracked component name. */
+  deprecatedByComponent?: Record<string, number>;
 }
 
 export interface MetricsSummary {

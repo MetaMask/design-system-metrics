@@ -46,6 +46,10 @@ export interface CodeOwnerStats {
   totalInstances: number;
   migrationPercentage: string;
   filesCount: number;
+  /** MMDS instance counts keyed by tracked component name. */
+  mmdsByComponent?: Record<string, number>;
+  /** Legacy (deprecated) instance counts keyed by tracked component name. */
+  deprecatedByComponent?: Record<string, number>;
 }
 
 export interface MetricsSummary {
