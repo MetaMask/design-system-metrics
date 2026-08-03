@@ -7,6 +7,13 @@ import { CodeOwnerAdoptionChart } from '../components/CodeOwnerAdoptionChart';
 import { CodeOwnerTrendChart } from '../components/CodeOwnerTrendChart';
 import { CodeOwnerAdoptionTrendChart } from '../components/CodeOwnerAdoptionTrendChart';
 import { ComponentPropsAuditSection } from '../components/ComponentPropsAuditSection';
+import { TeamLegacyBacklog } from '../components/TeamLegacyBacklog';
+import {
+  EXTENSION_EXCLUDED_OWNERS,
+  MOBILE_EXCLUDED_OWNERS,
+  normalizeOwner,
+} from '../constants/codeOwners';
+import type { CodeOwnerStats } from '../types/metrics';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine, Cell } from 'recharts';
 
 // ─── Deprecated instances weekly-delta sparkline ──────────────────────────────
@@ -73,25 +80,6 @@ function DeprecatedDeltaSparkline({ timeline, project }: { timeline: ProjectTime
   );
 }
 
-const MOBILE_EXCLUDED_OWNERS = new Set([
-  'design-system-engineers',
-  'mobile-admins',
-  'supply-chain',
-  'qa',
-]);
-
-const EXTENSION_EXCLUDED_OWNERS = new Set([
-  'howardbraham',
-  'dbrans',
-  'qa',
-  'wallet-integrations',
-  'extension-platform',
-  'extension-privacy-reviewers',
-  'extension-security-team',
-  'policy-reviewers',
-  'design-system-engineers',
-]);
-
 const JIRA_BROWSE_BASE = 'https://consensyssoftware.atlassian.net/browse';
 
 function normalizeTargetEntries(projectTargets?: MigrationTargetsProject | null) {
@@ -121,20 +109,10 @@ function getMigratedTargetCount(projectTargets?: MigrationTargetsProject | null)
   return entries.filter((entry) => entry.status === 'complete').length;
 }
 
-function normalizeOwner(owner: string) {
-  return owner.replace('@MetaMask/', '').replace(/^@/, '').toLowerCase();
-}
-
 function filterCodeOwners(
-  codeOwnerStats: Record<string, {
-    mmdsInstances: number;
-    deprecatedInstances: number;
-    totalInstances: number;
-    migrationPercentage: string;
-    filesCount: number;
-  }> | undefined,
+  codeOwnerStats: Record<string, CodeOwnerStats> | undefined,
   excludedOwners: Set<string>,
-) {
+): Record<string, CodeOwnerStats> | undefined {
   if (!codeOwnerStats) {
     return undefined;
   }
@@ -422,6 +400,7 @@ export function Overview() {
                 title="Mobile - Code Owner Adoption"
                 threshold={90}
                 codeOwnerTimeline={data.mobile.codeOwnerTimeline}
+                project="mobile"
               />
               <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
                 Disclaimer: Code owner adoption reflects migration stage, not code quality.
@@ -430,6 +409,16 @@ export function Overview() {
                 updated during planned replacement phases as MMDS alternatives roll out.
               </p>
             </div>
+          )}
+
+          {mobileCodeOwnerStats && (
+            <TeamLegacyBacklog
+              title="Mobile — Remaining legacy by team"
+              project="mobile"
+              codeOwnerStats={mobileCodeOwnerStats}
+              components={mobileMetrics?.components}
+              excludedOwners={MOBILE_EXCLUDED_OWNERS}
+            />
           )}
 
           {data.mobile.codeOwnerTimeline && data.mobile.codeOwnerTimeline.dates.length > 0 && (
@@ -633,6 +622,7 @@ export function Overview() {
                 title="Extension - Code Owner Adoption"
                 threshold={90}
                 codeOwnerTimeline={data.extension.codeOwnerTimeline}
+                project="extension"
               />
               <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
                 Disclaimer: Code owner adoption reflects migration stage, not code quality.
@@ -641,6 +631,16 @@ export function Overview() {
                 updated during planned replacement phases as MMDS alternatives roll out.
               </p>
             </div>
+          )}
+
+          {extensionCodeOwnerStats && (
+            <TeamLegacyBacklog
+              title="Extension — Remaining legacy by team"
+              project="extension"
+              codeOwnerStats={extensionCodeOwnerStats}
+              components={extensionMetrics?.components}
+              excludedOwners={EXTENSION_EXCLUDED_OWNERS}
+            />
           )}
 
           {data.extension.codeOwnerTimeline && data.extension.codeOwnerTimeline.dates.length > 0 && (

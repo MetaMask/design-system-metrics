@@ -150,7 +150,14 @@ async function main(): Promise<void> {
     env: dateEnv,
   });
 
-  // 5. Props audit
+  // 5. Rebuild one-off / untracked historical trend from dated discover outputs
+  run({
+    name: 'update-untracked-timeline',
+    command: 'node',
+    args: ['scripts/update-untracked-timeline.js'],
+  });
+
+  // 6. Props audit
   run({
     name: 'props-audit',
     command: 'node',
@@ -161,21 +168,21 @@ async function main(): Promise<void> {
     },
   });
 
-  // 6. Update timeline + index
+  // 7. Update migration timeline + index
   run({
     name: 'update-timeline',
     command: 'tsx',
     args: ['pipeline/update-timeline.ts'],
   });
 
-  // 7. Validate consistency
+  // 8. Validate consistency
   run({
     name: 'validate',
     command: 'tsx',
     args: ['pipeline/validate.ts'],
   });
 
-  // 8. Copy to dashboard
+  // 9. Copy to dashboard
   if (!onlyStages || onlyStages.has('copy')) {
     console.log('\n[copy] starting…');
     const copyStart = Date.now();

@@ -186,6 +186,8 @@ const trackComponent = (componentName, source, specificPath, filePath) => {
       codeOwnerMetrics.set(owner, {
         mmdsInstances: 0,
         deprecatedInstances: 0,
+        mmdsByComponent: new Map(),
+        deprecatedByComponent: new Map(),
         files: new Set(),
       });
     }
@@ -193,8 +195,16 @@ const trackComponent = (componentName, source, specificPath, filePath) => {
     const ownerMetrics = codeOwnerMetrics.get(owner);
     if (source === "current") {
       ownerMetrics.mmdsInstances++;
+      ownerMetrics.mmdsByComponent.set(
+        componentName,
+        (ownerMetrics.mmdsByComponent.get(componentName) || 0) + 1,
+      );
     } else if (source === "deprecated") {
       ownerMetrics.deprecatedInstances++;
+      ownerMetrics.deprecatedByComponent.set(
+        componentName,
+        (ownerMetrics.deprecatedByComponent.get(componentName) || 0) + 1,
+      );
     }
     ownerMetrics.files.add(filePath);
   }
@@ -617,6 +627,8 @@ const main = async () => {
           totalInstances: 0,
           migrationPercentage: "0.00",
           filesCount: 0,
+          mmdsByComponent: {},
+          deprecatedByComponent: {},
         };
       }
     }
@@ -627,12 +639,24 @@ const main = async () => {
         ? ((metrics.mmdsInstances / totalInstances) * 100).toFixed(2)
         : "0.00";
 
+      const sortByCountDesc = (entries) =>
+        Object.fromEntries([...entries].sort((a, b) => b[1] - a[1]));
+
+      const mmdsByComponent = sortByCountDesc(
+        metrics.mmdsByComponent || new Map(),
+      );
+      const deprecatedByComponent = sortByCountDesc(
+        metrics.deprecatedByComponent || new Map(),
+      );
+
       codeOwnerStats[owner] = {
         mmdsInstances: metrics.mmdsInstances,
         deprecatedInstances: metrics.deprecatedInstances,
         totalInstances: totalInstances,
         migrationPercentage: migrationPercentage,
         filesCount: metrics.files.size,
+        mmdsByComponent,
+        deprecatedByComponent,
       };
     }
 

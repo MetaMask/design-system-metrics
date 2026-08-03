@@ -1,14 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { BarChart, Bar, LabelList, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, ReferenceLine } from 'recharts';
-import type { CodeOwnerTimeline } from '../types/metrics';
-
-interface CodeOwnerStats {
-  mmdsInstances: number;
-  deprecatedInstances: number;
-  totalInstances: number;
-  migrationPercentage: string;
-  filesCount: number;
-}
+import type { CodeOwnerStats, CodeOwnerTimeline, IndexData, MetricsData } from '../types/metrics';
 
 interface CodeOwnerAdoptionChartProps {
   codeOwnerStats: Record<string, CodeOwnerStats>;
@@ -17,9 +9,14 @@ interface CodeOwnerAdoptionChartProps {
   threshold?: number;
   /** Historical timeline for delta badges. Optional. */
   codeOwnerTimeline?: CodeOwnerTimeline;
+  /** Project key — used to load dated snapshots for legacy component diffs. */
+  project?: 'mobile' | 'extension';
 }
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
+
+const BASE_PATH = import.meta.env.BASE_URL || '/';
+const METRICS_PATH = `${BASE_PATH}metrics/`;
 
 function isUnknownOwner(owner: string) {
   const normalized = owner.replace(/^@/, '').toLowerCase();
@@ -71,10 +68,77 @@ function TooltipMetricRow({
   );
 }
 
+interface ComponentDelta {
+  component: string;
+  delta: number;
+  from: number;
+  to: number;
+}
+
+interface OwnerComponentBaseline {
+  mmdsByComponent?: Record<string, number>;
+  deprecatedByComponent?: Record<string, number>;
+}
+
+function diffComponentCounts(
+  from: Record<string, number> | undefined,
+  to: Record<string, number> | undefined,
+  direction: 'increased' | 'decreased',
+): ComponentDelta[] {
+  if (!from || !to) return [];
+  const names = new Set([...Object.keys(from), ...Object.keys(to)]);
+  const deltas: ComponentDelta[] = [];
+  for (const component of names) {
+    const prev = from[component] ?? 0;
+    const next = to[component] ?? 0;
+    const delta = next - prev;
+    if (direction === 'increased' && delta > 0) {
+      deltas.push({ component, delta, from: prev, to: next });
+    } else if (direction === 'decreased' && delta < 0) {
+      deltas.push({ component, delta, from: prev, to: next });
+    }
+  }
+  return deltas.sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta));
+}
+
+function ComponentDeltaList({
+  title,
+  items,
+  valueClassName,
+}: {
+  title: string;
+  items: ComponentDelta[];
+  valueClassName: string;
+}) {
+  if (items.length === 0) return null;
+  return (
+    <div>
+      <p className="text-gray-500 dark:text-gray-400 mb-0.5">
+        {title} ({items.length}):
+      </p>
+      <ul className="space-y-0.5 max-h-36 overflow-y-auto">
+        {items.map((item) => (
+          <li
+            key={item.component}
+            className="flex justify-between gap-3 text-gray-700 dark:text-gray-200"
+          >
+            <span className="font-mono truncate">{item.component}</span>
+            <span className={`tabular-nums shrink-0 ${valueClassName}`}>
+              {item.delta > 0 ? '+' : ''}{item.delta}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 // ─── Delta computation ────────────────────────────────────────────────────────
 
 interface DeltaInfo {
   delta: number | null;
+  mmdsInstanceDelta: number | null;
+  legacyInstanceDelta: number | null;
   fromDate: string | null;
   toDate: string | null;
   actualWeeks: number;
@@ -99,13 +163,28 @@ function buildDeltaMap(
     const arr = data.migrationPercentage;
     const key = normalizeOwnerKey(owner);
     if (!arr || arr.length <= fromIdx) {
-      map.set(key, { delta: null, fromDate, toDate, actualWeeks });
+      map.set(key, {
+        delta: null,
+        mmdsInstanceDelta: null,
+        legacyInstanceDelta: null,
+        fromDate,
+        toDate,
+        actualWeeks,
+      });
       continue;
     }
     const current = arr[toIdx] ?? arr[arr.length - 1];
     const past = arr[fromIdx] ?? arr[0];
+    const mmdsTo = data.mmdsInstances?.[toIdx] ?? data.mmdsInstances?.[data.mmdsInstances.length - 1];
+    const mmdsFrom = data.mmdsInstances?.[fromIdx] ?? data.mmdsInstances?.[0];
+    const legacyTo = data.deprecatedInstances?.[toIdx] ?? data.deprecatedInstances?.[data.deprecatedInstances.length - 1];
+    const legacyFrom = data.deprecatedInstances?.[fromIdx] ?? data.deprecatedInstances?.[0];
     map.set(key, {
       delta: parseFloat((current - past).toFixed(2)),
+      mmdsInstanceDelta:
+        mmdsTo != null && mmdsFrom != null ? mmdsTo - mmdsFrom : null,
+      legacyInstanceDelta:
+        legacyTo != null && legacyFrom != null ? legacyTo - legacyFrom : null,
       fromDate,
       toDate,
       actualWeeks,
@@ -154,22 +233,95 @@ export function CodeOwnerAdoptionChart({
   title,
   threshold = 90,
   codeOwnerTimeline,
+  project,
 }: CodeOwnerAdoptionChartProps) {
-  const [lookback, setLookback] = useState(4);
+  // Default to 1 week — most actionable for spotting week-over-week changes.
+  const [lookback, setLookback] = useState(1);
   const deltaMap = buildDeltaMap(codeOwnerTimeline, lookback);
+  const [baselineByOwner, setBaselineByOwner] = useState<
+    Record<string, OwnerComponentBaseline> | null
+  >(null);
+
+  const comparisonDates = useMemo(() => {
+    if (!codeOwnerTimeline || codeOwnerTimeline.dates.length < 2) {
+      return { fromDate: null as string | null, toDate: null as string | null };
+    }
+    const toIdx = codeOwnerTimeline.dates.length - 1;
+    const fromIdx = Math.max(0, toIdx - lookback);
+    return {
+      fromDate: codeOwnerTimeline.dates[fromIdx] ?? null,
+      toDate: codeOwnerTimeline.dates[toIdx] ?? null,
+    };
+  }, [codeOwnerTimeline, lookback]);
+
+  // Load the lookback snapshot so we can diff per-component usage by team.
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadBaseline() {
+      if (!project || !comparisonDates.fromDate) {
+        setBaselineByOwner(null);
+        return;
+      }
+
+      try {
+        const indexRes = await fetch(`${METRICS_PATH}index.json`);
+        if (!indexRes.ok) throw new Error('Failed to fetch index');
+        const index: IndexData = await indexRes.json();
+        const entry = (index.projects[project] || []).find(
+          (e) => e.date === comparisonDates.fromDate,
+        );
+        if (!entry) {
+          if (!cancelled) setBaselineByOwner(null);
+          return;
+        }
+
+        const dataRes = await fetch(`${METRICS_PATH}${entry.file}`);
+        if (!dataRes.ok) throw new Error(`Failed to fetch ${entry.file}`);
+        const metrics: MetricsData = await dataRes.json();
+
+        const map: Record<string, OwnerComponentBaseline> = {};
+        for (const [owner, stats] of Object.entries(metrics.summary.codeOwnerStats || {})) {
+          if (stats.mmdsByComponent || stats.deprecatedByComponent) {
+            map[normalizeOwnerKey(owner)] = {
+              mmdsByComponent: stats.mmdsByComponent,
+              deprecatedByComponent: stats.deprecatedByComponent,
+            };
+          }
+        }
+        if (!cancelled) {
+          setBaselineByOwner(Object.keys(map).length > 0 ? map : null);
+        }
+      } catch {
+        if (!cancelled) setBaselineByOwner(null);
+      }
+    }
+
+    loadBaseline();
+    return () => {
+      cancelled = true;
+    };
+  }, [project, comparisonDates.fromDate]);
 
   const chartData = Object.entries(codeOwnerStats)
     .map(([owner, stats]) => {
       const key = normalizeOwnerKey(owner);
       const di = deltaMap.get(key);
+      const baseline = baselineByOwner?.[key];
       return {
         ownerLabel: formatOwnerLabel(owner),
         team: formatOwnerLabel(owner),
+        ownerKey: key,
         mmdsInstances: stats.mmdsInstances,
         deprecatedInstances: stats.deprecatedInstances,
         migrationPercentage: parseFloat(stats.migrationPercentage),
         totalInstances: stats.totalInstances,
         delta4w: di?.delta ?? null,
+        mmdsInstanceDelta: di?.mmdsInstanceDelta ?? null,
+        legacyInstanceDelta: di?.legacyInstanceDelta ?? null,
+        mmdsIncreased: diffComponentCounts(baseline?.mmdsByComponent, stats.mmdsByComponent, 'increased'),
+        legacyIncreased: diffComponentCounts(baseline?.deprecatedByComponent, stats.deprecatedByComponent, 'increased'),
+        legacyReduced: diffComponentCounts(baseline?.deprecatedByComponent, stats.deprecatedByComponent, 'decreased'),
         deltaFromDate: di?.fromDate ?? null,
         deltaToDate: di?.toDate ?? null,
         actualWeeks: di?.actualWeeks ?? lookback,
@@ -196,10 +348,22 @@ export function CodeOwnerAdoptionChart({
     const onTarget = d.migrationPercentage >= threshold;
     const hasDelta = d.delta4w != null;
     const isFlat = hasDelta && Math.abs(d.delta4w) < 0.5;
+    const isDeclining = hasDelta && !isFlat && d.delta4w < 0;
+    const isImproving = hasDelta && !isFlat && d.delta4w > 0;
     const mmdsColor = barFill(d.migrationPercentage, threshold);
+    const mmdsIncreased: ComponentDelta[] = d.mmdsIncreased ?? [];
+    const legacyIncreased: ComponentDelta[] = d.legacyIncreased ?? [];
+    const legacyReduced: ComponentDelta[] = d.legacyReduced ?? [];
+    const mmdsDelta: number | null = d.mmdsInstanceDelta;
+    const legacyDelta: number | null = d.legacyInstanceDelta;
+    const hasComponentBreakdown =
+      mmdsIncreased.length > 0 || legacyIncreased.length > 0 || legacyReduced.length > 0;
+    const showPeriodDetail = (isDeclining || isImproving) && (
+      mmdsDelta != null || legacyDelta != null || hasComponentBreakdown
+    );
 
     return (
-      <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-3 text-sm min-w-[200px]">
+      <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-3 text-sm min-w-[220px] max-w-[320px]">
         <p className="font-semibold text-gray-900 dark:text-white mb-1">{d.ownerLabel}</p>
         <TooltipMetricRow
           color={mmdsColor}
@@ -217,21 +381,61 @@ export function CodeOwnerAdoptionChart({
           {onTarget ? ' ✓' : ` (${(threshold - d.migrationPercentage).toFixed(1)}pp to go)`}
         </p>
         {hasDelta && (
-          <div className="mt-2 pt-2 border-t border-gray-100 dark:border-gray-700 text-xs space-y-0.5">
+          <div className="mt-2 pt-2 border-t border-gray-100 dark:border-gray-700 text-xs space-y-1">
             <p className="text-gray-400 dark:text-gray-500">
               {d.deltaFromDate} → {d.deltaToDate}
             </p>
             <p className={`font-semibold ${
               isFlat
                 ? 'text-gray-400 dark:text-gray-500'
-                : d.delta4w > 0
+                : isImproving
                 ? 'text-emerald-600 dark:text-emerald-400'
                 : 'text-red-500 dark:text-red-400'
             }`}>
               {isFlat
                 ? 'No meaningful change (~flat)'
-                : `${d.delta4w > 0 ? '+' : ''}${d.delta4w.toFixed(1)}pp ${d.delta4w > 0 ? '↑ improving' : '↓ declining'}`}
+                : `${d.delta4w > 0 ? '+' : ''}${d.delta4w.toFixed(1)}pp ${isImproving ? '↑ improving' : '↓ declining'}`}
             </p>
+            {showPeriodDetail && (
+              <div className="pt-1 space-y-1.5">
+                {mmdsDelta != null && mmdsDelta !== 0 && (
+                  <p className={mmdsDelta > 0 ? 'text-emerald-600 dark:text-emerald-400 font-medium' : 'text-red-500 dark:text-red-400 font-medium'}>
+                    MMDS instances: {mmdsDelta > 0 ? '+' : ''}{mmdsDelta.toLocaleString()}
+                  </p>
+                )}
+                {legacyDelta != null && legacyDelta !== 0 && (
+                  <p className={legacyDelta > 0 ? 'text-red-500 dark:text-red-400 font-medium' : 'text-emerald-600 dark:text-emerald-400 font-medium'}>
+                    Legacy instances: {legacyDelta > 0 ? '+' : ''}{legacyDelta.toLocaleString()}
+                  </p>
+                )}
+                {hasComponentBreakdown ? (
+                  <>
+                    <ComponentDeltaList
+                      title="MMDS components increased"
+                      items={mmdsIncreased}
+                      valueClassName="text-emerald-600 dark:text-emerald-400"
+                    />
+                    <ComponentDeltaList
+                      title="Legacy components reduced"
+                      items={legacyReduced}
+                      valueClassName="text-emerald-600 dark:text-emerald-400"
+                    />
+                    <ComponentDeltaList
+                      title="Legacy components introduced / increased"
+                      items={legacyIncreased}
+                      valueClassName="text-red-500 dark:text-red-400"
+                    />
+                  </>
+                ) : (
+                  ((isImproving && mmdsDelta != null && mmdsDelta > 0) ||
+                    (isDeclining && legacyDelta != null && legacyDelta > 0)) && (
+                    <p className="text-gray-400 dark:text-gray-500">
+                      Component breakdown unavailable for this comparison window.
+                    </p>
+                  )
+                )}
+              </div>
+            )}
           </div>
         )}
       </div>
