@@ -1,9 +1,9 @@
 {
   "component": "TextField",
-  "generatedAt": "2026-07-27T09:34:26.611Z",
+  "generatedAt": "2026-08-03T15:22:37.498Z",
   "projects": {
     "extension": {
-      "filesScanned": 3470,
+      "filesScanned": 3520,
       "targetComponent": "TextField",
       "mmds": {
         "totalInstances": 1,
@@ -84,15 +84,14 @@
         }
       },
       "deprecated": {
-        "totalInstances": 29,
-        "filesCount": 22,
+        "totalInstances": 28,
+        "filesCount": 21,
         "props": {
           "value": {
-            "count": 28,
+            "count": 27,
             "values": {
               "{inputValue}": 3,
               "{password}": 2,
-              "{searchQuery}": 2,
               "{marginAmount}": 1,
               "{isUsdDenomination ? amount : displayedTokenValue}": 1,
               "{percentInputValue}": 1,
@@ -108,6 +107,7 @@
               "{referralCode}": 1,
               "{confirmationInput}": 1,
               "{word.word}": 1,
+              "{searchQuery}": 1,
               "{customSpendingCapInputValue}": 1,
               "{amount}": 1,
               "{hexData}": 1,
@@ -117,7 +117,7 @@
             }
           },
           "onChange": {
-            "count": 28,
+            "count": 27,
             "values": {
               "{(e: React.ChangeEvent<HTMLInputElement>) => { const { value } = e.target; if ...}": 2,
               "{onChange}": 2,
@@ -139,7 +139,6 @@
               "{(e) => handleCustomInputChange(e, e.target.value)}": 1,
               "{(e) => { e.preventDefault(); e.stopPropagation(); const cleanedValue = saniti...}": 1,
               "{(e) => { handleCustomSlippage(e, e.target.value); }}": 1,
-              "{(e) => { setSearchQuery(e.target.value); }}": 1,
               "{(e) => setSearchQuery(e.target.value)}": 1,
               "{(event) => setCustomSpendingCapInputValue(event.target.value)}": 1,
               "{onToChange}": 1,
@@ -156,7 +155,7 @@
             }
           },
           "inputProps": {
-            "count": 21,
+            "count": 20,
             "values": {
               "{{ inputMode: 'decimal', }}": 4,
               "{{ onKeyDown: handleInputEnterKey }}": 4,
@@ -168,7 +167,6 @@
               "{{ 'data-testid': 'remove-snap-confirmation-input', }}": 1,
               "{{ ref: (el) => { if (el) { srpRefs.current[word.id] = el; } }, }}": 1,
               "{{ disableStateStyles: true, textAlign: TextAlign.Start, style: { fontWeight: ...}": 1,
-              "{{ disableStateStyles: true, textVariant: TextVariant.bodyMd, paddingRight: 2,...}": 1,
               "{{ disableStateStyles: true, }}": 1,
               "{{ 'data-testid': 'custom-spending-cap-input' }}": 1,
               "{{ 'data-testid': 'input-password', }}": 1,
@@ -176,14 +174,13 @@
             }
           },
           "placeholder": {
-            "count": 20,
+            "count": 19,
             "values": {
               "\"0.00\"": 6,
               "\"0\"": 6,
               "{isUsdDenomination ? usdPlaceholder : '0'}": 1,
               "{t('rewardsOnboardingReferralCodePlaceholder')}": 1,
               "{t('password')}": 1,
-              "{t('enterTokenNameOrAddress')}": 1,
               "{(isDestinationSolana ? t('destinationAccountPickerSearchPlaceholderToSolana')...}": 1,
               "{`${formattedSpendingCap} ${tokenSymbol}`}": 1,
               "{t('hexDataPlaceholder')}": 1,
@@ -191,10 +188,17 @@
             }
           },
           "borderRadius": {
-            "count": 17,
+            "count": 16,
             "values": {
               "{BorderRadius.MD}": 13,
-              "{BorderRadius.XL}": 4
+              "{BorderRadius.XL}": 3
+            }
+          },
+          "backgroundColor": {
+            "count": 16,
+            "values": {
+              "{BackgroundColor.backgroundMuted}": 15,
+              "{BackgroundColor.backgroundSubsection}": 1
             }
           },
           "className": {
@@ -204,20 +208,6 @@
               "\"flex-1\"": 1,
               "\"amount-input\"": 1,
               "{isWarning ? '!border-warning-default' : undefined}": 1
-            }
-          },
-          "borderWidth": {
-            "count": 15,
-            "values": {
-              "0": 14,
-              "1": 1
-            }
-          },
-          "backgroundColor": {
-            "count": 15,
-            "values": {
-              "{BackgroundColor.backgroundMuted}": 14,
-              "{BackgroundColor.backgroundSubsection}": 1
             }
           },
           "onBlur": {
@@ -251,6 +241,12 @@
               "{() => { setShowCustomInput(true); }}": 1
             }
           },
+          "borderWidth": {
+            "count": 14,
+            "values": {
+              "0": 14
+            }
+          },
           "endAccessory": {
             "count": 13,
             "values": {
@@ -266,34 +262,6 @@
               "{<ButtonIcon type=\"button\" iconName={showPassword ? IconName.Eye : IconName.Ey...}": 1
             }
           },
-          "startAccessory": {
-            "count": 11,
-            "values": {
-              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > $ </Text>}": 4,
-              "{<Text variant={TextVariant.BodySm} color={TextColor.TextAlternative} > $ </Text>}": 2,
-              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative}> {t('per...}": 1,
-              "{<Text color={TextColor.TextAlternative} textAlign={TextAlign.Left} className=...}": 1,
-              "{<Icon color={IconColor.IconAlternative} name={IconName.Search} size={IconSize...}": 1,
-              "{<Icon name={IconName.Search} size={IconSize.Md} />}": 1,
-              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} classNam...}": 1
-            }
-          },
-          "testId": {
-            "count": 11,
-            "values": {
-              "\"perps-update-tpsl-tp-price-input\"": 1,
-              "\"perps-update-tpsl-tp-percent-input\"": 1,
-              "\"perps-update-tpsl-sl-price-input\"": 1,
-              "\"perps-update-tpsl-sl-percent-input\"": 1,
-              "{`import-srp__srp-word-${index}`}": 1,
-              "\"multichain-private-key-password-input\"": 1,
-              "\"bridge__tx-settings-modal-custom-input\"": 1,
-              "bridge-asset-picker-search-input": 1,
-              "\"send-amount-input\"": 1,
-              "\"recipient-address-input\"": 1,
-              "{`recovery-phrase-chip-${index}`}": 1
-            }
-          },
           "data-testid": {
             "count": 10,
             "values": {
@@ -307,6 +275,32 @@
               "\"close-amount-value\"": 1,
               "\"leverage-input\"": 1,
               "\"destination-account-picker-modal-search-input\"": 1
+            }
+          },
+          "startAccessory": {
+            "count": 10,
+            "values": {
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > $ </Text>}": 4,
+              "{<Text variant={TextVariant.BodySm} color={TextColor.TextAlternative} > $ </Text>}": 2,
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative}> {t('per...}": 1,
+              "{<Text color={TextColor.TextAlternative} textAlign={TextAlign.Left} className=...}": 1,
+              "{<Icon name={IconName.Search} size={IconSize.Md} />}": 1,
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} classNam...}": 1
+            }
+          },
+          "testId": {
+            "count": 10,
+            "values": {
+              "\"perps-update-tpsl-tp-price-input\"": 1,
+              "\"perps-update-tpsl-tp-percent-input\"": 1,
+              "\"perps-update-tpsl-sl-price-input\"": 1,
+              "\"perps-update-tpsl-sl-percent-input\"": 1,
+              "{`import-srp__srp-word-${index}`}": 1,
+              "\"multichain-private-key-password-input\"": 1,
+              "\"bridge__tx-settings-modal-custom-input\"": 1,
+              "\"send-amount-input\"": 1,
+              "\"recipient-address-input\"": 1,
+              "{`recovery-phrase-chip-${index}`}": 1
             }
           },
           "error": {
@@ -341,9 +335,9 @@
             }
           },
           "autoFocus": {
-            "count": 7,
+            "count": 6,
             "values": {
-              "true (shorthand)": 5,
+              "true (shorthand)": 4,
               "{autoFocus}": 1,
               "true": 1
             }
@@ -375,11 +369,10 @@
             }
           },
           "style": {
-            "count": 5,
+            "count": 4,
             "values": {
               "{{ width: '100%' }}": 2,
               "{{ flex: 1, minWidth: 0, opacity: isAmountReadOnly && amountFieldProps?.value ...}": 1,
-              "{{ minHeight: 48, paddingRight: 8, outline: 'none', borderColor: BorderColor.b...}": 1,
               "{{ minHeight: 48, marginBottom: 12, outline: 'none', }}": 1
             }
           },
@@ -391,12 +384,6 @@
               "{(e: React.KeyboardEvent<HTMLInputElement>) => { // Only allows digits and dec...}": 1
             }
           },
-          "borderColor": {
-            "count": 3,
-            "values": {
-              "{BorderColor.borderMuted}": 3
-            }
-          },
           "key": {
             "count": 2,
             "values": {
@@ -404,10 +391,10 @@
               "{index}": 1
             }
           },
-          "marginInline": {
+          "borderColor": {
             "count": 2,
             "values": {
-              "4": 2
+              "{BorderColor.borderMuted}": 2
             }
           },
           "paddingRight": {
@@ -438,6 +425,12 @@
             "count": 1,
             "values": {
               "{amountFieldProps}": 1
+            }
+          },
+          "marginInline": {
+            "count": 1,
+            "values": {
+              "4": 1
             }
           },
           "color": {
@@ -473,15 +466,14 @@
         }
       },
       "overall": {
-        "totalInstances": 30,
-        "filesCount": 23,
+        "totalInstances": 29,
+        "filesCount": 22,
         "props": {
           "value": {
-            "count": 29,
+            "count": 28,
             "values": {
               "{inputValue}": 3,
               "{password}": 2,
-              "{searchQuery}": 2,
               "{marginAmount}": 1,
               "{isUsdDenomination ? amount : displayedTokenValue}": 1,
               "{percentInputValue}": 1,
@@ -498,6 +490,7 @@
               "{referralCode}": 1,
               "{confirmationInput}": 1,
               "{word.word}": 1,
+              "{searchQuery}": 1,
               "{customSpendingCapInputValue}": 1,
               "{amount}": 1,
               "{hexData}": 1,
@@ -507,7 +500,7 @@
             }
           },
           "onChange": {
-            "count": 29,
+            "count": 28,
             "values": {
               "{(e: React.ChangeEvent<HTMLInputElement>) => { const { value } = e.target; if ...}": 2,
               "{onChange}": 2,
@@ -530,7 +523,6 @@
               "{(e) => handleCustomInputChange(e, e.target.value)}": 1,
               "{(e) => { e.preventDefault(); e.stopPropagation(); const cleanedValue = saniti...}": 1,
               "{(e) => { handleCustomSlippage(e, e.target.value); }}": 1,
-              "{(e) => { setSearchQuery(e.target.value); }}": 1,
               "{(e) => setSearchQuery(e.target.value)}": 1,
               "{(event) => setCustomSpendingCapInputValue(event.target.value)}": 1,
               "{onToChange}": 1,
@@ -547,7 +539,7 @@
             }
           },
           "inputProps": {
-            "count": 22,
+            "count": 21,
             "values": {
               "{{ inputMode: 'decimal', }}": 4,
               "{{ onKeyDown: handleInputEnterKey }}": 4,
@@ -559,7 +551,6 @@
               "{{ 'data-testid': 'remove-snap-confirmation-input', }}": 1,
               "{{ ref: (el) => { if (el) { srpRefs.current[word.id] = el; } }, }}": 1,
               "{{ disableStateStyles: true, textAlign: TextAlign.Start, style: { fontWeight: ...}": 1,
-              "{{ disableStateStyles: true, textVariant: TextVariant.bodyMd, paddingRight: 2,...}": 1,
               "{{ disableStateStyles: true, }}": 1,
               "{{ 'data-testid': 'custom-spending-cap-input' }}": 1,
               "{{ 'data-testid': 'input-password', }}": 1,
@@ -567,25 +558,17 @@
             }
           },
           "placeholder": {
-            "count": 21,
+            "count": 20,
             "values": {
               "\"0.00\"": 7,
               "\"0\"": 6,
               "{isUsdDenomination ? usdPlaceholder : '0'}": 1,
               "{t('rewardsOnboardingReferralCodePlaceholder')}": 1,
               "{t('password')}": 1,
-              "{t('enterTokenNameOrAddress')}": 1,
               "{(isDestinationSolana ? t('destinationAccountPickerSearchPlaceholderToSolana')...}": 1,
               "{`${formattedSpendingCap} ${tokenSymbol}`}": 1,
               "{t('hexDataPlaceholder')}": 1,
               "{t('recipientPlaceholderText')}": 1
-            }
-          },
-          "borderRadius": {
-            "count": 17,
-            "values": {
-              "{BorderRadius.MD}": 13,
-              "{BorderRadius.XL}": 4
             }
           },
           "className": {
@@ -596,6 +579,20 @@
               "\"flex-1\"": 1,
               "\"amount-input\"": 1,
               "{isWarning ? '!border-warning-default' : undefined}": 1
+            }
+          },
+          "borderRadius": {
+            "count": 16,
+            "values": {
+              "{BorderRadius.MD}": 13,
+              "{BorderRadius.XL}": 3
+            }
+          },
+          "backgroundColor": {
+            "count": 16,
+            "values": {
+              "{BackgroundColor.backgroundMuted}": 15,
+              "{BackgroundColor.backgroundSubsection}": 1
             }
           },
           "onBlur": {
@@ -631,17 +628,9 @@
             }
           },
           "borderWidth": {
-            "count": 15,
+            "count": 14,
             "values": {
-              "0": 14,
-              "1": 1
-            }
-          },
-          "backgroundColor": {
-            "count": 15,
-            "values": {
-              "{BackgroundColor.backgroundMuted}": 14,
-              "{BackgroundColor.backgroundSubsection}": 1
+              "0": 14
             }
           },
           "endAccessory": {
@@ -660,19 +649,6 @@
               "{<ButtonIcon type=\"button\" iconName={showPassword ? IconName.Eye : IconName.Ey...}": 1
             }
           },
-          "startAccessory": {
-            "count": 12,
-            "values": {
-              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > $ </Text>}": 4,
-              "{<Text variant={TextVariant.BodySm} color={TextColor.TextAlternative} > $ </Text>}": 2,
-              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative}> {t('per...}": 1,
-              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative}> $ </Text>}": 1,
-              "{<Text color={TextColor.TextAlternative} textAlign={TextAlign.Left} className=...}": 1,
-              "{<Icon color={IconColor.IconAlternative} name={IconName.Search} size={IconSize...}": 1,
-              "{<Icon name={IconName.Search} size={IconSize.Md} />}": 1,
-              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} classNam...}": 1
-            }
-          },
           "data-testid": {
             "count": 11,
             "values": {
@@ -689,8 +665,20 @@
               "\"destination-account-picker-modal-search-input\"": 1
             }
           },
-          "testId": {
+          "startAccessory": {
             "count": 11,
+            "values": {
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > $ </Text>}": 4,
+              "{<Text variant={TextVariant.BodySm} color={TextColor.TextAlternative} > $ </Text>}": 2,
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative}> {t('per...}": 1,
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative}> $ </Text>}": 1,
+              "{<Text color={TextColor.TextAlternative} textAlign={TextAlign.Left} className=...}": 1,
+              "{<Icon name={IconName.Search} size={IconSize.Md} />}": 1,
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} classNam...}": 1
+            }
+          },
+          "testId": {
+            "count": 10,
             "values": {
               "\"perps-update-tpsl-tp-price-input\"": 1,
               "\"perps-update-tpsl-tp-percent-input\"": 1,
@@ -699,18 +687,9 @@
               "{`import-srp__srp-word-${index}`}": 1,
               "\"multichain-private-key-password-input\"": 1,
               "\"bridge__tx-settings-modal-custom-input\"": 1,
-              "bridge-asset-picker-search-input": 1,
               "\"send-amount-input\"": 1,
               "\"recipient-address-input\"": 1,
               "{`recovery-phrase-chip-${index}`}": 1
-            }
-          },
-          "autoFocus": {
-            "count": 8,
-            "values": {
-              "true (shorthand)": 5,
-              "{autoFocus}": 2,
-              "true": 1
             }
           },
           "error": {
@@ -744,6 +723,14 @@
               "true (shorthand)": 1
             }
           },
+          "autoFocus": {
+            "count": 7,
+            "values": {
+              "true (shorthand)": 4,
+              "{autoFocus}": 2,
+              "true": 1
+            }
+          },
           "inputRef": {
             "count": 5,
             "values": {
@@ -771,11 +758,10 @@
             }
           },
           "style": {
-            "count": 5,
+            "count": 4,
             "values": {
               "{{ width: '100%' }}": 2,
               "{{ flex: 1, minWidth: 0, opacity: isAmountReadOnly && amountFieldProps?.value ...}": 1,
-              "{{ minHeight: 48, paddingRight: 8, outline: 'none', borderColor: BorderColor.b...}": 1,
               "{{ minHeight: 48, marginBottom: 12, outline: 'none', }}": 1
             }
           },
@@ -787,12 +773,6 @@
               "{(e: React.KeyboardEvent<HTMLInputElement>) => { // Only allows digits and dec...}": 1
             }
           },
-          "borderColor": {
-            "count": 3,
-            "values": {
-              "{BorderColor.borderMuted}": 3
-            }
-          },
           "key": {
             "count": 2,
             "values": {
@@ -800,10 +780,10 @@
               "{index}": 1
             }
           },
-          "marginInline": {
+          "borderColor": {
             "count": 2,
             "values": {
-              "4": 2
+              "{BorderColor.borderMuted}": 2
             }
           },
           "paddingRight": {
@@ -834,6 +814,12 @@
             "count": 1,
             "values": {
               "{amountFieldProps}": 1
+            }
+          },
+          "marginInline": {
+            "count": 1,
+            "values": {
+              "4": 1
             }
           },
           "color": {
@@ -869,20 +855,60 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "TextField": 29
+        "TextField": 28
       }
     },
     "mobile": {
-      "filesScanned": 7343,
+      "filesScanned": 7459,
       "targetComponent": "TextField",
       "mmds": {
-        "totalInstances": 14,
-        "filesCount": 9,
+        "totalInstances": 20,
+        "filesCount": 12,
         "props": {
+          "value": {
+            "count": 20,
+            "values": {
+              "{password}": 8,
+              "{confirmPassword}": 2,
+              "{confirmCode}": 1,
+              "{email}": 1,
+              "{takeProfitPrice}": 1,
+              "{formattedTakeProfitPercentage}": 1,
+              "{stopLossPrice}": 1,
+              "{formattedStopLossPercentage}": 1,
+              "{formattedLimitPrice}": 1,
+              "{referralCode}": 1,
+              "{accountName}": 1,
+              "{displayValue}": 1
+            }
+          },
+          "inputProps": {
+            "count": 20,
+            "values": {
+              "{{ secureTextEntry: showPasswordIndex.includes(0), testID: ChoosePasswordSelec...}": 2,
+              "{{ secureTextEntry: showPasswordIndex.includes(1), testID: ChoosePasswordSelec...}": 2,
+              "{{ testID: LoginViewSelectors.PASSWORD_INPUT, accessibilityLabel: LoginViewSel...}": 2,
+              "{{ autoCapitalize: 'none', numberOfLines: 1, keyboardType: 'number-pad', textC...}": 1,
+              "{{ autoCapitalize: 'none', autoComplete: 'username', numberOfLines: 1, returnK...}": 1,
+              "{{ autoCapitalize: 'none', autoComplete: 'password', numberOfLines: 1, maxLeng...}": 1,
+              "{{ testID: PerpsTPSLViewSelectorsIDs.TAKE_PROFIT_PRICE_INPUT, showSoftInputOnF...}": 1,
+              "{{ testID: PerpsTPSLViewSelectorsIDs.TAKE_PROFIT_PERCENTAGE_INPUT, showSoftInp...}": 1,
+              "{{ testID: PerpsTPSLViewSelectorsIDs.STOP_LOSS_PRICE_INPUT, showSoftInputOnFoc...}": 1,
+              "{{ testID: PerpsTPSLViewSelectorsIDs.STOP_LOSS_PERCENTAGE_INPUT, showSoftInput...}": 1,
+              "{{ showSoftInputOnFocus: false, }}": 1,
+              "{{ autoCapitalize: 'characters', testID: 'referral-input', }}": 1,
+              "{{ secureTextEntry: true, onSubmitEditing: tryUnlock, testID: ManualBackUpStep...}": 1,
+              "{{ testID: EditAccountNameIds.ACCOUNT_NAME_INPUT, spellCheck: false, keyboardA...}": 1,
+              "{{ secureTextEntry: true, onSubmitEditing: reauthenticateWithPassword, testID:...}": 1,
+              "{{ secureTextEntry: !showPassword, autoCapitalize: 'none', onSubmitEditing: on...}": 1,
+              "{{ showSoftInputOnFocus: false, caretHidden: true, }}": 1
+            }
+          },
           "onChangeText": {
-            "count": 14,
+            "count": 18,
             "values": {
               "{onPasswordChange}": 5,
+              "{(text) => { const digitCount = (text.match(/\\d/g) || []).length; if (digitCou...}": 4,
               "{handlePasswordChange}": 3,
               "{handleOtpValueChange}": 1,
               "{handleEmailChange}": 1,
@@ -892,37 +918,28 @@
               "{setConfirmPassword}": 1
             }
           },
-          "value": {
+          "isError": {
             "count": 14,
             "values": {
-              "{password}": 8,
-              "{confirmPassword}": 2,
-              "{confirmCode}": 1,
-              "{email}": 1,
-              "{referralCode}": 1,
-              "{accountName}": 1
-            }
-          },
-          "inputProps": {
-            "count": 14,
-            "values": {
-              "{{ secureTextEntry: showPasswordIndex.includes(0), testID: ChoosePasswordSelec...}": 2,
-              "{{ secureTextEntry: showPasswordIndex.includes(1), testID: ChoosePasswordSelec...}": 2,
-              "{{ testID: LoginViewSelectors.PASSWORD_INPUT, accessibilityLabel: LoginViewSel...}": 2,
-              "{{ autoCapitalize: 'none', numberOfLines: 1, keyboardType: 'number-pad', textC...}": 1,
-              "{{ autoCapitalize: 'none', autoComplete: 'username', numberOfLines: 1, returnK...}": 1,
-              "{{ autoCapitalize: 'none', autoComplete: 'password', numberOfLines: 1, maxLeng...}": 1,
-              "{{ autoCapitalize: 'characters', testID: 'referral-input', }}": 1,
-              "{{ secureTextEntry: true, onSubmitEditing: tryUnlock, testID: ManualBackUpStep...}": 1,
-              "{{ testID: EditAccountNameIds.ACCOUNT_NAME_INPUT, spellCheck: false, keyboardA...}": 1,
-              "{{ secureTextEntry: true, onSubmitEditing: reauthenticateWithPassword, testID:...}": 1,
-              "{{ secureTextEntry: !showPassword, autoCapitalize: 'none', onSubmitEditing: on...}": 1
+              "{!!error}": 3,
+              "{takeProfitHasError}": 2,
+              "{stopLossHasError}": 2,
+              "{hasInputError}": 1,
+              "{referralCodeReadyForValidation && !referralCodeIsValid && !isValidatingReferr...}": 1,
+              "{isPasswordTooShort}": 1,
+              "{checkError()}": 1,
+              "{Boolean(error)}": 1,
+              "{isPasswordTooShort()}": 1,
+              "{isError}": 1
             }
           },
           "placeholder": {
-            "count": 9,
+            "count": 13,
             "values": {
+              "{strings('perps.tpsl.trigger_price_placeholder')}": 2,
               "{strings('login.password_placeholder')}": 2,
+              "{strings('perps.tpsl.profit_roe_placeholder')}": 1,
+              "{strings('perps.tpsl.loss_roe_placeholder')}": 1,
               "{strings('rewards.onboarding.referral_placeholder')}": 1,
               "{strings('manual_backup_step_1.password')}": 1,
               "{initialName}": 1,
@@ -932,28 +949,69 @@
               "Password": 1
             }
           },
-          "isError": {
-            "count": 8,
-            "values": {
-              "{!!error}": 3,
-              "{referralCodeReadyForValidation && !referralCodeIsValid && !isValidatingReferr...}": 1,
-              "{isPasswordTooShort}": 1,
-              "{checkError()}": 1,
-              "{Boolean(error)}": 1,
-              "{isPasswordTooShort()}": 1
-            }
-          },
           "endAccessory": {
-            "count": 8,
+            "count": 12,
             "values": {
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > % </Text>}": 2,
               "{<TouchableOpacity onPress={() => setIsPasswordVisible(!isPasswordVisible)} te...}": 1,
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > USD </...}": 1,
               "{renderReferralIcon()}": 1,
               "{<TouchableOpacity testID={ ChoosePasswordSelectorsIDs.NEW_PASSWORD_SHOW_ICON_...}": 1,
               "{<TouchableOpacity testID={ ChoosePasswordSelectorsIDs.CONFIRM_PASSWORD_SHOW_I...}": 1,
               "{capabilities ? ( <DeviceAuthenticationButton disabled={loading} onPress={unlo...}": 1,
               "{<TouchableOpacity onPress={() => toggleShowPassword(0)}> <Icon name={ showPas...}": 1,
               "{<TouchableOpacity onPress={() => toggleShowPassword(1)}> <Icon name={ showPas...}": 1,
-              "{<ButtonIcon iconName={showPassword ? IconName.Eye : IconName.EyeSlash} onPres...}": 1
+              "{<ButtonIcon iconName={showPassword ? IconName.Eye : IconName.EyeSlash} onPres...}": 1,
+              "{kind === 'sell' ? ( <Text variant={TextVariant.BodyMd} color={TextColor.TextD...}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 8,
+            "values": {
+              "{inputsDisabled}": 4,
+              "{optinLoading}": 1,
+              "{password === ''}": 1,
+              "{loading}": 1,
+              "{disabledInput}": 1
+            }
+          },
+          "inputRef": {
+            "count": 7,
+            "values": {
+              "{takeProfitPriceRef}": 1,
+              "{takeProfitPercentageRef}": 1,
+              "{stopLossPriceRef}": 1,
+              "{stopLossPercentageRef}": 1,
+              "{confirmPasswordInputRef}": 1,
+              "{fieldRef}": 1,
+              "{confirmPasswordInput}": 1
+            }
+          },
+          "onFocus": {
+            "count": 6,
+            "values": {
+              "{() => setIsPasswordFieldFocused(true)}": 2,
+              "{() => { handleInputFocus('takeProfitPrice'); }}": 1,
+              "{() => { handleInputFocus('takeProfitPercentage'); }}": 1,
+              "{() => { handleInputFocus('stopLossPrice'); }}": 1,
+              "{() => { handleInputFocus('stopLossPercentage'); }}": 1
+            }
+          },
+          "onBlur": {
+            "count": 6,
+            "values": {
+              "{() => setIsPasswordFieldFocused(false)}": 2,
+              "{() => handleInputBlur('takeProfitPrice')}": 1,
+              "{() => handleInputBlur('takeProfitPercentage')}": 1,
+              "{() => handleInputBlur('stopLossPrice')}": 1,
+              "{() => handleInputBlur('stopLossPercentage')}": 1
+            }
+          },
+          "twClassName": {
+            "count": 5,
+            "values": {
+              "\"flex-1\"": 4,
+              "{isFocused && !isError ? 'w-full border-default' : 'w-full'}": 1
             }
           },
           "autoFocus": {
@@ -962,33 +1020,29 @@
               "true (shorthand)": 4
             }
           },
-          "isDisabled": {
-            "count": 4,
-            "values": {
-              "{optinLoading}": 1,
-              "{password === ''}": 1,
-              "{loading}": 1,
-              "{disabledInput}": 1
-            }
-          },
-          "inputRef": {
+          "startAccessory": {
             "count": 3,
             "values": {
-              "{confirmPasswordInputRef}": 1,
-              "{fieldRef}": 1,
-              "{confirmPasswordInput}": 1
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > {strin...}": 2,
+              "{currencySymbol ? ( <Text variant={TextVariant.BodyMd} color={TextColor.TextDe...}": 1
             }
           },
-          "onFocus": {
+          "isReadOnly": {
             "count": 2,
             "values": {
-              "{() => setIsPasswordFieldFocused(true)}": 2
+              "true (shorthand)": 2
             }
           },
-          "onBlur": {
-            "count": 2,
+          "testID": {
+            "count": 1,
             "values": {
-              "{() => setIsPasswordFieldFocused(false)}": 2
+              "{PerpsLimitPriceBottomSheetSelectorsIDs.PRICE_DISPLAY}": 1
+            }
+          },
+          "pointerEvents": {
+            "count": 1,
+            "values": {
+              "\"none\"": 1
             }
           }
         }
@@ -1467,11 +1521,11 @@
         }
       },
       "overall": {
-        "totalInstances": 58,
-        "filesCount": 37,
+        "totalInstances": 64,
+        "filesCount": 40,
         "props": {
           "value": {
-            "count": 55,
+            "count": 61,
             "values": {
               "{password}": 10,
               "{email}": 4,
@@ -1492,6 +1546,11 @@
               "{addressLine2}": 1,
               "{city}": 1,
               "{zipCode}": 1,
+              "{takeProfitPrice}": 1,
+              "{formattedTakeProfitPercentage}": 1,
+              "{stopLossPrice}": 1,
+              "{formattedStopLossPercentage}": 1,
+              "{formattedLimitPrice}": 1,
               "{label}": 1,
               "{activationKey}": 1,
               "{telegram}": 1,
@@ -1502,16 +1561,18 @@
               "{ticker}": 1,
               "{failoverRpcUrls[0]}": 1,
               "{rpcNameForm}": 1,
+              "{displayValue}": 1,
               "{to}": 1,
               "{address}": 1,
               "{name}": 1
             }
           },
           "onChangeText": {
-            "count": 50,
+            "count": 54,
             "values": {
               "{onPasswordChange}": 6,
               "{handlePasswordChange}": 4,
+              "{(text) => { const digitCount = (text.match(/\\d/g) || []).length; if (digitCou...}": 4,
               "{handleEmailChange}": 3,
               "{handleChange}": 2,
               "{handlePhoneNumberChange}": 2,
@@ -1548,7 +1609,7 @@
             }
           },
           "testID": {
-            "count": 38,
+            "count": 39,
             "values": {
               "{`${testID}-input`}": 2,
               "{NetworkDetailsViewSelectorsIDs.BLOCK_EXPLORER_INPUT}": 2,
@@ -1570,6 +1631,7 @@
               "\"signup-email-input\"": 1,
               "\"signup-immersve-phone-number-input\"": 1,
               "\"signup-password-input\"": 1,
+              "{PerpsLimitPriceBottomSheetSelectorsIDs.PRICE_DISPLAY}": 1,
               "{EnterEmailSelectorsIDs.EMAIL_INPUT}": 1,
               "{REWARDS_VIEW_SELECTORS.CLAIM_MODAL_EMAIL_INPUT}": 1,
               "{REWARDS_VIEW_SELECTORS.CLAIM_MODAL_TELEGRAM_INPUT}": 1,
@@ -1588,21 +1650,16 @@
               "\"pet-name-name-input\"": 1
             }
           },
-          "autoCapitalize": {
-            "count": 33,
-            "values": {
-              "\"none\"": 17,
-              "none": 15,
-              "\"characters\"": 1
-            }
-          },
           "placeholder": {
-            "count": 31,
+            "count": 35,
             "values": {
               "{placeholder}": 3,
               "\"0\"": 2,
+              "{strings('perps.tpsl.trigger_price_placeholder')}": 2,
               "{strings('login.password_placeholder')}": 2,
               "{strings( 'app_settings.network_block_explorer_placeholder', )}": 2,
+              "{strings('perps.tpsl.profit_roe_placeholder')}": 1,
+              "{strings('perps.tpsl.loss_roe_placeholder')}": 1,
               "{strings('app_settings.fiat_on_ramp.add_label')}": 1,
               "{strings( 'app_settings.fiat_on_ramp.paste_or_type_activation_key', )}": 1,
               "{strings('deposit.enter_email.input_placeholder')}": 1,
@@ -1627,21 +1684,32 @@
               "{strings('sample_feature.pet_name.name_placeholder')}": 1
             }
           },
+          "autoCapitalize": {
+            "count": 33,
+            "values": {
+              "\"none\"": 17,
+              "none": 15,
+              "\"characters\"": 1
+            }
+          },
           "isError": {
-            "count": 23,
+            "count": 29,
             "values": {
               "{!!error}": 3,
               "{verifyIsError}": 2,
               "{!!nameError}": 2,
+              "{takeProfitHasError}": 2,
+              "{stopLossHasError}": 2,
               "{isPasswordTooShort}": 2,
+              "{isError}": 2,
               "{isSSNTouched && isSSNError}": 1,
               "{!isImmersveCountry && debouncedEmail.length > 0 && isEmailError}": 1,
               "{debouncedPassword.length > 0 && isPasswordError}": 1,
+              "{hasInputError}": 1,
               "{emailValidationError}": 1,
               "{referralCodeReadyForValidation && !referralCodeIsValid && !isValidatingReferr...}": 1,
               "{showClientValidationError || Boolean(applyReferralCodeError)}": 1,
               "{checkError()}": 1,
-              "{isError}": 1,
               "{Boolean(error)}": 1,
               "{hasInvalidUrl}": 1,
               "{!!warningName}": 1,
@@ -1651,8 +1719,9 @@
             }
           },
           "isDisabled": {
-            "count": 18,
+            "count": 22,
             "values": {
+              "{inputsDisabled}": 4,
               "{disabled}": 3,
               "{isClaimingReward}": 2,
               "{password === ''}": 2,
@@ -1665,6 +1734,49 @@
               "{loading}": 1,
               "{isAnyModalVisible || !addMode}": 1,
               "{disabledInput}": 1
+            }
+          },
+          "inputProps": {
+            "count": 20,
+            "values": {
+              "{{ secureTextEntry: showPasswordIndex.includes(0), testID: ChoosePasswordSelec...}": 2,
+              "{{ secureTextEntry: showPasswordIndex.includes(1), testID: ChoosePasswordSelec...}": 2,
+              "{{ testID: LoginViewSelectors.PASSWORD_INPUT, accessibilityLabel: LoginViewSel...}": 2,
+              "{{ autoCapitalize: 'none', numberOfLines: 1, keyboardType: 'number-pad', textC...}": 1,
+              "{{ autoCapitalize: 'none', autoComplete: 'username', numberOfLines: 1, returnK...}": 1,
+              "{{ autoCapitalize: 'none', autoComplete: 'password', numberOfLines: 1, maxLeng...}": 1,
+              "{{ testID: PerpsTPSLViewSelectorsIDs.TAKE_PROFIT_PRICE_INPUT, showSoftInputOnF...}": 1,
+              "{{ testID: PerpsTPSLViewSelectorsIDs.TAKE_PROFIT_PERCENTAGE_INPUT, showSoftInp...}": 1,
+              "{{ testID: PerpsTPSLViewSelectorsIDs.STOP_LOSS_PRICE_INPUT, showSoftInputOnFoc...}": 1,
+              "{{ testID: PerpsTPSLViewSelectorsIDs.STOP_LOSS_PERCENTAGE_INPUT, showSoftInput...}": 1,
+              "{{ showSoftInputOnFocus: false, }}": 1,
+              "{{ autoCapitalize: 'characters', testID: 'referral-input', }}": 1,
+              "{{ secureTextEntry: true, onSubmitEditing: tryUnlock, testID: ManualBackUpStep...}": 1,
+              "{{ testID: EditAccountNameIds.ACCOUNT_NAME_INPUT, spellCheck: false, keyboardA...}": 1,
+              "{{ secureTextEntry: true, onSubmitEditing: reauthenticateWithPassword, testID:...}": 1,
+              "{{ secureTextEntry: !showPassword, autoCapitalize: 'none', onSubmitEditing: on...}": 1,
+              "{{ showSoftInputOnFocus: false, caretHidden: true, }}": 1
+            }
+          },
+          "endAccessory": {
+            "count": 18,
+            "values": {
+              "{<TouchableOpacity onPress={() => setIsPasswordVisible(!isPasswordVisible)} te...}": 2,
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > % </Text>}": 2,
+              "{value ? ( <ButtonIcon onPress={handleClear} iconName={IconName.Close} size={B...}": 1,
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > USD </...}": 1,
+              "{renderReferralIcon()}": 1,
+              "{renderIcon()}": 1,
+              "{<TouchableOpacity testID={ ChoosePasswordSelectorsIDs.NEW_PASSWORD_SHOW_ICON_...}": 1,
+              "{<TouchableOpacity testID={ ChoosePasswordSelectorsIDs.CONFIRM_PASSWORD_SHOW_I...}": 1,
+              "{<Icon name={ showPasswordIndex.includes(0) ? IconName.Eye : IconName.EyeSlash...}": 1,
+              "{<Icon name={ showPasswordIndex.includes(1) ? IconName.Eye : IconName.EyeSlash...}": 1,
+              "{capabilities ? ( <DeviceAuthenticationButton disabled={loading} onPress={unlo...}": 1,
+              "{<TouchableOpacity onPress={() => toggleShowPassword(0)}> <Icon name={ showPas...}": 1,
+              "{<TouchableOpacity onPress={() => toggleShowPassword(1)}> <Icon name={ showPas...}": 1,
+              "{<ButtonIcon iconName={showPassword ? IconName.Eye : IconName.EyeSlash} onPres...}": 1,
+              "{kind === 'sell' ? ( <Text variant={TextVariant.BodyMd} color={TextColor.TextD...}": 1,
+              "{renderEndAccessory}": 1
             }
           },
           "keyboardType": {
@@ -1687,6 +1799,38 @@
               "{autoComplete}": 1,
               "\"email\"": 1,
               "\"off\"": 1
+            }
+          },
+          "onFocus": {
+            "count": 15,
+            "values": {
+              "{handleFocus}": 3,
+              "{() => setIsPasswordFieldFocused(true)}": 3,
+              "{() => { onFocus?.(); onInputPress?.(); }}": 1,
+              "{() => { handleInputFocus('takeProfitPrice'); }}": 1,
+              "{() => { handleInputFocus('takeProfitPercentage'); }}": 1,
+              "{() => { handleInputFocus('stopLossPrice'); }}": 1,
+              "{() => { handleInputFocus('stopLossPercentage'); }}": 1,
+              "{hasReferredByCode ? undefined : onInputFocus}": 1,
+              "{onNameFocused}": 1,
+              "{onChainIdFocused}": 1,
+              "{onSymbolFocused}": 1
+            }
+          },
+          "onBlur": {
+            "count": 15,
+            "values": {
+              "{handleBlur}": 3,
+              "{() => setIsPasswordFieldFocused(false)}": 3,
+              "{() => { onBlur?.(); }}": 1,
+              "{handleSSNBlur}": 1,
+              "{() => handleInputBlur('takeProfitPrice')}": 1,
+              "{() => handleInputBlur('takeProfitPercentage')}": 1,
+              "{() => handleInputBlur('stopLossPrice')}": 1,
+              "{() => handleInputBlur('stopLossPercentage')}": 1,
+              "{handleNameBlur}": 1,
+              "{handleChainIdBlur}": 1,
+              "{handleSymbolBlur}": 1
             }
           },
           "numberOfLines": {
@@ -1712,40 +1856,6 @@
               "{strings( 'card.card_onboarding.sign_up.password_label', )}": 1,
               "{ChoosePasswordSelectorsIDs.NEW_PASSWORD_INPUT_ID}": 1,
               "{ChoosePasswordSelectorsIDs.CONFIRM_PASSWORD_INPUT_ID}": 1
-            }
-          },
-          "endAccessory": {
-            "count": 14,
-            "values": {
-              "{<TouchableOpacity onPress={() => setIsPasswordVisible(!isPasswordVisible)} te...}": 2,
-              "{value ? ( <ButtonIcon onPress={handleClear} iconName={IconName.Close} size={B...}": 1,
-              "{renderReferralIcon()}": 1,
-              "{renderIcon()}": 1,
-              "{<TouchableOpacity testID={ ChoosePasswordSelectorsIDs.NEW_PASSWORD_SHOW_ICON_...}": 1,
-              "{<TouchableOpacity testID={ ChoosePasswordSelectorsIDs.CONFIRM_PASSWORD_SHOW_I...}": 1,
-              "{<Icon name={ showPasswordIndex.includes(0) ? IconName.Eye : IconName.EyeSlash...}": 1,
-              "{<Icon name={ showPasswordIndex.includes(1) ? IconName.Eye : IconName.EyeSlash...}": 1,
-              "{capabilities ? ( <DeviceAuthenticationButton disabled={loading} onPress={unlo...}": 1,
-              "{<TouchableOpacity onPress={() => toggleShowPassword(0)}> <Icon name={ showPas...}": 1,
-              "{<TouchableOpacity onPress={() => toggleShowPassword(1)}> <Icon name={ showPas...}": 1,
-              "{<ButtonIcon iconName={showPassword ? IconName.Eye : IconName.EyeSlash} onPres...}": 1,
-              "{renderEndAccessory}": 1
-            }
-          },
-          "inputProps": {
-            "count": 14,
-            "values": {
-              "{{ secureTextEntry: showPasswordIndex.includes(0), testID: ChoosePasswordSelec...}": 2,
-              "{{ secureTextEntry: showPasswordIndex.includes(1), testID: ChoosePasswordSelec...}": 2,
-              "{{ testID: LoginViewSelectors.PASSWORD_INPUT, accessibilityLabel: LoginViewSel...}": 2,
-              "{{ autoCapitalize: 'none', numberOfLines: 1, keyboardType: 'number-pad', textC...}": 1,
-              "{{ autoCapitalize: 'none', autoComplete: 'username', numberOfLines: 1, returnK...}": 1,
-              "{{ autoCapitalize: 'none', autoComplete: 'password', numberOfLines: 1, maxLeng...}": 1,
-              "{{ autoCapitalize: 'characters', testID: 'referral-input', }}": 1,
-              "{{ secureTextEntry: true, onSubmitEditing: tryUnlock, testID: ManualBackUpStep...}": 1,
-              "{{ testID: EditAccountNameIds.ACCOUNT_NAME_INPUT, spellCheck: false, keyboardA...}": 1,
-              "{{ secureTextEntry: true, onSubmitEditing: reauthenticateWithPassword, testID:...}": 1,
-              "{{ secureTextEntry: !showPassword, autoCapitalize: 'none', onSubmitEditing: on...}": 1
             }
           },
           "maxLength": {
@@ -1798,30 +1908,6 @@
               "{jumpToChainId}": 1
             }
           },
-          "onFocus": {
-            "count": 11,
-            "values": {
-              "{handleFocus}": 3,
-              "{() => setIsPasswordFieldFocused(true)}": 3,
-              "{() => { onFocus?.(); onInputPress?.(); }}": 1,
-              "{hasReferredByCode ? undefined : onInputFocus}": 1,
-              "{onNameFocused}": 1,
-              "{onChainIdFocused}": 1,
-              "{onSymbolFocused}": 1
-            }
-          },
-          "onBlur": {
-            "count": 11,
-            "values": {
-              "{handleBlur}": 3,
-              "{() => setIsPasswordFieldFocused(false)}": 3,
-              "{() => { onBlur?.(); }}": 1,
-              "{handleSSNBlur}": 1,
-              "{handleNameBlur}": 1,
-              "{handleChainIdBlur}": 1,
-              "{handleSymbolBlur}": 1
-            }
-          },
           "keyboardAppearance": {
             "count": 10,
             "values": {
@@ -1838,6 +1924,18 @@
               "\"next\"": 1
             }
           },
+          "inputRef": {
+            "count": 7,
+            "values": {
+              "{takeProfitPriceRef}": 1,
+              "{takeProfitPercentageRef}": 1,
+              "{stopLossPriceRef}": 1,
+              "{stopLossPercentageRef}": 1,
+              "{confirmPasswordInputRef}": 1,
+              "{fieldRef}": 1,
+              "{confirmPasswordInput}": 1
+            }
+          },
           "style": {
             "count": 6,
             "values": {
@@ -1851,6 +1949,22 @@
             "count": 6,
             "values": {
               "{placeholderTextColor}": 6
+            }
+          },
+          "startAccessory": {
+            "count": 5,
+            "values": {
+              "{<Text variant={TextVariant.BodyMd} color={TextColor.TextAlternative} > {strin...}": 2,
+              "{displayAvatar && value && isCaipAccountId(`${chainId}:${value}`) ? ( <SnapUIA...}": 1,
+              "{currencySymbol ? ( <Text variant={TextVariant.BodyMd} color={TextColor.TextDe...}": 1,
+              "{defaultStartAccessory}": 1
+            }
+          },
+          "twClassName": {
+            "count": 5,
+            "values": {
+              "\"flex-1\"": 4,
+              "{isFocused && !isError ? 'w-full border-default' : 'w-full'}": 1
             }
           },
           "[spread]": {
@@ -1882,37 +1996,22 @@
               "{name}": 3
             }
           },
+          "pointerEvents": {
+            "count": 3,
+            "values": {
+              "\"none\"": 3
+            }
+          },
           "textAlign": {
             "count": 3,
             "values": {
               "\"left\"": 3
             }
           },
-          "inputRef": {
-            "count": 3,
-            "values": {
-              "{confirmPasswordInputRef}": 1,
-              "{fieldRef}": 1,
-              "{confirmPasswordInput}": 1
-            }
-          },
-          "startAccessory": {
-            "count": 2,
-            "values": {
-              "{displayAvatar && value && isCaipAccountId(`${chainId}:${value}`) ? ( <SnapUIA...}": 1,
-              "{defaultStartAccessory}": 1
-            }
-          },
           "readOnly": {
             "count": 2,
             "values": {
               "true (shorthand)": 2
-            }
-          },
-          "pointerEvents": {
-            "count": 2,
-            "values": {
-              "\"none\"": 2
             }
           },
           "showSoftInputOnFocus": {
@@ -1946,6 +2045,12 @@
             "values": {
               "{tokenType === TokenInputAreaType.Destination}": 1,
               "{Boolean(key)}": 1
+            }
+          },
+          "isReadOnly": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
             }
           },
           "spellCheck": {
