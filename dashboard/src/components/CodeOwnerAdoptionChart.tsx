@@ -76,8 +76,30 @@ interface ComponentDelta {
 }
 
 interface OwnerComponentBaseline {
-  mmdsByComponent?: Record<string, number>;
-  deprecatedByComponent?: Record<string, number>;
+  mmdsByComponent: Record<string, number>;
+  deprecatedByComponent: Record<string, number>;
+}
+
+function sumComponentCounts(map?: Record<string, number>): number {
+  return Object.values(map || {}).reduce((sum, count) => sum + count, 0);
+}
+
+/**
+ * Per-component maps are only safe to diff when they fully explain the
+ * rolled-up instance totals. Backfilled historical snapshots can include maps
+ * from a re-scan that do not match the stored aggregates.
+ */
+function hasReconciledComponentMaps(stats: Pick<
+  CodeOwnerStats,
+  'mmdsInstances' | 'deprecatedInstances' | 'mmdsByComponent' | 'deprecatedByComponent'
+>): boolean {
+  if (stats.mmdsByComponent == null || stats.deprecatedByComponent == null) {
+    return false;
+  }
+  return (
+    sumComponentCounts(stats.mmdsByComponent) === stats.mmdsInstances &&
+    sumComponentCounts(stats.deprecatedByComponent) === stats.deprecatedInstances
+  );
 }
 
 function diffComponentCounts(
@@ -281,25 +303,17 @@ export function CodeOwnerAdoptionChart({
         const metrics: MetricsData = await dataRes.json();
 
         const ownerEntries = Object.entries(metrics.summary.codeOwnerStats || {});
-        // Older snapshots predate per-component maps. Only treat a snapshot as a
-        // usable baseline when at least one owner includes the new fields.
-        const hasComponentMaps = ownerEntries.some(
-          ([, stats]) => stats.mmdsByComponent != null || stats.deprecatedByComponent != null,
-        );
-        if (!hasComponentMaps) {
-          if (!cancelled) setBaselineByOwner(null);
-          return;
-        }
-
         const map: Record<string, OwnerComponentBaseline> = {};
         for (const [owner, stats] of ownerEntries) {
+          // Skip owners whose maps do not reconcile with rolled-up totals.
+          if (!hasReconciledComponentMaps(stats)) continue;
           map[normalizeOwnerKey(owner)] = {
             mmdsByComponent: stats.mmdsByComponent || {},
             deprecatedByComponent: stats.deprecatedByComponent || {},
           };
         }
         if (!cancelled) {
-          setBaselineByOwner(map);
+          setBaselineByOwner(Object.keys(map).length > 0 ? map : null);
         }
       } catch {
         if (!cancelled) setBaselineByOwner(null);
@@ -317,6 +331,9 @@ export function CodeOwnerAdoptionChart({
       const key = normalizeOwnerKey(owner);
       const di = deltaMap.get(key);
       const baseline = baselineByOwner?.[key];
+      // Require reconciled maps on both sides so component deltas explain
+      // the aggregate MMDS/legacy instance changes shown above them.
+      const canDiffComponents = Boolean(baseline && hasReconciledComponentMaps(stats));
       return {
         ownerLabel: formatOwnerLabel(owner),
         team: formatOwnerLabel(owner),
@@ -328,21 +345,23 @@ export function CodeOwnerAdoptionChart({
         delta4w: di?.delta ?? null,
         mmdsInstanceDelta: di?.mmdsInstanceDelta ?? null,
         legacyInstanceDelta: di?.legacyInstanceDelta ?? null,
-        mmdsIncreased: diffComponentCounts(
-          baseline ? (baseline.mmdsByComponent || {}) : undefined,
-          stats.mmdsByComponent,
-          'increased',
-        ),
-        legacyIncreased: diffComponentCounts(
-          baseline ? (baseline.deprecatedByComponent || {}) : undefined,
-          stats.deprecatedByComponent,
-          'increased',
-        ),
-        legacyReduced: diffComponentCounts(
-          baseline ? (baseline.deprecatedByComponent || {}) : undefined,
-          stats.deprecatedByComponent,
-          'decreased',
-        ),
+        mmdsIncreased: canDiffComponents
+          ? diffComponentCounts(baseline!.mmdsByComponent, stats.mmdsByComponent, 'increased')
+          : [],
+        legacyIncreased: canDiffComponents
+          ? diffComponentCounts(
+              baseline!.deprecatedByComponent,
+              stats.deprecatedByComponent,
+              'increased',
+            )
+          : [],
+        legacyReduced: canDiffComponents
+          ? diffComponentCounts(
+              baseline!.deprecatedByComponent,
+              stats.deprecatedByComponent,
+              'decreased',
+            )
+          : [],
         deltaFromDate: di?.fromDate ?? null,
         deltaToDate: di?.toDate ?? null,
         actualWeeks: di?.actualWeeks ?? lookback,
