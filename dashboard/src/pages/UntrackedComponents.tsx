@@ -16,6 +16,10 @@ const CONFIDENCE_ORDER = { exact: 0, high: 1, medium: 2 } as const;
 const CONFIDENCE_MULTIPLIER = { exact: 3, high: 2, medium: 1 } as const;
 /** Org target for MMDS adoption (includes replaceable one-offs). */
 const ADOPTION_THRESHOLD = 80;
+/** Visible rows before the Replace / Introduce tables scroll. */
+const TABLE_VISIBLE_ROWS = 20;
+/** Approx. sticky header + N body rows (py-3 text-sm ≈ 3.25rem each). */
+const TABLE_SCROLL_MAX_HEIGHT = `calc(2.75rem + ${TABLE_VISIBLE_ROWS} * 3.25rem)`;
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -334,7 +338,7 @@ function SortHeader<F extends string>({ label, field, sortState, onSort, classNa
   const active = sortState.field === field;
   return (
     <th
-      className={`px-4 py-3 text-left text-xs font-medium uppercase tracking-wider cursor-pointer select-none text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 ${className}`}
+      className={`sticky top-0 z-10 bg-gray-50 dark:bg-gray-900 px-4 py-3 text-left text-xs font-medium uppercase tracking-wider cursor-pointer select-none text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 ${className}`}
       onClick={() => onSort(field)}
     >
       <span className="inline-flex items-center gap-1">
@@ -347,9 +351,28 @@ function SortHeader<F extends string>({ label, field, sortState, onSort, classNa
 
 function StaticHeader({ label, className = '' }: { label: string; className?: string }) {
   return (
-    <th className={`px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400 ${className}`}>
+    <th className={`sticky top-0 z-10 bg-gray-50 dark:bg-gray-900 px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400 ${className}`}>
       {label}
     </th>
+  );
+}
+
+function TableScrollArea({ children, totalRows }: { children: React.ReactNode; totalRows: number }) {
+  const scrollable = totalRows > TABLE_VISIBLE_ROWS;
+  return (
+    <>
+      <div
+        className="overflow-auto"
+        style={scrollable ? { maxHeight: TABLE_SCROLL_MAX_HEIGHT } : undefined}
+      >
+        {children}
+      </div>
+      {scrollable && (
+        <p className="px-4 py-2 text-xs text-gray-400 dark:text-gray-500 border-t border-gray-100 dark:border-gray-700">
+          Showing {TABLE_VISIBLE_ROWS} of {totalRows.toLocaleString()} — scroll for more
+        </p>
+      )}
+    </>
   );
 }
 
@@ -436,9 +459,9 @@ function ReplaceNowTable({ rows, project, search, onSearch, sort, onSort, teamFi
           className="text-sm border border-gray-300 dark:border-gray-600 rounded-md px-3 py-1.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 w-44 focus:outline-none focus:ring-1 focus:ring-blue-500"
         />
       </div>
-      <div className="overflow-x-auto">
+      <TableScrollArea totalRows={rows.length}>
         <table className="min-w-full divide-y divide-gray-100 dark:divide-gray-700">
-          <thead className="bg-gray-50 dark:bg-gray-900/40">
+          <thead>
             <tr>
               <StaticHeader label="#" className="w-8" />
               <StaticHeader label="Component" />
@@ -510,7 +533,7 @@ function ReplaceNowTable({ rows, project, search, onSearch, sort, onSort, teamFi
             )}
           </tbody>
         </table>
-      </div>
+      </TableScrollArea>
     </div>
   );
 }
@@ -718,9 +741,9 @@ function DSRoadmapTable({ rows, project, search, onSearch, sort, onSort }: {
           className="text-sm border border-gray-300 dark:border-gray-600 rounded-md px-3 py-1.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 w-44 focus:outline-none focus:ring-1 focus:ring-blue-500"
         />
       </div>
-      <div className="overflow-x-auto">
+      <TableScrollArea totalRows={rows.length}>
         <table className="min-w-full divide-y divide-gray-100 dark:divide-gray-700">
-          <thead className="bg-gray-50 dark:bg-gray-900/40">
+          <thead>
             <tr>
               <StaticHeader label="#" className="w-8" />
               <StaticHeader label="Component" />
@@ -774,7 +797,7 @@ function DSRoadmapTable({ rows, project, search, onSearch, sort, onSort }: {
             )}
           </tbody>
         </table>
-      </div>
+      </TableScrollArea>
     </div>
   );
 }
@@ -1384,11 +1407,12 @@ export function UntrackedComponents() {
       <div className="max-w-7xl mx-auto">
         <header className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-            One-off Components
+            MMDS Adoption Metrics
           </h1>
           <p className="text-gray-500 dark:text-gray-400">
-            Track custom in-repo components that bypass MMDS. Use the team scoreboard for adoption targets ({ADOPTION_THRESHOLD}%),
-            then work through replaceable one-offs or flag gaps for the DS roadmap.
+            Track overall MMDS adoption, including replaceable in-repo one-off components.
+            Adoption % = MMDS ÷ (MMDS + Legacy + replaceable one-offs). Use the team scoreboard for
+            adoption targets ({ADOPTION_THRESHOLD}%), then work through replaceable one-offs or flag gaps for the DS roadmap.
           </p>
 
           <OneoffMethodologyPanel />

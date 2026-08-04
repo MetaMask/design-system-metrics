@@ -209,10 +209,11 @@ export function Overview() {
       <div className="max-w-7xl mx-auto">
         <header className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-            Design System Migration Dashboard
+            MMDS Migration Metrics
           </h1>
           <p className="text-gray-600 dark:text-gray-400">
-            Tracking component migration from legacy libraries to MetaMask Design System (MMDS)
+            Track migration from legacy component libraries to MetaMask Design System (MMDS).
+            Migration % = MMDS ÷ (MMDS + deprecated) — custom one-off components are not included.
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-500 mt-2">
             Last updated: {new Date(data.generatedAt).toLocaleDateString()}
