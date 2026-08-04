@@ -1,16 +1,27 @@
-import { HashRouter, Routes, Route, NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
+import { HashRouter, Routes, Route, NavLink, Navigate, useLocation } from 'react-router-dom';
 import { Overview } from './pages/Overview';
 import { UntrackedComponents } from './pages/UntrackedComponents';
 import './App.css';
 
 const navItems = [
-  { to: '/', label: 'Overview' },
-  { to: '/untracked', label: 'One-off Components' },
+  { to: '/migration', label: 'Migration', title: 'MMDS Migration Metrics' },
+  { to: '/adoption', label: 'Adoption', title: 'MMDS Adoption Metrics' },
 ] as const;
+
+function DocumentTitle() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const match = navItems.find(({ to }) => pathname.startsWith(to));
+    document.title = match?.title ?? 'MMDS Metrics';
+  }, [pathname]);
+  return null;
+}
 
 function App() {
   return (
     <HashRouter>
+      <DocumentTitle />
       <nav className="bg-white dark:bg-gray-800 shadow">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex space-x-6">
@@ -18,7 +29,6 @@ function App() {
               <NavLink
                 key={to}
                 to={to}
-                end={to === '/'}
                 className={({ isActive }) =>
                   `inline-flex items-center border-b-2 px-1 py-4 text-sm font-medium transition-colors ${
                     isActive
@@ -35,8 +45,11 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<Overview />} />
-        <Route path="/untracked" element={<UntrackedComponents />} />
+        <Route path="/migration" element={<Overview />} />
+        <Route path="/adoption" element={<UntrackedComponents />} />
+        {/* Back-compat redirects for previous URLs */}
+        <Route path="/" element={<Navigate to="/migration" replace />} />
+        <Route path="/untracked" element={<Navigate to="/adoption" replace />} />
       </Routes>
     </HashRouter>
   );
