@@ -1,3 +1,68 @@
 #root {
   margin: 0 auto;
 }
+
+@keyframes legacy-panel-backdrop-in {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: rgb(0 0 0 / 0.4);
+  }
+}
+
+@keyframes legacy-panel-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes legacy-panel-backdrop-out {
+  from {
+    background-color: rgb(0 0 0 / 0.4);
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+@keyframes legacy-panel-slide-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(1.25rem);
+  }
+}
+
+.legacy-panel-backdrop {
+  animation: legacy-panel-backdrop-in 180ms ease-out both;
+}
+
+.legacy-panel {
+  animation: legacy-panel-slide-in 220ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.legacy-panel-backdrop--closing {
+  animation: legacy-panel-backdrop-out 220ms ease-in both;
+}
+
+.legacy-panel--closing {
+  animation: legacy-panel-slide-out 220ms ease-in both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .legacy-panel-backdrop,
+  .legacy-panel,
+  .legacy-panel-backdrop--closing,
+  .legacy-panel--closing {
+    animation: none;
+  }
+}

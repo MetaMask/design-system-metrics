@@ -188,6 +188,8 @@ const trackComponent = (componentName, source, specificPath, filePath) => {
         deprecatedInstances: 0,
         mmdsByComponent: new Map(),
         deprecatedByComponent: new Map(),
+        // Map<componentName, Map<repoRelativeFilePath, count>>
+        deprecatedFilesByComponent: new Map(),
         files: new Set(),
       });
     }
@@ -205,6 +207,14 @@ const trackComponent = (componentName, source, specificPath, filePath) => {
         componentName,
         (ownerMetrics.deprecatedByComponent.get(componentName) || 0) + 1,
       );
+
+      if (!ownerMetrics.deprecatedFilesByComponent.has(componentName)) {
+        ownerMetrics.deprecatedFilesByComponent.set(componentName, new Map());
+      }
+      const fileCounts = ownerMetrics.deprecatedFilesByComponent.get(
+        componentName,
+      );
+      fileCounts.set(lookupPath, (fileCounts.get(lookupPath) || 0) + 1);
     }
     ownerMetrics.files.add(filePath);
   }
@@ -629,6 +639,7 @@ const main = async () => {
           filesCount: 0,
           mmdsByComponent: {},
           deprecatedByComponent: {},
+          deprecatedFilesByComponent: {},
         };
       }
     }
@@ -649,6 +660,16 @@ const main = async () => {
         metrics.deprecatedByComponent || new Map(),
       );
 
+      // Per-component file lists: { Component: [{ file, count }, ...] } sorted by count desc
+      const deprecatedFilesByComponent = {};
+      for (const [componentName, fileCounts] of (
+        metrics.deprecatedFilesByComponent || new Map()
+      ).entries()) {
+        deprecatedFilesByComponent[componentName] = [...fileCounts.entries()]
+          .map(([file, count]) => ({ file, count }))
+          .sort((a, b) => b.count - a.count || a.file.localeCompare(b.file));
+      }
+
       codeOwnerStats[owner] = {
         mmdsInstances: metrics.mmdsInstances,
         deprecatedInstances: metrics.deprecatedInstances,
@@ -657,6 +678,7 @@ const main = async () => {
         filesCount: metrics.files.size,
         mmdsByComponent,
         deprecatedByComponent,
+        deprecatedFilesByComponent,
       };
     }
 
