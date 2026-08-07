@@ -65,13 +65,6 @@ function mapComponent(component, mmdsComponents) {
     return manualMapping;
   }
 
-  // 2. Parse deprecation message for explicit hints
-  const hintMapping = parseDeprecationHint(deprecationMessage, project);
-  if (hintMapping) {
-    return hintMapping;
-  }
-
-  // 3. Check for exact name match in MMDS components
   const mmdsPackage = project === 'extension'
     ? '@metamask/design-system-react'
     : '@metamask/design-system-react-native';
@@ -80,6 +73,15 @@ function mapComponent(component, mmdsComponents) {
     ? mmdsComponents.react
     : mmdsComponents.reactNative;
 
+  // 2. Parse deprecation message for explicit MMDS package hints
+  const mmdsHint = parseMmdsDeprecationHint(deprecationMessage);
+  if (mmdsHint) {
+    return mmdsHint;
+  }
+
+  // 3. Prefer exact MMDS name match over intermediate in-repo paths.
+  // Mobile sometimes deprecates toward components-temp first while MMDS already
+  // ships the same component (e.g. Skeleton).
   if (mmdsList.includes(name)) {
     return {
       component: name,
@@ -87,51 +89,72 @@ function mapComponent(component, mmdsComponents) {
     };
   }
 
-  // 4. No replacement found
+  // 4. Intermediate component-library / components-temp migration targets
+  const libHint = parseComponentLibraryHint(deprecationMessage, project);
+  if (libHint) {
+    return libHint;
+  }
+
+  // 5. No replacement found
   return null;
 }
 
 /**
- * Parse @deprecated message for explicit replacement hints
+ * Parse @deprecated message for explicit MMDS package replacement hints.
  *
  * Examples:
  * - "use Button from @metamask/design-system-react"
  * - "Please update your code to use `Button` from `@metamask/design-system-react-native`"
  *
  * @param {string} message - Deprecation message
+ * @returns {Object|null}
+ */
+function parseMmdsDeprecationHint(message) {
+  if (!message) return null;
+
+  const mmdsPattern = /use\s+`?(\w+)`?\s+from\s+`?(@metamask\/design-system[^`\s]+)`?/i;
+  const match = message.match(mmdsPattern);
+  if (!match) return null;
+
+  return {
+    component: match[1],
+    package: match[2],
+  };
+}
+
+/**
+ * Parse @deprecated message for intermediate in-repo component-library targets.
+ *
+ * @param {string} message - Deprecation message
+ * @param {string} project - 'extension' or 'mobile'
+ * @returns {Object|null}
+ */
+function parseComponentLibraryHint(message, project) {
+  if (!message) return null;
+
+  const componentLibPattern = /component-library\/([^/\s]+)/i;
+  const libMatch = message.match(componentLibPattern);
+  if (!libMatch) return null;
+
+  const componentName = toPascalCase(libMatch[1]);
+  return {
+    component: componentName,
+    package: 'component-library',
+    path: project === 'extension'
+      ? `ui/components/component-library/${libMatch[1]}`
+      : `app/component-library/components/${componentName}`,
+  };
+}
+
+/**
+ * Parse @deprecated message for explicit replacement hints
+ *
+ * @param {string} message - Deprecation message
  * @param {string} project - 'extension' or 'mobile'
  * @returns {Object|null}
  */
 function parseDeprecationHint(message, project) {
-  if (!message) return null;
-
-  // Pattern: use `ComponentName` from `@metamask/design-system-*`
-  const mmdsPattern = /use\s+`?(\w+)`?\s+from\s+`?(@metamask\/design-system[^`\s]+)`?/i;
-  const match = message.match(mmdsPattern);
-
-  if (match) {
-    return {
-      component: match[1],
-      package: match[2],
-    };
-  }
-
-  // Pattern: component-library/component-name (intermediate migration)
-  const componentLibPattern = /component-library\/([^/\s]+)/i;
-  const libMatch = message.match(componentLibPattern);
-
-  if (libMatch) {
-    const componentName = toPascalCase(libMatch[1]);
-    return {
-      component: componentName,
-      package: 'component-library',
-      path: project === 'extension'
-        ? `ui/components/component-library/${libMatch[1]}`
-        : `app/component-library/components/${componentName}`,
-    };
-  }
-
-  return null;
+  return parseMmdsDeprecationHint(message) || parseComponentLibraryHint(message, project);
 }
 
 /**
