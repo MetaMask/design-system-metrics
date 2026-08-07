@@ -40,6 +40,11 @@ export interface Config {
 // Metrics outputs (written by index.js, read by pipeline)
 // ---------------------------------------------------------------------------
 
+export interface CodeOwnerFileOccurrence {
+  file: string;
+  count: number;
+}
+
 export interface CodeOwnerStats {
   mmdsInstances: number;
   deprecatedInstances: number;
@@ -50,6 +55,8 @@ export interface CodeOwnerStats {
   mmdsByComponent?: Record<string, number>;
   /** Legacy (deprecated) instance counts keyed by tracked component name. */
   deprecatedByComponent?: Record<string, number>;
+  /** Legacy instance file locations keyed by component name. */
+  deprecatedFilesByComponent?: Record<string, CodeOwnerFileOccurrence[]>;
 }
 
 export interface MetricsSummary {

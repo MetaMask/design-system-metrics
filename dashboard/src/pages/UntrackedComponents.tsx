@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { useUntrackedData, useUntrackedTimeline, useMetricsData } from '../hooks/useMetricsData';
 import { Loading } from '../components/Loading';
 import { ErrorMessage } from '../components/ErrorMessage';
@@ -580,7 +580,7 @@ function TeamAdoptionScoreboard({
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 max-w-3xl">
             <span className="font-medium text-gray-700 dark:text-gray-200">Migration %</span> = MMDS ÷ (MMDS + Legacy).{' '}
             <span className="font-medium text-gray-700 dark:text-gray-200">Adoption %</span> = MMDS ÷ (MMDS + Legacy + replaceable one-offs).
-            Click a team to filter the tables below.
+            Click a team to filter the tables below and jump to that team&apos;s backlog.
           </p>
         </div>
         <div className="flex flex-wrap gap-4 text-sm">
@@ -600,7 +600,7 @@ function TeamAdoptionScoreboard({
         </div>
       </div>
 
-      <div className="px-6 py-2.5 border-b border-gray-100 dark:border-gray-700 flex flex-wrap gap-4 text-xs text-gray-500 dark:text-gray-400">
+      <div className="px-6 py-2.5 border-b border-gray-100 dark:border-gray-700 flex flex-wrap items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
         <span className="flex items-center gap-1.5">
           <span className="w-2.5 h-2.5 rounded-sm bg-emerald-500" /> ≥ {threshold}% on target
         </span>
@@ -610,15 +610,30 @@ function TeamAdoptionScoreboard({
         <span className="flex items-center gap-1.5">
           <span className="w-2.5 h-2.5 rounded-sm bg-red-400" /> &lt; {Math.round(threshold * 0.7)}% behind
         </span>
-        {selectedTeam && (
-          <button
-            type="button"
-            onClick={() => onSelectTeam('')}
-            className="ml-auto text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            Clear team filter ({formatOwnerLabel(selectedTeam)})
-          </button>
-        )}
+        <div className="ml-auto flex items-center gap-2">
+          {selectedTeam ? (
+            <>
+              <span className="inline-flex items-center gap-1.5 font-semibold text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/40 rounded-full px-2.5 py-1">
+                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 4h16l-6 7v6l-4 2v-8L4 4Z" />
+                </svg>
+                Tables below filtered by {formatOwnerLabel(selectedTeam)}
+              </span>
+              <button
+                type="button"
+                onClick={() => onSelectTeam('')}
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Clear
+              </button>
+            </>
+          ) : (
+            <span className="inline-flex items-center gap-1.5 font-semibold text-blue-700 dark:text-blue-300">
+              Select a team row to filter and jump to the tables below
+              <span aria-hidden="true">↓</span>
+            </span>
+          )}
+        </div>
       </div>
 
       <div className="overflow-x-auto">
@@ -639,9 +654,19 @@ function TeamAdoptionScoreboard({
               return (
                 <tr
                   key={row.team}
+                  role="button"
+                  tabIndex={0}
+                  aria-pressed={selected}
+                  title={selected ? 'Clear team filter' : `Filter tables by ${row.label} and jump to backlog`}
                   onClick={() => onSelectTeam(selected ? '' : row.team)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault();
+                      onSelectTeam(selected ? '' : row.team);
+                    }
+                  }}
                   className={[
-                    'cursor-pointer transition-colors',
+                    'group cursor-pointer transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500',
                     selected
                       ? 'bg-blue-50 dark:bg-blue-900/20'
                       : i % 2 === 0
@@ -649,8 +674,20 @@ function TeamAdoptionScoreboard({
                         : 'bg-gray-50/50 dark:bg-gray-800/40 hover:bg-gray-50 dark:hover:bg-gray-700/40',
                   ].join(' ')}
                 >
-                  <td className="px-4 py-3 text-sm font-semibold text-gray-900 dark:text-white">
-                    {row.label}
+                  <td className="px-4 py-3 text-sm">
+                    <div className="flex items-center justify-between gap-3 min-w-[210px]">
+                      <span className="font-semibold text-blue-700 dark:text-blue-300 group-hover:underline">
+                        {row.label}
+                      </span>
+                      <span className={`shrink-0 inline-flex items-center gap-1 text-xs font-semibold rounded-full px-2 py-1 ${
+                        selected
+                          ? 'bg-blue-600 text-white'
+                          : 'bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-900/50'
+                      }`}>
+                        {selected ? 'Filtering below ✓' : 'Filter & jump'}
+                        {!selected && <span aria-hidden="true">↓</span>}
+                      </span>
+                    </div>
                   </td>
                   <td className="px-4 py-3 text-sm tabular-nums text-gray-700 dark:text-gray-300">
                     {row.migrationPercentage.toFixed(1)}%
@@ -1083,6 +1120,16 @@ function ProjectSection({ data, timeline, migrationPct, codeOwnerStats }: {
   const [candidateSearch, setCandidateSearch] = useState('');
   const [replaceSort, setReplaceSort] = useState<SortState<ReplaceSortField>>({ field: 'priority', dir: 'desc' });
   const [candidateSort, setCandidateSort] = useState<SortState<CandidateSortField>>({ field: 'breadth', dir: 'desc' });
+  const filteredTablesRef = useRef<HTMLDivElement>(null);
+
+  function handleScoreboardSelectTeam(team: string) {
+    setTeamFilter(team);
+    if (!team) return;
+    // Let the filtered tables paint before scrolling them into view.
+    window.setTimeout(() => {
+      filteredTablesRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+  }
 
   const excludedOwners = useMemo(
     () => excludedOwnersForProject(data.project),
@@ -1235,7 +1282,7 @@ function ProjectSection({ data, timeline, migrationPct, codeOwnerStats }: {
       <TeamAdoptionScoreboard
         rows={teamAdoptionRows}
         selectedTeam={teamFilter}
-        onSelectTeam={setTeamFilter}
+        onSelectTeam={handleScoreboardSelectTeam}
         threshold={ADOPTION_THRESHOLD}
       />
 
@@ -1273,7 +1320,7 @@ function ProjectSection({ data, timeline, migrationPct, codeOwnerStats }: {
       {timeline && <div className="mb-6" />}
 
       {/* Tables */}
-      <div className="space-y-6">
+      <div ref={filteredTablesRef} className="space-y-6 scroll-mt-6">
         <ReplaceNowTable
           rows={filteredReplaceable}
           project={data.project}

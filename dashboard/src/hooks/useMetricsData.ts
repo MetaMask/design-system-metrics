@@ -13,6 +13,14 @@ import type {
 const BASE_PATH = import.meta.env.BASE_URL || '/';
 const METRICS_PATH = `${BASE_PATH}metrics/`;
 
+/**
+ * Metrics files live at stable URLs whose contents change every pipeline run,
+ * so always revalidate rather than serving a cached snapshot.
+ */
+function fetchMetrics(fileName: string): Promise<Response> {
+  return fetch(`${METRICS_PATH}${fileName}`, { cache: 'no-cache' });
+}
+
 export function useMetricsData(project?: 'mobile' | 'extension') {
   const [data, setData] = useState<MetricsData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -26,7 +34,7 @@ export function useMetricsData(project?: 'mobile' | 'extension') {
         setLoading(true);
 
         // First, get the index to find the latest file
-        const indexRes = await fetch(`${METRICS_PATH}index.json`);
+        const indexRes = await fetchMetrics('index.json');
         if (!indexRes.ok) throw new Error('Failed to fetch index');
         const index: IndexData = await indexRes.json();
 
@@ -34,7 +42,7 @@ export function useMetricsData(project?: 'mobile' | 'extension') {
         if (!latestFile) throw new Error(`No data available for ${project}`);
 
         // Fetch the latest data file
-        const dataRes = await fetch(`${METRICS_PATH}${latestFile}`);
+        const dataRes = await fetchMetrics(latestFile);
         if (!dataRes.ok) throw new Error(`Failed to fetch ${latestFile}`);
         const metricsData: MetricsData = await dataRes.json();
 
@@ -63,7 +71,7 @@ export function useTimelineData() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`${METRICS_PATH}timeline.json`);
+        const res = await fetchMetrics('timeline.json');
         if (!res.ok) throw new Error('Failed to fetch timeline');
         const timeline: TimelineData = await res.json();
         setData(timeline);
@@ -91,7 +99,7 @@ export function useIndexData() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`${METRICS_PATH}index.json`);
+        const res = await fetchMetrics('index.json');
         if (!res.ok) throw new Error('Failed to fetch index');
         const index: IndexData = await res.json();
         setData(index);
@@ -120,7 +128,7 @@ export function useComponentPropsAudit(componentName: string) {
       try {
         setLoading(true);
         const fileName = `${componentName.toLowerCase()}-props-audit-latest.json`;
-        const res = await fetch(`${METRICS_PATH}${fileName}`);
+        const res = await fetchMetrics(fileName);
 
         // Optional dataset: no file yet should not be treated as a hard error.
         if (res.status === 404) {
@@ -157,7 +165,7 @@ export function useComponentPropsAuditIndex() {
       try {
         setLoading(true);
         const fileName = 'component-props-audit-index.json';
-        const res = await fetch(`${METRICS_PATH}${fileName}`);
+        const res = await fetchMetrics(fileName);
 
         if (res.status === 404) {
           setData(null);
@@ -193,7 +201,7 @@ export function useUntrackedData(project: 'mobile' | 'extension') {
       try {
         setLoading(true);
         const fileName = `${project}-untracked-latest.json`;
-        const res = await fetch(`${METRICS_PATH}${fileName}`);
+        const res = await fetchMetrics(fileName);
 
         // Optional dataset: return null without error when file is missing.
         if (res.status === 404) {
@@ -229,7 +237,7 @@ export function useUntrackedTimeline() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`${METRICS_PATH}untracked-timeline.json`);
+        const res = await fetchMetrics('untracked-timeline.json');
         if (res.status === 404) { setData(null); setError(null); return; }
         if (!res.ok) throw new Error('Failed to fetch untracked-timeline.json');
         setData(await res.json());
@@ -257,7 +265,7 @@ export function useMigrationTargets() {
       try {
         setLoading(true);
         const fileName = 'migration-targets.json';
-        const res = await fetch(`${METRICS_PATH}${fileName}`);
+        const res = await fetchMetrics(fileName);
 
         // Optional dataset: dashboard should still render if this file is missing.
         if (res.status === 404) {

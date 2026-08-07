@@ -7,6 +7,12 @@ export interface ComponentMetrics {
   migrationPercentage: string;
 }
 
+/** Per-file instance count for a legacy component within a CODEOWNERS team. */
+export interface CodeOwnerFileOccurrence {
+  file: string;
+  count: number;
+}
+
 export interface CodeOwnerStats {
   mmdsInstances: number;
   deprecatedInstances: number;
@@ -17,6 +23,11 @@ export interface CodeOwnerStats {
   mmdsByComponent?: Record<string, number>;
   /** Legacy (deprecated) instance counts keyed by tracked component name. */
   deprecatedByComponent?: Record<string, number>;
+  /**
+   * Legacy instance file locations keyed by component name.
+   * Each entry lists repo-relative files with per-file instance counts.
+   */
+  deprecatedFilesByComponent?: Record<string, CodeOwnerFileOccurrence[]>;
 }
 
 export interface MetricsSummary {
