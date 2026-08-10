@@ -496,37 +496,43 @@ async function auditProject(projectConfig, targetComponent) {
     projectConfig.ignoreFolders || [],
   );
 
-  for (const filePath of files) {
-    const linter = new Linter({ configType: 'eslintrc' });
-    linter.defineParser('component-props-ts-parser', tsEslintParser);
-    linter.defineRule(
-      'component-props-audit/collect',
-      createCollectorRule({
-        targetComponent,
-        trackedDeprecatedEntries,
-        mmdsPackages,
-        filePath,
-        mmdsCounter,
-        deprecatedCounter,
-        overallCounter,
-        deprecatedByLegacyComponent,
-      }),
-    );
+  const linter = new Linter({ configType: 'flat' });
 
+  for (const filePath of files) {
     const sourceText = await fs.readFile(path.resolve(process.cwd(), filePath), 'utf8');
     linter.verify(
       sourceText,
-      {
-        parser: 'component-props-ts-parser',
-        parserOptions: {
-          ecmaVersion: 'latest',
-          sourceType: 'module',
-          ecmaFeatures: { jsx: true },
+      [
+        {
+          languageOptions: {
+            parser: tsEslintParser,
+            parserOptions: {
+              ecmaVersion: 'latest',
+              sourceType: 'module',
+              ecmaFeatures: { jsx: true },
+            },
+          },
+          plugins: {
+            'component-props-audit': {
+              rules: {
+                collect: createCollectorRule({
+                  targetComponent,
+                  trackedDeprecatedEntries,
+                  mmdsPackages,
+                  filePath,
+                  mmdsCounter,
+                  deprecatedCounter,
+                  overallCounter,
+                  deprecatedByLegacyComponent,
+                }),
+              },
+            },
+          },
+          rules: {
+            'component-props-audit/collect': 'error',
+          },
         },
-        rules: {
-          'component-props-audit/collect': 'error',
-        },
-      },
+      ],
       { filename: filePath },
     );
   }
