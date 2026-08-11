@@ -1,320 +1,136 @@
 {
   "component": "AvatarFavicon",
-  "generatedAt": "2026-08-03T15:08:25.942Z",
+  "generatedAt": "2026-08-11T08:31:25.031Z",
   "projects": {
     "extension": {
-      "filesScanned": 3520,
-      "targetComponent": "AvatarFavicon",
-      "mmds": {
-        "totalInstances": 5,
-        "filesCount": 5,
-        "props": {
-          "src": {
-            "count": 5,
-            "values": {
-              "{connectedSubjectsMetadata?.iconUrl}": 2,
-              "{connection.iconUrl}": 1,
-              "{connectedSubjectsMetadata.iconUrl}": 1,
-              "{subjectMetadata[origin]?.iconUrl}": 1
-            }
-          },
-          "name": {
-            "count": 4,
-            "values": {
-              "{connectedSubjectsMetadata?.name}": 2,
-              "{connectedSubjectsMetadata.name}": 1,
-              "{origin}": 1
-            }
-          },
-          "size": {
-            "count": 4,
-            "values": {
-              "{AvatarFaviconSize.Sm}": 3,
-              "{AvatarFaviconSize.Md}": 1
-            }
-          },
-          "data-testid": {
-            "count": 2,
-            "values": {
-              "\"dapp-connection-control-bar__favicon\"": 1,
-              "\"connection-list-item__avatar-favicon\"": 1
-            }
-          }
-        }
-      },
-      "deprecated": {
-        "totalInstances": 7,
-        "filesCount": 7,
-        "props": {
-          "name": {
-            "count": 7,
-            "values": {
-              "{title}": 2,
-              "{subject.name ?? subject.origin}": 1,
-              "{snapName}": 1,
-              "{permissionSubject.connection}": 1,
-              "{origin}": 1,
-              "{blockExplorerToken.symbol}": 1
-            }
-          },
-          "src": {
-            "count": 7,
-            "values": {
-              "{iconUrl}": 2,
-              "{subject.iconUrl}": 1,
-              "{faviconUrl}": 1,
-              "{siteImage}": 1,
-              "{toToken.iconUrl ?? undefined}": 1,
-              "{targetSubjectMetadata.iconUrl}": 1
-            }
-          },
-          "size": {
-            "count": 6,
-            "values": {
-              "{AvatarFaviconSize.Md}": 2,
-              "{IconSize.Lg}": 1,
-              "{avatarSize as AvatarFaviconSize}": 1,
-              "{AvatarFaviconSize.Sm}": 1,
-              "{AvatarFaviconSize.Lg}": 1
-            }
-          },
-          "backgroundColor": {
-            "count": 3,
-            "values": {
-              "{BackgroundColor.backgroundAlternative}": 2,
-              "{BackgroundColor.backgroundMuted}": 1
-            }
-          },
-          "className": {
-            "count": 1,
-            "values": {
-              "\"connected-sites-list__subject-icon\"": 1
-            }
-          },
-          "style": {
-            "count": 1,
-            "values": {
-              "{{ backgroundColor: 'var(--color-background-alternative-hover)', }}": 1
-            }
-          },
-          "[spread]": {
-            "count": 1,
-            "values": {
-              "{props}": 1
-            }
-          },
-          "iconProps": {
-            "count": 1,
-            "values": {
-              "{{ size: IconSize.Sm, }}": 1
-            }
-          },
-          "data-testid": {
-            "count": 1,
-            "values": {
-              "{`${dataTestId}-avatar-favicon`}": 1
-            }
-          }
-        }
-      },
-      "overall": {
-        "totalInstances": 12,
-        "filesCount": 12,
-        "props": {
-          "src": {
-            "count": 12,
-            "values": {
-              "{iconUrl}": 2,
-              "{connectedSubjectsMetadata?.iconUrl}": 2,
-              "{subject.iconUrl}": 1,
-              "{faviconUrl}": 1,
-              "{connection.iconUrl}": 1,
-              "{connectedSubjectsMetadata.iconUrl}": 1,
-              "{siteImage}": 1,
-              "{toToken.iconUrl ?? undefined}": 1,
-              "{subjectMetadata[origin]?.iconUrl}": 1,
-              "{targetSubjectMetadata.iconUrl}": 1
-            }
-          },
-          "name": {
-            "count": 11,
-            "values": {
-              "{title}": 2,
-              "{connectedSubjectsMetadata?.name}": 2,
-              "{origin}": 2,
-              "{subject.name ?? subject.origin}": 1,
-              "{snapName}": 1,
-              "{permissionSubject.connection}": 1,
-              "{connectedSubjectsMetadata.name}": 1,
-              "{blockExplorerToken.symbol}": 1
-            }
-          },
-          "size": {
-            "count": 10,
-            "values": {
-              "{AvatarFaviconSize.Sm}": 4,
-              "{AvatarFaviconSize.Md}": 3,
-              "{IconSize.Lg}": 1,
-              "{avatarSize as AvatarFaviconSize}": 1,
-              "{AvatarFaviconSize.Lg}": 1
-            }
-          },
-          "backgroundColor": {
-            "count": 3,
-            "values": {
-              "{BackgroundColor.backgroundAlternative}": 2,
-              "{BackgroundColor.backgroundMuted}": 1
-            }
-          },
-          "data-testid": {
-            "count": 3,
-            "values": {
-              "\"dapp-connection-control-bar__favicon\"": 1,
-              "\"connection-list-item__avatar-favicon\"": 1,
-              "{`${dataTestId}-avatar-favicon`}": 1
-            }
-          },
-          "className": {
-            "count": 1,
-            "values": {
-              "\"connected-sites-list__subject-icon\"": 1
-            }
-          },
-          "style": {
-            "count": 1,
-            "values": {
-              "{{ backgroundColor: 'var(--color-background-alternative-hover)', }}": 1
-            }
-          },
-          "[spread]": {
-            "count": 1,
-            "values": {
-              "{props}": 1
-            }
-          },
-          "iconProps": {
-            "count": 1,
-            "values": {
-              "{{ size: IconSize.Sm, }}": 1
-            }
-          }
-        }
-      },
-      "deprecatedByLegacyComponent": {
-        "AvatarFavicon": 7
-      }
-    },
-    "mobile": {
-      "filesScanned": 7459,
+      "filesScanned": 3557,
       "targetComponent": "AvatarFavicon",
       "mmds": {
         "totalInstances": 1,
         "filesCount": 1,
         "props": {
+          "data-testid": {
+            "count": 1,
+            "values": {
+              "\"connection-list-item__avatar-favicon\"": 1
+            }
+          },
           "src": {
             "count": 1,
             "values": {
-              "{faviconSource}": 1
-            }
-          },
-          "size": {
-            "count": 1,
-            "values": {
-              "{AvatarFaviconSize.Sm}": 1
+              "{connection.iconUrl}": 1
             }
           }
         }
       },
       "deprecated": {
-        "totalInstances": 6,
-        "filesCount": 6,
+        "totalInstances": 2,
+        "filesCount": 2,
         "props": {
-          "imageSource": {
-            "count": 6,
+          "backgroundColor": {
+            "count": 2,
             "values": {
-              "{{ uri: iconUrl }}": 2,
-              "{{ uri: typeof icon === 'string' ? icon : icon?.uri, }}": 2,
-              "{{ uri: icon }}": 2
+              "{BackgroundColor.backgroundAlternative}": 2
             }
           },
           "size": {
-            "count": 4,
+            "count": 2,
             "values": {
-              "{AvatarSize.Md}": 2,
-              "{AvatarSize.Xl}": 1,
-              "{avatarSize as unknown as AvatarSize}": 1
+              "{IconSize.Lg}": 1,
+              "{AvatarFaviconSize.Md}": 1
             }
           },
-          "style": {
-            "count": 1,
+          "src": {
+            "count": 2,
             "values": {
-              "{styles.avatar}": 1
+              "{iconUrl}": 1,
+              "{faviconUrl}": 1
             }
           },
-          "testID": {
-            "count": 1,
+          "name": {
+            "count": 2,
             "values": {
-              "\"snap-avatar-icon\"": 1
+              "{title}": 1,
+              "{permissionSubject.connection}": 1
             }
           },
-          "[spread]": {
+          "iconProps": {
             "count": 1,
             "values": {
-              "{props}": 1
+              "{{ size: IconSize.Sm, }}": 1
             }
           }
         }
       },
       "overall": {
-        "totalInstances": 7,
-        "filesCount": 7,
+        "totalInstances": 3,
+        "filesCount": 3,
         "props": {
-          "imageSource": {
-            "count": 6,
+          "src": {
+            "count": 3,
             "values": {
-              "{{ uri: iconUrl }}": 2,
-              "{{ uri: typeof icon === 'string' ? icon : icon?.uri, }}": 2,
-              "{{ uri: icon }}": 2
+              "{iconUrl}": 1,
+              "{faviconUrl}": 1,
+              "{connection.iconUrl}": 1
+            }
+          },
+          "backgroundColor": {
+            "count": 2,
+            "values": {
+              "{BackgroundColor.backgroundAlternative}": 2
             }
           },
           "size": {
-            "count": 5,
+            "count": 2,
             "values": {
-              "{AvatarSize.Md}": 2,
-              "{AvatarSize.Xl}": 1,
-              "{avatarSize as unknown as AvatarSize}": 1,
-              "{AvatarFaviconSize.Sm}": 1
+              "{IconSize.Lg}": 1,
+              "{AvatarFaviconSize.Md}": 1
             }
           },
-          "style": {
-            "count": 1,
+          "name": {
+            "count": 2,
             "values": {
-              "{styles.avatar}": 1
+              "{title}": 1,
+              "{permissionSubject.connection}": 1
             }
           },
-          "testID": {
+          "iconProps": {
             "count": 1,
             "values": {
-              "\"snap-avatar-icon\"": 1
+              "{{ size: IconSize.Sm, }}": 1
             }
           },
-          "[spread]": {
+          "data-testid": {
             "count": 1,
             "values": {
-              "{props}": 1
-            }
-          },
-          "src": {
-            "count": 1,
-            "values": {
-              "{faviconSource}": 1
+              "\"connection-list-item__avatar-favicon\"": 1
             }
           }
         }
       },
       "deprecatedByLegacyComponent": {
-        "AvatarFavicon": 6
+        "AvatarFavicon": 2
       }
+    },
+    "mobile": {
+      "filesScanned": 7482,
+      "targetComponent": "AvatarFavicon",
+      "mmds": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "deprecated": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "overall": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "deprecatedByLegacyComponent": {}
     }
   }
 }

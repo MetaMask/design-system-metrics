@@ -1,148 +1,78 @@
 {
   "component": "AvatarIcon",
-  "generatedAt": "2026-08-03T15:09:33.972Z",
+  "generatedAt": "2026-08-11T08:31:36.698Z",
   "projects": {
     "extension": {
-      "filesScanned": 3520,
+      "filesScanned": 3557,
       "targetComponent": "AvatarIcon",
       "mmds": {
-        "totalInstances": 6,
-        "filesCount": 6,
-        "props": {
-          "iconName": {
-            "count": 6,
-            "values": {
-              "{iconName}": 2,
-              "{getDsIconName(iconSrc)}": 1,
-              "{icon.name}": 1,
-              "{IconName.Global}": 1,
-              "{startIconName}": 1
-            }
-          },
-          "size": {
-            "count": 6,
-            "values": {
-              "{AvatarIconSize.Md}": 3,
-              "{AvatarIconSize.Lg}": 2,
-              "{icon.size}": 1
-            }
-          },
-          "severity": {
-            "count": 3,
-            "values": {
-              "{AvatarIconSeverity.Neutral}": 2,
-              "{icon.severity}": 1
-            }
-          },
-          "iconProps": {
-            "count": 3,
-            "values": {
-              "{{ color: DsIconColor.IconDefault }}": 1,
-              "{icon.iconProps}": 1,
-              "{{ color: IconColor.PrimaryDefault, }}": 1
-            }
-          },
-          "color": {
-            "count": 3,
-            "values": {
-              "{IconColor.IconAlternative}": 2,
-              "{IconColor.PrimaryDefault}": 1
-            }
-          },
-          "className": {
-            "count": 1,
-            "values": {
-              "{icon.className}": 1
-            }
-          },
-          "data-testid": {
-            "count": 1,
-            "values": {
-              "{icon.dataTestId}": 1
-            }
-          }
-        }
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
       },
       "deprecated": {
-        "totalInstances": 20,
-        "filesCount": 18,
+        "totalInstances": 13,
+        "filesCount": 11,
         "props": {
           "iconName": {
-            "count": 19,
+            "count": 13,
             "values": {
-              "{iconName}": 3,
               "{IconName.Arrow2Down}": 3,
+              "{iconName}": 2,
               "{IconName.Info}": 2,
-              "{IconName.Snaps}": 2,
               "{permissionIcon}": 1,
+              "{IconName.Snaps}": 1,
               "{IconName.Danger}": 1,
               "{IconName.Question}": 1,
               "{Icon}": 1,
-              "{IconName.Gas}": 1,
-              "{badge.icon}": 1,
-              "{IconName.UserCircleAdd}": 1,
-              "{IconName.Confirmation}": 1,
-              "{IconName.UserCircleRemove}": 1
+              "{IconName.Confirmation}": 1
             }
           },
           "backgroundColor": {
-            "count": 17,
+            "count": 13,
             "values": {
-              "{BackgroundColor.infoDefault}": 5,
-              "{BackgroundColor.errorMuted}": 2,
+              "{BackgroundColor.infoDefault}": 3,
               "{backgroundColor}": 2,
               "{iconBackgroundColor}": 1,
+              "{BackgroundColor.errorMuted}": 1,
               "{BackgroundColor.backgroundAlternative}": 1,
               "{isError ? IconColor.errorDefault : IconColor.infoDefault}": 1,
               "{BackgroundColor.warningMuted}": 1,
               "{BackgroundColor.primaryMuted}": 1,
-              "{BackgroundColor.infoMuted}": 1,
               "{BackgroundColor.backgroundMuted}": 1,
               "{BackgroundColor.successMuted}": 1
             }
           },
           "color": {
-            "count": 14,
+            "count": 12,
             "values": {
               "{IconColor.primaryInverse}": 3,
-              "{IconColor.errorDefault}": 2,
               "{color}": 2,
               "{iconColor}": 1,
+              "{IconColor.errorDefault}": 1,
               "{IconColor.iconDefault}": 1,
               "{IconColor.warningDefault}": 1,
               "{IconColor.infoDefault}": 1,
-              "{TextColor.infoDefault}": 1,
               "{IconColor.iconAlternative}": 1,
               "{IconColor.successDefault}": 1
             }
           },
           "size": {
-            "count": 13,
+            "count": 9,
             "values": {
               "{AvatarIconSize.Md}": 5,
-              "{AvatarIconSize.Xl}": 5,
-              "{AvatarIconSize.Xs}": 2,
-              "{AvatarIconSize.Sm}": 1
+              "{AvatarIconSize.Xl}": 3,
+              "{AvatarIconSize.Xs}": 1
             }
           },
           "className": {
-            "count": 7,
+            "count": 6,
             "values": {
               "\"snap-install__scroll-button\"": 2,
               "\"snaps-authorship-header__button\"": 1,
               "\"snap-delineator__header__icon\"": 1,
               "\"snap-privacy-warning__content__scroll-button\"": 1,
-              "\"multichain-send-page__recipient__item__avatar\"": 1,
               "\"snap-result__header__icon\"": 1
-            }
-          },
-          "iconProps": {
-            "count": 4,
-            "values": {
-              "{{ size: IconSize.Sm, }}": 1,
-              "{{ color: IconColor.infoInverse, }}": 1,
-              "{{ color: IconColor.infoInverse, style: { width: '12px', height: '12px' }, nam...}": 1,
-              "{{ name: badge.icon, color: IconColor.infoInverse, size: IconSize.Xs, }}": 1
             }
           },
           "onClick": {
@@ -166,23 +96,11 @@
               "{{ cursor: 'pointer' }}": 3
             }
           },
-          "borderColor": {
+          "iconProps": {
             "count": 2,
             "values": {
-              "{BorderColor.backgroundDefault}": 2
-            }
-          },
-          "borderWidth": {
-            "count": 2,
-            "values": {
-              "2": 2
-            }
-          },
-          "[spread]": {
-            "count": 2,
-            "values": {
-              "{icon}": 1,
-              "{iconProps}": 1
+              "{{ size: IconSize.Sm, }}": 1,
+              "{{ color: IconColor.infoInverse, }}": 1
             }
           },
           "marginBottom": {
@@ -200,106 +118,68 @@
         }
       },
       "overall": {
-        "totalInstances": 26,
-        "filesCount": 24,
+        "totalInstances": 13,
+        "filesCount": 11,
         "props": {
           "iconName": {
-            "count": 25,
+            "count": 13,
             "values": {
-              "{iconName}": 5,
               "{IconName.Arrow2Down}": 3,
+              "{iconName}": 2,
               "{IconName.Info}": 2,
-              "{IconName.Snaps}": 2,
-              "{getDsIconName(iconSrc)}": 1,
               "{permissionIcon}": 1,
-              "{icon.name}": 1,
+              "{IconName.Snaps}": 1,
               "{IconName.Danger}": 1,
               "{IconName.Question}": 1,
               "{Icon}": 1,
-              "{IconName.Gas}": 1,
-              "{badge.icon}": 1,
-              "{IconName.Global}": 1,
-              "{IconName.UserCircleAdd}": 1,
-              "{IconName.Confirmation}": 1,
-              "{IconName.UserCircleRemove}": 1,
-              "{startIconName}": 1
-            }
-          },
-          "size": {
-            "count": 19,
-            "values": {
-              "{AvatarIconSize.Md}": 8,
-              "{AvatarIconSize.Xl}": 5,
-              "{AvatarIconSize.Xs}": 2,
-              "{AvatarIconSize.Lg}": 2,
-              "{icon.size}": 1,
-              "{AvatarIconSize.Sm}": 1
-            }
-          },
-          "color": {
-            "count": 17,
-            "values": {
-              "{IconColor.primaryInverse}": 3,
-              "{IconColor.errorDefault}": 2,
-              "{color}": 2,
-              "{IconColor.IconAlternative}": 2,
-              "{iconColor}": 1,
-              "{IconColor.iconDefault}": 1,
-              "{IconColor.warningDefault}": 1,
-              "{IconColor.infoDefault}": 1,
-              "{TextColor.infoDefault}": 1,
-              "{IconColor.iconAlternative}": 1,
-              "{IconColor.PrimaryDefault}": 1,
-              "{IconColor.successDefault}": 1
+              "{IconName.Confirmation}": 1
             }
           },
           "backgroundColor": {
-            "count": 17,
+            "count": 13,
             "values": {
-              "{BackgroundColor.infoDefault}": 5,
-              "{BackgroundColor.errorMuted}": 2,
+              "{BackgroundColor.infoDefault}": 3,
               "{backgroundColor}": 2,
               "{iconBackgroundColor}": 1,
+              "{BackgroundColor.errorMuted}": 1,
               "{BackgroundColor.backgroundAlternative}": 1,
               "{isError ? IconColor.errorDefault : IconColor.infoDefault}": 1,
               "{BackgroundColor.warningMuted}": 1,
               "{BackgroundColor.primaryMuted}": 1,
-              "{BackgroundColor.infoMuted}": 1,
               "{BackgroundColor.backgroundMuted}": 1,
               "{BackgroundColor.successMuted}": 1
             }
           },
+          "color": {
+            "count": 12,
+            "values": {
+              "{IconColor.primaryInverse}": 3,
+              "{color}": 2,
+              "{iconColor}": 1,
+              "{IconColor.errorDefault}": 1,
+              "{IconColor.iconDefault}": 1,
+              "{IconColor.warningDefault}": 1,
+              "{IconColor.infoDefault}": 1,
+              "{IconColor.iconAlternative}": 1,
+              "{IconColor.successDefault}": 1
+            }
+          },
+          "size": {
+            "count": 9,
+            "values": {
+              "{AvatarIconSize.Md}": 5,
+              "{AvatarIconSize.Xl}": 3,
+              "{AvatarIconSize.Xs}": 1
+            }
+          },
           "className": {
-            "count": 8,
+            "count": 6,
             "values": {
               "\"snap-install__scroll-button\"": 2,
-              "{icon.className}": 1,
               "\"snaps-authorship-header__button\"": 1,
               "\"snap-delineator__header__icon\"": 1,
               "\"snap-privacy-warning__content__scroll-button\"": 1,
-              "\"multichain-send-page__recipient__item__avatar\"": 1,
               "\"snap-result__header__icon\"": 1
-            }
-          },
-          "iconProps": {
-            "count": 7,
-            "values": {
-              "{{ color: DsIconColor.IconDefault }}": 1,
-              "{{ size: IconSize.Sm, }}": 1,
-              "{icon.iconProps}": 1,
-              "{{ color: IconColor.infoInverse, }}": 1,
-              "{{ color: IconColor.infoInverse, style: { width: '12px', height: '12px' }, nam...}": 1,
-              "{{ name: badge.icon, color: IconColor.infoInverse, size: IconSize.Xs, }}": 1,
-              "{{ color: IconColor.PrimaryDefault, }}": 1
-            }
-          },
-          "data-testid": {
-            "count": 4,
-            "values": {
-              "{icon.dataTestId}": 1,
-              "\"snap-privacy-warning-scroll\"": 1,
-              "\"snap-install-scroll\"": 1,
-              "\"snap-update-scroll\"": 1
             }
           },
           "onClick": {
@@ -309,11 +189,12 @@
               "{openModal}": 1
             }
           },
-          "severity": {
+          "data-testid": {
             "count": 3,
             "values": {
-              "{AvatarIconSeverity.Neutral}": 2,
-              "{icon.severity}": 1
+              "\"snap-privacy-warning-scroll\"": 1,
+              "\"snap-install-scroll\"": 1,
+              "\"snap-update-scroll\"": 1
             }
           },
           "style": {
@@ -322,23 +203,11 @@
               "{{ cursor: 'pointer' }}": 3
             }
           },
-          "borderColor": {
+          "iconProps": {
             "count": 2,
             "values": {
-              "{BorderColor.backgroundDefault}": 2
-            }
-          },
-          "borderWidth": {
-            "count": 2,
-            "values": {
-              "2": 2
-            }
-          },
-          "[spread]": {
-            "count": 2,
-            "values": {
-              "{icon}": 1,
-              "{iconProps}": 1
+              "{{ size: IconSize.Sm, }}": 1,
+              "{{ color: IconColor.infoInverse, }}": 1
             }
           },
           "marginBottom": {
@@ -356,140 +225,28 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "AvatarIcon": 20
+        "AvatarIcon": 13
       }
     },
     "mobile": {
-      "filesScanned": 7459,
+      "filesScanned": 7482,
       "targetComponent": "AvatarIcon",
       "mmds": {
-        "totalInstances": 5,
-        "filesCount": 4,
-        "props": {
-          "iconName": {
-            "count": 5,
-            "values": {
-              "{display.icon}": 2,
-              "{fallbackIconName}": 1,
-              "{isSuccess ? IconName.CheckBold : IconName.Error}": 1,
-              "{resolveTransactionIconName(item.type)}": 1
-            }
-          },
-          "severity": {
-            "count": 5,
-            "values": {
-              "{isFailed ? AvatarIconSeverity.Danger : AvatarIconSeverity.Neutral}": 2,
-              "{AvatarIconSeverity.Neutral}": 2,
-              "{isSuccess ? AvatarIconSeverity.Success : AvatarIconSeverity.Danger}": 1
-            }
-          },
-          "size": {
-            "count": 5,
-            "values": {
-              "{AvatarIconSize.Lg}": 3,
-              "{AvatarIconSize.Md}": 1,
-              "{AvatarIconSize.Xl}": 1
-            }
-          },
-          "testID": {
-            "count": 3,
-            "values": {
-              "{MoneyActivityItemTestIds.ICON}": 2,
-              "{`activity-row-avatar-single-${testIdSuffix}`}": 1
-            }
-          }
-        }
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
       },
       "deprecated": {
-        "totalInstances": 1,
-        "filesCount": 1,
-        "props": {
-          "name": {
-            "count": 1,
-            "values": {
-              "{IconName.Snaps}": 1
-            }
-          },
-          "iconColor": {
-            "count": 1,
-            "values": {
-              "{IconColor.Inverse}": 1
-            }
-          },
-          "size": {
-            "count": 1,
-            "values": {
-              "{AvatarSize.Md}": 1
-            }
-          },
-          "style": {
-            "count": 1,
-            "values": {
-              "{styles.badge}": 1
-            }
-          }
-        }
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
       },
       "overall": {
-        "totalInstances": 6,
-        "filesCount": 5,
-        "props": {
-          "size": {
-            "count": 6,
-            "values": {
-              "{AvatarIconSize.Lg}": 3,
-              "{AvatarSize.Md}": 1,
-              "{AvatarIconSize.Md}": 1,
-              "{AvatarIconSize.Xl}": 1
-            }
-          },
-          "iconName": {
-            "count": 5,
-            "values": {
-              "{display.icon}": 2,
-              "{fallbackIconName}": 1,
-              "{isSuccess ? IconName.CheckBold : IconName.Error}": 1,
-              "{resolveTransactionIconName(item.type)}": 1
-            }
-          },
-          "severity": {
-            "count": 5,
-            "values": {
-              "{isFailed ? AvatarIconSeverity.Danger : AvatarIconSeverity.Neutral}": 2,
-              "{AvatarIconSeverity.Neutral}": 2,
-              "{isSuccess ? AvatarIconSeverity.Success : AvatarIconSeverity.Danger}": 1
-            }
-          },
-          "testID": {
-            "count": 3,
-            "values": {
-              "{MoneyActivityItemTestIds.ICON}": 2,
-              "{`activity-row-avatar-single-${testIdSuffix}`}": 1
-            }
-          },
-          "name": {
-            "count": 1,
-            "values": {
-              "{IconName.Snaps}": 1
-            }
-          },
-          "iconColor": {
-            "count": 1,
-            "values": {
-              "{IconColor.Inverse}": 1
-            }
-          },
-          "style": {
-            "count": 1,
-            "values": {
-              "{styles.badge}": 1
-            }
-          }
-        }
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
       },
-      "deprecatedByLegacyComponent": {
-        "AvatarIcon": 1
-      }
+      "deprecatedByLegacyComponent": {}
     }
   }
 }

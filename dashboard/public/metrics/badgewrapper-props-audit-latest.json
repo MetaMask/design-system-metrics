@@ -1,334 +1,14 @@
 {
   "component": "BadgeWrapper",
-  "generatedAt": "2026-08-03T15:12:53.726Z",
+  "generatedAt": "2026-08-11T08:32:11.838Z",
   "projects": {
     "extension": {
-      "filesScanned": 3520,
+      "filesScanned": 3557,
       "targetComponent": "BadgeWrapper",
       "mmds": {
-        "totalInstances": 15,
-        "filesCount": 10,
-        "props": {
-          "badge": {
-            "count": 15,
-            "values": {
-              "{<BadgeNetwork name=\"Ethereum\" src=\"https://assets.coingecko.com/coins/images/...}": 4,
-              "{<AvatarNetwork size={AvatarNetworkSize.Xs} name={NETWORK_TO_NAME_MAP[CHAIN_ID...}": 2,
-              "{<AvatarNetwork className=\"border-2 border-background-default rounded-md\" styl...}": 1,
-              "{<BadgeStatus status={BadgeStatusStatus.New} />}": 1,
-              "{<AvatarNetwork name={networkName} src={networkIcon} style={{ width: 20, heigh...}": 1,
-              "{<AvatarNetwork name={ NETWORK_TO_SHORT_NETWORK_NAME_MAP[ formatChainIdToCaip(...}": 1,
-              "{<AvatarNetwork name={NETWORK_TO_SHORT_NETWORK_NAME_MAP[caipChainId]} src={BRI...}": 1,
-              "{<AvatarNetwork className=\"border-2 border-background-default rounded-md\" size...}": 1,
-              "{<BadgeCount count={10} max={9} />}": 1,
-              "{<AvatarNetwork src={arbitrumNetworkImageUrl} name={arbitrumNetworkName} size=...}": 1,
-              "{<AvatarNetwork size={AvatarNetworkSize.Xs} name={ NETWORK_TO_NAME_MAP[ select...}": 1
-            }
-          },
-          "position": {
-            "count": 4,
-            "values": {
-              "{BadgeWrapperPosition.TopRight}": 2,
-              "{BadgeWrapperPosition.BottomRight}": 2
-            }
-          },
-          "positionAnchorShape": {
-            "count": 2,
-            "values": {
-              "{BadgeWrapperPositionAnchorShape.Circular}": 1,
-              "{BadgeWrapperPositionAnchorShape.Rectangular}": 1
-            }
-          },
-          "badgeContainerProps": {
-            "count": 2,
-            "values": {
-              "{{ color: BackgroundColor.backgroundDefault, }}": 2
-            }
-          },
-          "key": {
-            "count": 2,
-            "values": {
-              "{asset.assetId}": 1,
-              "{token}": 1
-            }
-          },
-          "positionXOffset": {
-            "count": 1,
-            "values": {
-              "4": 1
-            }
-          },
-          "style": {
-            "count": 1,
-            "values": {
-              "{{ alignSelf: 'center' }}": 1
-            }
-          }
-        }
-      },
-      "deprecated": {
-        "totalInstances": 15,
-        "filesCount": 13,
-        "props": {
-          "badge": {
-            "count": 15,
-            "values": {
-              "{<AvatarNetwork size={AvatarNetworkSize.Xs} name={allNetworks?.[chainId as Hex...}": 2,
-              "{badgeIcon}": 2,
-              "{selectedChainId && networkIcon ? ( <AvatarNetwork size={AvatarNetworkSize.Xs}...}": 1,
-              "{<AvatarNetwork size={AvatarNetworkSize.Xs} name={networkName} src={networkIco...}": 1,
-              "{showConnectedStatus && ( <Box className={classNames('multichain-badge-status_...}": 1,
-              "{<AvatarIcon iconName={IconName.Snaps} size={AvatarIconSize.Xs} className=\"mul...}": 1,
-              "{<AvatarNetwork className=\"nft-item__network-badge\" backgroundColor={testNetwo...}": 1,
-              "{<AvatarIcon iconName={badge.icon} size={AvatarIconSize.Sm} backgroundColor={B...}": 1,
-              "{nftData.chainId ? ( <AvatarNetwork size={AvatarNetworkSize.Xs} name={nftData....}": 1,
-              "{chainId ? ( <AvatarNetwork size={AvatarNetworkSize.Xs} name={tokenData.networ...}": 1,
-              "{nftData.chainId ? ( <AvatarNetwork size={AvatarNetworkSize.Sm} name={nftData....}": 1,
-              "{chainId ? ( <AvatarNetwork size={AvatarNetworkSize.Sm} name={networkName || c...}": 1,
-              "{<AvatarNetwork size={NETWORK_BADGE_SIZE_MAP[size]} name={networkConfiguration...}": 1
-            }
-          },
-          "style": {
-            "count": 4,
-            "values": {
-              "{{ alignSelf: 'center' }}": 2,
-              "{{ alignSelf: 'center', }}": 2
-            }
-          },
-          "marginRight": {
-            "count": 3,
-            "values": {
-              "4": 3
-            }
-          },
-          "positionObj": {
-            "count": 3,
-            "values": {
-              "{positionObj}": 1,
-              "{{ bottom: '25%', right: '10%', }}": 1,
-              "{{ bottom: 4, right: 4 }}": 1
-            }
-          },
-          "position": {
-            "count": 3,
-            "values": {
-              "{icon.badge.position || BadgeWrapperPosition.topRight}": 1,
-              "{BadgeWrapperPosition.topRight}": 1,
-              "{badge.position || BadgeWrapperPosition.bottomRight}": 1
-            }
-          },
-          "badgeContainerProps": {
-            "count": 2,
-            "values": {
-              "{{ 'data-testid': networkBadgeTestId, }}": 1,
-              "{{ className: 'multichain-send-page__recipient__item__badge', }}": 1
-            }
-          },
-          "data-testid": {
-            "count": 2,
-            "values": {
-              "\"musd-buy-get-cta-icon\"": 1,
-              "\"badge-wrapper\"": 1
-            }
-          },
-          "className": {
-            "count": 2,
-            "values": {
-              "{classnames('nft-item__badge-wrapper', { 'nft-item__badge-wrapper__clickable':...}": 1,
-              "\"multichain-token-list-item__badge\"": 1
-            }
-          },
-          "anchorElementShape": {
-            "count": 1,
-            "values": {
-              "{BadgeWrapperAnchorElementShape.circular}": 1
-            }
-          },
-          "display": {
-            "count": 1,
-            "values": {
-              "{Display.Block}": 1
-            }
-          }
-        }
-      },
-      "overall": {
-        "totalInstances": 30,
-        "filesCount": 23,
-        "props": {
-          "badge": {
-            "count": 30,
-            "values": {
-              "{<BadgeNetwork name=\"Ethereum\" src=\"https://assets.coingecko.com/coins/images/...}": 4,
-              "{<AvatarNetwork size={AvatarNetworkSize.Xs} name={allNetworks?.[chainId as Hex...}": 2,
-              "{badgeIcon}": 2,
-              "{<AvatarNetwork size={AvatarNetworkSize.Xs} name={NETWORK_TO_NAME_MAP[CHAIN_ID...}": 2,
-              "{<AvatarNetwork className=\"border-2 border-background-default rounded-md\" styl...}": 1,
-              "{selectedChainId && networkIcon ? ( <AvatarNetwork size={AvatarNetworkSize.Xs}...}": 1,
-              "{<AvatarNetwork size={AvatarNetworkSize.Xs} name={networkName} src={networkIco...}": 1,
-              "{showConnectedStatus && ( <Box className={classNames('multichain-badge-status_...}": 1,
-              "{<AvatarIcon iconName={IconName.Snaps} size={AvatarIconSize.Xs} className=\"mul...}": 1,
-              "{<AvatarNetwork className=\"nft-item__network-badge\" backgroundColor={testNetwo...}": 1,
-              "{<AvatarIcon iconName={badge.icon} size={AvatarIconSize.Sm} backgroundColor={B...}": 1,
-              "{<BadgeStatus status={BadgeStatusStatus.New} />}": 1,
-              "{<AvatarNetwork name={networkName} src={networkIcon} style={{ width: 20, heigh...}": 1,
-              "{<AvatarNetwork name={ NETWORK_TO_SHORT_NETWORK_NAME_MAP[ formatChainIdToCaip(...}": 1,
-              "{<AvatarNetwork name={NETWORK_TO_SHORT_NETWORK_NAME_MAP[caipChainId]} src={BRI...}": 1,
-              "{nftData.chainId ? ( <AvatarNetwork size={AvatarNetworkSize.Xs} name={nftData....}": 1,
-              "{chainId ? ( <AvatarNetwork size={AvatarNetworkSize.Xs} name={tokenData.networ...}": 1,
-              "{nftData.chainId ? ( <AvatarNetwork size={AvatarNetworkSize.Sm} name={nftData....}": 1,
-              "{chainId ? ( <AvatarNetwork size={AvatarNetworkSize.Sm} name={networkName || c...}": 1,
-              "{<AvatarNetwork size={NETWORK_BADGE_SIZE_MAP[size]} name={networkConfiguration...}": 1,
-              "{<AvatarNetwork className=\"border-2 border-background-default rounded-md\" size...}": 1,
-              "{<BadgeCount count={10} max={9} />}": 1,
-              "{<AvatarNetwork src={arbitrumNetworkImageUrl} name={arbitrumNetworkName} size=...}": 1,
-              "{<AvatarNetwork size={AvatarNetworkSize.Xs} name={ NETWORK_TO_NAME_MAP[ select...}": 1
-            }
-          },
-          "position": {
-            "count": 7,
-            "values": {
-              "{BadgeWrapperPosition.TopRight}": 2,
-              "{BadgeWrapperPosition.BottomRight}": 2,
-              "{icon.badge.position || BadgeWrapperPosition.topRight}": 1,
-              "{BadgeWrapperPosition.topRight}": 1,
-              "{badge.position || BadgeWrapperPosition.bottomRight}": 1
-            }
-          },
-          "style": {
-            "count": 5,
-            "values": {
-              "{{ alignSelf: 'center' }}": 3,
-              "{{ alignSelf: 'center', }}": 2
-            }
-          },
-          "badgeContainerProps": {
-            "count": 4,
-            "values": {
-              "{{ color: BackgroundColor.backgroundDefault, }}": 2,
-              "{{ 'data-testid': networkBadgeTestId, }}": 1,
-              "{{ className: 'multichain-send-page__recipient__item__badge', }}": 1
-            }
-          },
-          "marginRight": {
-            "count": 3,
-            "values": {
-              "4": 3
-            }
-          },
-          "positionObj": {
-            "count": 3,
-            "values": {
-              "{positionObj}": 1,
-              "{{ bottom: '25%', right: '10%', }}": 1,
-              "{{ bottom: 4, right: 4 }}": 1
-            }
-          },
-          "data-testid": {
-            "count": 2,
-            "values": {
-              "\"musd-buy-get-cta-icon\"": 1,
-              "\"badge-wrapper\"": 1
-            }
-          },
-          "className": {
-            "count": 2,
-            "values": {
-              "{classnames('nft-item__badge-wrapper', { 'nft-item__badge-wrapper__clickable':...}": 1,
-              "\"multichain-token-list-item__badge\"": 1
-            }
-          },
-          "positionAnchorShape": {
-            "count": 2,
-            "values": {
-              "{BadgeWrapperPositionAnchorShape.Circular}": 1,
-              "{BadgeWrapperPositionAnchorShape.Rectangular}": 1
-            }
-          },
-          "key": {
-            "count": 2,
-            "values": {
-              "{asset.assetId}": 1,
-              "{token}": 1
-            }
-          },
-          "anchorElementShape": {
-            "count": 1,
-            "values": {
-              "{BadgeWrapperAnchorElementShape.circular}": 1
-            }
-          },
-          "display": {
-            "count": 1,
-            "values": {
-              "{Display.Block}": 1
-            }
-          },
-          "positionXOffset": {
-            "count": 1,
-            "values": {
-              "4": 1
-            }
-          }
-        }
-      },
-      "deprecatedByLegacyComponent": {
-        "BadgeWrapper": 15
-      }
-    },
-    "mobile": {
-      "filesScanned": 7459,
-      "targetComponent": "BadgeWrapper",
-      "mmds": {
-        "totalInstances": 16,
-        "filesCount": 15,
-        "props": {
-          "position": {
-            "count": 16,
-            "values": {
-              "{BadgeWrapperPosition.BottomRight}": 14,
-              "{BadgeWrapperPosition.TopRight}": 2
-            }
-          },
-          "badge": {
-            "count": 16,
-            "values": {
-              "{networkImage ? <BadgeNetwork src={networkImage} /> : null}": 3,
-              "{<BadgeNetwork twClassName=\"rounded-md\" src={networkImage} />}": 2,
-              "{<BadgeNetwork twClassName=\"rounded-md\" src={ networkImageSource as React.Comp...}": 1,
-              "{networkBadgeSource ? ( <BadgeNetwork src={ networkBadgeSource as React.Compon...}": 1,
-              "{item.caipChainId ? ( <BadgeNetwork src={getNetworkImageSource({ chainId: safe...}": 1,
-              "{!hasViewedCardButton && variant.showBadge ? ( <BadgeStatus testID={WalletView...}": 1,
-              "{BASE_NETWORK_IMAGE ? <BadgeNetwork src={BASE_NETWORK_IMAGE} /> : null}": 1,
-              "{srcChainHex ? ( <Badge variant={BadgeVariant.Network} size={AvatarSize.Xs} is...}": 1,
-              "{getChainHex(pendingPicker.row.tokenAsset) ? ( <Badge variant={BadgeVariant.Ne...}": 1,
-              "{chainHex ? ( <Badge variant={BadgeVariant.Network} size={AvatarSize.Xs} isSca...}": 1,
-              "{rowChainHex ? ( <Badge variant={BadgeVariant.Network} size={AvatarSize.Xs} is...}": 1,
-              "{networkImageSource ? ( <Box twClassName=\"overflow-hidden border border-backgr...}": 1,
-              "{isNotificationEnabled && unreadNotificationCount > 0 ? ( <BadgeStatus status=...}": 1
-            }
-          },
-          "style": {
-            "count": 3,
-            "values": {
-              "{tw.style('self-center')}": 1,
-              "{tw.style('mr-3')}": 1,
-              "{styles.tokenAvatarWrapper}": 1
-            }
-          },
-          "positionAnchorShape": {
-            "count": 2,
-            "values": {
-              "{BadgeWrapperPositionAnchorShape.Circular}": 2
-            }
-          },
-          "badgeContainerProps": {
-            "count": 1,
-            "values": {
-              "{{ testID: 'badge-wrapper-badge' }}": 1
-            }
-          }
-        }
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
       },
       "deprecated": {
         "totalInstances": 0,
@@ -336,55 +16,29 @@
         "props": {}
       },
       "overall": {
-        "totalInstances": 16,
-        "filesCount": 15,
-        "props": {
-          "position": {
-            "count": 16,
-            "values": {
-              "{BadgeWrapperPosition.BottomRight}": 14,
-              "{BadgeWrapperPosition.TopRight}": 2
-            }
-          },
-          "badge": {
-            "count": 16,
-            "values": {
-              "{networkImage ? <BadgeNetwork src={networkImage} /> : null}": 3,
-              "{<BadgeNetwork twClassName=\"rounded-md\" src={networkImage} />}": 2,
-              "{<BadgeNetwork twClassName=\"rounded-md\" src={ networkImageSource as React.Comp...}": 1,
-              "{networkBadgeSource ? ( <BadgeNetwork src={ networkBadgeSource as React.Compon...}": 1,
-              "{item.caipChainId ? ( <BadgeNetwork src={getNetworkImageSource({ chainId: safe...}": 1,
-              "{!hasViewedCardButton && variant.showBadge ? ( <BadgeStatus testID={WalletView...}": 1,
-              "{BASE_NETWORK_IMAGE ? <BadgeNetwork src={BASE_NETWORK_IMAGE} /> : null}": 1,
-              "{srcChainHex ? ( <Badge variant={BadgeVariant.Network} size={AvatarSize.Xs} is...}": 1,
-              "{getChainHex(pendingPicker.row.tokenAsset) ? ( <Badge variant={BadgeVariant.Ne...}": 1,
-              "{chainHex ? ( <Badge variant={BadgeVariant.Network} size={AvatarSize.Xs} isSca...}": 1,
-              "{rowChainHex ? ( <Badge variant={BadgeVariant.Network} size={AvatarSize.Xs} is...}": 1,
-              "{networkImageSource ? ( <Box twClassName=\"overflow-hidden border border-backgr...}": 1,
-              "{isNotificationEnabled && unreadNotificationCount > 0 ? ( <BadgeStatus status=...}": 1
-            }
-          },
-          "style": {
-            "count": 3,
-            "values": {
-              "{tw.style('self-center')}": 1,
-              "{tw.style('mr-3')}": 1,
-              "{styles.tokenAvatarWrapper}": 1
-            }
-          },
-          "positionAnchorShape": {
-            "count": 2,
-            "values": {
-              "{BadgeWrapperPositionAnchorShape.Circular}": 2
-            }
-          },
-          "badgeContainerProps": {
-            "count": 1,
-            "values": {
-              "{{ testID: 'badge-wrapper-badge' }}": 1
-            }
-          }
-        }
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "deprecatedByLegacyComponent": {}
+    },
+    "mobile": {
+      "filesScanned": 7482,
+      "targetComponent": "BadgeWrapper",
+      "mmds": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "deprecated": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "overall": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
       },
       "deprecatedByLegacyComponent": {}
     }
