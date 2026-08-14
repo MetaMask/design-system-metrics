@@ -1,36 +1,307 @@
 {
   "component": "TextButton",
-  "generatedAt": "2026-08-14T07:59:08.089Z",
+  "generatedAt": "2026-08-03T15:22:03.109Z",
   "projects": {
     "extension": {
-      "filesScanned": 3574,
+      "filesScanned": 3520,
       "targetComponent": "TextButton",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 80,
+        "filesCount": 53,
+        "props": {
+          "onClick": {
+            "count": 51,
+            "values": {
+              "{handleClick}": 3,
+              "{onLearnMore}": 3,
+              "{() => setShowPasskeyTroubleshootModal(true)}": 2,
+              "{() => setShowTroubleshootModal(true)}": 2,
+              "{handleUsePassword}": 2,
+              "{onClickFindTransactionHash}": 2,
+              "{handleContactSupportTrackEvent}": 2,
+              "{handleRepairDevice}": 1,
+              "{handleStillHavingTrouble}": 1,
+              "{canProceed ? onProceed : undefined}": 1,
+              "{toggleReferralInput}": 1,
+              "{openTermsOfUse}": 1,
+              "{openLearnMore}": 1,
+              "{handleMaybeLater}": 1,
+              "{(event: React.MouseEvent) => { event.stopPropagation(); trackEvent( createEve...}": 1,
+              "{(e: React.MouseEvent) => { e.stopPropagation(); trackEvent( createEventBuilde...}": 1,
+              "{() => { global.platform.openTab({ url: ZENDESK_URLS.ACCOUNT_UPGRADE, }); }}": 1,
+              "{() => navigate(PRIVACY_ROUTE)}": 1,
+              "{() => navigate(DEFAULT_ROUTE)}": 1,
+              "{goToPreviousPage}": 1,
+              "{goToNextPage}": 1,
+              "{() => onForgetDevice(device, selectedPath)}": 1,
+              "{(e) => { e.stopPropagation(); // Prevent parent div click /* Handle earn butt...}": 1,
+              "{() => setToggleSrpDetailsModal(true)}": 1,
+              "{onCopy}": 1,
+              "{handleSrpClick}": 1,
+              "{handleLearnHowToStaySafe}": 1,
+              "{handleLearnMoreClick}": 1,
+              "{() => navigate(ONBOARDING_PRIVACY_SETTINGS_ROUTE)}": 1,
+              "{() => { dispatch( toggleNetworkMenu({ isAddingNewNetwork: true, }), ); }}": 1,
+              "{handleOnShowSrpDetailsModal}": 1,
+              "{handleRemindLater}": 1,
+              "{() => { trackEvent( createEventBuilder(MetaMetricsEventName.SupportLinkClicke...}": 1,
+              "{onChangeProvider}": 1,
+              "{handleExpandTokens}": 1,
+              "{toggleVisitSupportDataConsentModal}": 1,
+              "{onRestart}": 1,
+              "{handleReset}": 1,
+              "{() => { navigate(TRANSACTION_SHIELD_MANAGE_PLAN_ROUTE); }}": 1,
+              "{() => { handleViewFullBenefitsClicked(); }}": 1,
+              "{this.onForgotPasswordOrLoginWithDiffMethods}": 1,
+              "{() => { this.ctx.trackEvent( { category: MetaMetricsEventCategory.Navigation,...}": 1
+            }
+          },
+          "className": {
+            "count": 45,
+            "values": {
+              "\"inline\"": 6,
+              "\"min-w-0\"": 5,
+              "\"hover:bg-transparent active:bg-transparent w-fit\"": 4,
+              "\"text-center\"": 4,
+              "\"w-full hover:bg-transparent active:bg-transparent\"": 3,
+              "\"mt-2 flex w-full justify-start text-left\"": 2,
+              "\"text-primary-default\"": 2,
+              "\"hw-list-pagination__button\"": 2,
+              "\"text-text-alternative hover:text-text-alternative hover:decoration-text-alternative hover:bg-transparent\"": 2,
+              "\"min-w-0 hover:bg-transparent active:bg-transparent\"": 1,
+              "\"hover:bg-transparent active:bg-transparent whitespace-nowrap\"": 1,
+              "\"!text-inherit !font-normal underline underline-offset-2 [text-decoration-skip-ink:none] cursor-pointer hover:!text-inherit hover:!font-normal hover:![text-decoration-color:inherit] hover:!underline-offset-2 hover:!cursor-pointer\"": 1,
+              "\"text-center mt-4\"": 1,
+              "{canProceed ? '' : 'text-alternative'}": 1,
+              "\"self-center text-alternative\"": 1,
+              "\"w-full\"": 1,
+              "\"srp-list__show-accounts\"": 1,
+              "\"inline font-normal\"": 1,
+              "\"w-full hover:bg-transparent\"": 1,
+              "\"hover:bg-transparent flex justify-center items-center w-full active:bg-transparent\"": 1,
+              "\"hover:bg-transparent\"": 1,
+              "\"hover:bg-transparent active:bg-transparent w-full text-center\"": 1,
+              "\"justify-start flex\"": 1,
+              "\"mb-4\"": 1
+            }
+          },
+          "asChild": {
+            "count": 34,
+            "values": {
+              "true (shorthand)": 34
+            }
+          },
+          "data-testid": {
+            "count": 31,
+            "values": {
+              "\"confirm-info-row-display-name\"": 2,
+              "\"market-closed-modal-learn-more\"": 1,
+              "\"change-password-passkey-toggle-open-full-screen\"": 1,
+              "{`${flow}-passkey-verifying-open-full-screen`}": 1,
+              "{`${flow}-verify-passkey-use-password`}": 1,
+              "\"scam-warning-proceed\"": 1,
+              "\"add-rewards-account-button\"": 1,
+              "\"passkey-maybe-later-button\"": 1,
+              "{`srp-list-show-accounts-${index}`}": 1,
+              "\"change-in-settings-link\"": 1,
+              "\"basic-functionality-off-review-in-settings\"": 1,
+              "\"basic-functionality-off-go-home\"": 1,
+              "\"hw-list-pagination__prev-button\"": 1,
+              "\"hardware-forget-device-button\"": 1,
+              "\"reveal-seed-quiz-intro-learn-more\"": 1,
+              "\"reveal-seed-quiz-learn-more\"": 1,
+              "\"reveal-seed-quiz-footer-learn-more\"": 1,
+              "\"reveal-seed-copy-button\"": 1,
+              "\"manage-default-settings\"": 1,
+              "\"recovery-phrase-remind-later\"": 1,
+              "\"ramps-change-provider-button\"": 1,
+              "\"ramps-show-all-tokens\"": 1,
+              "\"security-passkey-sidepanel-continue-full-screen\"": 1,
+              "\"qr-sync-start-with-new-qr-code\"": 1,
+              "\"qr-sync-generate-new-qr-code\"": 1,
+              "\"shield-detail-manage-plan-button\"": 1,
+              "\"shield-detail-view-benefits-button\"": 1,
+              "\"unlock-passkey-troubleshoot-button\"": 1,
+              "\"unlock-use-password-button\"": 1,
+              "\"unlock-forgot-password-button\"": 1
+            }
+          },
+          "key": {
+            "count": 27,
+            "values": {
+              "\"terms-link\"": 3,
+              "\"need-help-link\"": 3,
+              "\"terms\"": 2,
+              "\"u2f-error-1\"": 2,
+              "\"here-link\"": 2,
+              "\"learnMore\"": 1,
+              "\"shield-footer-agreement-button\"": 1,
+              "\"link\"": 1,
+              "\"defi-referral-partner-terms\"": 1,
+              "\"u2f-error-2\"": 1,
+              "\"learn-scam-risk\"": 1,
+              "\"secret-recovery-phrase\"": 1,
+              "\"srp-learn-srp\"": 1,
+              "\"chainlist-learn-how-to-stay-safe\"": 1,
+              "\"walletReadyLearn\"": 1,
+              "\"seedPhraseReviewDetails\"": 1,
+              "\"loginErrorGenericDescription\"": 1,
+              "\"onboardingLoginFooterTermsOfUse\"": 1,
+              "\"onboardingLoginFooterPrivacyNotice\"": 1,
+              "\"import-account\"": 1
+            }
+          },
+          "size": {
+            "count": 24,
+            "values": {
+              "{TextButtonSize.BodyMd}": 13,
+              "{TextButtonSize.BodySm}": 10,
+              "{TextButtonSize.BodyXs}": 1
+            }
+          },
+          "color": {
+            "count": 10,
+            "values": {
+              "{TextColor.PrimaryDefault}": 9,
+              "{isRehydrationFlow ? TextColor.TextDefault : TextColor.PrimaryDefault}": 1
+            }
+          },
+          "type": {
+            "count": 8,
+            "values": {
+              "\"button\"": 8
+            }
+          },
+          "[spread]": {
+            "count": 7,
+            "values": {
+              "{linkProps}": 7
+            }
+          },
+          "isDisabled": {
+            "count": 3,
+            "values": {
+              "{!canProceed}": 1,
+              "{isFirstPage}": 1,
+              "{!phraseRevealed}": 1
+            }
+          },
+          "textProps": {
+            "count": 2,
+            "values": {
+              "{{ variant: TextVariant.BodyMd, }}": 1,
+              "{{ variant: TextVariant.BodySm }}": 1
+            }
+          },
+          "style": {
+            "count": 2,
+            "values": {
+              "{{ alignItems: AlignItems.flexStart, }}": 1,
+              "{{ height: '22px', fontSize: '14px', lineHeight: '22px', verticalAlign: 'basel...}": 1
+            }
+          },
+          "isInverse": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "endIconName": {
+            "count": 2,
+            "values": {
+              "{IconName.ArrowRight}": 2
+            }
+          },
+          "endIconProps": {
+            "count": 2,
+            "values": {
+              "{{ size: IconSize.Sm, color: IconColor.IconAlternative, }}": 2
+            }
+          },
+          "startAccessory": {
+            "count": 1,
+            "values": {
+              "{isLoading ? ( <Icon name={IconName.Loading} size={IconSize.Sm} /> ) : ( <img ...}": 1
+            }
+          },
+          "endAccessory": {
+            "count": 1,
+            "values": {
+              "{isError ? ( <Icon name={IconName.Refresh} size={IconSize.Sm} color={IconColor...}": 1
+            }
+          },
+          "disabled": {
+            "count": 1,
+            "values": {
+              "{isLoading}": 1
+            }
+          }
+        }
       },
       "deprecated": {
-        "totalInstances": 29,
-        "filesCount": 20,
+        "totalInstances": 57,
+        "filesCount": 42,
         "props": {
-          "size": {
-            "count": 18,
+          "onClick": {
+            "count": 33,
             "values": {
-              "{ButtonLinkSize.Inherit}": 10,
+              "{setModeToEditAccounts}": 2,
+              "{onAlertLinkClick}": 1,
+              "{onClickSupportLink}": 1,
+              "{(e: { stopPropagation: () => void }) => { e.stopPropagation(); dispatch(showI...}": 1,
+              "{() => connectAccount(address)}": 1,
+              "{() => switchAccount(address)}": 1,
+              "{() => { setCustomNonce(nextNonce); }}": 1,
+              "{updateRpc}": 1,
+              "{switchToInfura}": 1,
+              "{() => { global.platform.openTab({ url: ZENDESK_URLS.USER_GUIDE_DAPPS, }); }}": 1,
+              "{onConfirm}": 1,
+              "{onShowAllPermissionsHandler}": 1,
+              "{handleMetaMaskLinkClick}": 1,
+              "{handleLinkClick}": 1,
+              "{onClick}": 1,
+              "{() => onShowAllPermissions()}": 1,
+              "{handlePortfolioOnClick}": 1,
+              "{() => { onMultiselectSubmit?.( Object.keys(checkedChainIds).filter( (chainId)...}": 1,
+              "{() => { handleToggleAllNetworks(); }}": 1,
+              "{() => { global.platform.openTab({ url: ZENDESK_URLS.UNKNOWN_NETWORK, }); }}": 1,
+              "{() => { setName(suggestedName); }}": 1,
+              "{() => { const chainIdHex = toHex(chainId); if (chainIdHex) { dispatch( setEdi...}": 1,
+              "{() => { setTicker(suggestedTicker); }}": 1,
+              "{() => onClick()}": 1,
+              "{() => onMaxButtonClick(balanceAmount)}": 1,
+              "{() => { dispatch(setWasTxDeclined(false)); }}": 1,
+              "{onSwitch}": 1,
+              "{() => { global.platform.openTab({ url: ZENDESK_URLS.ACCOUNT_UPGRADE, }); }}": 1,
+              "{updateToMax}": 1,
+              "{dismissAlert}": 1,
+              "{() => { trackEvent( createEventBuilder( 'Clicked \"Gas Fees: Learn More\" Link'...}": 1,
+              "{(e) => { e.preventDefault(); dispatch(setTransactionSettingsOpened(true)); }}": 1
+            }
+          },
+          "size": {
+            "count": 28,
+            "values": {
+              "{ButtonLinkSize.Inherit}": 16,
+              "{ButtonLinkSize.Auto}": 3,
               "{Size.inherit}": 3,
               "{BUTTON_SIZES.INHERIT}": 3,
               "{ButtonLinkSize.Lg}": 1,
+              "{ButtonLinkSize.Sm}": 1,
               "{Size.auto}": 1
             }
           },
           "href": {
-            "count": 18,
+            "count": 26,
             "values": {
               "{safeWebsite.toString()}": 2,
               "{url}": 2,
               "{ZENDESK_URLS.IMPORTED_ACCOUNTS_PRIVATE_KEY}": 2,
               "{blockExplorerLink}": 2,
+              "{ZENDESK_URLS.UPDATE_VERSION}": 2,
+              "{SECURITY_PROVIDER_CONFIG[provider]?.url}": 1,
+              "{reportUrl ?? ZENDESK_URLS.SUPPORT_URL}": 1,
+              "{ZENDESK_URLS.NETWORK_DEPRECATED}": 1,
               "{ZENDESK_URLS.CUSTOMIZE_NONCE}": 1,
               "{TERMS_OF_USE_LINK}": 1,
               "{href}": 1,
@@ -38,23 +309,51 @@
               "\"https://consensys.io/privacy-policy\"": 1,
               "{ZENDESK_URLS.IMPORTED_ACCOUNT_JSON}": 1,
               "{link}": 1,
+              "{SMART_TRANSACTIONS_LEARN_MORE_URL}": 1,
+              "{ZENDESK_URLS.ACCOUNT_UPGRADE}": 1,
+              "{ZENDESK_URLS.SPEEDUP_CANCEL}": 1,
               "\"https://snaps.metamask.io/\"": 1,
               "{ZENDESK_URLS.GAS_FEES}": 1,
               "{ZENDESK_URLS.SWAPS_USER_GUIDE}": 1
             }
           },
           "target": {
-            "count": 16,
+            "count": 22,
             "values": {
-              "\"_blank\"": 16
+              "\"_blank\"": 22
+            }
+          },
+          "key": {
+            "count": 14,
+            "values": {
+              "\"link\"": 2,
+              "\"update-metamask-link\"": 2,
+              "{`security-provider-button-link-${provider}`}": 1,
+              "{`security-provider-button-supporturl-${provider}`}": 1,
+              "\"import-token-fake-token-warning\"": 1,
+              "\"updateRpc\"": 1,
+              "\"switchToInfura\"": 1,
+              "\"permission-connect-footer-learn-more-link\"": 1,
+              "\"privacyNoticeTermsOfUseLink\"": 1,
+              "\"importAccountWithSocialMsgLearnMore\"": 1,
+              "{origin}": 1,
+              "\"gas-fees-learn-more\"": 1
+            }
+          },
+          "rel": {
+            "count": 13,
+            "values": {
+              "\"noopener noreferrer\"": 11,
+              "\"noreferrer noopener\"": 2
             }
           },
           "className": {
-            "count": 12,
+            "count": 13,
             "values": {
               "\"snap-ui-renderer__link\"": 3,
               "\"connected-accounts-list__account-status-link\"": 2,
               "\"confirm-add-suggested-nft__nft-name\"": 2,
+              "\"nft-default__button\"": 1,
               "\"customize-nonce-modal__link\"": 1,
               "\"customize-nonce-modal__reset\"": 1,
               "\"snap-privacy-warning__content__terms-link\"": 1,
@@ -62,57 +361,64 @@
               "\"snap-external-pill\"": 1
             }
           },
-          "onClick": {
+          "as": {
             "count": 12,
             "values": {
-              "{() => connectAccount(address)}": 1,
-              "{() => switchAccount(address)}": 1,
-              "{() => { setCustomNonce(nextNonce); }}": 1,
-              "{onConfirm}": 1,
-              "{onShowAllPermissionsHandler}": 1,
-              "{handleMetaMaskLinkClick}": 1,
-              "{handleLinkClick}": 1,
-              "{onClick}": 1,
-              "{() => onShowAllPermissions()}": 1,
-              "{() => onClick()}": 1,
-              "{() => { trackEvent( createEventBuilder( 'Clicked \"Gas Fees: Learn More\" Link'...}": 1,
-              "{(e) => { e.preventDefault(); dispatch(setTransactionSettingsOpened(true)); }}": 1
+              "\"a\"": 9,
+              "\"button\"": 3
             }
           },
-          "rel": {
-            "count": 8,
+          "variant": {
+            "count": 12,
             "values": {
-              "\"noopener noreferrer\"": 8
+              "{TextVariant.bodySm}": 7,
+              "{TextVariant.bodyXsMedium}": 2,
+              "{TextVariant.bodyMdMedium}": 2,
+              "{TextVariant.bodyMd}": 1
             }
           },
           "externalLink": {
-            "count": 6,
+            "count": 10,
             "values": {
-              "true (shorthand)": 5,
+              "true (shorthand)": 9,
               "{!isMetaMaskUrl}": 1
             }
           },
-          "as": {
-            "count": 5,
+          "data-testid": {
+            "count": 8,
             "values": {
-              "\"a\"": 5
+              "\"edit\"": 3,
+              "\"confirm-alert-modal-review-all-alerts\"": 1,
+              "\"alert-provider-report-link\"": 1,
+              "\"customize-nonce-reset\"": 1,
+              "\"portfolio-link\"": 1,
+              "{`switch_account-${name}`}": 1
+            }
+          },
+          "style": {
+            "count": 8,
+            "values": {
+              "{{ verticalAlign: 'bottom' }}": 2,
+              "{{ // Prevents the link from taking up the full width of the parent. width: 'f...}": 2,
+              "{{ verticalAlign: 'baseline' }}": 2,
+              "{{ alignSelf: AlignItems.flexStart, paddingInline: 16, }}": 1,
+              "{{ height: 'unset', verticalAlign: 'unset' }}": 1
+            }
+          },
+          "color": {
+            "count": 8,
+            "values": {
+              "{TextColor.primaryDefault}": 7,
+              "{TextColor.infoDefault}": 1
             }
           },
           "textProps": {
-            "count": 4,
+            "count": 6,
             "values": {
+              "{{ variant: TextVariant.bodyMd, alignItems: AlignItems.flexStart, }}": 2,
               "{{ display: Display.Inline, }}": 2,
               "{{ width: BlockSize.Full }}": 1,
-              "{{ variant: TextVariant.bodyMd, alignItems: AlignItems.flexStart, }}": 1
-            }
-          },
-          "key": {
-            "count": 4,
-            "values": {
-              "\"privacyNoticeTermsOfUseLink\"": 1,
-              "\"importAccountWithSocialMsgLearnMore\"": 1,
-              "{origin}": 1,
-              "\"gas-fees-learn-more\"": 1
+              "{{ variant: TextVariant.bodyMdMedium }}": 1
             }
           },
           "display": {
@@ -121,11 +427,28 @@
               "{Display.Inline}": 3
             }
           },
-          "data-testid": {
+          "paddingLeft": {
+            "count": 3,
+            "values": {
+              "1": 3
+            }
+          },
+          "block": {
             "count": 2,
             "values": {
-              "\"customize-nonce-reset\"": 1,
-              "\"edit\"": 1
+              "true (shorthand)": 2
+            }
+          },
+          "paddingTop": {
+            "count": 2,
+            "values": {
+              "0": 2
+            }
+          },
+          "paddingBottom": {
+            "count": 2,
+            "values": {
+              "0": 2
             }
           },
           "overflowWrap": {
@@ -140,22 +463,16 @@
               "true (shorthand)": 2
             }
           },
-          "style": {
+          "endIconName": {
             "count": 2,
             "values": {
-              "{{ // Prevents the link from taking up the full width of the parent. width: 'f...}": 2
+              "{IconName.Export}": 2
             }
           },
-          "color": {
+          "paddingRight": {
             "count": 2,
             "values": {
-              "{TextColor.primaryDefault}": 2
-            }
-          },
-          "variant": {
-            "count": 2,
-            "values": {
-              "{TextVariant.bodySm}": 2
+              "1": 2
             }
           },
           "title": {
@@ -164,10 +481,16 @@
               "{address}": 2
             }
           },
-          "block": {
+          "marginTop": {
             "count": 1,
             "values": {
-              "true (shorthand)": 1
+              "4": 1
+            }
+          },
+          "fontWeight": {
+            "count": 1,
+            "values": {
+              "{FontWeight.Normal}": 1
             }
           },
           "width": {
@@ -188,35 +511,249 @@
               "{rest}": 1
             }
           },
-          "endIconName": {
+          "disabled": {
             "count": 1,
             "values": {
-              "{IconName.Export}": 1
+              "{Object.values(checkedChainIds).every((v) => !v)}": 1
+            }
+          },
+          "marginLeft": {
+            "count": 1,
+            "values": {
+              "2": 1
             }
           }
         }
       },
       "overall": {
-        "totalInstances": 29,
-        "filesCount": 20,
+        "totalInstances": 137,
+        "filesCount": 95,
         "props": {
-          "size": {
-            "count": 18,
+          "onClick": {
+            "count": 84,
             "values": {
-              "{ButtonLinkSize.Inherit}": 10,
+              "{handleClick}": 3,
+              "{onLearnMore}": 3,
+              "{() => setShowPasskeyTroubleshootModal(true)}": 2,
+              "{() => setShowTroubleshootModal(true)}": 2,
+              "{handleUsePassword}": 2,
+              "{() => { global.platform.openTab({ url: ZENDESK_URLS.ACCOUNT_UPGRADE, }); }}": 2,
+              "{setModeToEditAccounts}": 2,
+              "{onClickFindTransactionHash}": 2,
+              "{handleContactSupportTrackEvent}": 2,
+              "{onAlertLinkClick}": 1,
+              "{onClickSupportLink}": 1,
+              "{(e: { stopPropagation: () => void }) => { e.stopPropagation(); dispatch(showI...}": 1,
+              "{() => connectAccount(address)}": 1,
+              "{() => switchAccount(address)}": 1,
+              "{() => { setCustomNonce(nextNonce); }}": 1,
+              "{handleRepairDevice}": 1,
+              "{updateRpc}": 1,
+              "{switchToInfura}": 1,
+              "{handleStillHavingTrouble}": 1,
+              "{() => { global.platform.openTab({ url: ZENDESK_URLS.USER_GUIDE_DAPPS, }); }}": 1,
+              "{canProceed ? onProceed : undefined}": 1,
+              "{onConfirm}": 1,
+              "{toggleReferralInput}": 1,
+              "{openTermsOfUse}": 1,
+              "{openLearnMore}": 1,
+              "{handleMaybeLater}": 1,
+              "{onShowAllPermissionsHandler}": 1,
+              "{handleMetaMaskLinkClick}": 1,
+              "{handleLinkClick}": 1,
+              "{onClick}": 1,
+              "{() => onShowAllPermissions()}": 1,
+              "{handlePortfolioOnClick}": 1,
+              "{() => { onMultiselectSubmit?.( Object.keys(checkedChainIds).filter( (chainId)...}": 1,
+              "{() => { handleToggleAllNetworks(); }}": 1,
+              "{(event: React.MouseEvent) => { event.stopPropagation(); trackEvent( createEve...}": 1,
+              "{() => { global.platform.openTab({ url: ZENDESK_URLS.UNKNOWN_NETWORK, }); }}": 1,
+              "{() => { setName(suggestedName); }}": 1,
+              "{() => { const chainIdHex = toHex(chainId); if (chainIdHex) { dispatch( setEdi...}": 1,
+              "{() => { setTicker(suggestedTicker); }}": 1,
+              "{() => onClick()}": 1,
+              "{(e: React.MouseEvent) => { e.stopPropagation(); trackEvent( createEventBuilde...}": 1,
+              "{() => navigate(PRIVACY_ROUTE)}": 1,
+              "{() => navigate(DEFAULT_ROUTE)}": 1,
+              "{() => onMaxButtonClick(balanceAmount)}": 1,
+              "{() => { dispatch(setWasTxDeclined(false)); }}": 1,
+              "{onSwitch}": 1,
+              "{updateToMax}": 1,
+              "{dismissAlert}": 1,
+              "{goToPreviousPage}": 1,
+              "{goToNextPage}": 1,
+              "{() => onForgetDevice(device, selectedPath)}": 1,
+              "{(e) => { e.stopPropagation(); // Prevent parent div click /* Handle earn butt...}": 1,
+              "{() => setToggleSrpDetailsModal(true)}": 1,
+              "{onCopy}": 1,
+              "{handleSrpClick}": 1,
+              "{handleLearnHowToStaySafe}": 1,
+              "{handleLearnMoreClick}": 1,
+              "{() => navigate(ONBOARDING_PRIVACY_SETTINGS_ROUTE)}": 1,
+              "{() => { dispatch( toggleNetworkMenu({ isAddingNewNetwork: true, }), ); }}": 1,
+              "{handleOnShowSrpDetailsModal}": 1,
+              "{handleRemindLater}": 1,
+              "{() => { trackEvent( createEventBuilder(MetaMetricsEventName.SupportLinkClicke...}": 1,
+              "{onChangeProvider}": 1,
+              "{handleExpandTokens}": 1,
+              "{toggleVisitSupportDataConsentModal}": 1,
+              "{onRestart}": 1,
+              "{handleReset}": 1,
+              "{() => { navigate(TRANSACTION_SHIELD_MANAGE_PLAN_ROUTE); }}": 1,
+              "{() => { handleViewFullBenefitsClicked(); }}": 1,
+              "{() => { trackEvent( createEventBuilder( 'Clicked \"Gas Fees: Learn More\" Link'...}": 1,
+              "{(e) => { e.preventDefault(); dispatch(setTransactionSettingsOpened(true)); }}": 1,
+              "{this.onForgotPasswordOrLoginWithDiffMethods}": 1,
+              "{() => { this.ctx.trackEvent( { category: MetaMetricsEventCategory.Navigation,...}": 1
+            }
+          },
+          "className": {
+            "count": 58,
+            "values": {
+              "\"inline\"": 6,
+              "\"min-w-0\"": 5,
+              "\"hover:bg-transparent active:bg-transparent w-fit\"": 4,
+              "\"text-center\"": 4,
+              "\"snap-ui-renderer__link\"": 3,
+              "\"w-full hover:bg-transparent active:bg-transparent\"": 3,
+              "\"mt-2 flex w-full justify-start text-left\"": 2,
+              "\"connected-accounts-list__account-status-link\"": 2,
+              "\"text-primary-default\"": 2,
+              "\"confirm-add-suggested-nft__nft-name\"": 2,
+              "\"hw-list-pagination__button\"": 2,
+              "\"text-text-alternative hover:text-text-alternative hover:decoration-text-alternative hover:bg-transparent\"": 2,
+              "\"nft-default__button\"": 1,
+              "\"min-w-0 hover:bg-transparent active:bg-transparent\"": 1,
+              "\"hover:bg-transparent active:bg-transparent whitespace-nowrap\"": 1,
+              "\"customize-nonce-modal__link\"": 1,
+              "\"customize-nonce-modal__reset\"": 1,
+              "\"!text-inherit !font-normal underline underline-offset-2 [text-decoration-skip-ink:none] cursor-pointer hover:!text-inherit hover:!font-normal hover:![text-decoration-color:inherit] hover:!underline-offset-2 hover:!cursor-pointer\"": 1,
+              "\"text-center mt-4\"": 1,
+              "{canProceed ? '' : 'text-alternative'}": 1,
+              "\"self-center text-alternative\"": 1,
+              "\"w-full\"": 1,
+              "\"snap-privacy-warning__content__terms-link\"": 1,
+              "\"snap-ui-markdown__link\"": 1,
+              "\"snap-external-pill\"": 1,
+              "\"srp-list__show-accounts\"": 1,
+              "\"inline font-normal\"": 1,
+              "\"w-full hover:bg-transparent\"": 1,
+              "\"hover:bg-transparent flex justify-center items-center w-full active:bg-transparent\"": 1,
+              "\"hover:bg-transparent\"": 1,
+              "\"hover:bg-transparent active:bg-transparent w-full text-center\"": 1,
+              "\"justify-start flex\"": 1,
+              "\"mb-4\"": 1
+            }
+          },
+          "size": {
+            "count": 52,
+            "values": {
+              "{ButtonLinkSize.Inherit}": 16,
+              "{TextButtonSize.BodyMd}": 13,
+              "{TextButtonSize.BodySm}": 10,
+              "{ButtonLinkSize.Auto}": 3,
               "{Size.inherit}": 3,
               "{BUTTON_SIZES.INHERIT}": 3,
               "{ButtonLinkSize.Lg}": 1,
+              "{TextButtonSize.BodyXs}": 1,
+              "{ButtonLinkSize.Sm}": 1,
               "{Size.auto}": 1
             }
           },
+          "key": {
+            "count": 41,
+            "values": {
+              "\"terms-link\"": 3,
+              "\"link\"": 3,
+              "\"need-help-link\"": 3,
+              "\"terms\"": 2,
+              "\"u2f-error-1\"": 2,
+              "\"update-metamask-link\"": 2,
+              "\"here-link\"": 2,
+              "{`security-provider-button-link-${provider}`}": 1,
+              "{`security-provider-button-supporturl-${provider}`}": 1,
+              "\"import-token-fake-token-warning\"": 1,
+              "\"updateRpc\"": 1,
+              "\"switchToInfura\"": 1,
+              "\"permission-connect-footer-learn-more-link\"": 1,
+              "\"learnMore\"": 1,
+              "\"privacyNoticeTermsOfUseLink\"": 1,
+              "\"importAccountWithSocialMsgLearnMore\"": 1,
+              "{origin}": 1,
+              "\"shield-footer-agreement-button\"": 1,
+              "\"defi-referral-partner-terms\"": 1,
+              "\"u2f-error-2\"": 1,
+              "\"learn-scam-risk\"": 1,
+              "\"secret-recovery-phrase\"": 1,
+              "\"srp-learn-srp\"": 1,
+              "\"chainlist-learn-how-to-stay-safe\"": 1,
+              "\"walletReadyLearn\"": 1,
+              "\"seedPhraseReviewDetails\"": 1,
+              "\"loginErrorGenericDescription\"": 1,
+              "\"onboardingLoginFooterTermsOfUse\"": 1,
+              "\"onboardingLoginFooterPrivacyNotice\"": 1,
+              "\"gas-fees-learn-more\"": 1,
+              "\"import-account\"": 1
+            }
+          },
+          "data-testid": {
+            "count": 39,
+            "values": {
+              "\"edit\"": 3,
+              "\"confirm-info-row-display-name\"": 2,
+              "\"confirm-alert-modal-review-all-alerts\"": 1,
+              "\"alert-provider-report-link\"": 1,
+              "\"market-closed-modal-learn-more\"": 1,
+              "\"change-password-passkey-toggle-open-full-screen\"": 1,
+              "\"customize-nonce-reset\"": 1,
+              "{`${flow}-passkey-verifying-open-full-screen`}": 1,
+              "{`${flow}-verify-passkey-use-password`}": 1,
+              "\"scam-warning-proceed\"": 1,
+              "\"add-rewards-account-button\"": 1,
+              "\"passkey-maybe-later-button\"": 1,
+              "\"portfolio-link\"": 1,
+              "{`srp-list-show-accounts-${index}`}": 1,
+              "\"change-in-settings-link\"": 1,
+              "\"basic-functionality-off-review-in-settings\"": 1,
+              "\"basic-functionality-off-go-home\"": 1,
+              "{`switch_account-${name}`}": 1,
+              "\"hw-list-pagination__prev-button\"": 1,
+              "\"hardware-forget-device-button\"": 1,
+              "\"reveal-seed-quiz-intro-learn-more\"": 1,
+              "\"reveal-seed-quiz-learn-more\"": 1,
+              "\"reveal-seed-quiz-footer-learn-more\"": 1,
+              "\"reveal-seed-copy-button\"": 1,
+              "\"manage-default-settings\"": 1,
+              "\"recovery-phrase-remind-later\"": 1,
+              "\"ramps-change-provider-button\"": 1,
+              "\"ramps-show-all-tokens\"": 1,
+              "\"security-passkey-sidepanel-continue-full-screen\"": 1,
+              "\"qr-sync-start-with-new-qr-code\"": 1,
+              "\"qr-sync-generate-new-qr-code\"": 1,
+              "\"shield-detail-manage-plan-button\"": 1,
+              "\"shield-detail-view-benefits-button\"": 1,
+              "\"unlock-passkey-troubleshoot-button\"": 1,
+              "\"unlock-use-password-button\"": 1,
+              "\"unlock-forgot-password-button\"": 1
+            }
+          },
+          "asChild": {
+            "count": 34,
+            "values": {
+              "true (shorthand)": 34
+            }
+          },
           "href": {
-            "count": 18,
+            "count": 26,
             "values": {
               "{safeWebsite.toString()}": 2,
               "{url}": 2,
               "{ZENDESK_URLS.IMPORTED_ACCOUNTS_PRIVATE_KEY}": 2,
               "{blockExplorerLink}": 2,
+              "{ZENDESK_URLS.UPDATE_VERSION}": 2,
+              "{SECURITY_PROVIDER_CONFIG[provider]?.url}": 1,
+              "{reportUrl ?? ZENDESK_URLS.SUPPORT_URL}": 1,
+              "{ZENDESK_URLS.NETWORK_DEPRECATED}": 1,
               "{ZENDESK_URLS.CUSTOMIZE_NONCE}": 1,
               "{TERMS_OF_USE_LINK}": 1,
               "{href}": 1,
@@ -224,81 +761,108 @@
               "\"https://consensys.io/privacy-policy\"": 1,
               "{ZENDESK_URLS.IMPORTED_ACCOUNT_JSON}": 1,
               "{link}": 1,
+              "{SMART_TRANSACTIONS_LEARN_MORE_URL}": 1,
+              "{ZENDESK_URLS.ACCOUNT_UPGRADE}": 1,
+              "{ZENDESK_URLS.SPEEDUP_CANCEL}": 1,
               "\"https://snaps.metamask.io/\"": 1,
               "{ZENDESK_URLS.GAS_FEES}": 1,
               "{ZENDESK_URLS.SWAPS_USER_GUIDE}": 1
             }
           },
           "target": {
-            "count": 16,
+            "count": 22,
             "values": {
-              "\"_blank\"": 16
+              "\"_blank\"": 22
             }
           },
-          "className": {
-            "count": 12,
+          "color": {
+            "count": 18,
             "values": {
-              "\"snap-ui-renderer__link\"": 3,
-              "\"connected-accounts-list__account-status-link\"": 2,
-              "\"confirm-add-suggested-nft__nft-name\"": 2,
-              "\"customize-nonce-modal__link\"": 1,
-              "\"customize-nonce-modal__reset\"": 1,
-              "\"snap-privacy-warning__content__terms-link\"": 1,
-              "\"snap-ui-markdown__link\"": 1,
-              "\"snap-external-pill\"": 1
-            }
-          },
-          "onClick": {
-            "count": 12,
-            "values": {
-              "{() => connectAccount(address)}": 1,
-              "{() => switchAccount(address)}": 1,
-              "{() => { setCustomNonce(nextNonce); }}": 1,
-              "{onConfirm}": 1,
-              "{onShowAllPermissionsHandler}": 1,
-              "{handleMetaMaskLinkClick}": 1,
-              "{handleLinkClick}": 1,
-              "{onClick}": 1,
-              "{() => onShowAllPermissions()}": 1,
-              "{() => onClick()}": 1,
-              "{() => { trackEvent( createEventBuilder( 'Clicked \"Gas Fees: Learn More\" Link'...}": 1,
-              "{(e) => { e.preventDefault(); dispatch(setTransactionSettingsOpened(true)); }}": 1
+              "{TextColor.PrimaryDefault}": 9,
+              "{TextColor.primaryDefault}": 7,
+              "{TextColor.infoDefault}": 1,
+              "{isRehydrationFlow ? TextColor.TextDefault : TextColor.PrimaryDefault}": 1
             }
           },
           "rel": {
-            "count": 8,
+            "count": 13,
             "values": {
-              "\"noopener noreferrer\"": 8
-            }
-          },
-          "externalLink": {
-            "count": 6,
-            "values": {
-              "true (shorthand)": 5,
-              "{!isMetaMaskUrl}": 1
+              "\"noopener noreferrer\"": 11,
+              "\"noreferrer noopener\"": 2
             }
           },
           "as": {
-            "count": 5,
+            "count": 12,
             "values": {
-              "\"a\"": 5
+              "\"a\"": 9,
+              "\"button\"": 3
+            }
+          },
+          "variant": {
+            "count": 12,
+            "values": {
+              "{TextVariant.bodySm}": 7,
+              "{TextVariant.bodyXsMedium}": 2,
+              "{TextVariant.bodyMdMedium}": 2,
+              "{TextVariant.bodyMd}": 1
+            }
+          },
+          "externalLink": {
+            "count": 10,
+            "values": {
+              "true (shorthand)": 9,
+              "{!isMetaMaskUrl}": 1
+            }
+          },
+          "style": {
+            "count": 10,
+            "values": {
+              "{{ verticalAlign: 'bottom' }}": 2,
+              "{{ // Prevents the link from taking up the full width of the parent. width: 'f...}": 2,
+              "{{ verticalAlign: 'baseline' }}": 2,
+              "{{ alignItems: AlignItems.flexStart, }}": 1,
+              "{{ alignSelf: AlignItems.flexStart, paddingInline: 16, }}": 1,
+              "{{ height: '22px', fontSize: '14px', lineHeight: '22px', verticalAlign: 'basel...}": 1,
+              "{{ height: 'unset', verticalAlign: 'unset' }}": 1
             }
           },
           "textProps": {
-            "count": 4,
+            "count": 8,
             "values": {
+              "{{ variant: TextVariant.bodyMd, alignItems: AlignItems.flexStart, }}": 2,
               "{{ display: Display.Inline, }}": 2,
+              "{{ variant: TextVariant.BodyMd, }}": 1,
+              "{{ variant: TextVariant.BodySm }}": 1,
               "{{ width: BlockSize.Full }}": 1,
-              "{{ variant: TextVariant.bodyMd, alignItems: AlignItems.flexStart, }}": 1
+              "{{ variant: TextVariant.bodyMdMedium }}": 1
             }
           },
-          "key": {
+          "type": {
+            "count": 8,
+            "values": {
+              "\"button\"": 8
+            }
+          },
+          "[spread]": {
+            "count": 8,
+            "values": {
+              "{linkProps}": 7,
+              "{rest}": 1
+            }
+          },
+          "endIconName": {
             "count": 4,
             "values": {
-              "\"privacyNoticeTermsOfUseLink\"": 1,
-              "\"importAccountWithSocialMsgLearnMore\"": 1,
-              "{origin}": 1,
-              "\"gas-fees-learn-more\"": 1
+              "{IconName.Export}": 2,
+              "{IconName.ArrowRight}": 2
+            }
+          },
+          "isDisabled": {
+            "count": 3,
+            "values": {
+              "{!canProceed}": 1,
+              "{isFirstPage}": 1,
+              "{!phraseRevealed}": 1
             }
           },
           "display": {
@@ -307,11 +871,35 @@
               "{Display.Inline}": 3
             }
           },
-          "data-testid": {
+          "paddingLeft": {
+            "count": 3,
+            "values": {
+              "1": 3
+            }
+          },
+          "block": {
             "count": 2,
             "values": {
-              "\"customize-nonce-reset\"": 1,
-              "\"edit\"": 1
+              "true (shorthand)": 2
+            }
+          },
+          "paddingTop": {
+            "count": 2,
+            "values": {
+              "0": 2
+            }
+          },
+          "paddingBottom": {
+            "count": 2,
+            "values": {
+              "0": 2
+            }
+          },
+          "disabled": {
+            "count": 2,
+            "values": {
+              "{isLoading}": 1,
+              "{Object.values(checkedChainIds).every((v) => !v)}": 1
             }
           },
           "overflowWrap": {
@@ -326,22 +914,16 @@
               "true (shorthand)": 2
             }
           },
-          "style": {
+          "paddingRight": {
             "count": 2,
             "values": {
-              "{{ // Prevents the link from taking up the full width of the parent. width: 'f...}": 2
+              "1": 2
             }
           },
-          "color": {
+          "isInverse": {
             "count": 2,
             "values": {
-              "{TextColor.primaryDefault}": 2
-            }
-          },
-          "variant": {
-            "count": 2,
-            "values": {
-              "{TextVariant.bodySm}": 2
+              "true (shorthand)": 2
             }
           },
           "title": {
@@ -350,10 +932,34 @@
               "{address}": 2
             }
           },
-          "block": {
+          "endIconProps": {
+            "count": 2,
+            "values": {
+              "{{ size: IconSize.Sm, color: IconColor.IconAlternative, }}": 2
+            }
+          },
+          "marginTop": {
             "count": 1,
             "values": {
-              "true (shorthand)": 1
+              "4": 1
+            }
+          },
+          "fontWeight": {
+            "count": 1,
+            "values": {
+              "{FontWeight.Normal}": 1
+            }
+          },
+          "startAccessory": {
+            "count": 1,
+            "values": {
+              "{isLoading ? ( <Icon name={IconName.Loading} size={IconSize.Sm} /> ) : ( <img ...}": 1
+            }
+          },
+          "endAccessory": {
+            "count": 1,
+            "values": {
+              "{isError ? ( <Icon name={IconName.Refresh} size={IconSize.Sm} color={IconColor...}": 1
             }
           },
           "width": {
@@ -368,31 +974,58 @@
               "{TextAlign.End}": 1
             }
           },
-          "[spread]": {
+          "marginLeft": {
             "count": 1,
             "values": {
-              "{rest}": 1
-            }
-          },
-          "endIconName": {
-            "count": 1,
-            "values": {
-              "{IconName.Export}": 1
+              "2": 1
             }
           }
         }
       },
       "deprecatedByLegacyComponent": {
-        "ButtonLink": 29
+        "ButtonLink": 57
       }
     },
     "mobile": {
-      "filesScanned": 7573,
+      "filesScanned": 7459,
       "targetComponent": "TextButton",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 8,
+        "filesCount": 7,
+        "props": {
+          "onPress": {
+            "count": 8,
+            "values": {
+              "{onLearnMore}": 3,
+              "{toggleContent}": 1,
+              "{handleHeaderCancelPress}": 1,
+              "{link.onPress}": 1,
+              "{handleTermsPress}": 1,
+              "{() => navigation.navigate( Routes.REWARDS_ONDO_CAMPAIGN_PORTFOLIO_VIEW, { cam...}": 1
+            }
+          },
+          "testID": {
+            "count": 5,
+            "values": {
+              "{ExportCredentialsIds.LEARN_MORE_BUTTON}": 3,
+              "{EARN_WITHDRAW_INPUT_VIEW_CANCEL_BUTTON_TEST_ID}": 1,
+              "{link.testID}": 1
+            }
+          },
+          "twClassName": {
+            "count": 3,
+            "values": {
+              "\"w-full text-center flex items-center justify-center\"": 2,
+              "\"w-full text-center flex items-center justify-center self-center\"": 1
+            }
+          },
+          "variant": {
+            "count": 1,
+            "values": {
+              "{TextVariant.ButtonLabelMd}": 1
+            }
+          }
+        }
       },
       "deprecated": {
         "totalInstances": 0,
@@ -400,9 +1033,42 @@
         "props": {}
       },
       "overall": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 8,
+        "filesCount": 7,
+        "props": {
+          "onPress": {
+            "count": 8,
+            "values": {
+              "{onLearnMore}": 3,
+              "{toggleContent}": 1,
+              "{handleHeaderCancelPress}": 1,
+              "{link.onPress}": 1,
+              "{handleTermsPress}": 1,
+              "{() => navigation.navigate( Routes.REWARDS_ONDO_CAMPAIGN_PORTFOLIO_VIEW, { cam...}": 1
+            }
+          },
+          "testID": {
+            "count": 5,
+            "values": {
+              "{ExportCredentialsIds.LEARN_MORE_BUTTON}": 3,
+              "{EARN_WITHDRAW_INPUT_VIEW_CANCEL_BUTTON_TEST_ID}": 1,
+              "{link.testID}": 1
+            }
+          },
+          "twClassName": {
+            "count": 3,
+            "values": {
+              "\"w-full text-center flex items-center justify-center\"": 2,
+              "\"w-full text-center flex items-center justify-center self-center\"": 1
+            }
+          },
+          "variant": {
+            "count": 1,
+            "values": {
+              "{TextVariant.ButtonLabelMd}": 1
+            }
+          }
+        }
       },
       "deprecatedByLegacyComponent": {}
     }

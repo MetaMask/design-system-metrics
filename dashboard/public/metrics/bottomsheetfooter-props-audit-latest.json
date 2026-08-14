@@ -1,9 +1,9 @@
 {
   "component": "BottomSheetFooter",
-  "generatedAt": "2026-08-14T07:58:29.136Z",
+  "generatedAt": "2026-08-03T15:13:28.323Z",
   "projects": {
     "extension": {
-      "filesScanned": 3574,
+      "filesScanned": 3520,
       "targetComponent": "BottomSheetFooter",
       "mmds": {
         "totalInstances": 0,
@@ -23,24 +23,259 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 7573,
+      "filesScanned": 7459,
       "targetComponent": "BottomSheetFooter",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 29,
+        "filesCount": 27,
+        "props": {
+          "primaryButtonProps": {
+            "count": 29,
+            "values": {
+              "{primaryButtonProps}": 9,
+              "{{ children: strings('bridge.cancel'), onPress: handleClose, isDisabled: loadi...}": 2,
+              "{{ children: strings('bridge.batch_sell_swap_instead'), onPress: handleSwapIns...}": 1,
+              "{footerButtonProps.primaryButtonProps}": 1,
+              "{{ children: strings('bridge.got_it'), onPress: handleClose, testID: 'footer-p...}": 1,
+              "{{ size: ButtonSize.Lg, children: strings('money.metamask_card.link_card_sheet...}": 1,
+              "{confirmButtonProps}": 1,
+              "{doneButtonProps}": 1,
+              "{setButtonProps}": 1,
+              "{{ children: strings('perps.tooltips.got_it_button'), onPress: handleGotItPres...}": 1,
+              "{{ children: strings('perps.add_funds'), onPress: handleAddFundsPress, size: B...}": 1,
+              "{{ size: ButtonSize.Lg, onPress: handleConfirm, children: strings('perps.order...}": 1,
+              "{{ children: strings('perps.order.limit_price_modal.set'), onPress: handleConf...}": 1,
+              "{{ children: strings('perps.deposit.quote_expired_modal.get_new_quote'), onPre...}": 1,
+              "{{ children: strings('predict.withdraw.unavailable_got_it'), onPress: closeShe...}": 1,
+              "{{ children: strings('support_consent.confirm'), onPress: handleConfirm, testI...}": 1,
+              "{{ children: strings('rwa.unavailable.button'), onPress: closeSheet, }}": 1,
+              "{{ children: strings('share_token.share'), onPress: handleNativeShare, size: B...}": 1,
+              "{deleteButtonProps}": 1,
+              "{{ size: ButtonSize.Lg, children: buttonText ?? strings('browser.got_it'), onP...}": 1
+            }
+          },
+          "buttonsAlignment": {
+            "count": 12,
+            "values": {
+              "{ButtonsAlignment.Horizontal}": 11,
+              "{ButtonsAlignment.Vertical}": 1
+            }
+          },
+          "twClassName": {
+            "count": 12,
+            "values": {
+              "\"pt-6\"": 6,
+              "\"pt-4\"": 2,
+              "\"px-4\"": 2,
+              "\"px-4 pt-4 pb-6\"": 1,
+              "\"px-4 pt-6\"": 1
+            }
+          },
+          "secondaryButtonProps": {
+            "count": 10,
+            "values": {
+              "{secondaryButtonProps}": 3,
+              "{{ children: strings('bridge.proceed'), onPress: handleProceed, isDisabled: lo...}": 2,
+              "{cancelButtonProps}": 2,
+              "{footerButtonProps.secondaryButtonProps}": 1,
+              "{{ children: strings('perps.withdraw'), onPress: handleWithdrawPress, size: Bu...}": 1,
+              "{{ children: strings('support_consent.reject'), onPress: handleReject, testID:...}": 1
+            }
+          },
+          "style": {
+            "count": 4,
+            "values": {
+              "{styles.footer}": 2,
+              "{tw.style('px-4')}": 1,
+              "{tw.style({ paddingBottom: footerText ? 0 : insets.bottom })}": 1
+            }
+          },
+          "testID": {
+            "count": 1,
+            "values": {
+              "\"perps-tooltip-bottom-sheet-footer\"": 1
+            }
+          }
+        }
       },
       "deprecated": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 39,
+        "filesCount": 38,
+        "props": {
+          "buttonPropsArray": {
+            "count": 39,
+            "values": {
+              "{buttons}": 5,
+              "{footerButtons}": 4,
+              "{footerButtonProps}": 3,
+              "{[cancelButtonProps, connectButtonProps]}": 2,
+              "{[okButtonProps]}": 2,
+              "{[cancelButtonProps, deleteButtonProps]}": 2,
+              "{[cancelButtonProps, addAccountButtonProps]}": 1,
+              "{[ { label: strings('navigation.cancel'), variant: ButtonVariants.Secondary, o...}": 1,
+              "{[ { label: strings('card.password_bottomsheet.cancel'), variant: ButtonVarian...}": 1,
+              "{buttonProps}": 1,
+              "{[cancelButtonProps, confirmButtonProps]}": 1,
+              "{[ { onPress: showCheckNetworkModal, label: strings('confirmation_modal.cancel...}": 1,
+              "{[ { onPress: onReject, label: strings('confirmation_modal.cancel_cta'), varia...}": 1,
+              "{[ { label: strings('perps.crossMargin.dismiss'), onPress: handleDismiss, vari...}": 1,
+              "{[ { variant: ButtonVariants.Primary, label: strings('predict.add_funds_sheet....}": 1,
+              "{[ { variant: ButtonVariants.Primary, label: buttonLabel, onPress: onRetry, te...}": 1,
+              "{[ { variant: ButtonVariants.Primary, label: strings('predict.unavailable.butt...}": 1,
+              "{quotesByPriceWithoutError.length > 1 ? [ { accessible: true, accessibilityRol...}": 1,
+              "{[ { onPress: () => navigation.goBack(), label: strings('confirmation_modal.ca...}": 1,
+              "{[acceptButtonProps]}": 1,
+              "{[cancelButtonProps, acceptButtonProps]}": 1,
+              "{[cancelButtonProps, removeButtonProps]}": 1,
+              "{[saveButtonProps]}": 1,
+              "{[ { variant: ButtonVariants.Secondary, label: strings('privacy_policy.pna25_o...}": 1,
+              "{[ { onPress: onCancel, label: strings('confirmation_modal.cancel_cta'), varia...}": 1,
+              "{buttonPropsArray}": 1,
+              "{[ { variant: ButtonVariants.Secondary, size: ButtonSize.Lg, label: strings('s...}": 1
+            }
+          },
+          "buttonsAlignment": {
+            "count": 32,
+            "values": {
+              "{ButtonsAlignment.Horizontal}": 29,
+              "{ButtonsAlignment.Vertical}": 3
+            }
+          },
+          "style": {
+            "count": 20,
+            "values": {
+              "{styles.footer}": 6,
+              "{tw.style('px-6')}": 3,
+              "{styles.footerPadding}": 2,
+              "{styles.footerContainer}": 2,
+              "{styles.footerButtonsContainer}": 1,
+              "{tw.style('px-4')}": 1,
+              "{style}": 1,
+              "{tw.style('px-4 pt-4', Platform.OS !== 'android' && 'pb-4')}": 1,
+              "{styles.buttonContainer}": 1,
+              "{styles.base}": 1,
+              "{tw.style('px-0')}": 1
+            }
+          }
+        }
       },
       "overall": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 68,
+        "filesCount": 65,
+        "props": {
+          "buttonsAlignment": {
+            "count": 44,
+            "values": {
+              "{ButtonsAlignment.Horizontal}": 40,
+              "{ButtonsAlignment.Vertical}": 4
+            }
+          },
+          "buttonPropsArray": {
+            "count": 39,
+            "values": {
+              "{buttons}": 5,
+              "{footerButtons}": 4,
+              "{footerButtonProps}": 3,
+              "{[cancelButtonProps, connectButtonProps]}": 2,
+              "{[okButtonProps]}": 2,
+              "{[cancelButtonProps, deleteButtonProps]}": 2,
+              "{[cancelButtonProps, addAccountButtonProps]}": 1,
+              "{[ { label: strings('navigation.cancel'), variant: ButtonVariants.Secondary, o...}": 1,
+              "{[ { label: strings('card.password_bottomsheet.cancel'), variant: ButtonVarian...}": 1,
+              "{buttonProps}": 1,
+              "{[cancelButtonProps, confirmButtonProps]}": 1,
+              "{[ { onPress: showCheckNetworkModal, label: strings('confirmation_modal.cancel...}": 1,
+              "{[ { onPress: onReject, label: strings('confirmation_modal.cancel_cta'), varia...}": 1,
+              "{[ { label: strings('perps.crossMargin.dismiss'), onPress: handleDismiss, vari...}": 1,
+              "{[ { variant: ButtonVariants.Primary, label: strings('predict.add_funds_sheet....}": 1,
+              "{[ { variant: ButtonVariants.Primary, label: buttonLabel, onPress: onRetry, te...}": 1,
+              "{[ { variant: ButtonVariants.Primary, label: strings('predict.unavailable.butt...}": 1,
+              "{quotesByPriceWithoutError.length > 1 ? [ { accessible: true, accessibilityRol...}": 1,
+              "{[ { onPress: () => navigation.goBack(), label: strings('confirmation_modal.ca...}": 1,
+              "{[acceptButtonProps]}": 1,
+              "{[cancelButtonProps, acceptButtonProps]}": 1,
+              "{[cancelButtonProps, removeButtonProps]}": 1,
+              "{[saveButtonProps]}": 1,
+              "{[ { variant: ButtonVariants.Secondary, label: strings('privacy_policy.pna25_o...}": 1,
+              "{[ { onPress: onCancel, label: strings('confirmation_modal.cancel_cta'), varia...}": 1,
+              "{buttonPropsArray}": 1,
+              "{[ { variant: ButtonVariants.Secondary, size: ButtonSize.Lg, label: strings('s...}": 1
+            }
+          },
+          "primaryButtonProps": {
+            "count": 29,
+            "values": {
+              "{primaryButtonProps}": 9,
+              "{{ children: strings('bridge.cancel'), onPress: handleClose, isDisabled: loadi...}": 2,
+              "{{ children: strings('bridge.batch_sell_swap_instead'), onPress: handleSwapIns...}": 1,
+              "{footerButtonProps.primaryButtonProps}": 1,
+              "{{ children: strings('bridge.got_it'), onPress: handleClose, testID: 'footer-p...}": 1,
+              "{{ size: ButtonSize.Lg, children: strings('money.metamask_card.link_card_sheet...}": 1,
+              "{confirmButtonProps}": 1,
+              "{doneButtonProps}": 1,
+              "{setButtonProps}": 1,
+              "{{ children: strings('perps.tooltips.got_it_button'), onPress: handleGotItPres...}": 1,
+              "{{ children: strings('perps.add_funds'), onPress: handleAddFundsPress, size: B...}": 1,
+              "{{ size: ButtonSize.Lg, onPress: handleConfirm, children: strings('perps.order...}": 1,
+              "{{ children: strings('perps.order.limit_price_modal.set'), onPress: handleConf...}": 1,
+              "{{ children: strings('perps.deposit.quote_expired_modal.get_new_quote'), onPre...}": 1,
+              "{{ children: strings('predict.withdraw.unavailable_got_it'), onPress: closeShe...}": 1,
+              "{{ children: strings('support_consent.confirm'), onPress: handleConfirm, testI...}": 1,
+              "{{ children: strings('rwa.unavailable.button'), onPress: closeSheet, }}": 1,
+              "{{ children: strings('share_token.share'), onPress: handleNativeShare, size: B...}": 1,
+              "{deleteButtonProps}": 1,
+              "{{ size: ButtonSize.Lg, children: buttonText ?? strings('browser.got_it'), onP...}": 1
+            }
+          },
+          "style": {
+            "count": 24,
+            "values": {
+              "{styles.footer}": 8,
+              "{tw.style('px-6')}": 3,
+              "{styles.footerPadding}": 2,
+              "{styles.footerContainer}": 2,
+              "{tw.style('px-4')}": 2,
+              "{styles.footerButtonsContainer}": 1,
+              "{style}": 1,
+              "{tw.style('px-4 pt-4', Platform.OS !== 'android' && 'pb-4')}": 1,
+              "{styles.buttonContainer}": 1,
+              "{tw.style({ paddingBottom: footerText ? 0 : insets.bottom })}": 1,
+              "{styles.base}": 1,
+              "{tw.style('px-0')}": 1
+            }
+          },
+          "twClassName": {
+            "count": 12,
+            "values": {
+              "\"pt-6\"": 6,
+              "\"pt-4\"": 2,
+              "\"px-4\"": 2,
+              "\"px-4 pt-4 pb-6\"": 1,
+              "\"px-4 pt-6\"": 1
+            }
+          },
+          "secondaryButtonProps": {
+            "count": 10,
+            "values": {
+              "{secondaryButtonProps}": 3,
+              "{{ children: strings('bridge.proceed'), onPress: handleProceed, isDisabled: lo...}": 2,
+              "{cancelButtonProps}": 2,
+              "{footerButtonProps.secondaryButtonProps}": 1,
+              "{{ children: strings('perps.withdraw'), onPress: handleWithdrawPress, size: Bu...}": 1,
+              "{{ children: strings('support_consent.reject'), onPress: handleReject, testID:...}": 1
+            }
+          },
+          "testID": {
+            "count": 1,
+            "values": {
+              "\"perps-tooltip-bottom-sheet-footer\"": 1
+            }
+          }
+        }
       },
-      "deprecatedByLegacyComponent": {}
+      "deprecatedByLegacyComponent": {
+        "BottomSheetFooter": 39
+      }
     }
   }
 }

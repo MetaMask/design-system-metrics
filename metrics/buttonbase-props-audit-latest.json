@@ -1,319 +1,1185 @@
 {
   "component": "ButtonBase",
-  "generatedAt": "2026-08-14T07:58:39.488Z",
+  "generatedAt": "2026-08-03T15:15:46.311Z",
   "projects": {
     "extension": {
-      "filesScanned": 3574,
+      "filesScanned": 3520,
       "targetComponent": "ButtonBase",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
-      },
-      "deprecated": {
-        "totalInstances": 2,
-        "filesCount": 2,
+        "totalInstances": 42,
+        "filesCount": 30,
         "props": {
           "className": {
-            "count": 2,
+            "count": 42,
             "values": {
-              "{classnames('multichain-account-picker', className)}": 1,
-              "{classnames('multichain-address-copy-button', { 'multichain-address-copy-butto...}": 1
-            }
-          },
-          "data-testid": {
-            "count": 2,
-            "values": {
-              "\"account-menu-icon\"": 1,
-              "\"address-copy-button-text\"": 1
+              "\"h-auto flex-1 flex-col justify-center rounded-lg bg-muted py-4 hover:bg-muted-hover active:bg-muted-pressed\"": 4,
+              "{twMerge( // Reset ButtonBase defaults for card layout 'justify-start rounded-...}": 2,
+              "\"w-full justify-between text-left rounded-none px-3 py-2 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 2,
+              "\"w-full flex flex-row justify-between items-center px-4 py-3 bg-transparent rounded-none hover:bg-hover active:bg-pressed\"": 2,
+              "\"flex items-center justify-start gap-1 rounded-lg bg-background-muted px-3 py-2 hover:bg-hover active:opacity-70\"": 2,
+              "{`w-full justify-between text-left rounded-none px-4 min-w-0 h-[46px] active:b...}": 2,
+              "\"w-full rounded-lg px-4 py-3 min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 2,
+              "{twMerge(ROW_STYLES)}": 1,
+              "{longTabStyles}": 1,
+              "{shortTabStyles}": 1,
+              "\"bg-transparent rounded-none px-2 min-w-0 h-auto\"": 1,
+              "{twMerge( 'h-auto min-w-0 rounded-full border-0 px-4 py-1 transition-colors', ...}": 1,
+              "{twMerge(rowBaseStyles, balanceRowStyles)}": 1,
+              "{twMerge( 'h-9 min-w-0 rounded-xl bg-muted px-0 py-0 transition-colors hover:b...}": 1,
+              "{twMerge( 'py-1.5 h-auto min-w-12 rounded-lg bg-transparent hover:bg-hover act...}": 1,
+              "{twMerge( 'py-1.5 h-auto min-w-12 rounded-lg flex items-center gap-1 bg-transp...}": 1,
+              "\"w-full flex flex-row justify-between items-center px-4 py-2 bg-transparent rounded-none hover:bg-hover active:bg-pressed\"": 1,
+              "\"min-w-0 rounded-md border-0 bg-transparent px-1 py-0.5 -mr-1 shadow-none hover:bg-transparent active:bg-transparent focus-visible:bg-transparent disabled:opacity-50\"": 1,
+              "\"w-full px-0 h-[62px] rounded-none bg-transparent hover:bg-hover active:bg-pressed\"": 1,
+              "\"flex-1 justify-start rounded-none min-w-0 h-auto text-left cursor-pointer gap-4 px-4 py-3 bg-transparent\"": 1,
+              "{twMerge( 'justify-start rounded-none min-w-0 h-auto text-left cursor-pointer'...}": 1,
+              "\"text-left rounded-none px-4 py-3 bg-transparent min-w-0 flex w-full items-center h-auto hover:bg-hover active:bg-pressed\"": 1,
+              "{twMerge( 'flex flex-row gap-2 p-2 items-center h-8 rounded-2 shrink-0', isSel...}": 1,
+              "\"flex flex-row items-center gap-1 bg-inherit\"": 1,
+              "{`mx-4 w-max rounded-lg border border-muted bg-default px-2 hover:bg-hover act...}": 1,
+              "\"bg-transparent border border-border-muted hover:bg-hover active:bg-pressed my-2\"": 1,
+              "\"rounded-lg w-full bg-muted\"": 1,
+              "{`w-full justify-between text-left rounded-none px-3 py-2 min-w-0 h-auto activ...}": 1,
+              "\"rounded-full p-1 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
+              "\"inline-flex items-center gap-2 rounded-full bg-background-alternative px-3 py-2 min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
+              "\"absolute left-4 top-1/2 -translate-y-1/2 rounded-full p-1 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
+              "\"bg-default text-default border border-muted\"": 1,
+              "\"w-full bg-muted text-default hover:bg-muted-hover active:bg-muted-pressed\"": 1
             }
           },
           "onClick": {
-            "count": 2,
+            "count": 38,
             "values": {
-              "{() => { trace({ name: TraceName.AccountList }); onClick(); }}": 1,
-              "{onClickCallback}": 1
+              "{handleClick}": 6,
+              "{onClick}": 3,
+              "{handleSeeAll}": 2,
+              "{() => handleDirectionClick('long')}": 1,
+              "{() => handleDirectionClick('short')}": 1,
+              "{handleMidClick}": 1,
+              "{() => { if (!isSelected) { onOrderTypeChange(type); } }}": 1,
+              "{handleToggleDropdown}": 1,
+              "{handleAddFunds}": 1,
+              "{handleWithdraw}": 1,
+              "{() => handlePeriodSelect(period.value)}": 1,
+              "{() => emitPeriodChange(period.value)}": 1,
+              "{() => setIsMoreModalOpen(true)}": 1,
+              "{handleSeeAllPerps}": 1,
+              "{onCloseAllPositions}": 1,
+              "{action.onClick}": 1,
+              "{() => onClick(network.chainId)}": 1,
+              "{() => onClick(order === 'asc' ? 'desc' : 'asc')}": 1,
+              "{() => isNetworkPickerOpen ? setIsNetworkPickerOpen(false) : setIsNetworkPicke...}": 1,
+              "{handleNetworkFilterClick}": 1,
+              "{() => { removeQuizWord(quizWord.word); }}": 1,
+              "{handleToggle}": 1,
+              "{() => handleSelect(option)}": 1,
+              "{handleOpen}": 1,
+              "{() => setPendingField(option.id)}": 1,
+              "{() => setPendingDirection(value)}": 1,
+              "{handleBack}": 1,
+              "{onBack}": 1,
+              "{handleOpenNetworkFilter}": 1,
+              "{handleAddCustomToken}": 1
             }
           },
-          "backgroundColor": {
-            "count": 2,
+          "data-testid": {
+            "count": 37,
             "values": {
-              "{BackgroundColor.transparent}": 1,
-              "{BackgroundColor.primaryMuted}": 1
-            }
-          },
-          "borderRadius": {
-            "count": 2,
-            "values": {
-              "{BorderRadius.LG}": 1,
-              "{BorderRadius.pill}": 1
+              "{testId}": 1,
+              "{`order-card-${order.orderId}`}": 1,
+              "\"direction-tab-long\"": 1,
+              "\"direction-tab-short\"": 1,
+              "\"limit-price-mid-button\"": 1,
+              "{`order-type-${type}`}": 1,
+              "\"perps-balance-dropdown-balance\"": 1,
+              "\"perps-balance-dropdown-add-funds\"": 1,
+              "\"perps-balance-dropdown-withdraw\"": 1,
+              "{`perps-candle-period-modal-${period.value}`}": 1,
+              "{`perps-candle-period-${period.value}`}": 1,
+              "\"perps-candle-period-more\"": 1,
+              "\"perps-explore-markets-row\"": 1,
+              "\"perps-market-detail-view-all-activity\"": 1,
+              "\"perps-close-all-positions\"": 1,
+              "\"perps-recent-activity-see-all\"": 1,
+              "{`position-card-${position.symbol}`}": 1,
+              "\"start-new-trade-cta\"": 1,
+              "{`transaction-card-${transaction.id}`}": 1,
+              "{action.testId}": 1,
+              "\"batch-sell-select-network-chip\"": 1,
+              "\"batch-sell-select-sorting-chip\"": 1,
+              "\"multichain-asset-picker__network\"": 1,
+              "\"send-network-filter-toggle\"": 1,
+              "{`recovery-phrase-quiz-answered-${actualIdxInSrp}`}": 1,
+              "{`${testId}-button`}": 1,
+              "{`${testId}-option-${option.id}`}": 1,
+              "\"sort-dropdown-button\"": 1,
+              "{`sort-field-option-${option.id}`}": 1,
+              "{`sort-direction-${value}`}": 1,
+              "\"back-button\"": 1,
+              "\"ramps-payment-method-pill\"": 1,
+              "{`ramps-payment-method-item-${paymentMethod.id}`}": 1,
+              "{`ramps-provider-item-${provider.id}`}": 1,
+              "{backButtonTestId}": 1,
+              "\"token-management-network-filter\"": 1,
+              "\"token-management-add-custom-token-button\"": 1
             }
           },
           "size": {
-            "count": 2,
+            "count": 7,
             "values": {
-              "{showAddress ? ButtonBaseSize.Lg : ButtonBaseSize.Sm}": 1,
-              "{Size.SM}": 1
+              "{ButtonBaseSize.Sm}": 7
             }
           },
-          "endIconName": {
-            "count": 2,
+          "key": {
+            "count": 7,
             "values": {
-              "{IconName.ArrowDown}": 1,
-              "{copied ? IconName.CopySuccess : IconName.Copy}": 1
+              "{period.value}": 2,
+              "{option.id}": 2,
+              "{action.label}": 1,
+              "{quizWord.index}": 1,
+              "{value}": 1
             }
           },
-          "ellipsis": {
-            "count": 1,
+          "isFullWidth": {
+            "count": 4,
             "values": {
-              "true (shorthand)": 1
+              "true (shorthand)": 4
+            }
+          },
+          "type": {
+            "count": 4,
+            "values": {
+              "\"button\"": 4
+            }
+          },
+          "aria-label": {
+            "count": 4,
+            "values": {
+              "{`${t('perpsRecentActivity')}, ${t('perpsSeeAll')}`}": 2,
+              "{t('back')}": 2
             }
           },
           "textProps": {
+            "count": 3,
+            "values": {
+              "{{ color: TextColor.PrimaryDefault, fontWeight: FontWeight.Medium, variant: Te...}": 1,
+              "{{ variant: TextVariant.BodySm, color: isSelected ? TextColor.TextDefault : Te...}": 1,
+              "{{ variant: TextVariant.BodySm, color: TextColor.TextAlternative, }}": 1
+            }
+          },
+          "ref": {
+            "count": 3,
+            "values": {
+              "{networkPickerButtonRef}": 1,
+              "{triggerRef}": 1,
+              "{(el) => { optionRefs.current[index] = el; }}": 1
+            }
+          },
+          "startIconName": {
+            "count": 3,
+            "values": {
+              "{IconName.Filter}": 3
+            }
+          },
+          "isDisabled": {
+            "count": 3,
+            "values": {
+              "{isDisabled}": 2,
+              "{!onClick}": 1
+            }
+          },
+          "startIconProps": {
+            "count": 2,
+            "values": {
+              "{{ size: IconSize.Md }}": 1,
+              "{{ 'data-testid': 'icon-filter' }}": 1
+            }
+          },
+          "onKeyDown": {
+            "count": 2,
+            "values": {
+              "{handleTriggerKeyDown}": 1,
+              "{(e) => handleOptionKeyDown(e, index)}": 1
+            }
+          },
+          "aria-pressed": {
             "count": 1,
             "values": {
-              "{{ display: Display.Flex, alignItems: AlignItems.center, gap: 2, ...textProps, }}": 1
+              "{isSelected}": 1
             }
           },
           "disabled": {
             "count": 1,
             "values": {
-              "{disabled}": 1
-            }
-          },
-          "endIconProps": {
-            "count": 1,
-            "values": {
-              "{{ color: IconColor.iconDefault, size: Size.SM, }}": 1
-            }
-          },
-          "[spread]": {
-            "count": 1,
-            "values": {
-              "{props}": 1
-            }
-          },
-          "gap": {
-            "count": 1,
-            "values": {
-              "1": 1
-            }
-          },
-          "style": {
-            "count": 1,
-            "values": {
-              "{AccountMenuStyle}": 1
-            }
-          },
-          "paddingRight": {
-            "count": 1,
-            "values": {
-              "4": 1
-            }
-          },
-          "paddingLeft": {
-            "count": 1,
-            "values": {
-              "4": 1
-            }
-          },
-          "variant": {
-            "count": 1,
-            "values": {
-              "{TextVariant.bodySm}": 1
+              "{isCloseAllPending || !onCloseAllPositions}": 1
             }
           },
           "color": {
             "count": 1,
             "values": {
-              "{TextColor.primaryDefault}": 1
+              "{TextColor.TextAlternative}": 1
+            }
+          },
+          "aria-haspopup": {
+            "count": 1,
+            "values": {
+              "\"listbox\"": 1
+            }
+          },
+          "aria-expanded": {
+            "count": 1,
+            "values": {
+              "{isOpen}": 1
+            }
+          },
+          "role": {
+            "count": 1,
+            "values": {
+              "\"option\"": 1
+            }
+          },
+          "aria-selected": {
+            "count": 1,
+            "values": {
+              "{isSelected}": 1
+            }
+          },
+          "id": {
+            "count": 1,
+            "values": {
+              "{`${testId}-option-${option.id}`}": 1
+            }
+          }
+        }
+      },
+      "deprecated": {
+        "totalInstances": 8,
+        "filesCount": 7,
+        "props": {
+          "onClick": {
+            "count": 8,
+            "values": {
+              "{onClick}": 2,
+              "{handleNetworkFilterClick}": 1,
+              "{handleClick}": 1,
+              "{handleModalOpen}": 1,
+              "{() => { trace({ name: TraceName.AccountList }); onClick(); }}": 1,
+              "{onClickCallback}": 1,
+              "{() => setSelectedTimeRange(timeRange)}": 1
+            }
+          },
+          "backgroundColor": {
+            "count": 8,
+            "values": {
+              "{BackgroundColor.transparent}": 3,
+              "{isNetworkFilterModalOpen ? BackgroundColor.backgroundPressed : BackgroundColo...}": 1,
+              "{selected ? BackgroundColor.primaryMuted : BackgroundColor.transparent}": 1,
+              "{BackgroundColor.backgroundDefault}": 1,
+              "{BackgroundColor.primaryMuted}": 1,
+              "{BackgroundColor.backgroundMuted}": 1
+            }
+          },
+          "className": {
+            "count": 7,
+            "values": {
+              "\"asset-list-control-bar__button asset-list-control-bar__network_control\"": 1,
+              "{className ? classnames('snap-ui-renderer__selector-item', className) : 'snap-...}": 1,
+              "{className ? classnames('snap-ui-renderer__selector', className) : 'snap-ui-re...}": 1,
+              "{classnames('multichain-account-picker', className)}": 1,
+              "{classnames('multichain-address-copy-button', { 'multichain-address-copy-butto...}": 1,
+              "{classNames('icon-button', className)}": 1,
+              "{classnames('time-range-button', { 'time-range-button__selected': timeRange ==...}": 1
+            }
+          },
+          "paddingRight": {
+            "count": 6,
+            "values": {
+              "0": 1,
+              "2": 2,
+              "4": 3
+            }
+          },
+          "paddingLeft": {
+            "count": 6,
+            "values": {
+              "0": 1,
+              "2": 2,
+              "4": 3
+            }
+          },
+          "data-testid": {
+            "count": 5,
+            "values": {
+              "\"address-copy-button-text\"": 2,
+              "\"sort-by-networks\"": 1,
+              "\"snap-ui-renderer__selector-item\"": 1,
+              "\"account-menu-icon\"": 1
+            }
+          },
+          "size": {
+            "count": 5,
+            "values": {
+              "{ButtonBaseSize.Sm}": 3,
+              "{showAddress ? ButtonBaseSize.Lg : ButtonBaseSize.Sm}": 1,
+              "{Size.SM}": 1
+            }
+          },
+          "variant": {
+            "count": 4,
+            "values": {
+              "{TextVariant.bodySmMedium}": 1,
+              "{TextVariant.bodySm}": 1,
+              "{TextVariant.bodyMd}": 1,
+              "{TextVariant.bodyXsMedium}": 1
+            }
+          },
+          "color": {
+            "count": 4,
+            "values": {
+              "{isSingleNetworkFilterSelected ? TextColor.primaryDefault : TextColor.textDefault}": 1,
+              "{TextColor.primaryDefault}": 1,
+              "{color}": 1,
+              "{TextColor.textAlternative}": 1
+            }
+          },
+          "ellipsis": {
+            "count": 4,
+            "values": {
+              "true (shorthand)": 4
+            }
+          },
+          "borderRadius": {
+            "count": 4,
+            "values": {
+              "{BorderRadius.LG}": 3,
+              "{BorderRadius.pill}": 1
+            }
+          },
+          "textProps": {
+            "count": 4,
+            "values": {
+              "{{ display: Display.Flex, width: BlockSize.Full, }}": 2,
+              "{{ display: Display.Flex, alignItems: AlignItems.center, gap: 2, ...textProps, }}": 1,
+              "{{ ellipsis: true, className: 'icon-button__label', }}": 1
+            }
+          },
+          "disabled": {
+            "count": 4,
+            "values": {
+              "{disabled}": 4
+            }
+          },
+          "endIconName": {
+            "count": 4,
+            "values": {
+              "{IconName.ArrowDown}": 2,
+              "{copied ? IconName.CopySuccess : IconName.Copy}": 2
+            }
+          },
+          "paddingTop": {
+            "count": 3,
+            "values": {
+              "2": 2,
+              "3": 1
+            }
+          },
+          "paddingBottom": {
+            "count": 3,
+            "values": {
+              "2": 2,
+              "3": 1
+            }
+          },
+          "style": {
+            "count": 3,
+            "values": {
+              "{{ justifyContent: 'inherit', textAlign: 'inherit', height: 'inherit', minHeig...}": 2,
+              "{AccountMenuStyle}": 1
             }
           },
           "alignItems": {
+            "count": 3,
+            "values": {
+              "{AlignItems.center}": 3
+            }
+          },
+          "endIconProps": {
+            "count": 2,
+            "values": {
+              "{{ color: IconColor.primaryDefault, size: IconSize.Sm, }}": 1,
+              "{{ color: IconColor.iconDefault, size: Size.SM, }}": 1
+            }
+          },
+          "gap": {
+            "count": 2,
+            "values": {
+              "1": 1,
+              "2": 1
+            }
+          },
+          "[spread]": {
+            "count": 2,
+            "values": {
+              "{props}": 2
+            }
+          },
+          "startIconName": {
             "count": 1,
             "values": {
-              "{AlignItems.center}": 1
+              "{IconName.Filter}": 1
+            }
+          },
+          "startIconProps": {
+            "count": 1,
+            "values": {
+              "{{ marginInlineEnd: 1, size: IconSize.Md }}": 1
+            }
+          },
+          "marginRight": {
+            "count": 1,
+            "values": {
+              "{isFullScreen ? 2 : null}": 1
+            }
+          },
+          "borderColor": {
+            "count": 1,
+            "values": {
+              "{BorderColor.borderMuted}": 1
+            }
+          },
+          "fontWeight": {
+            "count": 1,
+            "values": {
+              "{FontWeight.Normal}": 1
+            }
+          },
+          "ref": {
+            "count": 1,
+            "values": {
+              "{ref}": 1
+            }
+          },
+          "display": {
+            "count": 1,
+            "values": {
+              "{Display.InlineFlex}": 1
+            }
+          },
+          "flexDirection": {
+            "count": 1,
+            "values": {
+              "{FlexDirection.Column}": 1
+            }
+          },
+          "justifyContent": {
+            "count": 1,
+            "values": {
+              "{JustifyContent.center}": 1
+            }
+          },
+          "key": {
+            "count": 1,
+            "values": {
+              "{timeRange}": 1
             }
           }
         }
       },
       "overall": {
-        "totalInstances": 2,
-        "filesCount": 2,
+        "totalInstances": 50,
+        "filesCount": 37,
         "props": {
           "className": {
-            "count": 2,
+            "count": 49,
             "values": {
+              "\"h-auto flex-1 flex-col justify-center rounded-lg bg-muted py-4 hover:bg-muted-hover active:bg-muted-pressed\"": 4,
+              "{twMerge( // Reset ButtonBase defaults for card layout 'justify-start rounded-...}": 2,
+              "\"w-full justify-between text-left rounded-none px-3 py-2 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 2,
+              "\"w-full flex flex-row justify-between items-center px-4 py-3 bg-transparent rounded-none hover:bg-hover active:bg-pressed\"": 2,
+              "\"flex items-center justify-start gap-1 rounded-lg bg-background-muted px-3 py-2 hover:bg-hover active:opacity-70\"": 2,
+              "{`w-full justify-between text-left rounded-none px-4 min-w-0 h-[46px] active:b...}": 2,
+              "\"w-full rounded-lg px-4 py-3 min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 2,
+              "\"asset-list-control-bar__button asset-list-control-bar__network_control\"": 1,
+              "{twMerge(ROW_STYLES)}": 1,
+              "{longTabStyles}": 1,
+              "{shortTabStyles}": 1,
+              "\"bg-transparent rounded-none px-2 min-w-0 h-auto\"": 1,
+              "{twMerge( 'h-auto min-w-0 rounded-full border-0 px-4 py-1 transition-colors', ...}": 1,
+              "{twMerge(rowBaseStyles, balanceRowStyles)}": 1,
+              "{twMerge( 'h-9 min-w-0 rounded-xl bg-muted px-0 py-0 transition-colors hover:b...}": 1,
+              "{twMerge( 'py-1.5 h-auto min-w-12 rounded-lg bg-transparent hover:bg-hover act...}": 1,
+              "{twMerge( 'py-1.5 h-auto min-w-12 rounded-lg flex items-center gap-1 bg-transp...}": 1,
+              "\"w-full flex flex-row justify-between items-center px-4 py-2 bg-transparent rounded-none hover:bg-hover active:bg-pressed\"": 1,
+              "\"min-w-0 rounded-md border-0 bg-transparent px-1 py-0.5 -mr-1 shadow-none hover:bg-transparent active:bg-transparent focus-visible:bg-transparent disabled:opacity-50\"": 1,
+              "\"w-full px-0 h-[62px] rounded-none bg-transparent hover:bg-hover active:bg-pressed\"": 1,
+              "\"flex-1 justify-start rounded-none min-w-0 h-auto text-left cursor-pointer gap-4 px-4 py-3 bg-transparent\"": 1,
+              "{twMerge( 'justify-start rounded-none min-w-0 h-auto text-left cursor-pointer'...}": 1,
+              "{className ? classnames('snap-ui-renderer__selector-item', className) : 'snap-...}": 1,
+              "{className ? classnames('snap-ui-renderer__selector', className) : 'snap-ui-re...}": 1,
+              "\"text-left rounded-none px-4 py-3 bg-transparent min-w-0 flex w-full items-center h-auto hover:bg-hover active:bg-pressed\"": 1,
               "{classnames('multichain-account-picker', className)}": 1,
-              "{classnames('multichain-address-copy-button', { 'multichain-address-copy-butto...}": 1
-            }
-          },
-          "data-testid": {
-            "count": 2,
-            "values": {
-              "\"account-menu-icon\"": 1,
-              "\"address-copy-button-text\"": 1
+              "{classnames('multichain-address-copy-button', { 'multichain-address-copy-butto...}": 1,
+              "{classNames('icon-button', className)}": 1,
+              "{classnames('time-range-button', { 'time-range-button__selected': timeRange ==...}": 1,
+              "{twMerge( 'flex flex-row gap-2 p-2 items-center h-8 rounded-2 shrink-0', isSel...}": 1,
+              "\"flex flex-row items-center gap-1 bg-inherit\"": 1,
+              "{`mx-4 w-max rounded-lg border border-muted bg-default px-2 hover:bg-hover act...}": 1,
+              "\"bg-transparent border border-border-muted hover:bg-hover active:bg-pressed my-2\"": 1,
+              "\"rounded-lg w-full bg-muted\"": 1,
+              "{`w-full justify-between text-left rounded-none px-3 py-2 min-w-0 h-auto activ...}": 1,
+              "\"rounded-full p-1 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
+              "\"inline-flex items-center gap-2 rounded-full bg-background-alternative px-3 py-2 min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
+              "\"absolute left-4 top-1/2 -translate-y-1/2 rounded-full p-1 bg-transparent min-w-0 h-auto hover:bg-hover active:bg-pressed\"": 1,
+              "\"bg-default text-default border border-muted\"": 1,
+              "\"w-full bg-muted text-default hover:bg-muted-hover active:bg-muted-pressed\"": 1
             }
           },
           "onClick": {
-            "count": 2,
+            "count": 46,
             "values": {
+              "{handleClick}": 7,
+              "{onClick}": 5,
+              "{handleNetworkFilterClick}": 2,
+              "{handleSeeAll}": 2,
+              "{() => handleDirectionClick('long')}": 1,
+              "{() => handleDirectionClick('short')}": 1,
+              "{handleMidClick}": 1,
+              "{() => { if (!isSelected) { onOrderTypeChange(type); } }}": 1,
+              "{handleToggleDropdown}": 1,
+              "{handleAddFunds}": 1,
+              "{handleWithdraw}": 1,
+              "{() => handlePeriodSelect(period.value)}": 1,
+              "{() => emitPeriodChange(period.value)}": 1,
+              "{() => setIsMoreModalOpen(true)}": 1,
+              "{handleSeeAllPerps}": 1,
+              "{onCloseAllPositions}": 1,
+              "{handleModalOpen}": 1,
+              "{action.onClick}": 1,
               "{() => { trace({ name: TraceName.AccountList }); onClick(); }}": 1,
-              "{onClickCallback}": 1
+              "{onClickCallback}": 1,
+              "{() => setSelectedTimeRange(timeRange)}": 1,
+              "{() => onClick(network.chainId)}": 1,
+              "{() => onClick(order === 'asc' ? 'desc' : 'asc')}": 1,
+              "{() => isNetworkPickerOpen ? setIsNetworkPickerOpen(false) : setIsNetworkPicke...}": 1,
+              "{() => { removeQuizWord(quizWord.word); }}": 1,
+              "{handleToggle}": 1,
+              "{() => handleSelect(option)}": 1,
+              "{handleOpen}": 1,
+              "{() => setPendingField(option.id)}": 1,
+              "{() => setPendingDirection(value)}": 1,
+              "{handleBack}": 1,
+              "{onBack}": 1,
+              "{handleOpenNetworkFilter}": 1,
+              "{handleAddCustomToken}": 1
             }
           },
-          "backgroundColor": {
-            "count": 2,
+          "data-testid": {
+            "count": 42,
             "values": {
-              "{BackgroundColor.transparent}": 1,
-              "{BackgroundColor.primaryMuted}": 1
-            }
-          },
-          "borderRadius": {
-            "count": 2,
-            "values": {
-              "{BorderRadius.LG}": 1,
-              "{BorderRadius.pill}": 1
+              "\"address-copy-button-text\"": 2,
+              "\"sort-by-networks\"": 1,
+              "{testId}": 1,
+              "{`order-card-${order.orderId}`}": 1,
+              "\"direction-tab-long\"": 1,
+              "\"direction-tab-short\"": 1,
+              "\"limit-price-mid-button\"": 1,
+              "{`order-type-${type}`}": 1,
+              "\"perps-balance-dropdown-balance\"": 1,
+              "\"perps-balance-dropdown-add-funds\"": 1,
+              "\"perps-balance-dropdown-withdraw\"": 1,
+              "{`perps-candle-period-modal-${period.value}`}": 1,
+              "{`perps-candle-period-${period.value}`}": 1,
+              "\"perps-candle-period-more\"": 1,
+              "\"perps-explore-markets-row\"": 1,
+              "\"perps-market-detail-view-all-activity\"": 1,
+              "\"perps-close-all-positions\"": 1,
+              "\"perps-recent-activity-see-all\"": 1,
+              "{`position-card-${position.symbol}`}": 1,
+              "\"start-new-trade-cta\"": 1,
+              "{`transaction-card-${transaction.id}`}": 1,
+              "\"snap-ui-renderer__selector-item\"": 1,
+              "{action.testId}": 1,
+              "\"account-menu-icon\"": 1,
+              "\"batch-sell-select-network-chip\"": 1,
+              "\"batch-sell-select-sorting-chip\"": 1,
+              "\"multichain-asset-picker__network\"": 1,
+              "\"send-network-filter-toggle\"": 1,
+              "{`recovery-phrase-quiz-answered-${actualIdxInSrp}`}": 1,
+              "{`${testId}-button`}": 1,
+              "{`${testId}-option-${option.id}`}": 1,
+              "\"sort-dropdown-button\"": 1,
+              "{`sort-field-option-${option.id}`}": 1,
+              "{`sort-direction-${value}`}": 1,
+              "\"back-button\"": 1,
+              "\"ramps-payment-method-pill\"": 1,
+              "{`ramps-payment-method-item-${paymentMethod.id}`}": 1,
+              "{`ramps-provider-item-${provider.id}`}": 1,
+              "{backButtonTestId}": 1,
+              "\"token-management-network-filter\"": 1,
+              "\"token-management-add-custom-token-button\"": 1
             }
           },
           "size": {
-            "count": 2,
+            "count": 12,
             "values": {
+              "{ButtonBaseSize.Sm}": 10,
               "{showAddress ? ButtonBaseSize.Lg : ButtonBaseSize.Sm}": 1,
               "{Size.SM}": 1
             }
           },
-          "endIconName": {
-            "count": 2,
+          "backgroundColor": {
+            "count": 8,
             "values": {
-              "{IconName.ArrowDown}": 1,
-              "{copied ? IconName.CopySuccess : IconName.Copy}": 1
+              "{BackgroundColor.transparent}": 3,
+              "{isNetworkFilterModalOpen ? BackgroundColor.backgroundPressed : BackgroundColo...}": 1,
+              "{selected ? BackgroundColor.primaryMuted : BackgroundColor.transparent}": 1,
+              "{BackgroundColor.backgroundDefault}": 1,
+              "{BackgroundColor.primaryMuted}": 1,
+              "{BackgroundColor.backgroundMuted}": 1
             }
           },
-          "ellipsis": {
-            "count": 1,
+          "key": {
+            "count": 8,
             "values": {
-              "true (shorthand)": 1
+              "{period.value}": 2,
+              "{option.id}": 2,
+              "{action.label}": 1,
+              "{timeRange}": 1,
+              "{quizWord.index}": 1,
+              "{value}": 1
             }
           },
           "textProps": {
-            "count": 1,
+            "count": 7,
             "values": {
-              "{{ display: Display.Flex, alignItems: AlignItems.center, gap: 2, ...textProps, }}": 1
-            }
-          },
-          "disabled": {
-            "count": 1,
-            "values": {
-              "{disabled}": 1
-            }
-          },
-          "endIconProps": {
-            "count": 1,
-            "values": {
-              "{{ color: IconColor.iconDefault, size: Size.SM, }}": 1
-            }
-          },
-          "[spread]": {
-            "count": 1,
-            "values": {
-              "{props}": 1
-            }
-          },
-          "gap": {
-            "count": 1,
-            "values": {
-              "1": 1
-            }
-          },
-          "style": {
-            "count": 1,
-            "values": {
-              "{AccountMenuStyle}": 1
+              "{{ display: Display.Flex, width: BlockSize.Full, }}": 2,
+              "{{ color: TextColor.PrimaryDefault, fontWeight: FontWeight.Medium, variant: Te...}": 1,
+              "{{ variant: TextVariant.BodySm, color: isSelected ? TextColor.TextDefault : Te...}": 1,
+              "{{ variant: TextVariant.BodySm, color: TextColor.TextAlternative, }}": 1,
+              "{{ display: Display.Flex, alignItems: AlignItems.center, gap: 2, ...textProps, }}": 1,
+              "{{ ellipsis: true, className: 'icon-button__label', }}": 1
             }
           },
           "paddingRight": {
-            "count": 1,
+            "count": 6,
             "values": {
-              "4": 1
+              "0": 1,
+              "2": 2,
+              "4": 3
             }
           },
           "paddingLeft": {
-            "count": 1,
+            "count": 6,
             "values": {
-              "4": 1
-            }
-          },
-          "variant": {
-            "count": 1,
-            "values": {
-              "{TextVariant.bodySm}": 1
+              "0": 1,
+              "2": 2,
+              "4": 3
             }
           },
           "color": {
-            "count": 1,
+            "count": 5,
             "values": {
-              "{TextColor.primaryDefault}": 1
+              "{isSingleNetworkFilterSelected ? TextColor.primaryDefault : TextColor.textDefault}": 1,
+              "{TextColor.primaryDefault}": 1,
+              "{color}": 1,
+              "{TextColor.textAlternative}": 1,
+              "{TextColor.TextAlternative}": 1
+            }
+          },
+          "disabled": {
+            "count": 5,
+            "values": {
+              "{disabled}": 4,
+              "{isCloseAllPending || !onCloseAllPositions}": 1
+            }
+          },
+          "variant": {
+            "count": 4,
+            "values": {
+              "{TextVariant.bodySmMedium}": 1,
+              "{TextVariant.bodySm}": 1,
+              "{TextVariant.bodyMd}": 1,
+              "{TextVariant.bodyXsMedium}": 1
+            }
+          },
+          "startIconName": {
+            "count": 4,
+            "values": {
+              "{IconName.Filter}": 4
+            }
+          },
+          "ellipsis": {
+            "count": 4,
+            "values": {
+              "true (shorthand)": 4
+            }
+          },
+          "isFullWidth": {
+            "count": 4,
+            "values": {
+              "true (shorthand)": 4
+            }
+          },
+          "type": {
+            "count": 4,
+            "values": {
+              "\"button\"": 4
+            }
+          },
+          "aria-label": {
+            "count": 4,
+            "values": {
+              "{`${t('perpsRecentActivity')}, ${t('perpsSeeAll')}`}": 2,
+              "{t('back')}": 2
+            }
+          },
+          "borderRadius": {
+            "count": 4,
+            "values": {
+              "{BorderRadius.LG}": 3,
+              "{BorderRadius.pill}": 1
+            }
+          },
+          "endIconName": {
+            "count": 4,
+            "values": {
+              "{IconName.ArrowDown}": 2,
+              "{copied ? IconName.CopySuccess : IconName.Copy}": 2
+            }
+          },
+          "ref": {
+            "count": 4,
+            "values": {
+              "{ref}": 1,
+              "{networkPickerButtonRef}": 1,
+              "{triggerRef}": 1,
+              "{(el) => { optionRefs.current[index] = el; }}": 1
+            }
+          },
+          "startIconProps": {
+            "count": 3,
+            "values": {
+              "{{ marginInlineEnd: 1, size: IconSize.Md }}": 1,
+              "{{ size: IconSize.Md }}": 1,
+              "{{ 'data-testid': 'icon-filter' }}": 1
+            }
+          },
+          "paddingTop": {
+            "count": 3,
+            "values": {
+              "2": 2,
+              "3": 1
+            }
+          },
+          "paddingBottom": {
+            "count": 3,
+            "values": {
+              "2": 2,
+              "3": 1
+            }
+          },
+          "style": {
+            "count": 3,
+            "values": {
+              "{{ justifyContent: 'inherit', textAlign: 'inherit', height: 'inherit', minHeig...}": 2,
+              "{AccountMenuStyle}": 1
             }
           },
           "alignItems": {
+            "count": 3,
+            "values": {
+              "{AlignItems.center}": 3
+            }
+          },
+          "isDisabled": {
+            "count": 3,
+            "values": {
+              "{isDisabled}": 2,
+              "{!onClick}": 1
+            }
+          },
+          "endIconProps": {
+            "count": 2,
+            "values": {
+              "{{ color: IconColor.primaryDefault, size: IconSize.Sm, }}": 1,
+              "{{ color: IconColor.iconDefault, size: Size.SM, }}": 1
+            }
+          },
+          "gap": {
+            "count": 2,
+            "values": {
+              "1": 1,
+              "2": 1
+            }
+          },
+          "[spread]": {
+            "count": 2,
+            "values": {
+              "{props}": 2
+            }
+          },
+          "onKeyDown": {
+            "count": 2,
+            "values": {
+              "{handleTriggerKeyDown}": 1,
+              "{(e) => handleOptionKeyDown(e, index)}": 1
+            }
+          },
+          "marginRight": {
             "count": 1,
             "values": {
-              "{AlignItems.center}": 1
+              "{isFullScreen ? 2 : null}": 1
+            }
+          },
+          "borderColor": {
+            "count": 1,
+            "values": {
+              "{BorderColor.borderMuted}": 1
+            }
+          },
+          "aria-pressed": {
+            "count": 1,
+            "values": {
+              "{isSelected}": 1
+            }
+          },
+          "fontWeight": {
+            "count": 1,
+            "values": {
+              "{FontWeight.Normal}": 1
+            }
+          },
+          "display": {
+            "count": 1,
+            "values": {
+              "{Display.InlineFlex}": 1
+            }
+          },
+          "flexDirection": {
+            "count": 1,
+            "values": {
+              "{FlexDirection.Column}": 1
+            }
+          },
+          "justifyContent": {
+            "count": 1,
+            "values": {
+              "{JustifyContent.center}": 1
+            }
+          },
+          "aria-haspopup": {
+            "count": 1,
+            "values": {
+              "\"listbox\"": 1
+            }
+          },
+          "aria-expanded": {
+            "count": 1,
+            "values": {
+              "{isOpen}": 1
+            }
+          },
+          "role": {
+            "count": 1,
+            "values": {
+              "\"option\"": 1
+            }
+          },
+          "aria-selected": {
+            "count": 1,
+            "values": {
+              "{isSelected}": 1
+            }
+          },
+          "id": {
+            "count": 1,
+            "values": {
+              "{`${testId}-option-${option.id}`}": 1
             }
           }
         }
       },
       "deprecatedByLegacyComponent": {
-        "ButtonBase": 2
+        "ButtonBase": 8
       }
     },
     "mobile": {
-      "filesScanned": 7573,
+      "filesScanned": 7459,
       "targetComponent": "ButtonBase",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
-      },
-      "deprecated": {
-        "totalInstances": 1,
-        "filesCount": 1,
+        "totalInstances": 18,
+        "filesCount": 11,
         "props": {
-          "testID": {
-            "count": 1,
-            "values": {
-              "{WalletViewSelectorsIDs.TOKEN_NETWORK_FILTER}": 1
-            }
-          },
-          "label": {
-            "count": 1,
-            "values": {
-              "{<> <View style={styles.networkManagerWrapper}> {showNetworkFilterAvatar && ( ...}": 1
-            }
-          },
-          "isDisabled": {
-            "count": 1,
-            "values": {
-              "false": 1
-            }
-          },
           "onPress": {
-            "count": 1,
+            "count": 18,
             "values": {
-              "{showFilterControls}": 1
+              "{handleButtonPress}": 1,
+              "{onContactSupport}": 1,
+              "{() => onChange('energy')}": 1,
+              "{() => onChange('bandwidth')}": 1,
+              "{onLeveragePress}": 1,
+              "{onOrderTypeButtonPress}": 1,
+              "{onUseMidPricePress}": 1,
+              "{() => handleChange(isPro ? PerpsMode.Lite : PerpsMode.Pro)}": 1,
+              "{() => onBuyPress(upToken)}": 1,
+              "{() => onBuyPress(downToken)}": 1,
+              "{() => toggleWalletExpanded(walletId)}": 1,
+              "{() => openLink(metadata.externalLinks.homepage || '', 'website')}": 1,
+              "{() => openLink( `https://x.com/${metadata.externalLinks.twitterPage}`, 'twitt...}": 1,
+              "{() => openLink( `https://t.me/${metadata.externalLinks.telegramChannelId}`, '...}": 1,
+              "{() => openLink( blockExplorerUrl, 'block_explorer', blockExplorerName || stri...}": 1,
+              "{chip.onPress}": 1,
+              "{togglePrivacy}": 1,
+              "{onPress}": 1
             }
           },
-          "endIconName": {
-            "count": 1,
+          "testID": {
+            "count": 14,
             "values": {
-              "{IconName.ArrowDown}": 1
+              "{CardWelcomeSelectors.VERIFY_ACCOUNT_BUTTON}": 1,
+              "{AccessRestrictedModalSelectorsIDs.CONTACT_SUPPORT_BUTTON}": 1,
+              "{testIDEnergy}": 1,
+              "{testIDBandwidth}": 1,
+              "{ids.LEVERAGE_BUTTON}": 1,
+              "{ids.ORDER_TYPE_BUTTON}": 1,
+              "{ids.MID_PRICE_BUTTON}": 1,
+              "{isPro ? PerpsModeToggleSelectorsIDs.PRO_SEGMENT : PerpsModeToggleSelectorsIDs...}": 1,
+              "{PredictCryptoUpDownMarketCardSelectorsIDs.UP_BUTTON}": 1,
+              "{PredictCryptoUpDownMarketCardSelectorsIDs.DOWN_BUTTON}": 1,
+              "{`show-more-button-${walletId}`}": 1,
+              "{suppressTestID ? undefined : chip.testID}": 1,
+              "{HomepageBalanceBreakdownTestIds.HERO}": 1,
+              "{testID}": 1
+            }
+          },
+          "twClassName": {
+            "count": 14,
+            "values": {
+              "{(pressed) => `rounded-lg bg-muted px-3 ${pressed ? 'opacity-70' : ''}`}": 4,
+              "\"w-full rounded-xl bg-muted mt-6\"": 1,
+              "\"rounded-lg bg-muted px-2\"": 1,
+              "\"h-12 w-full bg-transparent px-3\"": 1,
+              "\"h-12 bg-transparent px-0\"": 1,
+              "\"bg-transparent border border-border-muted\"": 1,
+              "\"h-10 flex-1 rounded-lg bg-success-muted\"": 1,
+              "\"h-10 flex-1 rounded-lg bg-error-muted\"": 1,
+              "\"bg-background-default\"": 1,
+              "\"mx-4 h-auto self-stretch flex-col items-start justify-start overflow-visible rounded-none bg-transparent p-0\"": 1,
+              "{(pressed) => `${bgClass}${pressed && !buttonDisabled && state === 'idle' ? ' ...}": 1
+            }
+          },
+          "size": {
+            "count": 13,
+            "values": {
+              "{ButtonBaseSize.Md}": 7,
+              "{ButtonBaseSize.Sm}": 3,
+              "{ButtonSize.Lg}": 2,
+              "{ButtonBaseSize.Lg}": 1
+            }
+          },
+          "startIconName": {
+            "count": 6,
+            "values": {
+              "{IconName.Global}": 3,
+              "{IconName.Flash}": 1,
+              "{IconName.Connect}": 1,
+              "{IconName.X}": 1
             }
           },
           "style": {
+            "count": 4,
+            "values": {
+              "{styles.buttonBase}": 2,
+              "{styles.getStartedButton}": 1,
+              "{({ pressed }) => tw.style(pressed && 'bg-background-pressed')}": 1
+            }
+          },
+          "isFullWidth": {
+            "count": 4,
+            "values": {
+              "true (shorthand)": 4
+            }
+          },
+          "accessibilityLabel": {
+            "count": 4,
+            "values": {
+              "{energyLabel}": 1,
+              "{bandwidthLabel}": 1,
+              "{strings( 'perps.mode.active_pill_accessibility_label', { mode: currentModeLab...}": 1,
+              "{accessibilityLabel}": 1
+            }
+          },
+          "startIconProps": {
+            "count": 4,
+            "values": {
+              "{{ color: IconColor.IconDefault, size: IconSize.Sm, }}": 4
+            }
+          },
+          "textProps": {
+            "count": 3,
+            "values": {
+              "{{ variant: TextVariant.BodyMd, fontWeight: FontWeight.Medium, }}": 2,
+              "{{ variant: TextVariant.BodySm }}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 3,
+            "values": {
+              "{!onLeveragePress}": 1,
+              "{!onUseMidPricePress}": 1,
+              "{buttonDisabled}": 1
+            }
+          },
+          "contentWrapperProps": {
+            "count": 2,
+            "values": {
+              "{{ twClassName: 'w-full justify-between' }}": 1,
+              "{{ testID: HomepageBalanceBreakdownTestIds.HERO_CONTENT, twClassName: 'w-full ...}": 1
+            }
+          },
+          "endIconName": {
+            "count": 2,
+            "values": {
+              "{IconName.ArrowRight}": 1,
+              "{IconName.ArrowDown}": 1
+            }
+          },
+          "accessibilityHint": {
+            "count": 2,
+            "values": {
+              "{strings( 'perps.mode.active_pill_accessibility_hint', { mode: nextModeLabel }, )}": 1,
+              "{accessibilityHint}": 1
+            }
+          },
+          "disabled": {
+            "count": 2,
+            "values": {
+              "{!upToken || !isMarketOpen}": 1,
+              "{!downToken || !isMarketOpen}": 1
+            }
+          },
+          "endIconProps": {
             "count": 1,
             "values": {
+              "{{ size: IconSize.Sm, testID: `${ids.ORDER_TYPE_BUTTON}-chevron`, }}": 1
+            }
+          },
+          "isLoading": {
+            "count": 1,
+            "values": {
+              "{state === 'loading'}": 1
+            }
+          },
+          "textClassName": {
+            "count": 1,
+            "values": {
+              "{() => textClass}": 1
+            }
+          }
+        }
+      },
+      "deprecated": {
+        "totalInstances": 7,
+        "filesCount": 6,
+        "props": {
+          "label": {
+            "count": 7,
+            "values": {
+              "{buttonContent}": 1,
+              "{inlineButtonLabel}": 1,
+              "{`${value}`}": 1,
+              "{<Text variant={TextVariant.BodyMd} fontWeight={FontWeight.Medium} style={styl...}": 1,
+              "{<Text variant={TextVariant.BodyMDMedium} style={styles.getStartedButtonText} ...}": 1,
+              "{label}": 1,
+              "{<> <View style={styles.networkManagerWrapper}> {showNetworkFilterAvatar && ( ...}": 1
+            }
+          },
+          "onPress": {
+            "count": 7,
+            "values": {
+              "{handlePress}": 2,
+              "{handleModalOpen}": 1,
+              "{onPress}": 1,
+              "{() => tryPerpsNow()}": 1,
+              "{() => handleGetStarted()}": 1,
+              "{showFilterControls}": 1
+            }
+          },
+          "style": {
+            "count": 7,
+            "values": {
+              "{styles.modalButton}": 1,
+              "{styles.button}": 1,
+              "{styles.currencyToggleButton}": 1,
+              "{styles.tryNowButton}": 1,
+              "{styles.getStartedButton}": 1,
+              "{isHighlighted ? styles.amountHighlighted : styles.amount}": 1,
               "{styles.controlButton}": 1
+            }
+          },
+          "width": {
+            "count": 6,
+            "values": {
+              "{ButtonWidthTypes.Full}": 5,
+              "{ButtonWidthTypes.Auto}": 1
+            }
+          },
+          "testID": {
+            "count": 6,
+            "values": {
+              "\"snap-ui-renderer__selector-item\"": 1,
+              "{testID}": 1,
+              "\"currency-toggle\"": 1,
+              "{PerpsGTMModalSelectorsIDs.PERPS_TRY_NOW_BUTTON}": 1,
+              "{PREDICT_GTM_MODAL_TEST_IDS.GET_STARTED_BUTTON}": 1,
+              "{WalletViewSelectorsIDs.TOKEN_NETWORK_FILTER}": 1
+            }
+          },
+          "size": {
+            "count": 4,
+            "values": {
+              "{ButtonSize.Lg}": 2,
+              "{ButtonSize.Sm}": 1,
+              "{ButtonSize.Md}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 3,
+            "values": {
+              "{disabled}": 2,
+              "false": 1
+            }
+          },
+          "endIconName": {
+            "count": 3,
+            "values": {
+              "{IconName.ArrowDown}": 2,
+              "{IconName.SwapVertical}": 1
+            }
+          },
+          "labelColor": {
+            "count": 2,
+            "values": {
+              "{TextColor.Default}": 1,
+              "{isHighlighted ? TextColor.Primary : TextColor.Default}": 1
+            }
+          },
+          "labelTextVariant": {
+            "count": 2,
+            "values": {
+              "{TextVariant.BodyMDMedium}": 2
+            }
+          },
+          "activeOpacity": {
+            "count": 2,
+            "values": {
+              "0.6": 2
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{value === 1 && !isStablecoinLendingEnabled ? { startIconName: IconName.Sparkl...}": 1
             }
           },
           "disabled": {
@@ -325,55 +1191,245 @@
         }
       },
       "overall": {
-        "totalInstances": 1,
-        "filesCount": 1,
+        "totalInstances": 25,
+        "filesCount": 17,
         "props": {
-          "testID": {
-            "count": 1,
-            "values": {
-              "{WalletViewSelectorsIDs.TOKEN_NETWORK_FILTER}": 1
-            }
-          },
-          "label": {
-            "count": 1,
-            "values": {
-              "{<> <View style={styles.networkManagerWrapper}> {showNetworkFilterAvatar && ( ...}": 1
-            }
-          },
-          "isDisabled": {
-            "count": 1,
-            "values": {
-              "false": 1
-            }
-          },
           "onPress": {
-            "count": 1,
+            "count": 25,
             "values": {
-              "{showFilterControls}": 1
+              "{handlePress}": 2,
+              "{onPress}": 2,
+              "{handleModalOpen}": 1,
+              "{handleButtonPress}": 1,
+              "{onContactSupport}": 1,
+              "{() => onChange('energy')}": 1,
+              "{() => onChange('bandwidth')}": 1,
+              "{onLeveragePress}": 1,
+              "{onOrderTypeButtonPress}": 1,
+              "{onUseMidPricePress}": 1,
+              "{() => tryPerpsNow()}": 1,
+              "{() => handleChange(isPro ? PerpsMode.Lite : PerpsMode.Pro)}": 1,
+              "{() => onBuyPress(upToken)}": 1,
+              "{() => onBuyPress(downToken)}": 1,
+              "{() => handleGetStarted()}": 1,
+              "{() => toggleWalletExpanded(walletId)}": 1,
+              "{() => openLink(metadata.externalLinks.homepage || '', 'website')}": 1,
+              "{() => openLink( `https://x.com/${metadata.externalLinks.twitterPage}`, 'twitt...}": 1,
+              "{() => openLink( `https://t.me/${metadata.externalLinks.telegramChannelId}`, '...}": 1,
+              "{() => openLink( blockExplorerUrl, 'block_explorer', blockExplorerName || stri...}": 1,
+              "{chip.onPress}": 1,
+              "{showFilterControls}": 1,
+              "{togglePrivacy}": 1
             }
           },
-          "endIconName": {
-            "count": 1,
+          "testID": {
+            "count": 20,
             "values": {
-              "{IconName.ArrowDown}": 1
+              "{testID}": 2,
+              "\"snap-ui-renderer__selector-item\"": 1,
+              "{CardWelcomeSelectors.VERIFY_ACCOUNT_BUTTON}": 1,
+              "{AccessRestrictedModalSelectorsIDs.CONTACT_SUPPORT_BUTTON}": 1,
+              "\"currency-toggle\"": 1,
+              "{testIDEnergy}": 1,
+              "{testIDBandwidth}": 1,
+              "{ids.LEVERAGE_BUTTON}": 1,
+              "{ids.ORDER_TYPE_BUTTON}": 1,
+              "{ids.MID_PRICE_BUTTON}": 1,
+              "{PerpsGTMModalSelectorsIDs.PERPS_TRY_NOW_BUTTON}": 1,
+              "{isPro ? PerpsModeToggleSelectorsIDs.PRO_SEGMENT : PerpsModeToggleSelectorsIDs...}": 1,
+              "{PredictCryptoUpDownMarketCardSelectorsIDs.UP_BUTTON}": 1,
+              "{PredictCryptoUpDownMarketCardSelectorsIDs.DOWN_BUTTON}": 1,
+              "{PREDICT_GTM_MODAL_TEST_IDS.GET_STARTED_BUTTON}": 1,
+              "{`show-more-button-${walletId}`}": 1,
+              "{suppressTestID ? undefined : chip.testID}": 1,
+              "{WalletViewSelectorsIDs.TOKEN_NETWORK_FILTER}": 1,
+              "{HomepageBalanceBreakdownTestIds.HERO}": 1
+            }
+          },
+          "size": {
+            "count": 17,
+            "values": {
+              "{ButtonBaseSize.Md}": 7,
+              "{ButtonSize.Lg}": 4,
+              "{ButtonBaseSize.Sm}": 3,
+              "{ButtonBaseSize.Lg}": 1,
+              "{ButtonSize.Sm}": 1,
+              "{ButtonSize.Md}": 1
+            }
+          },
+          "twClassName": {
+            "count": 14,
+            "values": {
+              "{(pressed) => `rounded-lg bg-muted px-3 ${pressed ? 'opacity-70' : ''}`}": 4,
+              "\"w-full rounded-xl bg-muted mt-6\"": 1,
+              "\"rounded-lg bg-muted px-2\"": 1,
+              "\"h-12 w-full bg-transparent px-3\"": 1,
+              "\"h-12 bg-transparent px-0\"": 1,
+              "\"bg-transparent border border-border-muted\"": 1,
+              "\"h-10 flex-1 rounded-lg bg-success-muted\"": 1,
+              "\"h-10 flex-1 rounded-lg bg-error-muted\"": 1,
+              "\"bg-background-default\"": 1,
+              "\"mx-4 h-auto self-stretch flex-col items-start justify-start overflow-visible rounded-none bg-transparent p-0\"": 1,
+              "{(pressed) => `${bgClass}${pressed && !buttonDisabled && state === 'idle' ? ' ...}": 1
             }
           },
           "style": {
-            "count": 1,
+            "count": 11,
             "values": {
+              "{styles.getStartedButton}": 2,
+              "{styles.buttonBase}": 2,
+              "{styles.modalButton}": 1,
+              "{styles.button}": 1,
+              "{styles.currencyToggleButton}": 1,
+              "{styles.tryNowButton}": 1,
+              "{({ pressed }) => tw.style(pressed && 'bg-background-pressed')}": 1,
+              "{isHighlighted ? styles.amountHighlighted : styles.amount}": 1,
               "{styles.controlButton}": 1
             }
           },
+          "label": {
+            "count": 7,
+            "values": {
+              "{buttonContent}": 1,
+              "{inlineButtonLabel}": 1,
+              "{`${value}`}": 1,
+              "{<Text variant={TextVariant.BodyMd} fontWeight={FontWeight.Medium} style={styl...}": 1,
+              "{<Text variant={TextVariant.BodyMDMedium} style={styles.getStartedButtonText} ...}": 1,
+              "{label}": 1,
+              "{<> <View style={styles.networkManagerWrapper}> {showNetworkFilterAvatar && ( ...}": 1
+            }
+          },
+          "width": {
+            "count": 6,
+            "values": {
+              "{ButtonWidthTypes.Full}": 5,
+              "{ButtonWidthTypes.Auto}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 6,
+            "values": {
+              "{disabled}": 2,
+              "{!onLeveragePress}": 1,
+              "{!onUseMidPricePress}": 1,
+              "false": 1,
+              "{buttonDisabled}": 1
+            }
+          },
+          "startIconName": {
+            "count": 6,
+            "values": {
+              "{IconName.Global}": 3,
+              "{IconName.Flash}": 1,
+              "{IconName.Connect}": 1,
+              "{IconName.X}": 1
+            }
+          },
+          "endIconName": {
+            "count": 5,
+            "values": {
+              "{IconName.ArrowDown}": 3,
+              "{IconName.SwapVertical}": 1,
+              "{IconName.ArrowRight}": 1
+            }
+          },
+          "isFullWidth": {
+            "count": 4,
+            "values": {
+              "true (shorthand)": 4
+            }
+          },
+          "accessibilityLabel": {
+            "count": 4,
+            "values": {
+              "{energyLabel}": 1,
+              "{bandwidthLabel}": 1,
+              "{strings( 'perps.mode.active_pill_accessibility_label', { mode: currentModeLab...}": 1,
+              "{accessibilityLabel}": 1
+            }
+          },
+          "startIconProps": {
+            "count": 4,
+            "values": {
+              "{{ color: IconColor.IconDefault, size: IconSize.Sm, }}": 4
+            }
+          },
+          "textProps": {
+            "count": 3,
+            "values": {
+              "{{ variant: TextVariant.BodyMd, fontWeight: FontWeight.Medium, }}": 2,
+              "{{ variant: TextVariant.BodySm }}": 1
+            }
+          },
           "disabled": {
+            "count": 3,
+            "values": {
+              "{!upToken || !isMarketOpen}": 1,
+              "{!downToken || !isMarketOpen}": 1,
+              "false": 1
+            }
+          },
+          "labelColor": {
+            "count": 2,
+            "values": {
+              "{TextColor.Default}": 1,
+              "{isHighlighted ? TextColor.Primary : TextColor.Default}": 1
+            }
+          },
+          "labelTextVariant": {
+            "count": 2,
+            "values": {
+              "{TextVariant.BodyMDMedium}": 2
+            }
+          },
+          "contentWrapperProps": {
+            "count": 2,
+            "values": {
+              "{{ twClassName: 'w-full justify-between' }}": 1,
+              "{{ testID: HomepageBalanceBreakdownTestIds.HERO_CONTENT, twClassName: 'w-full ...}": 1
+            }
+          },
+          "activeOpacity": {
+            "count": 2,
+            "values": {
+              "0.6": 2
+            }
+          },
+          "accessibilityHint": {
+            "count": 2,
+            "values": {
+              "{strings( 'perps.mode.active_pill_accessibility_hint', { mode: nextModeLabel }, )}": 1,
+              "{accessibilityHint}": 1
+            }
+          },
+          "endIconProps": {
             "count": 1,
             "values": {
-              "false": 1
+              "{{ size: IconSize.Sm, testID: `${ids.ORDER_TYPE_BUTTON}-chevron`, }}": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{value === 1 && !isStablecoinLendingEnabled ? { startIconName: IconName.Sparkl...}": 1
+            }
+          },
+          "isLoading": {
+            "count": 1,
+            "values": {
+              "{state === 'loading'}": 1
+            }
+          },
+          "textClassName": {
+            "count": 1,
+            "values": {
+              "{() => textClass}": 1
             }
           }
         }
       },
       "deprecatedByLegacyComponent": {
-        "ButtonBase": 1
+        "ButtonBase": 7
       }
     }
   }

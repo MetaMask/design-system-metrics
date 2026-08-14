@@ -1,34 +1,591 @@
 {
   "component": "Skeleton",
-  "generatedAt": "2026-08-14T07:59:02.626Z",
+  "generatedAt": "2026-08-03T15:20:54.228Z",
   "projects": {
     "extension": {
-      "filesScanned": 3574,
+      "filesScanned": 3520,
       "targetComponent": "Skeleton",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 136,
+        "filesCount": 47,
+        "props": {
+          "className": {
+            "count": 80,
+            "values": {
+              "\"h-4 w-24\"": 5,
+              "\"h-8 w-8 shrink-0 rounded-full\"": 5,
+              "\"h-12 flex-1 rounded-lg\"": 4,
+              "\"h-3 w-20\"": 4,
+              "\"h-4 w-16\"": 4,
+              "\"h-3 w-12\"": 4,
+              "\"h-4 w-20\"": 4,
+              "\"h-4 w-28\"": 3,
+              "\"mb-1\"": 2,
+              "\"h-3 w-14 rounded\"": 2,
+              "\"h-4 w-12\"": 2,
+              "\"h-3 w-16\"": 2,
+              "\"h-10 w-10 shrink-0 rounded-full\"": 2,
+              "\"h-[250px] w-full rounded-lg\"": 2,
+              "\"h-5 w-32\"": 2,
+              "\"rounded\"": 2,
+              "\"h-3.5 w-8\"": 1,
+              "\"h-3.5\"": 1,
+              "{`h-3 ${priceWidth} rounded`}": 1,
+              "{`h-3 ${valueWidth} rounded`}": 1,
+              "\"h-3 w-12 rounded\"": 1,
+              "\"h-3 w-20 rounded\"": 1,
+              "\"h-1 w-full rounded-full\"": 1,
+              "\"h-[72px] w-full rounded-none\"": 1,
+              "\"h-5 w-36 rounded\"": 1,
+              "\"h-4 w-14 rounded\"": 1,
+              "\"h-10 w-full rounded-md\"": 1,
+              "\"h-10 w-40\"": 1,
+              "\"h-5 w-24\"": 1,
+              "\"h-4 w-4 rounded\"": 1,
+              "\"h-4 w-10\"": 1,
+              "\"h-7 w-32\"": 1,
+              "\"h-8 w-10 rounded-md\"": 1,
+              "\"h-5 w-16\"": 1,
+              "\"h-3 w-full\"": 1,
+              "\"h-3 w-3/4\"": 1,
+              "\"h-4 w-32\"": 1,
+              "\"h-4 w-36\"": 1,
+              "{`shrink-0 rounded-full ${AVATAR_SIZE_CLASS[size]} ${className ?? ''}`}": 1,
+              "\"h-[50px] w-full rounded-lg\"": 1,
+              "\"h-6 w-[180px] rounded-lg\"": 1,
+              "\"h-3 w-44\"": 1,
+              "\"mb-1 rounded-lg\"": 1,
+              "\"rounded-lg\"": 1,
+              "\"h-3 w-8\"": 1,
+              "\"rounded-full\"": 1,
+              "\"w-2/3 h-5\"": 1
+            }
+          },
+          "width": {
+            "count": 56,
+            "values": {
+              "40": 4,
+              "48": 2,
+              "60": 2,
+              "72": 1,
+              "80": 5,
+              "90": 1,
+              "100": 2,
+              "128": 2,
+              "\"100%\"": 10,
+              "\"60px\"": 3,
+              "\"30%\"": 3,
+              "\"60%\"": 3,
+              "\"200px\"": 3,
+              "\"40%\"": 3,
+              "\"50%\"": 2,
+              "\"100px\"": 2,
+              "\"25%\"": 1,
+              "\"33%\"": 1,
+              "\"35%\"": 1,
+              "{labelWidth}": 1,
+              "{valueWidth}": 1,
+              "\"80px\"": 1,
+              "\"40px\"": 1,
+              "\"32px\"": 1
+            }
+          },
+          "height": {
+            "count": 54,
+            "values": {
+              "16": 10,
+              "18": 2,
+              "20": 12,
+              "22": 3,
+              "24": 2,
+              "25": 1,
+              "26": 1,
+              "32": 2,
+              "40": 5,
+              "70": 2,
+              "\"32px\"": 3,
+              "\"72px\"": 3,
+              "\"20px\"": 2,
+              "\"18px\"": 2,
+              "\"16px\"": 1,
+              "\"60px\"": 1,
+              "\"40px\"": 1,
+              "\"24px\"": 1
+            }
+          },
+          "style": {
+            "count": 12,
+            "values": {
+              "{{ marginBottom: 12 }}": 3,
+              "{{ borderRadius: '50%' }}": 2,
+              "{{ marginBottom: '2px' }}": 2,
+              "{{ marginTop: 3, marginBottom: 3 }}": 1,
+              "{{ flex: 1, minWidth: 0 }}": 1,
+              "{{ marginTop: 32, marginBottom: 10, borderRadius: '50%', justifySelf: 'center'...}": 1,
+              "{{ marginBottom: 20, justifySelf: 'center', alignSelf: 'center' }}": 1,
+              "{{ flexShrink: 0 }}": 1
+            }
+          },
+          "hideChildren": {
+            "count": 10,
+            "values": {
+              "true (shorthand)": 2,
+              "{isEvm && !anyEnabledNetworksAreAvailable && (isZeroAmount(total) || currency ...}": 1,
+              "{isLoading}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(token.balance)}": 1,
+              "{token.isFiatLoading || (!anyEnabledNetworksAreAvailable && isZeroAmount(secon...}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(formattedAmountChangeCrossCha...}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(singleDayAmountChange)}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(balanceToDisplay)}": 1
+            }
+          },
+          "data-testid": {
+            "count": 10,
+            "values": {
+              "\"account-group-balance-skeleton\"": 1,
+              "\"multichain-token-list-item-percentage-skeleton\"": 1,
+              "\"multichain-token-list-item-secondary-value-skeleton\"": 1,
+              "\"perps-recent-activity-skeleton\"": 1,
+              "{`perps-token-logo-${sanitizedSymbol}`}": 1,
+              "{`${amountFieldProps.testId}-loading-skeleton`}": 1,
+              "\"rewards-loading-skeleton\"": 1,
+              "\"confirmation__info_skeleton\"": 1,
+              "\"confirm-title-skeleton\"": 1,
+              "\"simulation-details-skeleton\"": 1
+            }
+          },
+          "key": {
+            "count": 3,
+            "values": {
+              "{i}": 1,
+              "{period}": 1,
+              "{percentage}": 1
+            }
+          }
+        }
       },
       "deprecated": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 23,
+        "filesCount": 13,
+        "props": {
+          "width": {
+            "count": 20,
+            "values": {
+              "32": 1,
+              "36": 1,
+              "60": 1,
+              "80": 3,
+              "120": 1,
+              "\"100%\"": 7,
+              "\"50%\"": 3,
+              "\"100px\"": 2,
+              "{QR_CODE_SIZE}": 1
+            }
+          },
+          "height": {
+            "count": 14,
+            "values": {
+              "16": 2,
+              "20": 1,
+              "24": 8,
+              "32": 1,
+              "\"16px\"": 1,
+              "{QR_CODE_SIZE}": 1
+            }
+          },
+          "isLoading": {
+            "count": 9,
+            "values": {
+              "{isLoading}": 3,
+              "{!balances || assets[selectedAccount.id] === undefined || assets[selectedAccou...}": 1,
+              "{!quote || quote?.isLoadingQuote}": 1,
+              "{quotesAreFetching && anyEnabledAsset && !atLeastOneQuoteAvailable}": 1,
+              "{showSkeleton}": 1,
+              "{loading}": 1,
+              "{isBalanceLoading}": 1
+            }
+          },
+          "[spread]": {
+            "count": 3,
+            "values": {
+              "{skeletonProps}": 3
+            }
+          },
+          "marginBottom": {
+            "count": 1,
+            "values": {
+              "1": 1
+            }
+          },
+          "borderRadius": {
+            "count": 1,
+            "values": {
+              "{BorderRadius.full}": 1
+            }
+          },
+          "style": {
+            "count": 1,
+            "values": {
+              "{{ ...skeletonProps?.style, flexShrink: 0 }}": 1
+            }
+          }
+        }
       },
       "overall": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 159,
+        "filesCount": 60,
+        "props": {
+          "className": {
+            "count": 80,
+            "values": {
+              "\"h-4 w-24\"": 5,
+              "\"h-8 w-8 shrink-0 rounded-full\"": 5,
+              "\"h-12 flex-1 rounded-lg\"": 4,
+              "\"h-3 w-20\"": 4,
+              "\"h-4 w-16\"": 4,
+              "\"h-3 w-12\"": 4,
+              "\"h-4 w-20\"": 4,
+              "\"h-4 w-28\"": 3,
+              "\"mb-1\"": 2,
+              "\"h-3 w-14 rounded\"": 2,
+              "\"h-4 w-12\"": 2,
+              "\"h-3 w-16\"": 2,
+              "\"h-10 w-10 shrink-0 rounded-full\"": 2,
+              "\"h-[250px] w-full rounded-lg\"": 2,
+              "\"h-5 w-32\"": 2,
+              "\"rounded\"": 2,
+              "\"h-3.5 w-8\"": 1,
+              "\"h-3.5\"": 1,
+              "{`h-3 ${priceWidth} rounded`}": 1,
+              "{`h-3 ${valueWidth} rounded`}": 1,
+              "\"h-3 w-12 rounded\"": 1,
+              "\"h-3 w-20 rounded\"": 1,
+              "\"h-1 w-full rounded-full\"": 1,
+              "\"h-[72px] w-full rounded-none\"": 1,
+              "\"h-5 w-36 rounded\"": 1,
+              "\"h-4 w-14 rounded\"": 1,
+              "\"h-10 w-full rounded-md\"": 1,
+              "\"h-10 w-40\"": 1,
+              "\"h-5 w-24\"": 1,
+              "\"h-4 w-4 rounded\"": 1,
+              "\"h-4 w-10\"": 1,
+              "\"h-7 w-32\"": 1,
+              "\"h-8 w-10 rounded-md\"": 1,
+              "\"h-5 w-16\"": 1,
+              "\"h-3 w-full\"": 1,
+              "\"h-3 w-3/4\"": 1,
+              "\"h-4 w-32\"": 1,
+              "\"h-4 w-36\"": 1,
+              "{`shrink-0 rounded-full ${AVATAR_SIZE_CLASS[size]} ${className ?? ''}`}": 1,
+              "\"h-[50px] w-full rounded-lg\"": 1,
+              "\"h-6 w-[180px] rounded-lg\"": 1,
+              "\"h-3 w-44\"": 1,
+              "\"mb-1 rounded-lg\"": 1,
+              "\"rounded-lg\"": 1,
+              "\"h-3 w-8\"": 1,
+              "\"rounded-full\"": 1,
+              "\"w-2/3 h-5\"": 1
+            }
+          },
+          "width": {
+            "count": 76,
+            "values": {
+              "32": 1,
+              "36": 1,
+              "40": 4,
+              "48": 2,
+              "60": 3,
+              "72": 1,
+              "80": 8,
+              "90": 1,
+              "100": 2,
+              "120": 1,
+              "128": 2,
+              "\"100%\"": 17,
+              "\"50%\"": 5,
+              "\"100px\"": 4,
+              "\"60px\"": 3,
+              "\"30%\"": 3,
+              "\"60%\"": 3,
+              "\"200px\"": 3,
+              "\"40%\"": 3,
+              "\"25%\"": 1,
+              "\"33%\"": 1,
+              "\"35%\"": 1,
+              "{labelWidth}": 1,
+              "{valueWidth}": 1,
+              "\"80px\"": 1,
+              "\"40px\"": 1,
+              "\"32px\"": 1,
+              "{QR_CODE_SIZE}": 1
+            }
+          },
+          "height": {
+            "count": 68,
+            "values": {
+              "16": 12,
+              "18": 2,
+              "20": 13,
+              "22": 3,
+              "24": 10,
+              "25": 1,
+              "26": 1,
+              "32": 3,
+              "40": 5,
+              "70": 2,
+              "\"32px\"": 3,
+              "\"72px\"": 3,
+              "\"16px\"": 2,
+              "\"20px\"": 2,
+              "\"18px\"": 2,
+              "\"60px\"": 1,
+              "\"40px\"": 1,
+              "\"24px\"": 1,
+              "{QR_CODE_SIZE}": 1
+            }
+          },
+          "style": {
+            "count": 13,
+            "values": {
+              "{{ marginBottom: 12 }}": 3,
+              "{{ borderRadius: '50%' }}": 2,
+              "{{ marginBottom: '2px' }}": 2,
+              "{{ marginTop: 3, marginBottom: 3 }}": 1,
+              "{{ flex: 1, minWidth: 0 }}": 1,
+              "{{ ...skeletonProps?.style, flexShrink: 0 }}": 1,
+              "{{ marginTop: 32, marginBottom: 10, borderRadius: '50%', justifySelf: 'center'...}": 1,
+              "{{ marginBottom: 20, justifySelf: 'center', alignSelf: 'center' }}": 1,
+              "{{ flexShrink: 0 }}": 1
+            }
+          },
+          "hideChildren": {
+            "count": 10,
+            "values": {
+              "true (shorthand)": 2,
+              "{isEvm && !anyEnabledNetworksAreAvailable && (isZeroAmount(total) || currency ...}": 1,
+              "{isLoading}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(token.balance)}": 1,
+              "{token.isFiatLoading || (!anyEnabledNetworksAreAvailable && isZeroAmount(secon...}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(formattedAmountChangeCrossCha...}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(amountChange)}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(singleDayAmountChange)}": 1,
+              "{!anyEnabledNetworksAreAvailable && isZeroAmount(balanceToDisplay)}": 1
+            }
+          },
+          "data-testid": {
+            "count": 10,
+            "values": {
+              "\"account-group-balance-skeleton\"": 1,
+              "\"multichain-token-list-item-percentage-skeleton\"": 1,
+              "\"multichain-token-list-item-secondary-value-skeleton\"": 1,
+              "\"perps-recent-activity-skeleton\"": 1,
+              "{`perps-token-logo-${sanitizedSymbol}`}": 1,
+              "{`${amountFieldProps.testId}-loading-skeleton`}": 1,
+              "\"rewards-loading-skeleton\"": 1,
+              "\"confirmation__info_skeleton\"": 1,
+              "\"confirm-title-skeleton\"": 1,
+              "\"simulation-details-skeleton\"": 1
+            }
+          },
+          "isLoading": {
+            "count": 9,
+            "values": {
+              "{isLoading}": 3,
+              "{!balances || assets[selectedAccount.id] === undefined || assets[selectedAccou...}": 1,
+              "{!quote || quote?.isLoadingQuote}": 1,
+              "{quotesAreFetching && anyEnabledAsset && !atLeastOneQuoteAvailable}": 1,
+              "{showSkeleton}": 1,
+              "{loading}": 1,
+              "{isBalanceLoading}": 1
+            }
+          },
+          "key": {
+            "count": 3,
+            "values": {
+              "{i}": 1,
+              "{period}": 1,
+              "{percentage}": 1
+            }
+          },
+          "[spread]": {
+            "count": 3,
+            "values": {
+              "{skeletonProps}": 3
+            }
+          },
+          "marginBottom": {
+            "count": 1,
+            "values": {
+              "1": 1
+            }
+          },
+          "borderRadius": {
+            "count": 1,
+            "values": {
+              "{BorderRadius.full}": 1
+            }
+          }
+        }
       },
-      "deprecatedByLegacyComponent": {}
+      "deprecatedByLegacyComponent": {
+        "Skeleton": 23
+      }
     },
     "mobile": {
-      "filesScanned": 7573,
+      "filesScanned": 7459,
       "targetComponent": "Skeleton",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 154,
+        "filesCount": 33,
+        "props": {
+          "style": {
+            "count": 99,
+            "values": {
+              "{tw.style('h-4 w-24 rounded-lg')}": 6,
+              "{tw.style('h-48 rounded-xl')}": 4,
+              "{tw.style('h-32 rounded-xl')}": 4,
+              "{tw.style('h-6 w-20 rounded-lg')}": 4,
+              "{tw.style('h-6 w-16 rounded-lg')}": 4,
+              "{tw.style('rounded-md')}": 3,
+              "{tw.style('h-8 w-36 rounded-lg')}": 3,
+              "{tw.style('h-4 w-16 rounded-lg')}": 3,
+              "{tw.style('h-4 w-20 rounded-lg')}": 3,
+              "{tw.style('h-6 w-24 rounded bg-muted')}": 2,
+              "{tw.style('h-50 rounded-xl bg-muted')}": 2,
+              "{tw.style('h-8 w-32 rounded-lg')}": 2,
+              "{tw.style('h-4 w-44 rounded-lg')}": 2,
+              "{tw.style('h-4 w-28 rounded-lg')}": 2,
+              "{tw.style('h-4 w-36 rounded-lg')}": 2,
+              "{tw.style('h-3 w-24 rounded-lg')}": 2,
+              "{tw.style('h-5 w-20 rounded')}": 2,
+              "{tw.style('h-9 w-28 rounded')}": 2,
+              "{styles.skeletonMd}": 2,
+              "{tw.style('h-7 w-20 rounded-lg')}": 2,
+              "{styles.skeletonTop}": 2,
+              "{tw.style('h-10 w-[100px] rounded-md')}": 1,
+              "{tw.style('h-[22px] w-[150px] rounded-md')}": 1,
+              "{tw.style('rounded-lg')}": 1,
+              "{tw.style('h-[22px] w-[130px] rounded-md')}": 1,
+              "{tw.style('h-[22px] w-full rounded-md')}": 1,
+              "{tw.style('h-[22px] w-4/5 rounded-md')}": 1,
+              "{tw.style('h-[22px] w-[220px] rounded-md')}": 1,
+              "{tw.style('h-6 w-28 rounded-lg')}": 1,
+              "{tw.style('h-12 rounded-lg')}": 1,
+              "{tw.style('h-14 rounded-xl')}": 1,
+              "{tw.style('h-10 w-36 rounded-lg')}": 1,
+              "{tw.style('h-9 w-9 rounded-lg')}": 1,
+              "{tw.style('h-5 w-40 rounded-lg')}": 1,
+              "{tw.style('h-12 w-full rounded-lg')}": 1,
+              "{tw.style('h-16 rounded-xl')}": 1,
+              "{tw.style('h-10 w-10 rounded-full')}": 1,
+              "{tw.style('h-3 w-12 rounded-lg')}": 1,
+              "{tw.style('h-8 w-8 rounded-lg')}": 1,
+              "{tw.style('h-6 w-24 rounded-lg')}": 1,
+              "{tw.style('h-4 w-32 rounded-lg')}": 1,
+              "{tw.style('h-3 w-full rounded-full')}": 1,
+              "{tw.style('h-4 w-40 rounded-lg')}": 1,
+              "{tw.style('h-5 w-5 rounded-full')}": 1,
+              "{tw.style( `h-[108px] w-[${VIP_FEE_TILE_WIDTH}px] rounded-2xl`, )}": 1,
+              "{tw.style('h-8 w-40 rounded-lg')}": 1,
+              "{tw.style('h-4 w-full rounded-lg')}": 1,
+              "{tw.style('h-4 w-4/5 rounded-lg')}": 1,
+              "{tw.style('h-4 w-3/4 rounded-lg')}": 1,
+              "{tw.style('h-24 w-24 rounded-full')}": 1,
+              "{tw.style('h-5 w-8 rounded')}": 1,
+              "{tw.style('h-5 w-16 rounded')}": 1,
+              "{tw.style('h-4 w-full max-w-xs rounded')}": 1,
+              "{tw.style('h-4 rounded-full')}": 1,
+              "{tw.style('h-3 w-40 rounded')}": 1,
+              "{tw.style('h-50 rounded-xl')}": 1,
+              "{tw.style('mt-1 h-4 w-full max-w-xs rounded')}": 1,
+              "{styles.skeletonLg}": 1,
+              "{tw.style('h-28 rounded-xl')}": 1,
+              "{tw.style('h-5 w-full rounded-lg')}": 1,
+              "{tw.style('h-5 w-3/4 rounded-lg')}": 1,
+              "{styles.skeletonCircle}": 1
+            }
+          },
+          "height": {
+            "count": 58,
+            "values": {
+              "4": 1,
+              "12": 12,
+              "14": 4,
+              "16": 10,
+              "18": 4,
+              "20": 6,
+              "24": 8,
+              "32": 6,
+              "36": 1,
+              "40": 2,
+              "48": 2,
+              "154": 1,
+              "{iconSize}": 1
+            }
+          },
+          "width": {
+            "count": 57,
+            "values": {
+              "32": 4,
+              "40": 2,
+              "50": 1,
+              "52": 2,
+              "56": 1,
+              "60": 9,
+              "80": 8,
+              "100": 3,
+              "120": 5,
+              "160": 4,
+              "\"42%\"": 3,
+              "\"32%\"": 3,
+              "\"100%\"": 3,
+              "\"28%\"": 1,
+              "\"48%\"": 1,
+              "{iconSize}": 1,
+              "\"70%\"": 1,
+              "\"50%\"": 1,
+              "\"90%\"": 1,
+              "\"80%\"": 1,
+              "\"38%\"": 1,
+              "\"30%\"": 1
+            }
+          },
+          "twClassName": {
+            "count": 18,
+            "values": {
+              "\"rounded-full\"": 7,
+              "\"rounded-lg\"": 4,
+              "\"rounded\"": 4,
+              "\"shrink-0\"": 1,
+              "\"rounded-full mr-3\"": 1,
+              "\"rounded-xl\"": 1
+            }
+          },
+          "testID": {
+            "count": 5,
+            "values": {
+              "{MoneyBalanceCardTestIds.BALANCE_SKELETON}": 1,
+              "{MoneyBalanceCardTestIds.APY_TAG_SKELETON}": 1,
+              "{MoneyEarningsTestIds.LAST_30_DAYS_SKELETON}": 1,
+              "{MoneyEarningsTestIds.SINCE_INCEPTION_SKELETON}": 1,
+              "{REWARDS_VIP_VIEW_TEST_IDS.FEE_TILE_SKELETON}": 1
+            }
+          },
+          "hideChildren": {
+            "count": 4,
+            "values": {
+              "{loading}": 4
+            }
+          },
+          "key": {
+            "count": 4,
+            "values": {
+              "{i}": 3,
+              "{index}": 1
+            }
+          }
+        }
       },
       "deprecated": {
         "totalInstances": 0,
@@ -36,9 +593,156 @@
         "props": {}
       },
       "overall": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 154,
+        "filesCount": 33,
+        "props": {
+          "style": {
+            "count": 99,
+            "values": {
+              "{tw.style('h-4 w-24 rounded-lg')}": 6,
+              "{tw.style('h-48 rounded-xl')}": 4,
+              "{tw.style('h-32 rounded-xl')}": 4,
+              "{tw.style('h-6 w-20 rounded-lg')}": 4,
+              "{tw.style('h-6 w-16 rounded-lg')}": 4,
+              "{tw.style('rounded-md')}": 3,
+              "{tw.style('h-8 w-36 rounded-lg')}": 3,
+              "{tw.style('h-4 w-16 rounded-lg')}": 3,
+              "{tw.style('h-4 w-20 rounded-lg')}": 3,
+              "{tw.style('h-6 w-24 rounded bg-muted')}": 2,
+              "{tw.style('h-50 rounded-xl bg-muted')}": 2,
+              "{tw.style('h-8 w-32 rounded-lg')}": 2,
+              "{tw.style('h-4 w-44 rounded-lg')}": 2,
+              "{tw.style('h-4 w-28 rounded-lg')}": 2,
+              "{tw.style('h-4 w-36 rounded-lg')}": 2,
+              "{tw.style('h-3 w-24 rounded-lg')}": 2,
+              "{tw.style('h-5 w-20 rounded')}": 2,
+              "{tw.style('h-9 w-28 rounded')}": 2,
+              "{styles.skeletonMd}": 2,
+              "{tw.style('h-7 w-20 rounded-lg')}": 2,
+              "{styles.skeletonTop}": 2,
+              "{tw.style('h-10 w-[100px] rounded-md')}": 1,
+              "{tw.style('h-[22px] w-[150px] rounded-md')}": 1,
+              "{tw.style('rounded-lg')}": 1,
+              "{tw.style('h-[22px] w-[130px] rounded-md')}": 1,
+              "{tw.style('h-[22px] w-full rounded-md')}": 1,
+              "{tw.style('h-[22px] w-4/5 rounded-md')}": 1,
+              "{tw.style('h-[22px] w-[220px] rounded-md')}": 1,
+              "{tw.style('h-6 w-28 rounded-lg')}": 1,
+              "{tw.style('h-12 rounded-lg')}": 1,
+              "{tw.style('h-14 rounded-xl')}": 1,
+              "{tw.style('h-10 w-36 rounded-lg')}": 1,
+              "{tw.style('h-9 w-9 rounded-lg')}": 1,
+              "{tw.style('h-5 w-40 rounded-lg')}": 1,
+              "{tw.style('h-12 w-full rounded-lg')}": 1,
+              "{tw.style('h-16 rounded-xl')}": 1,
+              "{tw.style('h-10 w-10 rounded-full')}": 1,
+              "{tw.style('h-3 w-12 rounded-lg')}": 1,
+              "{tw.style('h-8 w-8 rounded-lg')}": 1,
+              "{tw.style('h-6 w-24 rounded-lg')}": 1,
+              "{tw.style('h-4 w-32 rounded-lg')}": 1,
+              "{tw.style('h-3 w-full rounded-full')}": 1,
+              "{tw.style('h-4 w-40 rounded-lg')}": 1,
+              "{tw.style('h-5 w-5 rounded-full')}": 1,
+              "{tw.style( `h-[108px] w-[${VIP_FEE_TILE_WIDTH}px] rounded-2xl`, )}": 1,
+              "{tw.style('h-8 w-40 rounded-lg')}": 1,
+              "{tw.style('h-4 w-full rounded-lg')}": 1,
+              "{tw.style('h-4 w-4/5 rounded-lg')}": 1,
+              "{tw.style('h-4 w-3/4 rounded-lg')}": 1,
+              "{tw.style('h-24 w-24 rounded-full')}": 1,
+              "{tw.style('h-5 w-8 rounded')}": 1,
+              "{tw.style('h-5 w-16 rounded')}": 1,
+              "{tw.style('h-4 w-full max-w-xs rounded')}": 1,
+              "{tw.style('h-4 rounded-full')}": 1,
+              "{tw.style('h-3 w-40 rounded')}": 1,
+              "{tw.style('h-50 rounded-xl')}": 1,
+              "{tw.style('mt-1 h-4 w-full max-w-xs rounded')}": 1,
+              "{styles.skeletonLg}": 1,
+              "{tw.style('h-28 rounded-xl')}": 1,
+              "{tw.style('h-5 w-full rounded-lg')}": 1,
+              "{tw.style('h-5 w-3/4 rounded-lg')}": 1,
+              "{styles.skeletonCircle}": 1
+            }
+          },
+          "height": {
+            "count": 58,
+            "values": {
+              "4": 1,
+              "12": 12,
+              "14": 4,
+              "16": 10,
+              "18": 4,
+              "20": 6,
+              "24": 8,
+              "32": 6,
+              "36": 1,
+              "40": 2,
+              "48": 2,
+              "154": 1,
+              "{iconSize}": 1
+            }
+          },
+          "width": {
+            "count": 57,
+            "values": {
+              "32": 4,
+              "40": 2,
+              "50": 1,
+              "52": 2,
+              "56": 1,
+              "60": 9,
+              "80": 8,
+              "100": 3,
+              "120": 5,
+              "160": 4,
+              "\"42%\"": 3,
+              "\"32%\"": 3,
+              "\"100%\"": 3,
+              "\"28%\"": 1,
+              "\"48%\"": 1,
+              "{iconSize}": 1,
+              "\"70%\"": 1,
+              "\"50%\"": 1,
+              "\"90%\"": 1,
+              "\"80%\"": 1,
+              "\"38%\"": 1,
+              "\"30%\"": 1
+            }
+          },
+          "twClassName": {
+            "count": 18,
+            "values": {
+              "\"rounded-full\"": 7,
+              "\"rounded-lg\"": 4,
+              "\"rounded\"": 4,
+              "\"shrink-0\"": 1,
+              "\"rounded-full mr-3\"": 1,
+              "\"rounded-xl\"": 1
+            }
+          },
+          "testID": {
+            "count": 5,
+            "values": {
+              "{MoneyBalanceCardTestIds.BALANCE_SKELETON}": 1,
+              "{MoneyBalanceCardTestIds.APY_TAG_SKELETON}": 1,
+              "{MoneyEarningsTestIds.LAST_30_DAYS_SKELETON}": 1,
+              "{MoneyEarningsTestIds.SINCE_INCEPTION_SKELETON}": 1,
+              "{REWARDS_VIP_VIEW_TEST_IDS.FEE_TILE_SKELETON}": 1
+            }
+          },
+          "hideChildren": {
+            "count": 4,
+            "values": {
+              "{loading}": 4
+            }
+          },
+          "key": {
+            "count": 4,
+            "values": {
+              "{i}": 3,
+              "{index}": 1
+            }
+          }
+        }
       },
       "deprecatedByLegacyComponent": {}
     }

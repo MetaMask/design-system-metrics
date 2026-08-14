@@ -1,9 +1,9 @@
 {
   "component": "Toast",
-  "generatedAt": "2026-08-14T07:59:12.750Z",
+  "generatedAt": "2026-08-03T15:23:11.627Z",
   "projects": {
     "extension": {
-      "filesScanned": 3574,
+      "filesScanned": 3520,
       "targetComponent": "Toast",
       "mmds": {
         "totalInstances": 0,
@@ -23,7 +23,7 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 7573,
+      "filesScanned": 7459,
       "targetComponent": "Toast",
       "mmds": {
         "totalInstances": 0,
@@ -31,20 +31,600 @@
         "props": {}
       },
       "deprecated": {
-        "totalInstances": 5,
-        "filesCount": 5,
+        "totalInstances": 155,
+        "filesCount": 97,
         "props": {
-          "status": {
-            "count": 2,
+          "style": {
+            "count": 42,
             "values": {
-              "{currentNotification.status}": 2
+              "{tw.style('rounded-xl py-2 px-3')}": 9,
+              "{styles.noNetworkFeeContainer}": 4,
+              "{tw.style('my-1')}": 4,
+              "{styles.paidByMetaMask}": 2,
+              "{styles.actionButtonWrapper}": 2,
+              "{tw.style('rounded-md')}": 2,
+              "{styles.iconSkeleton}": 2,
+              "{styles.tokenNameSkeleton}": 2,
+              "{styles.marketStatsSkeleton}": 2,
+              "{[ credit && styles.valueIsCredit, debit && styles.valueIsDebit, ]}": 2,
+              "{styles.tag}": 1,
+              "{tw.style('w-full')}": 1,
+              "{tw.style('w-full bg-muted')}": 1,
+              "{tw.style('w-full', showReducedOpacity && 'opacity-50')}": 1,
+              "{tw.style('rounded-full')}": 1,
+              "{{ ...styles.cashOutButton, }}": 1,
+              "{styles.priceSkeleton}": 1,
+              "{styles.percentageSkeleton}": 1,
+              "{tw.style('rounded-xl py-2 pl-2 pr-3')}": 1,
+              "{undefined}": 1,
+              "{overrides?.headerStyle}": 1
+            }
+          },
+          "testID": {
+            "count": 42,
+            "values": {
+              "{testID}": 6,
+              "{config.testID}": 2,
+              "{AccountListBottomSheetSelectorsIDs.ACCOUNT_LIST_ID}": 2,
+              "{`${BatchSellTokenSelectSelectorsIDs.NETWORK_PILL}-${chainId}`}": 1,
+              "\"bridge-watchlist-filter-watchlist\"": 1,
+              "\"network-pills-more-button\"": 1,
+              "\"money-onboarding-card\"": 1,
+              "{PerpsOrderBookViewSelectorsIDs.LONG_BUTTON}": 1,
+              "{PerpsOrderBookViewSelectorsIDs.SHORT_BUTTON}": 1,
+              "{PerpsOrderViewSelectorsIDs.PLACE_ORDER_BUTTON}": 1,
+              "{PerpsProMarketViewSelectorsIDs.POSITIONS_PANEL_TABS}": 1,
+              "{tabTestIDs[index]}": 1,
+              "{PredictCryptoUpDownDetailsSelectorsIDs.HEADER}": 1,
+              "{PredictBuyPreviewSelectorsIDs.PLACE_BET_BUTTON}": 1,
+              "{PREDICT_CATEGORIES_SECTION_TEST_IDS.HEADER}": 1,
+              "{PREDICT_TRENDING_SECTION_TEST_IDS.HEADER}": 1,
+              "{PredictCashOutSelectorsIDs.SELL_PREVIEW_CASH_OUT_BUTTON}": 1,
+              "{button.testID}": 1,
+              "{AccountsMenuSelectorsIDs.BUY_BUTTON}": 1,
+              "{WalletViewSelectorsIDs.WALLET_SCAN_BUTTON}": 1,
+              "{ActivitiesViewSelectorsIDs.HEADER_ROOT}": 1,
+              "{buyButtonActionID}": 1,
+              "{swapButtonActionID}": 1,
+              "{sendButtonActionID}": 1,
+              "{receiveButtonActionID}": 1,
+              "{HomepageDiscoveryPillsTestIds.pill(pillId)}": 1,
+              "{ImportSRPIDs.SCREEN_TITLE_ID}": 1,
+              "\"explore-tabs\"": 1,
+              "{TrendingViewSelectorsIDs.EXPLORE_HEADER_ROOT}": 1,
+              "{WalletViewSelectorsIDs.WALLET_HEADER_ROOT}": 1,
+              "{WalletActionsBottomSheetSelectorsIDs.SWAP_BUTTON}": 1,
+              "{WalletActionsBottomSheetSelectorsIDs.PERPS_BUTTON}": 1,
+              "{WalletActionsBottomSheetSelectorsIDs.EARN_BUTTON}": 1,
+              "{WalletActionsBottomSheetSelectorsIDs.PREDICT_BUTTON}": 1,
+              "{PredictClaimConfirmationSelectorsIDs.CLAIM_CONFIRM_BUTTON}": 1
+            }
+          },
+          "onPress": {
+            "count": 38,
+            "values": {
+              "{onPress}": 6,
+              "{handlePressTokenValue}": 2,
+              "{() => handleChainSelect(chainId)}": 1,
+              "{() => onChainSelect(chain.chainId)}": 1,
+              "{onWatchlistFilterPress}": 1,
+              "{() => onChainSelect(undefined)}": 1,
+              "{onMorePress}": 1,
+              "{createActionHandler(config)}": 1,
+              "{detailsFadeIn}": 1,
+              "{handleLongPress}": 1,
+              "{handleShortPress}": 1,
+              "{() => handlePlaceOrder()}": 1,
+              "{handleTabPress}": 1,
+              "{onPlaceBet}": 1,
+              "{handleSeeAll}": 1,
+              "{onCashOut}": 1,
+              "{handleAllPress}": 1,
+              "{() => handleNetworkPress(chainId)}": 1,
+              "{config.onPress}": 1,
+              "{button.onPress}": 1,
+              "{onPressDeposit}": 1,
+              "{openQRScanner}": 1,
+              "{handleBuyPress}": 1,
+              "{handleSwapPress}": 1,
+              "{handleSendPress}": 1,
+              "{handleReceivePress}": 1,
+              "{() => handlePillPress(pillId, HOMEPAGE_DISCOVERY_PILL_IDS.indexOf(pillId))}": 1,
+              "{goToSwaps}": 1,
+              "{onPerps}": 1,
+              "{onEarn}": 1,
+              "{onPredict}": 1,
+              "{handlePress}": 1
+            }
+          },
+          "value": {
+            "count": 32,
+            "values": {
+              "{{ label: ( <Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItem...}": 2,
+              "{{ label: isLoading || isEstimating ? ( <Skeleton height={20} width={80} style...}": 2,
+              "{{ label: { text: strings('earn.immediate'), variant: TextVariant.BodyMD, }, }}": 2,
+              "{{ label: ( <ContractTag contractAddress={lendingContractAddress} contractName...}": 2,
+              "{{ label: ( <AccountTag accountAddress={selectedAccount?.address} accountName=...}": 2,
+              "{{ label: ( <Text variant={TextVariant.BodyMd} color={TextColor.TextAlternativ...}": 2,
+              "{{ label: ( <TagColored color={TagColor.Success} labelProps={{ variant: TextVa...}": 1,
+              "{{ label: { text: formattedQuoteData.networkFee, variant: TextVariantLegacy.Bo...}": 1,
+              "{{ label: ( <TouchableOpacity onPress={handleSlippagePress} activeOpacity={0.6...}": 1,
+              "{{ label: { text: `${formattedMinToTokenAmount} ${destToken?.symbol}`, variant...}": 1,
+              "{{ label: ( <TouchableOpacity testID=\"price-impact-info-button\" onPress={handl...}": 1,
+              "{{ label: isLoading || isEstimating || !destination.isResolved ? ( <Skeleton h...}": 1,
+              "{{ label: { text: `${earnToken?.experience?.apr}%`, variant: TextVariant.BodyM...}": 1,
+              "{{ label: ( <View style={styles.estAnnualReward}> <Text numberOfLines={1}> { e...}": 1,
+              "{{ label: { text: strings('earn.every_minute'), variant: TextVariant.BodyMD, }, }}": 1,
+              "{{ label: ( <View style={styles.networkRowRight}> <Badge variant={BadgeVariant...}": 1,
+              "{{ label: ( <Text variant={TextVariant.BodyMd} testID={PerpsWithdrawViewSelect...}": 1,
+              "{pricePercentChange1d ?? 0}": 1,
+              "{{ label: ( <ContractTag contractAddress={vaultMetadata?.vaultAddress ?? contr...}": 1,
+              "{{ label: ( <View style={styles.networkKeyValueRow}> <Avatar variant={AvatarVa...}": 1,
+              "{{ label: { text: rewardRate, color: TextColor.Success, variant: TextVariant.B...}": 1,
+              "{{ label: ( <View style={styles.estAnnualRewardValue}> <Text color={TextColor....}": 1,
+              "{{ label: { text: strings('stake.12_hours'), variant: TextVariant.BodyMD, }, }}": 1,
+              "{{ label: { text: strings('stake.estimated_unstaking_time'), variant: TextVari...}": 1,
+              "{result.percentChange ?? 0}": 1,
+              "{percentValue}": 1
+            }
+          },
+          "field": {
+            "count": 29,
+            "values": {
+              "{{ label: ( <Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItem...}": 2,
+              "{{ label: { text: strings('bridge.network_fee'), variant: TextVariantLegacy.Bo...}": 1,
+              "{{ label: { text: toSentenceCase(strings('bridge.network_fee')), variant: Text...}": 1,
+              "{{ label: { text: strings('bridge.slippage'), variant: TextVariantLegacy.BodyM...}": 1,
+              "{{ label: { text: toSentenceCase(strings('bridge.minimum_received')), variant:...}": 1,
+              "{{ label: { text: toSentenceCase(strings('bridge.price_impact')), variant: Tex...}": 1,
+              "{{ label: { text: toSentenceCase(strings('bridge.points')), variant: TextVaria...}": 1,
+              "{{ label: { text: strings(config.strings.networkFee) }, }}": 1,
+              "{{ label: { text: strings(config.strings.expectedToReceive) }, }}": 1,
+              "{{ label: { text: strings(config.strings.to) } }}": 1,
+              "{{ label: { text: strings('earn.apr'), variant: TextVariant.BodyMDMedium, }, t...}": 1,
+              "{{ label: { text: strings('stake.estimated_annual_reward'), }, }}": 1,
+              "{{ label: { text: strings('stake.reward_frequency'), }, tooltip: { title: stri...}": 1,
+              "{{ label: { text: strings('stake.withdrawal_time'), }, tooltip: { title: strin...}": 1,
+              "{{ label: { text: strings('earn.protocol'), }, tooltip: { title: strings('earn...}": 1,
+              "{{ label: { text: strings('earn.withdrawal_time'), variant: TextVariant.BodyMD...}": 1,
+              "{{ label: { text: strings('earn.withdrawing_to'), variant: TextVariant.BodyMDM...}": 1,
+              "{{ label: { text: strings('earn.protocol'), variant: TextVariant.BodyMDMedium,...}": 1,
+              "{{ label: { text: strings('earn.network'), variant: TextVariant.BodyMDMedium, ...}": 1,
+              "{{ label: ( <Text variant={TextVariant.BodyMd}> {strings('perps.withdrawal.you...}": 1,
+              "{{ label: { text: strings('predict.fee_summary.estimated_points'), variant: Le...}": 1,
+              "{{ label: { text: primaryLabel } }}": 1,
+              "{{ label: { text: secondaryLabel }, }}": 1,
+              "{{ label: { text: strings('asset_details.network') } }}": 1,
+              "{{ label: { text: strings('tooltip_modal.reward_rate.title') }, tooltip: { tit...}": 1,
+              "{{ label: { text: strings('stake.estimated_annual_rewards') } }}": 1,
+              "{{ label: { text: strings('tooltip_modal.reward_frequency.title') }, tooltip: ...}": 1,
+              "{{ label: { text: strings('tooltip_modal.unstaking_time.title') }, tooltip: { ...}": 1
+            }
+          },
+          "label": {
+            "count": 24,
+            "values": {
+              "{<Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItems.Center} g...}": 6,
+              "{config.label}": 2,
+              "{strings('asset_overview.swap')}": 2,
+              "{<Icon name={IconName.StarFilled} size={IconSize.Md} color={ isWatchlistFilter...}": 1,
+              "{strings('bridge.all')}": 1,
+              "{strings('bridge.more_networks', { count: remainingCount, })}": 1,
+              "{allNetworksLabel}": 1,
+              "{button.label}": 1,
+              "{strings('accounts_menu.buy')}": 1,
+              "{strings('accounts_menu.scan')}": 1,
+              "{strings('asset_overview.buy_button')}": 1,
+              "{strings('asset_overview.send_button')}": 1,
+              "{strings('asset_overview.receive_button')}": 1,
+              "{strings('asset_overview.perps_button')}": 1,
+              "{strings('asset_overview.earn_button')}": 1,
+              "{strings('asset_overview.predict_button')}": 1,
+              "{label}": 1
+            }
+          },
+          "size": {
+            "count": 24,
+            "values": {
+              "{ButtonSize.Md}": 10,
+              "{ButtonSizeHero.Lg}": 5,
+              "\"large\"": 3,
+              "{ButtonSize.Lg}": 2,
+              "{ButtonToggleSize.Md}": 1,
+              "small": 1,
+              "{ButtonSizeRNDesignSystem.Lg}": 1,
+              "{ButtonBaseSize.Lg}": 1
+            }
+          },
+          "width": {
+            "count": 20,
+            "values": {
+              "16": 1,
+              "52": 1,
+              "60": 2,
+              "80": 3,
+              "92": 1,
+              "120": 2,
+              "{iconSize}": 2,
+              "\"60%\"": 2,
+              "\"80%\"": 2,
+              "\"100%\"": 1,
+              "\"50%\"": 1,
+              "\"30%\"": 1,
+              "\"35%\"": 1
+            }
+          },
+          "height": {
+            "count": 20,
+            "values": {
+              "16": 5,
+              "18": 3,
+              "20": 6,
+              "22": 1,
+              "24": 3,
+              "{iconSize}": 2
+            }
+          },
+          "title": {
+            "count": 17,
+            "values": {
+              "{title}": 3,
+              "{strings('app_settings.notifications_title')}": 2,
+              "{strings('predict.home.categories_title')}": 1,
+              "{strings('predict.home.trending_title')}": 1,
+              "{strings('rewards.perps_trading_campaign.title')}": 1,
+              "{strings('rewards.perps_trading_campaign.leaderboard_title')}": 1,
+              "{strings('rewards.perps_trading_campaign.stats_title')}": 1,
+              "{strings('rewards.predict_the_pitch_campaign.stats_title')}": 1,
+              "{strings('activity_view.title')}": 1,
+              "{strings('connect_hardware.title_select_hardware')}": 1,
+              "{strings('import_new_secret_recovery_phrase.import_wallet_title')}": 1,
+              "{strings('import_private_key.title')}": 1,
+              "{section.title}": 1,
+              "{strings('trending.title')}": 1
+            }
+          },
+          "color": {
+            "count": 16,
+            "values": {
+              "{TagColor.Success}": 10,
+              "{theme.colors.primary.default}": 3,
+              "{TagColor.Info}": 2,
+              "{theme.colors.primary.inverse}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 15,
+            "values": {
+              "{!canSignTransactions}": 4,
+              "{config.isDisabled}": 2,
+              "{!isSwapsEnabled}": 2,
+              "{isDisabled}": 1,
+              "{!orderValidation.isValid || isPlacingOrder || doesStopLossRiskLiquidation || ...}": 1,
+              "{!canPlaceBet}": 1,
+              "{button.isDisabled}": 1,
+              "{!isBuyingAvailable}": 1,
+              "false": 1,
+              "{isNFT || tokenValueMaxPrecision === null}": 1
+            }
+          },
+          "iconName": {
+            "count": 13,
+            "values": {
+              "{config.iconName}": 2,
+              "{IconName.SwapVertical}": 2,
+              "{button.iconName}": 1,
+              "{LocalIconName.AttachMoney}": 1,
+              "{LocalIconName.QrCode}": 1,
+              "{IconName.AttachMoney}": 1,
+              "{IconName.Arrow2UpRight}": 1,
+              "{IconName.Received}": 1,
+              "{IconName.Candlestick}": 1,
+              "{IconName.Stake}": 1,
+              "{IconName.Speedometer}": 1
+            }
+          },
+          "isActive": {
+            "count": 11,
+            "values": {
+              "{isSelected}": 5,
+              "false": 2,
+              "{isWatchlistFilterActive}": 1,
+              "{!selectedChainId && !isWatchlistFilterActive}": 1,
+              "{isActive}": 1,
+              "{isAllSelected}": 1
+            }
+          },
+          "twClassName": {
+            "count": 11,
+            "values": {
+              "\"px-4 pt-1 pb-3\"": 3,
+              "\"px-0 mb-2\"": 2,
+              "\"-mx-2\"": 1,
+              "\"w-full\"": 1,
+              "\"px-4 pb-6\"": 1,
+              "\"mb-2\"": 1,
+              "\"pl-1 pr-3\"": 1,
+              "\"bg-default\"": 1
+            }
+          },
+          "onBack": {
+            "count": 11,
+            "values": {
+              "{() => navigation.goBack()}": 5,
+              "{handleClose}": 2,
+              "{onBack}": 1,
+              "{handleBack}": 1,
+              "{navigation.goBack}": 1,
+              "{addBackButton ? handleBackPress : undefined}": 1
+            }
+          },
+          "labelProps": {
+            "count": 9,
+            "values": {
+              "{{ variant: TextVariant.BodySM, style: { textTransform: 'none', textAlign: 'ce...}": 4,
+              "{{ variant: TextVariantLegacy.BodySM, style: { textTransform: 'none', textAlig...}": 2,
+              "{{ variant: LegacyTextVariant.BodySM, style: { textTransform: 'none', textAlig...}": 2,
+              "{{ testID: 'paid-by-metamask' }}": 1
+            }
+          },
+          "includesTopInset": {
+            "count": 9,
+            "values": {
+              "true (shorthand)": 9
+            }
+          },
+          "key": {
+            "count": 8,
+            "values": {
+              "{chainId}": 2,
+              "{config.type}": 2,
+              "{chain.chainId}": 1,
+              "{tab}": 1,
+              "{button.key}": 1,
+              "{pillId}": 1
+            }
+          },
+          "backButtonProps": {
+            "count": 7,
+            "values": {
+              "{{ testID: PredictCryptoUpDownDetailsSelectorsIDs.BACK_BUTTON, }}": 1,
+              "{{ testID: 'perps-details-back-button' }}": 1,
+              "{{ testID: 'perps-leaderboard-back-button' }}": 1,
+              "{{ testID: 'perps-stats-back-button' }}": 1,
+              "{{ testID: 'predict-the-pitch-stats-back-button' }}": 1,
+              "{{ testID: NotificationMenuViewSelectorsIDs.CLOSE_BUTTON, }}": 1,
+              "{addBackButton ? { testID: `${title}-navbar-back-button` } : undefined}": 1
+            }
+          },
+          "endButtonIconProps": {
+            "count": 7,
+            "values": {
+              "{getCampaignMechanicsButtonProps( campaign != null, () => navigation.navigate(...}": 3,
+              "{[ { iconName: IconName.Share, onPress: handleSharePress, testID: PredictCrypt...}": 1,
+              "{getCampaignMechanicsButtonProps( campaign != null, navigateToMechanics, 'perp...}": 1,
+              "{[{ iconName: IconName.Close, onPress: handleClose }]}": 1,
+              "{[ { iconName: IconName.Setting, onPress: handleOpenSettings, testID: Notifica...}": 1
+            }
+          },
+          "description": {
+            "count": 6,
+            "values": {
+              "{config.description}": 2,
+              "{strings('asset_overview.swap_description')}": 1,
+              "{strings('asset_overview.perps_description')}": 1,
+              "{strings('asset_overview.earn_description')}": 1,
+              "{strings('asset_overview.predict_description')}": 1
+            }
+          },
+          "containerStyle": {
+            "count": 6,
+            "values": {
+              "{styles.buttonContainer}": 5,
+              "{styles.accountHeader}": 1
+            }
+          },
+          "onSelectAccount": {
+            "count": 5,
+            "values": {
+              "{handleSelectAccount}": 3,
+              "{_onSelectMultichainAccount}": 1,
+              "{onSelectAccountGroupId}": 1
+            }
+          },
+          "titleProps": {
+            "count": 5,
+            "values": {
+              "{{ variant: TextVariant.HeadingSm }}": 4,
+              "{{ testID: NotificationMenuViewSelectorsIDs.TITLE }}": 1
+            }
+          },
+          "avatarAccountType": {
+            "count": 4,
+            "values": {
+              "{avatarAccountType}": 3,
+              "{icon}": 1
+            }
+          },
+          "accessibilityLabel": {
+            "count": 4,
+            "values": {
+              "{strings('perps.watchlist.filter_badge_label')}": 1,
+              "{allNetworksLabel}": 1,
+              "{displayName}": 1,
+              "{strings(PILL_LABEL_KEYS[pillId])}": 1
+            }
+          },
+          "selectedAccountGroups": {
+            "count": 4,
+            "values": {
+              "{selectedAccountGroup ? [selectedAccountGroup] : []}": 2,
+              "{selectedAccountGroups}": 2
+            }
+          },
+          "isLoading": {
+            "count": 4,
+            "values": {
+              "{isLoading}": 3,
+              "{isPlacingOrder}": 1
+            }
+          },
+          "endAccessory": {
+            "count": 4,
+            "values": {
+              "{<Box twClassName=\"flex-row gap-2\"> {isVipProgramEnabled && isVipReferee && ( ...}": 1,
+              "{<Text variant={TextVariant.BodyLg} fontWeight={FontWeight.Medium} color={Text...}": 1,
+              "{<View style={styles.headerActionButtonsContainer} accessible={false} > {isMon...}": 1,
+              "{customRight}": 1
+            }
+          },
+          "ref": {
+            "count": 3,
+            "values": {
+              "{toastRef}": 1,
+              "{tabsListRef}": 1,
+              "{scrollViewRef}": 1
+            }
+          },
+          "showFooter": {
+            "count": 3,
+            "values": {
+              "false": 2,
+              "{!disableAddAccountButton}": 1
+            }
+          },
+          "chainId": {
+            "count": 3,
+            "values": {
+              "{item.scope}": 2,
+              "{destToken?.chainId}": 1
+            }
+          },
+          "status": {
+            "count": 3,
+            "values": {
+              "{currentNotification.status}": 2,
+              "\"success\"": 1
             }
           },
           "data": {
-            "count": 2,
+            "count": 3,
             "values": {
               "{{ title: currentNotification.title, description: currentNotification.descript...}": 1,
-              "{{ ...tx?.txParams, ...currentNotification.transaction, title: transactionElem...}": 1
+              "{{ ...tx?.txParams, ...currentNotification.transaction, title: transactionElem...}": 1,
+              "{notificationData}": 1
+            }
+          },
+          "onDismissComplete": {
+            "count": 3,
+            "values": {
+              "{onDismissComplete}": 2,
+              "{() => setOnboardingNotificationVisible(false)}": 1
+            }
+          },
+          "dismissDuration": {
+            "count": 3,
+            "values": {
+              "4000": 1,
+              "{dismissDuration}": 2
+            }
+          },
+          "[spread]": {
+            "count": 3,
+            "values": {
+              "{props}": 3
+            }
+          },
+          "severity": {
+            "count": 3,
+            "values": {
+              "{ButtonSemanticSeverity.Success}": 1,
+              "{ButtonSemanticSeverity.Danger}": 1,
+              "{orderForm.direction === 'long' ? ButtonSemanticSeverity.Success : ButtonSeman...}": 1
+            }
+          },
+          "accountGroup": {
+            "count": 3,
+            "values": {
+              "{item}": 2,
+              "{accountGroup}": 1
+            }
+          },
+          "accountAddress": {
+            "count": 2,
+            "values": {
+              "{activeAddress}": 2
+            }
+          },
+          "accountTokenBalance": {
+            "count": 2,
+            "values": {
+              "{addressBalance}": 2
+            }
+          },
+          "accountName": {
+            "count": 2,
+            "values": {
+              "{accountName}": 2
+            }
+          },
+          "accountBalanceLabel": {
+            "count": 2,
+            "values": {
+              "{strings('transaction.balance')}": 2
+            }
+          },
+          "accountTypeLabel": {
+            "count": 2,
+            "values": {
+              "{accountTypeLabel as string}": 1,
+              "{accountTypeLabel}": 1
+            }
+          },
+          "accountNetwork": {
+            "count": 2,
+            "values": {
+              "{String(displayNetworkName)}": 1,
+              "{networkName}": 1
+            }
+          },
+          "badgeProps": {
+            "count": 2,
+            "values": {
+              "{{ variant: BadgeVariant.Network, name: displayNetworkName, imageSource: displ...}": 1,
+              "{{ variant: BadgeVariant.Network, name: networkName, imageSource: networkImage, }}": 1
+            }
+          },
+          "accountSections": {
+            "count": 2,
+            "values": {
+              "{filteredAccountSections}": 2
+            }
+          },
+          "hideAccountCellMenu": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "setKeyboardAvoidingViewEnabled": {
+            "count": 2,
+            "values": {
+              "{setKeyboardAvoidingViewEnabled}": 2
+            }
+          },
+          "isScrollEnabled": {
+            "count": 2,
+            "values": {
+              "{isFullView}": 1,
+              "true (shorthand)": 1
+            }
+          },
+          "scrollViewProps": {
+            "count": 2,
+            "values": {
+              "{isFullView ? scrollViewProps : undefined}": 1,
+              "{{ testID: WalletViewSelectorsIDs.WALLET_SCROLL_VIEW, contentContainerStyle: s...}": 1
             }
           },
           "onHide": {
@@ -54,73 +634,830 @@
               "{onCloseNotification}": 1
             }
           },
-          "onDismissComplete": {
+          "backgroundColor": {
             "count": 2,
             "values": {
-              "{onDismissComplete}": 2
+              "{colors.background.alternative}": 1,
+              "{colors.background.default}": 1
             }
           },
-          "dismissDuration": {
+          "isFullWidth": {
             "count": 2,
             "values": {
-              "{dismissDuration}": 2
+              "true (shorthand)": 2
             }
           },
-          "onPress": {
+          "startAccessory": {
             "count": 2,
             "values": {
-              "{detailsFadeIn}": 1,
-              "{onPress}": 1
+              "{<Box twClassName=\"w-10 h-10 rounded-lg bg-muted overflow-hidden\"> {selectedMa...}": 1,
+              "{customLeft}": 1
             }
           },
-          "testID": {
+          "disabled": {
             "count": 2,
             "values": {
-              "{testID}": 1,
-              "{ActivitiesViewSelectorsIDs.HEADER_ROOT}": 1
+              "{disabled}": 1,
+              "{!preview || isLoading}": 1
             }
           },
-          "title": {
+          "bottomAccessory": {
+            "count": 2,
+            "values": {
+              "{<Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItems.Center} t...}": 1,
+              "{<View style={styles.descriptionContainer}> {isSRP ? ( <Text variant={TextVari...}": 1
+            }
+          },
+          "networkName": {
+            "count": 2,
+            "values": {
+              "{item.networkName}": 2
+            }
+          },
+          "address": {
+            "count": 2,
+            "values": {
+              "{item.account.address}": 2
+            }
+          },
+          "copyParams": {
+            "count": 2,
+            "values": {
+              "{{ callback: async () => { await copyAddressToClipboard(); toast({ title: stri...}": 1,
+              "{{ callback: async () => { await ClipboardManager.setStringExpire( privateKeys...}": 1
+            }
+          },
+          "onPressIn": {
+            "count": 2,
+            "values": {
+              "{handlePressTokenValue}": 2
+            }
+          },
+          "onPressOut": {
+            "count": 2,
+            "values": {
+              "{handlePressTokenValue}": 2
+            }
+          },
+          "tooltip": {
             "count": 1,
             "values": {
-              "{strings('activity_view.title')}": 1
+              "{{ title: strings('bridge.quote_info_title'), content: strings('bridge.quote_i...}": 1
             }
           },
-          "includesTopInset": {
+          "showExternalAccountOnEmptySearch": {
             "count": 1,
             "values": {
               "true (shorthand)": 1
             }
           },
-          "color": {
+          "onSelectExternalAccount": {
             "count": 1,
             "values": {
-              "{TagColor.Success}": 1
+              "{handleSelectExternalAccount}": 1
             }
           },
-          "labelProps": {
+          "selectedExternalAddress": {
             "count": 1,
             "values": {
-              "{{ variant: TextVariant.BodySM, style: { textTransform: 'none', textAlign: 'ce...}": 1
+              "{selectedExternalAddress}": 1
+            }
+          },
+          "keyboardDismissMode": {
+            "count": 1,
+            "values": {
+              "\"on-drag\"": 1
+            }
+          },
+          "keyboardShouldPersistTaps": {
+            "count": 1,
+            "values": {
+              "\"handled\"": 1
+            }
+          },
+          "steps": {
+            "count": 1,
+            "values": {
+              "{steps}": 1
+            }
+          },
+          "currentStep": {
+            "count": 1,
+            "values": {
+              "{effectiveCurrentStep}": 1
+            }
+          },
+          "tabs": {
+            "count": 1,
+            "values": {
+              "{tabs}": 1
+            }
+          },
+          "activeIndex": {
+            "count": 1,
+            "values": {
+              "{activeIndex}": 1
+            }
+          },
+          "onTabPress": {
+            "count": 1,
+            "values": {
+              "{setActiveIndex}": 1
+            }
+          },
+          "accessibilityRole": {
+            "count": 1,
+            "values": {
+              "\"button\"": 1
+            }
+          },
+          "bottomLabel": {
+            "count": 1,
+            "values": {
+              "{subtitle}": 1
+            }
+          },
+          "variant": {
+            "count": 1,
+            "values": {
+              "{HeaderSearchVariant.Inline}": 1
+            }
+          },
+          "onPressCancelButton": {
+            "count": 1,
+            "values": {
+              "{onClose}": 1
+            }
+          },
+          "cancelButtonProps": {
+            "count": 1,
+            "values": {
+              "{{ // ButtonBase applies self-start when not full width, which top-aligns the ...}": 1
+            }
+          },
+          "textFieldSearchProps": {
+            "count": 1,
+            "values": {
+              "{{ value: searchQuery, onChangeText: onSearchChange, onPressClearButton: () =>...}": 1
+            }
+          },
+          "icons": {
+            "count": 1,
+            "values": {
+              "{[ { name: IconName.QrCode, callback: () => { navigation.navigate( Routes.MODA...}": 1
+            }
+          },
+          "showCheckbox": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "isSelected": {
+            "count": 1,
+            "values": {
+              "{selectedAccountGroup?.id === item.id}": 1
+            }
+          },
+          "privacyMode": {
+            "count": 1,
+            "values": {
+              "{privacyMode}": 1
+            }
+          },
+          "tabPadding": {
+            "count": 1,
+            "values": {
+              "{TAB_BAR_HORIZONTAL_PADDING}": 1
+            }
+          },
+          "hideMenu": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "isVisible": {
+            "count": 1,
+            "values": {
+              "{onboardingNotificationVisible}": 1
+            }
+          },
+          "endContainer": {
+            "count": 1,
+            "values": {
+              "{<Switch style={styles.switch} value={isEnabled} onValueChange={handleToggleAc...}": 1
+            }
+          },
+          "tabsListContentTwClassName": {
+            "count": 1,
+            "values": {
+              "\"px-0 mt-0\"": 1
+            }
+          },
+          "onChangeTab": {
+            "count": 1,
+            "values": {
+              "{handleTabChange}": 1
             }
           }
         }
       },
       "overall": {
-        "totalInstances": 5,
-        "filesCount": 5,
+        "totalInstances": 155,
+        "filesCount": 97,
         "props": {
-          "status": {
-            "count": 2,
+          "style": {
+            "count": 42,
             "values": {
-              "{currentNotification.status}": 2
+              "{tw.style('rounded-xl py-2 px-3')}": 9,
+              "{styles.noNetworkFeeContainer}": 4,
+              "{tw.style('my-1')}": 4,
+              "{styles.paidByMetaMask}": 2,
+              "{styles.actionButtonWrapper}": 2,
+              "{tw.style('rounded-md')}": 2,
+              "{styles.iconSkeleton}": 2,
+              "{styles.tokenNameSkeleton}": 2,
+              "{styles.marketStatsSkeleton}": 2,
+              "{[ credit && styles.valueIsCredit, debit && styles.valueIsDebit, ]}": 2,
+              "{styles.tag}": 1,
+              "{tw.style('w-full')}": 1,
+              "{tw.style('w-full bg-muted')}": 1,
+              "{tw.style('w-full', showReducedOpacity && 'opacity-50')}": 1,
+              "{tw.style('rounded-full')}": 1,
+              "{{ ...styles.cashOutButton, }}": 1,
+              "{styles.priceSkeleton}": 1,
+              "{styles.percentageSkeleton}": 1,
+              "{tw.style('rounded-xl py-2 pl-2 pr-3')}": 1,
+              "{undefined}": 1,
+              "{overrides?.headerStyle}": 1
+            }
+          },
+          "testID": {
+            "count": 42,
+            "values": {
+              "{testID}": 6,
+              "{config.testID}": 2,
+              "{AccountListBottomSheetSelectorsIDs.ACCOUNT_LIST_ID}": 2,
+              "{`${BatchSellTokenSelectSelectorsIDs.NETWORK_PILL}-${chainId}`}": 1,
+              "\"bridge-watchlist-filter-watchlist\"": 1,
+              "\"network-pills-more-button\"": 1,
+              "\"money-onboarding-card\"": 1,
+              "{PerpsOrderBookViewSelectorsIDs.LONG_BUTTON}": 1,
+              "{PerpsOrderBookViewSelectorsIDs.SHORT_BUTTON}": 1,
+              "{PerpsOrderViewSelectorsIDs.PLACE_ORDER_BUTTON}": 1,
+              "{PerpsProMarketViewSelectorsIDs.POSITIONS_PANEL_TABS}": 1,
+              "{tabTestIDs[index]}": 1,
+              "{PredictCryptoUpDownDetailsSelectorsIDs.HEADER}": 1,
+              "{PredictBuyPreviewSelectorsIDs.PLACE_BET_BUTTON}": 1,
+              "{PREDICT_CATEGORIES_SECTION_TEST_IDS.HEADER}": 1,
+              "{PREDICT_TRENDING_SECTION_TEST_IDS.HEADER}": 1,
+              "{PredictCashOutSelectorsIDs.SELL_PREVIEW_CASH_OUT_BUTTON}": 1,
+              "{button.testID}": 1,
+              "{AccountsMenuSelectorsIDs.BUY_BUTTON}": 1,
+              "{WalletViewSelectorsIDs.WALLET_SCAN_BUTTON}": 1,
+              "{ActivitiesViewSelectorsIDs.HEADER_ROOT}": 1,
+              "{buyButtonActionID}": 1,
+              "{swapButtonActionID}": 1,
+              "{sendButtonActionID}": 1,
+              "{receiveButtonActionID}": 1,
+              "{HomepageDiscoveryPillsTestIds.pill(pillId)}": 1,
+              "{ImportSRPIDs.SCREEN_TITLE_ID}": 1,
+              "\"explore-tabs\"": 1,
+              "{TrendingViewSelectorsIDs.EXPLORE_HEADER_ROOT}": 1,
+              "{WalletViewSelectorsIDs.WALLET_HEADER_ROOT}": 1,
+              "{WalletActionsBottomSheetSelectorsIDs.SWAP_BUTTON}": 1,
+              "{WalletActionsBottomSheetSelectorsIDs.PERPS_BUTTON}": 1,
+              "{WalletActionsBottomSheetSelectorsIDs.EARN_BUTTON}": 1,
+              "{WalletActionsBottomSheetSelectorsIDs.PREDICT_BUTTON}": 1,
+              "{PredictClaimConfirmationSelectorsIDs.CLAIM_CONFIRM_BUTTON}": 1
+            }
+          },
+          "onPress": {
+            "count": 38,
+            "values": {
+              "{onPress}": 6,
+              "{handlePressTokenValue}": 2,
+              "{() => handleChainSelect(chainId)}": 1,
+              "{() => onChainSelect(chain.chainId)}": 1,
+              "{onWatchlistFilterPress}": 1,
+              "{() => onChainSelect(undefined)}": 1,
+              "{onMorePress}": 1,
+              "{createActionHandler(config)}": 1,
+              "{detailsFadeIn}": 1,
+              "{handleLongPress}": 1,
+              "{handleShortPress}": 1,
+              "{() => handlePlaceOrder()}": 1,
+              "{handleTabPress}": 1,
+              "{onPlaceBet}": 1,
+              "{handleSeeAll}": 1,
+              "{onCashOut}": 1,
+              "{handleAllPress}": 1,
+              "{() => handleNetworkPress(chainId)}": 1,
+              "{config.onPress}": 1,
+              "{button.onPress}": 1,
+              "{onPressDeposit}": 1,
+              "{openQRScanner}": 1,
+              "{handleBuyPress}": 1,
+              "{handleSwapPress}": 1,
+              "{handleSendPress}": 1,
+              "{handleReceivePress}": 1,
+              "{() => handlePillPress(pillId, HOMEPAGE_DISCOVERY_PILL_IDS.indexOf(pillId))}": 1,
+              "{goToSwaps}": 1,
+              "{onPerps}": 1,
+              "{onEarn}": 1,
+              "{onPredict}": 1,
+              "{handlePress}": 1
+            }
+          },
+          "value": {
+            "count": 32,
+            "values": {
+              "{{ label: ( <Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItem...}": 2,
+              "{{ label: isLoading || isEstimating ? ( <Skeleton height={20} width={80} style...}": 2,
+              "{{ label: { text: strings('earn.immediate'), variant: TextVariant.BodyMD, }, }}": 2,
+              "{{ label: ( <ContractTag contractAddress={lendingContractAddress} contractName...}": 2,
+              "{{ label: ( <AccountTag accountAddress={selectedAccount?.address} accountName=...}": 2,
+              "{{ label: ( <Text variant={TextVariant.BodyMd} color={TextColor.TextAlternativ...}": 2,
+              "{{ label: ( <TagColored color={TagColor.Success} labelProps={{ variant: TextVa...}": 1,
+              "{{ label: { text: formattedQuoteData.networkFee, variant: TextVariantLegacy.Bo...}": 1,
+              "{{ label: ( <TouchableOpacity onPress={handleSlippagePress} activeOpacity={0.6...}": 1,
+              "{{ label: { text: `${formattedMinToTokenAmount} ${destToken?.symbol}`, variant...}": 1,
+              "{{ label: ( <TouchableOpacity testID=\"price-impact-info-button\" onPress={handl...}": 1,
+              "{{ label: isLoading || isEstimating || !destination.isResolved ? ( <Skeleton h...}": 1,
+              "{{ label: { text: `${earnToken?.experience?.apr}%`, variant: TextVariant.BodyM...}": 1,
+              "{{ label: ( <View style={styles.estAnnualReward}> <Text numberOfLines={1}> { e...}": 1,
+              "{{ label: { text: strings('earn.every_minute'), variant: TextVariant.BodyMD, }, }}": 1,
+              "{{ label: ( <View style={styles.networkRowRight}> <Badge variant={BadgeVariant...}": 1,
+              "{{ label: ( <Text variant={TextVariant.BodyMd} testID={PerpsWithdrawViewSelect...}": 1,
+              "{pricePercentChange1d ?? 0}": 1,
+              "{{ label: ( <ContractTag contractAddress={vaultMetadata?.vaultAddress ?? contr...}": 1,
+              "{{ label: ( <View style={styles.networkKeyValueRow}> <Avatar variant={AvatarVa...}": 1,
+              "{{ label: { text: rewardRate, color: TextColor.Success, variant: TextVariant.B...}": 1,
+              "{{ label: ( <View style={styles.estAnnualRewardValue}> <Text color={TextColor....}": 1,
+              "{{ label: { text: strings('stake.12_hours'), variant: TextVariant.BodyMD, }, }}": 1,
+              "{{ label: { text: strings('stake.estimated_unstaking_time'), variant: TextVari...}": 1,
+              "{result.percentChange ?? 0}": 1,
+              "{percentValue}": 1
+            }
+          },
+          "field": {
+            "count": 29,
+            "values": {
+              "{{ label: ( <Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItem...}": 2,
+              "{{ label: { text: strings('bridge.network_fee'), variant: TextVariantLegacy.Bo...}": 1,
+              "{{ label: { text: toSentenceCase(strings('bridge.network_fee')), variant: Text...}": 1,
+              "{{ label: { text: strings('bridge.slippage'), variant: TextVariantLegacy.BodyM...}": 1,
+              "{{ label: { text: toSentenceCase(strings('bridge.minimum_received')), variant:...}": 1,
+              "{{ label: { text: toSentenceCase(strings('bridge.price_impact')), variant: Tex...}": 1,
+              "{{ label: { text: toSentenceCase(strings('bridge.points')), variant: TextVaria...}": 1,
+              "{{ label: { text: strings(config.strings.networkFee) }, }}": 1,
+              "{{ label: { text: strings(config.strings.expectedToReceive) }, }}": 1,
+              "{{ label: { text: strings(config.strings.to) } }}": 1,
+              "{{ label: { text: strings('earn.apr'), variant: TextVariant.BodyMDMedium, }, t...}": 1,
+              "{{ label: { text: strings('stake.estimated_annual_reward'), }, }}": 1,
+              "{{ label: { text: strings('stake.reward_frequency'), }, tooltip: { title: stri...}": 1,
+              "{{ label: { text: strings('stake.withdrawal_time'), }, tooltip: { title: strin...}": 1,
+              "{{ label: { text: strings('earn.protocol'), }, tooltip: { title: strings('earn...}": 1,
+              "{{ label: { text: strings('earn.withdrawal_time'), variant: TextVariant.BodyMD...}": 1,
+              "{{ label: { text: strings('earn.withdrawing_to'), variant: TextVariant.BodyMDM...}": 1,
+              "{{ label: { text: strings('earn.protocol'), variant: TextVariant.BodyMDMedium,...}": 1,
+              "{{ label: { text: strings('earn.network'), variant: TextVariant.BodyMDMedium, ...}": 1,
+              "{{ label: ( <Text variant={TextVariant.BodyMd}> {strings('perps.withdrawal.you...}": 1,
+              "{{ label: { text: strings('predict.fee_summary.estimated_points'), variant: Le...}": 1,
+              "{{ label: { text: primaryLabel } }}": 1,
+              "{{ label: { text: secondaryLabel }, }}": 1,
+              "{{ label: { text: strings('asset_details.network') } }}": 1,
+              "{{ label: { text: strings('tooltip_modal.reward_rate.title') }, tooltip: { tit...}": 1,
+              "{{ label: { text: strings('stake.estimated_annual_rewards') } }}": 1,
+              "{{ label: { text: strings('tooltip_modal.reward_frequency.title') }, tooltip: ...}": 1,
+              "{{ label: { text: strings('tooltip_modal.unstaking_time.title') }, tooltip: { ...}": 1
+            }
+          },
+          "label": {
+            "count": 24,
+            "values": {
+              "{<Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItems.Center} g...}": 6,
+              "{config.label}": 2,
+              "{strings('asset_overview.swap')}": 2,
+              "{<Icon name={IconName.StarFilled} size={IconSize.Md} color={ isWatchlistFilter...}": 1,
+              "{strings('bridge.all')}": 1,
+              "{strings('bridge.more_networks', { count: remainingCount, })}": 1,
+              "{allNetworksLabel}": 1,
+              "{button.label}": 1,
+              "{strings('accounts_menu.buy')}": 1,
+              "{strings('accounts_menu.scan')}": 1,
+              "{strings('asset_overview.buy_button')}": 1,
+              "{strings('asset_overview.send_button')}": 1,
+              "{strings('asset_overview.receive_button')}": 1,
+              "{strings('asset_overview.perps_button')}": 1,
+              "{strings('asset_overview.earn_button')}": 1,
+              "{strings('asset_overview.predict_button')}": 1,
+              "{label}": 1
+            }
+          },
+          "size": {
+            "count": 24,
+            "values": {
+              "{ButtonSize.Md}": 10,
+              "{ButtonSizeHero.Lg}": 5,
+              "\"large\"": 3,
+              "{ButtonSize.Lg}": 2,
+              "{ButtonToggleSize.Md}": 1,
+              "small": 1,
+              "{ButtonSizeRNDesignSystem.Lg}": 1,
+              "{ButtonBaseSize.Lg}": 1
+            }
+          },
+          "width": {
+            "count": 20,
+            "values": {
+              "16": 1,
+              "52": 1,
+              "60": 2,
+              "80": 3,
+              "92": 1,
+              "120": 2,
+              "{iconSize}": 2,
+              "\"60%\"": 2,
+              "\"80%\"": 2,
+              "\"100%\"": 1,
+              "\"50%\"": 1,
+              "\"30%\"": 1,
+              "\"35%\"": 1
+            }
+          },
+          "height": {
+            "count": 20,
+            "values": {
+              "16": 5,
+              "18": 3,
+              "20": 6,
+              "22": 1,
+              "24": 3,
+              "{iconSize}": 2
+            }
+          },
+          "title": {
+            "count": 17,
+            "values": {
+              "{title}": 3,
+              "{strings('app_settings.notifications_title')}": 2,
+              "{strings('predict.home.categories_title')}": 1,
+              "{strings('predict.home.trending_title')}": 1,
+              "{strings('rewards.perps_trading_campaign.title')}": 1,
+              "{strings('rewards.perps_trading_campaign.leaderboard_title')}": 1,
+              "{strings('rewards.perps_trading_campaign.stats_title')}": 1,
+              "{strings('rewards.predict_the_pitch_campaign.stats_title')}": 1,
+              "{strings('activity_view.title')}": 1,
+              "{strings('connect_hardware.title_select_hardware')}": 1,
+              "{strings('import_new_secret_recovery_phrase.import_wallet_title')}": 1,
+              "{strings('import_private_key.title')}": 1,
+              "{section.title}": 1,
+              "{strings('trending.title')}": 1
+            }
+          },
+          "color": {
+            "count": 16,
+            "values": {
+              "{TagColor.Success}": 10,
+              "{theme.colors.primary.default}": 3,
+              "{TagColor.Info}": 2,
+              "{theme.colors.primary.inverse}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 15,
+            "values": {
+              "{!canSignTransactions}": 4,
+              "{config.isDisabled}": 2,
+              "{!isSwapsEnabled}": 2,
+              "{isDisabled}": 1,
+              "{!orderValidation.isValid || isPlacingOrder || doesStopLossRiskLiquidation || ...}": 1,
+              "{!canPlaceBet}": 1,
+              "{button.isDisabled}": 1,
+              "{!isBuyingAvailable}": 1,
+              "false": 1,
+              "{isNFT || tokenValueMaxPrecision === null}": 1
+            }
+          },
+          "iconName": {
+            "count": 13,
+            "values": {
+              "{config.iconName}": 2,
+              "{IconName.SwapVertical}": 2,
+              "{button.iconName}": 1,
+              "{LocalIconName.AttachMoney}": 1,
+              "{LocalIconName.QrCode}": 1,
+              "{IconName.AttachMoney}": 1,
+              "{IconName.Arrow2UpRight}": 1,
+              "{IconName.Received}": 1,
+              "{IconName.Candlestick}": 1,
+              "{IconName.Stake}": 1,
+              "{IconName.Speedometer}": 1
+            }
+          },
+          "isActive": {
+            "count": 11,
+            "values": {
+              "{isSelected}": 5,
+              "false": 2,
+              "{isWatchlistFilterActive}": 1,
+              "{!selectedChainId && !isWatchlistFilterActive}": 1,
+              "{isActive}": 1,
+              "{isAllSelected}": 1
+            }
+          },
+          "twClassName": {
+            "count": 11,
+            "values": {
+              "\"px-4 pt-1 pb-3\"": 3,
+              "\"px-0 mb-2\"": 2,
+              "\"-mx-2\"": 1,
+              "\"w-full\"": 1,
+              "\"px-4 pb-6\"": 1,
+              "\"mb-2\"": 1,
+              "\"pl-1 pr-3\"": 1,
+              "\"bg-default\"": 1
+            }
+          },
+          "onBack": {
+            "count": 11,
+            "values": {
+              "{() => navigation.goBack()}": 5,
+              "{handleClose}": 2,
+              "{onBack}": 1,
+              "{handleBack}": 1,
+              "{navigation.goBack}": 1,
+              "{addBackButton ? handleBackPress : undefined}": 1
+            }
+          },
+          "labelProps": {
+            "count": 9,
+            "values": {
+              "{{ variant: TextVariant.BodySM, style: { textTransform: 'none', textAlign: 'ce...}": 4,
+              "{{ variant: TextVariantLegacy.BodySM, style: { textTransform: 'none', textAlig...}": 2,
+              "{{ variant: LegacyTextVariant.BodySM, style: { textTransform: 'none', textAlig...}": 2,
+              "{{ testID: 'paid-by-metamask' }}": 1
+            }
+          },
+          "includesTopInset": {
+            "count": 9,
+            "values": {
+              "true (shorthand)": 9
+            }
+          },
+          "key": {
+            "count": 8,
+            "values": {
+              "{chainId}": 2,
+              "{config.type}": 2,
+              "{chain.chainId}": 1,
+              "{tab}": 1,
+              "{button.key}": 1,
+              "{pillId}": 1
+            }
+          },
+          "backButtonProps": {
+            "count": 7,
+            "values": {
+              "{{ testID: PredictCryptoUpDownDetailsSelectorsIDs.BACK_BUTTON, }}": 1,
+              "{{ testID: 'perps-details-back-button' }}": 1,
+              "{{ testID: 'perps-leaderboard-back-button' }}": 1,
+              "{{ testID: 'perps-stats-back-button' }}": 1,
+              "{{ testID: 'predict-the-pitch-stats-back-button' }}": 1,
+              "{{ testID: NotificationMenuViewSelectorsIDs.CLOSE_BUTTON, }}": 1,
+              "{addBackButton ? { testID: `${title}-navbar-back-button` } : undefined}": 1
+            }
+          },
+          "endButtonIconProps": {
+            "count": 7,
+            "values": {
+              "{getCampaignMechanicsButtonProps( campaign != null, () => navigation.navigate(...}": 3,
+              "{[ { iconName: IconName.Share, onPress: handleSharePress, testID: PredictCrypt...}": 1,
+              "{getCampaignMechanicsButtonProps( campaign != null, navigateToMechanics, 'perp...}": 1,
+              "{[{ iconName: IconName.Close, onPress: handleClose }]}": 1,
+              "{[ { iconName: IconName.Setting, onPress: handleOpenSettings, testID: Notifica...}": 1
+            }
+          },
+          "description": {
+            "count": 6,
+            "values": {
+              "{config.description}": 2,
+              "{strings('asset_overview.swap_description')}": 1,
+              "{strings('asset_overview.perps_description')}": 1,
+              "{strings('asset_overview.earn_description')}": 1,
+              "{strings('asset_overview.predict_description')}": 1
+            }
+          },
+          "containerStyle": {
+            "count": 6,
+            "values": {
+              "{styles.buttonContainer}": 5,
+              "{styles.accountHeader}": 1
+            }
+          },
+          "onSelectAccount": {
+            "count": 5,
+            "values": {
+              "{handleSelectAccount}": 3,
+              "{_onSelectMultichainAccount}": 1,
+              "{onSelectAccountGroupId}": 1
+            }
+          },
+          "titleProps": {
+            "count": 5,
+            "values": {
+              "{{ variant: TextVariant.HeadingSm }}": 4,
+              "{{ testID: NotificationMenuViewSelectorsIDs.TITLE }}": 1
+            }
+          },
+          "avatarAccountType": {
+            "count": 4,
+            "values": {
+              "{avatarAccountType}": 3,
+              "{icon}": 1
+            }
+          },
+          "accessibilityLabel": {
+            "count": 4,
+            "values": {
+              "{strings('perps.watchlist.filter_badge_label')}": 1,
+              "{allNetworksLabel}": 1,
+              "{displayName}": 1,
+              "{strings(PILL_LABEL_KEYS[pillId])}": 1
+            }
+          },
+          "selectedAccountGroups": {
+            "count": 4,
+            "values": {
+              "{selectedAccountGroup ? [selectedAccountGroup] : []}": 2,
+              "{selectedAccountGroups}": 2
+            }
+          },
+          "isLoading": {
+            "count": 4,
+            "values": {
+              "{isLoading}": 3,
+              "{isPlacingOrder}": 1
+            }
+          },
+          "endAccessory": {
+            "count": 4,
+            "values": {
+              "{<Box twClassName=\"flex-row gap-2\"> {isVipProgramEnabled && isVipReferee && ( ...}": 1,
+              "{<Text variant={TextVariant.BodyLg} fontWeight={FontWeight.Medium} color={Text...}": 1,
+              "{<View style={styles.headerActionButtonsContainer} accessible={false} > {isMon...}": 1,
+              "{customRight}": 1
+            }
+          },
+          "ref": {
+            "count": 3,
+            "values": {
+              "{toastRef}": 1,
+              "{tabsListRef}": 1,
+              "{scrollViewRef}": 1
+            }
+          },
+          "showFooter": {
+            "count": 3,
+            "values": {
+              "false": 2,
+              "{!disableAddAccountButton}": 1
+            }
+          },
+          "chainId": {
+            "count": 3,
+            "values": {
+              "{item.scope}": 2,
+              "{destToken?.chainId}": 1
+            }
+          },
+          "status": {
+            "count": 3,
+            "values": {
+              "{currentNotification.status}": 2,
+              "\"success\"": 1
             }
           },
           "data": {
-            "count": 2,
+            "count": 3,
             "values": {
               "{{ title: currentNotification.title, description: currentNotification.descript...}": 1,
-              "{{ ...tx?.txParams, ...currentNotification.transaction, title: transactionElem...}": 1
+              "{{ ...tx?.txParams, ...currentNotification.transaction, title: transactionElem...}": 1,
+              "{notificationData}": 1
+            }
+          },
+          "onDismissComplete": {
+            "count": 3,
+            "values": {
+              "{onDismissComplete}": 2,
+              "{() => setOnboardingNotificationVisible(false)}": 1
+            }
+          },
+          "dismissDuration": {
+            "count": 3,
+            "values": {
+              "4000": 1,
+              "{dismissDuration}": 2
+            }
+          },
+          "[spread]": {
+            "count": 3,
+            "values": {
+              "{props}": 3
+            }
+          },
+          "severity": {
+            "count": 3,
+            "values": {
+              "{ButtonSemanticSeverity.Success}": 1,
+              "{ButtonSemanticSeverity.Danger}": 1,
+              "{orderForm.direction === 'long' ? ButtonSemanticSeverity.Success : ButtonSeman...}": 1
+            }
+          },
+          "accountGroup": {
+            "count": 3,
+            "values": {
+              "{item}": 2,
+              "{accountGroup}": 1
+            }
+          },
+          "accountAddress": {
+            "count": 2,
+            "values": {
+              "{activeAddress}": 2
+            }
+          },
+          "accountTokenBalance": {
+            "count": 2,
+            "values": {
+              "{addressBalance}": 2
+            }
+          },
+          "accountName": {
+            "count": 2,
+            "values": {
+              "{accountName}": 2
+            }
+          },
+          "accountBalanceLabel": {
+            "count": 2,
+            "values": {
+              "{strings('transaction.balance')}": 2
+            }
+          },
+          "accountTypeLabel": {
+            "count": 2,
+            "values": {
+              "{accountTypeLabel as string}": 1,
+              "{accountTypeLabel}": 1
+            }
+          },
+          "accountNetwork": {
+            "count": 2,
+            "values": {
+              "{String(displayNetworkName)}": 1,
+              "{networkName}": 1
+            }
+          },
+          "badgeProps": {
+            "count": 2,
+            "values": {
+              "{{ variant: BadgeVariant.Network, name: displayNetworkName, imageSource: displ...}": 1,
+              "{{ variant: BadgeVariant.Network, name: networkName, imageSource: networkImage, }}": 1
+            }
+          },
+          "accountSections": {
+            "count": 2,
+            "values": {
+              "{filteredAccountSections}": 2
+            }
+          },
+          "hideAccountCellMenu": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "setKeyboardAvoidingViewEnabled": {
+            "count": 2,
+            "values": {
+              "{setKeyboardAvoidingViewEnabled}": 2
+            }
+          },
+          "isScrollEnabled": {
+            "count": 2,
+            "values": {
+              "{isFullView}": 1,
+              "true (shorthand)": 1
+            }
+          },
+          "scrollViewProps": {
+            "count": 2,
+            "values": {
+              "{isFullView ? scrollViewProps : undefined}": 1,
+              "{{ testID: WalletViewSelectorsIDs.WALLET_SCROLL_VIEW, contentContainerStyle: s...}": 1
             }
           },
           "onHide": {
@@ -130,60 +1467,238 @@
               "{onCloseNotification}": 1
             }
           },
-          "onDismissComplete": {
+          "backgroundColor": {
             "count": 2,
             "values": {
-              "{onDismissComplete}": 2
+              "{colors.background.alternative}": 1,
+              "{colors.background.default}": 1
             }
           },
-          "dismissDuration": {
+          "isFullWidth": {
             "count": 2,
             "values": {
-              "{dismissDuration}": 2
+              "true (shorthand)": 2
             }
           },
-          "onPress": {
+          "startAccessory": {
             "count": 2,
             "values": {
-              "{detailsFadeIn}": 1,
-              "{onPress}": 1
+              "{<Box twClassName=\"w-10 h-10 rounded-lg bg-muted overflow-hidden\"> {selectedMa...}": 1,
+              "{customLeft}": 1
             }
           },
-          "testID": {
+          "disabled": {
             "count": 2,
             "values": {
-              "{testID}": 1,
-              "{ActivitiesViewSelectorsIDs.HEADER_ROOT}": 1
+              "{disabled}": 1,
+              "{!preview || isLoading}": 1
             }
           },
-          "title": {
+          "bottomAccessory": {
+            "count": 2,
+            "values": {
+              "{<Box flexDirection={BoxFlexDirection.Row} alignItems={BoxAlignItems.Center} t...}": 1,
+              "{<View style={styles.descriptionContainer}> {isSRP ? ( <Text variant={TextVari...}": 1
+            }
+          },
+          "networkName": {
+            "count": 2,
+            "values": {
+              "{item.networkName}": 2
+            }
+          },
+          "address": {
+            "count": 2,
+            "values": {
+              "{item.account.address}": 2
+            }
+          },
+          "copyParams": {
+            "count": 2,
+            "values": {
+              "{{ callback: async () => { await copyAddressToClipboard(); toast({ title: stri...}": 1,
+              "{{ callback: async () => { await ClipboardManager.setStringExpire( privateKeys...}": 1
+            }
+          },
+          "onPressIn": {
+            "count": 2,
+            "values": {
+              "{handlePressTokenValue}": 2
+            }
+          },
+          "onPressOut": {
+            "count": 2,
+            "values": {
+              "{handlePressTokenValue}": 2
+            }
+          },
+          "tooltip": {
             "count": 1,
             "values": {
-              "{strings('activity_view.title')}": 1
+              "{{ title: strings('bridge.quote_info_title'), content: strings('bridge.quote_i...}": 1
             }
           },
-          "includesTopInset": {
+          "showExternalAccountOnEmptySearch": {
             "count": 1,
             "values": {
               "true (shorthand)": 1
             }
           },
-          "color": {
+          "onSelectExternalAccount": {
             "count": 1,
             "values": {
-              "{TagColor.Success}": 1
+              "{handleSelectExternalAccount}": 1
             }
           },
-          "labelProps": {
+          "selectedExternalAddress": {
             "count": 1,
             "values": {
-              "{{ variant: TextVariant.BodySM, style: { textTransform: 'none', textAlign: 'ce...}": 1
+              "{selectedExternalAddress}": 1
+            }
+          },
+          "keyboardDismissMode": {
+            "count": 1,
+            "values": {
+              "\"on-drag\"": 1
+            }
+          },
+          "keyboardShouldPersistTaps": {
+            "count": 1,
+            "values": {
+              "\"handled\"": 1
+            }
+          },
+          "steps": {
+            "count": 1,
+            "values": {
+              "{steps}": 1
+            }
+          },
+          "currentStep": {
+            "count": 1,
+            "values": {
+              "{effectiveCurrentStep}": 1
+            }
+          },
+          "tabs": {
+            "count": 1,
+            "values": {
+              "{tabs}": 1
+            }
+          },
+          "activeIndex": {
+            "count": 1,
+            "values": {
+              "{activeIndex}": 1
+            }
+          },
+          "onTabPress": {
+            "count": 1,
+            "values": {
+              "{setActiveIndex}": 1
+            }
+          },
+          "accessibilityRole": {
+            "count": 1,
+            "values": {
+              "\"button\"": 1
+            }
+          },
+          "bottomLabel": {
+            "count": 1,
+            "values": {
+              "{subtitle}": 1
+            }
+          },
+          "variant": {
+            "count": 1,
+            "values": {
+              "{HeaderSearchVariant.Inline}": 1
+            }
+          },
+          "onPressCancelButton": {
+            "count": 1,
+            "values": {
+              "{onClose}": 1
+            }
+          },
+          "cancelButtonProps": {
+            "count": 1,
+            "values": {
+              "{{ // ButtonBase applies self-start when not full width, which top-aligns the ...}": 1
+            }
+          },
+          "textFieldSearchProps": {
+            "count": 1,
+            "values": {
+              "{{ value: searchQuery, onChangeText: onSearchChange, onPressClearButton: () =>...}": 1
+            }
+          },
+          "icons": {
+            "count": 1,
+            "values": {
+              "{[ { name: IconName.QrCode, callback: () => { navigation.navigate( Routes.MODA...}": 1
+            }
+          },
+          "showCheckbox": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "isSelected": {
+            "count": 1,
+            "values": {
+              "{selectedAccountGroup?.id === item.id}": 1
+            }
+          },
+          "privacyMode": {
+            "count": 1,
+            "values": {
+              "{privacyMode}": 1
+            }
+          },
+          "tabPadding": {
+            "count": 1,
+            "values": {
+              "{TAB_BAR_HORIZONTAL_PADDING}": 1
+            }
+          },
+          "hideMenu": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "isVisible": {
+            "count": 1,
+            "values": {
+              "{onboardingNotificationVisible}": 1
+            }
+          },
+          "endContainer": {
+            "count": 1,
+            "values": {
+              "{<Switch style={styles.switch} value={isEnabled} onValueChange={handleToggleAc...}": 1
+            }
+          },
+          "tabsListContentTwClassName": {
+            "count": 1,
+            "values": {
+              "\"px-0 mt-0\"": 1
+            }
+          },
+          "onChangeTab": {
+            "count": 1,
+            "values": {
+              "{handleTabChange}": 1
             }
           }
         }
       },
       "deprecatedByLegacyComponent": {
-        "BaseNotification": 5
+        "BaseNotification": 154,
+        "Toast": 1
       }
     }
   }

@@ -1,46 +1,738 @@
 {
   "component": "Input",
-  "generatedAt": "2026-08-14T07:58:54.549Z",
+  "generatedAt": "2026-08-03T15:19:14.250Z",
   "projects": {
     "extension": {
-      "filesScanned": 3574,
+      "filesScanned": 3520,
       "targetComponent": "Input",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 3,
+        "filesCount": 2,
+        "props": {
+          "value": {
+            "count": 3,
+            "values": {
+              "{url}": 1,
+              "{name}": 1,
+              "{digit}": 1
+            }
+          },
+          "onChange": {
+            "count": 3,
+            "values": {
+              "{(event: React.ChangeEvent<HTMLInputElement>) => setUrl(event.target.value)}": 1,
+              "{(event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value)}": 1,
+              "{(event) => handleChange(event.target.value, index)}": 1
+            }
+          },
+          "className": {
+            "count": 3,
+            "values": {
+              "\"rounded-xl border border-border-muted bg-background-muted px-4 py-3\"": 2,
+              "\"w-12 h-[54px] rounded-lg border border-muted bg-default text-center text-l-medium\"": 1
+            }
+          },
+          "data-testid": {
+            "count": 3,
+            "values": {
+              "\"rpc-url-input-test\"": 1,
+              "\"rpc-name-input-test\"": 1,
+              "{`qr-sync-otp-input-${index}`}": 1
+            }
+          },
+          "id": {
+            "count": 2,
+            "values": {
+              "\"rpcUrl\"": 1,
+              "\"rpcName\"": 1
+            }
+          },
+          "placeholder": {
+            "count": 2,
+            "values": {
+              "{t('enterRpcUrl')}": 1,
+              "{t('enterANameToIdentifyTheUrl')}": 1
+            }
+          },
+          "style": {
+            "count": 2,
+            "values": {
+              "{{ borderRadius: BorderRadius.XL }}": 2
+            }
+          },
+          "autoFocus": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 1,
+              "{index === 0}": 1
+            }
+          },
+          "key": {
+            "count": 1,
+            "values": {
+              "{`verification-code-${index}`}": 1
+            }
+          },
+          "ref": {
+            "count": 1,
+            "values": {
+              "{(ref) => { inputRefs.current[index] = ref; }}": 1
+            }
+          },
+          "onKeyDown": {
+            "count": 1,
+            "values": {
+              "{(event) => handleKeyDown(event, index)}": 1
+            }
+          },
+          "onPaste": {
+            "count": 1,
+            "values": {
+              "{(event) => handlePaste(event, index)}": 1
+            }
+          },
+          "onFocus": {
+            "count": 1,
+            "values": {
+              "{handleFocus}": 1
+            }
+          },
+          "type": {
+            "count": 1,
+            "values": {
+              "\"text\"": 1
+            }
+          },
+          "inputMode": {
+            "count": 1,
+            "values": {
+              "\"numeric\"": 1
+            }
+          },
+          "autoComplete": {
+            "count": 1,
+            "values": {
+              "\"one-time-code\"": 1
+            }
+          },
+          "aria-label": {
+            "count": 1,
+            "values": {
+              "{`${t('enter_verification_code')} ${index + 1}`}": 1
+            }
+          },
+          "maxLength": {
+            "count": 1,
+            "values": {
+              "1": 1
+            }
+          },
+          "isDisabled": {
+            "count": 1,
+            "values": {
+              "{isExpired || hasMaxedOutAttempts}": 1
+            }
+          }
+        }
       },
       "deprecated": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 1,
+        "filesCount": 1,
+        "props": {
+          "className": {
+            "count": 1,
+            "values": {
+              "\"dropdown-editor__item-placeholder\"": 1
+            }
+          },
+          "placeholder": {
+            "count": 1,
+            "values": {
+              "{placeholder}": 1
+            }
+          },
+          "readOnly": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "tabIndex": {
+            "count": 1,
+            "values": {
+              "{-1}": 1
+            }
+          },
+          "paddingTop": {
+            "count": 1,
+            "values": {
+              "3": 1
+            }
+          },
+          "paddingBottom": {
+            "count": 1,
+            "values": {
+              "3": 1
+            }
+          }
+        }
       },
       "overall": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 4,
+        "filesCount": 3,
+        "props": {
+          "className": {
+            "count": 4,
+            "values": {
+              "\"rounded-xl border border-border-muted bg-background-muted px-4 py-3\"": 2,
+              "\"dropdown-editor__item-placeholder\"": 1,
+              "\"w-12 h-[54px] rounded-lg border border-muted bg-default text-center text-l-medium\"": 1
+            }
+          },
+          "placeholder": {
+            "count": 3,
+            "values": {
+              "{placeholder}": 1,
+              "{t('enterRpcUrl')}": 1,
+              "{t('enterANameToIdentifyTheUrl')}": 1
+            }
+          },
+          "value": {
+            "count": 3,
+            "values": {
+              "{url}": 1,
+              "{name}": 1,
+              "{digit}": 1
+            }
+          },
+          "onChange": {
+            "count": 3,
+            "values": {
+              "{(event: React.ChangeEvent<HTMLInputElement>) => setUrl(event.target.value)}": 1,
+              "{(event: React.ChangeEvent<HTMLInputElement>) => setName(event.target.value)}": 1,
+              "{(event) => handleChange(event.target.value, index)}": 1
+            }
+          },
+          "data-testid": {
+            "count": 3,
+            "values": {
+              "\"rpc-url-input-test\"": 1,
+              "\"rpc-name-input-test\"": 1,
+              "{`qr-sync-otp-input-${index}`}": 1
+            }
+          },
+          "id": {
+            "count": 2,
+            "values": {
+              "\"rpcUrl\"": 1,
+              "\"rpcName\"": 1
+            }
+          },
+          "style": {
+            "count": 2,
+            "values": {
+              "{{ borderRadius: BorderRadius.XL }}": 2
+            }
+          },
+          "autoFocus": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 1,
+              "{index === 0}": 1
+            }
+          },
+          "readOnly": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "tabIndex": {
+            "count": 1,
+            "values": {
+              "{-1}": 1
+            }
+          },
+          "paddingTop": {
+            "count": 1,
+            "values": {
+              "3": 1
+            }
+          },
+          "paddingBottom": {
+            "count": 1,
+            "values": {
+              "3": 1
+            }
+          },
+          "key": {
+            "count": 1,
+            "values": {
+              "{`verification-code-${index}`}": 1
+            }
+          },
+          "ref": {
+            "count": 1,
+            "values": {
+              "{(ref) => { inputRefs.current[index] = ref; }}": 1
+            }
+          },
+          "onKeyDown": {
+            "count": 1,
+            "values": {
+              "{(event) => handleKeyDown(event, index)}": 1
+            }
+          },
+          "onPaste": {
+            "count": 1,
+            "values": {
+              "{(event) => handlePaste(event, index)}": 1
+            }
+          },
+          "onFocus": {
+            "count": 1,
+            "values": {
+              "{handleFocus}": 1
+            }
+          },
+          "type": {
+            "count": 1,
+            "values": {
+              "\"text\"": 1
+            }
+          },
+          "inputMode": {
+            "count": 1,
+            "values": {
+              "\"numeric\"": 1
+            }
+          },
+          "autoComplete": {
+            "count": 1,
+            "values": {
+              "\"one-time-code\"": 1
+            }
+          },
+          "aria-label": {
+            "count": 1,
+            "values": {
+              "{`${t('enter_verification_code')} ${index + 1}`}": 1
+            }
+          },
+          "maxLength": {
+            "count": 1,
+            "values": {
+              "1": 1
+            }
+          },
+          "isDisabled": {
+            "count": 1,
+            "values": {
+              "{isExpired || hasMaxedOutAttempts}": 1
+            }
+          }
+        }
       },
-      "deprecatedByLegacyComponent": {}
+      "deprecatedByLegacyComponent": {
+        "Input": 1
+      }
     },
     "mobile": {
-      "filesScanned": 7573,
+      "filesScanned": 7459,
       "targetComponent": "Input",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 1,
+        "filesCount": 1,
+        "props": {
+          "ref": {
+            "count": 1,
+            "values": {
+              "{inputRef}": 1
+            }
+          },
+          "value": {
+            "count": 1,
+            "values": {
+              "{value}": 1
+            }
+          },
+          "onChangeText": {
+            "count": 1,
+            "values": {
+              "{onChangeText}": 1
+            }
+          },
+          "keyboardType": {
+            "count": 1,
+            "values": {
+              "\"decimal-pad\"": 1
+            }
+          },
+          "returnKeyType": {
+            "count": 1,
+            "values": {
+              "\"done\"": 1
+            }
+          },
+          "onSubmitEditing": {
+            "count": 1,
+            "values": {
+              "{Keyboard.dismiss}": 1
+            }
+          },
+          "inputAccessoryViewID": {
+            "count": 1,
+            "values": {
+              "{inputAccessoryViewID}": 1
+            }
+          },
+          "placeholder": {
+            "count": 1,
+            "values": {
+              "{placeholder}": 1
+            }
+          },
+          "placeholderTextColor": {
+            "count": 1,
+            "values": {
+              "{tw.color(`text-${placeholderColor}`)}": 1
+            }
+          },
+          "textVariant": {
+            "count": 1,
+            "values": {
+              "{TextVariant.BodySm}": 1
+            }
+          },
+          "isStateStylesDisabled": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "twClassName": {
+            "count": 1,
+            "values": {
+              "\"flex-1 border-0 bg-transparent p-0 font-medium\"": 1
+            }
+          },
+          "testID": {
+            "count": 1,
+            "values": {
+              "{testID}": 1
+            }
+          },
+          "accessibilityLabel": {
+            "count": 1,
+            "values": {
+              "{label}": 1
+            }
+          }
+        }
       },
       "deprecated": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 3,
+        "filesCount": 3,
+        "props": {
+          "testID": {
+            "count": 3,
+            "values": {
+              "{`snap-ui-renderer__date-time-picker--${type}-input`}": 1,
+              "\"input-stepper-input\"": 1,
+              "{`${testID}-input`}": 1
+            }
+          },
+          "value": {
+            "count": 3,
+            "values": {
+              "{formatDateForDisplay(value, type)}": 1,
+              "{displayedAmount}": 1,
+              "{primaryAmountDisplayValue}": 1
+            }
+          },
+          "placeholder": {
+            "count": 3,
+            "values": {
+              "{placeholder}": 2,
+              "\"0\"": 1
+            }
+          },
+          "showSoftInputOnFocus": {
+            "count": 2,
+            "values": {
+              "false": 2
+            }
+          },
+          "caretHidden": {
+            "count": 2,
+            "values": {
+              "false": 2
+            }
+          },
+          "autoFocus": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 1,
+              "false": 1
+            }
+          },
+          "style": {
+            "count": 2,
+            "values": {
+              "{styles.input}": 2
+            }
+          },
+          "selection": {
+            "count": 2,
+            "values": {
+              "{selection}": 1,
+              "{tokenType === TokenInputAreaType.Destination ? { start: 0, end: 0 } : selection}": 1
+            }
+          },
+          "onSelectionChange": {
+            "count": 2,
+            "values": {
+              "{onSelectionChange}": 1,
+              "{tokenType === TokenInputAreaType.Source ? onSelectionChange : undefined}": 1
+            }
+          },
+          "isStateStylesDisabled": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "readOnly": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "pointerEvents": {
+            "count": 1,
+            "values": {
+              "\"none\"": 1
+            }
+          },
+          "ref": {
+            "count": 1,
+            "values": {
+              "{inputRef}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 1,
+            "values": {
+              "false": 1
+            }
+          },
+          "isReadonly": {
+            "count": 1,
+            "values": {
+              "{tokenType === TokenInputAreaType.Destination}": 1
+            }
+          },
+          "onPressIn": {
+            "count": 1,
+            "values": {
+              "{() => { onInputPress?.(); }}": 1
+            }
+          },
+          "onFocus": {
+            "count": 1,
+            "values": {
+              "{() => { onFocus?.(); onInputPress?.(); }}": 1
+            }
+          },
+          "onBlur": {
+            "count": 1,
+            "values": {
+              "{() => { onBlur?.(); }}": 1
+            }
+          }
+        }
       },
       "overall": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 4,
+        "filesCount": 4,
+        "props": {
+          "testID": {
+            "count": 4,
+            "values": {
+              "{`snap-ui-renderer__date-time-picker--${type}-input`}": 1,
+              "\"input-stepper-input\"": 1,
+              "{`${testID}-input`}": 1,
+              "{testID}": 1
+            }
+          },
+          "value": {
+            "count": 4,
+            "values": {
+              "{formatDateForDisplay(value, type)}": 1,
+              "{displayedAmount}": 1,
+              "{primaryAmountDisplayValue}": 1,
+              "{value}": 1
+            }
+          },
+          "placeholder": {
+            "count": 4,
+            "values": {
+              "{placeholder}": 3,
+              "\"0\"": 1
+            }
+          },
+          "isStateStylesDisabled": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "showSoftInputOnFocus": {
+            "count": 2,
+            "values": {
+              "false": 2
+            }
+          },
+          "caretHidden": {
+            "count": 2,
+            "values": {
+              "false": 2
+            }
+          },
+          "autoFocus": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 1,
+              "false": 1
+            }
+          },
+          "style": {
+            "count": 2,
+            "values": {
+              "{styles.input}": 2
+            }
+          },
+          "selection": {
+            "count": 2,
+            "values": {
+              "{selection}": 1,
+              "{tokenType === TokenInputAreaType.Destination ? { start: 0, end: 0 } : selection}": 1
+            }
+          },
+          "onSelectionChange": {
+            "count": 2,
+            "values": {
+              "{onSelectionChange}": 1,
+              "{tokenType === TokenInputAreaType.Source ? onSelectionChange : undefined}": 1
+            }
+          },
+          "ref": {
+            "count": 2,
+            "values": {
+              "{inputRef}": 2
+            }
+          },
+          "readOnly": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "pointerEvents": {
+            "count": 1,
+            "values": {
+              "\"none\"": 1
+            }
+          },
+          "isDisabled": {
+            "count": 1,
+            "values": {
+              "false": 1
+            }
+          },
+          "isReadonly": {
+            "count": 1,
+            "values": {
+              "{tokenType === TokenInputAreaType.Destination}": 1
+            }
+          },
+          "onPressIn": {
+            "count": 1,
+            "values": {
+              "{() => { onInputPress?.(); }}": 1
+            }
+          },
+          "onFocus": {
+            "count": 1,
+            "values": {
+              "{() => { onFocus?.(); onInputPress?.(); }}": 1
+            }
+          },
+          "onBlur": {
+            "count": 1,
+            "values": {
+              "{() => { onBlur?.(); }}": 1
+            }
+          },
+          "onChangeText": {
+            "count": 1,
+            "values": {
+              "{onChangeText}": 1
+            }
+          },
+          "keyboardType": {
+            "count": 1,
+            "values": {
+              "\"decimal-pad\"": 1
+            }
+          },
+          "returnKeyType": {
+            "count": 1,
+            "values": {
+              "\"done\"": 1
+            }
+          },
+          "onSubmitEditing": {
+            "count": 1,
+            "values": {
+              "{Keyboard.dismiss}": 1
+            }
+          },
+          "inputAccessoryViewID": {
+            "count": 1,
+            "values": {
+              "{inputAccessoryViewID}": 1
+            }
+          },
+          "placeholderTextColor": {
+            "count": 1,
+            "values": {
+              "{tw.color(`text-${placeholderColor}`)}": 1
+            }
+          },
+          "textVariant": {
+            "count": 1,
+            "values": {
+              "{TextVariant.BodySm}": 1
+            }
+          },
+          "twClassName": {
+            "count": 1,
+            "values": {
+              "\"flex-1 border-0 bg-transparent p-0 font-medium\"": 1
+            }
+          },
+          "accessibilityLabel": {
+            "count": 1,
+            "values": {
+              "{label}": 1
+            }
+          }
+        }
       },
-      "deprecatedByLegacyComponent": {}
+      "deprecatedByLegacyComponent": {
+        "Input": 3
+      }
     }
   }
 }

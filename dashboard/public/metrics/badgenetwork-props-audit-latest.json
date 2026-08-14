@@ -1,14 +1,27 @@
 {
   "component": "BadgeNetwork",
-  "generatedAt": "2026-08-14T07:58:21.235Z",
+  "generatedAt": "2026-08-03T15:11:45.354Z",
   "projects": {
     "extension": {
-      "filesScanned": 3574,
+      "filesScanned": 3520,
       "targetComponent": "BadgeNetwork",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 4,
+        "filesCount": 1,
+        "props": {
+          "name": {
+            "count": 4,
+            "values": {
+              "\"Ethereum\"": 4
+            }
+          },
+          "src": {
+            "count": 4,
+            "values": {
+              "\"https://assets.coingecko.com/coins/images/279/small/ethereum.png\"": 4
+            }
+          }
+        }
       },
       "deprecated": {
         "totalInstances": 0,
@@ -16,82 +29,118 @@
         "props": {}
       },
       "overall": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 4,
+        "filesCount": 1,
+        "props": {
+          "name": {
+            "count": 4,
+            "values": {
+              "\"Ethereum\"": 4
+            }
+          },
+          "src": {
+            "count": 4,
+            "values": {
+              "\"https://assets.coingecko.com/coins/images/279/small/ethereum.png\"": 4
+            }
+          }
+        }
       },
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 7573,
+      "filesScanned": 7459,
       "targetComponent": "BadgeNetwork",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 9,
+        "filesCount": 8,
+        "props": {
+          "src": {
+            "count": 9,
+            "values": {
+              "{networkImage}": 5,
+              "{networkImageSource as React.ComponentProps< typeof BadgeNetwork >['src']}": 1,
+              "{networkBadgeSource as React.ComponentProps< typeof BadgeNetwork >['src']}": 1,
+              "{getNetworkImageSource({ chainId: safeFormatChainIdToHex( item.caipChainId, ) ...}": 1,
+              "{BASE_NETWORK_IMAGE}": 1
+            }
+          },
+          "twClassName": {
+            "count": 3,
+            "values": {
+              "\"rounded-md\"": 3
+            }
+          }
+        }
       },
       "deprecated": {
-        "totalInstances": 1,
-        "filesCount": 1,
+        "totalInstances": 7,
+        "filesCount": 7,
         "props": {
-          "variant": {
-            "count": 1,
+          "name": {
+            "count": 7,
             "values": {
-              "{BadgeVariant.Network}": 1
+              "{networkName}": 3,
+              "{token.network?.shortName}": 1,
+              "{normalizedNetworkChainId}": 1,
+              "{depositNetworkName ?? networkName}": 1,
+              "{networkBadge.name}": 1
             }
           },
           "imageSource": {
-            "count": 1,
+            "count": 7,
             "values": {
-              "{NetworkBadgeSource(chainId)}": 1
-            }
-          },
-          "isScaled": {
-            "count": 1,
-            "values": {
-              "false": 1
-            }
-          },
-          "size": {
-            "count": 1,
-            "values": {
-              "{AvatarSize.Xs}": 1
+              "{networkImageSource}": 4,
+              "{getNetworkImageForToken(token)}": 1,
+              "{NetworkBadgeSource(asset.chainId as `0x${string}`)}": 1,
+              "{networkBadge.imageSource}": 1
             }
           }
         }
       },
       "overall": {
-        "totalInstances": 1,
-        "filesCount": 1,
+        "totalInstances": 16,
+        "filesCount": 15,
         "props": {
-          "variant": {
-            "count": 1,
+          "src": {
+            "count": 9,
             "values": {
-              "{BadgeVariant.Network}": 1
+              "{networkImage}": 5,
+              "{networkImageSource as React.ComponentProps< typeof BadgeNetwork >['src']}": 1,
+              "{networkBadgeSource as React.ComponentProps< typeof BadgeNetwork >['src']}": 1,
+              "{getNetworkImageSource({ chainId: safeFormatChainIdToHex( item.caipChainId, ) ...}": 1,
+              "{BASE_NETWORK_IMAGE}": 1
+            }
+          },
+          "name": {
+            "count": 7,
+            "values": {
+              "{networkName}": 3,
+              "{token.network?.shortName}": 1,
+              "{normalizedNetworkChainId}": 1,
+              "{depositNetworkName ?? networkName}": 1,
+              "{networkBadge.name}": 1
             }
           },
           "imageSource": {
-            "count": 1,
+            "count": 7,
             "values": {
-              "{NetworkBadgeSource(chainId)}": 1
+              "{networkImageSource}": 4,
+              "{getNetworkImageForToken(token)}": 1,
+              "{NetworkBadgeSource(asset.chainId as `0x${string}`)}": 1,
+              "{networkBadge.imageSource}": 1
             }
           },
-          "isScaled": {
-            "count": 1,
+          "twClassName": {
+            "count": 3,
             "values": {
-              "false": 1
-            }
-          },
-          "size": {
-            "count": 1,
-            "values": {
-              "{AvatarSize.Xs}": 1
+              "\"rounded-md\"": 3
             }
           }
         }
       },
       "deprecatedByLegacyComponent": {
-        "Badge": 1
+        "BadgeNetwork": 7
       }
     }
   }
