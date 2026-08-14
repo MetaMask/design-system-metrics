@@ -1,5 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import type { CodeOwnerFileOccurrence, CodeOwnerStats } from '../types/metrics';
+import type {
+  CodeOwnerFileOccurrence,
+  CodeOwnerStats,
+  LegacyReplacementInfo,
+} from '../types/metrics';
 import { formatOwnerLabel, normalizeOwner } from '../constants/codeOwners';
 
 function isUnknownOwner(owner: string): boolean {
@@ -24,12 +28,15 @@ interface TeamLegacyBacklogProps {
   project: 'mobile' | 'extension';
   codeOwnerStats: Record<string, CodeOwnerStats>;
   components?: ReplacementComponentRow[];
+  legacyReplacements?: Record<string, LegacyReplacementInfo>;
   excludedOwners?: Set<string>;
 }
 
 interface BacklogRow {
   component: string;
   replacement: string | null;
+  replacementOptions: string[];
+  replacementGuidance: string | null;
   legacyInstances: number;
   mmdsInstances: number;
   teamMigrationPct: number | null;
@@ -92,9 +99,47 @@ function buildReplacementMap(
   return map;
 }
 
+function resolveReplacementInfo(
+  component: string,
+  replacementMap: Map<string, string>,
+  legacyReplacements?: Record<string, LegacyReplacementInfo>,
+): Pick<BacklogRow, 'replacement' | 'replacementOptions' | 'replacementGuidance'> {
+  const mapped = legacyReplacements?.[component];
+  const options =
+    mapped?.replacementOptions && mapped.replacementOptions.length > 0
+      ? mapped.replacementOptions
+      : mapped?.replacement
+        ? [mapped.replacement]
+        : [];
+
+  const replacement =
+    replacementMap.get(component) ??
+    mapped?.replacement ??
+    options[0] ??
+    null;
+
+  return {
+    replacement,
+    replacementOptions: options.length > 0 ? options : replacement ? [replacement] : [],
+    replacementGuidance: mapped?.guidance ?? null,
+  };
+}
+
+function countMmdsInstances(
+  mmds: Record<string, number>,
+  component: string,
+  replacementOptions: string[],
+): number {
+  if (replacementOptions.length > 0) {
+    return replacementOptions.reduce((sum, name) => sum + (mmds[name] ?? 0), 0);
+  }
+  return mmds[component] ?? 0;
+}
+
 function buildTeamBacklog(
   stats: CodeOwnerStats,
   replacementMap: Map<string, string>,
+  legacyReplacements?: Record<string, LegacyReplacementInfo>,
 ): BacklogRow[] {
   const deprecated = stats.deprecatedByComponent || {};
   const mmds = stats.mmdsByComponent || {};
@@ -106,11 +151,20 @@ function buildTeamBacklog(
     const legacyInstances = deprecated[component] ?? 0;
     if (legacyInstances <= 0) continue;
 
-    const mmdsInstances = mmds[component] ?? 0;
+    const replacementInfo = resolveReplacementInfo(
+      component,
+      replacementMap,
+      legacyReplacements,
+    );
+    const mmdsInstances = countMmdsInstances(
+      mmds,
+      component,
+      replacementInfo.replacementOptions,
+    );
     const total = legacyInstances + mmdsInstances;
     rows.push({
       component,
-      replacement: replacementMap.get(component) ?? null,
+      ...replacementInfo,
       legacyInstances,
       mmdsInstances,
       teamMigrationPct: total > 0 ? (mmdsInstances / total) * 100 : null,
@@ -119,6 +173,50 @@ function buildTeamBacklog(
   }
 
   return rows;
+}
+
+function ReplacementCell({
+  project,
+  replacementOptions,
+  guidance,
+}: {
+  project: 'mobile' | 'extension';
+  replacementOptions: string[];
+  guidance: string | null;
+}) {
+  if (replacementOptions.length > 0) {
+    return (
+      <span className="inline-flex flex-wrap items-center gap-x-1 gap-y-0.5">
+        {replacementOptions.map((name, index) => (
+          <span key={name} className="inline-flex items-center gap-x-1">
+            {index > 0 && <span className="text-gray-400 dark:text-gray-500">·</span>}
+            <a
+              href={mmdsPackagePath(project, name)}
+              target="_blank"
+              rel="noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="text-blue-600 dark:text-blue-400 hover:underline font-mono"
+            >
+              {name}
+            </a>
+          </span>
+        ))}
+      </span>
+    );
+  }
+
+  if (guidance) {
+    return (
+      <span
+        className="text-xs text-amber-700 dark:text-amber-300 italic"
+        title={guidance}
+      >
+        {guidance}
+      </span>
+    );
+  }
+
+  return <span className="text-gray-400 dark:text-gray-500">—</span>;
 }
 
 function downloadJson(filename: string, payload: unknown) {
@@ -152,6 +250,8 @@ function buildAgentHandoffText(opts: {
   codeOwner: string;
   component: string;
   replacement: string | null;
+  replacementOptions: string[];
+  replacementGuidance: string | null;
   legacyInstances: number;
   mmdsInstances: number;
   teamMigrationPct: number | null;
@@ -163,6 +263,8 @@ function buildAgentHandoffText(opts: {
     codeOwner,
     component,
     replacement,
+    replacementOptions,
+    replacementGuidance,
     legacyInstances,
     mmdsInstances,
     teamMigrationPct,
@@ -173,7 +275,11 @@ function buildAgentHandoffText(opts: {
   const instanceCount = fileTotal > 0 ? fileTotal : legacyInstances;
   const pkg = mmdsPackageName(project);
   const repo = githubRepo(project);
-  const hasReplacement = Boolean(replacement);
+  const hasReplacement = replacementOptions.length > 0 || Boolean(replacement);
+  const replacementLabel =
+    replacementOptions.length > 0
+      ? replacementOptions.join(' or ')
+      : replacement;
 
   const lines: string[] = [
     `# Task: Replace all legacy \`${component}\` instances with MMDS`,
@@ -187,10 +293,12 @@ function buildAgentHandoffText(opts: {
     `- CODEOWNERS team: ${team} (${codeOwner})`,
     `- Legacy component: \`${component}\``,
     hasReplacement
-      ? `- MMDS replacement: \`${replacement}\` from \`${pkg}\``
-      : `- MMDS replacement: **none listed yet** — confirm the correct MMDS component before changing call sites`,
+      ? `- MMDS replacement: \`${replacementLabel}\` from \`${pkg}\``
+      : replacementGuidance
+        ? `- MMDS replacement: **not auto-mapped** — ${replacementGuidance}`
+        : `- MMDS replacement: **none listed yet** — confirm the correct MMDS component before changing call sites`,
     `- Legacy instances to migrate: **${instanceCount}** across **${files.length}** file(s)`,
-    `- Current MMDS \`${replacement ?? component}\` usage by this team: ${mmdsInstances}`,
+    `- Current MMDS usage by this team for target component(s): ${mmdsInstances}`,
   ];
 
   if (teamMigrationPct != null) {
@@ -207,7 +315,36 @@ function buildAgentHandoffText(opts: {
     '### MMDS (target)',
   );
 
-  if (hasReplacement && replacement) {
+  if (hasReplacement && replacementOptions.length > 0) {
+    for (const target of replacementOptions) {
+      lines.push(
+        `- Component: \`${target}\``,
+        `- Package: \`${pkg}\``,
+        `- Source: ${mmdsPackagePath(project, target)}`,
+        `- Migration guide: ${mmdsMigrationGuideUrl(project, target)}`,
+        `- Component README: ${mmdsReadmeUrl(project, target)}`,
+      );
+      if (project === 'extension') {
+        lines.push(`- Storybook: ${mmdsStorybookUrl(target)}`);
+      }
+      lines.push('');
+    }
+    lines.push(
+      '## Instructions',
+      `1. Read the MMDS migration guides and README/source above before editing.`,
+      `2. For each file below, find every legacy \`${component}\` import and JSX usage.`,
+      replacementOptions.length > 1
+        ? `3. Replace each legacy import with the appropriate option from \`${replacementLabel}\` in \`${pkg}\`.`
+        : `3. Replace each legacy import with \`${replacementOptions[0]}\` from \`${pkg}\`.`,
+      replacementOptions.length > 1
+        ? `4. Update JSX tags to the chosen MMDS component(s) from \`${replacementLabel}\`.`
+        : `4. Update JSX tags from \`<${component}>\` to \`<${replacementOptions[0]}>\` (and closing tags).`,
+      '5. Map props to the MMDS API — do not assume prop names/values are identical; compare against the MMDS docs.',
+      '6. Remove unused legacy imports after the swap.',
+      '7. Keep behavior and accessibility equivalent; fix TypeScript and lint issues introduced by the migration.',
+      `8. When finished, there should be **0** remaining legacy \`${component}\` instances in the listed files.`,
+    );
+  } else if (hasReplacement && replacement) {
     lines.push(
       `- Component: \`${replacement}\``,
       `- Package: \`${pkg}\``,
@@ -233,6 +370,7 @@ function buildAgentHandoffText(opts: {
   } else {
     lines.push(
       `- No tracked MMDS replacement is configured for \`${component}\`.`,
+      replacementGuidance ? `- Deprecation guidance: ${replacementGuidance}` : '',
       `- Package to investigate: \`${pkg}\``,
       '- Design system repo: https://github.com/MetaMask/metamask-design-system',
       '',
@@ -264,7 +402,7 @@ function buildAgentHandoffText(opts: {
     '## Acceptance criteria',
     `- [ ] All ${instanceCount} legacy \`${component}\` instance(s) in the files above are migrated`,
     hasReplacement
-      ? `- [ ] Imports use \`${replacement}\` from \`${pkg}\``
+      ? `- [ ] Imports use \`${replacementLabel}\` from \`${pkg}\``
       : `- [ ] Imports use the confirmed MMDS replacement from \`${pkg}\``,
     '- [ ] Props match the MMDS API (no leftover legacy-only props)',
     '- [ ] Typecheck / lint clean for touched files',
@@ -279,6 +417,7 @@ export function TeamLegacyBacklog({
   project,
   codeOwnerStats,
   components,
+  legacyReplacements,
   excludedOwners,
 }: TeamLegacyBacklogProps) {
   const [teamFilter, setTeamFilter] = useState('');
@@ -317,13 +456,19 @@ export function TeamLegacyBacklog({
 
   const rows = useMemo(() => {
     if (!selectedOwner || !codeOwnerStats[selectedOwner]) return [];
-    let list = buildTeamBacklog(codeOwnerStats[selectedOwner], replacementMap);
+    let list = buildTeamBacklog(
+      codeOwnerStats[selectedOwner],
+      replacementMap,
+      legacyReplacements,
+    );
     if (search) {
       const q = search.toLowerCase();
       list = list.filter(
         (r) =>
           r.component.toLowerCase().includes(q) ||
-          (r.replacement?.toLowerCase().includes(q) ?? false),
+          (r.replacement?.toLowerCase().includes(q) ?? false) ||
+          r.replacementOptions.some((name) => name.toLowerCase().includes(q)) ||
+          (r.replacementGuidance?.toLowerCase().includes(q) ?? false),
       );
     }
     return [...list].sort((a, b) => {
@@ -336,7 +481,7 @@ export function TeamLegacyBacklog({
       }
       return sortDir === 'desc' ? -cmp : cmp;
     });
-  }, [codeOwnerStats, selectedOwner, replacementMap, search, sortField, sortDir]);
+  }, [codeOwnerStats, selectedOwner, replacementMap, legacyReplacements, search, sortField, sortDir]);
 
   const selectedTeam = teams.find((t) => t.owner === selectedOwner);
   const totalLegacy = rows.reduce((sum, r) => sum + r.legacyInstances, 0);
@@ -450,6 +595,8 @@ export function TeamLegacyBacklog({
       codeOwner: selectedOwner,
       component: detailRow.component,
       replacement: detailRow.replacement,
+      replacementOptions: detailRow.replacementOptions,
+      replacementGuidance: detailRow.replacementGuidance,
       legacyInstances: detailRow.legacyInstances,
       mmdsInstances: detailRow.mmdsInstances,
       teamMigrationPct: detailRow.teamMigrationPct,
@@ -566,7 +713,6 @@ export function TeamLegacyBacklog({
           </thead>
           <tbody className="divide-y divide-gray-100 dark:divide-gray-700/60">
             {rows.map((row, i) => {
-              const replacement = row.replacement;
               const isOpen = selectedComponent === row.component;
               const toggleRow = () => {
                 if (isOpen) closePanel();
@@ -597,19 +743,11 @@ export function TeamLegacyBacklog({
                     {row.component}
                   </td>
                   <td className="px-4 py-3 text-sm">
-                    {replacement ? (
-                      <a
-                        href={mmdsPackagePath(project, replacement)}
-                        target="_blank"
-                        rel="noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="text-blue-600 dark:text-blue-400 hover:underline font-mono"
-                      >
-                        {replacement}
-                      </a>
-                    ) : (
-                      <span className="text-gray-400 dark:text-gray-500">—</span>
-                    )}
+                    <ReplacementCell
+                      project={project}
+                      replacementOptions={row.replacementOptions}
+                      guidance={row.replacementGuidance}
+                    />
                   </td>
                   <td className="px-4 py-3 text-sm tabular-nums font-medium text-red-600 dark:text-red-400">
                     {row.legacyInstances.toLocaleString()}
@@ -711,18 +849,13 @@ export function TeamLegacyBacklog({
                 </div>
                 <div className="rounded-lg bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/50 p-3">
                   <p className="text-xs text-emerald-700 dark:text-emerald-400">Replace with</p>
-                  {detailRow.replacement ? (
-                    <a
-                      href={mmdsPackagePath(project, detailRow.replacement)}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="block mt-1 font-semibold font-mono text-emerald-700 dark:text-emerald-300 hover:underline truncate"
-                    >
-                      {detailRow.replacement}
-                    </a>
-                  ) : (
-                    <p className="mt-1 font-semibold text-gray-500">Not mapped</p>
-                  )}
+                  <div className="mt-1">
+                    <ReplacementCell
+                      project={project}
+                      replacementOptions={detailRow.replacementOptions}
+                      guidance={detailRow.replacementGuidance}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -761,6 +894,8 @@ export function TeamLegacyBacklog({
                             codeOwner: selectedOwner,
                             component: detailRow.component,
                             mmdsReplacement: detailRow.replacement,
+                            mmdsReplacementOptions: detailRow.replacementOptions,
+                            replacementGuidance: detailRow.replacementGuidance,
                             legacyInstances: detailRow.legacyInstances,
                             generatedAt: new Date().toISOString(),
                             files: detailRow.files,

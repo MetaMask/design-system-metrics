@@ -1,0 +1,410 @@
+{
+  "component": "TextButton",
+  "generatedAt": "2026-08-10T09:53:59.196Z",
+  "projects": {
+    "extension": {
+      "filesScanned": 3552,
+      "targetComponent": "TextButton",
+      "mmds": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "deprecated": {
+        "totalInstances": 29,
+        "filesCount": 20,
+        "props": {
+          "size": {
+            "count": 18,
+            "values": {
+              "{ButtonLinkSize.Inherit}": 10,
+              "{Size.inherit}": 3,
+              "{BUTTON_SIZES.INHERIT}": 3,
+              "{ButtonLinkSize.Lg}": 1,
+              "{Size.auto}": 1
+            }
+          },
+          "href": {
+            "count": 18,
+            "values": {
+              "{safeWebsite.toString()}": 2,
+              "{url}": 2,
+              "{ZENDESK_URLS.IMPORTED_ACCOUNTS_PRIVATE_KEY}": 2,
+              "{blockExplorerLink}": 2,
+              "{ZENDESK_URLS.CUSTOMIZE_NONCE}": 1,
+              "{TERMS_OF_USE_LINK}": 1,
+              "{href}": 1,
+              "\"https://consensys.io/privacy-policy/\"": 1,
+              "\"https://consensys.io/privacy-policy\"": 1,
+              "{ZENDESK_URLS.IMPORTED_ACCOUNT_JSON}": 1,
+              "{link}": 1,
+              "\"https://snaps.metamask.io/\"": 1,
+              "{ZENDESK_URLS.GAS_FEES}": 1,
+              "{ZENDESK_URLS.SWAPS_USER_GUIDE}": 1
+            }
+          },
+          "target": {
+            "count": 16,
+            "values": {
+              "\"_blank\"": 16
+            }
+          },
+          "className": {
+            "count": 12,
+            "values": {
+              "\"snap-ui-renderer__link\"": 3,
+              "\"connected-accounts-list__account-status-link\"": 2,
+              "\"confirm-add-suggested-nft__nft-name\"": 2,
+              "\"customize-nonce-modal__link\"": 1,
+              "\"customize-nonce-modal__reset\"": 1,
+              "\"snap-privacy-warning__content__terms-link\"": 1,
+              "\"snap-ui-markdown__link\"": 1,
+              "\"snap-external-pill\"": 1
+            }
+          },
+          "onClick": {
+            "count": 12,
+            "values": {
+              "{() => connectAccount(address)}": 1,
+              "{() => switchAccount(address)}": 1,
+              "{() => { setCustomNonce(nextNonce); }}": 1,
+              "{onConfirm}": 1,
+              "{onShowAllPermissionsHandler}": 1,
+              "{handleMetaMaskLinkClick}": 1,
+              "{handleLinkClick}": 1,
+              "{onClick}": 1,
+              "{() => onShowAllPermissions()}": 1,
+              "{() => onClick()}": 1,
+              "{() => { trackEvent( createEventBuilder( 'Clicked \"Gas Fees: Learn More\" Link'...}": 1,
+              "{(e) => { e.preventDefault(); dispatch(setTransactionSettingsOpened(true)); }}": 1
+            }
+          },
+          "rel": {
+            "count": 8,
+            "values": {
+              "\"noopener noreferrer\"": 8
+            }
+          },
+          "externalLink": {
+            "count": 6,
+            "values": {
+              "true (shorthand)": 5,
+              "{!isMetaMaskUrl}": 1
+            }
+          },
+          "as": {
+            "count": 5,
+            "values": {
+              "\"a\"": 5
+            }
+          },
+          "textProps": {
+            "count": 4,
+            "values": {
+              "{{ display: Display.Inline, }}": 2,
+              "{{ width: BlockSize.Full }}": 1,
+              "{{ variant: TextVariant.bodyMd, alignItems: AlignItems.flexStart, }}": 1
+            }
+          },
+          "key": {
+            "count": 4,
+            "values": {
+              "\"privacyNoticeTermsOfUseLink\"": 1,
+              "\"importAccountWithSocialMsgLearnMore\"": 1,
+              "{origin}": 1,
+              "\"gas-fees-learn-more\"": 1
+            }
+          },
+          "display": {
+            "count": 3,
+            "values": {
+              "{Display.Inline}": 3
+            }
+          },
+          "data-testid": {
+            "count": 2,
+            "values": {
+              "\"customize-nonce-reset\"": 1,
+              "\"edit\"": 1
+            }
+          },
+          "overflowWrap": {
+            "count": 2,
+            "values": {
+              "{OverflowWrap.Anywhere}": 2
+            }
+          },
+          "ellipsis": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "style": {
+            "count": 2,
+            "values": {
+              "{{ // Prevents the link from taking up the full width of the parent. width: 'f...}": 2
+            }
+          },
+          "color": {
+            "count": 2,
+            "values": {
+              "{TextColor.primaryDefault}": 2
+            }
+          },
+          "variant": {
+            "count": 2,
+            "values": {
+              "{TextVariant.bodySm}": 2
+            }
+          },
+          "title": {
+            "count": 2,
+            "values": {
+              "{address}": 2
+            }
+          },
+          "block": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "width": {
+            "count": 1,
+            "values": {
+              "{BlockSize.Full}": 1
+            }
+          },
+          "textAlign": {
+            "count": 1,
+            "values": {
+              "{TextAlign.End}": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{rest}": 1
+            }
+          },
+          "endIconName": {
+            "count": 1,
+            "values": {
+              "{IconName.Export}": 1
+            }
+          }
+        }
+      },
+      "overall": {
+        "totalInstances": 29,
+        "filesCount": 20,
+        "props": {
+          "size": {
+            "count": 18,
+            "values": {
+              "{ButtonLinkSize.Inherit}": 10,
+              "{Size.inherit}": 3,
+              "{BUTTON_SIZES.INHERIT}": 3,
+              "{ButtonLinkSize.Lg}": 1,
+              "{Size.auto}": 1
+            }
+          },
+          "href": {
+            "count": 18,
+            "values": {
+              "{safeWebsite.toString()}": 2,
+              "{url}": 2,
+              "{ZENDESK_URLS.IMPORTED_ACCOUNTS_PRIVATE_KEY}": 2,
+              "{blockExplorerLink}": 2,
+              "{ZENDESK_URLS.CUSTOMIZE_NONCE}": 1,
+              "{TERMS_OF_USE_LINK}": 1,
+              "{href}": 1,
+              "\"https://consensys.io/privacy-policy/\"": 1,
+              "\"https://consensys.io/privacy-policy\"": 1,
+              "{ZENDESK_URLS.IMPORTED_ACCOUNT_JSON}": 1,
+              "{link}": 1,
+              "\"https://snaps.metamask.io/\"": 1,
+              "{ZENDESK_URLS.GAS_FEES}": 1,
+              "{ZENDESK_URLS.SWAPS_USER_GUIDE}": 1
+            }
+          },
+          "target": {
+            "count": 16,
+            "values": {
+              "\"_blank\"": 16
+            }
+          },
+          "className": {
+            "count": 12,
+            "values": {
+              "\"snap-ui-renderer__link\"": 3,
+              "\"connected-accounts-list__account-status-link\"": 2,
+              "\"confirm-add-suggested-nft__nft-name\"": 2,
+              "\"customize-nonce-modal__link\"": 1,
+              "\"customize-nonce-modal__reset\"": 1,
+              "\"snap-privacy-warning__content__terms-link\"": 1,
+              "\"snap-ui-markdown__link\"": 1,
+              "\"snap-external-pill\"": 1
+            }
+          },
+          "onClick": {
+            "count": 12,
+            "values": {
+              "{() => connectAccount(address)}": 1,
+              "{() => switchAccount(address)}": 1,
+              "{() => { setCustomNonce(nextNonce); }}": 1,
+              "{onConfirm}": 1,
+              "{onShowAllPermissionsHandler}": 1,
+              "{handleMetaMaskLinkClick}": 1,
+              "{handleLinkClick}": 1,
+              "{onClick}": 1,
+              "{() => onShowAllPermissions()}": 1,
+              "{() => onClick()}": 1,
+              "{() => { trackEvent( createEventBuilder( 'Clicked \"Gas Fees: Learn More\" Link'...}": 1,
+              "{(e) => { e.preventDefault(); dispatch(setTransactionSettingsOpened(true)); }}": 1
+            }
+          },
+          "rel": {
+            "count": 8,
+            "values": {
+              "\"noopener noreferrer\"": 8
+            }
+          },
+          "externalLink": {
+            "count": 6,
+            "values": {
+              "true (shorthand)": 5,
+              "{!isMetaMaskUrl}": 1
+            }
+          },
+          "as": {
+            "count": 5,
+            "values": {
+              "\"a\"": 5
+            }
+          },
+          "textProps": {
+            "count": 4,
+            "values": {
+              "{{ display: Display.Inline, }}": 2,
+              "{{ width: BlockSize.Full }}": 1,
+              "{{ variant: TextVariant.bodyMd, alignItems: AlignItems.flexStart, }}": 1
+            }
+          },
+          "key": {
+            "count": 4,
+            "values": {
+              "\"privacyNoticeTermsOfUseLink\"": 1,
+              "\"importAccountWithSocialMsgLearnMore\"": 1,
+              "{origin}": 1,
+              "\"gas-fees-learn-more\"": 1
+            }
+          },
+          "display": {
+            "count": 3,
+            "values": {
+              "{Display.Inline}": 3
+            }
+          },
+          "data-testid": {
+            "count": 2,
+            "values": {
+              "\"customize-nonce-reset\"": 1,
+              "\"edit\"": 1
+            }
+          },
+          "overflowWrap": {
+            "count": 2,
+            "values": {
+              "{OverflowWrap.Anywhere}": 2
+            }
+          },
+          "ellipsis": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "style": {
+            "count": 2,
+            "values": {
+              "{{ // Prevents the link from taking up the full width of the parent. width: 'f...}": 2
+            }
+          },
+          "color": {
+            "count": 2,
+            "values": {
+              "{TextColor.primaryDefault}": 2
+            }
+          },
+          "variant": {
+            "count": 2,
+            "values": {
+              "{TextVariant.bodySm}": 2
+            }
+          },
+          "title": {
+            "count": 2,
+            "values": {
+              "{address}": 2
+            }
+          },
+          "block": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "width": {
+            "count": 1,
+            "values": {
+              "{BlockSize.Full}": 1
+            }
+          },
+          "textAlign": {
+            "count": 1,
+            "values": {
+              "{TextAlign.End}": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{rest}": 1
+            }
+          },
+          "endIconName": {
+            "count": 1,
+            "values": {
+              "{IconName.Export}": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {
+        "ButtonLink": 29
+      }
+    },
+    "mobile": {
+      "filesScanned": 7461,
+      "targetComponent": "TextButton",
+      "mmds": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "deprecated": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "overall": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "deprecatedByLegacyComponent": {}
+    }
+  }
+}

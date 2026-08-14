@@ -80,6 +80,13 @@ export interface ComponentData {
   migrationPercentage: string;
 }
 
+export interface LegacyReplacementInfo {
+  replacement: string | null;
+  replacementOptions: string[];
+  package: string | null;
+  guidance: string | null;
+}
+
 export interface MetricsData {
   project: string;
   date: string;
@@ -89,6 +96,7 @@ export interface MetricsData {
   newComponents: string[];
   summary: MetricsSummary;
   components: ComponentData[];
+  legacyReplacements?: Record<string, LegacyReplacementInfo>;
 }
 
 // ---------------------------------------------------------------------------
