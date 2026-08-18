@@ -1,133 +1,30 @@
 {
   "component": "Checkbox",
-  "generatedAt": "2026-08-11T08:32:59.708Z",
+  "generatedAt": "2026-08-18T08:43:49.701Z",
   "projects": {
     "extension": {
-      "filesScanned": 3557,
+      "filesScanned": 3576,
       "targetComponent": "Checkbox",
       "mmds": {
-        "totalInstances": 5,
-        "filesCount": 3,
+        "totalInstances": 9,
+        "filesCount": 7,
         "props": {
           "isSelected": {
-            "count": 3,
+            "count": 7,
             "values": {
               "{selectedChainIds.includes(network.caipChainId)}": 2,
+              "true (shorthand)": 1,
+              "{termsChecked}": 1,
+              "{userAgree}": 1,
+              "{isTermsOfUseChecked}": 1,
               "{checked || isIndeterminate}": 1
             }
           },
           "onChange": {
-            "count": 3,
+            "count": 7,
             "values": {
               "{() => handleNetworkClick(network.caipChainId)}": 2,
-              "{() => (allAreSelected() ? deselectAll() : selectAll())}": 1
-            }
-          },
-          "checkboxContainerProps": {
-            "count": 3,
-            "values": {
-              "{checkboxContainerProps}": 3
-            }
-          },
-          "onClick": {
-            "count": 2,
-            "values": {
-              "{(event) => event.stopPropagation()}": 2
-            }
-          },
-          "label": {
-            "count": 1,
-            "values": {
-              "{t('selectAll')}": 1
-            }
-          },
-          "checkedIconProps": {
-            "count": 1,
-            "values": {
-              "{isIndeterminate ? { name: IconName.MinusBold } : undefined}": 1
-            }
-          }
-        }
-      },
-      "deprecated": {
-        "totalInstances": 4,
-        "filesCount": 4,
-        "props": {
-          "isChecked": {
-            "count": 4,
-            "values": {
-              "true (shorthand)": 1,
-              "{termsChecked}": 1,
-              "{userAgree}": 1,
-              "{isTermsOfUseChecked}": 1
-            }
-          },
-          "label": {
-            "count": 4,
-            "values": {
-              "{label}": 1,
-              "{termsOfUse}": 1,
-              "{<Text as=\"span\"> Install{' '} <Text as=\"span\" fontWeight={FontWeight.Medium}>...}": 1,
-              "{t('termsOfUseAgreeText')}": 1
-            }
-          },
-          "id": {
-            "count": 3,
-            "values": {
-              "{`connected-permission-${idx}`}": 1,
-              "\"create-new-vault-terms-checkbox\"": 1,
-              "\"terms-of-use__checkbox\"": 1
-            }
-          },
-          "onChange": {
-            "count": 3,
-            "values": {
-              "{toggleTermsCheck}": 1,
-              "{() => setUserAgree((state) => !state)}": 1,
-              "{toggle}": 1
-            }
-          },
-          "data-testid": {
-            "count": 2,
-            "values": {
-              "\"create-new-vault-terms-checkbox\"": 1,
-              "\"terms-of-use-checkbox\"": 1
-            }
-          },
-          "isDisabled": {
-            "count": 1,
-            "values": {
-              "true (shorthand)": 1
-            }
-          },
-          "isRequired": {
-            "count": 1,
-            "values": {
-              "true (shorthand)": 1
-            }
-          },
-          "className": {
-            "count": 1,
-            "values": {
-              "\"terms-of-use__checkbox\"": 1
-            }
-          },
-          "alignItems": {
-            "count": 1,
-            "values": {
-              "{AlignItems.flexStart}": 1
-            }
-          }
-        }
-      },
-      "overall": {
-        "totalInstances": 9,
-        "filesCount": 7,
-        "props": {
-          "onChange": {
-            "count": 6,
-            "values": {
-              "{() => handleNetworkClick(network.caipChainId)}": 2,
+              "{() => { // TODO: @MetaMask/design-system-engineers make onChange no a require...}": 1,
               "{toggleTermsCheck}": 1,
               "{() => setUserAgree((state) => !state)}": 1,
               "{toggle}": 1,
@@ -144,41 +41,28 @@
               "{t('selectAll')}": 1
             }
           },
-          "isChecked": {
-            "count": 4,
+          "data-testid": {
+            "count": 5,
             "values": {
-              "true (shorthand)": 1,
-              "{termsChecked}": 1,
-              "{userAgree}": 1,
-              "{isTermsOfUseChecked}": 1
+              "{`network-list-item-checkbox-${network.name}`}": 2,
+              "\"create-new-vault-terms-checkbox\"": 1,
+              "\"terms-of-use-checkbox\"": 1,
+              "\"network-list-item-checkbox-select-all\"": 1
             }
           },
           "id": {
-            "count": 3,
+            "count": 4,
             "values": {
               "{`connected-permission-${idx}`}": 1,
               "\"create-new-vault-terms-checkbox\"": 1,
+              "\"snap-install-warning-checkbox\"": 1,
               "\"terms-of-use__checkbox\"": 1
-            }
-          },
-          "isSelected": {
-            "count": 3,
-            "values": {
-              "{selectedChainIds.includes(network.caipChainId)}": 2,
-              "{checked || isIndeterminate}": 1
             }
           },
           "checkboxContainerProps": {
             "count": 3,
             "values": {
               "{checkboxContainerProps}": 3
-            }
-          },
-          "data-testid": {
-            "count": 2,
-            "values": {
-              "\"create-new-vault-terms-checkbox\"": 1,
-              "\"terms-of-use-checkbox\"": 1
             }
           },
           "onClick": {
@@ -193,22 +77,16 @@
               "true (shorthand)": 1
             }
           },
-          "isRequired": {
+          "inputProps": {
             "count": 1,
             "values": {
-              "true (shorthand)": 1
+              "{{ required: true, 'data-testid': 'snap-install-warning-checkbox', }}": 1
             }
           },
           "className": {
             "count": 1,
             "values": {
-              "\"terms-of-use__checkbox\"": 1
-            }
-          },
-          "alignItems": {
-            "count": 1,
-            "values": {
-              "{AlignItems.flexStart}": 1
+              "\"terms-of-use__checkbox items-start\"": 1
             }
           },
           "checkedIconProps": {
@@ -219,12 +97,107 @@
           }
         }
       },
-      "deprecatedByLegacyComponent": {
-        "Checkbox": 4
-      }
+      "deprecated": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "overall": {
+        "totalInstances": 9,
+        "filesCount": 7,
+        "props": {
+          "isSelected": {
+            "count": 7,
+            "values": {
+              "{selectedChainIds.includes(network.caipChainId)}": 2,
+              "true (shorthand)": 1,
+              "{termsChecked}": 1,
+              "{userAgree}": 1,
+              "{isTermsOfUseChecked}": 1,
+              "{checked || isIndeterminate}": 1
+            }
+          },
+          "onChange": {
+            "count": 7,
+            "values": {
+              "{() => handleNetworkClick(network.caipChainId)}": 2,
+              "{() => { // TODO: @MetaMask/design-system-engineers make onChange no a require...}": 1,
+              "{toggleTermsCheck}": 1,
+              "{() => setUserAgree((state) => !state)}": 1,
+              "{toggle}": 1,
+              "{() => (allAreSelected() ? deselectAll() : selectAll())}": 1
+            }
+          },
+          "label": {
+            "count": 5,
+            "values": {
+              "{label}": 1,
+              "{termsOfUse}": 1,
+              "{<Text as=\"span\"> Install{' '} <Text as=\"span\" fontWeight={FontWeight.Medium}>...}": 1,
+              "{t('termsOfUseAgreeText')}": 1,
+              "{t('selectAll')}": 1
+            }
+          },
+          "data-testid": {
+            "count": 5,
+            "values": {
+              "{`network-list-item-checkbox-${network.name}`}": 2,
+              "\"create-new-vault-terms-checkbox\"": 1,
+              "\"terms-of-use-checkbox\"": 1,
+              "\"network-list-item-checkbox-select-all\"": 1
+            }
+          },
+          "id": {
+            "count": 4,
+            "values": {
+              "{`connected-permission-${idx}`}": 1,
+              "\"create-new-vault-terms-checkbox\"": 1,
+              "\"snap-install-warning-checkbox\"": 1,
+              "\"terms-of-use__checkbox\"": 1
+            }
+          },
+          "checkboxContainerProps": {
+            "count": 3,
+            "values": {
+              "{checkboxContainerProps}": 3
+            }
+          },
+          "onClick": {
+            "count": 2,
+            "values": {
+              "{(event) => event.stopPropagation()}": 2
+            }
+          },
+          "isDisabled": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "inputProps": {
+            "count": 1,
+            "values": {
+              "{{ required: true, 'data-testid': 'snap-install-warning-checkbox', }}": 1
+            }
+          },
+          "className": {
+            "count": 1,
+            "values": {
+              "\"terms-of-use__checkbox items-start\"": 1
+            }
+          },
+          "checkedIconProps": {
+            "count": 1,
+            "values": {
+              "{isIndeterminate ? { name: IconName.MinusBold } : undefined}": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 7482,
+      "filesScanned": 7588,
       "targetComponent": "Checkbox",
       "mmds": {
         "totalInstances": 0,
