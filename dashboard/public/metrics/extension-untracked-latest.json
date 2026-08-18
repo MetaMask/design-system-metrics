@@ -1,6 +1,6 @@
 {
   "project": "extension",
-  "date": "2026-08-11",
+  "date": "2026-08-18",
   "teams": [
     "@MetaMask/accounts-engineers",
     "@MetaMask/confirmations",
@@ -14,15 +14,15 @@
     "@MetaMask/web3auth"
   ],
   "summary": {
-    "filesScanned": 1660,
-    "totalJSXUsages": 10146,
-    "trackedDeprecated": 2756,
-    "trackedMMDS": 4148,
-    "untrackedTotal": 3242,
-    "uniqueUntrackedComponents": 116,
+    "filesScanned": 1675,
+    "totalJSXUsages": 10261,
+    "trackedDeprecated": 2736,
+    "trackedMMDS": 4232,
+    "untrackedTotal": 3293,
+    "uniqueUntrackedComponents": 117,
     "replaceableNow": 49,
-    "replaceableInstances": 642,
-    "futureDSCandidates": 67,
+    "replaceableInstances": 645,
+    "futureDSCandidates": 68,
     "codeOwnerBreakdown": {
       "@MetaMask/swaps-engineers": {
         "replaceableComponents": 16,
@@ -41,8 +41,8 @@
       },
       "@MetaMask/perps": {
         "replaceableComponents": 9,
-        "futureDSComponents": 6,
-        "replaceableInstances": 31
+        "futureDSComponents": 7,
+        "replaceableInstances": 34
       },
       "@MetaMask/engagement": {
         "replaceableComponents": 6,
@@ -62,7 +62,7 @@
       "@MetaMask/accounts-engineers": {
         "replaceableComponents": 10,
         "futureDSComponents": 11,
-        "replaceableInstances": 61
+        "replaceableInstances": 60
       },
       "@MetaMask/metamask-assets": {
         "replaceableComponents": 8,
@@ -113,8 +113,8 @@
     },
     {
       "component": "Header",
-      "instances": 48,
-      "fileCount": 47,
+      "instances": 49,
+      "fileCount": 48,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/multichain/pages/page",
       "importSources": [
@@ -150,11 +150,11 @@
         "@MetaMask/accounts-engineers",
         "@MetaMask/core-extension-ux",
         "@MetaMask/confirmations",
-        "@MetaMask/swaps-engineers"
+        "@MetaMask/perps"
       ],
       "codeOwnerBreakdown": {
         "@unknown": 16,
-        "@MetaMask/perps": 1,
+        "@MetaMask/perps": 2,
         "@MetaMask/engagement": 1,
         "@MetaMask/core-extension-ux": 6,
         "@MetaMask/swaps-engineers": 2,
@@ -218,8 +218,8 @@
     },
     {
       "component": "Content",
-      "instances": 40,
-      "fileCount": 36,
+      "instances": 41,
+      "fileCount": 37,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/multichain/pages/page",
       "importSources": [
@@ -243,10 +243,10 @@
         "@unknown",
         "@MetaMask/swaps-engineers",
         "@MetaMask/core-extension-ux",
-        "@MetaMask/web3auth"
+        "@MetaMask/perps"
       ],
       "codeOwnerBreakdown": {
-        "@MetaMask/perps": 2,
+        "@MetaMask/perps": 3,
         "@MetaMask/engagement": 2,
         "@unknown": 7,
         "@MetaMask/swaps-engineers": 4,
@@ -324,15 +324,15 @@
         "@unknown",
         "@MetaMask/web3auth",
         "@MetaMask/metamask-assets",
-        "@MetaMask/accounts-engineers"
+        "@MetaMask/perps"
       ],
       "codeOwnerBreakdown": {
-        "@unknown": 6,
+        "@unknown": 7,
         "@MetaMask/money-movement": 1,
-        "@MetaMask/accounts-engineers": 2,
         "@MetaMask/core-extension-ux": 9,
         "@MetaMask/perps": 2,
         "@MetaMask/web3auth": 6,
+        "@MetaMask/accounts-engineers": 1,
         "@MetaMask/metamask-assets": 3,
         "@MetaMask/confirmations": 1
       }
@@ -419,13 +419,13 @@
       "importSources": [
         "../../components/multichain/network-list-item",
         "../../../components/multichain",
+        "../../../components/multichain/network-list-item",
         "../network-list-item",
         "./network-list-item/network-list-item",
         "../../../../components/multichain/network-list-item",
         "../../../multichain/network-list-item",
         "../../network-list-item",
         "../../../../../components/multichain",
-        "../../../../../components/multichain/network-list-item",
         "../../../network-list-item",
         "../../../../multichain/network-list-item"
       ],
@@ -442,17 +442,17 @@
       "codeOwners": [
         "@MetaMask/core-extension-ux",
         "@unknown",
+        "@MetaMask/swaps-engineers",
         "@MetaMask/accounts-engineers",
-        "@MetaMask/confirmations",
-        "@MetaMask/swaps-engineers"
+        "@MetaMask/confirmations"
       ],
       "codeOwnerBreakdown": {
         "@unknown": 4,
+        "@MetaMask/swaps-engineers": 2,
         "@MetaMask/core-extension-ux": 8,
         "@MetaMask/web3auth": 1,
         "@MetaMask/accounts-engineers": 2,
         "@MetaMask/confirmations": 2,
-        "@MetaMask/swaps-engineers": 2,
         "@MetaMask/metamask-assets": 1
       }
     },
@@ -1059,6 +1059,29 @@
       }
     },
     {
+      "component": "PerpsTokenLogo",
+      "instances": 7,
+      "fileCount": 7,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/app/perps/perps-token-logo",
+      "importSources": [
+        "../../components/app/perps/perps-token-logo",
+        "../perps-token-logo"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "AvatarToken",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/perps"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/perps": 7
+      }
+    },
+    {
       "component": "SectionHeader",
       "instances": 7,
       "fileCount": 3,
@@ -1153,29 +1176,6 @@
       }
     },
     {
-      "component": "PerpsTokenLogo",
-      "instances": 6,
-      "fileCount": 6,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/app/perps/perps-token-logo",
-      "importSources": [
-        "../../components/app/perps/perps-token-logo",
-        "../perps-token-logo"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "AvatarToken",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@MetaMask/perps"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/perps": 6
-      }
-    },
-    {
       "component": "NetworksPageFormBody",
       "instances": 6,
       "fileCount": 1,
@@ -1257,6 +1257,38 @@
       }
     },
     {
+      "component": "TextField",
+      "instances": 6,
+      "fileCount": 4,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "ui/text-field",
+      "importSources": [
+        "../text-field",
+        "../../ui/text-field",
+        "../../../ui/text-field"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "TextField",
+          "confidence": "exact"
+        },
+        {
+          "component": "Text",
+          "confidence": "high"
+        },
+        {
+          "component": "FormTextField",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@unknown"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 6
+      }
+    },
+    {
       "component": "AvatarGroup",
       "instances": 6,
       "fileCount": 6,
@@ -1294,38 +1326,6 @@
         "@MetaMask/core-extension-ux": 2,
         "@unknown": 2,
         "@MetaMask/metamask-assets": 1
-      }
-    },
-    {
-      "component": "TextField",
-      "instances": 6,
-      "fileCount": 4,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "ui/text-field",
-      "importSources": [
-        "../text-field",
-        "../../ui/text-field",
-        "../../../ui/text-field"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "TextField",
-          "confidence": "exact"
-        },
-        {
-          "component": "Text",
-          "confidence": "high"
-        },
-        {
-          "component": "FormTextField",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@unknown"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 6
       }
     },
     {
@@ -1658,8 +1658,7 @@
       "importSources": [
         "../../../components/app/assets/market-closed-modal",
         "../../app/assets/market-closed-modal",
-        "../../../app/assets/market-closed-modal",
-        "../../../../../components/app/assets/market-closed-modal"
+        "../../../app/assets/market-closed-modal"
       ],
       "mmdsMatches": [
         {
@@ -1711,16 +1710,44 @@
   ],
   "futureDSCandidates": [
     {
+      "component": "Row",
+      "instances": 95,
+      "fileCount": 22,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "details/components/shared",
+      "importSources": [
+        "../details/components/shared",
+        "../components/shared",
+        "./shared",
+        "../layout",
+        "../../components/shared",
+        "../../layout"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/swaps-engineers",
+        "@MetaMask/core-extension-ux",
+        "@MetaMask/perps",
+        "@MetaMask/money-movement"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/perps": 13,
+        "@MetaMask/core-extension-ux": 30,
+        "@MetaMask/swaps-engineers": 42,
+        "@MetaMask/money-movement": 10
+      }
+    },
+    {
       "component": "Tooltip",
-      "instances": 89,
-      "fileCount": 72,
+      "instances": 87,
+      "fileCount": 71,
       "sourceCategory": "mixed",
       "canonicalSource": "components/ui/tooltip/tooltip",
       "importSources": [
         "../../components/ui/tooltip",
         "../../../components/ui/tooltip",
-        "react-tippy",
         "../layout",
+        "react-tippy",
         "../tooltip",
         "../tooltip/tooltip",
         "../../ui/tooltip",
@@ -1750,38 +1777,12 @@
         "@MetaMask/perps": 4,
         "@unknown": 25,
         "@MetaMask/web3auth": 2,
-        "@MetaMask/accounts-engineers": 4,
         "@MetaMask/swaps-engineers": 8,
         "@MetaMask/core-extension-ux": 15,
+        "@MetaMask/accounts-engineers": 2,
         "@MetaMask/confirmations": 22,
         "@MetaMask/core-platform": 6,
         "@MetaMask/metamask-assets": 3
-      }
-    },
-    {
-      "component": "Row",
-      "instances": 82,
-      "fileCount": 21,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/shared",
-      "importSources": [
-        "../components/shared",
-        "./shared",
-        "../layout",
-        "../../components/shared",
-        "../../layout",
-        "../../../layout"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@MetaMask/swaps-engineers",
-        "@MetaMask/core-extension-ux",
-        "@MetaMask/money-movement"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/core-extension-ux": 30,
-        "@MetaMask/swaps-engineers": 42,
-        "@MetaMask/money-movement": 10
       }
     },
     {
@@ -1818,8 +1819,8 @@
     },
     {
       "component": "Page",
-      "instances": 44,
-      "fileCount": 42,
+      "instances": 45,
+      "fileCount": 43,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/multichain/pages/page",
       "importSources": [
@@ -1840,7 +1841,7 @@
         "@MetaMask/swaps-engineers"
       ],
       "codeOwnerBreakdown": {
-        "@MetaMask/perps": 3,
+        "@MetaMask/perps": 4,
         "@MetaMask/engagement": 2,
         "@unknown": 8,
         "@MetaMask/swaps-engineers": 3,
@@ -1882,8 +1883,7 @@
       "importSources": [
         "../layout",
         "./column",
-        "../../layout",
-        "../../../layout"
+        "../../layout"
       ],
       "mmdsMatches": [],
       "codeOwners": [
@@ -2046,8 +2046,8 @@
       "importSources": [
         "../../components/ui/icon/preloader/preloader-icon.component",
         "../../../components/ui/icon/preloader/preloader-icon.component",
-        "../../ui/icon/preloader",
         "../icon/preloader/preloader-icon.component",
+        "../../ui/icon/preloader",
         "../../ui/icon/preloader/preloader-icon.component",
         "../../../ui/icon/preloader/preloader-icon.component",
         "../../../../../components/ui/icon/preloader",
@@ -2065,8 +2065,8 @@
       "codeOwnerBreakdown": {
         "@MetaMask/engagement": 1,
         "@MetaMask/core-extension-ux": 3,
-        "@MetaMask/accounts-engineers": 4,
         "@unknown": 1,
+        "@MetaMask/accounts-engineers": 4,
         "@MetaMask/core-platform": 1,
         "@MetaMask/confirmations": 6
       }
@@ -2211,8 +2211,8 @@
       "canonicalSource": "asset-list/sort-control/sort-control",
       "importSources": [
         "../../asset-list/sort-control/sort-control",
-        "../sort-control/sort-control",
-        "(local or re-export)"
+        "(local or re-export)",
+        "../sort-control/sort-control"
       ],
       "mmdsMatches": [],
       "codeOwners": [
@@ -2732,7 +2732,7 @@
       }
     },
     {
-      "component": "RampsSelectionCenteredMessage",
+      "component": "RampsSelectionPage",
       "instances": 6,
       "fileCount": 3,
       "sourceCategory": "local-oneoff",
@@ -2749,7 +2749,7 @@
       }
     },
     {
-      "component": "RampsSelectionPage",
+      "component": "RampsSelectionCenteredMessage",
       "instances": 6,
       "fileCount": 3,
       "sourceCategory": "local-oneoff",
@@ -3073,6 +3073,23 @@
         "@unknown": 2,
         "@MetaMask/core-extension-ux": 1,
         "@MetaMask/confirmations": 1
+      }
+    },
+    {
+      "component": "NavTab",
+      "instances": 5,
+      "fileCount": 1,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "(local)",
+      "importSources": [
+        "(local or re-export)"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@unknown"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 5
       }
     },
     {
