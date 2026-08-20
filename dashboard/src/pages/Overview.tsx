@@ -418,6 +418,7 @@ export function Overview() {
               project="mobile"
               codeOwnerStats={mobileCodeOwnerStats}
               components={mobileMetrics?.components}
+              legacyReplacements={mobileMetrics?.legacyReplacements}
               excludedOwners={MOBILE_EXCLUDED_OWNERS}
             />
           )}
@@ -640,6 +641,7 @@ export function Overview() {
               project="extension"
               codeOwnerStats={extensionCodeOwnerStats}
               components={extensionMetrics?.components}
+              legacyReplacements={extensionMetrics?.legacyReplacements}
               excludedOwners={EXTENSION_EXCLUDED_OWNERS}
             />
           )}

@@ -7,6 +7,13 @@ export interface ComponentMetrics {
   migrationPercentage: string;
 }
 
+export interface LegacyReplacementInfo {
+  replacement: string | null;
+  replacementOptions: string[];
+  package: string | null;
+  guidance: string | null;
+}
+
 /** Per-file instance count for a legacy component within a CODEOWNERS team. */
 export interface CodeOwnerFileOccurrence {
   file: string;
@@ -48,6 +55,7 @@ export interface MetricsData {
   generatedAt: string;
   summary: MetricsSummary;
   components: ComponentMetrics[];
+  legacyReplacements?: Record<string, LegacyReplacementInfo>;
 }
 
 export interface CodeOwnerTimelineEntry {

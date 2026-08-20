@@ -8,6 +8,10 @@ const { program } = require("commander");
 const chalk = require("chalk");
 const CodeOwnersParser = require("./scripts/codeowners-parser");
 const { minimatch } = require("minimatch");
+const {
+  isMmdsPackage,
+  buildLegacyReplacementEntry,
+} = require("./scripts/lib/component-mapper");
 
 let config;
 let codeOwnersParser = null;
@@ -502,6 +506,7 @@ const main = async () => {
           pathBreakdown,
           files: allFiles,
           replacement: componentConfig.replacement,
+          deprecationMessage: componentConfig._deprecationMessage || null,
         });
       }
     }
@@ -529,12 +534,7 @@ const main = async () => {
     // Filter to components that have an MMDS replacement
     const componentsWithMMDSReplacement = Array.from(
       deprecatedMetrics.entries(),
-    ).filter(
-      ([, metrics]) =>
-        metrics.replacement &&
-        metrics.replacement.package &&
-        metrics.replacement.package.includes("@metamask/design-system"),
-    );
+    ).filter(([, metrics]) => isMmdsPackage(metrics.replacement?.package));
 
     // Group deprecated components by their MMDS replacement component
     const groupedByMMDS = new Map();
@@ -567,7 +567,17 @@ const main = async () => {
 
     const componentsWithNoReplacement = Array.from(
       deprecatedMetrics.entries(),
-    ).filter(([, metrics]) => !metrics.replacement);
+    ).filter(([, metrics]) => !isMmdsPackage(metrics.replacement?.package));
+
+    const legacyReplacements = Object.fromEntries(
+      Array.from(deprecatedMetrics.entries()).map(([componentName, metrics]) => [
+        componentName,
+        buildLegacyReplacementEntry(
+          metrics.replacement,
+          metrics.deprecationMessage,
+        ),
+      ]),
+    );
 
     let totalNoReplacement = 0;
     componentsWithNoReplacement.forEach(([, metrics]) => {
@@ -746,6 +756,7 @@ const main = async () => {
       newComponents,
       summary: dataSummary,
       components: groupedComponentData,
+      legacyReplacements,
     };
 
     await fs.writeFile(dataFile, JSON.stringify(dataOutput, null, 2));
