@@ -1,9 +1,9 @@
 {
   "component": "Box",
-  "generatedAt": "2026-08-18T14:10:46.279Z",
+  "generatedAt": "2026-08-24T08:34:04.966Z",
   "projects": {
     "extension": {
-      "filesScanned": 3587,
+      "filesScanned": 3617,
       "targetComponent": "Box",
       "mmds": {
         "totalInstances": 109,
@@ -292,23 +292,22 @@
         }
       },
       "deprecated": {
-        "totalInstances": 151,
-        "filesCount": 47,
+        "totalInstances": 144,
+        "filesCount": 45,
         "props": {
           "display": {
-            "count": 95,
+            "count": 90,
             "values": {
-              "{Display.Flex}": 91,
+              "{Display.Flex}": 86,
               "{Display.Block}": 2,
               "{isCollapsable && isCollapsed ? Display.None : Display.Flex}": 1,
               "{[Display.None, Display.Flex]}": 1
             }
           },
           "className": {
-            "count": 59,
+            "count": 58,
             "values": {
               "\"snap-home-menu__item\"": 3,
-              "\"multichain-connection-list-item\"": 2,
               "\"confirmation-network-switch__icon\"": 2,
               "\"toggle-ipfs-modal\"": 1,
               "{classnames('copyable', { sensitive, clicked: isClicked, visible: isVisible, })}": 1,
@@ -335,6 +334,7 @@
               "\"min-w-0\"": 1,
               "{classnames( isUnlocked ? 'multichain-app-header__contents flex' : 'multichain...}": 1,
               "\"multichain-app-header-logo\"": 1,
+              "\"multichain-connection-list-item\"": 1,
               "\"multichain-product-tour-menu__container\"": 1,
               "\"multichain-product-tour-menu__arrow\"": 1,
               "\"multichain-product-tour-menu__header\"": 1,
@@ -365,42 +365,42 @@
             }
           },
           "alignItems": {
-            "count": 54,
+            "count": 50,
             "values": {
-              "{AlignItems.center}": 47,
+              "{AlignItems.center}": 44,
               "{AlignItems.flexEnd}": 4,
-              "{AlignItems.baseline}": 2,
-              "{isLoading && AlignItems.center}": 1
-            }
-          },
-          "flexDirection": {
-            "count": 47,
-            "values": {
-              "{FlexDirection.Column}": 29,
-              "{FlexDirection.Row}": 17,
-              "{showAvatarAccount ? FlexDirection.Row : FlexDirection.Column}": 1
+              "{isLoading && AlignItems.center}": 1,
+              "{AlignItems.baseline}": 1
             }
           },
           "justifyContent": {
-            "count": 47,
+            "count": 46,
             "values": {
-              "{JustifyContent.center}": 25,
+              "{JustifyContent.center}": 24,
               "{JustifyContent.spaceBetween}": 17,
               "{JustifyContent.flexStart}": 2,
               "{JustifyContent.flexEnd}": 2,
               "{isLoading && JustifyContent.center}": 1
             }
           },
-          "width": {
-            "count": 32,
+          "flexDirection": {
+            "count": 43,
             "values": {
-              "{BlockSize.Full}": 29,
-              "{BlockSize.FiveTwelfths}": 2,
-              "\"full\"": 1
+              "{FlexDirection.Column}": 27,
+              "{FlexDirection.Row}": 15,
+              "{showAvatarAccount ? FlexDirection.Row : FlexDirection.Column}": 1
+            }
+          },
+          "width": {
+            "count": 29,
+            "values": {
+              "{BlockSize.Full}": 27,
+              "\"full\"": 1,
+              "{BlockSize.FiveTwelfths}": 1
             }
           },
           "style": {
-            "count": 29,
+            "count": 28,
             "values": {
               "{{ overflow: 'hidden' }}": 3,
               "{{ overflowY: 'auto', }}": 3,
@@ -416,7 +416,6 @@
               "{{ alignSelf: 'center' }}": 1,
               "{{ alignSelf: 'center', flexGrow: '1' }}": 1,
               "{{ flex: '1', alignSelf: 'center' }}": 1,
-              "{{ alignSelf: 'center', flexGrow: 1 }}": 1,
               "{{ '--arrow-position': arrowPosition, }}": 1,
               "{style}": 1,
               "{{ width: '100%', position: 'relative', overflow: 'hidden' }}": 1,
@@ -430,10 +429,10 @@
             }
           },
           "backgroundColor": {
-            "count": 23,
+            "count": 22,
             "values": {
               "{BackgroundColor.backgroundAlternative}": 8,
-              "{BackgroundColor.backgroundDefault}": 7,
+              "{BackgroundColor.backgroundDefault}": 6,
               "{isVisible && sensitive ? BackgroundColor.errorMuted : BackgroundColor.primary...}": 1,
               "{isError ? BackgroundColor.errorMuted : BackgroundColor.backgroundDefault}": 1,
               "{userAgree ? BackgroundColor.infoMuted : BackgroundColor.backgroundAlternative}": 1,
@@ -456,11 +455,11 @@
             }
           },
           "padding": {
-            "count": 18,
+            "count": 16,
             "values": {
               "1": 2,
               "2": 2,
-              "4": 12,
+              "4": 10,
               "{!disablePadding || isLoading ? 4 : 0}": 1,
               "{hasHeader || hasHeaderMaybe ? 0 : 4}": 1
             }
@@ -472,16 +471,6 @@
               "{BlockSize.Min}": 1
             }
           },
-          "gap": {
-            "count": 16,
-            "values": {
-              "1": 4,
-              "2": 2,
-              "4": 8,
-              "6": 1,
-              "{showAvatarAccount ? 2 : 0}": 1
-            }
-          },
           "paddingLeft": {
             "count": 13,
             "values": {
@@ -491,25 +480,14 @@
             }
           },
           "paddingBottom": {
-            "count": 13,
+            "count": 12,
             "values": {
               "0": 1,
               "1": 1,
               "2": 6,
               "3": 1,
               "4": 2,
-              "8": 1,
-              "{paddingBottomValue}": 1
-            }
-          },
-          "paddingTop": {
-            "count": 11,
-            "values": {
-              "1": 1,
-              "2": 5,
-              "3": 1,
-              "4": 3,
-              "{paddingTopValue}": 1
+              "8": 1
             }
           },
           "paddingRight": {
@@ -517,6 +495,16 @@
             "values": {
               "2": 1,
               "4": 10
+            }
+          },
+          "gap": {
+            "count": 11,
+            "values": {
+              "1": 1,
+              "2": 2,
+              "4": 6,
+              "6": 1,
+              "{showAvatarAccount ? 2 : 0}": 1
             }
           },
           "borderRadius": {
@@ -530,6 +518,15 @@
               "{BorderRadius.pill}": 1
             }
           },
+          "paddingTop": {
+            "count": 10,
+            "values": {
+              "1": 1,
+              "2": 5,
+              "3": 1,
+              "4": 3
+            }
+          },
           "marginBottom": {
             "count": 9,
             "values": {
@@ -538,22 +535,21 @@
               "{marginBottom}": 1
             }
           },
-          "data-testid": {
-            "count": 7,
-            "values": {
-              "\"app-header-logo\"": 2,
-              "{snapId}": 1,
-              "\"connection-list-item\"": 1,
-              "\"no-connections\"": 1,
-              "\"site-cell-connection-list-item\"": 1,
-              "{dataTestId}": 1
-            }
-          },
           "flexWrap": {
             "count": 7,
             "values": {
               "{FlexWrap.NoWrap}": 4,
               "{FlexWrap.Wrap}": 3
+            }
+          },
+          "data-testid": {
+            "count": 6,
+            "values": {
+              "\"app-header-logo\"": 2,
+              "{snapId}": 1,
+              "\"connection-list-item\"": 1,
+              "\"no-connections\"": 1,
+              "{dataTestId}": 1
             }
           },
           "marginRight": {
@@ -659,11 +655,11 @@
         }
       },
       "overall": {
-        "totalInstances": 260,
-        "filesCount": 77,
+        "totalInstances": 253,
+        "filesCount": 75,
         "props": {
           "className": {
-            "count": 149,
+            "count": 148,
             "values": {
               "\"flex\"": 20,
               "\"flex flex-col\"": 8,
@@ -671,7 +667,6 @@
               "\"snap-home-menu__item\"": 3,
               "\"hold-to-reveal-button__absolute-fill\"": 2,
               "\"permission-cell__status__accounts-group-box inline-flex\"": 2,
-              "\"multichain-connection-list-item\"": 2,
               "\"confirmation-network-switch__icon\"": 2,
               "\"toggle-ipfs-modal\"": 1,
               "{classnames('flex connected-accounts-list__row', className)}": 1,
@@ -732,6 +727,7 @@
               "\"min-w-0\"": 1,
               "{classnames( isUnlocked ? 'multichain-app-header__contents flex' : 'multichain...}": 1,
               "\"multichain-app-header-logo\"": 1,
+              "\"multichain-connection-list-item\"": 1,
               "\"multichain-product-tour-menu__container\"": 1,
               "\"multichain-product-tour-menu__arrow\"": 1,
               "\"multichain-product-tour-menu__header\"": 1,
@@ -782,30 +778,30 @@
             }
           },
           "display": {
-            "count": 95,
+            "count": 90,
             "values": {
-              "{Display.Flex}": 91,
+              "{Display.Flex}": 86,
               "{Display.Block}": 2,
               "{isCollapsable && isCollapsed ? Display.None : Display.Flex}": 1,
               "{[Display.None, Display.Flex]}": 1
             }
           },
           "alignItems": {
-            "count": 85,
+            "count": 81,
             "values": {
-              "{AlignItems.center}": 47,
+              "{AlignItems.center}": 44,
               "{BoxAlignItems.Center}": 29,
               "{AlignItems.flexEnd}": 4,
-              "{AlignItems.baseline}": 2,
               "{BoxAlignItems.Start}": 1,
               "{isLoading && AlignItems.center}": 1,
+              "{AlignItems.baseline}": 1,
               "{BoxAlignItems.Baseline}": 1
             }
           },
           "justifyContent": {
-            "count": 75,
+            "count": 74,
             "values": {
-              "{JustifyContent.center}": 25,
+              "{JustifyContent.center}": 24,
               "{JustifyContent.spaceBetween}": 17,
               "{BoxJustifyContent.Center}": 13,
               "{BoxJustifyContent.Between}": 9,
@@ -818,29 +814,21 @@
             }
           },
           "flexDirection": {
-            "count": 73,
+            "count": 69,
             "values": {
-              "{FlexDirection.Column}": 29,
-              "{FlexDirection.Row}": 17,
+              "{FlexDirection.Column}": 27,
+              "{FlexDirection.Row}": 15,
               "{BoxFlexDirection.Row}": 13,
               "{BoxFlexDirection.Column}": 13,
               "{showAvatarAccount ? FlexDirection.Row : FlexDirection.Column}": 1
             }
           },
-          "width": {
-            "count": 36,
-            "values": {
-              "{BlockSize.Full}": 33,
-              "{BlockSize.FiveTwelfths}": 2,
-              "\"full\"": 1
-            }
-          },
           "backgroundColor": {
-            "count": 34,
+            "count": 33,
             "values": {
               "{BackgroundColor.backgroundAlternative}": 8,
-              "{BackgroundColor.backgroundDefault}": 7,
               "{BoxBackgroundColor.BackgroundDefault}": 6,
+              "{BackgroundColor.backgroundDefault}": 6,
               "{containerbackgroundColor}": 1,
               "{isVisible && sensitive ? BackgroundColor.errorMuted : BackgroundColor.primary...}": 1,
               "{isError ? BackgroundColor.errorMuted : BackgroundColor.backgroundDefault}": 1,
@@ -856,8 +844,16 @@
               "{BackgroundColor.backgroundMuted}": 1
             }
           },
+          "width": {
+            "count": 33,
+            "values": {
+              "{BlockSize.Full}": 31,
+              "\"full\"": 1,
+              "{BlockSize.FiveTwelfths}": 1
+            }
+          },
           "style": {
-            "count": 32,
+            "count": 31,
             "values": {
               "{{ overflow: 'hidden' }}": 4,
               "{{ overflowY: 'auto', }}": 3,
@@ -875,7 +871,6 @@
               "{{ alignSelf: 'center' }}": 1,
               "{{ alignSelf: 'center', flexGrow: '1' }}": 1,
               "{{ flex: '1', alignSelf: 'center' }}": 1,
-              "{{ alignSelf: 'center', flexGrow: 1 }}": 1,
               "{{ '--arrow-position': arrowPosition, }}": 1,
               "{style}": 1,
               "{{ width: '100%', position: 'relative', overflow: 'hidden' }}": 1,
@@ -889,12 +884,12 @@
             }
           },
           "padding": {
-            "count": 30,
+            "count": 28,
             "values": {
               "0": 2,
               "1": 3,
               "2": 4,
-              "4": 19,
+              "4": 17,
               "{!disablePadding || isLoading ? 4 : 0}": 1,
               "{hasHeader || hasHeaderMaybe ? 0 : 4}": 1
             }
@@ -912,17 +907,17 @@
             }
           },
           "gap": {
-            "count": 25,
+            "count": 20,
             "values": {
-              "1": 4,
+              "1": 1,
               "2": 5,
-              "4": 13,
+              "4": 11,
               "6": 2,
               "{showAvatarAccount ? 2 : 0}": 1
             }
           },
           "paddingTop": {
-            "count": 20,
+            "count": 19,
             "values": {
               "1": 1,
               "2": 7,
@@ -931,12 +926,11 @@
               "5": 1,
               "6": 1,
               "8": 1,
-              "12": 1,
-              "{paddingTopValue}": 1
+              "12": 1
             }
           },
           "paddingBottom": {
-            "count": 19,
+            "count": 18,
             "values": {
               "0": 1,
               "1": 1,
@@ -945,8 +939,7 @@
               "4": 3,
               "5": 1,
               "8": 1,
-              "12": 1,
-              "{paddingBottomValue}": 1
+              "12": 1
             }
           },
           "paddingLeft": {
@@ -990,21 +983,6 @@
               "{BoxFlexWrap.Wrap}": 1
             }
           },
-          "data-testid": {
-            "count": 11,
-            "values": {
-              "\"app-header-logo\"": 2,
-              "\"connected-accounts-permissions-list\"": 1,
-              "{snapId}": 1,
-              "\"network-loader\"": 1,
-              "\"account-item\"": 1,
-              "\"account-list-item-badge\"": 1,
-              "\"connection-list-item\"": 1,
-              "\"no-connections\"": 1,
-              "\"site-cell-connection-list-item\"": 1,
-              "{dataTestId}": 1
-            }
-          },
           "borderRadius": {
             "count": 11,
             "values": {
@@ -1014,6 +992,20 @@
               "{BorderRadius.SM}": 1,
               "{BorderRadius.MD}": 1,
               "{BorderRadius.full}": 1
+            }
+          },
+          "data-testid": {
+            "count": 10,
+            "values": {
+              "\"app-header-logo\"": 2,
+              "\"connected-accounts-permissions-list\"": 1,
+              "{snapId}": 1,
+              "\"network-loader\"": 1,
+              "\"account-item\"": 1,
+              "\"account-list-item-badge\"": 1,
+              "\"connection-list-item\"": 1,
+              "\"no-connections\"": 1,
+              "{dataTestId}": 1
             }
           },
           "marginRight": {
@@ -1151,11 +1143,11 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "Box": 151
+        "Box": 144
       }
     },
     "mobile": {
-      "filesScanned": 7602,
+      "filesScanned": 7735,
       "targetComponent": "Box",
       "mmds": {
         "totalInstances": 27,
