@@ -1,51 +1,53 @@
 {
   "component": "Button",
-  "generatedAt": "2026-08-18T14:10:51.223Z",
+  "generatedAt": "2026-08-24T08:34:11.165Z",
   "projects": {
     "extension": {
-      "filesScanned": 3587,
+      "filesScanned": 3617,
       "targetComponent": "Button",
       "mmds": {
-        "totalInstances": 8,
+        "totalInstances": 9,
         "filesCount": 6,
         "props": {
           "onClick": {
-            "count": 8,
+            "count": 9,
             "values": {
               "{cancelTransaction}": 1,
               "{onCancel}": 1,
               "{onSubmit}": 1,
               "{onClose}": 1,
               "{() => { onActionComplete(); }}": 1,
+              "{async () => { try { const result = await importAccountFunc(); if (result) { o...}": 1,
               "{() => { onClose(); navigate(DEFAULT_ROUTE); }}": 1,
               "{() => handleAddNft()}": 1,
               "{onClick}": 1
             }
           },
           "variant": {
-            "count": 8,
+            "count": 9,
             "values": {
-              "{ButtonVariant.Secondary}": 4,
-              "{ButtonVariant.Primary}": 4
+              "{ButtonVariant.Primary}": 5,
+              "{ButtonVariant.Secondary}": 4
             }
           },
           "isFullWidth": {
-            "count": 4,
+            "count": 5,
             "values": {
-              "true (shorthand)": 4
+              "true (shorthand)": 5
             }
           },
           "size": {
-            "count": 4,
+            "count": 5,
             "values": {
-              "{ButtonSize.Lg}": 3,
+              "{ButtonSize.Lg}": 4,
               "{ButtonBaseSize.Sm}": 1
             }
           },
           "data-testid": {
-            "count": 3,
+            "count": 4,
             "values": {
               "\"cancel-button\"": 1,
+              "\"import-account-confirm-button\"": 1,
               "\"import-nfts-modal-import-button\"": 1,
               "\"tour-cta-button\"": 1
             }
@@ -56,6 +58,13 @@
               "\"mt-6\"": 1,
               "\"import-nfts-modal__cancel-button flex-1 rounded-xl\"": 1,
               "\"flex-1 rounded-xl\"": 1
+            }
+          },
+          "isDisabled": {
+            "count": 2,
+            "values": {
+              "{isPrimaryDisabled}": 1,
+              "{isFormDisabled}": 1
             }
           },
           "[spread]": {
@@ -70,12 +79,6 @@
               "{password === ''}": 1
             }
           },
-          "isDisabled": {
-            "count": 1,
-            "values": {
-              "{isFormDisabled}": 1
-            }
-          },
           "isInverse": {
             "count": 1,
             "values": {
@@ -85,11 +88,11 @@
         }
       },
       "deprecated": {
-        "totalInstances": 40,
-        "filesCount": 27,
+        "totalInstances": 37,
+        "filesCount": 25,
         "props": {
           "onClick": {
-            "count": 35,
+            "count": 32,
             "values": {
               "{onClose}": 5,
               "{onCancel}": 4,
@@ -103,9 +106,6 @@
               "{handleClick}": 1,
               "{handleScrollDownClick}": 1,
               "{() => updateArgs({ isShowingModal: true })}": 1,
-              "{() => { onSubmit(selectedChainIds); // Get networks that are in `selectedChai...}": 1,
-              "{() => { onSubmit(selectedChainIds); onClose(); }}": 1,
-              "{async () => { try { const result = await importAccountFunc(); if (result) { o...}": 1,
               "{() => setShowDisconnectAllModal(true)}": 1,
               "{() => { if (onClickCopy) { onClickCopy(); } handleCopy(text); }}": 1,
               "{onCancel ? (e) => onCancel(e) : undefined}": 1,
@@ -130,22 +130,6 @@
               "{submitVariant ?? ButtonVariant.Primary}": 1
             }
           },
-          "size": {
-            "count": 21,
-            "values": {
-              "{ButtonSize.Lg}": 12,
-              "{BUTTON_SIZES.LG}": 4,
-              "{ButtonPrimarySize.Lg}": 3,
-              "{Size.LG}": 1,
-              "{ButtonLinkSize.Inherit}": 1
-            }
-          },
-          "block": {
-            "count": 20,
-            "values": {
-              "true (shorthand)": 20
-            }
-          },
           "className": {
             "count": 18,
             "values": {
@@ -167,16 +151,41 @@
               "\"snap-view__content__remove-button\"": 1
             }
           },
+          "size": {
+            "count": 18,
+            "values": {
+              "{ButtonSize.Lg}": 12,
+              "{BUTTON_SIZES.LG}": 4,
+              "{Size.LG}": 1,
+              "{ButtonLinkSize.Inherit}": 1
+            }
+          },
+          "block": {
+            "count": 17,
+            "values": {
+              "true (shorthand)": 17
+            }
+          },
+          "disabled": {
+            "count": 11,
+            "values": {
+              "{alertState === LOADING}": 3,
+              "true (shorthand)": 2,
+              "{!isValid}": 1,
+              "{!isTermsOfUseChecked || !isScrolledToBottom}": 1,
+              "{disabled}": 1,
+              "{Boolean(loading)}": 1,
+              "{snap.preinstalled && snap.removable === false}": 1,
+              "{!didFormChange}": 1
+            }
+          },
           "data-testid": {
-            "count": 14,
+            "count": 11,
             "values": {
               "\"create-new-vault-submit-button\"": 1,
               "\"modalSnapLinkButton\"": 1,
               "\"terms-of-use-scroll-button\"": 1,
               "\"terms-of-use-agree-button\"": 1,
-              "\"disconnect-chains-button\"": 1,
-              "\"connect-more-chains-button\"": 1,
-              "\"import-account-confirm-button\"": 1,
               "\"disconnect-all-button\"": 1,
               "\"page-container-footer-cancel\"": 1,
               "\"page-container-footer-next\"": 1,
@@ -186,38 +195,23 @@
               "\"update-transaction-settings-button\"": 1
             }
           },
-          "disabled": {
-            "count": 12,
-            "values": {
-              "{alertState === LOADING}": 3,
-              "true (shorthand)": 2,
-              "{!isValid}": 1,
-              "{!isTermsOfUseChecked || !isScrolledToBottom}": 1,
-              "{isPrimaryDisabled}": 1,
-              "{disabled}": 1,
-              "{Boolean(loading)}": 1,
-              "{snap.preinstalled && snap.removable === false}": 1,
-              "{!didFormChange}": 1
-            }
-          },
-          "danger": {
-            "count": 6,
-            "values": {
-              "true (shorthand)": 5,
-              "\"true\"": 1
-            }
-          },
           "width": {
             "count": 5,
             "values": {
               "{BlockSize.Full}": 5
             }
           },
+          "danger": {
+            "count": 5,
+            "values": {
+              "true (shorthand)": 4,
+              "\"true\"": 1
+            }
+          },
           "startIconName": {
-            "count": 4,
+            "count": 3,
             "values": {
               "{IconName.ArrowDown}": 1,
-              "{IconName.Logout}": 1,
               "{submitButtonIcon}": 1,
               "{hasAlerts ? IconName.Info : undefined}": 1
             }
@@ -323,11 +317,11 @@
         }
       },
       "overall": {
-        "totalInstances": 48,
-        "filesCount": 32,
+        "totalInstances": 46,
+        "filesCount": 31,
         "props": {
           "onClick": {
-            "count": 43,
+            "count": 41,
             "values": {
               "{onClose}": 6,
               "{onCancel}": 5,
@@ -342,8 +336,6 @@
               "{handleClick}": 1,
               "{handleScrollDownClick}": 1,
               "{() => updateArgs({ isShowingModal: true })}": 1,
-              "{() => { onSubmit(selectedChainIds); // Get networks that are in `selectedChai...}": 1,
-              "{() => { onSubmit(selectedChainIds); onClose(); }}": 1,
               "{() => { onActionComplete(); }}": 1,
               "{async () => { try { const result = await importAccountFunc(); if (result) { o...}": 1,
               "{() => { onClose(); navigate(DEFAULT_ROUTE); }}": 1,
@@ -361,10 +353,10 @@
             }
           },
           "variant": {
-            "count": 35,
+            "count": 36,
             "values": {
+              "{ButtonVariant.Primary}": 14,
               "{ButtonVariant.Secondary}": 13,
-              "{ButtonVariant.Primary}": 13,
               "{BUTTON_VARIANT.SECONDARY}": 3,
               "{ButtonVariant.Link}": 2,
               "{BUTTON_VARIANT.PRIMARY}": 2,
@@ -373,11 +365,10 @@
             }
           },
           "size": {
-            "count": 25,
+            "count": 23,
             "values": {
-              "{ButtonSize.Lg}": 15,
+              "{ButtonSize.Lg}": 16,
               "{BUTTON_SIZES.LG}": 4,
-              "{ButtonPrimarySize.Lg}": 3,
               "{Size.LG}": 1,
               "{ButtonBaseSize.Sm}": 1,
               "{ButtonLinkSize.Inherit}": 1
@@ -408,21 +399,19 @@
             }
           },
           "block": {
-            "count": 20,
+            "count": 17,
             "values": {
-              "true (shorthand)": 20
+              "true (shorthand)": 17
             }
           },
           "data-testid": {
-            "count": 17,
+            "count": 15,
             "values": {
               "\"cancel-button\"": 1,
               "\"create-new-vault-submit-button\"": 1,
               "\"modalSnapLinkButton\"": 1,
               "\"terms-of-use-scroll-button\"": 1,
               "\"terms-of-use-agree-button\"": 1,
-              "\"disconnect-chains-button\"": 1,
-              "\"connect-more-chains-button\"": 1,
               "\"import-account-confirm-button\"": 1,
               "\"import-nfts-modal-import-button\"": 1,
               "\"disconnect-all-button\"": 1,
@@ -436,25 +425,17 @@
             }
           },
           "disabled": {
-            "count": 13,
+            "count": 12,
             "values": {
               "{alertState === LOADING}": 3,
               "true (shorthand)": 2,
               "{!isValid}": 1,
               "{!isTermsOfUseChecked || !isScrolledToBottom}": 1,
               "{password === ''}": 1,
-              "{isPrimaryDisabled}": 1,
               "{disabled}": 1,
               "{Boolean(loading)}": 1,
               "{snap.preinstalled && snap.removable === false}": 1,
               "{!didFormChange}": 1
-            }
-          },
-          "danger": {
-            "count": 6,
-            "values": {
-              "true (shorthand)": 5,
-              "\"true\"": 1
             }
           },
           "width": {
@@ -463,19 +444,25 @@
               "{BlockSize.Full}": 5
             }
           },
-          "startIconName": {
-            "count": 4,
+          "danger": {
+            "count": 5,
             "values": {
-              "{IconName.ArrowDown}": 1,
-              "{IconName.Logout}": 1,
-              "{submitButtonIcon}": 1,
-              "{hasAlerts ? IconName.Info : undefined}": 1
+              "true (shorthand)": 4,
+              "\"true\"": 1
             }
           },
           "isFullWidth": {
-            "count": 4,
+            "count": 5,
             "values": {
-              "true (shorthand)": 4
+              "true (shorthand)": 5
+            }
+          },
+          "startIconName": {
+            "count": 3,
+            "values": {
+              "{IconName.ArrowDown}": 1,
+              "{submitButtonIcon}": 1,
+              "{hasAlerts ? IconName.Info : undefined}": 1
             }
           },
           "href": {
@@ -489,6 +476,13 @@
             "count": 2,
             "values": {
               "true (shorthand)": 2
+            }
+          },
+          "isDisabled": {
+            "count": 2,
+            "values": {
+              "{isPrimaryDisabled}": 1,
+              "{isFormDisabled}": 1
             }
           },
           "loading": {
@@ -564,12 +558,6 @@
               "{{ size: IconSize.Md, marginRight: 0 }}": 1
             }
           },
-          "isDisabled": {
-            "count": 1,
-            "values": {
-              "{isFormDisabled}": 1
-            }
-          },
           "isInverse": {
             "count": 1,
             "values": {
@@ -598,12 +586,12 @@
       },
       "deprecatedByLegacyComponent": {
         "Button": 32,
-        "ButtonPrimary": 7,
+        "ButtonPrimary": 4,
         "ButtonSecondary": 1
       }
     },
     "mobile": {
-      "filesScanned": 7602,
+      "filesScanned": 7735,
       "targetComponent": "Button",
       "mmds": {
         "totalInstances": 4,
