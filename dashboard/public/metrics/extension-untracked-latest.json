@@ -1,6 +1,6 @@
 {
   "project": "extension",
-  "date": "2026-08-24",
+  "date": "2026-08-25",
   "teams": [
     "@MetaMask/accounts-engineers",
     "@MetaMask/confirmations",
@@ -15,10 +15,10 @@
   ],
   "summary": {
     "filesScanned": 1674,
-    "totalJSXUsages": 10170,
-    "trackedDeprecated": 2689,
-    "trackedMMDS": 4218,
-    "untrackedTotal": 3263,
+    "totalJSXUsages": 10178,
+    "trackedDeprecated": 2667,
+    "trackedMMDS": 4241,
+    "untrackedTotal": 3270,
     "uniqueUntrackedComponents": 118,
     "replaceableNow": 49,
     "replaceableInstances": 632,
@@ -1246,38 +1246,6 @@
       }
     },
     {
-      "component": "TextField",
-      "instances": 6,
-      "fileCount": 4,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "ui/text-field",
-      "importSources": [
-        "../text-field",
-        "../../ui/text-field",
-        "../../../ui/text-field"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "TextField",
-          "confidence": "exact"
-        },
-        {
-          "component": "Text",
-          "confidence": "high"
-        },
-        {
-          "component": "FormTextField",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@unknown"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 6
-      }
-    },
-    {
       "component": "AvatarGroup",
       "instances": 6,
       "fileCount": 6,
@@ -1315,6 +1283,38 @@
         "@MetaMask/core-extension-ux": 2,
         "@unknown": 2,
         "@MetaMask/metamask-assets": 1
+      }
+    },
+    {
+      "component": "TextField",
+      "instances": 6,
+      "fileCount": 4,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "ui/text-field",
+      "importSources": [
+        "../text-field",
+        "../../ui/text-field",
+        "../../../ui/text-field"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "TextField",
+          "confidence": "exact"
+        },
+        {
+          "component": "Text",
+          "confidence": "high"
+        },
+        {
+          "component": "FormTextField",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@unknown"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 6
       }
     },
     {
@@ -2043,8 +2043,8 @@
       "importSources": [
         "../../components/ui/icon/preloader/preloader-icon.component",
         "../../../components/ui/icon/preloader/preloader-icon.component",
-        "../icon/preloader/preloader-icon.component",
         "../../ui/icon/preloader",
+        "../icon/preloader/preloader-icon.component",
         "../../ui/icon/preloader/preloader-icon.component",
         "../../../ui/icon/preloader/preloader-icon.component",
         "../../../../../components/ui/icon/preloader",
@@ -2062,8 +2062,8 @@
       "codeOwnerBreakdown": {
         "@MetaMask/engagement": 1,
         "@MetaMask/core-extension-ux": 3,
-        "@unknown": 1,
         "@MetaMask/accounts-engineers": 4,
+        "@unknown": 1,
         "@MetaMask/core-platform": 1,
         "@MetaMask/confirmations": 6
       }
@@ -2729,6 +2729,23 @@
       }
     },
     {
+      "component": "MoneySectionDivider",
+      "instances": 6,
+      "fileCount": 1,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "(local)",
+      "importSources": [
+        "(local or re-export)"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@unknown"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 6
+      }
+    },
+    {
       "component": "RampsSelectionCenteredMessage",
       "instances": 6,
       "fileCount": 3,
@@ -2825,23 +2842,6 @@
       "codeOwnerBreakdown": {
         "@unknown": 2,
         "@MetaMask/swaps-engineers": 3
-      }
-    },
-    {
-      "component": "MoneySectionDivider",
-      "instances": 5,
-      "fileCount": 1,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "(local)",
-      "importSources": [
-        "(local or re-export)"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@unknown"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 5
       }
     },
     {
