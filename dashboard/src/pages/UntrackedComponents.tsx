@@ -247,26 +247,9 @@ function adoptionBarFill(pct: number, threshold: number): string {
 }
 
 const REPORT_LOOKBACK_OPTIONS = [
-  { label: '1 week', value: 1 },
-  { label: '4 weeks', value: 4 },
-];
-
-function ScoreboardStatCard({
-  label,
-  children,
-  className = '',
-}: {
-  label: string;
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <div className={`rounded-lg border border-gray-100 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-900/30 px-4 py-3 ${className}`}>
-      <p className="text-[11px] font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">{label}</p>
-      <div className="mt-1 text-sm font-semibold text-gray-900 dark:text-white">{children}</div>
-    </div>
-  );
-}
+  { label: 'Past week', value: 1 },
+  { label: 'Past 4 weeks', value: 4 },
+] as const;
 
 function MetricDeltaLine({
   label,
@@ -638,24 +621,12 @@ function TeamAdoptionScoreboard({
     [codeOwnerTimeline, untrackedTimeline, lookback],
   );
 
-  const comparisonDates = useMemo(() => {
-    if (!codeOwnerTimeline || codeOwnerTimeline.dates.length < 2) {
-      return { fromDate: null as string | null, toDate: null as string | null };
-    }
-    const toIdx = codeOwnerTimeline.dates.length - 1;
-    const fromIdx = Math.max(0, toIdx - lookback);
-    return {
-      fromDate: codeOwnerTimeline.dates[fromIdx] ?? null,
-      toDate: codeOwnerTimeline.dates[toIdx] ?? null,
-    };
-  }, [codeOwnerTimeline, lookback]);
+  const changeColumnLabel = lookback === 1 ? 'Change (1 wk)' : 'Change (4 wk)';
 
   const sorted = useMemo(
     () => sortTeamAdoptionRows(rows, sort, deltaMap),
     [rows, sort, deltaMap],
   );
-  const compliant = rows.filter(r => r.onTarget).length;
-  const withOpportunity = rows.filter(r => r.replaceableInstances > 0).length;
 
   function toggleSort(field: TeamAdoptionSortField) {
     setSort(prev =>
@@ -669,20 +640,40 @@ function TeamAdoptionScoreboard({
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden mb-5">
-      <div className="p-6 border-b border-gray-100 dark:border-gray-700 space-y-4">
-        <div className="flex flex-wrap items-start justify-between gap-3">
-          <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Team adoption scoreboard
-            </h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-              Per-team migration and adoption. Click a row to filter the backlog tables below.
-            </p>
-          </div>
+      <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-700 flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+            Team adoption scoreboard
+          </h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
+            Click a row to filter the backlog tables below.
+          </p>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-3">
+          {codeOwnerTimeline && (
+            <div className="inline-flex rounded-lg border border-gray-200 dark:border-gray-600 p-0.5 bg-gray-50 dark:bg-gray-900/40">
+              {REPORT_LOOKBACK_OPTIONS.map(opt => (
+                <button
+                  key={opt.value}
+                  type="button"
+                  onClick={() => setLookback(opt.value)}
+                  className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
+                    lookback === opt.value
+                      ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm'
+                      : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+          )}
+
           {selectedTeam ? (
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/40 rounded-full px-3 py-1.5">
-                Filtering: {formatOwnerLabel(selectedTeam)}
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-semibold text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/40 rounded-full px-3 py-1.5">
+                {formatOwnerLabel(selectedTeam)}
               </span>
               <button
                 type="button"
@@ -692,82 +683,7 @@ function TeamAdoptionScoreboard({
                 Clear
               </button>
             </div>
-          ) : (
-            <span className="inline-flex items-center gap-1.5 text-xs font-medium text-blue-700 dark:text-blue-300 bg-blue-50/80 dark:bg-blue-950/30 rounded-full px-3 py-1.5">
-              Select a team row to filter tables
-              <span aria-hidden="true">↓</span>
-            </span>
-          )}
-        </div>
-
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          {codeOwnerTimeline && comparisonDates.fromDate && comparisonDates.toDate ? (
-            <ScoreboardStatCard label="Report window">
-              <span className="tabular-nums">{comparisonDates.fromDate}</span>
-              <span className="mx-1 text-gray-400 font-normal">→</span>
-              <span className="tabular-nums">{comparisonDates.toDate}</span>
-            </ScoreboardStatCard>
-          ) : (
-            <ScoreboardStatCard label="Report window">
-              <span className="text-gray-400 font-normal">No timeline data</span>
-            </ScoreboardStatCard>
-          )}
-
-          {codeOwnerTimeline ? (
-            <ScoreboardStatCard label="Compare vs">
-              <select
-                value={lookback}
-                onChange={e => setLookback(Number(e.target.value))}
-                className="w-full text-sm font-semibold border-0 bg-transparent p-0 text-gray-900 dark:text-white focus:outline-none focus:ring-0 cursor-pointer"
-              >
-                {REPORT_LOOKBACK_OPTIONS.map(opt => (
-                  <option key={opt.value} value={opt.value}>{opt.label} ago</option>
-                ))}
-              </select>
-            </ScoreboardStatCard>
-          ) : (
-            <ScoreboardStatCard label="Compare vs">
-              <span className="text-gray-400 font-normal">—</span>
-            </ScoreboardStatCard>
-          )}
-
-          <ScoreboardStatCard label={`≥ ${threshold}% adoption`}>
-            {compliant} / {rows.length} teams
-            <span className="ml-1.5 text-xs font-normal text-gray-400">
-              ({rows.length > 0 ? Math.round((compliant / rows.length) * 100) : 0}%)
-            </span>
-          </ScoreboardStatCard>
-
-          <ScoreboardStatCard label="Replaceable opportunity">
-            {withOpportunity} teams
-          </ScoreboardStatCard>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1 text-xs text-gray-500 dark:text-gray-400 border-t border-gray-100 dark:border-gray-700/80">
-          <span>
-            <span className="font-medium text-gray-600 dark:text-gray-300">Migration</span>
-            {' '}= MMDS ÷ (MMDS + Legacy)
-          </span>
-          <span>
-            <span className="font-medium text-gray-600 dark:text-gray-300">Adoption</span>
-            {' '}= MMDS ÷ (MMDS + Legacy + replaceable)
-          </span>
-          {codeOwnerTimeline && (
-            <span>
-              <span className="font-medium text-gray-600 dark:text-gray-300">Since last report</span>
-              {' '}= week-over-week Δ
-            </span>
-          )}
-          <span className="hidden sm:inline text-gray-300 dark:text-gray-600">|</span>
-          <span className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-sm bg-emerald-500" /> ≥ {threshold}%
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-sm bg-amber-500" /> ≥ {Math.round(threshold * 0.7)}%
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-sm bg-red-400" /> &lt; {Math.round(threshold * 0.7)}%
-          </span>
+          ) : null}
         </div>
       </div>
 
@@ -779,7 +695,7 @@ function TeamAdoptionScoreboard({
               <SortHeader label="Migration %" field="migration" sortState={sort} onSort={toggleSort} />
               <SortHeader label="Adoption %" field="adoption" sortState={sort} onSort={toggleSort} />
               {codeOwnerTimeline && (
-                <SortHeader label="Since last report" field="change" sortState={sort} onSort={toggleSort} />
+                <SortHeader label={changeColumnLabel} field="change" sortState={sort} onSort={toggleSort} />
               )}
               <SortHeader label="Gap" field="gap" sortState={sort} onSort={toggleSort} />
               <SortHeader label="Opportunity" field="opportunity" sortState={sort} onSort={toggleSort} />
