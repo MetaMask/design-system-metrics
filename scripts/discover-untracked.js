@@ -544,7 +544,7 @@ async function main() {
 
   // ─── Build output object ───────────────────────────────────────────────
 
-  const today = new Date().toISOString().split('T')[0];
+  const today = process.env.METRICS_DATE || new Date().toISOString().split('T')[0];
 
   const output = {
     project: options.project,

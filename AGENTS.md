@@ -14,8 +14,8 @@ Use this as the quick-start guide when making changes in this repository.
 
 - Metrics scanner/report logic: `index.js`
 - Config sync/discovery logic: `scripts/sync-config.js`, `scripts/lib/*`
-- Timeline/index derivation: `scripts/update-timeline.js`
-- Data consistency checks: `scripts/validate-metrics-consistency.js`
+- Timeline/index derivation: `pipeline/update-timeline.ts`, `scripts/update-untracked-timeline.js`
+- Data consistency checks: `pipeline/validate.ts`
 - Slack output: `scripts/generate-slack-report.js`
 - Dashboard UI/data hooks: `dashboard/src/*`
 - Generated artifacts: `metrics/*`
@@ -39,17 +39,18 @@ cp metrics/*.json dashboard/public/metrics/
 cd dashboard && npm ci && npm run build
 ```
 
-Prefer `yarn pipeline` when you want the full weekly sequence (includes discover + untracked timeline).
+Prefer `yarn pipeline` for the full weekly sequence (includes discover, **update-untracked-timeline**, migration timeline, and validation).
 
-If generating for a historical date, set `METRICS_DATE=YYYY-MM-DD` when running `yarn start` / `yarn start:mobile`.
+If generating for a historical date, set `METRICS_DATE=YYYY-MM-DD` when running `yarn pipeline` (or individual scan/discover steps).
 
 ## Validation Expectations
 
 For any change touching generation or schemas:
 
 1. Regenerate affected metric outputs.
-2. Run `yarn update-timeline`.
-3. Run `yarn validate-metrics`.
+2. Run `yarn update-untracked-timeline` when untracked/adoption timeline schema changes (or use `yarn pipeline`).
+3. Run `yarn update-timeline`.
+4. Run `yarn validate-metrics`.
 4. If dashboard data contracts changed, run `cd dashboard && npm run build`.
 
 ## Guardrails

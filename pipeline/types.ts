@@ -175,6 +175,21 @@ export interface IndexData {
   };
 }
 
+export interface UntrackedProjectTimeline {
+  dates: string[];
+  replaceableInstances: number[];
+  trackedMMDS: number[];
+  trackedDeprecated: number[];
+  trueAdoption: (number | null)[];
+  teamReplaceableInstances?: Record<string, number[]>;
+}
+
+export interface UntrackedTimelineData {
+  generatedAt: string;
+  mobile: UntrackedProjectTimeline;
+  extension: UntrackedProjectTimeline;
+}
+
 // ---------------------------------------------------------------------------
 // Pipeline internals
 // ---------------------------------------------------------------------------

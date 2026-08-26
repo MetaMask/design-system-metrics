@@ -1,14 +1,24 @@
 import { useMemo, useRef, useState } from 'react';
-import { useUntrackedData, useUntrackedTimeline, useMetricsData } from '../hooks/useMetricsData';
+import { useUntrackedData, useUntrackedTimeline, useMetricsData, useTimelineData } from '../hooks/useMetricsData';
 import { Loading } from '../components/Loading';
 import { ErrorMessage } from '../components/ErrorMessage';
-import type { CodeOwnerStats, UntrackedData, UntrackedComponent, UntrackedProjectTimeline } from '../types/metrics';
+import type { CodeOwnerStats, CodeOwnerTimeline, UntrackedData, UntrackedComponent, UntrackedProjectTimeline } from '../types/metrics';
 import {
   excludedOwnersForProject,
   formatOwnerLabel,
   normalizeOwner,
 } from '../constants/codeOwners';
-import { LineChart, Line, BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine } from 'recharts';
+import {
+  buildTeamAdoptionDeltaMap,
+  computeAdoptionPercentage,
+  formatSignedDelta,
+  getTeamAdoptionDelta,
+  weekOverWeekDelta,
+  type TeamAdoptionDelta,
+} from '../lib/adoptionMetrics';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine } from 'recharts';
+
+const TREND_WEEKS = 26;
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -25,7 +35,7 @@ const TABLE_SCROLL_MAX_HEIGHT = `calc(2.75rem + ${TABLE_VISIBLE_ROWS} * 3.25rem)
 
 type ReplaceSortField = 'priority' | 'instances' | 'fileCount' | 'confidence';
 type CandidateSortField = 'breadth' | 'instances' | 'fileCount';
-type TeamAdoptionSortField = 'adoption' | 'migration' | 'opportunity' | 'gap' | 'team';
+type TeamAdoptionSortField = 'adoption' | 'migration' | 'opportunity' | 'gap' | 'team' | 'change';
 interface SortState<F extends string> { field: F; dir: 'asc' | 'desc' }
 
 interface TeamAdoptionRow {
@@ -212,6 +222,7 @@ function buildTeamAdoptionRows(
 function sortTeamAdoptionRows(
   rows: TeamAdoptionRow[],
   sort: SortState<TeamAdoptionSortField>,
+  deltaMap: Map<string, TeamAdoptionDelta>,
 ): TeamAdoptionRow[] {
   return [...rows].sort((a, b) => {
     let cmp = 0;
@@ -219,6 +230,11 @@ function sortTeamAdoptionRows(
     else if (sort.field === 'migration') cmp = a.migrationPercentage - b.migrationPercentage;
     else if (sort.field === 'opportunity') cmp = a.replaceableInstances - b.replaceableInstances;
     else if (sort.field === 'gap') cmp = a.gapPp - b.gapPp;
+    else if (sort.field === 'change') {
+      const aDelta = getTeamAdoptionDelta(deltaMap, a.team)?.adoptionDelta;
+      const bDelta = getTeamAdoptionDelta(deltaMap, b.team)?.adoptionDelta;
+      cmp = (aDelta ?? -Infinity) - (bDelta ?? -Infinity);
+    }
     else if (sort.field === 'team') cmp = a.label.localeCompare(b.label);
     return sort.dir === 'desc' ? -cmp : cmp;
   });
@@ -228,6 +244,45 @@ function adoptionBarFill(pct: number, threshold: number): string {
   if (pct >= threshold) return 'bg-emerald-500';
   if (pct >= threshold * 0.7) return 'bg-amber-500';
   return 'bg-red-400';
+}
+
+const REPORT_LOOKBACK_OPTIONS = [
+  { label: 'Past week', value: 1 },
+  { label: 'Past 4 weeks', value: 4 },
+] as const;
+
+function MetricDeltaLine({
+  label,
+  delta,
+  unit = ' pp',
+  positiveIsGood = true,
+}: {
+  label: string;
+  delta: number | null;
+  unit?: string;
+  positiveIsGood?: boolean;
+}) {
+  if (delta == null) {
+    return (
+      <p className="text-xs text-gray-400 dark:text-gray-500">
+        {label}: —
+      </p>
+    );
+  }
+  const isFlat = Math.abs(delta) < 0.05;
+  const isGood = positiveIsGood ? delta > 0 : delta < 0;
+  const tone = isFlat
+    ? 'text-gray-400 dark:text-gray-500'
+    : isGood
+    ? 'text-emerald-600 dark:text-emerald-400'
+    : 'text-red-500 dark:text-red-400';
+
+  return (
+    <p className={`text-xs tabular-nums ${tone}`}>
+      <span className="text-gray-500 dark:text-gray-400">{label}:</span>{' '}
+      {isFlat ? '~flat' : formatSignedDelta(delta, unit)}
+    </p>
+  );
 }
 
 // ─── URL helpers ──────────────────────────────────────────────────────────────
@@ -545,20 +600,33 @@ function TeamAdoptionScoreboard({
   selectedTeam,
   onSelectTeam,
   threshold,
+  codeOwnerTimeline,
+  untrackedTimeline,
 }: {
   rows: TeamAdoptionRow[];
   selectedTeam: string;
   onSelectTeam: (team: string) => void;
   threshold: number;
+  codeOwnerTimeline?: CodeOwnerTimeline;
+  untrackedTimeline?: UntrackedProjectTimeline | null;
 }) {
   const [sort, setSort] = useState<SortState<TeamAdoptionSortField>>({
     field: 'opportunity',
     dir: 'desc',
   });
+  const [lookback, setLookback] = useState(1);
 
-  const sorted = useMemo(() => sortTeamAdoptionRows(rows, sort), [rows, sort]);
-  const compliant = rows.filter(r => r.onTarget).length;
-  const withOpportunity = rows.filter(r => r.replaceableInstances > 0).length;
+  const deltaMap = useMemo(
+    () => buildTeamAdoptionDeltaMap(codeOwnerTimeline, untrackedTimeline ?? undefined, lookback),
+    [codeOwnerTimeline, untrackedTimeline, lookback],
+  );
+
+  const changeColumnLabel = lookback === 1 ? 'Change (1 wk)' : 'Change (4 wk)';
+
+  const sorted = useMemo(
+    () => sortTeamAdoptionRows(rows, sort, deltaMap),
+    [rows, sort, deltaMap],
+  );
 
   function toggleSort(field: TeamAdoptionSortField) {
     setSort(prev =>
@@ -572,67 +640,50 @@ function TeamAdoptionScoreboard({
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden mb-5">
-      <div className="p-6 pb-4 border-b border-gray-100 dark:border-gray-700 flex flex-wrap items-start justify-between gap-4">
+      <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-700 flex flex-wrap items-center justify-between gap-3">
         <div>
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
             Team adoption scoreboard
           </h3>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 max-w-3xl">
-            <span className="font-medium text-gray-700 dark:text-gray-200">Migration %</span> = MMDS ÷ (MMDS + Legacy).{' '}
-            <span className="font-medium text-gray-700 dark:text-gray-200">Adoption %</span> = MMDS ÷ (MMDS + Legacy + replaceable one-offs).
-            Click a team to filter the tables below and jump to that team&apos;s backlog.
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
+            Click a row to filter the backlog tables below.
           </p>
         </div>
-        <div className="flex flex-wrap gap-4 text-sm">
-          <div className="rounded-md bg-gray-50 dark:bg-gray-900/40 px-3 py-2">
-            <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">≥ {threshold}% adoption</p>
-            <p className="font-semibold text-gray-900 dark:text-white">
-              {compliant} / {rows.length} teams
-              <span className="ml-1.5 text-xs font-normal text-gray-400">
-                ({rows.length > 0 ? Math.round((compliant / rows.length) * 100) : 0}%)
-              </span>
-            </p>
-          </div>
-          <div className="rounded-md bg-gray-50 dark:bg-gray-900/40 px-3 py-2">
-            <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">With replaceable opportunity</p>
-            <p className="font-semibold text-gray-900 dark:text-white">{withOpportunity} teams</p>
-          </div>
-        </div>
-      </div>
 
-      <div className="px-6 py-2.5 border-b border-gray-100 dark:border-gray-700 flex flex-wrap items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
-        <span className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-sm bg-emerald-500" /> ≥ {threshold}% on target
-        </span>
-        <span className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-sm bg-amber-500" /> ≥ {Math.round(threshold * 0.7)}% approaching
-        </span>
-        <span className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-sm bg-red-400" /> &lt; {Math.round(threshold * 0.7)}% behind
-        </span>
-        <div className="ml-auto flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-3">
+          {codeOwnerTimeline && (
+            <div className="inline-flex rounded-lg border border-gray-200 dark:border-gray-600 p-0.5 bg-gray-50 dark:bg-gray-900/40">
+              {REPORT_LOOKBACK_OPTIONS.map(opt => (
+                <button
+                  key={opt.value}
+                  type="button"
+                  onClick={() => setLookback(opt.value)}
+                  className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
+                    lookback === opt.value
+                      ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm'
+                      : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+          )}
+
           {selectedTeam ? (
-            <>
-              <span className="inline-flex items-center gap-1.5 font-semibold text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/40 rounded-full px-2.5 py-1">
-                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 4h16l-6 7v6l-4 2v-8L4 4Z" />
-                </svg>
-                Tables below filtered by {formatOwnerLabel(selectedTeam)}
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-semibold text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/40 rounded-full px-3 py-1.5">
+                {formatOwnerLabel(selectedTeam)}
               </span>
               <button
                 type="button"
                 onClick={() => onSelectTeam('')}
-                className="text-blue-600 dark:text-blue-400 hover:underline"
+                className="text-xs text-blue-600 dark:text-blue-400 hover:underline"
               >
                 Clear
               </button>
-            </>
-          ) : (
-            <span className="inline-flex items-center gap-1.5 font-semibold text-blue-700 dark:text-blue-300">
-              Select a team row to filter and jump to the tables below
-              <span aria-hidden="true">↓</span>
-            </span>
-          )}
+            </div>
+          ) : null}
         </div>
       </div>
 
@@ -643,6 +694,9 @@ function TeamAdoptionScoreboard({
               <SortHeader label="Team" field="team" sortState={sort} onSort={toggleSort} />
               <SortHeader label="Migration %" field="migration" sortState={sort} onSort={toggleSort} />
               <SortHeader label="Adoption %" field="adoption" sortState={sort} onSort={toggleSort} />
+              {codeOwnerTimeline && (
+                <SortHeader label={changeColumnLabel} field="change" sortState={sort} onSort={toggleSort} />
+              )}
               <SortHeader label="Gap" field="gap" sortState={sort} onSort={toggleSort} />
               <SortHeader label="Opportunity" field="opportunity" sortState={sort} onSort={toggleSort} />
               <StaticHeader label="vs target" />
@@ -651,6 +705,7 @@ function TeamAdoptionScoreboard({
           <tbody className="divide-y divide-gray-100 dark:divide-gray-700/60">
             {sorted.map((row, i) => {
               const selected = selectedTeam === row.team;
+              const delta = getTeamAdoptionDelta(deltaMap, row.team);
               return (
                 <tr
                   key={row.team}
@@ -712,6 +767,20 @@ function TeamAdoptionScoreboard({
                       </span>
                     </div>
                   </td>
+                  {codeOwnerTimeline && (
+                    <td className="px-4 py-3 text-sm min-w-[150px]">
+                      <MetricDeltaLine label="Adoption" delta={delta?.adoptionDelta ?? null} />
+                      <MetricDeltaLine label="Migration" delta={delta?.migrationDelta ?? null} />
+                      {delta?.replaceableDelta != null && delta.replaceableDelta !== 0 && (
+                        <MetricDeltaLine
+                          label="Replaceable"
+                          delta={delta.replaceableDelta}
+                          unit=""
+                          positiveIsGood={false}
+                        />
+                      )}
+                    </td>
+                  )}
                   <td className="px-4 py-3 text-sm tabular-nums text-amber-600 dark:text-amber-400">
                     {row.gapPp > 0.05 ? `${row.gapPp.toFixed(1)} pp` : '—'}
                   </td>
@@ -873,36 +942,126 @@ function InfoPopover({ children }: { children: React.ReactNode }) {
   );
 }
 
-// ─── One-off trend chart (Target 6) ──────────────────────────────────────────
+// ─── One-off trend charts (Target 6) ─────────────────────────────────────────
 
-function OneoffTrendChart({ timeline }: { timeline: UntrackedProjectTimeline; project: string }) {
-  const chartData = timeline.dates.map((date, i) => ({
+function WeeklyTrendStat({
+  label,
+  value,
+  delta,
+  deltaUnit,
+  positiveIsGood,
+  accent,
+}: {
+  label: string;
+  value: string;
+  delta: number;
+  deltaUnit: string;
+  positiveIsGood: boolean;
+  accent: 'amber' | 'emerald' | 'purple' | 'gray';
+}) {
+  const isFlat = delta === 0;
+  const isGood = positiveIsGood ? delta > 0 : delta < 0;
+  const accentText = {
+    amber: 'text-amber-600 dark:text-amber-400',
+    emerald: 'text-emerald-600 dark:text-emerald-400',
+    purple: 'text-purple-600 dark:text-purple-400',
+    gray: 'text-gray-900 dark:text-white',
+  }[accent];
+
+  return (
+    <div className="rounded-lg border border-gray-100 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-900/30 px-4 py-3">
+      <p className="text-[11px] font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">{label}</p>
+      <p className={`text-xl font-bold mt-0.5 ${accentText}`}>{value}</p>
+      <p className={`text-xs mt-1 ${
+        isFlat
+          ? 'text-gray-400 dark:text-gray-500'
+          : isGood
+          ? 'text-emerald-600 dark:text-emerald-400'
+          : 'text-red-500 dark:text-red-400'
+      }`}>
+        {isFlat ? 'No change vs prior week' : `${formatSignedDelta(delta, deltaUnit)} vs prior week`}
+      </p>
+    </div>
+  );
+}
+
+function OneoffTrendChart({
+  timeline,
+  adoptionThreshold,
+  headlineAdoption,
+  headlineReplaceableInstances,
+  headlineCandidateInstances,
+}: {
+  timeline: UntrackedProjectTimeline;
+  project: string;
+  adoptionThreshold: number;
+  headlineAdoption: string;
+  headlineReplaceableInstances: number;
+  headlineCandidateInstances: number;
+}) {
+  const allChartData = timeline.dates.map((date, i) => ({
     date,
     replaceable: timeline.replaceableInstances[i] ?? 0,
     candidates: timeline.candidateInstances[i] ?? 0,
     total: (timeline.replaceableInstances[i] ?? 0) + (timeline.candidateInstances[i] ?? 0),
-    trueAdoption: timeline.trueAdoption[i] ?? null,
+    adoption: computeAdoptionPercentage(
+      timeline.trackedMMDS[i] ?? 0,
+      timeline.trackedDeprecated[i] ?? 0,
+      timeline.replaceableInstances[i] ?? 0,
+    ),
   }));
 
-  if (chartData.length < 2) return null;
+  if (allChartData.length < 2) return null;
 
-  // Compute a simple linear trend for the "total one-off instances" line
+  const chartData = allChartData.slice(-TREND_WEEKS);
   const n = chartData.length;
-  const latestTotal = chartData[n - 1].total;
-  const prevTotal = chartData[n > 4 ? n - 5 : 0].total;
-  const weekSpan = n > 4 ? 4 : n - 1;
-  const weeklyChange = weekSpan > 0 ? Math.round((latestTotal - prevTotal) / weekSpan) : 0;
-  const isFlat = Math.abs(weeklyChange) <= 2;
-  const trend = isFlat ? 'flat' : weeklyChange < 0 ? 'down' : 'up';
+  const latest = chartData[n - 1];
+  const adoptionSeries = chartData.map(d => d.adoption ?? 0);
+  const totalSeries = chartData.map(d => d.total);
 
-  const CustomTooltip = ({ active, payload, label }: any) => {
+  const adoptionWoW = weekOverWeekDelta(adoptionSeries);
+  const totalWoW = weekOverWeekDelta(totalSeries);
+  const replaceableWoW = weekOverWeekDelta(chartData.map(d => d.replaceable));
+  const candidatesWoW = weekOverWeekDelta(chartData.map(d => d.candidates));
+
+  // 4-week smoothed one-off backlog trend
+  const weekSpan = n > 4 ? 4 : n - 1;
+  const prevTotal = chartData[n > 4 ? n - 5 : 0].total;
+  const weeklyChange = weekSpan > 0 ? Math.round((latest.total - prevTotal) / weekSpan) : 0;
+  const isFlat = Math.abs(weeklyChange) <= 2;
+  const backlogTrend = isFlat ? 'flat' : weeklyChange < 0 ? 'down' : 'up';
+
+  const adoptionDomain = (() => {
+    const values = chartData.map(d => d.adoption).filter((v): v is number => v != null);
+    if (values.length === 0) return [0, 100];
+    const min = Math.min(...values, adoptionThreshold);
+    const max = Math.max(...values, adoptionThreshold);
+    const pad = Math.max(2, (max - min) * 0.1);
+    return [Math.max(0, Math.floor(min - pad)), Math.min(100, Math.ceil(max + pad))];
+  })();
+
+  const AdoptionTooltip = ({ active, payload, label }: any) => {
     if (!active || !payload?.length) return null;
     return (
       <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow p-3 text-xs">
         <p className="font-semibold text-gray-700 dark:text-gray-200 mb-1">{label}</p>
         {payload.map((p: any) => (
           <p key={p.dataKey} style={{ color: p.color }} className="mb-0.5">
-            {p.name}: {p.value != null ? (p.dataKey === 'trueAdoption' ? `${p.value.toFixed(1)}%` : p.value.toLocaleString()) : '—'}
+            {p.name}: {p.value != null ? `${Number(p.value).toFixed(1)}%` : '—'}
+          </p>
+        ))}
+      </div>
+    );
+  };
+
+  const BacklogTooltip = ({ active, payload, label }: any) => {
+    if (!active || !payload?.length) return null;
+    return (
+      <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow p-3 text-xs">
+        <p className="font-semibold text-gray-700 dark:text-gray-200 mb-1">{label}</p>
+        {payload.map((p: any) => (
+          <p key={p.dataKey} style={{ color: p.color }} className="mb-0.5">
+            {p.name}: {p.value != null ? Number(p.value).toLocaleString() : '—'}
           </p>
         ))}
       </div>
@@ -910,210 +1069,186 @@ function OneoffTrendChart({ timeline }: { timeline: UntrackedProjectTimeline; pr
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-5 mb-6">
-      <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-        <div>
-          <h3 className="text-base font-semibold text-gray-900 dark:text-white">
-            One-off component trend
-          </h3>
-          <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
-            Total replaceable + candidate instances over time. A falling line means the one-off backlog is shrinking.
-          </p>
-        </div>
-        <div className="flex items-center gap-2">
-          <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium ${
-            trend === 'down'
-              ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300'
-              : trend === 'up'
-              ? 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
-              : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400'
-          }`}>
-            {trend === 'down' ? '↓' : trend === 'up' ? '↑' : '→'}
-            {' '}
-            {trend === 'flat'
-              ? '~flat (4-week avg)'
-              : `${Math.abs(weeklyChange)} instances/week ${trend === 'down' ? 'reduction' : 'increase'}`}
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-5 mb-5 space-y-6">
+      <div>
+        <h3 className="text-base font-semibold text-gray-900 dark:text-white">
+          Adoption &amp; one-off trends
+        </h3>
+        <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
+          Tracks the <span className="font-medium text-amber-600 dark:text-amber-400">{headlineAdoption}% adoption</span> headline
+          and the one-off instance counts that explain the migration gap — replaceable ({headlineReplaceableInstances.toLocaleString()})
+          and candidates ({headlineCandidateInstances.toLocaleString()}).
+        </p>
+      </div>
+
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <WeeklyTrendStat
+          label="Adoption ↔ headline"
+          value={latest.adoption != null ? `${latest.adoption.toFixed(1)}%` : '—'}
+          delta={adoptionWoW}
+          deltaUnit=" pp"
+          positiveIsGood
+          accent="amber"
+        />
+        <WeeklyTrendStat
+          label="One-off instances ↔ total"
+          value={latest.total.toLocaleString()}
+          delta={totalWoW}
+          deltaUnit=""
+          positiveIsGood={false}
+          accent="gray"
+        />
+        <WeeklyTrendStat
+          label="Replaceable ↔ Replace Now"
+          value={latest.replaceable.toLocaleString()}
+          delta={replaceableWoW}
+          deltaUnit=""
+          positiveIsGood={false}
+          accent="emerald"
+        />
+        <WeeklyTrendStat
+          label="Candidates ↔ Introduce to MMDS"
+          value={latest.candidates.toLocaleString()}
+          delta={candidatesWoW}
+          deltaUnit=""
+          positiveIsGood={false}
+          accent="purple"
+        />
+      </div>
+
+      <div>
+        <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
+          <div>
+            <h4 className="text-sm font-semibold text-gray-900 dark:text-white">Adoption trend ↔ headline KPI</h4>
+            <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
+              Same formula as the adoption figure above: MMDS ÷ (MMDS + deprecated + replaceable). Latest point should match {headlineAdoption}%.
+            </p>
           </div>
-          <InfoPopover>
-            <p className="font-semibold text-gray-800 dark:text-gray-100 mb-1.5">How this is calculated</p>
-            <p className="mb-1.5">
-              This badge shows a <span className="font-medium text-gray-800 dark:text-gray-100">smoothed 4-week average</span> rate of change,
-              not a single week-over-week diff. It compares the total one-off instance count
-              now ({latestTotal.toLocaleString()}) against {weekSpan} week{weekSpan !== 1 ? 's' : ''} ago ({prevTotal.toLocaleString()}),
-              then divides by {weekSpan}.
-            </p>
-            <p className="mb-1.5">
-              <span className="font-medium text-gray-800 dark:text-gray-100">~flat</span> is shown when the rounded average is ±2 or fewer
-              instances per week — at this scale that's noise, not signal.
-            </p>
-            <p className="text-gray-400 dark:text-gray-500">
-              For week-by-week detail, see the <span className="font-medium text-gray-600 dark:text-gray-300">weekly change</span> chart below.
-            </p>
-          </InfoPopover>
+          {adoptionWoW !== 0 && (
+            <div className={`px-3 py-1.5 rounded-full text-xs font-medium ${
+              adoptionWoW > 0
+                ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300'
+                : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
+            }`}>
+              {formatSignedDelta(adoptionWoW, ' pp')} this week
+            </div>
+          )}
         </div>
+        <ResponsiveContainer width="100%" height={200}>
+          <LineChart data={chartData} margin={{ top: 4, right: 16, left: 0, bottom: 30 }}>
+            <CartesianGrid strokeDasharray="3 3" className="stroke-gray-100 dark:stroke-gray-700" />
+            <XAxis dataKey="date" tick={{ fontSize: 10 }} angle={-40} textAnchor="end" height={48} />
+            <YAxis
+              tick={{ fontSize: 10 }}
+              width={40}
+              domain={adoptionDomain}
+              tickFormatter={v => `${v}%`}
+            />
+            <Tooltip content={<AdoptionTooltip />} />
+            <ReferenceLine
+              y={adoptionThreshold}
+              stroke="#f59e0b"
+              strokeDasharray="4 4"
+              label={{ value: `${adoptionThreshold}% target`, position: 'insideTopRight', fontSize: 10, fill: '#f59e0b' }}
+            />
+            <Line
+              type="monotone"
+              dataKey="adoption"
+              name="Adoption %"
+              stroke="#f59e0b"
+              strokeWidth={2.5}
+              dot={{ r: 2 }}
+              connectNulls
+            />
+          </LineChart>
+        </ResponsiveContainer>
       </div>
 
-      <ResponsiveContainer width="100%" height={220}>
-        <LineChart data={chartData} margin={{ top: 4, right: 60, left: 0, bottom: 30 }}>
-          <CartesianGrid strokeDasharray="3 3" className="stroke-gray-100 dark:stroke-gray-700" />
-          <XAxis
-            dataKey="date"
-            tick={{ fontSize: 10 }}
-            angle={-40}
-            textAnchor="end"
-            height={48}
-          />
-          <YAxis yAxisId="left" tick={{ fontSize: 10 }} width={48} />
-          <YAxis
-            yAxisId="right"
-            orientation="right"
-            tick={{ fontSize: 10 }}
-            width={36}
-            domain={[0, 100]}
-            tickFormatter={v => `${v}%`}
-          />
-          <Tooltip content={<CustomTooltip />} />
-          <Legend wrapperStyle={{ fontSize: 11 }} />
-
-          <Line
-            yAxisId="left"
-            type="monotone"
-            dataKey="replaceable"
-            name="Replaceable instances"
-            stroke="#10b981"
-            strokeWidth={2}
-            dot={{ r: 2 }}
-            connectNulls
-          />
-          <Line
-            yAxisId="left"
-            type="monotone"
-            dataKey="candidates"
-            name="Candidate instances"
-            stroke="#8b5cf6"
-            strokeWidth={2}
-            dot={{ r: 2 }}
-            connectNulls
-          />
-          <Line
-            yAxisId="left"
-            type="monotone"
-            dataKey="total"
-            name="Total one-off instances"
-            stroke="#f59e0b"
-            strokeWidth={2.5}
-            strokeDasharray="5 3"
-            dot={false}
-            connectNulls
-          />
-          <Line
-            yAxisId="right"
-            type="monotone"
-            dataKey="trueAdoption"
-            name="Overall adoption %"
-            stroke="#3b82f6"
-            strokeWidth={2}
-            dot={false}
-            connectNulls
-          />
-        </LineChart>
-      </ResponsiveContainer>
-    </div>
-  );
-}
-
-// ─── One-off instances — weekly delta sparkline ───────────────────────────────
-
-function OneoffDeltaSparkline({ timeline, project }: { timeline: UntrackedProjectTimeline; project: string }) {
-  const totals = timeline.replaceableInstances.map((v, i) => v + (timeline.candidateInstances[i] ?? 0));
-  const replDeltas = timeline.replaceableInstances.map((v, i) => i === 0 ? 0 : v - timeline.replaceableInstances[i - 1]).slice(1);
-  const candDeltas = timeline.candidateInstances.map((v, i) => i === 0 ? 0 : v - timeline.candidateInstances[i - 1]).slice(1);
-  const totalDeltas = totals.map((v, i) => i === 0 ? 0 : v - totals[i - 1]).slice(1);
-  const dates = timeline.dates.slice(1);
-
-  const allChartData = totalDeltas.map((delta, i) => ({
-    date: dates[i],
-    delta,
-    replaceable: replDeltas[i] ?? 0,
-    candidates: candDeltas[i] ?? 0,
-  }));
-
-  // Cap to last 26 weeks (~6 months)
-  const chartData = allChartData.slice(-26);
-
-  if (chartData.length === 0) return null;
-
-  const CustomTooltip = ({ active, payload }: any) => {
-    if (!active || !payload?.length) return null;
-    const d = payload[0].payload;
-    const isGood = d.delta < 0;
-    return (
-      <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow p-2.5 text-xs">
-        <p className="text-gray-500 dark:text-gray-400 mb-1">{d.date}</p>
-        <p className={`font-semibold ${isGood ? 'text-emerald-600 dark:text-emerald-400' : d.delta === 0 ? 'text-gray-500' : 'text-red-500 dark:text-red-400'}`}>
-          {d.delta > 0 ? `+${d.delta}` : d.delta} total one-off instances
-        </p>
-        <p className="text-gray-400 dark:text-gray-500 mt-0.5">
-          Replaceable: {d.replaceable > 0 ? `+${d.replaceable}` : d.replaceable}
-          {' · '}
-          Candidates: {d.candidates > 0 ? `+${d.candidates}` : d.candidates}
-        </p>
-        <p className="text-gray-400 dark:text-gray-500 mt-0.5">
-          {isGood ? 'Week-over-week reduction' : d.delta === 0 ? 'No change' : 'Net increase — new one-off usage added'}
-        </p>
-      </div>
-    );
-  };
-
-  return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-5 mt-4">
-      <div className="flex items-center justify-between mb-3">
-        <div>
-          <h4 className="text-sm font-semibold text-gray-900 dark:text-white">
-            {project === 'mobile' ? '📱' : '🧩'} One-off instances — weekly change
-          </h4>
-          <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
-            Green bars = net reduction (one-offs shrinking). Red bars = net increase (new one-off usage added).
-            Hover for replaceable vs candidate breakdown.
-          </p>
+      <div>
+        <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
+          <div>
+            <h4 className="text-sm font-semibold text-gray-900 dark:text-white">One-off backlog ↔ summary cards</h4>
+            <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
+              Replaceable (green) and candidate (purple) instance counts over time. Replaceable sits in the adoption denominator; candidates are tracked separately as roadmap signals.
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium ${
+              backlogTrend === 'down'
+                ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300'
+                : backlogTrend === 'up'
+                ? 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
+                : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400'
+            }`}>
+              {backlogTrend === 'down' ? '↓' : backlogTrend === 'up' ? '↑' : '→'}
+              {' '}
+              {backlogTrend === 'flat'
+                ? '~flat (4-week avg)'
+                : `${Math.abs(weeklyChange)} instances/week ${backlogTrend === 'down' ? 'reduction' : 'increase'}`}
+            </div>
+            <InfoPopover>
+              <p className="font-semibold text-gray-800 dark:text-gray-100 mb-1.5">How this is calculated</p>
+              <p className="mb-1.5">
+                Smoothed 4-week average rate of change for total one-off instances
+                ({latest.total.toLocaleString()} now vs {prevTotal.toLocaleString()} {weekSpan} week{weekSpan !== 1 ? 's' : ''} ago).
+              </p>
+              <p className="text-gray-400 dark:text-gray-500">
+                ~flat is shown when the rounded average is ±2 or fewer instances per week.
+              </p>
+            </InfoPopover>
+          </div>
         </div>
-        <div className="flex gap-3 text-xs">
-          <span className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-sm inline-block bg-emerald-500" />
-            reduction
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-sm inline-block bg-red-400" />
-            increase
-          </span>
-        </div>
+        <ResponsiveContainer width="100%" height={200}>
+          <LineChart data={chartData} margin={{ top: 4, right: 16, left: 0, bottom: 30 }}>
+            <CartesianGrid strokeDasharray="3 3" className="stroke-gray-100 dark:stroke-gray-700" />
+            <XAxis dataKey="date" tick={{ fontSize: 10 }} angle={-40} textAnchor="end" height={48} />
+            <YAxis tick={{ fontSize: 10 }} width={48} />
+            <Tooltip content={<BacklogTooltip />} />
+            <Legend wrapperStyle={{ fontSize: 11 }} />
+            <Line
+              type="monotone"
+              dataKey="replaceable"
+              name="Replaceable instances"
+              stroke="#10b981"
+              strokeWidth={2}
+              dot={{ r: 2 }}
+              connectNulls
+            />
+            <Line
+              type="monotone"
+              dataKey="candidates"
+              name="Candidate instances"
+              stroke="#8b5cf6"
+              strokeWidth={2}
+              dot={{ r: 2 }}
+              connectNulls
+            />
+            <Line
+              type="monotone"
+              dataKey="total"
+              name="Total one-off instances"
+              stroke="#6b7280"
+              strokeWidth={2}
+              strokeDasharray="5 3"
+              dot={false}
+              connectNulls
+            />
+          </LineChart>
+        </ResponsiveContainer>
       </div>
-      <ResponsiveContainer width="100%" height={100}>
-        <BarChart data={chartData} margin={{ top: 4, right: 8, left: 0, bottom: 0 }}>
-          <CartesianGrid strokeDasharray="3 3" vertical={false} className="stroke-gray-100 dark:stroke-gray-700" />
-          <XAxis dataKey="date" tick={{ fontSize: 9 }} angle={-45} textAnchor="end" height={36} />
-          <YAxis tick={{ fontSize: 10 }} width={36} />
-          <Tooltip content={<CustomTooltip />} />
-          <ReferenceLine y={0} stroke="#9ca3af" strokeWidth={1} />
-          <Bar dataKey="delta" radius={[2, 2, 0, 0]}>
-            {chartData.map((entry, i) => (
-              <Cell key={i} fill={entry.delta < 0 ? '#10b981' : entry.delta === 0 ? '#d1d5db' : '#f87171'} />
-            ))}
-          </Bar>
-        </BarChart>
-      </ResponsiveContainer>
     </div>
   );
 }
 
 // ─── Project section ──────────────────────────────────────────────────────────
 
-function ProjectSection({ data, timeline, migrationPct, codeOwnerStats }: {
+function ProjectSection({ data, timeline, migrationPct, codeOwnerStats, codeOwnerTimeline }: {
   data: UntrackedData;
   timeline: UntrackedProjectTimeline | null;
   /** Migration % from the main scanner (index.js / timeline.json). Used as the authoritative base. */
   migrationPct: number | null;
   codeOwnerStats?: Record<string, CodeOwnerStats>;
+  codeOwnerTimeline?: CodeOwnerTimeline;
 }) {
   const [teamFilter, setTeamFilter] = useState('');
   const [replaceSearch, setReplaceSearch] = useState('');
@@ -1160,8 +1295,8 @@ function ProjectSection({ data, timeline, migrationPct, codeOwnerStats }: {
 
   // Overall adoption (scored KPI): MMDS / (MMDS + deprecated + replaceable local one-offs)
   // Candidates without an MMDS match are excluded from the org benchmark denominator.
-  const trueTotal = trackedMMDS + trackedDeprecated + replaceableInstances;
-  const trueAdoptionRate = trueTotal > 0 ? ((trackedMMDS / trueTotal) * 100).toFixed(1) : '—';
+  const adoptionPct = computeAdoptionPercentage(trackedMMDS, trackedDeprecated, replaceableInstances);
+  const trueAdoptionRate = adoptionPct !== null ? adoptionPct.toFixed(1) : '—';
 
   // Gap: how much lower is overall adoption than the migration rate?
   const adoptionGap = migrationPct !== null && trueAdoptionRate !== '—'
@@ -1234,34 +1369,52 @@ function ProjectSection({ data, timeline, migrationPct, codeOwnerStats }: {
           <div>
             <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Adoption</p>
             <p className="text-2xl font-bold text-amber-600 dark:text-amber-400">{trueAdoptionRate}%</p>
-            <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">MMDS ÷ (MMDS + deprecated + replaceable)</p>
-            <p className="text-xs text-gray-400 dark:text-gray-500">Team target {ADOPTION_THRESHOLD}%</p>
+            <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
+              MMDS ÷ (MMDS + deprecated + {replaceableInstances.toLocaleString()} replaceable)
+            </p>
+            <p className="text-xs text-gray-400 dark:text-gray-500">Team target {ADOPTION_THRESHOLD}% · tracked in chart below</p>
           </div>
         </div>
         <div className="flex-1 min-w-[180px] text-sm text-gray-500 dark:text-gray-400 border-l border-gray-200 dark:border-gray-700 pl-5 space-y-1">
           <p>
-            <span className="font-semibold text-gray-700 dark:text-gray-200">Migration</span> tracks only the swap from the old deprecated library to MMDS — it ignores custom one-off components entirely.
+            <span className="font-semibold text-gray-700 dark:text-gray-200">Migration</span> ({migrationRate}%) ignores one-offs entirely — swap from legacy library to MMDS only.
           </p>
           <p>
-            <span className="font-semibold text-gray-700 dark:text-gray-200">Adoption</span> adds replaceable one-offs (MMDS equivalent exists) to the denominator, lowering the rate by{' '}
+            <span className="font-semibold text-amber-600 dark:text-amber-400">Adoption</span> ({trueAdoptionRate}%) adds{' '}
+            <span className="font-semibold text-emerald-600 dark:text-emerald-400">{replaceableInstances.toLocaleString()} replaceable</span> instances to the denominator, lowering the rate by{' '}
             <span className="font-semibold text-amber-600 dark:text-amber-400">{adoptionGap} pp</span>.
-            {' '}{adoptionCompliantTeams} / {teamAdoptionRows.length} teams are at ≥{ADOPTION_THRESHOLD}% adoption.
+            {' '}{adoptionCompliantTeams} / {teamAdoptionRows.length} teams at ≥{ADOPTION_THRESHOLD}%.
+          </p>
+          <p className="text-xs text-gray-400 dark:text-gray-500 pt-0.5">
+            ↳ Weekly trends below map to these figures: adoption %, replaceable ({replaceableInstances.toLocaleString()}), candidates ({candidateInstances.toLocaleString()}).
           </p>
         </div>
       </div>
 
+      {/* Adoption & one-off trend charts — directly under headline KPIs */}
+      {timeline && (
+        <OneoffTrendChart
+          timeline={timeline}
+          project={data.project}
+          adoptionThreshold={ADOPTION_THRESHOLD}
+          headlineAdoption={trueAdoptionRate}
+          headlineReplaceableInstances={replaceableInstances}
+          headlineCandidateInstances={candidateInstances}
+        />
+      )}
+
       {/* Summary cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-5">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-5 mt-6">
         <SummaryCard
           title="Replace Now"
           value={replaceableRows.length}
-          subtitle={`${replaceableInstances.toLocaleString()} instances · MMDS equivalent exists`}
+          subtitle={`${replaceableInstances.toLocaleString()} instances · ↔ replaceable in trend chart`}
           accent="green"
         />
         <SummaryCard
           title="Introduce to MMDS"
           value={candidateRows.length}
-          subtitle={`${candidateInstances.toLocaleString()} instances · no DS equivalent yet`}
+          subtitle={`${candidateInstances.toLocaleString()} instances · ↔ candidates in trend chart`}
           accent="purple"
         />
         <SummaryCard
@@ -1273,7 +1426,7 @@ function ProjectSection({ data, timeline, migrationPct, codeOwnerStats }: {
         <SummaryCard
           title="Adoption gap"
           value={adoptionGap !== '—' ? `${adoptionGap} pp` : '—'}
-          subtitle={`Migration ${migrationRate}% vs adoption ${trueAdoptionRate}% — driven by replaceable one-offs`}
+          subtitle={`Migration ${migrationRate}% ↔ adoption ${trueAdoptionRate}% in headline above`}
           accent="amber"
         />
       </div>
@@ -1284,6 +1437,8 @@ function ProjectSection({ data, timeline, migrationPct, codeOwnerStats }: {
         selectedTeam={teamFilter}
         onSelectTeam={handleScoreboardSelectTeam}
         threshold={ADOPTION_THRESHOLD}
+        codeOwnerTimeline={codeOwnerTimeline}
+        untrackedTimeline={timeline}
       />
 
       {/* Team filter */}
@@ -1309,15 +1464,6 @@ function ProjectSection({ data, timeline, migrationPct, codeOwnerStats }: {
           )}
         </div>
       )}
-
-      {/* One-off trend chart */}
-      {timeline && <OneoffTrendChart timeline={timeline} project={data.project} />}
-
-      {/* Weekly delta sparkline */}
-      {timeline && <OneoffDeltaSparkline timeline={timeline} project={data.project} />}
-
-      {/* Spacer */}
-      {timeline && <div className="mb-6" />}
 
       {/* Tables */}
       <div ref={filteredTablesRef} className="space-y-6 scroll-mt-6">
@@ -1416,6 +1562,7 @@ export function UntrackedComponents() {
   const { data: mobileData, loading: mobileLoading, error: mobileError } = useUntrackedData('mobile');
   const { data: extensionData, loading: extensionLoading, error: extensionError } = useUntrackedData('extension');
   const { data: untrackedTimeline } = useUntrackedTimeline();
+  const { data: mainTimeline } = useTimelineData();
   // Main scanner data — authoritative source for migration %
   const { data: mobileMetrics } = useMetricsData('mobile');
   const { data: extensionMetrics } = useMetricsData('extension');
@@ -1471,6 +1618,7 @@ export function UntrackedComponents() {
             timeline={untrackedTimeline?.mobile ?? null}
             migrationPct={mobileMigrationPct}
             codeOwnerStats={mobileMetrics?.summary.codeOwnerStats}
+            codeOwnerTimeline={mainTimeline?.mobile.codeOwnerTimeline}
           />
         )}
         {extensionData && (
@@ -1479,6 +1627,7 @@ export function UntrackedComponents() {
             timeline={untrackedTimeline?.extension ?? null}
             migrationPct={extensionMigrationPct}
             codeOwnerStats={extensionMetrics?.summary.codeOwnerStats}
+            codeOwnerTimeline={mainTimeline?.extension.codeOwnerTimeline}
           />
         )}
       </div>
