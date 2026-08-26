@@ -1,17 +1,20 @@
 import { useMemo, useRef, useState } from 'react';
-import { useUntrackedData, useUntrackedTimeline, useMetricsData } from '../hooks/useMetricsData';
+import { useUntrackedData, useUntrackedTimeline, useMetricsData, useTimelineData } from '../hooks/useMetricsData';
 import { Loading } from '../components/Loading';
 import { ErrorMessage } from '../components/ErrorMessage';
-import type { CodeOwnerStats, UntrackedData, UntrackedComponent, UntrackedProjectTimeline } from '../types/metrics';
+import type { CodeOwnerStats, CodeOwnerTimeline, UntrackedData, UntrackedComponent, UntrackedProjectTimeline } from '../types/metrics';
 import {
   excludedOwnersForProject,
   formatOwnerLabel,
   normalizeOwner,
 } from '../constants/codeOwners';
 import {
+  buildTeamAdoptionDeltaMap,
   computeAdoptionPercentage,
   formatSignedDelta,
+  getTeamAdoptionDelta,
   weekOverWeekDelta,
+  type TeamAdoptionDelta,
 } from '../lib/adoptionMetrics';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine } from 'recharts';
 
@@ -32,7 +35,7 @@ const TABLE_SCROLL_MAX_HEIGHT = `calc(2.75rem + ${TABLE_VISIBLE_ROWS} * 3.25rem)
 
 type ReplaceSortField = 'priority' | 'instances' | 'fileCount' | 'confidence';
 type CandidateSortField = 'breadth' | 'instances' | 'fileCount';
-type TeamAdoptionSortField = 'adoption' | 'migration' | 'opportunity' | 'gap' | 'team';
+type TeamAdoptionSortField = 'adoption' | 'migration' | 'opportunity' | 'gap' | 'team' | 'change';
 interface SortState<F extends string> { field: F; dir: 'asc' | 'desc' }
 
 interface TeamAdoptionRow {
@@ -219,6 +222,7 @@ function buildTeamAdoptionRows(
 function sortTeamAdoptionRows(
   rows: TeamAdoptionRow[],
   sort: SortState<TeamAdoptionSortField>,
+  deltaMap: Map<string, TeamAdoptionDelta>,
 ): TeamAdoptionRow[] {
   return [...rows].sort((a, b) => {
     let cmp = 0;
@@ -226,6 +230,11 @@ function sortTeamAdoptionRows(
     else if (sort.field === 'migration') cmp = a.migrationPercentage - b.migrationPercentage;
     else if (sort.field === 'opportunity') cmp = a.replaceableInstances - b.replaceableInstances;
     else if (sort.field === 'gap') cmp = a.gapPp - b.gapPp;
+    else if (sort.field === 'change') {
+      const aDelta = getTeamAdoptionDelta(deltaMap, a.team)?.adoptionDelta;
+      const bDelta = getTeamAdoptionDelta(deltaMap, b.team)?.adoptionDelta;
+      cmp = (aDelta ?? -Infinity) - (bDelta ?? -Infinity);
+    }
     else if (sort.field === 'team') cmp = a.label.localeCompare(b.label);
     return sort.dir === 'desc' ? -cmp : cmp;
   });
@@ -235,6 +244,62 @@ function adoptionBarFill(pct: number, threshold: number): string {
   if (pct >= threshold) return 'bg-emerald-500';
   if (pct >= threshold * 0.7) return 'bg-amber-500';
   return 'bg-red-400';
+}
+
+const REPORT_LOOKBACK_OPTIONS = [
+  { label: '1 week', value: 1 },
+  { label: '4 weeks', value: 4 },
+];
+
+function ScoreboardStatCard({
+  label,
+  children,
+  className = '',
+}: {
+  label: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={`rounded-lg border border-gray-100 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-900/30 px-4 py-3 ${className}`}>
+      <p className="text-[11px] font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">{label}</p>
+      <div className="mt-1 text-sm font-semibold text-gray-900 dark:text-white">{children}</div>
+    </div>
+  );
+}
+
+function MetricDeltaLine({
+  label,
+  delta,
+  unit = ' pp',
+  positiveIsGood = true,
+}: {
+  label: string;
+  delta: number | null;
+  unit?: string;
+  positiveIsGood?: boolean;
+}) {
+  if (delta == null) {
+    return (
+      <p className="text-xs text-gray-400 dark:text-gray-500">
+        {label}: —
+      </p>
+    );
+  }
+  const isFlat = Math.abs(delta) < 0.05;
+  const isGood = positiveIsGood ? delta > 0 : delta < 0;
+  const tone = isFlat
+    ? 'text-gray-400 dark:text-gray-500'
+    : isGood
+    ? 'text-emerald-600 dark:text-emerald-400'
+    : 'text-red-500 dark:text-red-400';
+
+  return (
+    <p className={`text-xs tabular-nums ${tone}`}>
+      <span className="text-gray-500 dark:text-gray-400">{label}:</span>{' '}
+      {isFlat ? '~flat' : formatSignedDelta(delta, unit)}
+    </p>
+  );
 }
 
 // ─── URL helpers ──────────────────────────────────────────────────────────────
@@ -552,18 +617,43 @@ function TeamAdoptionScoreboard({
   selectedTeam,
   onSelectTeam,
   threshold,
+  codeOwnerTimeline,
+  untrackedTimeline,
 }: {
   rows: TeamAdoptionRow[];
   selectedTeam: string;
   onSelectTeam: (team: string) => void;
   threshold: number;
+  codeOwnerTimeline?: CodeOwnerTimeline;
+  untrackedTimeline?: UntrackedProjectTimeline | null;
 }) {
   const [sort, setSort] = useState<SortState<TeamAdoptionSortField>>({
     field: 'opportunity',
     dir: 'desc',
   });
+  const [lookback, setLookback] = useState(1);
 
-  const sorted = useMemo(() => sortTeamAdoptionRows(rows, sort), [rows, sort]);
+  const deltaMap = useMemo(
+    () => buildTeamAdoptionDeltaMap(codeOwnerTimeline, untrackedTimeline ?? undefined, lookback),
+    [codeOwnerTimeline, untrackedTimeline, lookback],
+  );
+
+  const comparisonDates = useMemo(() => {
+    if (!codeOwnerTimeline || codeOwnerTimeline.dates.length < 2) {
+      return { fromDate: null as string | null, toDate: null as string | null };
+    }
+    const toIdx = codeOwnerTimeline.dates.length - 1;
+    const fromIdx = Math.max(0, toIdx - lookback);
+    return {
+      fromDate: codeOwnerTimeline.dates[fromIdx] ?? null,
+      toDate: codeOwnerTimeline.dates[toIdx] ?? null,
+    };
+  }, [codeOwnerTimeline, lookback]);
+
+  const sorted = useMemo(
+    () => sortTeamAdoptionRows(rows, sort, deltaMap),
+    [rows, sort, deltaMap],
+  );
   const compliant = rows.filter(r => r.onTarget).length;
   const withOpportunity = rows.filter(r => r.replaceableInstances > 0).length;
 
@@ -579,67 +669,105 @@ function TeamAdoptionScoreboard({
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden mb-5">
-      <div className="p-6 pb-4 border-b border-gray-100 dark:border-gray-700 flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            Team adoption scoreboard
-          </h3>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 max-w-3xl">
-            <span className="font-medium text-gray-700 dark:text-gray-200">Migration %</span> = MMDS ÷ (MMDS + Legacy).{' '}
-            <span className="font-medium text-gray-700 dark:text-gray-200">Adoption %</span> = MMDS ÷ (MMDS + Legacy + replaceable one-offs).
-            Click a team to filter the tables below and jump to that team&apos;s backlog.
-          </p>
-        </div>
-        <div className="flex flex-wrap gap-4 text-sm">
-          <div className="rounded-md bg-gray-50 dark:bg-gray-900/40 px-3 py-2">
-            <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">≥ {threshold}% adoption</p>
-            <p className="font-semibold text-gray-900 dark:text-white">
-              {compliant} / {rows.length} teams
-              <span className="ml-1.5 text-xs font-normal text-gray-400">
-                ({rows.length > 0 ? Math.round((compliant / rows.length) * 100) : 0}%)
-              </span>
+      <div className="p-6 border-b border-gray-100 dark:border-gray-700 space-y-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              Team adoption scoreboard
+            </h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+              Per-team migration and adoption. Click a row to filter the backlog tables below.
             </p>
           </div>
-          <div className="rounded-md bg-gray-50 dark:bg-gray-900/40 px-3 py-2">
-            <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">With replaceable opportunity</p>
-            <p className="font-semibold text-gray-900 dark:text-white">{withOpportunity} teams</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="px-6 py-2.5 border-b border-gray-100 dark:border-gray-700 flex flex-wrap items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
-        <span className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-sm bg-emerald-500" /> ≥ {threshold}% on target
-        </span>
-        <span className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-sm bg-amber-500" /> ≥ {Math.round(threshold * 0.7)}% approaching
-        </span>
-        <span className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-sm bg-red-400" /> &lt; {Math.round(threshold * 0.7)}% behind
-        </span>
-        <div className="ml-auto flex items-center gap-2">
           {selectedTeam ? (
-            <>
-              <span className="inline-flex items-center gap-1.5 font-semibold text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/40 rounded-full px-2.5 py-1">
-                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 4h16l-6 7v6l-4 2v-8L4 4Z" />
-                </svg>
-                Tables below filtered by {formatOwnerLabel(selectedTeam)}
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/40 rounded-full px-3 py-1.5">
+                Filtering: {formatOwnerLabel(selectedTeam)}
               </span>
               <button
                 type="button"
                 onClick={() => onSelectTeam('')}
-                className="text-blue-600 dark:text-blue-400 hover:underline"
+                className="text-xs text-blue-600 dark:text-blue-400 hover:underline"
               >
                 Clear
               </button>
-            </>
+            </div>
           ) : (
-            <span className="inline-flex items-center gap-1.5 font-semibold text-blue-700 dark:text-blue-300">
-              Select a team row to filter and jump to the tables below
+            <span className="inline-flex items-center gap-1.5 text-xs font-medium text-blue-700 dark:text-blue-300 bg-blue-50/80 dark:bg-blue-950/30 rounded-full px-3 py-1.5">
+              Select a team row to filter tables
               <span aria-hidden="true">↓</span>
             </span>
           )}
+        </div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          {codeOwnerTimeline && comparisonDates.fromDate && comparisonDates.toDate ? (
+            <ScoreboardStatCard label="Report window">
+              <span className="tabular-nums">{comparisonDates.fromDate}</span>
+              <span className="mx-1 text-gray-400 font-normal">→</span>
+              <span className="tabular-nums">{comparisonDates.toDate}</span>
+            </ScoreboardStatCard>
+          ) : (
+            <ScoreboardStatCard label="Report window">
+              <span className="text-gray-400 font-normal">No timeline data</span>
+            </ScoreboardStatCard>
+          )}
+
+          {codeOwnerTimeline ? (
+            <ScoreboardStatCard label="Compare vs">
+              <select
+                value={lookback}
+                onChange={e => setLookback(Number(e.target.value))}
+                className="w-full text-sm font-semibold border-0 bg-transparent p-0 text-gray-900 dark:text-white focus:outline-none focus:ring-0 cursor-pointer"
+              >
+                {REPORT_LOOKBACK_OPTIONS.map(opt => (
+                  <option key={opt.value} value={opt.value}>{opt.label} ago</option>
+                ))}
+              </select>
+            </ScoreboardStatCard>
+          ) : (
+            <ScoreboardStatCard label="Compare vs">
+              <span className="text-gray-400 font-normal">—</span>
+            </ScoreboardStatCard>
+          )}
+
+          <ScoreboardStatCard label={`≥ ${threshold}% adoption`}>
+            {compliant} / {rows.length} teams
+            <span className="ml-1.5 text-xs font-normal text-gray-400">
+              ({rows.length > 0 ? Math.round((compliant / rows.length) * 100) : 0}%)
+            </span>
+          </ScoreboardStatCard>
+
+          <ScoreboardStatCard label="Replaceable opportunity">
+            {withOpportunity} teams
+          </ScoreboardStatCard>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1 text-xs text-gray-500 dark:text-gray-400 border-t border-gray-100 dark:border-gray-700/80">
+          <span>
+            <span className="font-medium text-gray-600 dark:text-gray-300">Migration</span>
+            {' '}= MMDS ÷ (MMDS + Legacy)
+          </span>
+          <span>
+            <span className="font-medium text-gray-600 dark:text-gray-300">Adoption</span>
+            {' '}= MMDS ÷ (MMDS + Legacy + replaceable)
+          </span>
+          {codeOwnerTimeline && (
+            <span>
+              <span className="font-medium text-gray-600 dark:text-gray-300">Since last report</span>
+              {' '}= week-over-week Δ
+            </span>
+          )}
+          <span className="hidden sm:inline text-gray-300 dark:text-gray-600">|</span>
+          <span className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-sm bg-emerald-500" /> ≥ {threshold}%
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-sm bg-amber-500" /> ≥ {Math.round(threshold * 0.7)}%
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-sm bg-red-400" /> &lt; {Math.round(threshold * 0.7)}%
+          </span>
         </div>
       </div>
 
@@ -650,6 +778,9 @@ function TeamAdoptionScoreboard({
               <SortHeader label="Team" field="team" sortState={sort} onSort={toggleSort} />
               <SortHeader label="Migration %" field="migration" sortState={sort} onSort={toggleSort} />
               <SortHeader label="Adoption %" field="adoption" sortState={sort} onSort={toggleSort} />
+              {codeOwnerTimeline && (
+                <SortHeader label="Since last report" field="change" sortState={sort} onSort={toggleSort} />
+              )}
               <SortHeader label="Gap" field="gap" sortState={sort} onSort={toggleSort} />
               <SortHeader label="Opportunity" field="opportunity" sortState={sort} onSort={toggleSort} />
               <StaticHeader label="vs target" />
@@ -658,6 +789,7 @@ function TeamAdoptionScoreboard({
           <tbody className="divide-y divide-gray-100 dark:divide-gray-700/60">
             {sorted.map((row, i) => {
               const selected = selectedTeam === row.team;
+              const delta = getTeamAdoptionDelta(deltaMap, row.team);
               return (
                 <tr
                   key={row.team}
@@ -719,6 +851,20 @@ function TeamAdoptionScoreboard({
                       </span>
                     </div>
                   </td>
+                  {codeOwnerTimeline && (
+                    <td className="px-4 py-3 text-sm min-w-[150px]">
+                      <MetricDeltaLine label="Adoption" delta={delta?.adoptionDelta ?? null} />
+                      <MetricDeltaLine label="Migration" delta={delta?.migrationDelta ?? null} />
+                      {delta?.replaceableDelta != null && delta.replaceableDelta !== 0 && (
+                        <MetricDeltaLine
+                          label="Replaceable"
+                          delta={delta.replaceableDelta}
+                          unit=""
+                          positiveIsGood={false}
+                        />
+                      )}
+                    </td>
+                  )}
                   <td className="px-4 py-3 text-sm tabular-nums text-amber-600 dark:text-amber-400">
                     {row.gapPp > 0.05 ? `${row.gapPp.toFixed(1)} pp` : '—'}
                   </td>
@@ -1180,12 +1326,13 @@ function OneoffTrendChart({
 
 // ─── Project section ──────────────────────────────────────────────────────────
 
-function ProjectSection({ data, timeline, migrationPct, codeOwnerStats }: {
+function ProjectSection({ data, timeline, migrationPct, codeOwnerStats, codeOwnerTimeline }: {
   data: UntrackedData;
   timeline: UntrackedProjectTimeline | null;
   /** Migration % from the main scanner (index.js / timeline.json). Used as the authoritative base. */
   migrationPct: number | null;
   codeOwnerStats?: Record<string, CodeOwnerStats>;
+  codeOwnerTimeline?: CodeOwnerTimeline;
 }) {
   const [teamFilter, setTeamFilter] = useState('');
   const [replaceSearch, setReplaceSearch] = useState('');
@@ -1374,6 +1521,8 @@ function ProjectSection({ data, timeline, migrationPct, codeOwnerStats }: {
         selectedTeam={teamFilter}
         onSelectTeam={handleScoreboardSelectTeam}
         threshold={ADOPTION_THRESHOLD}
+        codeOwnerTimeline={codeOwnerTimeline}
+        untrackedTimeline={timeline}
       />
 
       {/* Team filter */}
@@ -1497,6 +1646,7 @@ export function UntrackedComponents() {
   const { data: mobileData, loading: mobileLoading, error: mobileError } = useUntrackedData('mobile');
   const { data: extensionData, loading: extensionLoading, error: extensionError } = useUntrackedData('extension');
   const { data: untrackedTimeline } = useUntrackedTimeline();
+  const { data: mainTimeline } = useTimelineData();
   // Main scanner data — authoritative source for migration %
   const { data: mobileMetrics } = useMetricsData('mobile');
   const { data: extensionMetrics } = useMetricsData('extension');
@@ -1552,6 +1702,7 @@ export function UntrackedComponents() {
             timeline={untrackedTimeline?.mobile ?? null}
             migrationPct={mobileMigrationPct}
             codeOwnerStats={mobileMetrics?.summary.codeOwnerStats}
+            codeOwnerTimeline={mainTimeline?.mobile.codeOwnerTimeline}
           />
         )}
         {extensionData && (
@@ -1560,6 +1711,7 @@ export function UntrackedComponents() {
             timeline={untrackedTimeline?.extension ?? null}
             migrationPct={extensionMigrationPct}
             codeOwnerStats={extensionMetrics?.summary.codeOwnerStats}
+            codeOwnerTimeline={mainTimeline?.extension.codeOwnerTimeline}
           />
         )}
       </div>

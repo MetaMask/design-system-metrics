@@ -7,8 +7,18 @@
 
 import fs from 'fs/promises';
 import path from 'path';
+import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
-import type { IndexData, MetricsData, TimelineData } from './types.ts';
+import type { IndexData, MetricsData, TimelineData, UntrackedTimelineData } from './types.ts';
+
+const require = createRequire(import.meta.url);
+const { computeAdoptionPercentage } = require('../scripts/lib/adoption-metrics.js') as {
+  computeAdoptionPercentage: (
+    trackedMMDS: number,
+    trackedDeprecated: number,
+    replaceableInstances: number,
+  ) => number | null;
+};
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const METRICS_DIR = path.join(__dirname, '..', 'metrics');
@@ -128,6 +138,94 @@ async function validateTimelineAndIndex(errors: string[]): Promise<void> {
 }
 
 // ---------------------------------------------------------------------------
+// Validate untracked timeline (adoption + per-team replaceable history)
+// ---------------------------------------------------------------------------
+
+async function validateUntrackedTimeline(errors: string[]): Promise<void> {
+  let untrackedTimeline: UntrackedTimelineData;
+
+  try {
+    untrackedTimeline = await readJson<UntrackedTimelineData>(
+      path.join(METRICS_DIR, 'untracked-timeline.json'),
+    );
+  } catch (err) {
+    errors.push(`Could not read untracked-timeline.json — ${(err as Error).message}`);
+    return;
+  }
+
+  for (const project of PROJECTS) {
+    const timeline = untrackedTimeline[project];
+    const label = `untracked-timeline.${project}`;
+    const n = timeline.dates.length;
+
+    if (n === 0) {
+      errors.push(`${label}.dates is empty`);
+      continue;
+    }
+
+    if (!timeline.teamReplaceableInstances || Object.keys(timeline.teamReplaceableInstances).length === 0) {
+      errors.push(`${label}.teamReplaceableInstances is missing or empty — run update-untracked-timeline`);
+      continue;
+    }
+
+    const latestDate = timeline.dates[n - 1];
+    const latestIdx = n - 1;
+
+    for (const [owner, series] of Object.entries(timeline.teamReplaceableInstances)) {
+      if (series.length !== n) {
+        errors.push(`${label}.teamReplaceableInstances.${owner} length ${series.length} != dates length ${n}`);
+      }
+    }
+
+    check(
+      timeline.replaceableInstances.length,
+      n,
+      `${label}.replaceableInstances.length`,
+      errors,
+    );
+
+    const expectedAdoption = computeAdoptionPercentage(
+      timeline.trackedMMDS[latestIdx] ?? 0,
+      timeline.trackedDeprecated[latestIdx] ?? 0,
+      timeline.replaceableInstances[latestIdx] ?? 0,
+    );
+    const actualAdoption = timeline.trueAdoption[latestIdx];
+
+    if (expectedAdoption != null && actualAdoption != null) {
+      if (Math.abs(expectedAdoption - actualAdoption) > 0.01) {
+        errors.push(
+          `${label}.trueAdoption[${latestDate}] expected ${expectedAdoption}, got ${actualAdoption}`,
+        );
+      }
+    }
+
+    const untrackedPath = path.join(METRICS_DIR, `${project}-untracked-${latestDate}.json`);
+    try {
+      const latestUntracked = await readJson<{
+        date: string;
+        summary?: { trackedMMDS?: number; trackedDeprecated?: number };
+      }>(untrackedPath);
+
+      check(latestUntracked.date, latestDate, `${label}.latestUntrackedDate`, errors);
+      check(
+        timeline.trackedMMDS[latestIdx],
+        latestUntracked.summary?.trackedMMDS,
+        `${label}.trackedMMDS[${latestDate}]`,
+        errors,
+      );
+      check(
+        timeline.trackedDeprecated[latestIdx],
+        latestUntracked.summary?.trackedDeprecated,
+        `${label}.trackedDeprecated[${latestDate}]`,
+        errors,
+      );
+    } catch (err) {
+      errors.push(`${label}: missing dated untracked file for ${latestDate} — ${(err as Error).message}`);
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
@@ -148,6 +246,7 @@ async function main(): Promise<void> {
   }
 
   await validateTimelineAndIndex(errors);
+  await validateUntrackedTimeline(errors);
 
   if (errors.length > 0) {
     console.error(`  ❌ ${errors.length} consistency error(s):`);

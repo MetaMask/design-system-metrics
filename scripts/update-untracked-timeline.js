@@ -8,7 +8,7 @@
  *         dashboard/public/metrics/untracked-timeline.json (when that dir exists)
  *
  * Run: yarn update-untracked-timeline
- *      (also invoked by yarn pipeline)
+ *      (automatically invoked by yarn pipeline after discover:extension/mobile)
  */
 
 const fs = require('fs');
@@ -41,6 +41,18 @@ function localOneoffCandidates(items) {
   );
 }
 
+/** Per-team replaceable instance counts from local-oneoff rows. */
+function extractTeamReplaceable(replaceable) {
+  const byTeam = {};
+  for (const row of replaceable) {
+    for (const [owner, count] of Object.entries(row.codeOwnerBreakdown ?? {})) {
+      if (owner === '@unknown') continue;
+      byTeam[owner] = (byTeam[owner] ?? 0) + count;
+    }
+  }
+  return byTeam;
+}
+
 function extractEntry(filePath) {
   const raw = fs.readFileSync(filePath, 'utf8');
   const d = JSON.parse(raw);
@@ -50,6 +62,7 @@ function extractEntry(filePath) {
 
   const replaceableInstances = replaceable.reduce((s, r) => s + (r.instances || 0), 0);
   const candidateInstances = candidates.reduce((s, r) => s + (r.instances || 0), 0);
+  const teamReplaceable = extractTeamReplaceable(replaceable);
 
   const trackedMMDS = d.summary?.trackedMMDS ?? 0;
   const trackedDeprecated = d.summary?.trackedDeprecated ?? 0;
@@ -64,6 +77,7 @@ function extractEntry(filePath) {
     trackedMMDS,
     trackedDeprecated,
     trueAdoption,
+    teamReplaceable,
   };
 }
 
@@ -91,6 +105,15 @@ function buildProjectTimeline(project) {
     }
   }
 
+  const allOwners = new Set();
+  for (const entry of entries) {
+    for (const owner of Object.keys(entry.teamReplaceable)) allOwners.add(owner);
+  }
+  const teamReplaceableInstances = {};
+  for (const owner of allOwners) {
+    teamReplaceableInstances[owner] = entries.map(e => e.teamReplaceable[owner] ?? 0);
+  }
+
   return {
     dates: entries.map(e => e.date),
     replaceableCount: entries.map(e => e.replaceableCount),
@@ -100,6 +123,7 @@ function buildProjectTimeline(project) {
     trackedMMDS: entries.map(e => e.trackedMMDS),
     trackedDeprecated: entries.map(e => e.trackedDeprecated),
     trueAdoption: entries.map(e => e.trueAdoption),
+    teamReplaceableInstances,
   };
 }
 

@@ -72,26 +72,28 @@ Use this sequence locally to match CI behavior:
 ```bash
 yarn install
 yarn setup-repos
-
-yarn sync-config
-yarn start
-yarn start:mobile
-
-yarn update-timeline
-yarn validate-metrics
-
+yarn pipeline
 yarn slack-report --output metrics/slack-report-YYYY-MM-DD.md
-
-cp metrics/*.json dashboard/public/metrics/
 cd dashboard && npm ci && npm run build
 ```
 
-Historical date override (backfills):
+`yarn pipeline` runs the full weekly sequence: config sync, extension/mobile scans, one-off discovery, **untracked timeline rebuild** (adoption trends + per-team replaceable history), migration timeline/index update, validation, and dashboard metrics copy.
+
+Manual stage breakdown (debugging only):
 
 ```bash
-METRICS_DATE=2026-03-04 yarn start
-METRICS_DATE=2026-03-04 yarn start:mobile
+yarn sync-config
+yarn start
+yarn start:mobile
+yarn discover:extension
+yarn discover:mobile
+yarn update-untracked-timeline
+yarn update-timeline
+yarn validate-metrics
+cp metrics/*.json dashboard/public/metrics/
 ```
+
+If generating for a historical date, set `METRICS_DATE=YYYY-MM-DD` when running `yarn pipeline` (or individual scan/discover steps).
 
 CI workflows:
 - `.github/workflows/weekly-metrics.yml`

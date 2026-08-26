@@ -243,6 +243,8 @@ export interface UntrackedProjectTimeline {
   trackedMMDS: number[];
   trackedDeprecated: number[];
   trueAdoption: (number | null)[];
+  /** Per-team replaceable instance counts aligned to `dates`. */
+  teamReplaceableInstances?: Record<string, number[]>;
 }
 
 export interface UntrackedTimeline {
