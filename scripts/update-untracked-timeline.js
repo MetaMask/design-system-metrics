@@ -13,6 +13,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { computeAdoptionPercentage } = require('./lib/adoption-metrics');
 
 const ROOT = path.join(__dirname, '..');
 const METRICS_DIR = path.join(ROOT, 'metrics');
@@ -52,9 +53,7 @@ function extractEntry(filePath) {
 
   const trackedMMDS = d.summary?.trackedMMDS ?? 0;
   const trackedDeprecated = d.summary?.trackedDeprecated ?? 0;
-  // Timeline keeps candidates in the denominator for historical continuity.
-  const trueTotal = trackedMMDS + trackedDeprecated + replaceableInstances + candidateInstances;
-  const trueAdoption = trueTotal > 0 ? parseFloat(((trackedMMDS / trueTotal) * 100).toFixed(2)) : null;
+  const trueAdoption = computeAdoptionPercentage(trackedMMDS, trackedDeprecated, replaceableInstances);
 
   return {
     date: d.date,
