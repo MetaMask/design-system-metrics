@@ -1,42 +1,65 @@
 {
   "component": "TextButton",
-  "generatedAt": "2026-08-25T17:15:47.664Z",
+  "generatedAt": "2026-08-31T08:33:17.610Z",
   "projects": {
     "extension": {
-      "filesScanned": 3616,
+      "filesScanned": 3619,
       "targetComponent": "TextButton",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
-      },
-      "deprecated": {
-        "totalInstances": 28,
-        "filesCount": 19,
+        "totalInstances": 3,
+        "filesCount": 2,
         "props": {
           "size": {
-            "count": 18,
+            "count": 3,
+            "values": {
+              "\"body-sm\"": 2,
+              "\"body-md\"": 1
+            }
+          },
+          "asChild": {
+            "count": 3,
+            "values": {
+              "true (shorthand)": 3
+            }
+          },
+          "className": {
+            "count": 3,
+            "values": {
+              "\"inline\"": 3
+            }
+          },
+          "key": {
+            "count": 1,
+            "values": {
+              "\"importAccountWithSocialMsgLearnMore\"": 1
+            }
+          }
+        }
+      },
+      "deprecated": {
+        "totalInstances": 25,
+        "filesCount": 17,
+        "props": {
+          "size": {
+            "count": 15,
             "values": {
               "{ButtonLinkSize.Inherit}": 10,
-              "{Size.inherit}": 3,
               "{BUTTON_SIZES.INHERIT}": 3,
               "{ButtonLinkSize.Lg}": 1,
               "{Size.auto}": 1
             }
           },
           "href": {
-            "count": 18,
+            "count": 15,
             "values": {
               "{safeWebsite.toString()}": 2,
               "{url}": 2,
-              "{ZENDESK_URLS.IMPORTED_ACCOUNTS_PRIVATE_KEY}": 2,
               "{blockExplorerLink}": 2,
               "{ZENDESK_URLS.CUSTOMIZE_NONCE}": 1,
               "{TERMS_OF_USE_LINK}": 1,
               "{href}": 1,
               "\"https://consensys.io/privacy-policy/\"": 1,
               "\"https://consensys.io/privacy-policy\"": 1,
-              "{ZENDESK_URLS.IMPORTED_ACCOUNT_JSON}": 1,
               "{link}": 1,
               "\"https://snaps.metamask.io/\"": 1,
               "{ZENDESK_URLS.GAS_FEES}": 1,
@@ -44,9 +67,9 @@
             }
           },
           "target": {
-            "count": 16,
+            "count": 13,
             "values": {
-              "\"_blank\"": 16
+              "\"_blank\"": 13
             }
           },
           "className": {
@@ -78,17 +101,17 @@
               "{(e) => { e.preventDefault(); dispatch(setTransactionSettingsOpened(true)); }}": 1
             }
           },
-          "rel": {
-            "count": 8,
-            "values": {
-              "\"noopener noreferrer\"": 8
-            }
-          },
           "externalLink": {
             "count": 6,
             "values": {
               "true (shorthand)": 5,
               "{!isMetaMaskUrl}": 1
+            }
+          },
+          "rel": {
+            "count": 5,
+            "values": {
+              "\"noopener noreferrer\"": 5
             }
           },
           "as": {
@@ -106,10 +129,9 @@
             }
           },
           "key": {
-            "count": 4,
+            "count": 3,
             "values": {
               "\"privacyNoticeTermsOfUseLink\"": 1,
-              "\"importAccountWithSocialMsgLearnMore\"": 1,
               "{origin}": 1,
               "\"gas-fees-learn-more\"": 1
             }
@@ -202,41 +224,18 @@
             "count": 18,
             "values": {
               "{ButtonLinkSize.Inherit}": 10,
-              "{Size.inherit}": 3,
               "{BUTTON_SIZES.INHERIT}": 3,
+              "\"body-sm\"": 2,
               "{ButtonLinkSize.Lg}": 1,
+              "\"body-md\"": 1,
               "{Size.auto}": 1
             }
           },
-          "href": {
-            "count": 18,
-            "values": {
-              "{safeWebsite.toString()}": 2,
-              "{url}": 2,
-              "{ZENDESK_URLS.IMPORTED_ACCOUNTS_PRIVATE_KEY}": 2,
-              "{blockExplorerLink}": 2,
-              "{ZENDESK_URLS.CUSTOMIZE_NONCE}": 1,
-              "{TERMS_OF_USE_LINK}": 1,
-              "{href}": 1,
-              "\"https://consensys.io/privacy-policy/\"": 1,
-              "\"https://consensys.io/privacy-policy\"": 1,
-              "{ZENDESK_URLS.IMPORTED_ACCOUNT_JSON}": 1,
-              "{link}": 1,
-              "\"https://snaps.metamask.io/\"": 1,
-              "{ZENDESK_URLS.GAS_FEES}": 1,
-              "{ZENDESK_URLS.SWAPS_USER_GUIDE}": 1
-            }
-          },
-          "target": {
-            "count": 16,
-            "values": {
-              "\"_blank\"": 16
-            }
-          },
           "className": {
-            "count": 12,
+            "count": 15,
             "values": {
               "\"snap-ui-renderer__link\"": 3,
+              "\"inline\"": 3,
               "\"connected-accounts-list__account-status-link\"": 2,
               "\"confirm-add-suggested-nft__nft-name\"": 2,
               "\"customize-nonce-modal__link\"": 1,
@@ -244,6 +243,29 @@
               "\"snap-privacy-warning__content__terms-link\"": 1,
               "\"snap-ui-markdown__link\"": 1,
               "\"snap-external-pill\"": 1
+            }
+          },
+          "href": {
+            "count": 15,
+            "values": {
+              "{safeWebsite.toString()}": 2,
+              "{url}": 2,
+              "{blockExplorerLink}": 2,
+              "{ZENDESK_URLS.CUSTOMIZE_NONCE}": 1,
+              "{TERMS_OF_USE_LINK}": 1,
+              "{href}": 1,
+              "\"https://consensys.io/privacy-policy/\"": 1,
+              "\"https://consensys.io/privacy-policy\"": 1,
+              "{link}": 1,
+              "\"https://snaps.metamask.io/\"": 1,
+              "{ZENDESK_URLS.GAS_FEES}": 1,
+              "{ZENDESK_URLS.SWAPS_USER_GUIDE}": 1
+            }
+          },
+          "target": {
+            "count": 13,
+            "values": {
+              "\"_blank\"": 13
             }
           },
           "onClick": {
@@ -262,17 +284,17 @@
               "{(e) => { e.preventDefault(); dispatch(setTransactionSettingsOpened(true)); }}": 1
             }
           },
-          "rel": {
-            "count": 8,
-            "values": {
-              "\"noopener noreferrer\"": 8
-            }
-          },
           "externalLink": {
             "count": 6,
             "values": {
               "true (shorthand)": 5,
               "{!isMetaMaskUrl}": 1
+            }
+          },
+          "rel": {
+            "count": 5,
+            "values": {
+              "\"noopener noreferrer\"": 5
             }
           },
           "as": {
@@ -302,6 +324,12 @@
             "count": 3,
             "values": {
               "{Display.Inline}": 3
+            }
+          },
+          "asChild": {
+            "count": 3,
+            "values": {
+              "true (shorthand)": 3
             }
           },
           "overflowWrap": {
@@ -379,11 +407,11 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "ButtonLink": 28
+        "ButtonLink": 25
       }
     },
     "mobile": {
-      "filesScanned": 7777,
+      "filesScanned": 7864,
       "targetComponent": "TextButton",
       "mmds": {
         "totalInstances": 0,

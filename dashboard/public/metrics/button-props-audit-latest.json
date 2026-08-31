@@ -1,9 +1,9 @@
 {
   "component": "Button",
-  "generatedAt": "2026-08-25T17:14:33.521Z",
+  "generatedAt": "2026-08-31T08:32:05.546Z",
   "projects": {
     "extension": {
-      "filesScanned": 3616,
+      "filesScanned": 3619,
       "targetComponent": "Button",
       "mmds": {
         "totalInstances": 9,
@@ -591,7 +591,7 @@
       }
     },
     "mobile": {
-      "filesScanned": 7777,
+      "filesScanned": 7864,
       "targetComponent": "Button",
       "mmds": {
         "totalInstances": 4,
@@ -641,11 +641,11 @@
         }
       },
       "deprecated": {
-        "totalInstances": 12,
-        "filesCount": 6,
+        "totalInstances": 11,
+        "filesCount": 5,
         "props": {
           "onPress": {
-            "count": 12,
+            "count": 11,
             "values": {
               "{toggleModal}": 2,
               "{onCancelPress}": 1,
@@ -654,27 +654,9 @@
               "{hideWhatIsSeedphrase}": 1,
               "{onCancelAction}": 1,
               "{onConfirmAction}": 1,
-              "{showFilterControls}": 1,
               "{onPrimary}": 1,
               "{onSecondary}": 1,
               "{handleSubmit}": 1
-            }
-          },
-          "label": {
-            "count": 12,
-            "values": {
-              "{cancelText}": 1,
-              "{confirmText}": 1,
-              "{strings('phishing.back_to_safety')}": 1,
-              "{strings('account_backup_step_1.what_is_seedphrase_confirm')}": 1,
-              "{strings('account_backup_step_1.skip_button_cancel')}": 1,
-              "{strings('account_backup_step_1.skip_button_confirm')}": 1,
-              "{<> <View style={styles.networkManagerWrapper}> {showNetworkFilterAvatar && ( ...}": 1,
-              "{strings('error_screen.describe')}": 1,
-              "{primaryButtonText}": 1,
-              "{secondaryButtonText}": 1,
-              "{strings('error_screen.cancel')}": 1,
-              "{strings('error_screen.submit')}": 1
             }
           },
           "variant": {
@@ -683,6 +665,22 @@
               "{ButtonVariants.Secondary}": 5,
               "{ButtonVariants.Primary}": 5,
               "{dataCollectionForMarketing ? ButtonVariants.Secondary : ButtonVariants.Primary}": 1
+            }
+          },
+          "label": {
+            "count": 11,
+            "values": {
+              "{cancelText}": 1,
+              "{confirmText}": 1,
+              "{strings('phishing.back_to_safety')}": 1,
+              "{strings('account_backup_step_1.what_is_seedphrase_confirm')}": 1,
+              "{strings('account_backup_step_1.skip_button_cancel')}": 1,
+              "{strings('account_backup_step_1.skip_button_confirm')}": 1,
+              "{strings('error_screen.describe')}": 1,
+              "{primaryButtonText}": 1,
+              "{secondaryButtonText}": 1,
+              "{strings('error_screen.cancel')}": 1,
+              "{strings('error_screen.submit')}": 1
             }
           },
           "size": {
@@ -698,34 +696,31 @@
             }
           },
           "style": {
-            "count": 8,
+            "count": 7,
             "values": {
               "{styles.button}": 2,
               "{styles.fullWidthButton}": 2,
               "{[ styles.button, confirmButtonState === ConfirmButtonState.Warning && styles....}": 1,
               "{styles.buttonWrapper}": 1,
-              "{styles.skipButton}": 1,
-              "{styles.controlButton}": 1
+              "{styles.skipButton}": 1
             }
           },
           "testID": {
-            "count": 6,
+            "count": 5,
             "values": {
               "{cancelTestID}": 1,
               "{confirmTestID}": 1,
               "{PhishingModalSelectorsIDs.BACK_TO_SAFETY_BUTTON}": 1,
               "{SkipAccountSecurityModalSelectorsIDs.CANCEL_BUTTON}": 1,
-              "{SkipAccountSecurityModalSelectorsIDs.SKIP_BUTTON}": 1,
-              "{WalletViewSelectorsIDs.TOKEN_NETWORK_FILTER}": 1
+              "{SkipAccountSecurityModalSelectorsIDs.SKIP_BUTTON}": 1
             }
           },
           "isDisabled": {
-            "count": 5,
+            "count": 4,
             "values": {
               "{confirmed}": 1,
               "{confirmed || confirmDisabled || loading}": 1,
               "{!skipCheckbox}": 1,
-              "false": 1,
               "{!feedback}": 1
             }
           },
@@ -747,27 +742,15 @@
             "values": {
               "{confirmButtonState === ConfirmButtonState.Error}": 1
             }
-          },
-          "endIconName": {
-            "count": 1,
-            "values": {
-              "{IconName.ArrowDown}": 1
-            }
-          },
-          "disabled": {
-            "count": 1,
-            "values": {
-              "false": 1
-            }
           }
         }
       },
       "overall": {
-        "totalInstances": 16,
-        "filesCount": 9,
+        "totalInstances": 15,
+        "filesCount": 8,
         "props": {
           "onPress": {
-            "count": 16,
+            "count": 15,
             "values": {
               "{goNext}": 2,
               "{toggleModal}": 2,
@@ -779,7 +762,6 @@
               "{onCancelAction}": 1,
               "{onConfirmAction}": 1,
               "{showRemindLater}": 1,
-              "{showFilterControls}": 1,
               "{onPrimary}": 1,
               "{onSecondary}": 1,
               "{handleSubmit}": 1
@@ -803,7 +785,7 @@
             }
           },
           "label": {
-            "count": 12,
+            "count": 11,
             "values": {
               "{cancelText}": 1,
               "{confirmText}": 1,
@@ -811,7 +793,6 @@
               "{strings('account_backup_step_1.what_is_seedphrase_confirm')}": 1,
               "{strings('account_backup_step_1.skip_button_cancel')}": 1,
               "{strings('account_backup_step_1.skip_button_confirm')}": 1,
-              "{<> <View style={styles.networkManagerWrapper}> {showNetworkFilterAvatar && ( ...}": 1,
               "{strings('error_screen.describe')}": 1,
               "{primaryButtonText}": 1,
               "{secondaryButtonText}": 1,
@@ -826,7 +807,7 @@
             }
           },
           "testID": {
-            "count": 8,
+            "count": 7,
             "values": {
               "{cancelTestID}": 1,
               "{confirmTestID}": 1,
@@ -834,28 +815,25 @@
               "{ProtectWalletModalSelectorsIDs.LEARN_MORE_BUTTON}": 1,
               "{SkipAccountSecurityModalSelectorsIDs.CANCEL_BUTTON}": 1,
               "{SkipAccountSecurityModalSelectorsIDs.SKIP_BUTTON}": 1,
-              "{ManualBackUpStepsSelectorsIDs.REMIND_ME_LATER_BUTTON}": 1,
-              "{WalletViewSelectorsIDs.TOKEN_NETWORK_FILTER}": 1
+              "{ManualBackUpStepsSelectorsIDs.REMIND_ME_LATER_BUTTON}": 1
             }
           },
           "style": {
-            "count": 8,
+            "count": 7,
             "values": {
               "{styles.button}": 2,
               "{styles.fullWidthButton}": 2,
               "{[ styles.button, confirmButtonState === ConfirmButtonState.Warning && styles....}": 1,
               "{styles.buttonWrapper}": 1,
-              "{styles.skipButton}": 1,
-              "{styles.controlButton}": 1
+              "{styles.skipButton}": 1
             }
           },
           "isDisabled": {
-            "count": 5,
+            "count": 4,
             "values": {
               "{confirmed}": 1,
               "{confirmed || confirmDisabled || loading}": 1,
               "{!skipCheckbox}": 1,
-              "false": 1,
               "{!feedback}": 1
             }
           },
@@ -889,23 +867,11 @@
             "values": {
               "\"w-full mb-3.5\"": 1
             }
-          },
-          "endIconName": {
-            "count": 1,
-            "values": {
-              "{IconName.ArrowDown}": 1
-            }
-          },
-          "disabled": {
-            "count": 1,
-            "values": {
-              "false": 1
-            }
           }
         }
       },
       "deprecatedByLegacyComponent": {
-        "Button": 12
+        "Button": 11
       }
     }
   }
