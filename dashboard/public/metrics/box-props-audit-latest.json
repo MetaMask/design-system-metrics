@@ -1,16 +1,16 @@
 {
   "component": "Box",
-  "generatedAt": "2026-08-31T08:31:59.433Z",
+  "generatedAt": "2026-09-07T08:32:09.308Z",
   "projects": {
     "extension": {
-      "filesScanned": 3619,
+      "filesScanned": 3674,
       "targetComponent": "Box",
       "mmds": {
-        "totalInstances": 109,
-        "filesCount": 30,
+        "totalInstances": 112,
+        "filesCount": 31,
         "props": {
           "className": {
-            "count": 90,
+            "count": 92,
             "values": {
               "\"flex\"": 20,
               "\"flex flex-col\"": 8,
@@ -51,6 +51,8 @@
               "\"multichain-account-list-item__account-name flex me-2\"": 1,
               "\"multichain-account-list-item__asset flex overflow-hidden\"": 1,
               "\"network-indicator\"": 1,
+              "\"flex h-full flex-col items-center justify-center p-4\"": 1,
+              "\"flex w-full flex-col items-center gap-2\"": 1,
               "\"flex rounded-md border border-solid\"": 1,
               "\"form-field__heading-title flex\"": 1,
               "\"form-field__heading-detail text-right\"": 1,
@@ -183,6 +185,16 @@
               "4": 6
             }
           },
+          "data-testid": {
+            "count": 5,
+            "values": {
+              "\"connected-accounts-permissions-list\"": 1,
+              "\"network-loader\"": 1,
+              "\"account-item\"": 1,
+              "\"account-list-item-badge\"": 1,
+              "\"no-connections\"": 1
+            }
+          },
           "flexWrap": {
             "count": 5,
             "values": {
@@ -208,15 +220,6 @@
             "count": 4,
             "values": {
               "{BlockSize.Full}": 4
-            }
-          },
-          "data-testid": {
-            "count": 4,
-            "values": {
-              "\"connected-accounts-permissions-list\"": 1,
-              "\"network-loader\"": 1,
-              "\"account-item\"": 1,
-              "\"account-list-item-badge\"": 1
             }
           },
           "marginRight": {
@@ -252,10 +255,11 @@
             }
           },
           "ref": {
-            "count": 2,
+            "count": 3,
             "values": {
               "{scrollContainerRef}": 1,
-              "{itemRef}": 1
+              "{itemRef}": 1,
+              "{headerRef}": 1
             }
           },
           "borderWidth": {
@@ -292,13 +296,13 @@
         }
       },
       "deprecated": {
-        "totalInstances": 144,
-        "filesCount": 45,
+        "totalInstances": 141,
+        "filesCount": 44,
         "props": {
           "display": {
-            "count": 90,
+            "count": 88,
             "values": {
-              "{Display.Flex}": 86,
+              "{Display.Flex}": 84,
               "{Display.Block}": 2,
               "{isCollapsable && isCollapsed ? Display.None : Display.Flex}": 1,
               "{[Display.None, Display.Flex]}": 1
@@ -365,18 +369,18 @@
             }
           },
           "alignItems": {
-            "count": 50,
+            "count": 49,
             "values": {
-              "{AlignItems.center}": 44,
+              "{AlignItems.center}": 43,
               "{AlignItems.flexEnd}": 4,
               "{isLoading && AlignItems.center}": 1,
               "{AlignItems.baseline}": 1
             }
           },
           "justifyContent": {
-            "count": 46,
+            "count": 45,
             "values": {
-              "{JustifyContent.center}": 24,
+              "{JustifyContent.center}": 23,
               "{JustifyContent.spaceBetween}": 17,
               "{JustifyContent.flexStart}": 2,
               "{JustifyContent.flexEnd}": 2,
@@ -384,19 +388,11 @@
             }
           },
           "flexDirection": {
-            "count": 43,
+            "count": 41,
             "values": {
-              "{FlexDirection.Column}": 27,
+              "{FlexDirection.Column}": 25,
               "{FlexDirection.Row}": 15,
               "{showAvatarAccount ? FlexDirection.Row : FlexDirection.Column}": 1
-            }
-          },
-          "width": {
-            "count": 29,
-            "values": {
-              "{BlockSize.Full}": 27,
-              "\"full\"": 1,
-              "{BlockSize.FiveTwelfths}": 1
             }
           },
           "style": {
@@ -428,6 +424,14 @@
               "{{ overflowY: 'auto', flex: 1 }}": 1
             }
           },
+          "width": {
+            "count": 28,
+            "values": {
+              "{BlockSize.Full}": 26,
+              "\"full\"": 1,
+              "{BlockSize.FiveTwelfths}": 1
+            }
+          },
           "backgroundColor": {
             "count": 22,
             "values": {
@@ -455,19 +459,19 @@
             }
           },
           "padding": {
-            "count": 16,
+            "count": 15,
             "values": {
               "1": 2,
               "2": 2,
-              "4": 10,
+              "4": 9,
               "{!disablePadding || isLoading ? 4 : 0}": 1,
               "{hasHeader || hasHeaderMaybe ? 0 : 4}": 1
             }
           },
           "height": {
-            "count": 16,
+            "count": 15,
             "values": {
-              "{BlockSize.Full}": 15,
+              "{BlockSize.Full}": 14,
               "{BlockSize.Min}": 1
             }
           },
@@ -497,16 +501,6 @@
               "4": 10
             }
           },
-          "gap": {
-            "count": 11,
-            "values": {
-              "1": 1,
-              "2": 2,
-              "4": 6,
-              "6": 1,
-              "{showAvatarAccount ? 2 : 0}": 1
-            }
-          },
           "borderRadius": {
             "count": 10,
             "values": {
@@ -527,6 +521,16 @@
               "4": 3
             }
           },
+          "gap": {
+            "count": 10,
+            "values": {
+              "1": 1,
+              "2": 1,
+              "4": 6,
+              "6": 1,
+              "{showAvatarAccount ? 2 : 0}": 1
+            }
+          },
           "marginBottom": {
             "count": 9,
             "values": {
@@ -542,16 +546,6 @@
               "{FlexWrap.Wrap}": 3
             }
           },
-          "data-testid": {
-            "count": 6,
-            "values": {
-              "\"app-header-logo\"": 2,
-              "{snapId}": 1,
-              "\"connection-list-item\"": 1,
-              "\"no-connections\"": 1,
-              "{dataTestId}": 1
-            }
-          },
           "marginRight": {
             "count": 5,
             "values": {
@@ -559,13 +553,13 @@
               "4": 4
             }
           },
-          "ref": {
+          "data-testid": {
             "count": 5,
             "values": {
-              "{ref}": 2,
-              "{contentRef}": 1,
-              "{headerRef}": 1,
-              "{!isLoading && !hasError ? ref : undefined}": 1
+              "\"app-header-logo\"": 2,
+              "{snapId}": 1,
+              "\"connection-list-item\"": 1,
+              "{dataTestId}": 1
             }
           },
           "onClick": {
@@ -573,6 +567,14 @@
             "values": {
               "{onClick}": 3,
               "{sensitive && !isVisible ? handleVisibilityClick : handleCopyClick}": 1
+            }
+          },
+          "ref": {
+            "count": 4,
+            "values": {
+              "{ref}": 2,
+              "{contentRef}": 1,
+              "{!isLoading && !hasError ? ref : undefined}": 1
             }
           },
           "[spread]": {
@@ -659,7 +661,7 @@
         "filesCount": 75,
         "props": {
           "className": {
-            "count": 148,
+            "count": 150,
             "values": {
               "\"flex\"": 20,
               "\"flex flex-col\"": 8,
@@ -728,6 +730,8 @@
               "{classnames( isUnlocked ? 'multichain-app-header__contents flex' : 'multichain...}": 1,
               "\"multichain-app-header-logo\"": 1,
               "\"multichain-connection-list-item\"": 1,
+              "\"flex h-full flex-col items-center justify-center p-4\"": 1,
+              "\"flex w-full flex-col items-center gap-2\"": 1,
               "\"multichain-product-tour-menu__container\"": 1,
               "\"multichain-product-tour-menu__arrow\"": 1,
               "\"multichain-product-tour-menu__header\"": 1,
@@ -778,18 +782,18 @@
             }
           },
           "display": {
-            "count": 90,
+            "count": 88,
             "values": {
-              "{Display.Flex}": 86,
+              "{Display.Flex}": 84,
               "{Display.Block}": 2,
               "{isCollapsable && isCollapsed ? Display.None : Display.Flex}": 1,
               "{[Display.None, Display.Flex]}": 1
             }
           },
           "alignItems": {
-            "count": 81,
+            "count": 80,
             "values": {
-              "{AlignItems.center}": 44,
+              "{AlignItems.center}": 43,
               "{BoxAlignItems.Center}": 29,
               "{AlignItems.flexEnd}": 4,
               "{BoxAlignItems.Start}": 1,
@@ -799,9 +803,9 @@
             }
           },
           "justifyContent": {
-            "count": 74,
+            "count": 73,
             "values": {
-              "{JustifyContent.center}": 24,
+              "{JustifyContent.center}": 23,
               "{JustifyContent.spaceBetween}": 17,
               "{BoxJustifyContent.Center}": 13,
               "{BoxJustifyContent.Between}": 9,
@@ -814,9 +818,9 @@
             }
           },
           "flexDirection": {
-            "count": 69,
+            "count": 67,
             "values": {
-              "{FlexDirection.Column}": 27,
+              "{FlexDirection.Column}": 25,
               "{FlexDirection.Row}": 15,
               "{BoxFlexDirection.Row}": 13,
               "{BoxFlexDirection.Column}": 13,
@@ -845,9 +849,9 @@
             }
           },
           "width": {
-            "count": 33,
+            "count": 32,
             "values": {
-              "{BlockSize.Full}": 31,
+              "{BlockSize.Full}": 30,
               "\"full\"": 1,
               "{BlockSize.FiveTwelfths}": 1
             }
@@ -884,12 +888,12 @@
             }
           },
           "padding": {
-            "count": 28,
+            "count": 27,
             "values": {
               "0": 2,
               "1": 3,
               "2": 4,
-              "4": 17,
+              "4": 16,
               "{!disablePadding || isLoading ? 4 : 0}": 1,
               "{hasHeader || hasHeaderMaybe ? 0 : 4}": 1
             }
@@ -907,10 +911,10 @@
             }
           },
           "gap": {
-            "count": 20,
+            "count": 19,
             "values": {
               "1": 1,
-              "2": 5,
+              "2": 4,
               "4": 11,
               "6": 2,
               "{showAvatarAccount ? 2 : 0}": 1
@@ -958,9 +962,9 @@
             }
           },
           "height": {
-            "count": 16,
+            "count": 15,
             "values": {
-              "{BlockSize.Full}": 15,
+              "{BlockSize.Full}": 14,
               "{BlockSize.Min}": 1
             }
           },
@@ -1143,11 +1147,11 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "Box": 144
+        "Box": 141
       }
     },
     "mobile": {
-      "filesScanned": 7864,
+      "filesScanned": 8005,
       "targetComponent": "Box",
       "mmds": {
         "totalInstances": 26,

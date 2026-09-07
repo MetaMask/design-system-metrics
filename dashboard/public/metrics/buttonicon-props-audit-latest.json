@@ -1,50 +1,63 @@
 {
   "component": "ButtonIcon",
-  "generatedAt": "2026-08-31T08:32:17.536Z",
+  "generatedAt": "2026-09-07T08:32:27.155Z",
   "projects": {
     "extension": {
-      "filesScanned": 3619,
+      "filesScanned": 3674,
       "targetComponent": "ButtonIcon",
       "mmds": {
-        "totalInstances": 3,
-        "filesCount": 3,
+        "totalInstances": 5,
+        "filesCount": 5,
         "props": {
           "iconName": {
-            "count": 3,
+            "count": 5,
             "values": {
+              "{IconName.ArrowLeft}": 2,
               "{copied ? IconName.CopySuccess : IconName.Copy}": 1,
               "{privateKeyCopied ? IconName.CopySuccess : IconName.Copy}": 1,
               "{IconName.MoreVertical}": 1
             }
           },
           "size": {
-            "count": 3,
+            "count": 5,
             "values": {
-              "{ButtonIconSize.Md}": 2,
-              "{ButtonIconSize.Sm}": 1
+              "{ButtonIconSize.Md}": 3,
+              "{ButtonIconSize.Sm}": 2
             }
           },
           "onClick": {
-            "count": 3,
+            "count": 5,
             "values": {
               "{handleClick}": 1,
               "{() => setShowDisableSelectWarn(false) || handlePrivateKeyCopy(privateKey)}": 1,
-              "{(e) => { e.stopPropagation(); if (!accountOptionsMenuOpen) { trackEvent( crea...}": 1
+              "{(e) => { e.stopPropagation(); if (!accountOptionsMenuOpen) { trackEvent( crea...}": 1,
+              "{handleBack}": 1,
+              "{prevClick}": 1
             }
           },
           "ariaLabel": {
-            "count": 3,
+            "count": 4,
             "values": {
               "\"copy-button\"": 1,
               "{t('copyPrivateKey')}": 1,
-              "{`${account.metadata.name} ${t('options')}`}": 1
+              "{`${account.metadata.name} ${t('options')}`}": 1,
+              "{t('back')}": 1
             }
           },
           "data-testid": {
-            "count": 2,
+            "count": 4,
             "values": {
               "\"address-copy-button-text\"": 1,
-              "\"account-list-item-menu-button\"": 1
+              "\"account-list-item-menu-button\"": 1,
+              "\"permissions-page-back\"": 1,
+              "\"multichain-product-tour-menu-popover-prevIcon\"": 1
+            }
+          },
+          "iconProps": {
+            "count": 2,
+            "values": {
+              "{{ className: IconColor.IconDefault }}": 1,
+              "{{ className: IconColor.InfoInverse }}": 1
             }
           },
           "color": {
@@ -64,30 +77,35 @@
             "values": {
               "{setAccountListItemMenuRef}": 1
             }
+          },
+          "className": {
+            "count": 1,
+            "values": {
+              "\"multichain-product-tour-menu__previous-icon\"": 1
+            }
           }
         }
       },
       "deprecated": {
-        "totalInstances": 20,
-        "filesCount": 18,
+        "totalInstances": 18,
+        "filesCount": 16,
         "props": {
           "iconName": {
-            "count": 20,
+            "count": 18,
             "values": {
               "{IconName.Close}": 5,
               "{IconName.MoreVertical}": 4,
-              "{IconName.ArrowLeft}": 3,
               "{IconName.Export}": 2,
               "{copied ? IconName.CopySuccess : IconName.Copy}": 2,
               "\"arrow-left\"": 2,
               "{expanded ? IconName.ArrowUp : IconName.ArrowDown}": 1,
+              "{IconName.ArrowLeft}": 1,
               "{IconName.Arrow2Down}": 1
             }
           },
           "onClick": {
-            "count": 19,
+            "count": 17,
             "values": {
-              "{handleBack}": 2,
               "{() => handleCopy(address)}": 2,
               "{() => { global.platform.openTab({ url: 'test', }); }}": 1,
               "{onShowOptions}": 1,
@@ -95,7 +113,6 @@
               "{handleOpen}": 1,
               "{onCancel}": 1,
               "{() => { handleMenuOpen(); }}": 1,
-              "{prevClick}": 1,
               "{() => { setRemoved(true); }}": 1,
               "{onBack}": 1,
               "{onClose}": 1,
@@ -103,28 +120,29 @@
               "{(e) => { e.preventDefault(); e.stopPropagation(); dispatch( rejectPendingAppr...}": 1,
               "{scrollToBottom}": 1,
               "{() => { const blockExplorerTokenLink = getAccountLink( address, chainId, { bl...}": 1,
-              "{handleBackClick}": 1
+              "{handleBackClick}": 1,
+              "{handleBack}": 1
             }
           },
           "size": {
-            "count": 16,
+            "count": 14,
             "values": {
-              "{ButtonIconSize.Md}": 7,
+              "{ButtonIconSize.Md}": 6,
               "{IconSize.Sm}": 3,
-              "{ButtonIconSize.Sm}": 3,
+              "{ButtonIconSize.Sm}": 2,
               "{Size.SM}": 2,
               "\"md\"": 1
             }
           },
           "ariaLabel": {
-            "count": 15,
+            "count": 14,
             "values": {
               "{t('close')}": 3,
               "{t('options')}": 2,
-              "{t('back')}": 2,
               "\"Back\"": 2,
               "{t('showPermissions')}": 1,
               "{t('snapHomeMenu')}": 1,
+              "{t('back')}": 1,
               "{t('assetOptions')}": 1,
               "{t('scrollDown')}": 1,
               "{copied ? t('copiedExclamation') : t('copyToClipboard')}": 1,
@@ -132,40 +150,36 @@
             }
           },
           "color": {
-            "count": 10,
+            "count": 8,
             "values": {
               "{IconColor.iconMuted}": 2,
-              "{Color.iconDefault}": 2,
               "{Color.iconMuted}": 2,
               "{IconColor.iconDefault}": 1,
-              "{IconColor.infoInverse}": 1,
+              "{Color.iconDefault}": 1,
               "{Color.textDefault}": 1,
               "{IconColor.primaryInverse}": 1
             }
           },
-          "data-testid": {
-            "count": 8,
-            "values": {
-              "{permissionName}": 1,
-              "\"snap-home-menu-button\"": 1,
-              "\"permissions-page-back\"": 1,
-              "\"multichain-product-tour-menu-popover-prevIcon\"": 1,
-              "\"popover-close\"": 1,
-              "\"asset-options__button\"": 1,
-              "{`confirm-add-suggested-nft__nft-remove-${id}`}": 1,
-              "\"scroll-to-bottom\"": 1
-            }
-          },
           "className": {
-            "count": 7,
+            "count": 6,
             "values": {
               "\"connected-accounts-options__button\"": 1,
               "\"customize-nonce-modal__close\"": 1,
-              "\"multichain-product-tour-menu__previous-icon\"": 1,
               "\"callout__close-button\"": 1,
               "\"asset-options__button\"": 1,
               "\"confirm-add-suggested-nft__nft-remove\"": 1,
               "\"scroll-to-bottom__button\"": 1
+            }
+          },
+          "data-testid": {
+            "count": 6,
+            "values": {
+              "{permissionName}": 1,
+              "\"snap-home-menu-button\"": 1,
+              "\"popover-close\"": 1,
+              "\"asset-options__button\"": 1,
+              "{`confirm-add-suggested-nft__nft-remove-${id}`}": 1,
+              "\"scroll-to-bottom\"": 1
             }
           },
           "display": {
@@ -278,19 +292,6 @@
               "{t('openInBlockExplorer')}": 1
             }
           },
-          "color": {
-            "count": 11,
-            "values": {
-              "{IconColor.iconMuted}": 2,
-              "{Color.iconDefault}": 2,
-              "{Color.iconMuted}": 2,
-              "{IconColor.iconDefault}": 1,
-              "{IconColor.IconAlternative}": 1,
-              "{IconColor.infoInverse}": 1,
-              "{Color.textDefault}": 1,
-              "{IconColor.primaryInverse}": 1
-            }
-          },
           "data-testid": {
             "count": 10,
             "values": {
@@ -304,6 +305,18 @@
               "\"asset-options__button\"": 1,
               "{`confirm-add-suggested-nft__nft-remove-${id}`}": 1,
               "\"scroll-to-bottom\"": 1
+            }
+          },
+          "color": {
+            "count": 9,
+            "values": {
+              "{IconColor.iconMuted}": 2,
+              "{Color.iconMuted}": 2,
+              "{IconColor.iconDefault}": 1,
+              "{IconColor.IconAlternative}": 1,
+              "{Color.iconDefault}": 1,
+              "{Color.textDefault}": 1,
+              "{IconColor.primaryInverse}": 1
             }
           },
           "className": {
@@ -323,6 +336,13 @@
             "values": {
               "{setMenuRef}": 1,
               "{setAccountListItemMenuRef}": 1
+            }
+          },
+          "iconProps": {
+            "count": 2,
+            "values": {
+              "{{ className: IconColor.IconDefault }}": 1,
+              "{{ className: IconColor.InfoInverse }}": 1
             }
           },
           "display": {
@@ -365,11 +385,11 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "ButtonIcon": 20
+        "ButtonIcon": 18
       }
     },
     "mobile": {
-      "filesScanned": 7864,
+      "filesScanned": 8005,
       "targetComponent": "ButtonIcon",
       "mmds": {
         "totalInstances": 3,

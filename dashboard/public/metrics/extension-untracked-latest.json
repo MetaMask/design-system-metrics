@@ -1,6 +1,6 @@
 {
   "project": "extension",
-  "date": "2026-08-31",
+  "date": "2026-09-07",
   "teams": [
     "@MetaMask/accounts-engineers",
     "@MetaMask/confirmations",
@@ -14,15 +14,15 @@
     "@MetaMask/web3auth"
   ],
   "summary": {
-    "filesScanned": 1672,
-    "totalJSXUsages": 10179,
-    "trackedDeprecated": 2557,
-    "trackedMMDS": 4353,
-    "untrackedTotal": 3269,
-    "uniqueUntrackedComponents": 118,
-    "replaceableNow": 49,
-    "replaceableInstances": 629,
-    "futureDSCandidates": 69,
+    "filesScanned": 1687,
+    "totalJSXUsages": 10327,
+    "trackedDeprecated": 2540,
+    "trackedMMDS": 4477,
+    "untrackedTotal": 3310,
+    "uniqueUntrackedComponents": 121,
+    "replaceableNow": 50,
+    "replaceableInstances": 641,
+    "futureDSCandidates": 71,
     "codeOwnerBreakdown": {
       "@MetaMask/swaps-engineers": {
         "replaceableComponents": 15,
@@ -32,17 +32,17 @@
       "@MetaMask/core-extension-ux": {
         "replaceableComponents": 26,
         "futureDSComponents": 27,
-        "replaceableInstances": 110
+        "replaceableInstances": 111
       },
       "@MetaMask/confirmations": {
-        "replaceableComponents": 15,
-        "futureDSComponents": 25,
-        "replaceableInstances": 100
+        "replaceableComponents": 16,
+        "futureDSComponents": 26,
+        "replaceableInstances": 106
       },
       "@MetaMask/perps": {
         "replaceableComponents": 9,
         "futureDSComponents": 7,
-        "replaceableInstances": 33
+        "replaceableInstances": 34
       },
       "@MetaMask/engagement": {
         "replaceableComponents": 6,
@@ -60,9 +60,9 @@
         "replaceableInstances": 34
       },
       "@MetaMask/accounts-engineers": {
-        "replaceableComponents": 8,
+        "replaceableComponents": 9,
         "futureDSComponents": 11,
-        "replaceableInstances": 50
+        "replaceableInstances": 51
       },
       "@MetaMask/metamask-assets": {
         "replaceableComponents": 7,
@@ -71,8 +71,8 @@
       },
       "@MetaMask/money-movement": {
         "replaceableComponents": 7,
-        "futureDSComponents": 7,
-        "replaceableInstances": 7
+        "futureDSComponents": 8,
+        "replaceableInstances": 8
       }
     }
   },
@@ -167,8 +167,8 @@
     },
     {
       "component": "PreferredAvatar",
-      "instances": 43,
-      "fileCount": 42,
+      "instances": 44,
+      "fileCount": 43,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/app/preferred-avatar",
       "importSources": [
@@ -211,7 +211,7 @@
         "@MetaMask/accounts-engineers": 6,
         "@MetaMask/core-extension-ux": 5,
         "@MetaMask/web3auth": 3,
-        "@MetaMask/confirmations": 11,
+        "@MetaMask/confirmations": 12,
         "@MetaMask/swaps-engineers": 1,
         "@MetaMask/core-platform": 1
       }
@@ -294,8 +294,8 @@
     },
     {
       "component": "ToastContent",
-      "instances": 33,
-      "fileCount": 20,
+      "instances": 34,
+      "fileCount": 21,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/ui/toast/toast",
       "importSources": [
@@ -328,6 +328,7 @@
         "@unknown": 11,
         "@MetaMask/money-movement": 1,
         "@MetaMask/core-extension-ux": 9,
+        "@MetaMask/accounts-engineers": 1,
         "@MetaMask/perps": 2,
         "@MetaMask/web3auth": 6,
         "@MetaMask/metamask-assets": 3,
@@ -452,6 +453,44 @@
       }
     },
     {
+      "component": "Toast",
+      "instances": 15,
+      "fileCount": 10,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/multichain/toast/toast",
+      "importSources": [
+        "../../components/multichain/toast",
+        "../../../components/multichain/toast",
+        "../../../components/multichain",
+        "../../../components/multichain/toast/toast",
+        "../../multichain",
+        "../../multichain/toast/toast",
+        "../../multichain/toast",
+        "../../../../components/multichain/toast/toast",
+        "../../../multichain/toast"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Toast",
+          "confidence": "exact"
+        }
+      ],
+      "codeOwners": [
+        "@unknown",
+        "@MetaMask/perps",
+        "@MetaMask/core-extension-ux",
+        "@MetaMask/swaps-engineers",
+        "@MetaMask/confirmations"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 10,
+        "@MetaMask/core-extension-ux": 1,
+        "@MetaMask/swaps-engineers": 1,
+        "@MetaMask/perps": 2,
+        "@MetaMask/confirmations": 1
+      }
+    },
+    {
       "component": "ButtonRow",
       "instances": 15,
       "fileCount": 3,
@@ -480,44 +519,6 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/web3auth": 15
-      }
-    },
-    {
-      "component": "Toast",
-      "instances": 14,
-      "fileCount": 9,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/multichain/toast/toast",
-      "importSources": [
-        "../../components/multichain/toast",
-        "../../../components/multichain/toast",
-        "../../../components/multichain",
-        "../../../components/multichain/toast/toast",
-        "../../multichain",
-        "../../multichain/toast/toast",
-        "../../multichain/toast",
-        "../../../../components/multichain/toast/toast",
-        "../../../multichain/toast"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Toast",
-          "confidence": "exact"
-        }
-      ],
-      "codeOwners": [
-        "@unknown",
-        "@MetaMask/perps",
-        "@MetaMask/core-extension-ux",
-        "@MetaMask/swaps-engineers",
-        "@MetaMask/confirmations"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 9,
-        "@MetaMask/core-extension-ux": 1,
-        "@MetaMask/swaps-engineers": 1,
-        "@MetaMask/perps": 2,
-        "@MetaMask/confirmations": 1
       }
     },
     {
@@ -813,6 +814,64 @@
       }
     },
     {
+      "component": "AccountName",
+      "instances": 9,
+      "fileCount": 5,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/app/transaction/account-name",
+      "importSources": [
+        "../../../components/app/transaction/account-name",
+        "../../../../components/app/transaction/account-name"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "AvatarAccount",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/core-extension-ux",
+        "@MetaMask/money-movement"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/money-movement": 2,
+        "@MetaMask/core-extension-ux": 7
+      }
+    },
+    {
+      "component": "BlockExplorerButton",
+      "instances": 9,
+      "fileCount": 9,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/block-explorer-button",
+      "importSources": [
+        "../components/block-explorer-button",
+        "../../components/block-explorer-button"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Button",
+          "confidence": "high"
+        },
+        {
+          "component": "ButtonBase",
+          "confidence": "medium"
+        },
+        {
+          "component": "ButtonFilter",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/core-extension-ux",
+        "@MetaMask/money-movement"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/core-extension-ux": 8,
+        "@MetaMask/money-movement": 1
+      }
+    },
+    {
       "component": "IconButton",
       "instances": 9,
       "fileCount": 2,
@@ -870,6 +929,29 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/confirmations": 9
+      }
+    },
+    {
+      "component": "PerpsTokenLogo",
+      "instances": 8,
+      "fileCount": 8,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/app/perps/perps-token-logo",
+      "importSources": [
+        "../../components/app/perps/perps-token-logo",
+        "../perps-token-logo"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "AvatarToken",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/perps"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/perps": 8
       }
     },
     {
@@ -959,64 +1041,6 @@
       }
     },
     {
-      "component": "BlockExplorerButton",
-      "instances": 8,
-      "fileCount": 8,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/block-explorer-button",
-      "importSources": [
-        "../components/block-explorer-button",
-        "../../components/block-explorer-button"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Button",
-          "confidence": "high"
-        },
-        {
-          "component": "ButtonBase",
-          "confidence": "medium"
-        },
-        {
-          "component": "ButtonFilter",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@MetaMask/core-extension-ux",
-        "@MetaMask/money-movement"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/core-extension-ux": 7,
-        "@MetaMask/money-movement": 1
-      }
-    },
-    {
-      "component": "AccountName",
-      "instances": 8,
-      "fileCount": 4,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/app/transaction/account-name",
-      "importSources": [
-        "../../../components/app/transaction/account-name",
-        "../../../../components/app/transaction/account-name"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "AvatarAccount",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@MetaMask/core-extension-ux",
-        "@MetaMask/money-movement"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/core-extension-ux": 7,
-        "@MetaMask/money-movement": 1
-      }
-    },
-    {
       "component": "NotificationDetailBlockExplorerButton",
       "instances": 8,
       "fileCount": 8,
@@ -1044,29 +1068,6 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/engagement": 8
-      }
-    },
-    {
-      "component": "PerpsTokenLogo",
-      "instances": 7,
-      "fileCount": 7,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/app/perps/perps-token-logo",
-      "importSources": [
-        "../../components/app/perps/perps-token-logo",
-        "../perps-token-logo"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "AvatarToken",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@MetaMask/perps"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/perps": 7
       }
     },
     {
@@ -1363,6 +1364,36 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/engagement": 6
+      }
+    },
+    {
+      "component": "DeveloperButton",
+      "instances": 6,
+      "fileCount": 6,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "developer-button",
+      "importSources": [
+        "../developer-button"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Button",
+          "confidence": "high"
+        },
+        {
+          "component": "ButtonBase",
+          "confidence": "medium"
+        },
+        {
+          "component": "ButtonFilter",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/confirmations"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/confirmations": 6
       }
     },
     {
@@ -1671,33 +1702,38 @@
       }
     },
     {
-      "component": "DeveloperButton",
+      "component": "TokenIcon",
       "instances": 5,
       "fileCount": 5,
       "sourceCategory": "local-oneoff",
-      "canonicalSource": "developer-button",
+      "canonicalSource": "pages/confirmations/components/token-icon/token-icon",
       "importSources": [
-        "../developer-button"
+        "../../../pages/confirmations/components/token-icon/token-icon",
+        "../../../components/token-icon",
+        "../../token-icon",
+        "../../../../token-icon"
       ],
       "mmdsMatches": [
         {
-          "component": "Button",
+          "component": "Icon",
           "confidence": "high"
         },
         {
-          "component": "ButtonBase",
+          "component": "AvatarIcon",
           "confidence": "medium"
         },
         {
-          "component": "ButtonFilter",
+          "component": "AvatarToken",
           "confidence": "medium"
         }
       ],
       "codeOwners": [
-        "@MetaMask/confirmations"
+        "@MetaMask/confirmations",
+        "@unknown"
       ],
       "codeOwnerBreakdown": {
-        "@MetaMask/confirmations": 5
+        "@unknown": 1,
+        "@MetaMask/confirmations": 4
       }
     }
   ],
@@ -1780,8 +1816,8 @@
     },
     {
       "component": "ConfirmInfoRow",
-      "instances": 73,
-      "fileCount": 42,
+      "instances": 74,
+      "fileCount": 43,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/app/confirm/info/row/row",
       "importSources": [
@@ -1805,7 +1841,7 @@
         "@MetaMask/perps"
       ],
       "codeOwnerBreakdown": {
-        "@MetaMask/confirmations": 67,
+        "@MetaMask/confirmations": 68,
         "@MetaMask/perps": 1,
         "@unknown": 5
       }
@@ -2576,6 +2612,23 @@
       }
     },
     {
+      "component": "MoneyTransactionDetailsRow",
+      "instances": 7,
+      "fileCount": 1,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/money-transaction-details-row",
+      "importSources": [
+        "./components/money-transaction-details-row"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@unknown"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 7
+      }
+    },
+    {
       "component": "Nav",
       "instances": 7,
       "fileCount": 7,
@@ -2836,6 +2889,31 @@
       "codeOwnerBreakdown": {
         "@unknown": 2,
         "@MetaMask/swaps-engineers": 3
+      }
+    },
+    {
+      "component": "Asset",
+      "instances": 5,
+      "fileCount": 5,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "pages/confirmations/components/send/asset/asset",
+      "importSources": [
+        "(local or re-export)",
+        "../../../components/app/asset-picker",
+        "../components/send/asset",
+        "../../../pages/confirmations/components/send/asset/asset",
+        "../../send/asset"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@unknown",
+        "@MetaMask/confirmations",
+        "@MetaMask/money-movement"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 2,
+        "@MetaMask/money-movement": 1,
+        "@MetaMask/confirmations": 2
       }
     },
     {
