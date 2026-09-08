@@ -226,6 +226,89 @@ async function validateUntrackedTimeline(errors: string[]): Promise<void> {
 }
 
 // ---------------------------------------------------------------------------
+// Validate alignment inventory + timeline
+// ---------------------------------------------------------------------------
+
+async function validateAlignment(errors: string[]): Promise<void> {
+  const latestPath = path.join(METRICS_DIR, 'alignment-latest.json');
+  const timelinePath = path.join(METRICS_DIR, 'alignment-timeline.json');
+
+  let latest: {
+    date?: string;
+    summary?: {
+      requiredCoverage?: number;
+      openGaps?: number;
+      missingOnReact?: number;
+      missingOnReactNative?: number;
+      codeConnectCoverage?: number;
+      requiredSharedCount?: number;
+    };
+    components?: Array<{ classification?: string; missingOn?: string[] }>;
+    queue?: unknown[];
+  };
+  let timeline: {
+    dates?: string[];
+    requiredCoverage?: unknown[];
+    openGaps?: unknown[];
+    missingOnReact?: unknown[];
+    missingOnReactNative?: unknown[];
+    codeConnectCoverage?: unknown[];
+    requiredSharedCount?: unknown[];
+    inventoryCount?: unknown[];
+    latest?: { date?: string; requiredCoverage?: number; openGaps?: number };
+  };
+
+  try {
+    [latest, timeline] = await Promise.all([readJson(latestPath), readJson(timelinePath)]);
+  } catch (err) {
+    errors.push(`Could not read alignment-latest.json or alignment-timeline.json — ${(err as Error).message}`);
+    return;
+  }
+
+  const coverage = latest.summary?.requiredCoverage;
+  if (typeof coverage !== 'number' || coverage < 0 || coverage > 100) {
+    errors.push(`alignment-latest.summary.requiredCoverage: out of range ${String(coverage)}`);
+  }
+  const connect = latest.summary?.codeConnectCoverage;
+  if (typeof connect !== 'number' || connect < 0 || connect > 100) {
+    errors.push(`alignment-latest.summary.codeConnectCoverage: out of range ${String(connect)}`);
+  }
+
+  const required = (latest.components || []).filter((c) => c.classification === 'required_shared');
+  const computedOpen = required.filter((c) => (c.missingOn || []).length > 0).length;
+  check(latest.summary?.openGaps, computedOpen, 'alignment-latest.summary.openGaps', errors);
+  check(latest.summary?.requiredSharedCount, required.length, 'alignment-latest.summary.requiredSharedCount', errors);
+  check(latest.queue?.length, computedOpen, 'alignment-latest.queue.length', errors);
+
+  const dates = timeline.dates;
+  if (!Array.isArray(dates) || dates.length === 0) {
+    errors.push('alignment-timeline.dates is empty');
+    return;
+  }
+
+  const SERIES = [
+    'requiredCoverage',
+    'openGaps',
+    'missingOnReact',
+    'missingOnReactNative',
+    'codeConnectCoverage',
+    'requiredSharedCount',
+    'inventoryCount',
+  ] as const;
+  for (const key of SERIES) {
+    const series = timeline[key];
+    if (!Array.isArray(series) || series.length !== dates.length) {
+      errors.push(`alignment-timeline.${key}: length mismatch (expected ${dates.length})`);
+    }
+  }
+
+  const lastDate = dates[dates.length - 1];
+  check(timeline.latest?.date, lastDate, 'alignment-timeline.latest.date', errors);
+  check(timeline.latest?.date, latest.date, 'alignment-latest.date vs timeline.latest.date', errors);
+  check(timeline.latest?.openGaps, latest.summary?.openGaps, 'alignment-timeline.latest.openGaps', errors);
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
@@ -247,6 +330,7 @@ async function main(): Promise<void> {
 
   await validateTimelineAndIndex(errors);
   await validateUntrackedTimeline(errors);
+  await validateAlignment(errors);
 
   if (errors.length > 0) {
     console.error(`  ❌ ${errors.length} consistency error(s):`);

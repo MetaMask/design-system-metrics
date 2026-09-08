@@ -15,6 +15,7 @@ Use this as the quick-start guide when making changes in this repository.
 - Metrics scanner/report logic: `index.js`
 - Config sync/discovery logic: `scripts/sync-config.js`, `scripts/lib/*`
 - Timeline/index derivation: `pipeline/update-timeline.ts`, `scripts/update-untracked-timeline.js`
+- MMDS alignment (Figma/React/RN inventory): `config/alignment-exceptions.json`, `scripts/lib/alignment-inventory.js`, `scripts/discover-alignment.js`
 - Data consistency checks: `pipeline/validate.ts`
 - Slack output: `scripts/generate-slack-report.js`
 - Dashboard UI/data hooks: `dashboard/src/*`
@@ -32,6 +33,7 @@ yarn start:mobile
 yarn discover:extension
 yarn discover:mobile
 yarn update-untracked-timeline
+yarn discover-alignment
 yarn update-timeline
 yarn validate-metrics
 yarn slack-report --output metrics/slack-report-YYYY-MM-DD.md

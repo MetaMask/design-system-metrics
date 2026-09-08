@@ -157,6 +157,14 @@ async function main(): Promise<void> {
     args: ['scripts/update-untracked-timeline.js'],
   });
 
+  // 5c. MMDS platform alignment (Figma/React/RN inventory from the DS monorepo)
+  run({
+    name: 'discover-alignment',
+    command: 'node',
+    args: ['scripts/discover-alignment.js'],
+    env: dateEnv,
+  });
+
   // 6. Props audit
   run({
     name: 'props-audit',

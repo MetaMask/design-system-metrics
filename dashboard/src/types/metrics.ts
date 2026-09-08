@@ -252,3 +252,94 @@ export interface UntrackedTimeline {
   extension: UntrackedProjectTimeline;
   mobile: UntrackedProjectTimeline;
 }
+
+// ─── Platform alignment (Figma / React / RN) ──────────────────────────────────
+
+export type AlignmentClassification =
+  | 'required_shared'
+  | 'platform_exception'
+  | 'helper_excluded';
+
+export type AlignmentFigmaStatus = 'unknown' | 'linked' | 'present' | 'missing';
+
+export interface AlignmentComponent {
+  name: string;
+  classification: AlignmentClassification;
+  familyId: string | null;
+  figma: AlignmentFigmaStatus;
+  figmaUrl: string | null;
+  react: boolean;
+  reactNative: boolean;
+  codeConnectReact: boolean;
+  codeConnectReactNative: boolean;
+  missingOn: Array<'react' | 'reactNative'>;
+}
+
+export interface AlignmentFamily {
+  id: string;
+  label: string;
+  rationale: string;
+  react: string[];
+  reactNative: string[];
+  reactPresent: number;
+  reactNativePresent: number;
+  aligned: boolean;
+}
+
+export interface AlignmentQueueItem {
+  name: string;
+  missingOn: Array<'react' | 'reactNative'>;
+  react: boolean;
+  reactNative: boolean;
+}
+
+export interface AlignmentSummary {
+  inventoryCount: number;
+  requiredSharedCount: number;
+  platformExceptionCount: number;
+  helperExcludedCount: number;
+  requiredCoverage: number;
+  openGaps: number;
+  missingOnReact: number;
+  missingOnReactNative: number;
+  figmaLinked: number;
+  codeConnectCoverage: number;
+  codeConnectMapped: number;
+  codeConnectSlots: number;
+  familiesAligned: number;
+  familiesTotal: number;
+}
+
+export interface AlignmentData {
+  date: string;
+  generatedAt: string;
+  source: string;
+  /** How Figma presence is inferred. `code-connect` means a `.figma.tsx` URL, not a live library scan. */
+  figmaStatus: 'unknown' | 'code-connect' | 'live';
+  summary: AlignmentSummary;
+  families: AlignmentFamily[];
+  queue: AlignmentQueueItem[];
+  components: AlignmentComponent[];
+}
+
+export interface AlignmentTimelineLatest {
+  date: string;
+  requiredCoverage: number | null;
+  openGaps: number | null;
+  missingOnReact: number | null;
+  missingOnReactNative: number | null;
+  codeConnectCoverage: number | null;
+}
+
+export interface AlignmentTimeline {
+  generatedAt: string;
+  dates: string[];
+  requiredCoverage: (number | null)[];
+  openGaps: (number | null)[];
+  missingOnReact: (number | null)[];
+  missingOnReactNative: (number | null)[];
+  codeConnectCoverage: (number | null)[];
+  requiredSharedCount: (number | null)[];
+  inventoryCount: (number | null)[];
+  latest: AlignmentTimelineLatest | null;
+}
