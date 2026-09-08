@@ -241,10 +241,21 @@ async function validateAlignment(errors: string[]): Promise<void> {
       missingOnReact?: number;
       missingOnReactNative?: number;
       codeConnectCoverage?: number;
+      codeConnectGaps?: number;
+      missingCodeConnectReact?: number;
+      missingCodeConnectReactNative?: number;
       requiredSharedCount?: number;
     };
-    components?: Array<{ classification?: string; missingOn?: string[] }>;
+    components?: Array<{
+      classification?: string;
+      missingOn?: string[];
+      react?: boolean;
+      reactNative?: boolean;
+      codeConnectReact?: boolean;
+      codeConnectReactNative?: boolean;
+    }>;
     queue?: unknown[];
+    codeConnectQueue?: unknown[];
   };
   let timeline: {
     dates?: string[];
@@ -253,6 +264,9 @@ async function validateAlignment(errors: string[]): Promise<void> {
     missingOnReact?: unknown[];
     missingOnReactNative?: unknown[];
     codeConnectCoverage?: unknown[];
+    codeConnectGaps?: unknown[];
+    missingCodeConnectReact?: unknown[];
+    missingCodeConnectReactNative?: unknown[];
     requiredSharedCount?: unknown[];
     inventoryCount?: unknown[];
     latest?: { date?: string; requiredCoverage?: number; openGaps?: number };
@@ -280,6 +294,21 @@ async function validateAlignment(errors: string[]): Promise<void> {
   check(latest.summary?.requiredSharedCount, required.length, 'alignment-latest.summary.requiredSharedCount', errors);
   check(latest.queue?.length, computedOpen, 'alignment-latest.queue.length', errors);
 
+  const computedCodeConnectGaps = (latest.components || []).filter(
+    (c) =>
+      (c.react && !c.codeConnectReact) ||
+      (c.reactNative && !c.codeConnectReactNative),
+  ).length;
+  check(latest.summary?.codeConnectGaps, computedCodeConnectGaps, 'alignment-latest.summary.codeConnectGaps', errors);
+  if (latest.codeConnectQueue != null) {
+    check(
+      latest.codeConnectQueue.length,
+      computedCodeConnectGaps,
+      'alignment-latest.codeConnectQueue.length',
+      errors,
+    );
+  }
+
   const dates = timeline.dates;
   if (!Array.isArray(dates) || dates.length === 0) {
     errors.push('alignment-timeline.dates is empty');
@@ -292,6 +321,9 @@ async function validateAlignment(errors: string[]): Promise<void> {
     'missingOnReact',
     'missingOnReactNative',
     'codeConnectCoverage',
+    'codeConnectGaps',
+    'missingCodeConnectReact',
+    'missingCodeConnectReactNative',
     'requiredSharedCount',
     'inventoryCount',
   ] as const;
@@ -303,9 +335,11 @@ async function validateAlignment(errors: string[]): Promise<void> {
   }
 
   const lastDate = dates[dates.length - 1];
-  check(timeline.latest?.date, lastDate, 'alignment-timeline.latest.date', errors);
   check(timeline.latest?.date, latest.date, 'alignment-latest.date vs timeline.latest.date', errors);
   check(timeline.latest?.openGaps, latest.summary?.openGaps, 'alignment-timeline.latest.openGaps', errors);
+  if (timeline.latest?.date === lastDate) {
+    check(timeline.latest?.requiredCoverage, latest.summary?.requiredCoverage, 'alignment-timeline.latest.requiredCoverage', errors);
+  }
 }
 
 // ---------------------------------------------------------------------------

@@ -13,6 +13,10 @@ import { useAlignmentData, useAlignmentTimeline } from '../hooks/useMetricsData'
 import { Loading } from '../components/Loading';
 import { ErrorMessage } from '../components/ErrorMessage';
 import { formatSignedDelta, weekOverWeekDelta } from '../lib/adoptionMetrics';
+import {
+  buildWeeklyAlignmentChartSeries,
+  headlineWeeklyDelta,
+} from '../lib/alignmentMetrics';
 import type {
   AlignmentClassification,
   AlignmentComponent,
@@ -24,6 +28,8 @@ import type {
 
 const TREND_WEEKS = 26;
 const COVERAGE_GOAL = 90;
+/** User-facing label for required_shared components present on both React and RN. */
+const CROSS_PLATFORM_COVERAGE_LABEL = 'Total cross-platform coverage';
 
 type MatrixFilter = 'all' | 'gaps' | 'required' | 'exceptions';
 type QueueTab = 'platform' | 'codeConnect';
@@ -43,28 +49,22 @@ const NAV_SECTIONS = [
   { id: 'exceptions', label: 'Exceptions' },
 ] as const;
 
-function coverageDelta(timeline: AlignmentTimeline | null): number | null {
-  if (!timeline || timeline.requiredCoverage.length < 2) return null;
-  const latest = timeline.requiredCoverage[timeline.requiredCoverage.length - 1];
-  const prev = timeline.requiredCoverage[timeline.requiredCoverage.length - 2];
-  if (latest == null || prev == null) return null;
-  return Math.round((latest - prev) * 10) / 10;
+const BUCKET_LABELS: Record<Exclude<BucketFilter, 'all'>, string> = {
+  both: 'On React and React Native',
+  rnOnly: 'React Native only (React missing)',
+  reactOnly: 'React only (React Native missing)',
+};
+
+function coverageDelta(timeline: AlignmentTimeline | null, headline: number): number | null {
+  return headlineWeeklyDelta(timeline, headline, timeline?.requiredCoverage ?? []);
 }
 
-function gapsDelta(timeline: AlignmentTimeline | null): number | null {
-  if (!timeline || timeline.openGaps.length < 2) return null;
-  const latest = timeline.openGaps[timeline.openGaps.length - 1];
-  const prev = timeline.openGaps[timeline.openGaps.length - 2];
-  if (latest == null || prev == null) return null;
-  return latest - prev;
+function gapsDelta(timeline: AlignmentTimeline | null, headline: number): number | null {
+  return headlineWeeklyDelta(timeline, headline, timeline?.openGaps ?? []);
 }
 
-function codeConnectDelta(timeline: AlignmentTimeline | null): number | null {
-  if (!timeline || timeline.codeConnectCoverage.length < 2) return null;
-  const latest = timeline.codeConnectCoverage[timeline.codeConnectCoverage.length - 1];
-  const prev = timeline.codeConnectCoverage[timeline.codeConnectCoverage.length - 2];
-  if (latest == null || prev == null) return null;
-  return Math.round((latest - prev) * 10) / 10;
+function codeConnectDelta(timeline: AlignmentTimeline | null, headline: number): number | null {
+  return headlineWeeklyDelta(timeline, headline, timeline?.codeConnectCoverage ?? []);
 }
 
 function classificationLabel(kind: AlignmentClassification): string {
@@ -294,7 +294,7 @@ function buildWeeklySummary(
     .map((q) => q.name)
     .join(', ');
   return [
-    `Alignment ${data.date}: ${s.requiredCoverage}% required coverage${covPart}.`,
+    `Alignment ${data.date}: ${s.requiredCoverage}% total cross-platform coverage${covPart}.`,
     `${s.openGaps} open platform gaps${gapPart} (${s.missingOnReact} React, ${s.missingOnReactNative} RN).`,
     `Code Connect ${s.codeConnectCoverage}%.`,
     topGaps ? `Top queue: ${topGaps}.` : '',
@@ -396,6 +396,26 @@ function CodeConnectActions({ component: c }: { component: AlignmentComponent })
   );
 }
 
+function buildCodeConnectGapsFromData(data: AlignmentData): CodeConnectGap[] {
+  const componentByName = new Map(data.components.map((c) => [c.name, c]));
+
+  if (data.codeConnectQueue?.length) {
+    return data.codeConnectQueue
+      .map((item) => {
+        const component = componentByName.get(item.name);
+        if (!component) return null;
+        return {
+          name: item.name,
+          missingConnect: item.missingConnect,
+          component,
+        };
+      })
+      .filter((item): item is CodeConnectGap => item != null);
+  }
+
+  return buildCodeConnectGaps(data.components);
+}
+
 function buildCodeConnectGaps(components: AlignmentComponent[]): CodeConnectGap[] {
   return components
     .filter(
@@ -424,28 +444,11 @@ function AlignmentTrendSection({
 
   const chartData = useMemo(() => {
     if (!timeline) return [];
-    return timeline.dates.map((date, i) => ({
-      date,
-      coverage: timeline.requiredCoverage[i] ?? null,
-      codeConnect: timeline.codeConnectCoverage[i] ?? null,
-      openGaps: timeline.openGaps[i] ?? null,
-      missingReact: timeline.missingOnReact[i] ?? null,
-    }));
+    return buildWeeklyAlignmentChartSeries(timeline);
   }, [timeline]);
 
   const trendSlice = chartData.slice(-TREND_WEEKS);
   const hasTrend = trendSlice.length >= 2;
-  const latest = trendSlice[trendSlice.length - 1];
-
-  const coverageSeries = trendSlice.map((d) => d.coverage ?? 0);
-  const gapsSeries = trendSlice.map((d) => d.openGaps ?? 0);
-  const connectSeries = trendSlice.map((d) => d.codeConnect ?? 0);
-  const missingReactSeries = trendSlice.map((d) => d.missingReact ?? 0);
-
-  const coverageWoW = weekOverWeekDelta(coverageSeries);
-  const gapsWoW = weekOverWeekDelta(gapsSeries);
-  const connectWoW = weekOverWeekDelta(connectSeries);
-  const missingReactWoW = weekOverWeekDelta(missingReactSeries);
 
   const PercentTooltip = ({ active, payload, label }: any) => {
     if (!active || !payload?.length) return null;
@@ -484,7 +487,7 @@ function AlignmentTrendSection({
         <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
           Tracks the{' '}
           <span className="font-medium text-emerald-600 dark:text-emerald-400">
-            {s.requiredCoverage}% required coverage
+            {s.requiredCoverage}% total cross-platform coverage
           </span>{' '}
           headline, open platform gaps ({s.openGaps}), and Code Connect coverage (
           {s.codeConnectCoverage}%).
@@ -493,35 +496,33 @@ function AlignmentTrendSection({
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         <WeeklyTrendStat
-          label="Coverage ↔ headline"
-          value={latest?.coverage != null ? `${latest.coverage.toFixed(1)}%` : `${s.requiredCoverage}%`}
-          delta={coverageWoW}
+          label="Cross-platform ↔ headline"
+          value={`${s.requiredCoverage}%`}
+          delta={weekOverWeekDelta(trendSlice.map((d) => d.coverage ?? 0))}
           deltaUnit=" pp"
           positiveIsGood
           accent="emerald"
         />
         <WeeklyTrendStat
           label="Open gaps ↔ platform queue"
-          value={String(latest?.openGaps ?? s.openGaps)}
-          delta={gapsWoW}
+          value={String(s.openGaps)}
+          delta={weekOverWeekDelta(trendSlice.map((d) => d.openGaps ?? 0))}
           deltaUnit=""
           positiveIsGood={false}
           accent="red"
         />
         <WeeklyTrendStat
           label="Missing React ↔ queue tab"
-          value={String(latest?.missingReact ?? s.missingOnReact)}
-          delta={missingReactWoW}
+          value={String(s.missingOnReact)}
+          delta={weekOverWeekDelta(trendSlice.map((d) => d.missingReact ?? 0))}
           deltaUnit=""
           positiveIsGood={false}
           accent="amber"
         />
         <WeeklyTrendStat
           label="Code Connect ↔ design bridge"
-          value={
-            latest?.codeConnect != null ? `${latest.codeConnect.toFixed(1)}%` : `${s.codeConnectCoverage}%`
-          }
-          delta={connectWoW}
+          value={`${s.codeConnectCoverage}%`}
+          delta={weekOverWeekDelta(trendSlice.map((d) => d.codeConnect ?? 0))}
           deltaUnit=" pp"
           positiveIsGood
           accent="purple"
@@ -532,7 +533,7 @@ function AlignmentTrendSection({
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
           <div>
             <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Coverage &amp; Code Connect
+              Cross-platform coverage &amp; Code Connect
             </h3>
             <ResponsiveContainer width="100%" height={240}>
               <LineChart data={trendSlice}>
@@ -544,7 +545,7 @@ function AlignmentTrendSection({
                 <Line
                   type="monotone"
                   dataKey="coverage"
-                  name="Required coverage"
+                  name={CROSS_PLATFORM_COVERAGE_LABEL}
                   stroke="#10b981"
                   strokeWidth={2}
                   dot={false}
@@ -597,7 +598,8 @@ function AlignmentTrendSection({
         </div>
       ) : (
         <p className="text-sm text-gray-500 dark:text-gray-400 rounded-lg border border-dashed border-gray-200 dark:border-gray-700 px-4 py-3">
-          Trend charts appear after two weekly scans. Snapshot cards above still reflect this
+          Trend charts appear after two weekly scans (7+ days apart). Same-week re-scans update
+          the headline KPIs but are excluded from trends. Snapshot cards above still reflect this
           week&apos;s headline metrics.
         </p>
       )}
@@ -641,9 +643,16 @@ export function Alignment() {
   const [summaryCopied, setSummaryCopied] = useState(false);
 
   const codeConnectGaps = useMemo(
-    () => (data ? buildCodeConnectGaps(data.components) : []),
+    () => (data ? buildCodeConnectGapsFromData(data) : []),
     [data]
   );
+
+  const codeConnectGapCount = data?.summary.codeConnectGaps ?? codeConnectGaps.length;
+
+  const selectPlatformFilter = (filter: PlatformFilter) => {
+    setPlatformFilter(filter);
+    setBucketFilter('all');
+  };
 
   const platformQueue = useMemo(() => {
     if (!data) return [];
@@ -653,7 +662,9 @@ export function Alignment() {
     } else if (platformFilter === 'reactNative') {
       items = items.filter((item) => item.missingOn.includes('reactNative'));
     }
-    if (bucketFilter === 'rnOnly') {
+    if (bucketFilter === 'both') {
+      items = items.filter((item) => item.react && item.reactNative);
+    } else if (bucketFilter === 'rnOnly') {
       items = items.filter((item) => !item.react && item.reactNative);
     } else if (bucketFilter === 'reactOnly') {
       items = items.filter((item) => item.react && !item.reactNative);
@@ -686,6 +697,7 @@ export function Alignment() {
 
   const applyBucketFilter = (bucket: BucketFilter) => {
     setBucketFilter((prev) => (prev === bucket ? 'all' : bucket));
+    setPlatformFilter('all');
     setQueueTab('platform');
     setMatrixFilter('gaps');
     workQueueRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -706,9 +718,9 @@ export function Alignment() {
   if (!data) return null;
 
   const s = data.summary;
-  const covDelta = coverageDelta(timeline);
-  const gapDelta = gapsDelta(timeline);
-  const connectDelta = codeConnectDelta(timeline);
+  const covDelta = coverageDelta(timeline, s.requiredCoverage);
+  const gapDelta = gapsDelta(timeline, s.openGaps);
+  const connectDelta = codeConnectDelta(timeline, s.codeConnectCoverage);
   const weeklySummary = buildWeeklySummary(data, covDelta, gapDelta);
   const required = data.components.filter((c) => c.classification === 'required_shared');
   const split = [
@@ -772,9 +784,9 @@ export function Alignment() {
         <section id="overview" className="scroll-mt-24">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             <KpiCard
-              title="Required-platform coverage"
+              title={CROSS_PLATFORM_COVERAGE_LABEL}
               value={`${s.requiredCoverage}%`}
-              subtitle={`${s.requiredSharedCount - s.openGaps} of ${s.requiredSharedCount} required components on both React and React Native · goal ${COVERAGE_GOAL}%`}
+              subtitle={`${s.requiredSharedCount - s.openGaps} of ${s.requiredSharedCount} shared components on both React and React Native · goal ${COVERAGE_GOAL}%`}
               tone={coverageTone(s.requiredCoverage)}
               fillPercent={s.requiredCoverage}
               delta={covDelta}
@@ -794,7 +806,7 @@ export function Alignment() {
             <KpiCard
               title="Code Connect coverage"
               value={`${s.codeConnectCoverage}%`}
-              subtitle={`${s.codeConnectMapped} of ${s.codeConnectSlots} code-platform slots mapped · ${codeConnectGaps.length} unmapped in queue`}
+              subtitle={`${s.codeConnectMapped} of ${s.codeConnectSlots} code-platform slots mapped · ${codeConnectGapCount} unmapped in queue`}
               tone={coverageTone(s.codeConnectCoverage)}
               fillPercent={s.codeConnectCoverage}
               delta={connectDelta}
@@ -904,9 +916,26 @@ export function Alignment() {
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'
                 }`}
               >
-                Code Connect gaps ({codeConnectGaps.length})
+                Code Connect gaps ({codeConnectGapCount})
               </button>
             </div>
+            {queueTab === 'platform' && bucketFilter !== 'all' && (
+              <div className="mt-3 flex flex-wrap items-center gap-2 rounded-md bg-amber-50 dark:bg-amber-900/20 px-3 py-2 text-sm text-amber-800 dark:text-amber-200">
+                <span>
+                  Bucket filter active:{' '}
+                  {bucketFilter === 'both'
+                    ? BUCKET_LABELS.both
+                    : BUCKET_LABELS[bucketFilter as Exclude<BucketFilter, 'all' | 'both'>]}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setBucketFilter('all')}
+                  className="text-xs font-medium underline underline-offset-2"
+                >
+                  Clear bucket filter
+                </button>
+              </div>
+            )}
             {queueTab === 'platform' && (
               <div className="mt-3 flex flex-wrap gap-2">
                 {(
@@ -919,7 +948,7 @@ export function Alignment() {
                   <button
                     key={id}
                     type="button"
-                    onClick={() => setPlatformFilter(id)}
+                    onClick={() => selectPlatformFilter(id)}
                     className={`px-3 py-1 rounded-md text-xs font-medium ${
                       platformFilter === id
                         ? 'bg-gray-800 text-white dark:bg-gray-200 dark:text-gray-900'

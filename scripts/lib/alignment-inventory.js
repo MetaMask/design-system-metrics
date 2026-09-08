@@ -205,6 +205,19 @@ function buildAlignmentReport(input) {
   }
   const codeConnectCoverage = connectSlots === 0 ? 100 : (connectHave / connectSlots) * 100;
 
+  const codeConnectGapItems = components
+    .filter(
+      (c) =>
+        (c.react && !c.codeConnectReact) || (c.reactNative && !c.codeConnectReactNative),
+    )
+    .sort((a, b) => a.name.localeCompare(b.name));
+  const missingCodeConnectReact = components.filter(
+    (c) => c.react && !c.codeConnectReact,
+  ).length;
+  const missingCodeConnectReactNative = components.filter(
+    (c) => c.reactNative && !c.codeConnectReactNative,
+  ).length;
+
   const queue = [...openGapItems].sort((a, b) => {
     const aReact = a.missingOn.includes('react') ? 0 : 1;
     const bReact = b.missingOn.includes('react') ? 0 : 1;
@@ -233,10 +246,22 @@ function buildAlignmentReport(input) {
       codeConnectCoverage: round1(codeConnectCoverage),
       codeConnectMapped: connectHave,
       codeConnectSlots: connectSlots,
+      codeConnectGaps: codeConnectGapItems.length,
+      missingCodeConnectReact,
+      missingCodeConnectReactNative,
       familiesAligned: families.filter((f) => f.aligned).length,
       familiesTotal: families.length,
     },
     families,
+    codeConnectQueue: codeConnectGapItems.map((c) => ({
+      name: c.name,
+      missingConnect: [
+        ...(c.react && !c.codeConnectReact ? ['react'] : []),
+        ...(c.reactNative && !c.codeConnectReactNative ? ['reactNative'] : []),
+      ],
+      react: c.react,
+      reactNative: c.reactNative,
+    })),
     queue: queue.map((c) => ({
       name: c.name,
       missingOn: c.missingOn,

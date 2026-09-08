@@ -22,6 +22,15 @@ const DASHBOARD_METRICS_DIR = path.join(ROOT, 'dashboard', 'public', 'metrics');
 const DS_ROOT = path.join(ROOT, 'repos/metamask-design-system');
 const EXCEPTIONS_PATH = path.join(ROOT, 'config/alignment-exceptions.json');
 
+/** Minimum days between timeline points — one weekly reporting point per window. */
+const MIN_WEEKLY_TIMELINE_GAP_DAYS = 7;
+
+function daysBetweenDates(start, end) {
+  const startMs = Date.parse(`${start}T00:00:00Z`);
+  const endMs = Date.parse(`${end}T00:00:00Z`);
+  return Math.round((endMs - startMs) / (1000 * 60 * 60 * 24));
+}
+
 function parseArgs(argv) {
   const opts = {
     date: process.env.METRICS_DATE || new Date().toISOString().split('T')[0],
@@ -53,18 +62,37 @@ function buildTimeline() {
   const missingOnReact = [];
   const missingOnReactNative = [];
   const codeConnectCoverage = [];
+  const codeConnectGaps = [];
+  const missingCodeConnectReact = [];
+  const missingCodeConnectReactNative = [];
   const requiredSharedCount = [];
   const inventoryCount = [];
+  let latestSnapshot = null;
 
   for (const [date, file] of [...byDate.entries()].sort()) {
     try {
       const data = JSON.parse(fs.readFileSync(path.join(METRICS_DIR, file), 'utf8'));
+      latestSnapshot = { date, data };
+
+      if (dates.length > 0) {
+        const daysSinceLast = daysBetweenDates(dates[dates.length - 1], date);
+        if (daysSinceLast < MIN_WEEKLY_TIMELINE_GAP_DAYS) {
+          console.warn(
+            `  Skipping ${date} in timeline (${daysSinceLast} day(s) after ${dates[dates.length - 1]}; weekly cadence is ${MIN_WEEKLY_TIMELINE_GAP_DAYS}+ days)`,
+          );
+          continue;
+        }
+      }
+
       dates.push(date);
       requiredCoverage.push(data.summary?.requiredCoverage ?? null);
       openGaps.push(data.summary?.openGaps ?? null);
       missingOnReact.push(data.summary?.missingOnReact ?? null);
       missingOnReactNative.push(data.summary?.missingOnReactNative ?? null);
       codeConnectCoverage.push(data.summary?.codeConnectCoverage ?? null);
+      codeConnectGaps.push(data.summary?.codeConnectGaps ?? null);
+      missingCodeConnectReact.push(data.summary?.missingCodeConnectReact ?? null);
+      missingCodeConnectReactNative.push(data.summary?.missingCodeConnectReactNative ?? null);
       requiredSharedCount.push(data.summary?.requiredSharedCount ?? null);
       inventoryCount.push(data.summary?.inventoryCount ?? null);
     } catch (err) {
@@ -72,7 +100,7 @@ function buildTimeline() {
     }
   }
 
-  const lastIdx = dates.length - 1;
+  const latestData = latestSnapshot?.data;
   return {
     generatedAt: new Date().toISOString(),
     dates,
@@ -81,17 +109,23 @@ function buildTimeline() {
     missingOnReact,
     missingOnReactNative,
     codeConnectCoverage,
+    codeConnectGaps,
+    missingCodeConnectReact,
+    missingCodeConnectReactNative,
     requiredSharedCount,
     inventoryCount,
     latest:
-      lastIdx >= 0
+      latestSnapshot && latestData
         ? {
-            date: dates[lastIdx],
-            requiredCoverage: requiredCoverage[lastIdx],
-            openGaps: openGaps[lastIdx],
-            missingOnReact: missingOnReact[lastIdx],
-            missingOnReactNative: missingOnReactNative[lastIdx],
-            codeConnectCoverage: codeConnectCoverage[lastIdx],
+            date: latestSnapshot.date,
+            requiredCoverage: latestData.summary?.requiredCoverage ?? null,
+            openGaps: latestData.summary?.openGaps ?? null,
+            missingOnReact: latestData.summary?.missingOnReact ?? null,
+            missingOnReactNative: latestData.summary?.missingOnReactNative ?? null,
+            codeConnectCoverage: latestData.summary?.codeConnectCoverage ?? null,
+            codeConnectGaps: latestData.summary?.codeConnectGaps ?? null,
+            missingCodeConnectReact: latestData.summary?.missingCodeConnectReact ?? null,
+            missingCodeConnectReactNative: latestData.summary?.missingCodeConnectReactNative ?? null,
           }
         : null,
   };
@@ -135,7 +169,7 @@ function main() {
 
   const s = report.summary;
   console.log(
-    `  inventory ${s.inventoryCount}, required ${s.requiredSharedCount}, coverage ${s.requiredCoverage}%, open gaps ${s.openGaps} (React ${s.missingOnReact}, RN ${s.missingOnReactNative}), Figma linked ${s.figmaLinked}, Code Connect ${s.codeConnectCoverage}%`,
+    `  inventory ${s.inventoryCount}, required ${s.requiredSharedCount}, coverage ${s.requiredCoverage}%, open gaps ${s.openGaps} (React ${s.missingOnReact}, RN ${s.missingOnReactNative}), Code Connect gaps ${s.codeConnectGaps} (React ${s.missingCodeConnectReact}, RN ${s.missingCodeConnectReactNative}), Figma linked ${s.figmaLinked}, Code Connect ${s.codeConnectCoverage}%`,
   );
 }
 

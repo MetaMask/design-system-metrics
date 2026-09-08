@@ -293,6 +293,13 @@ export interface AlignmentQueueItem {
   reactNative: boolean;
 }
 
+export interface AlignmentCodeConnectQueueItem {
+  name: string;
+  missingConnect: Array<'react' | 'reactNative'>;
+  react: boolean;
+  reactNative: boolean;
+}
+
 export interface AlignmentSummary {
   inventoryCount: number;
   requiredSharedCount: number;
@@ -306,6 +313,9 @@ export interface AlignmentSummary {
   codeConnectCoverage: number;
   codeConnectMapped: number;
   codeConnectSlots: number;
+  codeConnectGaps?: number;
+  missingCodeConnectReact?: number;
+  missingCodeConnectReactNative?: number;
   familiesAligned: number;
   familiesTotal: number;
 }
@@ -319,6 +329,7 @@ export interface AlignmentData {
   summary: AlignmentSummary;
   families: AlignmentFamily[];
   queue: AlignmentQueueItem[];
+  codeConnectQueue?: AlignmentCodeConnectQueueItem[];
   components: AlignmentComponent[];
 }
 
@@ -329,6 +340,9 @@ export interface AlignmentTimelineLatest {
   missingOnReact: number | null;
   missingOnReactNative: number | null;
   codeConnectCoverage: number | null;
+  codeConnectGaps: number | null;
+  missingCodeConnectReact: number | null;
+  missingCodeConnectReactNative: number | null;
 }
 
 export interface AlignmentTimeline {
@@ -339,6 +353,9 @@ export interface AlignmentTimeline {
   missingOnReact: (number | null)[];
   missingOnReactNative: (number | null)[];
   codeConnectCoverage: (number | null)[];
+  codeConnectGaps: (number | null)[];
+  missingCodeConnectReact: (number | null)[];
+  missingCodeConnectReactNative: (number | null)[];
   requiredSharedCount: (number | null)[];
   inventoryCount: (number | null)[];
   latest: AlignmentTimelineLatest | null;

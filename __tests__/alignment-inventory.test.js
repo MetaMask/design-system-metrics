@@ -145,6 +145,19 @@ describe('buildAlignmentReport', () => {
     expect(report.components.find((c) => c.name === 'Button').codeConnectReact).toBe(true);
     expect(report.components.find((c) => c.name === 'Text').codeConnectReact).toBe(false);
   });
+
+  test('Code Connect gaps count components missing a connect file on any platform', () => {
+    expect(report.summary.codeConnectGaps).toBe(5);
+    expect(report.summary.missingCodeConnectReact).toBe(3);
+    expect(report.summary.missingCodeConnectReactNative).toBe(3);
+    expect(report.codeConnectQueue.map((q) => q.name).sort()).toEqual([
+      'BoxRow',
+      'Card',
+      'Modal',
+      'Popover',
+      'Text',
+    ]);
+  });
 });
 
 describe('extractFigmaUrl', () => {
