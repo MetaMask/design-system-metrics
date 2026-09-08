@@ -2,11 +2,13 @@ import { useEffect } from 'react';
 import { HashRouter, Routes, Route, NavLink, Navigate, useLocation } from 'react-router-dom';
 import { Overview } from './pages/Overview';
 import { UntrackedComponents } from './pages/UntrackedComponents';
+import { Alignment } from './pages/Alignment';
 import './App.css';
 
 const navItems = [
-  { to: '/migration', label: 'Migration', title: 'MMDS Migration Metrics' },
   { to: '/adoption', label: 'Adoption', title: 'MMDS Adoption Metrics' },
+  { to: '/alignment', label: 'Alignment', title: 'MMDS Alignment' },
+  { to: '/migration', label: 'Migration', title: 'MMDS Migration Metrics' },
 ] as const;
 
 function DocumentTitle() {
@@ -45,10 +47,11 @@ function App() {
       </nav>
 
       <Routes>
+        <Route path="/alignment" element={<Alignment />} />
         <Route path="/migration" element={<Overview />} />
         <Route path="/adoption" element={<UntrackedComponents />} />
         {/* Back-compat redirects for previous URLs */}
-        <Route path="/" element={<Navigate to="/migration" replace />} />
+        <Route path="/" element={<Navigate to="/adoption" replace />} />
         <Route path="/untracked" element={<Navigate to="/adoption" replace />} />
       </Routes>
     </HashRouter>

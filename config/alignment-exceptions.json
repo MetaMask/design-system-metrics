@@ -1,0 +1,42 @@
+{
+  "excludeFromInventory": [
+    "PureBlackProvider"
+  ],
+  "helpers": [
+    "BoxColumn",
+    "BoxRow"
+  ],
+  "families": [
+    {
+      "id": "sheet-dialog",
+      "label": "Sheet / dialog chrome",
+      "rationale": "React uses Modal; React Native uses BottomSheet. Same job, platform-native pattern — not a missing port.",
+      "react": [
+        "Modal",
+        "ModalBody",
+        "ModalContent",
+        "ModalFocus",
+        "ModalFooter",
+        "ModalHeader",
+        "ModalOverlay"
+      ],
+      "reactNative": [
+        "BottomSheet",
+        "BottomSheetDialog",
+        "BottomSheetFooter",
+        "BottomSheetHeader",
+        "BottomSheetOverlay"
+      ]
+    },
+    {
+      "id": "floating-chrome",
+      "label": "Floating web chrome",
+      "rationale": "Popover is a web overlay pattern. React Native does not need a Popover port unless we explicitly decide otherwise. Tooltip is not in either package yet — do not treat it as an exception until it exists in Figma or code.",
+      "react": [
+        "Popover",
+        "PopoverHeader"
+      ],
+      "reactNative": []
+    }
+  ]
+}

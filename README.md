@@ -25,9 +25,10 @@ This repository is an internal reporting pipeline.
 
 #### **1) Dashboard**
 
-A React dashboard (`dashboard/`) that visualizes migration progress over time for Mobile and Extension using generated JSON in `metrics/`.
+A React dashboard (`dashboard/`) that visualizes MMDS alignment (Figma / React / React Native) plus migration progress over time for Mobile and Extension using generated JSON in `metrics/`.
 
 Current dashboard scope includes:
+- MMDS platform alignment (default)
 - Latest migration KPIs
 - 6-month trend charts
 - MMDS vs deprecated instance trends
@@ -62,6 +63,21 @@ Core implementation files:
 - `scripts/update-timeline.js`: rebuilds `metrics/timeline.json` + `metrics/index.json`
 - `scripts/validate-metrics-consistency.js`: consistency checks across generated artifacts
 - `scripts/generate-slack-report.js`: weekly Slack markdown output
+- `config/alignment-exceptions.json`: intentional platform-specific families (Modal/BottomSheet, Popover, helpers)
+- `scripts/lib/alignment-inventory.js`: MMDS package inventory + Code Connect classification
+- `scripts/discover-alignment.js`: writes `metrics/alignment-*.json` and `metrics/alignment-timeline.json`
+
+#### **Platform alignment**
+
+The Alignment tab measures MMDS itself: whether a component exists on React and
+React Native with the same name, plus Code Connect coverage. Figma is marked
+`linked` when a `.figma.tsx` file points at a Figma node; otherwise `unknown`.
+Unknown is not a gap, and linked is not a live library confirmation.
+
+Default: every component is required on both code platforms. A small exception
+list in `config/alignment-exceptions.json` names intentional platform families
+(Modal vs BottomSheet, Popover) and helpers to exclude.
+Output: `metrics/alignment-latest.json` and `metrics/alignment-timeline.json`.
 
 ---
 
@@ -77,7 +93,7 @@ yarn slack-report --output metrics/slack-report-YYYY-MM-DD.md
 cd dashboard && npm ci && npm run build
 ```
 
-`yarn pipeline` runs the full weekly sequence: config sync, extension/mobile scans, one-off discovery, **untracked timeline rebuild** (adoption trends + per-team replaceable history), migration timeline/index update, validation, and dashboard metrics copy.
+`yarn pipeline` runs the full weekly sequence: config sync, extension/mobile scans, one-off discovery, **untracked timeline rebuild** (adoption trends + per-team replaceable history), MMDS platform alignment inventory, migration timeline/index update, validation, and dashboard metrics copy.
 
 Manual stage breakdown (debugging only):
 
@@ -88,6 +104,7 @@ yarn start:mobile
 yarn discover:extension
 yarn discover:mobile
 yarn update-untracked-timeline
+yarn discover-alignment
 yarn update-timeline
 yarn validate-metrics
 cp metrics/*.json dashboard/public/metrics/
@@ -153,6 +170,8 @@ Generated in `metrics/`:
 - `mobile-component-metrics-YYYY-MM-DD-data.json`
 - `timeline.json`
 - `index.json`
+- `alignment-YYYY-MM-DD.json` (+ `alignment-latest.json`)
+- `alignment-timeline.json`
 - `slack-report-YYYY-MM-DD.md`
 
 Notes:

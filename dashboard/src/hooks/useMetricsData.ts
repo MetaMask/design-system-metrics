@@ -8,6 +8,8 @@ import type {
   MigrationTargetsData,
   UntrackedData,
   UntrackedTimeline,
+  AlignmentData,
+  AlignmentTimeline,
 } from '../types/metrics';
 
 const BASE_PATH = import.meta.env.BASE_URL || '/';
@@ -286,6 +288,63 @@ export function useMigrationTargets() {
       }
     };
 
+    fetchData();
+  }, []);
+
+  return { data, loading, error };
+}
+
+export function useAlignmentData() {
+  const [data, setData] = useState<AlignmentData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const res = await fetchMetrics('alignment-latest.json');
+        if (!res.ok) throw new Error('Failed to fetch alignment-latest.json');
+        setData(await res.json());
+        setError(null);
+      } catch (err) {
+        setError(err as Error);
+        setData(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  return { data, loading, error };
+}
+
+export function useAlignmentTimeline() {
+  const [data, setData] = useState<AlignmentTimeline | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const res = await fetchMetrics('alignment-timeline.json');
+        if (res.status === 404) {
+          setData(null);
+          setError(null);
+          return;
+        }
+        if (!res.ok) throw new Error('Failed to fetch alignment-timeline.json');
+        setData(await res.json());
+        setError(null);
+      } catch (err) {
+        setError(err as Error);
+        setData(null);
+      } finally {
+        setLoading(false);
+      }
+    };
     fetchData();
   }, []);
 

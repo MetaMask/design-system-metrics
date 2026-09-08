@@ -1,0 +1,1371 @@
+{
+  "date": "2026-09-07",
+  "generatedAt": "2026-09-07T23:55:09.121Z",
+  "source": "metamask-design-system component folders + Code Connect files",
+  "figmaStatus": "code-connect",
+  "summary": {
+    "inventoryCount": 83,
+    "requiredSharedCount": 67,
+    "platformExceptionCount": 14,
+    "helperExcludedCount": 2,
+    "requiredCoverage": 53.7,
+    "openGaps": 31,
+    "missingOnReact": 30,
+    "missingOnReactNative": 1,
+    "figmaLinked": 36,
+    "codeConnectCoverage": 47.9,
+    "codeConnectMapped": 56,
+    "codeConnectSlots": 117,
+    "familiesAligned": 2,
+    "familiesTotal": 2
+  },
+  "families": [
+    {
+      "id": "sheet-dialog",
+      "label": "Sheet / dialog chrome",
+      "rationale": "React uses Modal; React Native uses BottomSheet. Same job, platform-native pattern — not a missing port.",
+      "react": [
+        "Modal",
+        "ModalBody",
+        "ModalContent",
+        "ModalFocus",
+        "ModalFooter",
+        "ModalHeader",
+        "ModalOverlay"
+      ],
+      "reactNative": [
+        "BottomSheet",
+        "BottomSheetDialog",
+        "BottomSheetFooter",
+        "BottomSheetHeader",
+        "BottomSheetOverlay"
+      ],
+      "reactPresent": 7,
+      "reactNativePresent": 5,
+      "aligned": true
+    },
+    {
+      "id": "floating-chrome",
+      "label": "Floating web chrome",
+      "rationale": "Popover is a web overlay pattern. React Native does not need a Popover port unless we explicitly decide otherwise. Tooltip is not in either package yet — do not treat it as an exception until it exists in Figma or code.",
+      "react": [
+        "Popover",
+        "PopoverHeader"
+      ],
+      "reactNative": [],
+      "reactPresent": 2,
+      "reactNativePresent": 0,
+      "aligned": true
+    }
+  ],
+  "queue": [
+    {
+      "name": "ActionListItem",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "ButtonSemantic",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "Card",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "Content",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "FilterButton",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "FilterButtonGroup",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "HeaderRoot",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "HeaderSearch",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "HeaderStandard",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "HeaderStandardAnimated",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "HeaderSubpage",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "KeyValueColumn",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "KeyValueRow",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "KeyValueSelect",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "ListItem",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "ListItemMultiSelect",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "ListItemSelect",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "MainActionButton",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "RadioButton",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "SectionDivider",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "SectionHeader",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "SegmentedControl",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "SelectButton",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "Slider",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "Switch",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "TabEmptyState",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "TitleAlert",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "TitleHub",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "TitleStandard",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "TitleSubpage",
+      "missingOn": [
+        "react"
+      ],
+      "react": false,
+      "reactNative": true
+    },
+    {
+      "name": "FormTextField",
+      "missingOn": [
+        "reactNative"
+      ],
+      "react": true,
+      "reactNative": false
+    }
+  ],
+  "components": [
+    {
+      "name": "ActionListItem",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "AvatarAccount",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=18237-451",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "AvatarBase",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "AvatarFavicon",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=225%3A5186",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "AvatarGroup",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=310-2005",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "AvatarIcon",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=224-1636",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "AvatarNetwork",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=196-1563",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "AvatarToken",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=128-2312",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "BadgeCount",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=623-3506",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "BadgeIcon",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=1973-2439",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "BadgeNetwork",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=580-4660",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "BadgeStatus",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=623-3377",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "BadgeWrapper",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=18365-23780",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "BannerAlert",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=16610-22779",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "BannerBase",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=16610-20738",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "BottomSheet",
+      "classification": "platform_exception",
+      "familyId": "sheet-dialog",
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=16571-1026",
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "BottomSheetDialog",
+      "classification": "platform_exception",
+      "familyId": "sheet-dialog",
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=16571-1745",
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "BottomSheetFooter",
+      "classification": "platform_exception",
+      "familyId": "sheet-dialog",
+      "figma": "linked",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "BottomSheetHeader",
+      "classification": "platform_exception",
+      "familyId": "sheet-dialog",
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=16572-21288",
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "BottomSheetOverlay",
+      "classification": "platform_exception",
+      "familyId": "sheet-dialog",
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=16576-21410",
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "Box",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "BoxColumn",
+      "classification": "helper_excluded",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "BoxRow",
+      "classification": "helper_excluded",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "Button",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=1%3A304",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "ButtonBase",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=1%3A432",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "ButtonFilter",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "ButtonHero",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=5416%3A15232",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "ButtonIcon",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=1%3A2860",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "ButtonSemantic",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "Card",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "Checkbox",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=385%3A18907",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "Content",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "FilterButton",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=16475-25833",
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": true,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "FilterButtonGroup",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "FormTextField",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": false,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "reactNative"
+      ]
+    },
+    {
+      "name": "HeaderBase",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "HeaderRoot",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "HeaderSearch",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "HeaderStandard",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "HeaderStandardAnimated",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "HeaderSubpage",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "HelpText",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "Icon",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=1%3A2554",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "IconAlert",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=4757-12584",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "Input",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "KeyValueColumn",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "KeyValueRow",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "KeyValueSelect",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "Label",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "ListItem",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "ListItemMultiSelect",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "ListItemSelect",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "MainActionButton",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=15793-13",
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": true,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "Modal",
+      "classification": "platform_exception",
+      "familyId": "sheet-dialog",
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": false,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "ModalBody",
+      "classification": "platform_exception",
+      "familyId": "sheet-dialog",
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": false,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "ModalContent",
+      "classification": "platform_exception",
+      "familyId": "sheet-dialog",
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": false,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "ModalFocus",
+      "classification": "platform_exception",
+      "familyId": "sheet-dialog",
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": false,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "ModalFooter",
+      "classification": "platform_exception",
+      "familyId": "sheet-dialog",
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": false,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "ModalHeader",
+      "classification": "platform_exception",
+      "familyId": "sheet-dialog",
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": false,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "ModalOverlay",
+      "classification": "platform_exception",
+      "familyId": "sheet-dialog",
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": false,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "Popover",
+      "classification": "platform_exception",
+      "familyId": "floating-chrome",
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": false,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "PopoverHeader",
+      "classification": "platform_exception",
+      "familyId": "floating-chrome",
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": false,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "RadioButton",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "SectionDivider",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "SectionHeader",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "SegmentedControl",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=16499-254",
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": true,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "SelectButton",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "SensitiveText",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "Skeleton",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "Slider",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "Switch",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=16017-31",
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": true,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "TabEmptyState",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "Tag",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=13223-1347",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "Text",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "TextArea",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=12302%3A528",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "TextButton",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=1%3A398",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": true,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    },
+    {
+      "name": "TextField",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "TextFieldSearch",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": []
+    },
+    {
+      "name": "TitleAlert",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=14851-114",
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": true,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "TitleHub",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=15293-24032",
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": true,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "TitleStandard",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/1D6tnzXqWgnUC3spaAOELN/%F0%9F%A6%8A-MMDS-Components?node-id=15535-3398",
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": true,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "TitleSubpage",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "unknown",
+      "figmaUrl": null,
+      "react": false,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": false,
+      "missingOn": [
+        "react"
+      ]
+    },
+    {
+      "name": "Toast",
+      "classification": "required_shared",
+      "familyId": null,
+      "figma": "linked",
+      "figmaUrl": "https://www.figma.com/design/wM7fvpmK8hr8iA4TTkL8qV/%F0%9F%A6%8A-MMDS-Components?node-id=10690%3A2640",
+      "react": true,
+      "reactNative": true,
+      "codeConnectReact": false,
+      "codeConnectReactNative": true,
+      "missingOn": []
+    }
+  ]
+}
