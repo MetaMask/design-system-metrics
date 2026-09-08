@@ -6,9 +6,9 @@ import { Alignment } from './pages/Alignment';
 import './App.css';
 
 const navItems = [
+  { to: '/adoption', label: 'Adoption', title: 'MMDS Adoption Metrics' },
   { to: '/alignment', label: 'Alignment', title: 'MMDS Alignment' },
   { to: '/migration', label: 'Migration', title: 'MMDS Migration Metrics' },
-  { to: '/adoption', label: 'Adoption', title: 'MMDS Adoption Metrics' },
 ] as const;
 
 function DocumentTitle() {
@@ -51,7 +51,7 @@ function App() {
         <Route path="/migration" element={<Overview />} />
         <Route path="/adoption" element={<UntrackedComponents />} />
         {/* Back-compat redirects for previous URLs */}
-        <Route path="/" element={<Navigate to="/alignment" replace />} />
+        <Route path="/" element={<Navigate to="/adoption" replace />} />
         <Route path="/untracked" element={<Navigate to="/adoption" replace />} />
       </Routes>
     </HashRouter>

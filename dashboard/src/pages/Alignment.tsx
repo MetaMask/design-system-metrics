@@ -1,15 +1,47 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts';
 import { useAlignmentData, useAlignmentTimeline } from '../hooks/useMetricsData';
 import { Loading } from '../components/Loading';
 import { ErrorMessage } from '../components/ErrorMessage';
+import { formatSignedDelta, weekOverWeekDelta } from '../lib/adoptionMetrics';
 import type {
   AlignmentClassification,
   AlignmentComponent,
+  AlignmentData,
   AlignmentFamily,
+  AlignmentQueueItem,
   AlignmentTimeline,
 } from '../types/metrics';
 
+const TREND_WEEKS = 26;
+const COVERAGE_GOAL = 90;
+
 type MatrixFilter = 'all' | 'gaps' | 'required' | 'exceptions';
+type QueueTab = 'platform' | 'codeConnect';
+type PlatformFilter = 'all' | 'react' | 'reactNative';
+type BucketFilter = 'all' | 'both' | 'rnOnly' | 'reactOnly';
+
+interface CodeConnectGap {
+  name: string;
+  missingConnect: Array<'react' | 'reactNative'>;
+  component: AlignmentComponent;
+}
+
+const NAV_SECTIONS = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'work-queue', label: 'Work queue' },
+  { id: 'inventory', label: 'Inventory' },
+  { id: 'exceptions', label: 'Exceptions' },
+] as const;
 
 function coverageDelta(timeline: AlignmentTimeline | null): number | null {
   if (!timeline || timeline.requiredCoverage.length < 2) return null;
@@ -27,10 +59,38 @@ function gapsDelta(timeline: AlignmentTimeline | null): number | null {
   return latest - prev;
 }
 
+function codeConnectDelta(timeline: AlignmentTimeline | null): number | null {
+  if (!timeline || timeline.codeConnectCoverage.length < 2) return null;
+  const latest = timeline.codeConnectCoverage[timeline.codeConnectCoverage.length - 1];
+  const prev = timeline.codeConnectCoverage[timeline.codeConnectCoverage.length - 2];
+  if (latest == null || prev == null) return null;
+  return Math.round((latest - prev) * 10) / 10;
+}
+
 function classificationLabel(kind: AlignmentClassification): string {
   if (kind === 'required_shared') return 'Required';
   if (kind === 'platform_exception') return 'Exception';
   return 'Helper';
+}
+
+const ALIGNMENT_PILL =
+  'inline-flex items-center justify-center rounded-full px-2.5 py-1 text-xs font-medium leading-none whitespace-nowrap';
+
+function AlignmentPill({
+  children,
+  tone,
+}: {
+  children: React.ReactNode;
+  tone: 'yes' | 'no' | 'neutral';
+}) {
+  const toneClass =
+    tone === 'yes'
+      ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300'
+      : tone === 'no'
+      ? 'bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300'
+      : 'bg-gray-100 text-gray-500 dark:bg-gray-700 dark:text-gray-400';
+
+  return <span className={`${ALIGNMENT_PILL} ${toneClass}`}>{children}</span>;
 }
 
 function Presence({
@@ -41,34 +101,18 @@ function Presence({
   required: boolean;
 }) {
   if (present) {
-    return (
-      <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-emerald-100 text-xs font-medium text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300">
-        Yes
-      </span>
-    );
+    return <AlignmentPill tone="yes">Yes</AlignmentPill>;
   }
   if (!required) {
-    return (
-      <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-gray-100 text-xs text-gray-500 dark:bg-gray-700 dark:text-gray-400">
-        —
-      </span>
-    );
+    return <AlignmentPill tone="neutral">—</AlignmentPill>;
   }
-  return (
-    <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-red-100 text-xs font-medium text-red-800 dark:bg-red-900/40 dark:text-red-300">
-      No
-    </span>
-  );
+  return <AlignmentPill tone="no">No</AlignmentPill>;
 }
 
 function FigmaCell({ status, url }: { status: AlignmentComponent['figma']; url: string | null }) {
   if (status === 'linked' || status === 'present') {
     const label = status === 'present' ? 'Yes' : 'Linked';
-    const pill = (
-      <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-emerald-100 text-xs font-medium text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300">
-        {label}
-      </span>
-    );
+    const pill = <AlignmentPill tone="yes">{label}</AlignmentPill>;
     if (!url) return pill;
     return (
       <a href={url} target="_blank" rel="noreferrer" className="inline-flex hover:opacity-80">
@@ -77,22 +121,30 @@ function FigmaCell({ status, url }: { status: AlignmentComponent['figma']; url: 
     );
   }
   if (status === 'missing') {
-    return (
-      <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-red-100 text-xs font-medium text-red-800 dark:bg-red-900/40 dark:text-red-300">
-        No
-      </span>
-    );
+    return <AlignmentPill tone="no">No</AlignmentPill>;
   }
+  return <AlignmentPill tone="neutral">Unknown</AlignmentPill>;
+}
+
+function MissingOnPills({ missingOn }: { missingOn: Array<'react' | 'reactNative'> }) {
+  const labels: Record<'react' | 'reactNative', string> = {
+    react: 'React',
+    reactNative: 'React Native',
+  };
+
   return (
-    <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-gray-100 text-xs text-gray-500 dark:bg-gray-700 dark:text-gray-400">
-      Unknown
-    </span>
+    <div className="flex flex-wrap gap-1.5">
+      {missingOn.map((platform) => (
+        <AlignmentPill key={platform} tone="no">
+          {labels[platform]}
+        </AlignmentPill>
+      ))}
+    </div>
   );
 }
 
 type Tone = 'bad' | 'warn' | 'good';
 
-/** Below 70% is not close enough to call the system aligned; 90% is the "healthy" bar. */
 function coverageTone(pct: number): Tone {
   if (pct < 70) return 'bad';
   if (pct < 90) return 'warn';
@@ -130,7 +182,6 @@ function KpiCard({
   value: string;
   subtitle: string;
   tone: Tone;
-  /** Share of the goal met, drawn as a proportion bar under the value. */
   fillPercent: number;
   delta?: number | null;
   deltaPositiveIsGood?: boolean;
@@ -163,6 +214,52 @@ function KpiCard({
   );
 }
 
+function WeeklyTrendStat({
+  label,
+  value,
+  delta,
+  deltaUnit,
+  positiveIsGood,
+  accent,
+}: {
+  label: string;
+  value: string;
+  delta: number;
+  deltaUnit: string;
+  positiveIsGood: boolean;
+  accent: 'amber' | 'emerald' | 'purple' | 'gray' | 'red';
+}) {
+  const isFlat = delta === 0;
+  const isGood = positiveIsGood ? delta > 0 : delta < 0;
+  const accentText = {
+    amber: 'text-amber-600 dark:text-amber-400',
+    emerald: 'text-emerald-600 dark:text-emerald-400',
+    purple: 'text-purple-600 dark:text-purple-400',
+    gray: 'text-gray-900 dark:text-white',
+    red: 'text-red-600 dark:text-red-400',
+  }[accent];
+
+  return (
+    <div className="rounded-lg border border-gray-100 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-900/30 px-4 py-3">
+      <p className="text-[11px] font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">
+        {label}
+      </p>
+      <p className={`text-xl font-bold mt-0.5 ${accentText}`}>{value}</p>
+      <p
+        className={`text-xs mt-1 ${
+          isFlat
+            ? 'text-gray-400 dark:text-gray-500'
+            : isGood
+            ? 'text-emerald-600 dark:text-emerald-400'
+            : 'text-red-500 dark:text-red-400'
+        }`}
+      >
+        {isFlat ? 'No change vs prior week' : `${formatSignedDelta(delta, deltaUnit)} vs prior week`}
+      </p>
+    </div>
+  );
+}
+
 function familyMembersLabel(family: AlignmentFamily): string {
   const side = (names: string[], present: number, platform: string) =>
     names.length === 0 ? `${platform}: not required` : `${platform}: ${present}/${names.length}`;
@@ -173,31 +270,436 @@ function familyMembersLabel(family: AlignmentFamily): string {
   )}`;
 }
 
-function missingLabel(missingOn: Array<'react' | 'reactNative'>): string {
-  return missingOn
-    .map((p) => (p === 'react' ? 'React' : 'React Native'))
-    .join(', ');
-}
-
 function githubComponentUrl(platform: 'react' | 'reactNative', name: string): string {
   const pkg = platform === 'react' ? 'design-system-react' : 'design-system-react-native';
   return `https://github.com/MetaMask/metamask-design-system/tree/main/packages/${pkg}/src/components/${name}`;
 }
 
+function buildWeeklySummary(
+  data: AlignmentData,
+  covDelta: number | null,
+  gapDelta: number | null
+): string {
+  const s = data.summary;
+  const covPart =
+    covDelta != null && covDelta !== 0
+      ? ` (${formatSignedDelta(covDelta, ' pp')} vs prior week)`
+      : '';
+  const gapPart =
+    gapDelta != null && gapDelta !== 0
+      ? ` (${formatSignedDelta(gapDelta, '')} vs prior week)`
+      : '';
+  const topGaps = data.queue
+    .slice(0, 5)
+    .map((q) => q.name)
+    .join(', ');
+  return [
+    `Alignment ${data.date}: ${s.requiredCoverage}% required coverage${covPart}.`,
+    `${s.openGaps} open platform gaps${gapPart} (${s.missingOnReact} React, ${s.missingOnReactNative} RN).`,
+    `Code Connect ${s.codeConnectCoverage}%.`,
+    topGaps ? `Top queue: ${topGaps}.` : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+}
+
+function ActionLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline underline-offset-2"
+    >
+      {children}
+    </a>
+  );
+}
+
+function PlatformQueueActions({ item }: { item: AlignmentQueueItem }) {
+  const links: Array<{ key: string; href: string; label: string }> = [];
+
+  if (item.missingOn.includes('react')) {
+    if (item.reactNative) {
+      links.push({
+        key: 'port-rn',
+        href: githubComponentUrl('reactNative', item.name),
+        label: 'Port from RN',
+      });
+    }
+    links.push({
+      key: 'add-react',
+      href: githubComponentUrl('react', item.name),
+      label: 'Add React',
+    });
+  }
+
+  if (item.missingOn.includes('reactNative')) {
+    if (item.react) {
+      links.push({
+        key: 'port-react',
+        href: githubComponentUrl('react', item.name),
+        label: 'Port from React',
+      });
+    }
+    links.push({
+      key: 'add-rn',
+      href: githubComponentUrl('reactNative', item.name),
+      label: 'Add RN',
+    });
+  }
+
+  if (links.length === 0) {
+    return <span className="text-gray-400 dark:text-gray-500">—</span>;
+  }
+
+  return (
+    <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm">
+      {links.map((link) => (
+        <ActionLink key={link.key} href={link.href}>
+          {link.label}
+        </ActionLink>
+      ))}
+    </div>
+  );
+}
+
+function CodeConnectActions({ component: c }: { component: AlignmentComponent }) {
+  const links: Array<{ key: string; href: string; label: string }> = [];
+
+  if (c.react && !c.codeConnectReact) {
+    links.push({
+      key: 'connect-react',
+      href: githubComponentUrl('react', c.name),
+      label: 'Add React Connect',
+    });
+  }
+  if (c.reactNative && !c.codeConnectReactNative) {
+    links.push({
+      key: 'connect-rn',
+      href: githubComponentUrl('reactNative', c.name),
+      label: 'Add RN Connect',
+    });
+  }
+  if (c.figmaUrl) {
+    links.push({ key: 'figma', href: c.figmaUrl, label: 'Figma' });
+  }
+
+  return (
+    <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm">
+      {links.map((link) => (
+        <ActionLink key={link.key} href={link.href}>
+          {link.label}
+        </ActionLink>
+      ))}
+    </div>
+  );
+}
+
+function buildCodeConnectGaps(components: AlignmentComponent[]): CodeConnectGap[] {
+  return components
+    .filter(
+      (c) =>
+        (c.react && !c.codeConnectReact) || (c.reactNative && !c.codeConnectReactNative)
+    )
+    .map((c) => ({
+      name: c.name,
+      missingConnect: [
+        ...(c.react && !c.codeConnectReact ? (['react'] as const) : []),
+        ...(c.reactNative && !c.codeConnectReactNative ? (['reactNative'] as const) : []),
+      ],
+      component: c,
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+function AlignmentTrendSection({
+  timeline,
+  data,
+}: {
+  timeline: AlignmentTimeline | null;
+  data: AlignmentData;
+}) {
+  const s = data.summary;
+
+  const chartData = useMemo(() => {
+    if (!timeline) return [];
+    return timeline.dates.map((date, i) => ({
+      date,
+      coverage: timeline.requiredCoverage[i] ?? null,
+      codeConnect: timeline.codeConnectCoverage[i] ?? null,
+      openGaps: timeline.openGaps[i] ?? null,
+      missingReact: timeline.missingOnReact[i] ?? null,
+    }));
+  }, [timeline]);
+
+  const trendSlice = chartData.slice(-TREND_WEEKS);
+  const hasTrend = trendSlice.length >= 2;
+  const latest = trendSlice[trendSlice.length - 1];
+
+  const coverageSeries = trendSlice.map((d) => d.coverage ?? 0);
+  const gapsSeries = trendSlice.map((d) => d.openGaps ?? 0);
+  const connectSeries = trendSlice.map((d) => d.codeConnect ?? 0);
+  const missingReactSeries = trendSlice.map((d) => d.missingReact ?? 0);
+
+  const coverageWoW = weekOverWeekDelta(coverageSeries);
+  const gapsWoW = weekOverWeekDelta(gapsSeries);
+  const connectWoW = weekOverWeekDelta(connectSeries);
+  const missingReactWoW = weekOverWeekDelta(missingReactSeries);
+
+  const PercentTooltip = ({ active, payload, label }: any) => {
+    if (!active || !payload?.length) return null;
+    return (
+      <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow p-3 text-xs">
+        <p className="font-semibold text-gray-700 dark:text-gray-200 mb-1">{label}</p>
+        {payload.map((p: any) => (
+          <p key={p.dataKey} style={{ color: p.color }} className="mb-0.5">
+            {p.name}: {p.value != null ? `${Number(p.value).toFixed(1)}%` : '—'}
+          </p>
+        ))}
+      </div>
+    );
+  };
+
+  const CountTooltip = ({ active, payload, label }: any) => {
+    if (!active || !payload?.length) return null;
+    return (
+      <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow p-3 text-xs">
+        <p className="font-semibold text-gray-700 dark:text-gray-200 mb-1">{label}</p>
+        {payload.map((p: any) => (
+          <p key={p.dataKey} style={{ color: p.color }} className="mb-0.5">
+            {p.name}: {p.value != null ? Number(p.value).toLocaleString() : '—'}
+          </p>
+        ))}
+      </div>
+    );
+  };
+
+  return (
+    <section className="bg-white dark:bg-gray-800 rounded-lg shadow p-5 mb-8 space-y-5">
+      <div>
+        <h2 className="text-base font-semibold text-gray-900 dark:text-white">
+          Alignment trends
+        </h2>
+        <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
+          Tracks the{' '}
+          <span className="font-medium text-emerald-600 dark:text-emerald-400">
+            {s.requiredCoverage}% required coverage
+          </span>{' '}
+          headline, open platform gaps ({s.openGaps}), and Code Connect coverage (
+          {s.codeConnectCoverage}%).
+        </p>
+      </div>
+
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <WeeklyTrendStat
+          label="Coverage ↔ headline"
+          value={latest?.coverage != null ? `${latest.coverage.toFixed(1)}%` : `${s.requiredCoverage}%`}
+          delta={coverageWoW}
+          deltaUnit=" pp"
+          positiveIsGood
+          accent="emerald"
+        />
+        <WeeklyTrendStat
+          label="Open gaps ↔ platform queue"
+          value={String(latest?.openGaps ?? s.openGaps)}
+          delta={gapsWoW}
+          deltaUnit=""
+          positiveIsGood={false}
+          accent="red"
+        />
+        <WeeklyTrendStat
+          label="Missing React ↔ queue tab"
+          value={String(latest?.missingReact ?? s.missingOnReact)}
+          delta={missingReactWoW}
+          deltaUnit=""
+          positiveIsGood={false}
+          accent="amber"
+        />
+        <WeeklyTrendStat
+          label="Code Connect ↔ design bridge"
+          value={
+            latest?.codeConnect != null ? `${latest.codeConnect.toFixed(1)}%` : `${s.codeConnectCoverage}%`
+          }
+          delta={connectWoW}
+          deltaUnit=" pp"
+          positiveIsGood
+          accent="purple"
+        />
+      </div>
+
+      {hasTrend ? (
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+          <div>
+            <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              Coverage &amp; Code Connect
+            </h3>
+            <ResponsiveContainer width="100%" height={240}>
+              <LineChart data={trendSlice}>
+                <CartesianGrid strokeDasharray="3 3" className="opacity-30" />
+                <XAxis dataKey="date" tick={{ fontSize: 11 }} />
+                <YAxis domain={[0, 100]} tick={{ fontSize: 11 }} unit="%" />
+                <Tooltip content={<PercentTooltip />} />
+                <Legend wrapperStyle={{ fontSize: 12 }} />
+                <Line
+                  type="monotone"
+                  dataKey="coverage"
+                  name="Required coverage"
+                  stroke="#10b981"
+                  strokeWidth={2}
+                  dot={false}
+                  connectNulls
+                />
+                <Line
+                  type="monotone"
+                  dataKey="codeConnect"
+                  name="Code Connect"
+                  stroke="#8b5cf6"
+                  strokeWidth={2}
+                  dot={false}
+                  connectNulls
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+          <div>
+            <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              Open platform gaps
+            </h3>
+            <ResponsiveContainer width="100%" height={240}>
+              <LineChart data={trendSlice}>
+                <CartesianGrid strokeDasharray="3 3" className="opacity-30" />
+                <XAxis dataKey="date" tick={{ fontSize: 11 }} />
+                <YAxis tick={{ fontSize: 11 }} allowDecimals={false} />
+                <Tooltip content={<CountTooltip />} />
+                <Legend wrapperStyle={{ fontSize: 12 }} />
+                <Line
+                  type="monotone"
+                  dataKey="openGaps"
+                  name="Open gaps"
+                  stroke="#ef4444"
+                  strokeWidth={2}
+                  dot={false}
+                  connectNulls
+                />
+                <Line
+                  type="monotone"
+                  dataKey="missingReact"
+                  name="Missing React"
+                  stroke="#f59e0b"
+                  strokeWidth={2}
+                  dot={false}
+                  connectNulls
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      ) : (
+        <p className="text-sm text-gray-500 dark:text-gray-400 rounded-lg border border-dashed border-gray-200 dark:border-gray-700 px-4 py-3">
+          Trend charts appear after two weekly scans. Snapshot cards above still reflect this
+          week&apos;s headline metrics.
+        </p>
+      )}
+    </section>
+  );
+}
+
+function SectionNav({ activeId }: { activeId: string | null }) {
+  return (
+    <nav className="sticky top-0 z-20 -mx-6 px-6 py-3 mb-6 bg-gray-50/95 dark:bg-gray-900/95 backdrop-blur border-b border-gray-200 dark:border-gray-700">
+      <div className="flex flex-wrap gap-2">
+        {NAV_SECTIONS.map(({ id, label }) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+              activeId === id
+                ? 'bg-blue-600 text-white'
+                : 'bg-white text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700'
+            }`}
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+    </nav>
+  );
+}
+
 export function Alignment() {
   const { data, loading, error } = useAlignmentData();
   const { data: timeline } = useAlignmentTimeline();
-  const [filter, setFilter] = useState<MatrixFilter>('all');
+  const workQueueRef = useRef<HTMLElement>(null);
 
-  const rows = useMemo(() => {
+  const [matrixFilter, setMatrixFilter] = useState<MatrixFilter>('gaps');
+  const [queueTab, setQueueTab] = useState<QueueTab>('platform');
+  const [platformFilter, setPlatformFilter] = useState<PlatformFilter>('all');
+  const [bucketFilter, setBucketFilter] = useState<BucketFilter>('all');
+  const [search, setSearch] = useState('');
+  const [exceptionsOpen, setExceptionsOpen] = useState(false);
+  const [summaryCopied, setSummaryCopied] = useState(false);
+
+  const codeConnectGaps = useMemo(
+    () => (data ? buildCodeConnectGaps(data.components) : []),
+    [data]
+  );
+
+  const platformQueue = useMemo(() => {
+    if (!data) return [];
+    let items = data.queue;
+    if (platformFilter === 'react') {
+      items = items.filter((item) => item.missingOn.includes('react'));
+    } else if (platformFilter === 'reactNative') {
+      items = items.filter((item) => item.missingOn.includes('reactNative'));
+    }
+    if (bucketFilter === 'rnOnly') {
+      items = items.filter((item) => !item.react && item.reactNative);
+    } else if (bucketFilter === 'reactOnly') {
+      items = items.filter((item) => item.react && !item.reactNative);
+    }
+    if (search.trim()) {
+      const q = search.trim().toLowerCase();
+      items = items.filter((item) => item.name.toLowerCase().includes(q));
+    }
+    return items;
+  }, [data, platformFilter, bucketFilter, search]);
+
+  const filteredCodeConnectGaps = useMemo(() => {
+    if (!search.trim()) return codeConnectGaps;
+    const q = search.trim().toLowerCase();
+    return codeConnectGaps.filter((item) => item.name.toLowerCase().includes(q));
+  }, [codeConnectGaps, search]);
+
+  const matrixRows = useMemo(() => {
     if (!data) return [];
     return data.components.filter((c) => {
-      if (filter === 'gaps') return c.missingOn.length > 0;
-      if (filter === 'required') return c.classification === 'required_shared';
-      if (filter === 'exceptions') return c.classification !== 'required_shared';
+      if (matrixFilter === 'gaps') return c.missingOn.length > 0;
+      if (matrixFilter === 'required') return c.classification === 'required_shared';
+      if (matrixFilter === 'exceptions') return c.classification !== 'required_shared';
       return true;
+    }).filter((c) => {
+      if (!search.trim()) return true;
+      return c.name.toLowerCase().includes(search.trim().toLowerCase());
     });
-  }, [data, filter]);
+  }, [data, matrixFilter, search]);
+
+  const applyBucketFilter = (bucket: BucketFilter) => {
+    setBucketFilter((prev) => (prev === bucket ? 'all' : bucket));
+    setQueueTab('platform');
+    setMatrixFilter('gaps');
+    workQueueRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const copySummary = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setSummaryCopied(true);
+      window.setTimeout(() => setSummaryCopied(false), 2000);
+    } catch {
+      setSummaryCopied(false);
+    }
+  };
 
   if (loading) return <Loading />;
   if (error) return <ErrorMessage error={error} />;
@@ -206,113 +708,277 @@ export function Alignment() {
   const s = data.summary;
   const covDelta = coverageDelta(timeline);
   const gapDelta = gapsDelta(timeline);
+  const connectDelta = codeConnectDelta(timeline);
+  const weeklySummary = buildWeeklySummary(data, covDelta, gapDelta);
   const required = data.components.filter((c) => c.classification === 'required_shared');
   const split = [
     {
+      id: 'both' as const,
       label: 'On React and React Native',
       bar: 'bg-emerald-500',
       count: required.filter((c) => c.react && c.reactNative).length,
+      bucket: 'both' as BucketFilter,
     },
     {
+      id: 'rnOnly' as const,
       label: 'React Native only (React missing)',
       bar: 'bg-red-500',
       count: required.filter((c) => !c.react && c.reactNative).length,
+      bucket: 'rnOnly' as BucketFilter,
     },
     {
+      id: 'reactOnly' as const,
       label: 'React only (React Native missing)',
       bar: 'bg-amber-500',
       count: required.filter((c) => c.react && !c.reactNative).length,
+      bucket: 'reactOnly' as BucketFilter,
     },
   ];
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-6">
       <div className="max-w-7xl mx-auto">
-        <header className="mb-8">
+        <header className="mb-6">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
             MMDS Alignment
           </h1>
           <p className="text-gray-500 dark:text-gray-400 max-w-3xl">
-            Alignment is MMDS quality across Figma, React, and React Native: the same applicable
-            component name and shared core API, unless a platform is supposed to differ. Missing
-            required platforms are work. Intentional exceptions are named so they are not treated
-            as forgotten ports. Product migration stays on the Migration and Adoption tabs.
+            MMDS quality across Figma, React, and React Native. The work queue below is what to
+            fix this week; the inventory matrix is the full reference. Product migration stays on
+            Migration and Adoption.
           </p>
           <p className="text-sm text-gray-400 dark:text-gray-500 mt-2">
-            Last scanned: {data.date}. Figma <span className="font-medium text-gray-500 dark:text-gray-400">Linked</span> means a Code Connect file points at a Figma node. That is not a live library scan, and unknown is not a gap.
+            Last scanned: {data.date}. Figma{' '}
+            <span className="font-medium text-gray-500 dark:text-gray-400">Linked</span> means a
+            Code Connect file points at a Figma node — not a live library scan.
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <KpiCard
-            title="Required-platform coverage"
-            value={`${s.requiredCoverage}%`}
-            subtitle={`${s.requiredSharedCount - s.openGaps} of ${s.requiredSharedCount} required components exist on React and React Native`}
-            tone={coverageTone(s.requiredCoverage)}
-            fillPercent={s.requiredCoverage}
-            delta={covDelta}
-            deltaPositiveIsGood
-          />
-          <KpiCard
-            title="Open alignment gaps"
-            value={String(s.openGaps)}
-            subtitle={`Missing on React: ${s.missingOnReact}. Missing on React Native: ${s.missingOnReactNative}.`}
-            tone={s.openGaps === 0 ? 'good' : 'bad'}
-            fillPercent={
-              s.requiredSharedCount === 0 ? 0 : (s.openGaps / s.requiredSharedCount) * 100
-            }
-            delta={gapDelta}
-            deltaPositiveIsGood={false}
-          />
-          <KpiCard
-            title="Code Connect coverage"
-            value={`${s.codeConnectCoverage}%`}
-            subtitle={`${s.codeConnectMapped} of ${s.codeConnectSlots} code-platform slots have a .figma.tsx file`}
-            tone={coverageTone(s.codeConnectCoverage)}
-            fillPercent={s.codeConnectCoverage}
-          />
+        <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-3 mb-6 flex flex-wrap items-start justify-between gap-3">
+          <p className="text-sm text-gray-700 dark:text-gray-300 flex-1 min-w-[16rem]">
+            {weeklySummary}
+          </p>
+          <button
+            type="button"
+            onClick={() => copySummary(weeklySummary)}
+            className="shrink-0 px-3 py-1.5 rounded-md text-xs font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
+          >
+            {summaryCopied ? 'Copied' : 'Copy summary'}
+          </button>
         </div>
 
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow mb-8 p-6">
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-            Where the required components stand
-          </h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-            Every required component sits in exactly one of these buckets.
-          </p>
-          <div className="flex h-6 w-full overflow-hidden rounded-md bg-gray-200 dark:bg-gray-700">
-            {split.map((bucket) =>
-              bucket.count === 0 ? null : (
-                <div
-                  key={bucket.label}
-                  className={bucket.bar}
-                  style={{ width: `${(bucket.count / Math.max(1, s.requiredSharedCount)) * 100}%` }}
-                  title={`${bucket.label}: ${bucket.count}`}
-                />
-              )
-            )}
+        <SectionNav activeId={null} />
+
+        <section id="overview" className="scroll-mt-24">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <KpiCard
+              title="Required-platform coverage"
+              value={`${s.requiredCoverage}%`}
+              subtitle={`${s.requiredSharedCount - s.openGaps} of ${s.requiredSharedCount} required components on both React and React Native · goal ${COVERAGE_GOAL}%`}
+              tone={coverageTone(s.requiredCoverage)}
+              fillPercent={s.requiredCoverage}
+              delta={covDelta}
+              deltaPositiveIsGood
+            />
+            <KpiCard
+              title="Open platform gaps"
+              value={String(s.openGaps)}
+              subtitle={`Missing React: ${s.missingOnReact}. Missing RN: ${s.missingOnReactNative}. See work queue.`}
+              tone={s.openGaps === 0 ? 'good' : 'bad'}
+              fillPercent={
+                s.requiredSharedCount === 0 ? 0 : (s.openGaps / s.requiredSharedCount) * 100
+              }
+              delta={gapDelta}
+              deltaPositiveIsGood={false}
+            />
+            <KpiCard
+              title="Code Connect coverage"
+              value={`${s.codeConnectCoverage}%`}
+              subtitle={`${s.codeConnectMapped} of ${s.codeConnectSlots} code-platform slots mapped · ${codeConnectGaps.length} unmapped in queue`}
+              tone={coverageTone(s.codeConnectCoverage)}
+              fillPercent={s.codeConnectCoverage}
+              delta={connectDelta}
+              deltaPositiveIsGood
+            />
           </div>
-          <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-sm">
-            {split.map((bucket) => (
-              <li key={bucket.label} className="flex items-center gap-2">
-                <span className={`h-2.5 w-2.5 rounded-sm ${bucket.bar}`} />
-                <span className="text-gray-600 dark:text-gray-300">{bucket.label}</span>
-                <span className="font-medium text-gray-900 dark:text-white">{bucket.count}</span>
-              </li>
-            ))}
-          </ul>
+
+          <AlignmentTrendSection timeline={timeline} data={data} />
+
+          <section className="bg-white dark:bg-gray-800 rounded-lg shadow mb-8 p-6">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+              Required component buckets
+            </h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+              Click a bucket to filter the platform work queue.
+              {bucketFilter !== 'all' && (
+                <button
+                  type="button"
+                  onClick={() => setBucketFilter('all')}
+                  className="ml-2 text-blue-600 dark:text-blue-400 underline"
+                >
+                  Clear filter
+                </button>
+              )}
+            </p>
+            <div className="flex h-6 w-full overflow-hidden rounded-md bg-gray-200 dark:bg-gray-700">
+              {split.map((bucket) =>
+                bucket.count === 0 ? null : (
+                  <button
+                    key={bucket.id}
+                    type="button"
+                    onClick={() => applyBucketFilter(bucket.bucket)}
+                    className={`${bucket.bar} ${
+                      bucketFilter === bucket.bucket ? 'ring-2 ring-inset ring-white/70' : ''
+                    } hover:opacity-90 transition-opacity cursor-pointer`}
+                    style={{
+                      width: `${(bucket.count / Math.max(1, s.requiredSharedCount)) * 100}%`,
+                    }}
+                    title={`${bucket.label}: ${bucket.count}`}
+                    aria-label={`Filter queue to ${bucket.label}`}
+                  />
+                )
+              )}
+            </div>
+            <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              {split.map((bucket) => (
+                <li key={bucket.id}>
+                  <button
+                    type="button"
+                    onClick={() => applyBucketFilter(bucket.bucket)}
+                    className={`flex items-center gap-2 rounded-md px-1 py-0.5 transition-colors ${
+                      bucketFilter === bucket.bucket
+                        ? 'ring-1 ring-blue-500 bg-blue-50 dark:bg-blue-900/20'
+                        : 'hover:bg-gray-100 dark:hover:bg-gray-700/50'
+                    }`}
+                  >
+                    <span className={`h-2.5 w-2.5 rounded-sm ${bucket.bar}`} />
+                    <span className="text-gray-600 dark:text-gray-300">{bucket.label}</span>
+                    <span className="font-medium text-gray-900 dark:text-white">{bucket.count}</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </section>
         </section>
 
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow mb-8">
+        <section
+          id="work-queue"
+          ref={workQueueRef}
+          className="scroll-mt-24 bg-white dark:bg-gray-800 rounded-lg shadow mb-8"
+        >
           <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white">This week's queue</h2>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-              Required components missing on a code platform, React-missing first.
-            </p>
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Work queue</h2>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                  Platform gaps are missing React or RN ports. Code Connect gaps are missing
+                  `.figma.tsx` files on existing components.
+                </p>
+              </div>
+              <input
+                type="search"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search components…"
+                className="px-3 py-1.5 rounded-md text-sm border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-w-[12rem]"
+              />
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() => setQueueTab('platform')}
+                className={`px-3 py-1.5 rounded-md text-xs font-medium ${
+                  queueTab === 'platform'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'
+                }`}
+              >
+                Platform gaps ({data.queue.length})
+              </button>
+              <button
+                type="button"
+                onClick={() => setQueueTab('codeConnect')}
+                className={`px-3 py-1.5 rounded-md text-xs font-medium ${
+                  queueTab === 'codeConnect'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'
+                }`}
+              >
+                Code Connect gaps ({codeConnectGaps.length})
+              </button>
+            </div>
+            {queueTab === 'platform' && (
+              <div className="mt-3 flex flex-wrap gap-2">
+                {(
+                  [
+                    ['all', `All (${data.queue.length})`],
+                    ['react', `Missing React (${s.missingOnReact})`],
+                    ['reactNative', `Missing RN (${s.missingOnReactNative})`],
+                  ] as const
+                ).map(([id, label]) => (
+                  <button
+                    key={id}
+                    type="button"
+                    onClick={() => setPlatformFilter(id)}
+                    className={`px-3 py-1 rounded-md text-xs font-medium ${
+                      platformFilter === id
+                        ? 'bg-gray-800 text-white dark:bg-gray-200 dark:text-gray-900'
+                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
-          {data.queue.length === 0 ? (
+
+          {queueTab === 'platform' ? (
+            platformQueue.length === 0 ? (
+              <p className="px-6 py-8 text-sm text-gray-500 dark:text-gray-400">
+                No platform gaps match the current filters.
+              </p>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="min-w-full text-sm">
+                  <thead className="bg-gray-50 dark:bg-gray-900/40 text-left text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                    <tr>
+                      <th className="px-6 py-3 font-medium">Component</th>
+                      <th className="px-6 py-3 font-medium">Missing on</th>
+                      <th className="px-6 py-3 font-medium">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                    {platformQueue.map((item) => (
+                      <tr key={item.name}>
+                        <td className="px-6 py-3 font-medium text-gray-900 dark:text-white">
+                          {item.reactNative ? (
+                            <ActionLink href={githubComponentUrl('reactNative', item.name)}>
+                              {item.name}
+                            </ActionLink>
+                          ) : item.react ? (
+                            <ActionLink href={githubComponentUrl('react', item.name)}>
+                              {item.name}
+                            </ActionLink>
+                          ) : (
+                            item.name
+                          )}
+                        </td>
+                        <td className="px-6 py-3">
+                          <MissingOnPills missingOn={item.missingOn} />
+                        </td>
+                        <td className="px-6 py-3">
+                          <PlatformQueueActions item={item} />
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )
+          ) : filteredCodeConnectGaps.length === 0 ? (
             <p className="px-6 py-8 text-sm text-gray-500 dark:text-gray-400">
-              No required-platform gaps in this scan.
+              No Code Connect gaps match the current search.
             </p>
           ) : (
             <div className="overflow-x-auto">
@@ -320,21 +986,29 @@ export function Alignment() {
                 <thead className="bg-gray-50 dark:bg-gray-900/40 text-left text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">
                   <tr>
                     <th className="px-6 py-3 font-medium">Component</th>
-                    <th className="px-6 py-3 font-medium">Missing on</th>
-                    <th className="px-6 py-3 font-medium">React</th>
-                    <th className="px-6 py-3 font-medium">React Native</th>
+                    <th className="px-6 py-3 font-medium">Missing Connect</th>
+                    <th className="px-6 py-3 font-medium">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-                  {data.queue.map((item) => (
+                  {filteredCodeConnectGaps.map((item) => (
                     <tr key={item.name}>
-                      <td className="px-6 py-3 font-medium text-gray-900 dark:text-white">{item.name}</td>
-                      <td className="px-6 py-3 text-red-700 dark:text-red-300">{missingLabel(item.missingOn)}</td>
-                      <td className="px-6 py-3">
-                        <Presence present={item.react} required />
+                      <td className="px-6 py-3 font-medium text-gray-900 dark:text-white">
+                        {item.component.react ? (
+                          <ActionLink href={githubComponentUrl('react', item.name)}>
+                            {item.name}
+                          </ActionLink>
+                        ) : (
+                          <ActionLink href={githubComponentUrl('reactNative', item.name)}>
+                            {item.name}
+                          </ActionLink>
+                        )}
                       </td>
                       <td className="px-6 py-3">
-                        <Presence present={item.reactNative} required />
+                        <MissingOnPills missingOn={item.missingConnect} />
+                      </td>
+                      <td className="px-6 py-3">
+                        <CodeConnectActions component={item.component} />
                       </td>
                     </tr>
                   ))}
@@ -344,47 +1018,22 @@ export function Alignment() {
           )}
         </section>
 
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow mb-8 p-6">
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-            Intentional platform families
-          </h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
-            Excluded from gaps on purpose. Everything else is assumed shared.
-          </p>
-          <ul className="text-sm divide-y divide-gray-200 dark:divide-gray-700">
-            {data.families.map((family) => (
-              <li
-                key={family.id}
-                title={family.rationale}
-                className="py-2 flex flex-wrap items-baseline gap-x-2"
-              >
-                <span className="font-medium text-gray-900 dark:text-white">{family.label}</span>
-                <span className="text-gray-500 dark:text-gray-400">
-                  {familyMembersLabel(family)}
-                </span>
-                {!family.aligned && (
-                  <span className="text-xs font-medium text-amber-600 dark:text-amber-400">
-                    incomplete
-                  </span>
-                )}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow">
+        <section id="inventory" className="scroll-mt-24 bg-white dark:bg-gray-800 rounded-lg shadow mb-8">
           <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex flex-wrap items-center justify-between gap-3">
             <div>
-              <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Component matrix</h2>
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+                Component inventory
+              </h2>
               <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                {s.inventoryCount} components from MMDS packages. Figma linked via Code Connect: {s.figmaLinked}.
+                Full matrix for audit. Defaults to gaps — use filters for required components and
+                exceptions.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
               {(
                 [
-                  ['all', 'All'],
                   ['gaps', 'Gaps'],
+                  ['all', 'All'],
                   ['required', 'Required'],
                   ['exceptions', 'Exceptions'],
                 ] as const
@@ -392,9 +1041,9 @@ export function Alignment() {
                 <button
                   key={id}
                   type="button"
-                  onClick={() => setFilter(id)}
+                  onClick={() => setMatrixFilter(id)}
                   className={`px-3 py-1.5 rounded-md text-xs font-medium ${
-                    filter === id
+                    matrixFilter === id
                       ? 'bg-blue-600 text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'
                   }`}
@@ -410,54 +1059,111 @@ export function Alignment() {
                 <tr>
                   <th className="px-6 py-3 font-medium">Component</th>
                   <th className="px-6 py-3 font-medium">Class</th>
-                  <th className="px-6 py-3 font-medium">Figma</th>
+                  <th className="px-6 py-3 font-medium">
+                    <span title="Linked via Code Connect — not a live Figma scan">Figma</span>
+                  </th>
                   <th className="px-6 py-3 font-medium">React</th>
                   <th className="px-6 py-3 font-medium">RN</th>
-                  <th className="px-6 py-3 font-medium">Connect R</th>
-                  <th className="px-6 py-3 font-medium">Connect RN</th>
+                  <th className="px-6 py-3 font-medium">
+                    <span title=".figma.tsx for React">Connect (R)</span>
+                  </th>
+                  <th className="px-6 py-3 font-medium">
+                    <span title=".figma.tsx for React Native">Connect (RN)</span>
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-                {rows.map((c) => (
-                  <MatrixRow key={c.name} component={c} />
-                ))}
+                {matrixRows.length === 0 ? (
+                  <tr>
+                    <td
+                      colSpan={7}
+                      className="px-6 py-8 text-center text-sm text-gray-500 dark:text-gray-400"
+                    >
+                      No components match the current filters.
+                    </td>
+                  </tr>
+                ) : (
+                  matrixRows.map((c) => <MatrixRow key={c.name} component={c} families={data.families} />)
+                )}
               </tbody>
             </table>
           </div>
+        </section>
+
+        <section id="exceptions" className="scroll-mt-24 bg-white dark:bg-gray-800 rounded-lg shadow mb-8">
+          <button
+            type="button"
+            onClick={() => setExceptionsOpen((open) => !open)}
+            className="w-full px-6 py-4 flex items-center justify-between text-left"
+          >
+            <div>
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+                Intentional platform families
+              </h2>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                Excluded from gaps on purpose — {data.families.length} families,{' '}
+                {s.familiesAligned}/{s.familiesTotal} aligned.
+              </p>
+            </div>
+            <span className="text-gray-400 text-sm">{exceptionsOpen ? 'Hide' : 'Show'}</span>
+          </button>
+          {exceptionsOpen && (
+            <ul className="px-6 pb-6 text-sm divide-y divide-gray-200 dark:divide-gray-700 border-t border-gray-200 dark:border-gray-700">
+              {data.families.map((family) => (
+                <li
+                  key={family.id}
+                  title={family.rationale}
+                  className="py-3 flex flex-wrap items-baseline gap-x-2"
+                >
+                  <span className="font-medium text-gray-900 dark:text-white">{family.label}</span>
+                  <span className="text-gray-500 dark:text-gray-400">
+                    {familyMembersLabel(family)}
+                  </span>
+                  {!family.aligned && (
+                    <span className="text-xs font-medium text-amber-600 dark:text-amber-400">
+                      incomplete
+                    </span>
+                  )}
+                  <span className="w-full text-xs text-gray-400 dark:text-gray-500 mt-1">
+                    {family.rationale}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
       </div>
     </div>
   );
 }
 
-function MatrixRow({ component: c }: { component: AlignmentComponent }) {
+function MatrixRow({
+  component: c,
+  families,
+}: {
+  component: AlignmentComponent;
+  families: AlignmentFamily[];
+}) {
   const required = c.classification === 'required_shared';
+  const family = c.familyId ? families.find((f) => f.id === c.familyId) : null;
+
   return (
     <tr>
       <td className="px-6 py-3 font-medium text-gray-900 dark:text-white">
         {c.react ? (
-          <a
-            href={githubComponentUrl('react', c.name)}
-            target="_blank"
-            rel="noreferrer"
-            className="underline hover:text-blue-600 dark:hover:text-blue-400"
-          >
-            {c.name}
-          </a>
+          <ActionLink href={githubComponentUrl('react', c.name)}>{c.name}</ActionLink>
         ) : c.reactNative ? (
-          <a
-            href={githubComponentUrl('reactNative', c.name)}
-            target="_blank"
-            rel="noreferrer"
-            className="underline hover:text-blue-600 dark:hover:text-blue-400"
-          >
-            {c.name}
-          </a>
+          <ActionLink href={githubComponentUrl('reactNative', c.name)}>{c.name}</ActionLink>
         ) : (
           c.name
         )}
       </td>
-      <td className="px-6 py-3 text-gray-600 dark:text-gray-300">{classificationLabel(c.classification)}</td>
+      <td className="px-6 py-3 text-gray-600 dark:text-gray-300">
+        <span title={family?.rationale}>{classificationLabel(c.classification)}</span>
+        {family && (
+          <span className="block text-xs text-gray-400 dark:text-gray-500">{family.label}</span>
+        )}
+      </td>
       <td className="px-6 py-3">
         <FigmaCell status={c.figma} url={c.figmaUrl} />
       </td>
