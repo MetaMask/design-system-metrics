@@ -608,13 +608,18 @@ function AlignmentTrendSection({
 }
 
 function SectionNav({ activeId }: { activeId: string | null }) {
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <nav className="sticky top-0 z-20 -mx-6 px-6 py-3 mb-6 bg-gray-50/95 dark:bg-gray-900/95 backdrop-blur border-b border-gray-200 dark:border-gray-700">
       <div className="flex flex-wrap gap-2">
         {NAV_SECTIONS.map(({ id, label }) => (
-          <a
+          <button
             key={id}
-            href={`#${id}`}
+            type="button"
+            onClick={() => scrollToSection(id)}
             className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
               activeId === id
                 ? 'bg-blue-600 text-white'
@@ -622,7 +627,7 @@ function SectionNav({ activeId }: { activeId: string | null }) {
             }`}
           >
             {label}
-          </a>
+          </button>
         ))}
       </div>
     </nav>
