@@ -1,17 +1,18 @@
 {
   "component": "Icon",
-  "generatedAt": "2026-09-21T08:34:48.565Z",
+  "generatedAt": "2026-09-28T08:30:29.037Z",
   "projects": {
     "extension": {
-      "filesScanned": 3738,
+      "filesScanned": 3752,
       "targetComponent": "Icon",
       "mmds": {
-        "totalInstances": 2,
-        "filesCount": 1,
+        "totalInstances": 3,
+        "filesCount": 2,
         "props": {
           "name": {
-            "count": 2,
+            "count": 3,
             "values": {
+              "{IconName.Info}": 1,
               "{IconName.Pin}": 1,
               "{IconName.EyeSlash}": 1
             }
@@ -29,6 +30,12 @@
               "\"account-hidden-icon\"": 1
             }
           },
+          "color": {
+            "count": 1,
+            "values": {
+              "{IconColor.iconDefault}": 1
+            }
+          },
           "data-testid": {
             "count": 1,
             "values": {
@@ -39,20 +46,21 @@
       },
       "deprecated": {
         "totalInstances": 48,
-        "filesCount": 33,
+        "filesCount": 31,
         "props": {
           "name": {
             "count": 48,
             "values": {
-              "{IconName.Info}": 15,
+              "{IconName.Info}": 13,
               "{IconName.Export}": 5,
               "{IconName.Danger}": 4,
               "{IconName.ArrowRight}": 3,
               "{IconName.ArrowDown}": 3,
+              "{isClicked ? IconName.CopySuccess : IconName.Copy}": 2,
               "{IconName.Snaps}": 2,
               "{infoIcon}": 1,
-              "{isVisible ? IconName.EyeSlash : IconName.Eye}": 1,
-              "{isClicked ? IconName.CopySuccess : IconName.Copy}": 1,
+              "{IconName.EyeSlash}": 1,
+              "{IconName.Eye}": 1,
               "{isCollapsed ? IconName.ArrowDown : IconName.ArrowUp}": 1,
               "{IconName.Setting}": 1,
               "{IconName.Book}": 1,
@@ -69,13 +77,13 @@
             }
           },
           "color": {
-            "count": 32,
+            "count": 33,
             "values": {
+              "{IconColor.iconAlternative}": 9,
               "{IconColor.iconMuted}": 7,
-              "{IconColor.iconAlternative}": 7,
-              "{IconColor.iconDefault}": 6,
+              "{IconColor.iconDefault}": 5,
               "{IconColor.errorDefault}": 3,
-              "{isVisible && sensitive ? Color.errorAlternative : IconColor.iconAlternative}": 2,
+              "{Color.errorAlternative}": 2,
               "{IconColor.warningDefault}": 2,
               "{IconColor.primaryDefault}": 2,
               "{infoIconColor}": 1,
@@ -104,9 +112,9 @@
             }
           },
           "className": {
-            "count": 7,
+            "count": 8,
             "values": {
-              "\"copyable__icon\"": 1,
+              "\"copyable__icon\"": 2,
               "\"snap-delineator__expansion-icon\"": 1,
               "\"tab-bar__tab__caret\"": 1,
               "\"dropdown__icon-caret-down\"": 1,
@@ -116,18 +124,18 @@
             }
           },
           "data-testid": {
-            "count": 4,
+            "count": 6,
             "values": {
-              "\"reveal-icon\"": 1,
-              "\"copy-icon\"": 1,
+              "\"reveal-icon\"": 2,
+              "\"copy-icon\"": 2,
               "\"asset__back\"": 1,
               "\"exchange-rate-display-switch\"": 1
             }
           },
           "onClick": {
-            "count": 3,
+            "count": 4,
             "values": {
-              "{handleVisibilityClick}": 1,
+              "{handleVisibilityClick}": 2,
               "{onClick}": 1,
               "{() => { setShowPrimaryToSecondary(!showPrimaryToSecondary); }}": 1
             }
@@ -177,21 +185,22 @@
         }
       },
       "overall": {
-        "totalInstances": 50,
-        "filesCount": 34,
+        "totalInstances": 51,
+        "filesCount": 33,
         "props": {
           "name": {
-            "count": 50,
+            "count": 51,
             "values": {
-              "{IconName.Info}": 15,
+              "{IconName.Info}": 14,
               "{IconName.Export}": 5,
               "{IconName.Danger}": 4,
               "{IconName.ArrowRight}": 3,
               "{IconName.ArrowDown}": 3,
+              "{IconName.EyeSlash}": 2,
+              "{isClicked ? IconName.CopySuccess : IconName.Copy}": 2,
               "{IconName.Snaps}": 2,
               "{infoIcon}": 1,
-              "{isVisible ? IconName.EyeSlash : IconName.Eye}": 1,
-              "{isClicked ? IconName.CopySuccess : IconName.Copy}": 1,
+              "{IconName.Eye}": 1,
               "{isCollapsed ? IconName.ArrowDown : IconName.ArrowUp}": 1,
               "{IconName.Setting}": 1,
               "{IconName.Book}": 1,
@@ -200,7 +209,6 @@
               "{IconName.CircleX}": 1,
               "{IconName.Clock}": 1,
               "{IconName.Pin}": 1,
-              "{IconName.EyeSlash}": 1,
               "{IconName.Question}": 1,
               "{IconName.ArrowLeft}": 1,
               "{hasCopied ? IconName.CopySuccess : IconName.Copy}": 1,
@@ -210,13 +218,13 @@
             }
           },
           "color": {
-            "count": 32,
+            "count": 34,
             "values": {
+              "{IconColor.iconAlternative}": 9,
               "{IconColor.iconMuted}": 7,
-              "{IconColor.iconAlternative}": 7,
               "{IconColor.iconDefault}": 6,
               "{IconColor.errorDefault}": 3,
-              "{isVisible && sensitive ? Color.errorAlternative : IconColor.iconAlternative}": 2,
+              "{Color.errorAlternative}": 2,
               "{IconColor.warningDefault}": 2,
               "{IconColor.primaryDefault}": 2,
               "{infoIconColor}": 1,
@@ -237,9 +245,9 @@
             }
           },
           "className": {
-            "count": 9,
+            "count": 10,
             "values": {
-              "\"copyable__icon\"": 1,
+              "\"copyable__icon\"": 2,
               "\"snap-delineator__expansion-icon\"": 1,
               "\"tab-bar__tab__caret\"": 1,
               "\"account-pinned-icon\"": 1,
@@ -259,19 +267,19 @@
             }
           },
           "data-testid": {
-            "count": 5,
+            "count": 7,
             "values": {
-              "\"reveal-icon\"": 1,
-              "\"copy-icon\"": 1,
+              "\"reveal-icon\"": 2,
+              "\"copy-icon\"": 2,
               "\"account-pinned-icon\"": 1,
               "\"asset__back\"": 1,
               "\"exchange-rate-display-switch\"": 1
             }
           },
           "onClick": {
-            "count": 3,
+            "count": 4,
             "values": {
-              "{handleVisibilityClick}": 1,
+              "{handleVisibilityClick}": 2,
               "{onClick}": 1,
               "{() => { setShowPrimaryToSecondary(!showPrimaryToSecondary); }}": 1
             }
@@ -325,7 +333,7 @@
       }
     },
     "mobile": {
-      "filesScanned": 8308,
+      "filesScanned": 8537,
       "targetComponent": "Icon",
       "mmds": {
         "totalInstances": 2,
