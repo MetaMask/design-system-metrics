@@ -1,6 +1,6 @@
 {
   "project": "extension",
-  "date": "2026-09-28",
+  "date": "2026-10-05",
   "teams": [
     "@MetaMask/accounts-engineers",
     "@MetaMask/confirmations",
@@ -15,11 +15,11 @@
     "@MetaMask/web3auth"
   ],
   "summary": {
-    "filesScanned": 1706,
-    "totalJSXUsages": 10509,
-    "trackedDeprecated": 2522,
-    "trackedMMDS": 4633,
-    "untrackedTotal": 3354,
+    "filesScanned": 1707,
+    "totalJSXUsages": 10502,
+    "trackedDeprecated": 2460,
+    "trackedMMDS": 4683,
+    "untrackedTotal": 3359,
     "uniqueUntrackedComponents": 119,
     "replaceableNow": 51,
     "replaceableInstances": 688,
@@ -1648,31 +1648,6 @@
       }
     },
     {
-      "component": "TransactionStatus",
-      "instances": 5,
-      "fileCount": 5,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/app/transaction/transaction-status",
-      "importSources": [
-        "../../../components/app/transaction/transaction-status",
-        "../../../../components/app/transaction/transaction-status"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "BadgeStatus",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@MetaMask/core-extension-ux",
-        "@MetaMask/money-movement"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/core-extension-ux": 4,
-        "@MetaMask/money-movement": 1
-      }
-    },
-    {
       "component": "ActivityAvatar",
       "instances": 5,
       "fileCount": 5,
@@ -1693,6 +1668,31 @@
         },
         {
           "component": "AvatarFavicon",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/core-extension-ux",
+        "@MetaMask/money-movement"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/core-extension-ux": 4,
+        "@MetaMask/money-movement": 1
+      }
+    },
+    {
+      "component": "TransactionStatus",
+      "instances": 5,
+      "fileCount": 5,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/app/transaction/transaction-status",
+      "importSources": [
+        "../../../components/app/transaction/transaction-status",
+        "../../../../components/app/transaction/transaction-status"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "BadgeStatus",
           "confidence": "medium"
         }
       ],
@@ -1788,8 +1788,8 @@
       "canonicalSource": "details/components/shared",
       "importSources": [
         "../details/components/shared",
-        "../components/shared",
         "./shared",
+        "../components/shared",
         "../layout",
         "../../components/shared",
         "../../layout"
@@ -1914,10 +1914,10 @@
       "instances": 22,
       "fileCount": 13,
       "sourceCategory": "local-oneoff",
-      "canonicalSource": "column",
+      "canonicalSource": "layout",
       "importSources": [
-        "./column",
         "../layout",
+        "./column",
         "../../layout"
       ],
       "mmdsMatches": [],
@@ -1935,8 +1935,8 @@
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/shared",
       "importSources": [
-        "../components/shared",
         "./shared",
+        "../components/shared",
         "../../components/shared",
         "(local or re-export)"
       ],
@@ -2082,8 +2082,8 @@
       "importSources": [
         "../../components/ui/icon/preloader/preloader-icon.component",
         "../../../components/ui/icon/preloader/preloader-icon.component",
-        "../icon/preloader/preloader-icon.component",
         "../../ui/icon/preloader",
+        "../icon/preloader/preloader-icon.component",
         "../../ui/icon/preloader/preloader-icon.component",
         "../../../ui/icon/preloader/preloader-icon.component",
         "../../../../../components/ui/icon/preloader",
@@ -2101,8 +2101,8 @@
       "codeOwnerBreakdown": {
         "@MetaMask/engagement": 1,
         "@MetaMask/core-extension-ux": 3,
-        "@unknown": 1,
         "@MetaMask/accounts-engineers": 3,
+        "@unknown": 1,
         "@MetaMask/core-platform": 1,
         "@MetaMask/confirmations": 6
       }
@@ -3049,6 +3049,29 @@
       }
     },
     {
+      "component": "NftItem",
+      "instances": 5,
+      "fileCount": 5,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/multichain/nft-item",
+      "importSources": [
+        "../nft-item",
+        "../../../../multichain/nft-item",
+        "../../../../../../../components/multichain/nft-item"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/metamask-assets",
+        "@MetaMask/core-extension-ux",
+        "@MetaMask/confirmations"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/core-extension-ux": 1,
+        "@MetaMask/metamask-assets": 3,
+        "@MetaMask/confirmations": 1
+      }
+    },
+    {
       "component": "NotificationDetail",
       "instances": 5,
       "fileCount": 5,
@@ -3080,29 +3103,6 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/core-extension-ux": 5
-      }
-    },
-    {
-      "component": "NftItem",
-      "instances": 5,
-      "fileCount": 5,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/multichain/nft-item",
-      "importSources": [
-        "../nft-item",
-        "../../../../multichain/nft-item",
-        "../../../../../../../components/multichain/nft-item"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@MetaMask/metamask-assets",
-        "@MetaMask/core-extension-ux",
-        "@MetaMask/confirmations"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/core-extension-ux": 1,
-        "@MetaMask/metamask-assets": 3,
-        "@MetaMask/confirmations": 1
       }
     },
     {
