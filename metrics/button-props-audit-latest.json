@@ -1,59 +1,47 @@
 {
   "component": "Button",
-  "generatedAt": "2026-10-12T08:48:02.945Z",
+  "generatedAt": "2026-10-19T08:36:22.147Z",
   "projects": {
     "extension": {
-      "filesScanned": 3761,
+      "filesScanned": 3810,
       "targetComponent": "Button",
       "mmds": {
-        "totalInstances": 9,
-        "filesCount": 6,
+        "totalInstances": 7,
+        "filesCount": 5,
         "props": {
           "onClick": {
-            "count": 9,
+            "count": 7,
             "values": {
               "{cancelTransaction}": 1,
               "{onAccept}": 1,
               "{() => onIgnore(checkboxState)}": 1,
               "{() => { onActionComplete(); }}": 1,
               "{async () => { try { const result = await importAccountFunc(); if (result) { o...}": 1,
-              "{() => { onClose(); navigate(DEFAULT_ROUTE); }}": 1,
-              "{() => handleAddNft()}": 1,
               "{() => setShowDisconnectAllModal(true)}": 1,
               "{onClick}": 1
             }
           },
           "variant": {
-            "count": 9,
+            "count": 7,
             "values": {
-              "{ButtonVariant.Secondary}": 5,
-              "{ButtonVariant.Primary}": 4
-            }
-          },
-          "size": {
-            "count": 6,
-            "values": {
-              "{ButtonSize.Lg}": 5,
-              "{ButtonBaseSize.Sm}": 1
+              "{ButtonVariant.Secondary}": 4,
+              "{ButtonVariant.Primary}": 3
             }
           },
           "data-testid": {
-            "count": 5,
+            "count": 4,
             "values": {
               "\"cancel-button\"": 1,
               "\"import-account-confirm-button\"": 1,
-              "\"import-nfts-modal-import-button\"": 1,
               "\"disconnect-all-button\"": 1,
               "\"tour-cta-button\"": 1
             }
           },
-          "className": {
+          "size": {
             "count": 4,
             "values": {
-              "\"home-notification__accept-button\"": 1,
-              "\"home-notification__ignore-button\"": 1,
-              "\"import-nfts-modal__cancel-button flex-1\"": 1,
-              "\"flex-1\"": 1
+              "{ButtonSize.Lg}": 3,
+              "{ButtonBaseSize.Sm}": 1
             }
           },
           "isFullWidth": {
@@ -62,17 +50,23 @@
               "true (shorthand)": 3
             }
           },
-          "isDisabled": {
+          "className": {
             "count": 2,
             "values": {
-              "{isPrimaryDisabled}": 1,
-              "{isFormDisabled}": 1
+              "\"home-notification__accept-button\"": 1,
+              "\"home-notification__ignore-button\"": 1
             }
           },
           "[spread]": {
             "count": 1,
             "values": {
               "{props}": 1
+            }
+          },
+          "isDisabled": {
+            "count": 1,
+            "values": {
+              "{isPrimaryDisabled}": 1
             }
           },
           "isDanger": {
@@ -313,11 +307,11 @@
         }
       },
       "overall": {
-        "totalInstances": 42,
-        "filesCount": 28,
+        "totalInstances": 40,
+        "filesCount": 27,
         "props": {
           "onClick": {
-            "count": 37,
+            "count": 35,
             "values": {
               "{onClose}": 4,
               "{onCancel}": 4,
@@ -335,8 +329,6 @@
               "{() => updateArgs({ isShowingModal: true })}": 1,
               "{() => { onActionComplete(); }}": 1,
               "{async () => { try { const result = await importAccountFunc(); if (result) { o...}": 1,
-              "{() => { onClose(); navigate(DEFAULT_ROUTE); }}": 1,
-              "{() => handleAddNft()}": 1,
               "{() => setShowDisconnectAllModal(true)}": 1,
               "{onCancel ? (e) => onCancel(e) : undefined}": 1,
               "{onSubmit ? (e) => onSubmit(e) : undefined}": 1,
@@ -349,10 +341,10 @@
             }
           },
           "variant": {
-            "count": 32,
+            "count": 30,
             "values": {
-              "{ButtonVariant.Secondary}": 12,
-              "{ButtonVariant.Primary}": 11,
+              "{ButtonVariant.Secondary}": 11,
+              "{ButtonVariant.Primary}": 10,
               "{BUTTON_VARIANT.SECONDARY}": 3,
               "{ButtonVariant.Link}": 2,
               "{BUTTON_VARIANT.PRIMARY}": 2,
@@ -361,9 +353,9 @@
             }
           },
           "size": {
-            "count": 23,
+            "count": 21,
             "values": {
-              "{ButtonSize.Lg}": 16,
+              "{ButtonSize.Lg}": 14,
               "{BUTTON_SIZES.LG}": 4,
               "{Size.LG}": 1,
               "{ButtonBaseSize.Sm}": 1,
@@ -371,7 +363,7 @@
             }
           },
           "className": {
-            "count": 19,
+            "count": 17,
             "values": {
               "\"invalid-custom-network-alert__footer-row-button\"": 2,
               "\"page-container__footer-button select-quote-popover__button\"": 2,
@@ -381,8 +373,6 @@
               "\"home-notification__ignore-button\"": 1,
               "\"show-more__button\"": 1,
               "\"terms-of-use-popup__scroll-button\"": 1,
-              "\"import-nfts-modal__cancel-button flex-1\"": 1,
-              "\"flex-1\"": 1,
               "{classnames( 'page-container__footer-button', 'page-container__footer-button__...}": 1,
               "{classnames( 'page-container__footer-button', footerButtonClassName, )}": 1,
               "\"confirm-add-suggested-token__link\"": 1,
@@ -399,7 +389,7 @@
             }
           },
           "data-testid": {
-            "count": 15,
+            "count": 14,
             "values": {
               "\"cancel-button\"": 1,
               "\"create-new-vault-submit-button\"": 1,
@@ -407,7 +397,6 @@
               "\"terms-of-use-scroll-button\"": 1,
               "\"terms-of-use-agree-button\"": 1,
               "\"import-account-confirm-button\"": 1,
-              "\"import-nfts-modal-import-button\"": 1,
               "\"disconnect-all-button\"": 1,
               "\"tour-cta-button\"": 1,
               "\"page-container-footer-cancel\"": 1,
@@ -469,13 +458,6 @@
             "count": 2,
             "values": {
               "true (shorthand)": 2
-            }
-          },
-          "isDisabled": {
-            "count": 2,
-            "values": {
-              "{isPrimaryDisabled}": 1,
-              "{isFormDisabled}": 1
             }
           },
           "loading": {
@@ -551,6 +533,12 @@
               "{{ size: IconSize.Md, marginRight: 0 }}": 1
             }
           },
+          "isDisabled": {
+            "count": 1,
+            "values": {
+              "{isPrimaryDisabled}": 1
+            }
+          },
           "isDanger": {
             "count": 1,
             "values": {
@@ -589,7 +577,7 @@
       }
     },
     "mobile": {
-      "filesScanned": 8793,
+      "filesScanned": 8917,
       "targetComponent": "Button",
       "mmds": {
         "totalInstances": 5,

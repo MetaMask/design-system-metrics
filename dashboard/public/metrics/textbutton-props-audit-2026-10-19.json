@@ -1,0 +1,434 @@
+{
+  "component": "TextButton",
+  "generatedAt": "2026-10-19T08:37:27.197Z",
+  "projects": {
+    "extension": {
+      "filesScanned": 3810,
+      "targetComponent": "TextButton",
+      "mmds": {
+        "totalInstances": 3,
+        "filesCount": 2,
+        "props": {
+          "size": {
+            "count": 3,
+            "values": {
+              "\"body-sm\"": 2,
+              "\"body-md\"": 1
+            }
+          },
+          "asChild": {
+            "count": 3,
+            "values": {
+              "true (shorthand)": 3
+            }
+          },
+          "className": {
+            "count": 3,
+            "values": {
+              "\"inline\"": 3
+            }
+          },
+          "key": {
+            "count": 1,
+            "values": {
+              "\"importAccountWithSocialMsgLearnMore\"": 1
+            }
+          }
+        }
+      },
+      "deprecated": {
+        "totalInstances": 25,
+        "filesCount": 17,
+        "props": {
+          "size": {
+            "count": 15,
+            "values": {
+              "{ButtonLinkSize.Inherit}": 10,
+              "{BUTTON_SIZES.INHERIT}": 3,
+              "{ButtonLinkSize.Lg}": 1,
+              "{Size.auto}": 1
+            }
+          },
+          "href": {
+            "count": 15,
+            "values": {
+              "{safeWebsite.toString()}": 2,
+              "{url}": 2,
+              "{blockExplorerLink}": 2,
+              "{ZENDESK_URLS.CUSTOMIZE_NONCE}": 1,
+              "{TERMS_OF_USE_LINK}": 1,
+              "{href}": 1,
+              "\"https://consensys.io/privacy-policy/\"": 1,
+              "\"https://consensys.io/privacy-policy\"": 1,
+              "{link}": 1,
+              "\"https://snaps.metamask.io/\"": 1,
+              "{ZENDESK_URLS.GAS_FEES}": 1,
+              "{ZENDESK_URLS.SWAPS_USER_GUIDE}": 1
+            }
+          },
+          "target": {
+            "count": 13,
+            "values": {
+              "\"_blank\"": 13
+            }
+          },
+          "className": {
+            "count": 12,
+            "values": {
+              "\"snap-ui-renderer__link\"": 3,
+              "\"connected-accounts-list__account-status-link\"": 2,
+              "\"confirm-add-suggested-nft__nft-name\"": 2,
+              "\"customize-nonce-modal__link\"": 1,
+              "\"customize-nonce-modal__reset\"": 1,
+              "\"snap-privacy-warning__content__terms-link\"": 1,
+              "\"snap-ui-markdown__link\"": 1,
+              "\"snap-external-pill\"": 1
+            }
+          },
+          "onClick": {
+            "count": 11,
+            "values": {
+              "{() => connectAccount(address)}": 1,
+              "{() => switchAccount(address)}": 1,
+              "{() => { setCustomNonce(nextNonce); }}": 1,
+              "{onConfirm}": 1,
+              "{onShowAllPermissionsHandler}": 1,
+              "{handleMetaMaskLinkClick}": 1,
+              "{handleLinkClick}": 1,
+              "{onClick}": 1,
+              "{() => onShowAllPermissions()}": 1,
+              "{() => { trackEvent( createEventBuilder( 'Clicked \"Gas Fees: Learn More\" Link'...}": 1,
+              "{(e) => { e.preventDefault(); dispatch(setTransactionSettingsOpened(true)); }}": 1
+            }
+          },
+          "externalLink": {
+            "count": 6,
+            "values": {
+              "true (shorthand)": 5,
+              "{!isMetaMaskUrl}": 1
+            }
+          },
+          "rel": {
+            "count": 5,
+            "values": {
+              "\"noopener noreferrer\"": 5
+            }
+          },
+          "as": {
+            "count": 5,
+            "values": {
+              "\"a\"": 5
+            }
+          },
+          "textProps": {
+            "count": 4,
+            "values": {
+              "{{ display: Display.Inline, }}": 2,
+              "{{ width: BlockSize.Full }}": 1,
+              "{{ variant: TextVariant.bodyMd, alignItems: AlignItems.flexStart, }}": 1
+            }
+          },
+          "key": {
+            "count": 3,
+            "values": {
+              "\"privacyNoticeTermsOfUseLink\"": 1,
+              "{origin}": 1,
+              "\"gas-fees-learn-more\"": 1
+            }
+          },
+          "display": {
+            "count": 3,
+            "values": {
+              "{Display.Inline}": 3
+            }
+          },
+          "overflowWrap": {
+            "count": 2,
+            "values": {
+              "{OverflowWrap.Anywhere}": 2
+            }
+          },
+          "ellipsis": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "style": {
+            "count": 2,
+            "values": {
+              "{{ // Prevents the link from taking up the full width of the parent. width: 'f...}": 2
+            }
+          },
+          "color": {
+            "count": 2,
+            "values": {
+              "{TextColor.primaryDefault}": 2
+            }
+          },
+          "variant": {
+            "count": 2,
+            "values": {
+              "{TextVariant.bodySm}": 2
+            }
+          },
+          "title": {
+            "count": 2,
+            "values": {
+              "{address}": 2
+            }
+          },
+          "data-testid": {
+            "count": 1,
+            "values": {
+              "\"customize-nonce-reset\"": 1
+            }
+          },
+          "block": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "width": {
+            "count": 1,
+            "values": {
+              "{BlockSize.Full}": 1
+            }
+          },
+          "textAlign": {
+            "count": 1,
+            "values": {
+              "{TextAlign.End}": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{rest}": 1
+            }
+          },
+          "endIconName": {
+            "count": 1,
+            "values": {
+              "{IconName.Export}": 1
+            }
+          }
+        }
+      },
+      "overall": {
+        "totalInstances": 28,
+        "filesCount": 19,
+        "props": {
+          "size": {
+            "count": 18,
+            "values": {
+              "{ButtonLinkSize.Inherit}": 10,
+              "{BUTTON_SIZES.INHERIT}": 3,
+              "\"body-sm\"": 2,
+              "{ButtonLinkSize.Lg}": 1,
+              "\"body-md\"": 1,
+              "{Size.auto}": 1
+            }
+          },
+          "className": {
+            "count": 15,
+            "values": {
+              "\"snap-ui-renderer__link\"": 3,
+              "\"inline\"": 3,
+              "\"connected-accounts-list__account-status-link\"": 2,
+              "\"confirm-add-suggested-nft__nft-name\"": 2,
+              "\"customize-nonce-modal__link\"": 1,
+              "\"customize-nonce-modal__reset\"": 1,
+              "\"snap-privacy-warning__content__terms-link\"": 1,
+              "\"snap-ui-markdown__link\"": 1,
+              "\"snap-external-pill\"": 1
+            }
+          },
+          "href": {
+            "count": 15,
+            "values": {
+              "{safeWebsite.toString()}": 2,
+              "{url}": 2,
+              "{blockExplorerLink}": 2,
+              "{ZENDESK_URLS.CUSTOMIZE_NONCE}": 1,
+              "{TERMS_OF_USE_LINK}": 1,
+              "{href}": 1,
+              "\"https://consensys.io/privacy-policy/\"": 1,
+              "\"https://consensys.io/privacy-policy\"": 1,
+              "{link}": 1,
+              "\"https://snaps.metamask.io/\"": 1,
+              "{ZENDESK_URLS.GAS_FEES}": 1,
+              "{ZENDESK_URLS.SWAPS_USER_GUIDE}": 1
+            }
+          },
+          "target": {
+            "count": 13,
+            "values": {
+              "\"_blank\"": 13
+            }
+          },
+          "onClick": {
+            "count": 11,
+            "values": {
+              "{() => connectAccount(address)}": 1,
+              "{() => switchAccount(address)}": 1,
+              "{() => { setCustomNonce(nextNonce); }}": 1,
+              "{onConfirm}": 1,
+              "{onShowAllPermissionsHandler}": 1,
+              "{handleMetaMaskLinkClick}": 1,
+              "{handleLinkClick}": 1,
+              "{onClick}": 1,
+              "{() => onShowAllPermissions()}": 1,
+              "{() => { trackEvent( createEventBuilder( 'Clicked \"Gas Fees: Learn More\" Link'...}": 1,
+              "{(e) => { e.preventDefault(); dispatch(setTransactionSettingsOpened(true)); }}": 1
+            }
+          },
+          "externalLink": {
+            "count": 6,
+            "values": {
+              "true (shorthand)": 5,
+              "{!isMetaMaskUrl}": 1
+            }
+          },
+          "rel": {
+            "count": 5,
+            "values": {
+              "\"noopener noreferrer\"": 5
+            }
+          },
+          "as": {
+            "count": 5,
+            "values": {
+              "\"a\"": 5
+            }
+          },
+          "textProps": {
+            "count": 4,
+            "values": {
+              "{{ display: Display.Inline, }}": 2,
+              "{{ width: BlockSize.Full }}": 1,
+              "{{ variant: TextVariant.bodyMd, alignItems: AlignItems.flexStart, }}": 1
+            }
+          },
+          "key": {
+            "count": 4,
+            "values": {
+              "\"privacyNoticeTermsOfUseLink\"": 1,
+              "\"importAccountWithSocialMsgLearnMore\"": 1,
+              "{origin}": 1,
+              "\"gas-fees-learn-more\"": 1
+            }
+          },
+          "display": {
+            "count": 3,
+            "values": {
+              "{Display.Inline}": 3
+            }
+          },
+          "asChild": {
+            "count": 3,
+            "values": {
+              "true (shorthand)": 3
+            }
+          },
+          "overflowWrap": {
+            "count": 2,
+            "values": {
+              "{OverflowWrap.Anywhere}": 2
+            }
+          },
+          "ellipsis": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "style": {
+            "count": 2,
+            "values": {
+              "{{ // Prevents the link from taking up the full width of the parent. width: 'f...}": 2
+            }
+          },
+          "color": {
+            "count": 2,
+            "values": {
+              "{TextColor.primaryDefault}": 2
+            }
+          },
+          "variant": {
+            "count": 2,
+            "values": {
+              "{TextVariant.bodySm}": 2
+            }
+          },
+          "title": {
+            "count": 2,
+            "values": {
+              "{address}": 2
+            }
+          },
+          "data-testid": {
+            "count": 1,
+            "values": {
+              "\"customize-nonce-reset\"": 1
+            }
+          },
+          "block": {
+            "count": 1,
+            "values": {
+              "true (shorthand)": 1
+            }
+          },
+          "width": {
+            "count": 1,
+            "values": {
+              "{BlockSize.Full}": 1
+            }
+          },
+          "textAlign": {
+            "count": 1,
+            "values": {
+              "{TextAlign.End}": 1
+            }
+          },
+          "[spread]": {
+            "count": 1,
+            "values": {
+              "{rest}": 1
+            }
+          },
+          "endIconName": {
+            "count": 1,
+            "values": {
+              "{IconName.Export}": 1
+            }
+          }
+        }
+      },
+      "deprecatedByLegacyComponent": {
+        "ButtonLink": 25
+      }
+    },
+    "mobile": {
+      "filesScanned": 8917,
+      "targetComponent": "TextButton",
+      "mmds": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "deprecated": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "overall": {
+        "totalInstances": 0,
+        "filesCount": 0,
+        "props": {}
+      },
+      "deprecatedByLegacyComponent": {}
+    }
+  }
+}

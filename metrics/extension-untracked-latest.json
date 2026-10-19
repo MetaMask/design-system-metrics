@@ -1,6 +1,6 @@
 {
   "project": "extension",
-  "date": "2026-10-12",
+  "date": "2026-10-19",
   "teams": [
     "@MetaMask/accounts-engineers",
     "@MetaMask/confirmations",
@@ -15,15 +15,15 @@
     "@MetaMask/web3auth"
   ],
   "summary": {
-    "filesScanned": 1708,
-    "totalJSXUsages": 10523,
-    "trackedDeprecated": 2457,
-    "trackedMMDS": 4705,
-    "untrackedTotal": 3361,
-    "uniqueUntrackedComponents": 119,
+    "filesScanned": 1727,
+    "totalJSXUsages": 10654,
+    "trackedDeprecated": 2424,
+    "trackedMMDS": 4824,
+    "untrackedTotal": 3406,
+    "uniqueUntrackedComponents": 120,
     "replaceableNow": 51,
-    "replaceableInstances": 688,
-    "futureDSCandidates": 68,
+    "replaceableInstances": 693,
+    "futureDSCandidates": 69,
     "codeOwnerBreakdown": {
       "@MetaMask/swaps-engineers": {
         "replaceableComponents": 15,
@@ -33,7 +33,7 @@
       "@MetaMask/core-extension-ux": {
         "replaceableComponents": 27,
         "futureDSComponents": 26,
-        "replaceableInstances": 115
+        "replaceableInstances": 116
       },
       "@MetaMask/confirmations": {
         "replaceableComponents": 16,
@@ -62,13 +62,13 @@
       },
       "@MetaMask/accounts-engineers": {
         "replaceableComponents": 9,
-        "futureDSComponents": 10,
+        "futureDSComponents": 12,
         "replaceableInstances": 61
       },
       "@MetaMask/metamask-assets": {
         "replaceableComponents": 8,
         "futureDSComponents": 7,
-        "replaceableInstances": 13
+        "replaceableInstances": 14
       },
       "@MetaMask/money-movement": {
         "replaceableComponents": 7,
@@ -78,7 +78,7 @@
       "@MetaMask/earn": {
         "replaceableComponents": 2,
         "futureDSComponents": 0,
-        "replaceableInstances": 4
+        "replaceableInstances": 5
       }
     }
   },
@@ -119,8 +119,8 @@
     },
     {
       "component": "Header",
-      "instances": 48,
-      "fileCount": 47,
+      "instances": 49,
+      "fileCount": 48,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/multichain/pages/page",
       "importSources": [
@@ -159,7 +159,7 @@
         "@MetaMask/perps"
       ],
       "codeOwnerBreakdown": {
-        "@unknown": 16,
+        "@unknown": 17,
         "@MetaMask/perps": 2,
         "@MetaMask/engagement": 1,
         "@MetaMask/core-extension-ux": 6,
@@ -224,8 +224,8 @@
     },
     {
       "component": "Page",
-      "instances": 41,
-      "fileCount": 39,
+      "instances": 42,
+      "fileCount": 40,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/multichain/pages/page",
       "importSources": [
@@ -253,7 +253,7 @@
       "codeOwnerBreakdown": {
         "@MetaMask/perps": 3,
         "@MetaMask/engagement": 2,
-        "@unknown": 8,
+        "@unknown": 9,
         "@MetaMask/swaps-engineers": 3,
         "@MetaMask/core-platform": 2,
         "@MetaMask/web3auth": 2,
@@ -265,14 +265,15 @@
     },
     {
       "component": "Content",
-      "instances": 39,
-      "fileCount": 35,
+      "instances": 40,
+      "fileCount": 36,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/multichain/pages/page",
       "importSources": [
         "../../components/multichain/pages/page",
         "../../../components/multichain/pages/page",
         "(local or re-export)",
+        "../pages/page",
         "../../../../components/multichain/pages/page",
         "../page",
         "../../page",
@@ -287,8 +288,8 @@
       "codeOwners": [
         "@MetaMask/accounts-engineers",
         "@unknown",
-        "@MetaMask/swaps-engineers",
         "@MetaMask/core-extension-ux",
+        "@MetaMask/swaps-engineers",
         "@MetaMask/perps"
       ],
       "codeOwnerBreakdown": {
@@ -299,14 +300,14 @@
         "@MetaMask/core-platform": 2,
         "@MetaMask/web3auth": 3,
         "@MetaMask/accounts-engineers": 12,
-        "@MetaMask/core-extension-ux": 4,
+        "@MetaMask/core-extension-ux": 5,
         "@MetaMask/metamask-assets": 2
       }
     },
     {
       "component": "ToastContent",
-      "instances": 37,
-      "fileCount": 24,
+      "instances": 38,
+      "fileCount": 25,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/ui/toast/toast",
       "importSources": [
@@ -344,7 +345,7 @@
         "@MetaMask/perps": 2,
         "@MetaMask/web3auth": 6,
         "@MetaMask/earn": 1,
-        "@MetaMask/metamask-assets": 3,
+        "@MetaMask/metamask-assets": 4,
         "@MetaMask/confirmations": 1
       }
     },
@@ -1033,6 +1034,40 @@
       }
     },
     {
+      "component": "TooltipText",
+      "instances": 8,
+      "fileCount": 7,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/app/money/tooltip-text",
+      "importSources": [
+        "../../components/app/money/tooltip-text",
+        "../../../components/app/money/tooltip-text",
+        "../tooltip-text"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Text",
+          "confidence": "high"
+        },
+        {
+          "component": "FormTextField",
+          "confidence": "medium"
+        },
+        {
+          "component": "HelpText",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@unknown",
+        "@MetaMask/earn"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 4,
+        "@MetaMask/earn": 4
+      }
+    },
+    {
       "component": "NotificationDetailBlockExplorerButton",
       "instances": 8,
       "fileCount": 8,
@@ -1097,40 +1132,6 @@
       "codeOwnerBreakdown": {
         "@unknown": 3,
         "@MetaMask/confirmations": 4
-      }
-    },
-    {
-      "component": "TooltipText",
-      "instances": 7,
-      "fileCount": 6,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/app/money/tooltip-text",
-      "importSources": [
-        "../../components/app/money/tooltip-text",
-        "../../../components/app/money/tooltip-text",
-        "../tooltip-text"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Text",
-          "confidence": "high"
-        },
-        {
-          "component": "FormTextField",
-          "confidence": "medium"
-        },
-        {
-          "component": "HelpText",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@unknown",
-        "@MetaMask/earn"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 4,
-        "@MetaMask/earn": 3
       }
     },
     {
@@ -2430,6 +2431,34 @@
       }
     },
     {
+      "component": "Spinner",
+      "instances": 9,
+      "fileCount": 9,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/ui/spinner",
+      "importSources": [
+        "../../components/ui/spinner",
+        "../../../components/ui/spinner",
+        "../spinner",
+        "../../ui/spinner",
+        "../../../../components/ui/spinner",
+        "../../../ui/spinner"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@unknown",
+        "@MetaMask/accounts-engineers",
+        "@MetaMask/money-movement",
+        "@MetaMask/web3auth"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/accounts-engineers": 1,
+        "@MetaMask/money-movement": 1,
+        "@unknown": 6,
+        "@MetaMask/web3auth": 1
+      }
+    },
+    {
       "component": "RiveComponent",
       "instances": 9,
       "fileCount": 9,
@@ -2523,31 +2552,6 @@
       ],
       "codeOwnerBreakdown": {
         "@unknown": 8
-      }
-    },
-    {
-      "component": "Spinner",
-      "instances": 8,
-      "fileCount": 8,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/ui/spinner",
-      "importSources": [
-        "../../../components/ui/spinner",
-        "../spinner",
-        "../../ui/spinner",
-        "../../../../components/ui/spinner",
-        "../../../ui/spinner"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@unknown",
-        "@MetaMask/money-movement",
-        "@MetaMask/web3auth"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/money-movement": 1,
-        "@unknown": 6,
-        "@MetaMask/web3auth": 1
       }
     },
     {
@@ -2778,6 +2782,23 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/money-movement": 6
+      }
+    },
+    {
+      "component": "StepLayout",
+      "instances": 6,
+      "fileCount": 6,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "step-layout",
+      "importSources": [
+        "./step-layout"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/accounts-engineers"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/accounts-engineers": 6
       }
     },
     {
