@@ -1,9 +1,9 @@
 {
   "component": "Box",
-  "generatedAt": "2026-10-12T08:47:56.579Z",
+  "generatedAt": "2026-10-19T08:36:16.686Z",
   "projects": {
     "extension": {
-      "filesScanned": 3761,
+      "filesScanned": 3810,
       "targetComponent": "Box",
       "mmds": {
         "totalInstances": 106,
@@ -289,13 +289,13 @@
         }
       },
       "deprecated": {
-        "totalInstances": 143,
-        "filesCount": 43,
+        "totalInstances": 133,
+        "filesCount": 42,
         "props": {
           "display": {
-            "count": 88,
+            "count": 82,
             "values": {
-              "{Display.Flex}": 85,
+              "{Display.Flex}": 79,
               "{Display.Block}": 2,
               "{isCollapsable && isCollapsed ? Display.None : Display.Flex}": 1
             }
@@ -361,31 +361,31 @@
             }
           },
           "alignItems": {
-            "count": 49,
+            "count": 45,
             "values": {
-              "{AlignItems.center}": 43,
-              "{AlignItems.flexEnd}": 4,
+              "{AlignItems.center}": 41,
+              "{AlignItems.flexEnd}": 2,
               "{isLoading && AlignItems.center}": 1,
               "{AlignItems.baseline}": 1
             }
           },
+          "flexDirection": {
+            "count": 41,
+            "values": {
+              "{FlexDirection.Column}": 25,
+              "{FlexDirection.Row}": 14,
+              "{sensitive && isVisible ? FlexDirection.Column : FlexDirection.Row}": 1,
+              "{showAvatarAccount ? FlexDirection.Row : FlexDirection.Column}": 1
+            }
+          },
           "justifyContent": {
-            "count": 44,
+            "count": 41,
             "values": {
               "{JustifyContent.center}": 22,
-              "{JustifyContent.spaceBetween}": 17,
+              "{JustifyContent.spaceBetween}": 14,
               "{JustifyContent.flexStart}": 2,
               "{JustifyContent.flexEnd}": 2,
               "{isLoading && JustifyContent.center}": 1
-            }
-          },
-          "flexDirection": {
-            "count": 43,
-            "values": {
-              "{FlexDirection.Column}": 26,
-              "{FlexDirection.Row}": 15,
-              "{sensitive && isVisible ? FlexDirection.Column : FlexDirection.Row}": 1,
-              "{showAvatarAccount ? FlexDirection.Row : FlexDirection.Column}": 1
             }
           },
           "style": {
@@ -442,24 +442,14 @@
             }
           },
           "marginTop": {
-            "count": 18,
+            "count": 17,
             "values": {
               "4": 10,
-              "6": 2,
+              "6": 1,
               "8": 1,
               "12": 3,
               "{marginTop}": 1,
               "{[4, 7]}": 1
-            }
-          },
-          "padding": {
-            "count": 16,
-            "values": {
-              "1": 2,
-              "2": 3,
-              "4": 9,
-              "{!disablePadding || isLoading ? 4 : 0}": 1,
-              "{hasHeader || hasHeaderMaybe ? 0 : 4}": 1
             }
           },
           "height": {
@@ -467,6 +457,16 @@
             "values": {
               "{BlockSize.Full}": 14,
               "{BlockSize.Min}": 1
+            }
+          },
+          "padding": {
+            "count": 14,
+            "values": {
+              "1": 2,
+              "2": 3,
+              "4": 7,
+              "{!disablePadding || isLoading ? 4 : 0}": 1,
+              "{hasHeader || hasHeaderMaybe ? 0 : 4}": 1
             }
           },
           "paddingLeft": {
@@ -477,17 +477,6 @@
               "8": 1
             }
           },
-          "paddingBottom": {
-            "count": 12,
-            "values": {
-              "0": 1,
-              "1": 1,
-              "2": 6,
-              "3": 1,
-              "4": 2,
-              "8": 1
-            }
-          },
           "paddingRight": {
             "count": 12,
             "values": {
@@ -495,14 +484,14 @@
               "4": 11
             }
           },
-          "gap": {
+          "paddingBottom": {
             "count": 11,
             "values": {
               "1": 1,
-              "2": 2,
-              "4": 6,
-              "6": 1,
-              "{showAvatarAccount ? 2 : 0}": 1
+              "2": 6,
+              "3": 1,
+              "4": 2,
+              "8": 1
             }
           },
           "borderRadius": {
@@ -525,10 +514,19 @@
               "4": 3
             }
           },
-          "marginBottom": {
+          "gap": {
             "count": 9,
             "values": {
-              "1": 3,
+              "1": 1,
+              "2": 2,
+              "4": 5,
+              "{showAvatarAccount ? 2 : 0}": 1
+            }
+          },
+          "marginBottom": {
+            "count": 7,
+            "values": {
+              "1": 1,
               "4": 5,
               "{marginBottom}": 1
             }
@@ -644,8 +642,8 @@
         }
       },
       "overall": {
-        "totalInstances": 249,
-        "filesCount": 70,
+        "totalInstances": 239,
+        "filesCount": 69,
         "props": {
           "className": {
             "count": 148,
@@ -767,19 +765,19 @@
             }
           },
           "display": {
-            "count": 88,
+            "count": 82,
             "values": {
-              "{Display.Flex}": 85,
+              "{Display.Flex}": 79,
               "{Display.Block}": 2,
               "{isCollapsable && isCollapsed ? Display.None : Display.Flex}": 1
             }
           },
           "alignItems": {
-            "count": 76,
+            "count": 72,
             "values": {
-              "{AlignItems.center}": 43,
+              "{AlignItems.center}": 41,
               "{BoxAlignItems.Center}": 25,
-              "{AlignItems.flexEnd}": 4,
+              "{AlignItems.flexEnd}": 2,
               "{BoxAlignItems.Start}": 1,
               "{isLoading && AlignItems.center}": 1,
               "{AlignItems.baseline}": 1,
@@ -787,10 +785,10 @@
             }
           },
           "justifyContent": {
-            "count": 70,
+            "count": 67,
             "values": {
               "{JustifyContent.center}": 22,
-              "{JustifyContent.spaceBetween}": 17,
+              "{JustifyContent.spaceBetween}": 14,
               "{BoxJustifyContent.Center}": 11,
               "{BoxJustifyContent.Between}": 9,
               "{BoxJustifyContent.Start}": 3,
@@ -802,10 +800,10 @@
             }
           },
           "flexDirection": {
-            "count": 63,
+            "count": 61,
             "values": {
-              "{FlexDirection.Column}": 26,
-              "{FlexDirection.Row}": 15,
+              "{FlexDirection.Column}": 25,
+              "{FlexDirection.Row}": 14,
               "{BoxFlexDirection.Column}": 11,
               "{BoxFlexDirection.Row}": 9,
               "{sensitive && isVisible ? FlexDirection.Column : FlexDirection.Row}": 1,
@@ -873,22 +871,22 @@
             }
           },
           "padding": {
-            "count": 26,
+            "count": 24,
             "values": {
               "0": 2,
               "1": 3,
               "2": 5,
-              "4": 14,
+              "4": 12,
               "{!disablePadding || isLoading ? 4 : 0}": 1,
               "{hasHeader || hasHeaderMaybe ? 0 : 4}": 1
             }
           },
           "marginTop": {
-            "count": 24,
+            "count": 23,
             "values": {
               "2": 3,
               "4": 12,
-              "6": 3,
+              "6": 2,
               "8": 1,
               "12": 3,
               "{marginTop}": 1,
@@ -922,26 +920,25 @@
               "8": 1
             }
           },
-          "gap": {
-            "count": 17,
-            "values": {
-              "1": 1,
-              "2": 4,
-              "4": 9,
-              "6": 2,
-              "{showAvatarAccount ? 2 : 0}": 1
-            }
-          },
           "paddingBottom": {
-            "count": 17,
+            "count": 16,
             "values": {
-              "0": 1,
               "1": 1,
               "2": 9,
               "3": 1,
               "4": 3,
               "5": 1,
               "8": 1
+            }
+          },
+          "gap": {
+            "count": 15,
+            "values": {
+              "1": 1,
+              "2": 4,
+              "4": 8,
+              "6": 1,
+              "{showAvatarAccount ? 2 : 0}": 1
             }
           },
           "height": {
@@ -951,16 +948,6 @@
               "{BlockSize.Min}": 1
             }
           },
-          "marginBottom": {
-            "count": 14,
-            "values": {
-              "1": 3,
-              "2": 1,
-              "3": 1,
-              "4": 8,
-              "{marginBottom}": 1
-            }
-          },
           "flexWrap": {
             "count": 12,
             "values": {
@@ -968,6 +955,16 @@
               "{BoxFlexWrap.NoWrap}": 4,
               "{FlexWrap.Wrap}": 3,
               "{BoxFlexWrap.Wrap}": 1
+            }
+          },
+          "marginBottom": {
+            "count": 12,
+            "values": {
+              "1": 1,
+              "2": 1,
+              "3": 1,
+              "4": 8,
+              "{marginBottom}": 1
             }
           },
           "borderRadius": {
@@ -1127,11 +1124,11 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "Box": 143
+        "Box": 133
       }
     },
     "mobile": {
-      "filesScanned": 8793,
+      "filesScanned": 8917,
       "targetComponent": "Box",
       "mmds": {
         "totalInstances": 26,

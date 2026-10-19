@@ -1,6 +1,6 @@
 {
   "project": "mobile",
-  "date": "2026-10-12",
+  "date": "2026-10-19",
   "teams": [
     "@MetaMask/accounts-engineers",
     "@MetaMask/card",
@@ -17,20 +17,26 @@
     "@MetaMask/rewards",
     "@MetaMask/social-ai",
     "@MetaMask/swaps-engineers",
+    "@MetaMask/universal-kyc",
     "@MetaMask/wallet-integrations",
     "@MetaMask/web3auth"
   ],
   "summary": {
-    "filesScanned": 7006,
-    "totalJSXUsages": 24205,
-    "trackedDeprecated": 1873,
-    "trackedMMDS": 10785,
-    "untrackedTotal": 11547,
-    "uniqueUntrackedComponents": 236,
-    "replaceableNow": 157,
-    "replaceableInstances": 2933,
-    "futureDSCandidates": 79,
+    "filesScanned": 7132,
+    "totalJSXUsages": 24646,
+    "trackedDeprecated": 1871,
+    "trackedMMDS": 11044,
+    "untrackedTotal": 11731,
+    "uniqueUntrackedComponents": 243,
+    "replaceableNow": 162,
+    "replaceableInstances": 2990,
+    "futureDSCandidates": 81,
     "codeOwnerBreakdown": {
+      "@MetaMask/core-platform": {
+        "replaceableComponents": 5,
+        "futureDSComponents": 5,
+        "replaceableInstances": 31
+      },
       "@MetaMask/wallet-integrations": {
         "replaceableComponents": 3,
         "futureDSComponents": 0,
@@ -42,14 +48,9 @@
         "replaceableInstances": 147
       },
       "@MetaMask/metamask-assets": {
-        "replaceableComponents": 31,
-        "futureDSComponents": 15,
-        "replaceableInstances": 143
-      },
-      "@MetaMask/core-platform": {
-        "replaceableComponents": 5,
-        "futureDSComponents": 5,
-        "replaceableInstances": 31
+        "replaceableComponents": 34,
+        "futureDSComponents": 16,
+        "replaceableInstances": 148
       },
       "@MetaMask/transactions": {
         "replaceableComponents": 1,
@@ -57,9 +58,9 @@
         "replaceableInstances": 3
       },
       "@MetaMask/social-ai": {
-        "replaceableComponents": 23,
-        "futureDSComponents": 14,
-        "replaceableInstances": 189
+        "replaceableComponents": 27,
+        "futureDSComponents": 19,
+        "replaceableInstances": 232
       },
       "@MetaMask/engagement": {
         "replaceableComponents": 9,
@@ -67,24 +68,24 @@
         "replaceableInstances": 23
       },
       "@MetaMask/accounts-engineers": {
-        "replaceableComponents": 13,
-        "futureDSComponents": 5,
-        "replaceableInstances": 65
+        "replaceableComponents": 14,
+        "futureDSComponents": 7,
+        "replaceableInstances": 68
       },
       "@MetaMask/money-movement": {
         "replaceableComponents": 28,
-        "futureDSComponents": 22,
-        "replaceableInstances": 237
+        "futureDSComponents": 21,
+        "replaceableInstances": 227
       },
       "@MetaMask/perps": {
-        "replaceableComponents": 36,
-        "futureDSComponents": 24,
-        "replaceableInstances": 244
+        "replaceableComponents": 37,
+        "futureDSComponents": 25,
+        "replaceableInstances": 247
       },
       "@MetaMask/swaps-engineers": {
-        "replaceableComponents": 35,
+        "replaceableComponents": 36,
         "futureDSComponents": 10,
-        "replaceableInstances": 167
+        "replaceableInstances": 168
       },
       "@MetaMask/confirmations": {
         "replaceableComponents": 37,
@@ -102,24 +103,29 @@
         "replaceableInstances": 52
       },
       "@MetaMask/rewards": {
-        "replaceableComponents": 20,
+        "replaceableComponents": 19,
         "futureDSComponents": 14,
-        "replaceableInstances": 144
+        "replaceableInstances": 140
+      },
+      "@MetaMask/universal-kyc": {
+        "replaceableComponents": 3,
+        "futureDSComponents": 1,
+        "replaceableInstances": 9
       },
       "@MetaMask/predict": {
-        "replaceableComponents": 24,
+        "replaceableComponents": 25,
         "futureDSComponents": 17,
-        "replaceableInstances": 199
+        "replaceableInstances": 202
       },
       "@MetaMask/earn": {
         "replaceableComponents": 21,
-        "futureDSComponents": 9,
-        "replaceableInstances": 110
+        "futureDSComponents": 8,
+        "replaceableInstances": 112
       },
       "@MetaMask/card": {
         "replaceableComponents": 19,
         "futureDSComponents": 16,
-        "replaceableInstances": 107
+        "replaceableInstances": 108
       },
       "@MetaMask/mobile-platform": {
         "replaceableComponents": 2,
@@ -169,10 +175,10 @@
       ],
       "codeOwnerBreakdown": {
         "@unknown": 216,
+        "@MetaMask/core-platform": 3,
         "@MetaMask/wallet-integrations": 5,
         "@MetaMask/mobile-core-ux": 41,
         "@MetaMask/metamask-assets": 16,
-        "@MetaMask/core-platform": 3,
         "@MetaMask/transactions": 3,
         "@MetaMask/social-ai": 4,
         "@MetaMask/engagement": 1,
@@ -185,8 +191,8 @@
     },
     {
       "component": "SafeAreaView",
-      "instances": 223,
-      "fileCount": 205,
+      "instances": 225,
+      "fileCount": 206,
       "sourceCategory": "platform-primitive",
       "canonicalSource": "react-native-safe-area-context",
       "importSources": [
@@ -206,7 +212,7 @@
         "@MetaMask/mobile-core-ux"
       ],
       "codeOwnerBreakdown": {
-        "@unknown": 56,
+        "@unknown": 55,
         "@MetaMask/product-safety": 1,
         "@MetaMask/web3auth": 16,
         "@MetaMask/wallet-integrations": 1,
@@ -215,11 +221,12 @@
         "@MetaMask/metamask-assets": 9,
         "@MetaMask/social-ai": 10,
         "@MetaMask/core-platform": 2,
-        "@MetaMask/accounts-engineers": 10,
+        "@MetaMask/accounts-engineers": 11,
         "@MetaMask/rewards": 27,
         "@MetaMask/perps": 15,
+        "@MetaMask/universal-kyc": 7,
         "@MetaMask/confirmations": 4,
-        "@MetaMask/money-movement": 13,
+        "@MetaMask/money-movement": 8,
         "@MetaMask/predict": 10,
         "@MetaMask/earn": 1,
         "@MetaMask/card": 24,
@@ -228,8 +235,8 @@
     },
     {
       "component": "Animated",
-      "instances": 204,
-      "fileCount": 134,
+      "instances": 216,
+      "fileCount": 141,
       "sourceCategory": "platform-primitive",
       "canonicalSource": "react-native",
       "importSources": [
@@ -259,27 +266,28 @@
         "@MetaMask/web3auth": 1,
         "@MetaMask/mobile-platform": 1,
         "@MetaMask/swaps-engineers": 6,
-        "@MetaMask/metamask-assets": 6,
-        "@MetaMask/social-ai": 38,
+        "@MetaMask/metamask-assets": 7,
+        "@MetaMask/social-ai": 50,
+        "@MetaMask/accounts-engineers": 1,
         "@MetaMask/rewards": 6,
         "@MetaMask/earn": 10,
         "@MetaMask/mobile-core-ux": 3,
-        "@MetaMask/money-movement": 14,
-        "@MetaMask/perps": 34,
+        "@MetaMask/money-movement": 12,
         "@MetaMask/predict": 10,
+        "@MetaMask/perps": 34,
         "@MetaMask/card": 8,
         "@MetaMask/confirmations": 4
       }
     },
     {
       "component": "Image",
-      "instances": 179,
+      "instances": 180,
       "fileCount": 161,
       "sourceCategory": "platform-primitive",
-      "canonicalSource": "react-native",
+      "canonicalSource": "expo-image",
       "importSources": [
-        "react-native",
-        "expo-image"
+        "expo-image",
+        "react-native"
       ],
       "mmdsMatches": [
         {
@@ -295,20 +303,21 @@
         "@MetaMask/perps"
       ],
       "codeOwnerBreakdown": {
+        "@MetaMask/core-platform": 1,
         "@MetaMask/web3auth": 7,
         "@MetaMask/mobile-core-ux": 6,
         "@unknown": 55,
         "@MetaMask/metamask-assets": 3,
-        "@MetaMask/core-platform": 1,
-        "@MetaMask/social-ai": 12,
-        "@MetaMask/rewards": 12,
+        "@MetaMask/social-ai": 11,
+        "@MetaMask/rewards": 11,
         "@MetaMask/predict": 28,
         "@MetaMask/engagement": 2,
-        "@MetaMask/accounts-engineers": 1,
+        "@MetaMask/universal-kyc": 1,
+        "@MetaMask/accounts-engineers": 2,
         "@MetaMask/confirmations": 8,
         "@MetaMask/money-movement": 9,
         "@MetaMask/perps": 11,
-        "@MetaMask/earn": 10,
+        "@MetaMask/earn": 11,
         "@MetaMask/card": 9,
         "@MetaMask/swaps-engineers": 5
       }
@@ -366,8 +375,8 @@
     },
     {
       "component": "SkeletonPlaceholder",
-      "instances": 71,
-      "fileCount": 33,
+      "instances": 73,
+      "fileCount": 34,
       "sourceCategory": "platform-primitive",
       "canonicalSource": "react-native-skeleton-placeholder",
       "importSources": [
@@ -388,12 +397,12 @@
       ],
       "codeOwnerBreakdown": {
         "@unknown": 5,
-        "@MetaMask/social-ai": 9,
+        "@MetaMask/social-ai": 11,
         "@MetaMask/metamask-assets": 12,
         "@MetaMask/earn": 37,
         "@MetaMask/engagement": 4,
-        "@MetaMask/predict": 2,
-        "@MetaMask/perps": 2
+        "@MetaMask/perps": 2,
+        "@MetaMask/predict": 2
       }
     },
     {
@@ -406,8 +415,8 @@
         "../components/ActivityDetailsLayout",
         "./ActivityDetailsLayout",
         "../../components",
-        "../../../../Views/ActivityDetails/components/ActivityDetailsLayout",
-        "../../../../Views/ActivityDetails/components"
+        "../../../../Views/ActivityDetails/components",
+        "../../../../Views/ActivityDetails/components/ActivityDetailsLayout"
       ],
       "mmdsMatches": [
         {
@@ -500,7 +509,7 @@
     },
     {
       "component": "FlatList",
-      "instances": 50,
+      "instances": 51,
       "fileCount": 47,
       "sourceCategory": "platform-primitive",
       "canonicalSource": "react-native",
@@ -524,8 +533,8 @@
       ],
       "codeOwners": [
         "@MetaMask/money-movement",
-        "@MetaMask/rewards",
         "@MetaMask/social-ai",
+        "@MetaMask/rewards",
         "@MetaMask/predict",
         "@unknown"
       ],
@@ -533,7 +542,7 @@
         "@MetaMask/web3auth": 2,
         "@unknown": 4,
         "@MetaMask/metamask-assets": 2,
-        "@MetaMask/social-ai": 6,
+        "@MetaMask/social-ai": 7,
         "@MetaMask/rewards": 7,
         "@MetaMask/engagement": 1,
         "@MetaMask/accounts-engineers": 2,
@@ -548,7 +557,7 @@
     },
     {
       "component": "TextInput",
-      "instances": 43,
+      "instances": 42,
       "fileCount": 31,
       "sourceCategory": "platform-primitive",
       "canonicalSource": "react-native",
@@ -577,7 +586,7 @@
         "@MetaMask/money-movement"
       ],
       "codeOwnerBreakdown": {
-        "@unknown": 27,
+        "@unknown": 26,
         "@MetaMask/social-ai": 2,
         "@MetaMask/core-platform": 1,
         "@MetaMask/mobile-core-ux": 1,
@@ -586,6 +595,42 @@
         "@MetaMask/money-movement": 2,
         "@MetaMask/card": 1,
         "@MetaMask/confirmations": 2
+      }
+    },
+    {
+      "component": "RefreshControl",
+      "instances": 39,
+      "fileCount": 37,
+      "sourceCategory": "platform-primitive",
+      "canonicalSource": "react-native",
+      "importSources": [
+        "react-native"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "SegmentedControl",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@unknown",
+        "@MetaMask/social-ai",
+        "@MetaMask/predict",
+        "@MetaMask/metamask-assets",
+        "@MetaMask/rewards"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 9,
+        "@MetaMask/mobile-core-ux": 2,
+        "@MetaMask/metamask-assets": 3,
+        "@MetaMask/social-ai": 8,
+        "@MetaMask/rewards": 3,
+        "@MetaMask/money-movement": 3,
+        "@MetaMask/predict": 4,
+        "@MetaMask/perps": 2,
+        "@MetaMask/earn": 1,
+        "@MetaMask/card": 2,
+        "@MetaMask/swaps-engineers": 2
       }
     },
     {
@@ -635,6 +680,43 @@
       }
     },
     {
+      "component": "Svg",
+      "instances": 39,
+      "fileCount": 33,
+      "sourceCategory": "platform-primitive",
+      "canonicalSource": "react-native-svg",
+      "importSources": [
+        "react-native-svg"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "ImageOrSvg",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/social-ai",
+        "@MetaMask/predict",
+        "@unknown",
+        "@MetaMask/perps",
+        "@MetaMask/rewards"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 6,
+        "@MetaMask/social-ai": 8,
+        "@MetaMask/universal-kyc": 1,
+        "@MetaMask/accounts-engineers": 1,
+        "@MetaMask/metamask-assets": 2,
+        "@MetaMask/rewards": 3,
+        "@MetaMask/predict": 7,
+        "@MetaMask/perps": 6,
+        "@MetaMask/card": 2,
+        "@MetaMask/swaps-engineers": 1,
+        "@MetaMask/money-movement": 1,
+        "@MetaMask/earn": 1
+      }
+    },
+    {
       "component": "RewardsErrorBanner",
       "instances": 39,
       "fileCount": 38,
@@ -663,45 +745,9 @@
       }
     },
     {
-      "component": "RefreshControl",
-      "instances": 38,
-      "fileCount": 36,
-      "sourceCategory": "platform-primitive",
-      "canonicalSource": "react-native",
-      "importSources": [
-        "react-native"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "SegmentedControl",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@unknown",
-        "@MetaMask/social-ai",
-        "@MetaMask/predict",
-        "@MetaMask/metamask-assets",
-        "@MetaMask/rewards"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 9,
-        "@MetaMask/mobile-core-ux": 2,
-        "@MetaMask/metamask-assets": 3,
-        "@MetaMask/social-ai": 7,
-        "@MetaMask/rewards": 3,
-        "@MetaMask/money-movement": 3,
-        "@MetaMask/perps": 2,
-        "@MetaMask/predict": 4,
-        "@MetaMask/earn": 1,
-        "@MetaMask/card": 2,
-        "@MetaMask/swaps-engineers": 2
-      }
-    },
-    {
       "component": "FlashList",
-      "instances": 37,
-      "fileCount": 36,
+      "instances": 38,
+      "fileCount": 37,
       "sourceCategory": "third-party",
       "canonicalSource": "@shopify/flash-list",
       "importSources": [
@@ -734,9 +780,9 @@
         "@MetaMask/accounts-engineers": 4,
         "@MetaMask/metamask-assets": 8,
         "@MetaMask/rewards": 1,
-        "@MetaMask/perps": 2,
         "@MetaMask/predict": 4,
-        "@MetaMask/earn": 2,
+        "@MetaMask/perps": 2,
+        "@MetaMask/earn": 3,
         "@MetaMask/card": 1,
         "@MetaMask/swaps-engineers": 1,
         "@MetaMask/confirmations": 1
@@ -775,42 +821,6 @@
         "@MetaMask/mobile-core-ux": 26,
         "@unknown": 8,
         "@MetaMask/confirmations": 1
-      }
-    },
-    {
-      "component": "Svg",
-      "instances": 34,
-      "fileCount": 30,
-      "sourceCategory": "platform-primitive",
-      "canonicalSource": "react-native-svg",
-      "importSources": [
-        "react-native-svg"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "ImageOrSvg",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@MetaMask/predict",
-        "@unknown",
-        "@MetaMask/perps",
-        "@MetaMask/social-ai",
-        "@MetaMask/rewards"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 6,
-        "@MetaMask/social-ai": 3,
-        "@MetaMask/accounts-engineers": 1,
-        "@MetaMask/metamask-assets": 2,
-        "@MetaMask/rewards": 3,
-        "@MetaMask/money-movement": 2,
-        "@MetaMask/perps": 6,
-        "@MetaMask/predict": 7,
-        "@MetaMask/card": 2,
-        "@MetaMask/swaps-engineers": 1,
-        "@MetaMask/earn": 1
       }
     },
     {
@@ -859,9 +869,9 @@
         "../../../UI/Perps/components/PerpsTokenLogo/PerpsTokenLogo",
         "../../Perps/components/PerpsTokenLogo",
         "../../../Perps/components/PerpsTokenLogo",
-        "../../components/PerpsTokenLogo",
         "../PerpsTokenLogo",
         "../PerpsTokenLogo/PerpsTokenLogo",
+        "../../components/PerpsTokenLogo",
         "../../../components/PerpsTokenLogo",
         "../../../../../../UI/Perps/components/PerpsTokenLogo"
       ],
@@ -908,6 +918,37 @@
       }
     },
     {
+      "component": "DetailRow",
+      "instances": 26,
+      "fileCount": 5,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/LimitOrderConfirmationModal/DetailRow",
+      "importSources": [
+        "(local or re-export)",
+        "../../components/LimitOrderConfirmationModal/DetailRow",
+        "../LimitOrderConfirmationModal/DetailRow",
+        "./DetailRow"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "BoxRow",
+          "confidence": "medium"
+        },
+        {
+          "component": "KeyValueRow",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/swaps-engineers",
+        "@MetaMask/metamask-assets"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/metamask-assets": 8,
+        "@MetaMask/swaps-engineers": 18
+      }
+    },
+    {
       "component": "Item",
       "instances": 24,
       "fileCount": 1,
@@ -947,8 +988,8 @@
         "../components/ActivityDetailsLayout",
         "./ActivityDetailsLayout",
         "../../components",
-        "../../../../Views/ActivityDetails/components/ActivityDetailsLayout",
-        "../../../../Views/ActivityDetails/components"
+        "../../../../Views/ActivityDetails/components",
+        "../../../../Views/ActivityDetails/components/ActivityDetailsLayout"
       ],
       "mmdsMatches": [
         {
@@ -1080,68 +1121,6 @@
       }
     },
     {
-      "component": "SectionHeader",
-      "instances": 22,
-      "fileCount": 9,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "Views/TrendingView/components/SectionHeader",
-      "importSources": [
-        "../components/SectionHeader",
-        "(local or re-export)",
-        "../../components/SectionHeader",
-        "../../../../Views/TrendingView/components/SectionHeader"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "SectionHeader",
-          "confidence": "exact"
-        },
-        {
-          "component": "BottomSheetHeader",
-          "confidence": "medium"
-        },
-        {
-          "component": "HeaderBase",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@unknown",
-        "@MetaMask/metamask-assets",
-        "@MetaMask/swaps-engineers",
-        "@MetaMask/perps"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 14,
-        "@MetaMask/perps": 1,
-        "@MetaMask/swaps-engineers": 2,
-        "@MetaMask/metamask-assets": 5
-      }
-    },
-    {
-      "component": "BankDetailRow",
-      "instances": 20,
-      "fileCount": 3,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/BankDetailRow/BankDetailRow",
-      "importSources": [
-        "../../components/BankDetailRow/BankDetailRow",
-        "../../components/BankDetailRow"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "BoxRow",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@MetaMask/money-movement"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/money-movement": 20
-      }
-    },
-    {
       "component": "PerpsBottomSheetTooltip",
       "instances": 19,
       "fileCount": 14,
@@ -1151,9 +1130,9 @@
         "../../Perps/components/PerpsBottomSheetTooltip",
         "../components/PerpsBottomSheetTooltip",
         "../../../Perps/components/PerpsBottomSheetTooltip",
+        "../PerpsBottomSheetTooltip",
         "../../components/PerpsBottomSheetTooltip",
         "../../components/PerpsBottomSheetTooltip/PerpsBottomSheetTooltip",
-        "../PerpsBottomSheetTooltip",
         "../../../components/PerpsBottomSheetTooltip"
       ],
       "mmdsMatches": [
@@ -1204,31 +1183,63 @@
       }
     },
     {
-      "component": "DetailRow",
+      "component": "BankDetailRow",
       "instances": 18,
-      "fileCount": 3,
+      "fileCount": 2,
       "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/LimitOrderConfirmationModal/DetailRow",
+      "canonicalSource": "components/BankDetailRow/BankDetailRow",
       "importSources": [
-        "../LimitOrderConfirmationModal/DetailRow",
-        "./DetailRow",
-        "../../components/LimitOrderConfirmationModal/DetailRow"
+        "../../components/BankDetailRow/BankDetailRow",
+        "../../components/BankDetailRow"
       ],
       "mmdsMatches": [
         {
           "component": "BoxRow",
           "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/money-movement"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/money-movement": 18
+      }
+    },
+    {
+      "component": "SectionHeader",
+      "instances": 17,
+      "fileCount": 8,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "Views/TrendingView/components/SectionHeader",
+      "importSources": [
+        "../components/SectionHeader",
+        "(local or re-export)",
+        "../../components/SectionHeader",
+        "../../../../Views/TrendingView/components/SectionHeader"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "SectionHeader",
+          "confidence": "exact"
         },
         {
-          "component": "KeyValueRow",
+          "component": "BottomSheetHeader",
+          "confidence": "medium"
+        },
+        {
+          "component": "HeaderBase",
           "confidence": "medium"
         }
       ],
       "codeOwners": [
-        "@MetaMask/swaps-engineers"
+        "@unknown",
+        "@MetaMask/swaps-engineers",
+        "@MetaMask/perps"
       ],
       "codeOwnerBreakdown": {
-        "@MetaMask/swaps-engineers": 18
+        "@unknown": 14,
+        "@MetaMask/perps": 1,
+        "@MetaMask/swaps-engineers": 2
       }
     },
     {
@@ -1268,8 +1279,8 @@
       "sourceCategory": "local-oneoff",
       "canonicalSource": "Base/RemoteImage",
       "importSources": [
-        "../../Base/RemoteImage",
         "../RemoteImage",
+        "../../Base/RemoteImage",
         "../../../../Base/RemoteImage",
         "../../../../../Base/RemoteImage"
       ],
@@ -1286,16 +1297,16 @@
         "@unknown"
       ],
       "codeOwnerBreakdown": {
-        "@MetaMask/metamask-assets": 3,
         "@unknown": 2,
+        "@MetaMask/metamask-assets": 3,
         "@MetaMask/engagement": 5,
         "@MetaMask/money-movement": 6
       }
     },
     {
       "component": "TraderAvatar",
-      "instances": 15,
-      "fileCount": 15,
+      "instances": 16,
+      "fileCount": 16,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "UI/SocialFeed/components/TraderAvatar",
       "importSources": [
@@ -1323,7 +1334,7 @@
         "@MetaMask/mobile-core-ux"
       ],
       "codeOwnerBreakdown": {
-        "@MetaMask/social-ai": 14,
+        "@MetaMask/social-ai": 15,
         "@MetaMask/mobile-core-ux": 1
       }
     },
@@ -1413,6 +1424,41 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/card": 14
+      }
+    },
+    {
+      "component": "ProfileAvatar",
+      "instances": 13,
+      "fileCount": 11,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "MyProfileView/components/ProfileAvatar",
+      "importSources": [
+        "./ProfileAvatar",
+        "../MyProfileView/components/ProfileAvatar",
+        "./components/ProfileAvatar",
+        "../../../MyProfileView/components/ProfileAvatar"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "AvatarAccount",
+          "confidence": "medium"
+        },
+        {
+          "component": "AvatarBase",
+          "confidence": "medium"
+        },
+        {
+          "component": "AvatarFavicon",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/social-ai",
+        "@unknown"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 1,
+        "@MetaMask/social-ai": 12
       }
     },
     {
@@ -1548,34 +1594,6 @@
       }
     },
     {
-      "component": "StatRow",
-      "instances": 11,
-      "fileCount": 2,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "(local)",
-      "importSources": [
-        "(local or re-export)"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "BoxRow",
-          "confidence": "medium"
-        },
-        {
-          "component": "KeyValueRow",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@MetaMask/metamask-assets",
-        "@unknown"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 2,
-        "@MetaMask/metamask-assets": 9
-      }
-    },
-    {
       "component": "NftDetailsInformationRow",
       "instances": 11,
       "fileCount": 1,
@@ -1638,8 +1656,8 @@
       "sourceCategory": "local-oneoff",
       "canonicalSource": "UI/Identicon",
       "importSources": [
-        "../Identicon",
         "../../UI/Identicon",
+        "../Identicon",
         "(local or re-export)",
         "../../../../../../UI/Identicon"
       ],
@@ -1805,6 +1823,37 @@
       }
     },
     {
+      "component": "CardMessageBox",
+      "instances": 11,
+      "fileCount": 4,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/CardMessageBox/CardMessageBox",
+      "importSources": [
+        "../../components/CardMessageBox/CardMessageBox",
+        "../../../components/CardMessageBox/CardMessageBox"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Box",
+          "confidence": "high"
+        },
+        {
+          "component": "Card",
+          "confidence": "high"
+        },
+        {
+          "component": "BoxColumn",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/card"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/card": 11
+      }
+    },
+    {
       "component": "NetworkAssetLogo",
       "instances": 10,
       "fileCount": 10,
@@ -1836,37 +1885,6 @@
         "@MetaMask/metamask-assets": 2,
         "@MetaMask/earn": 4,
         "@MetaMask/confirmations": 4
-      }
-    },
-    {
-      "component": "CardMessageBox",
-      "instances": 10,
-      "fileCount": 4,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/CardMessageBox/CardMessageBox",
-      "importSources": [
-        "../../components/CardMessageBox/CardMessageBox",
-        "../../../components/CardMessageBox/CardMessageBox"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Box",
-          "confidence": "high"
-        },
-        {
-          "component": "Card",
-          "confidence": "high"
-        },
-        {
-          "component": "BoxColumn",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@MetaMask/card"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/card": 10
       }
     },
     {
@@ -2037,37 +2055,33 @@
       }
     },
     {
-      "component": "ProfileAvatar",
+      "component": "PillScrollList",
       "instances": 9,
-      "fileCount": 7,
+      "fileCount": 8,
       "sourceCategory": "local-oneoff",
-      "canonicalSource": "MyProfileView/components/ProfileAvatar",
+      "canonicalSource": "Views/TrendingView/components/PillScrollList",
       "importSources": [
-        "./ProfileAvatar",
-        "../MyProfileView/components/ProfileAvatar",
-        "./components/ProfileAvatar"
+        "../components/PillScrollList",
+        "../../../Trending/components/PillScrollList",
+        "../../../../Views/TrendingView/components/PillScrollList",
+        "../../../Trending/components/PillScrollList/PillScrollList",
+        "../../../../../UI/Trending/components/PillScrollList"
       ],
       "mmdsMatches": [
         {
-          "component": "AvatarAccount",
-          "confidence": "medium"
-        },
-        {
-          "component": "AvatarBase",
-          "confidence": "medium"
-        },
-        {
-          "component": "AvatarFavicon",
+          "component": "ListItem",
           "confidence": "medium"
         }
       ],
       "codeOwners": [
-        "@MetaMask/social-ai",
-        "@unknown"
+        "@MetaMask/perps",
+        "@unknown",
+        "@MetaMask/swaps-engineers"
       ],
       "codeOwnerBreakdown": {
-        "@unknown": 1,
-        "@MetaMask/social-ai": 8
+        "@unknown": 2,
+        "@MetaMask/perps": 5,
+        "@MetaMask/swaps-engineers": 2
       }
     },
     {
@@ -2139,6 +2153,34 @@
       }
     },
     {
+      "component": "PerpsRowSkeleton",
+      "instances": 9,
+      "fileCount": 7,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "UI/Perps/components/PerpsRowSkeleton",
+      "importSources": [
+        "../../../../UI/Perps/components/PerpsRowSkeleton",
+        "../PerpsRowSkeleton",
+        "../../components/PerpsRowSkeleton"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Skeleton",
+          "confidence": "high"
+        },
+        {
+          "component": "BoxRow",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/perps"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/perps": 9
+      }
+    },
+    {
       "component": "PaymentMethodIcon",
       "instances": 9,
       "fileCount": 9,
@@ -2207,8 +2249,8 @@
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/LivePriceDisplay/LivePriceHeader",
       "importSources": [
-        "../../components/LivePriceDisplay/LivePriceHeader",
         "../LivePriceDisplay/LivePriceHeader",
+        "../../components/LivePriceDisplay/LivePriceHeader",
         "../../../components/LivePriceDisplay/LivePriceHeader"
       ],
       "mmdsMatches": [
@@ -2298,6 +2340,34 @@
         "@unknown": 1,
         "@MetaMask/confirmations": 2,
         "@MetaMask/money-movement": 5
+      }
+    },
+    {
+      "component": "GestureHandlerRootView",
+      "instances": 8,
+      "fileCount": 8,
+      "sourceCategory": "platform-primitive",
+      "canonicalSource": "react-native-gesture-handler",
+      "importSources": [
+        "react-native-gesture-handler"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "HeaderRoot",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/social-ai",
+        "@MetaMask/mobile-platform",
+        "@MetaMask/predict",
+        "@MetaMask/perps"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/mobile-platform": 1,
+        "@MetaMask/social-ai": 5,
+        "@MetaMask/predict": 1,
+        "@MetaMask/perps": 1
       }
     },
     {
@@ -2460,36 +2530,6 @@
       }
     },
     {
-      "component": "PillScrollList",
-      "instances": 8,
-      "fileCount": 7,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "Views/TrendingView/components/PillScrollList",
-      "importSources": [
-        "../components/PillScrollList",
-        "../../../Trending/components/PillScrollList",
-        "../../../../Views/TrendingView/components/PillScrollList",
-        "../../../Trending/components/PillScrollList/PillScrollList",
-        "../../../../../UI/Trending/components/PillScrollList"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "ListItem",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@MetaMask/perps",
-        "@unknown",
-        "@MetaMask/swaps-engineers"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 2,
-        "@MetaMask/perps": 4,
-        "@MetaMask/swaps-engineers": 2
-      }
-    },
-    {
       "component": "VipIcon",
       "instances": 8,
       "fileCount": 7,
@@ -2516,39 +2556,80 @@
       ],
       "codeOwners": [
         "@MetaMask/rewards",
+        "@unknown",
         "@MetaMask/perps"
       ],
       "codeOwnerBreakdown": {
-        "@MetaMask/rewards": 7,
+        "@unknown": 1,
+        "@MetaMask/rewards": 6,
         "@MetaMask/perps": 1
       }
     },
     {
-      "component": "PerpsRowSkeleton",
+      "component": "PositionTokenAvatar",
       "instances": 8,
-      "fileCount": 6,
+      "fileCount": 7,
       "sourceCategory": "local-oneoff",
-      "canonicalSource": "UI/Perps/components/PerpsRowSkeleton",
+      "canonicalSource": "UI/SocialFeed/components/PositionTokenAvatar",
       "importSources": [
-        "../../../../UI/Perps/components/PerpsRowSkeleton",
-        "../../components/PerpsRowSkeleton",
-        "../PerpsRowSkeleton"
+        "./PositionTokenAvatar",
+        "../../../../UI/SocialFeed/components/PositionTokenAvatar",
+        "../../../../../UI/SocialFeed/components/PositionTokenAvatar"
       ],
       "mmdsMatches": [
         {
-          "component": "Skeleton",
-          "confidence": "high"
+          "component": "AvatarAccount",
+          "confidence": "medium"
         },
         {
-          "component": "BoxRow",
+          "component": "AvatarBase",
+          "confidence": "medium"
+        },
+        {
+          "component": "AvatarFavicon",
           "confidence": "medium"
         }
       ],
       "codeOwners": [
-        "@MetaMask/perps"
+        "@MetaMask/social-ai"
       ],
       "codeOwnerBreakdown": {
-        "@MetaMask/perps": 8
+        "@MetaMask/social-ai": 8
+      }
+    },
+    {
+      "component": "MoneyBalanceIcon",
+      "instances": 8,
+      "fileCount": 8,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "images/money-balance.svg",
+      "importSources": [
+        "../../../../../images/money-balance.svg",
+        "../../../../../../images/money-balance.svg"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Icon",
+          "confidence": "high"
+        },
+        {
+          "component": "AvatarIcon",
+          "confidence": "medium"
+        },
+        {
+          "component": "BadgeIcon",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/card",
+        "@MetaMask/earn",
+        "@MetaMask/swaps-engineers"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/earn": 2,
+        "@MetaMask/card": 5,
+        "@MetaMask/swaps-engineers": 1
       }
     },
     {
@@ -2711,45 +2792,17 @@
       }
     },
     {
-      "component": "GestureHandlerRootView",
-      "instances": 7,
-      "fileCount": 7,
-      "sourceCategory": "platform-primitive",
-      "canonicalSource": "react-native-gesture-handler",
-      "importSources": [
-        "react-native-gesture-handler"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "HeaderRoot",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@MetaMask/social-ai",
-        "@MetaMask/mobile-platform",
-        "@MetaMask/predict",
-        "@MetaMask/perps"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/mobile-platform": 1,
-        "@MetaMask/social-ai": 4,
-        "@MetaMask/predict": 1,
-        "@MetaMask/perps": 1
-      }
-    },
-    {
-      "component": "RewardsVipBadge",
+      "component": "MembershipVipBadge",
       "instances": 7,
       "fileCount": 7,
       "sourceCategory": "local-oneoff",
-      "canonicalSource": "Rewards/components/RewardsVipBadge/RewardsVipBadge",
+      "canonicalSource": "shared/MembershipVipBadge/MembershipVipBadge",
       "importSources": [
-        "../Rewards/components/RewardsVipBadge",
-        "../../../Rewards/components/RewardsVipBadge/RewardsVipBadge",
-        "../../../Rewards/components/RewardsVipBadge",
-        "../../../../Rewards/components/RewardsVipBadge/RewardsVipBadge",
-        "../../../../Rewards/components/RewardsVipBadge"
+        "../shared/MembershipVipBadge",
+        "../../../shared/MembershipVipBadge/MembershipVipBadge",
+        "../../../shared/MembershipVipBadge",
+        "../../../../shared/MembershipVipBadge/MembershipVipBadge",
+        "../../../../shared/MembershipVipBadge"
       ],
       "mmdsMatches": [
         {
@@ -3053,39 +3106,6 @@
       }
     },
     {
-      "component": "MoneyBalanceIcon",
-      "instances": 7,
-      "fileCount": 7,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "images/money-balance.svg",
-      "importSources": [
-        "../../../../../images/money-balance.svg",
-        "../../../../../../images/money-balance.svg"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Icon",
-          "confidence": "high"
-        },
-        {
-          "component": "AvatarIcon",
-          "confidence": "medium"
-        },
-        {
-          "component": "BadgeIcon",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@MetaMask/card",
-        "@MetaMask/earn"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/earn": 2,
-        "@MetaMask/card": 5
-      }
-    },
-    {
       "component": "ListRow",
       "instances": 7,
       "fileCount": 1,
@@ -3179,9 +3199,9 @@
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/LimitOrderConfirmationModal/TokenAmountValue",
       "importSources": [
+        "../../components/LimitOrderConfirmationModal/TokenAmountValue",
         "../LimitOrderConfirmationModal/TokenAmountValue",
-        "./TokenAmountValue",
-        "../../components/LimitOrderConfirmationModal/TokenAmountValue"
+        "./TokenAmountValue"
       ],
       "mmdsMatches": [
         {
@@ -3385,14 +3405,14 @@
       "codeOwners": [
         "@MetaMask/social-ai",
         "@unknown",
-        "@MetaMask/predict",
-        "@MetaMask/perps"
+        "@MetaMask/perps",
+        "@MetaMask/predict"
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/social-ai": 3,
         "@unknown": 1,
-        "@MetaMask/predict": 1,
-        "@MetaMask/perps": 1
+        "@MetaMask/perps": 1,
+        "@MetaMask/predict": 1
       }
     },
     {
@@ -3631,38 +3651,6 @@
       }
     },
     {
-      "component": "PositionTokenAvatar",
-      "instances": 6,
-      "fileCount": 6,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "UI/SocialFeed/components/PositionTokenAvatar",
-      "importSources": [
-        "./PositionTokenAvatar",
-        "../../../../UI/SocialFeed/components/PositionTokenAvatar",
-        "../../../../../UI/SocialFeed/components/PositionTokenAvatar"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "AvatarAccount",
-          "confidence": "medium"
-        },
-        {
-          "component": "AvatarBase",
-          "confidence": "medium"
-        },
-        {
-          "component": "AvatarFavicon",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@MetaMask/social-ai"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/social-ai": 6
-      }
-    },
-    {
       "component": "CampaignOutcomeBanner",
       "instances": 6,
       "fileCount": 6,
@@ -3690,6 +3678,36 @@
       }
     },
     {
+      "component": "AnimatedPath",
+      "instances": 6,
+      "fileCount": 4,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "(local)",
+      "importSources": [
+        "(local or re-export)"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "ButtonAnimated",
+          "confidence": "medium"
+        },
+        {
+          "component": "HeaderStandardAnimated",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/predict",
+        "@MetaMask/social-ai",
+        "@MetaMask/rewards"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/social-ai": 2,
+        "@MetaMask/rewards": 1,
+        "@MetaMask/predict": 3
+      }
+    },
+    {
       "component": "PerpsServiceInterruptionBanner",
       "instances": 6,
       "fileCount": 6,
@@ -3697,8 +3715,8 @@
       "canonicalSource": "UI/Perps/components/PerpsServiceInterruptionBanner",
       "importSources": [
         "../../../../UI/Perps/components/PerpsServiceInterruptionBanner",
-        "../../components/PerpsServiceInterruptionBanner",
-        "../PerpsServiceInterruptionBanner"
+        "../PerpsServiceInterruptionBanner",
+        "../../components/PerpsServiceInterruptionBanner"
       ],
       "mmdsMatches": [
         {
@@ -3827,8 +3845,8 @@
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/PerpsSlider",
       "importSources": [
-        "../../components/PerpsSlider",
         "../PerpsSlider",
+        "../../components/PerpsSlider",
         "../../../../components/PerpsSlider"
       ],
       "mmdsMatches": [
@@ -4001,6 +4019,32 @@
       }
     },
     {
+      "component": "Wrapper",
+      "instances": 5,
+      "fileCount": 5,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "(local)",
+      "importSources": [
+        "(local or re-export)"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "BadgeWrapper",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/predict",
+        "@unknown",
+        "@MetaMask/metamask-assets"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 1,
+        "@MetaMask/predict": 3,
+        "@MetaMask/metamask-assets": 1
+      }
+    },
+    {
       "component": "ActionView",
       "instances": 5,
       "fileCount": 5,
@@ -4089,6 +4133,38 @@
       }
     },
     {
+      "component": "EmptyIcon",
+      "instances": 5,
+      "fileCount": 4,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "(local)",
+      "importSources": [
+        "(local or re-export)"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "Icon",
+          "confidence": "high"
+        },
+        {
+          "component": "AvatarIcon",
+          "confidence": "medium"
+        },
+        {
+          "component": "BadgeIcon",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@unknown",
+        "@MetaMask/predict"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 3,
+        "@MetaMask/predict": 2
+      }
+    },
+    {
       "component": "RewardsDiscountBadge",
       "instances": 5,
       "fileCount": 4,
@@ -4096,7 +4172,7 @@
       "canonicalSource": "Rewards/components/RewardsDiscountBadge",
       "importSources": [
         "../Rewards/components/RewardsDiscountBadge",
-        "../RewardsDiscountBadge",
+        "../../Rewards/components/RewardsDiscountBadge",
         "../../../Rewards/components/RewardsDiscountBadge",
         "../../../../Rewards/components/RewardsDiscountBadge"
       ],
@@ -4116,11 +4192,11 @@
       ],
       "codeOwners": [
         "@MetaMask/swaps-engineers",
-        "@MetaMask/rewards"
+        "@unknown"
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/swaps-engineers": 3,
-        "@MetaMask/rewards": 2
+        "@unknown": 2
       }
     },
     {
@@ -4211,38 +4287,6 @@
       }
     },
     {
-      "component": "EmptyIcon",
-      "instances": 5,
-      "fileCount": 4,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "(local)",
-      "importSources": [
-        "(local or re-export)"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "Icon",
-          "confidence": "high"
-        },
-        {
-          "component": "AvatarIcon",
-          "confidence": "medium"
-        },
-        {
-          "component": "BadgeIcon",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@unknown",
-        "@MetaMask/predict"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 3,
-        "@MetaMask/predict": 2
-      }
-    },
-    {
       "component": "PredictionsCarouselSection",
       "instances": 5,
       "fileCount": 5,
@@ -4269,6 +4313,66 @@
       }
     },
     {
+      "component": "SocialV1FeedPostList",
+      "instances": 5,
+      "fileCount": 5,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "UI/SocialFeed/components/SocialV1FeedPostList",
+      "importSources": [
+        "../../../UI/SocialFeed/components/SocialV1FeedPostList",
+        "./SocialV1FeedPostList",
+        "../../../SocialFeed/components/SocialV1FeedPostList",
+        "../../../SocialFeed"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "ListItem",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/social-ai",
+        "@MetaMask/metamask-assets",
+        "@MetaMask/perps"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/social-ai": 3,
+        "@MetaMask/metamask-assets": 1,
+        "@MetaMask/perps": 1
+      }
+    },
+    {
+      "component": "TraderHeaderIdentity",
+      "instances": 5,
+      "fileCount": 5,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/TraderHeaderIdentity",
+      "importSources": [
+        "../components/TraderHeaderIdentity",
+        "../../components/TraderHeaderIdentity"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "HeaderBase",
+          "confidence": "medium"
+        },
+        {
+          "component": "HeaderRoot",
+          "confidence": "medium"
+        },
+        {
+          "component": "HeaderSearch",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/social-ai"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/social-ai": 5
+      }
+    },
+    {
       "component": "PositionRow",
       "instances": 5,
       "fileCount": 3,
@@ -4286,6 +4390,36 @@
         },
         {
           "component": "KeyValueRow",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/social-ai"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/social-ai": 5
+      }
+    },
+    {
+      "component": "OnboardingTitle",
+      "instances": 5,
+      "fileCount": 1,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "(local)",
+      "importSources": [
+        "(local or re-export)"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "TitleAlert",
+          "confidence": "medium"
+        },
+        {
+          "component": "TitleHub",
+          "confidence": "medium"
+        },
+        {
+          "component": "TitleStandard",
           "confidence": "medium"
         }
       ],
@@ -4452,6 +4586,34 @@
       "codeOwnerBreakdown": {
         "@MetaMask/metamask-assets": 1,
         "@MetaMask/perps": 4
+      }
+    },
+    {
+      "component": "TokenDetailsStickyFooter",
+      "instances": 5,
+      "fileCount": 5,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "TokenDetails/components/TokenDetailsStickyFooter",
+      "importSources": [
+        "../components/TokenDetailsStickyFooter",
+        "../../TokenDetails/components/TokenDetailsStickyFooter",
+        "../../../TokenDetails/components/TokenDetailsStickyFooter"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "AvatarToken",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/metamask-assets",
+        "@unknown",
+        "@MetaMask/social-ai"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/metamask-assets": 3,
+        "@unknown": 1,
+        "@MetaMask/social-ai": 1
       }
     },
     {
@@ -4630,31 +4792,6 @@
       }
     },
     {
-      "component": "StatusAndDateRows",
-      "instances": 5,
-      "fileCount": 3,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "PredictDetailsShared",
-      "importSources": [
-        "./PredictDetailsShared",
-        "(local or re-export)"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "BadgeStatus",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@MetaMask/perps",
-        "@unknown"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 2,
-        "@MetaMask/perps": 3
-      }
-    },
-    {
       "component": "ActivityDetailsPerpsHero",
       "instances": 5,
       "fileCount": 1,
@@ -4677,6 +4814,31 @@
       }
     },
     {
+      "component": "StatusAndDateRows",
+      "instances": 5,
+      "fileCount": 3,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "PredictDetailsShared",
+      "importSources": [
+        "(local or re-export)",
+        "./PredictDetailsShared"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "BadgeStatus",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/perps",
+        "@unknown"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/perps": 3,
+        "@unknown": 2
+      }
+    },
+    {
       "component": "VipTierDetailRow",
       "instances": 5,
       "fileCount": 1,
@@ -4696,66 +4858,6 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/rewards": 5
-      }
-    },
-    {
-      "component": "AnimatedPath",
-      "instances": 5,
-      "fileCount": 3,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "(local)",
-      "importSources": [
-        "(local or re-export)"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "ButtonAnimated",
-          "confidence": "medium"
-        },
-        {
-          "component": "HeaderStandardAnimated",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@MetaMask/predict",
-        "@MetaMask/rewards",
-        "@MetaMask/social-ai"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/rewards": 1,
-        "@MetaMask/predict": 3,
-        "@MetaMask/social-ai": 1
-      }
-    },
-    {
-      "component": "StatItem",
-      "instances": 5,
-      "fileCount": 1,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "(local)",
-      "importSources": [
-        "(local or re-export)"
-      ],
-      "mmdsMatches": [
-        {
-          "component": "ActionListItem",
-          "confidence": "medium"
-        },
-        {
-          "component": "ListItem",
-          "confidence": "medium"
-        },
-        {
-          "component": "ListItemMultiSelect",
-          "confidence": "medium"
-        }
-      ],
-      "codeOwners": [
-        "@MetaMask/perps"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/perps": 5
       }
     },
     {
@@ -4788,6 +4890,36 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/predict": 5
+      }
+    },
+    {
+      "component": "StatItem",
+      "instances": 5,
+      "fileCount": 1,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "(local)",
+      "importSources": [
+        "(local or re-export)"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "ActionListItem",
+          "confidence": "medium"
+        },
+        {
+          "component": "ListItem",
+          "confidence": "medium"
+        },
+        {
+          "component": "ListItemMultiSelect",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/perps"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/perps": 5
       }
     },
     {
@@ -4958,6 +5090,36 @@
       }
     },
     {
+      "component": "SectionTitle",
+      "instances": 5,
+      "fileCount": 1,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "(local)",
+      "importSources": [
+        "(local or re-export)"
+      ],
+      "mmdsMatches": [
+        {
+          "component": "SectionDivider",
+          "confidence": "medium"
+        },
+        {
+          "component": "SectionHeader",
+          "confidence": "medium"
+        },
+        {
+          "component": "TitleAlert",
+          "confidence": "medium"
+        }
+      ],
+      "codeOwners": [
+        "@MetaMask/metamask-assets"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/metamask-assets": 5
+      }
+    },
+    {
       "component": "OptionFilterButton",
       "instances": 5,
       "fileCount": 1,
@@ -5013,8 +5175,8 @@
   "futureDSCandidates": [
     {
       "component": "View",
-      "instances": 2605,
-      "fileCount": 781,
+      "instances": 2613,
+      "fileCount": 785,
       "sourceCategory": "mixed",
       "canonicalSource": "react-native",
       "importSources": [
@@ -5031,23 +5193,23 @@
         "@MetaMask/metamask-assets"
       ],
       "codeOwnerBreakdown": {
-        "@unknown": 733,
+        "@unknown": 731,
         "@MetaMask/product-safety": 16,
+        "@MetaMask/core-platform": 38,
         "@MetaMask/wallet-integrations": 15,
         "@MetaMask/web3auth": 8,
         "@MetaMask/mobile-core-ux": 182,
         "@MetaMask/engagement": 56,
-        "@MetaMask/metamask-assets": 196,
+        "@MetaMask/metamask-assets": 199,
         "@MetaMask/mobile-platform": 9,
-        "@MetaMask/core-platform": 38,
-        "@MetaMask/money-movement": 201,
+        "@MetaMask/money-movement": 202,
         "@MetaMask/transactions": 7,
-        "@MetaMask/social-ai": 160,
-        "@MetaMask/accounts-engineers": 89,
+        "@MetaMask/social-ai": 166,
+        "@MetaMask/accounts-engineers": 90,
         "@MetaMask/earn": 177,
         "@MetaMask/rewards": 20,
         "@MetaMask/swaps-engineers": 37,
-        "@MetaMask/perps": 322,
+        "@MetaMask/perps": 321,
         "@MetaMask/confirmations": 247,
         "@MetaMask/predict": 59,
         "@MetaMask/card": 33
@@ -5055,7 +5217,7 @@
     },
     {
       "component": "NativeStack",
-      "instances": 388,
+      "instances": 393,
       "fileCount": 3,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "(local)",
@@ -5069,13 +5231,13 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/mobile-platform": 2,
-        "@unknown": 386
+        "@unknown": 391
       }
     },
     {
       "component": "TouchableOpacity",
-      "instances": 377,
-      "fileCount": 278,
+      "instances": 375,
+      "fileCount": 277,
       "sourceCategory": "platform-primitive",
       "canonicalSource": "react-native",
       "importSources": [
@@ -5091,31 +5253,31 @@
         "@MetaMask/money-movement"
       ],
       "codeOwnerBreakdown": {
-        "@unknown": 97,
+        "@unknown": 95,
         "@MetaMask/product-safety": 3,
+        "@MetaMask/core-platform": 7,
         "@MetaMask/wallet-integrations": 1,
         "@MetaMask/mobile-core-ux": 21,
-        "@MetaMask/web3auth": 5,
-        "@MetaMask/metamask-assets": 30,
-        "@MetaMask/core-platform": 7,
+        "@MetaMask/web3auth": 4,
+        "@MetaMask/metamask-assets": 32,
         "@MetaMask/transactions": 2,
-        "@MetaMask/social-ai": 9,
         "@MetaMask/engagement": 3,
         "@MetaMask/accounts-engineers": 24,
         "@MetaMask/rewards": 9,
         "@MetaMask/swaps-engineers": 19,
         "@MetaMask/earn": 14,
         "@MetaMask/confirmations": 28,
+        "@MetaMask/social-ai": 8,
         "@MetaMask/money-movement": 28,
-        "@MetaMask/perps": 19,
         "@MetaMask/predict": 24,
+        "@MetaMask/perps": 19,
         "@MetaMask/card": 34
       }
     },
     {
       "component": "ScrollView",
-      "instances": 252,
-      "fileCount": 239,
+      "instances": 256,
+      "fileCount": 243,
       "sourceCategory": "platform-primitive",
       "canonicalSource": "react-native",
       "importSources": [
@@ -5131,30 +5293,31 @@
         "@MetaMask/social-ai"
       ],
       "codeOwnerBreakdown": {
-        "@unknown": 64,
+        "@unknown": 63,
         "@MetaMask/product-safety": 2,
+        "@MetaMask/core-platform": 5,
         "@MetaMask/web3auth": 11,
         "@MetaMask/wallet-integrations": 2,
         "@MetaMask/mobile-core-ux": 12,
-        "@MetaMask/metamask-assets": 6,
-        "@MetaMask/core-platform": 5,
-        "@MetaMask/social-ai": 15,
+        "@MetaMask/metamask-assets": 7,
+        "@MetaMask/social-ai": 16,
         "@MetaMask/swaps-engineers": 14,
         "@MetaMask/engagement": 1,
-        "@MetaMask/accounts-engineers": 4,
+        "@MetaMask/accounts-engineers": 6,
         "@MetaMask/rewards": 24,
         "@MetaMask/perps": 24,
+        "@MetaMask/universal-kyc": 4,
         "@MetaMask/confirmations": 13,
         "@MetaMask/earn": 12,
-        "@MetaMask/money-movement": 23,
+        "@MetaMask/money-movement": 20,
         "@MetaMask/predict": 15,
         "@MetaMask/card": 5
       }
     },
     {
       "component": "Pressable",
-      "instances": 241,
-      "fileCount": 183,
+      "instances": 246,
+      "fileCount": 189,
       "sourceCategory": "mixed",
       "canonicalSource": "react-native",
       "importSources": [
@@ -5163,8 +5326,8 @@
       ],
       "mmdsMatches": [],
       "codeOwners": [
-        "@unknown",
         "@MetaMask/social-ai",
+        "@unknown",
         "@MetaMask/rewards",
         "@MetaMask/perps",
         "@MetaMask/predict"
@@ -5174,15 +5337,15 @@
         "@MetaMask/web3auth": 1,
         "@MetaMask/engagement": 4,
         "@MetaMask/mobile-core-ux": 3,
-        "@MetaMask/social-ai": 45,
+        "@MetaMask/social-ai": 50,
+        "@MetaMask/metamask-assets": 6,
         "@MetaMask/rewards": 31,
-        "@MetaMask/metamask-assets": 4,
-        "@MetaMask/money-movement": 6,
-        "@MetaMask/perps": 31,
+        "@MetaMask/money-movement": 4,
         "@MetaMask/predict": 26,
-        "@MetaMask/earn": 20,
+        "@MetaMask/perps": 31,
+        "@MetaMask/earn": 21,
         "@MetaMask/card": 1,
-        "@MetaMask/swaps-engineers": 13,
+        "@MetaMask/swaps-engineers": 12,
         "@MetaMask/confirmations": 8
       }
     },
@@ -5205,8 +5368,8 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/rewards": 5,
-        "@MetaMask/perps": 6,
         "@MetaMask/predict": 13,
+        "@MetaMask/perps": 6,
         "@MetaMask/social-ai": 2,
         "@MetaMask/card": 177,
         "@MetaMask/money-movement": 19,
@@ -5237,8 +5400,8 @@
     },
     {
       "component": "ActivityIndicator",
-      "instances": 91,
-      "fileCount": 86,
+      "instances": 93,
+      "fileCount": 88,
       "sourceCategory": "platform-primitive",
       "canonicalSource": "react-native",
       "importSources": [
@@ -5249,22 +5412,23 @@
         "@unknown",
         "@MetaMask/rewards",
         "@MetaMask/predict",
-        "@MetaMask/money-movement",
-        "@MetaMask/card"
+        "@MetaMask/card",
+        "@MetaMask/money-movement"
       ],
       "codeOwnerBreakdown": {
-        "@unknown": 21,
+        "@MetaMask/core-platform": 4,
+        "@unknown": 20,
         "@MetaMask/web3auth": 1,
         "@MetaMask/mobile-platform": 1,
-        "@MetaMask/core-platform": 4,
         "@MetaMask/mobile-core-ux": 3,
         "@MetaMask/social-ai": 6,
-        "@MetaMask/accounts-engineers": 2,
+        "@MetaMask/accounts-engineers": 3,
         "@MetaMask/rewards": 10,
         "@MetaMask/engagement": 1,
+        "@MetaMask/universal-kyc": 2,
         "@MetaMask/card": 8,
-        "@MetaMask/metamask-assets": 5,
-        "@MetaMask/money-movement": 9,
+        "@MetaMask/metamask-assets": 6,
+        "@MetaMask/money-movement": 8,
         "@MetaMask/predict": 10,
         "@MetaMask/perps": 8,
         "@MetaMask/earn": 1,
@@ -5273,7 +5437,7 @@
     },
     {
       "component": "ModalStack",
-      "instances": 77,
+      "instances": 78,
       "fileCount": 6,
       "sourceCategory": "local-oneoff",
       "canonicalSource": "(local)",
@@ -5288,16 +5452,16 @@
         "@MetaMask/predict"
       ],
       "codeOwnerBreakdown": {
-        "@MetaMask/swaps-engineers": 34,
+        "@MetaMask/swaps-engineers": 35,
         "@MetaMask/earn": 21,
-        "@MetaMask/perps": 16,
-        "@MetaMask/predict": 6
+        "@MetaMask/predict": 6,
+        "@MetaMask/perps": 16
       }
     },
     {
       "component": "Path",
-      "instances": 73,
-      "fileCount": 21,
+      "instances": 76,
+      "fileCount": 22,
       "sourceCategory": "platform-primitive",
       "canonicalSource": "react-native-svg",
       "importSources": [
@@ -5309,24 +5473,25 @@
         "@MetaMask/money-movement",
         "@MetaMask/predict",
         "@MetaMask/perps",
-        "@unknown"
+        "@MetaMask/social-ai"
       ],
       "codeOwnerBreakdown": {
         "@unknown": 3,
-        "@MetaMask/social-ai": 2,
+        "@MetaMask/social-ai": 5,
+        "@MetaMask/universal-kyc": 1,
         "@MetaMask/metamask-assets": 2,
-        "@MetaMask/money-movement": 16,
-        "@MetaMask/perps": 6,
         "@MetaMask/predict": 7,
+        "@MetaMask/perps": 6,
         "@MetaMask/card": 35,
         "@MetaMask/swaps-engineers": 1,
+        "@MetaMask/money-movement": 15,
         "@MetaMask/earn": 1
       }
     },
     {
       "component": "Modal",
-      "instances": 65,
-      "fileCount": 64,
+      "instances": 66,
+      "fileCount": 65,
       "sourceCategory": "platform-primitive",
       "canonicalSource": "react-native-modal",
       "importSources": [
@@ -5345,7 +5510,7 @@
         "@unknown": 17,
         "@MetaMask/product-safety": 1,
         "@MetaMask/mobile-core-ux": 1,
-        "@MetaMask/social-ai": 8,
+        "@MetaMask/social-ai": 9,
         "@MetaMask/accounts-engineers": 1,
         "@MetaMask/metamask-assets": 3,
         "@MetaMask/engagement": 1,
@@ -5360,8 +5525,8 @@
     },
     {
       "component": "LinearGradient",
-      "instances": 58,
-      "fileCount": 33,
+      "instances": 60,
+      "fileCount": 35,
       "sourceCategory": "platform-primitive",
       "canonicalSource": "react-native-linear-gradient",
       "importSources": [
@@ -5377,14 +5542,15 @@
         "@MetaMask/perps"
       ],
       "codeOwnerBreakdown": {
-        "@unknown": 3,
-        "@MetaMask/social-ai": 6,
+        "@unknown": 2,
+        "@MetaMask/social-ai": 7,
         "@MetaMask/engagement": 1,
         "@MetaMask/rewards": 8,
-        "@MetaMask/perps": 8,
         "@MetaMask/predict": 10,
-        "@MetaMask/earn": 3,
+        "@MetaMask/perps": 8,
+        "@MetaMask/earn": 4,
         "@MetaMask/card": 10,
+        "@MetaMask/metamask-assets": 1,
         "@MetaMask/money-movement": 9
       }
     },
@@ -5415,8 +5581,8 @@
         "@MetaMask/swaps-engineers": 4,
         "@MetaMask/confirmations": 2,
         "@MetaMask/money-movement": 2,
-        "@MetaMask/perps": 14,
         "@MetaMask/predict": 1,
+        "@MetaMask/perps": 14,
         "@MetaMask/earn": 2,
         "@MetaMask/card": 1
       }
@@ -5438,6 +5604,34 @@
       "codeOwnerBreakdown": {
         "@MetaMask/money-movement": 20,
         "@MetaMask/card": 20
+      }
+    },
+    {
+      "component": "Circle",
+      "instances": 32,
+      "fileCount": 18,
+      "sourceCategory": "mixed",
+      "canonicalSource": "react-native-svg",
+      "importSources": [
+        "(local or re-export)",
+        "react-native-svg"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/social-ai",
+        "@MetaMask/predict",
+        "@MetaMask/metamask-assets",
+        "@unknown",
+        "@MetaMask/rewards"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 2,
+        "@MetaMask/social-ai": 13,
+        "@MetaMask/universal-kyc": 1,
+        "@MetaMask/metamask-assets": 3,
+        "@MetaMask/rewards": 2,
+        "@MetaMask/predict": 10,
+        "@MetaMask/earn": 1
       }
     },
     {
@@ -5506,34 +5700,6 @@
       }
     },
     {
-      "component": "Circle",
-      "instances": 25,
-      "fileCount": 15,
-      "sourceCategory": "mixed",
-      "canonicalSource": "react-native-svg",
-      "importSources": [
-        "react-native-svg",
-        "(local or re-export)"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@MetaMask/predict",
-        "@MetaMask/social-ai",
-        "@MetaMask/metamask-assets",
-        "@unknown",
-        "@MetaMask/rewards"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 2,
-        "@MetaMask/social-ai": 6,
-        "@MetaMask/metamask-assets": 3,
-        "@MetaMask/rewards": 2,
-        "@MetaMask/money-movement": 1,
-        "@MetaMask/predict": 10,
-        "@MetaMask/earn": 1
-      }
-    },
-    {
       "component": "ScreensStack",
       "instances": 22,
       "fileCount": 2,
@@ -5553,35 +5719,6 @@
       }
     },
     {
-      "component": "KeyboardAvoidingView",
-      "instances": 20,
-      "fileCount": 20,
-      "sourceCategory": "platform-primitive",
-      "canonicalSource": "react-native",
-      "importSources": [
-        "react-native"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@unknown",
-        "@MetaMask/social-ai",
-        "@MetaMask/money-movement",
-        "@MetaMask/mobile-core-ux",
-        "@MetaMask/card"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 6,
-        "@MetaMask/mobile-core-ux": 2,
-        "@MetaMask/web3auth": 1,
-        "@MetaMask/social-ai": 3,
-        "@MetaMask/accounts-engineers": 1,
-        "@MetaMask/perps": 1,
-        "@MetaMask/card": 2,
-        "@MetaMask/confirmations": 1,
-        "@MetaMask/money-movement": 3
-      }
-    },
-    {
       "component": "PerpsProModalPortal",
       "instances": 20,
       "fileCount": 9,
@@ -5598,6 +5735,62 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/perps": 20
+      }
+    },
+    {
+      "component": "KeyboardAvoidingView",
+      "instances": 19,
+      "fileCount": 19,
+      "sourceCategory": "platform-primitive",
+      "canonicalSource": "react-native",
+      "importSources": [
+        "react-native"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@unknown",
+        "@MetaMask/social-ai",
+        "@MetaMask/mobile-core-ux",
+        "@MetaMask/accounts-engineers",
+        "@MetaMask/card"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 5,
+        "@MetaMask/mobile-core-ux": 2,
+        "@MetaMask/web3auth": 1,
+        "@MetaMask/social-ai": 3,
+        "@MetaMask/accounts-engineers": 2,
+        "@MetaMask/perps": 1,
+        "@MetaMask/card": 2,
+        "@MetaMask/confirmations": 1,
+        "@MetaMask/money-movement": 2
+      }
+    },
+    {
+      "component": "RiveView",
+      "instances": 19,
+      "fileCount": 19,
+      "sourceCategory": "third-party",
+      "canonicalSource": "@rive-app/react-native",
+      "importSources": [
+        "@rive-app/react-native"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@unknown",
+        "@MetaMask/earn",
+        "@MetaMask/social-ai",
+        "@MetaMask/accounts-engineers",
+        "@MetaMask/rewards"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 7,
+        "@MetaMask/social-ai": 3,
+        "@MetaMask/accounts-engineers": 1,
+        "@MetaMask/rewards": 1,
+        "@MetaMask/perps": 1,
+        "@MetaMask/earn": 5,
+        "@MetaMask/card": 1
       }
     },
     {
@@ -5626,30 +5819,57 @@
       }
     },
     {
-      "component": "RiveView",
+      "component": "Line",
       "instances": 17,
-      "fileCount": 17,
-      "sourceCategory": "third-party",
-      "canonicalSource": "@rive-app/react-native",
+      "fileCount": 13,
+      "sourceCategory": "mixed",
+      "canonicalSource": "react-native-svg",
       "importSources": [
-        "@rive-app/react-native"
+        "react-native-svg",
+        "(local or re-export)"
       ],
       "mmdsMatches": [],
       "codeOwners": [
-        "@unknown",
-        "@MetaMask/earn",
+        "@MetaMask/predict",
         "@MetaMask/social-ai",
-        "@MetaMask/accounts-engineers",
-        "@MetaMask/rewards"
+        "@MetaMask/earn",
+        "@unknown",
+        "@MetaMask/accounts-engineers"
       ],
       "codeOwnerBreakdown": {
-        "@unknown": 7,
-        "@MetaMask/social-ai": 1,
+        "@unknown": 1,
+        "@MetaMask/social-ai": 4,
         "@MetaMask/accounts-engineers": 1,
-        "@MetaMask/rewards": 1,
-        "@MetaMask/perps": 1,
-        "@MetaMask/earn": 5,
-        "@MetaMask/card": 1
+        "@MetaMask/metamask-assets": 1,
+        "@MetaMask/predict": 6,
+        "@MetaMask/earn": 4
+      }
+    },
+    {
+      "component": "Defs",
+      "instances": 16,
+      "fileCount": 15,
+      "sourceCategory": "platform-primitive",
+      "canonicalSource": "react-native-svg",
+      "importSources": [
+        "react-native-svg"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/predict",
+        "@MetaMask/social-ai",
+        "@MetaMask/rewards",
+        "@MetaMask/perps",
+        "@MetaMask/card"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/social-ai": 3,
+        "@MetaMask/rewards": 2,
+        "@MetaMask/predict": 4,
+        "@MetaMask/perps": 2,
+        "@MetaMask/card": 2,
+        "@MetaMask/money-movement": 1,
+        "@MetaMask/earn": 2
       }
     },
     {
@@ -5667,33 +5887,6 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/mobile-core-ux": 16
-      }
-    },
-    {
-      "component": "Line",
-      "instances": 15,
-      "fileCount": 12,
-      "sourceCategory": "mixed",
-      "canonicalSource": "react-native-svg",
-      "importSources": [
-        "react-native-svg",
-        "(local or re-export)"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@MetaMask/predict",
-        "@MetaMask/earn",
-        "@MetaMask/social-ai",
-        "@unknown",
-        "@MetaMask/accounts-engineers"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 1,
-        "@MetaMask/social-ai": 2,
-        "@MetaMask/accounts-engineers": 1,
-        "@MetaMask/metamask-assets": 1,
-        "@MetaMask/predict": 6,
-        "@MetaMask/earn": 4
       }
     },
     {
@@ -5740,6 +5933,31 @@
       }
     },
     {
+      "component": "Rect",
+      "instances": 14,
+      "fileCount": 7,
+      "sourceCategory": "platform-primitive",
+      "canonicalSource": "react-native-svg",
+      "importSources": [
+        "react-native-svg"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/predict",
+        "@MetaMask/card",
+        "@MetaMask/perps",
+        "@MetaMask/social-ai",
+        "@MetaMask/rewards"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/social-ai": 1,
+        "@MetaMask/rewards": 1,
+        "@MetaMask/predict": 5,
+        "@MetaMask/card": 5,
+        "@MetaMask/perps": 2
+      }
+    },
+    {
       "component": "Address",
       "instances": 14,
       "fileCount": 8,
@@ -5760,33 +5978,6 @@
       }
     },
     {
-      "component": "Defs",
-      "instances": 14,
-      "fileCount": 13,
-      "sourceCategory": "platform-primitive",
-      "canonicalSource": "react-native-svg",
-      "importSources": [
-        "react-native-svg"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@MetaMask/predict",
-        "@MetaMask/rewards",
-        "@MetaMask/perps",
-        "@MetaMask/card",
-        "@MetaMask/earn"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/rewards": 2,
-        "@MetaMask/perps": 2,
-        "@MetaMask/predict": 4,
-        "@MetaMask/social-ai": 1,
-        "@MetaMask/card": 2,
-        "@MetaMask/money-movement": 1,
-        "@MetaMask/earn": 2
-      }
-    },
-    {
       "component": "ErrorView",
       "instances": 14,
       "fileCount": 6,
@@ -5803,29 +5994,6 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/money-movement": 14
-      }
-    },
-    {
-      "component": "Rect",
-      "instances": 13,
-      "fileCount": 6,
-      "sourceCategory": "platform-primitive",
-      "canonicalSource": "react-native-svg",
-      "importSources": [
-        "react-native-svg"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@MetaMask/predict",
-        "@MetaMask/card",
-        "@MetaMask/perps",
-        "@MetaMask/rewards"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/rewards": 1,
-        "@MetaMask/predict": 5,
-        "@MetaMask/card": 5,
-        "@MetaMask/perps": 2
       }
     },
     {
@@ -5875,8 +6043,8 @@
       "codeOwnerBreakdown": {
         "@MetaMask/engagement": 1,
         "@MetaMask/rewards": 1,
-        "@MetaMask/perps": 4,
         "@MetaMask/predict": 2,
+        "@MetaMask/perps": 4,
         "@MetaMask/earn": 1,
         "@MetaMask/social-ai": 3
       }
@@ -5905,23 +6073,6 @@
       }
     },
     {
-      "component": "SettingsDrawer",
-      "instances": 11,
-      "fileCount": 1,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "UI/SettingsDrawer",
-      "importSources": [
-        "../../UI/SettingsDrawer"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@MetaMask/mobile-core-ux"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/mobile-core-ux": 11
-      }
-    },
-    {
       "component": "ApprovalModal",
       "instances": 11,
       "fileCount": 11,
@@ -5939,6 +6090,23 @@
       "codeOwnerBreakdown": {
         "@MetaMask/core-platform": 4,
         "@unknown": 7
+      }
+    },
+    {
+      "component": "SettingsDrawer",
+      "instances": 11,
+      "fileCount": 1,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "UI/SettingsDrawer",
+      "importSources": [
+        "../../UI/SettingsDrawer"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/mobile-core-ux"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/mobile-core-ux": 11
       }
     },
     {
@@ -6095,6 +6263,52 @@
       }
     },
     {
+      "component": "GestureDetector",
+      "instances": 9,
+      "fileCount": 9,
+      "sourceCategory": "platform-primitive",
+      "canonicalSource": "react-native-gesture-handler",
+      "importSources": [
+        "react-native-gesture-handler"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/social-ai",
+        "@unknown",
+        "@MetaMask/metamask-assets",
+        "@MetaMask/perps",
+        "@MetaMask/swaps-engineers"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 2,
+        "@MetaMask/metamask-assets": 2,
+        "@MetaMask/social-ai": 3,
+        "@MetaMask/perps": 1,
+        "@MetaMask/swaps-engineers": 1
+      }
+    },
+    {
+      "component": "ClipPath",
+      "instances": 9,
+      "fileCount": 3,
+      "sourceCategory": "platform-primitive",
+      "canonicalSource": "react-native-svg",
+      "importSources": [
+        "react-native-svg"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/card",
+        "@MetaMask/predict",
+        "@MetaMask/social-ai"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/social-ai": 2,
+        "@MetaMask/card": 4,
+        "@MetaMask/predict": 3
+      }
+    },
+    {
       "component": "PoweredByTransak",
       "instances": 9,
       "fileCount": 7,
@@ -6151,31 +6365,6 @@
       }
     },
     {
-      "component": "GestureDetector",
-      "instances": 7,
-      "fileCount": 7,
-      "sourceCategory": "platform-primitive",
-      "canonicalSource": "react-native-gesture-handler",
-      "importSources": [
-        "react-native-gesture-handler"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@unknown",
-        "@MetaMask/social-ai",
-        "@MetaMask/metamask-assets",
-        "@MetaMask/perps",
-        "@MetaMask/swaps-engineers"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 2,
-        "@MetaMask/metamask-assets": 1,
-        "@MetaMask/perps": 1,
-        "@MetaMask/swaps-engineers": 1,
-        "@MetaMask/social-ai": 2
-      }
-    },
-    {
       "component": "FontAwesome",
       "instances": 7,
       "fileCount": 4,
@@ -6218,23 +6407,6 @@
       }
     },
     {
-      "component": "StepLayout",
-      "instances": 7,
-      "fileCount": 7,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "StepLayout",
-      "importSources": [
-        "./StepLayout"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@unknown"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 7
-      }
-    },
-    {
       "component": "DepositProgressBar",
       "instances": 7,
       "fileCount": 5,
@@ -6271,22 +6443,29 @@
       }
     },
     {
-      "component": "ClipPath",
-      "instances": 7,
-      "fileCount": 2,
-      "sourceCategory": "platform-primitive",
-      "canonicalSource": "react-native-svg",
+      "component": "Tooltip",
+      "instances": 6,
+      "fileCount": 6,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "Views/confirmations/components/UI/Tooltip",
       "importSources": [
-        "react-native-svg"
+        "../../Views/confirmations/components/UI/Tooltip",
+        "(local or re-export)",
+        "../UI/Tooltip",
+        "../Tooltip/Tooltip"
       ],
       "mmdsMatches": [],
       "codeOwners": [
-        "@MetaMask/card",
-        "@MetaMask/predict"
+        "@MetaMask/confirmations",
+        "@MetaMask/core-platform",
+        "@MetaMask/metamask-assets",
+        "@MetaMask/social-ai"
       ],
       "codeOwnerBreakdown": {
-        "@MetaMask/card": 4,
-        "@MetaMask/predict": 3
+        "@MetaMask/core-platform": 1,
+        "@MetaMask/metamask-assets": 1,
+        "@MetaMask/confirmations": 3,
+        "@MetaMask/social-ai": 1
       }
     },
     {
@@ -6332,32 +6511,6 @@
       }
     },
     {
-      "component": "Tooltip",
-      "instances": 6,
-      "fileCount": 6,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "Views/confirmations/components/UI/Tooltip",
-      "importSources": [
-        "../../Views/confirmations/components/UI/Tooltip",
-        "(local or re-export)",
-        "../UI/Tooltip",
-        "../Tooltip/Tooltip"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@MetaMask/confirmations",
-        "@MetaMask/core-platform",
-        "@MetaMask/metamask-assets",
-        "@MetaMask/social-ai"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/core-platform": 1,
-        "@MetaMask/metamask-assets": 1,
-        "@MetaMask/confirmations": 3,
-        "@MetaMask/social-ai": 1
-      }
-    },
-    {
       "component": "TooltipModal",
       "instances": 6,
       "fileCount": 6,
@@ -6381,6 +6534,34 @@
         "@unknown": 2,
         "@MetaMask/earn": 1,
         "@MetaMask/confirmations": 3
+      }
+    },
+    {
+      "component": "QuickBuy",
+      "instances": 6,
+      "fileCount": 6,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "UI/QuickBuy",
+      "importSources": [
+        "./quickBuy",
+        "../../../UI/QuickBuy",
+        "../../QuickBuy/quickBuy",
+        "../../QuickBuy",
+        "../../../../UI/QuickBuy",
+        "../../../QuickBuy/quickBuy"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/social-ai",
+        "@MetaMask/metamask-assets",
+        "@MetaMask/swaps-engineers",
+        "@unknown"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/swaps-engineers": 1,
+        "@MetaMask/social-ai": 2,
+        "@MetaMask/metamask-assets": 2,
+        "@unknown": 1
       }
     },
     {
@@ -6410,6 +6591,31 @@
         "@MetaMask/accounts-engineers": 1,
         "@MetaMask/engagement": 1,
         "@MetaMask/money-movement": 1
+      }
+    },
+    {
+      "component": "SocialFeedPostShell",
+      "instances": 6,
+      "fileCount": 6,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "UI/SocialFeed/components/SocialFeedPostShell",
+      "importSources": [
+        "../../../UI/SocialFeed/components/SocialFeedPostShell",
+        "(local or re-export)",
+        "./SocialFeedPostShell",
+        "../../../SocialFeed/components/SocialFeedPostShell",
+        "../../../SocialFeed"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/social-ai",
+        "@MetaMask/metamask-assets",
+        "@MetaMask/perps"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/social-ai": 4,
+        "@MetaMask/metamask-assets": 1,
+        "@MetaMask/perps": 1
       }
     },
     {
@@ -6463,8 +6669,8 @@
       "sourceCategory": "local-oneoff",
       "canonicalSource": "components/PerpsAmountDisplay",
       "importSources": [
-        "../../components/PerpsAmountDisplay",
-        "../PerpsAmountDisplay"
+        "../PerpsAmountDisplay",
+        "../../components/PerpsAmountDisplay"
       ],
       "mmdsMatches": [],
       "codeOwners": [
@@ -6489,51 +6695,6 @@
       ],
       "codeOwnerBreakdown": {
         "@MetaMask/confirmations": 6
-      }
-    },
-    {
-      "component": "CollectibleMedia",
-      "instances": 5,
-      "fileCount": 5,
-      "sourceCategory": "local-oneoff",
-      "canonicalSource": "components/UI/CollectibleMedia",
-      "importSources": [
-        "../../../components/UI/CollectibleMedia",
-        "../CollectibleMedia",
-        "../../../../UI/CollectibleMedia",
-        "../../../../../UI/CollectibleMedia"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@MetaMask/metamask-assets",
-        "@MetaMask/confirmations",
-        "@unknown"
-      ],
-      "codeOwnerBreakdown": {
-        "@MetaMask/metamask-assets": 2,
-        "@unknown": 1,
-        "@MetaMask/confirmations": 2
-      }
-    },
-    {
-      "component": "TouchableHighlight",
-      "instances": 5,
-      "fileCount": 5,
-      "sourceCategory": "platform-primitive",
-      "canonicalSource": "react-native",
-      "importSources": [
-        "react-native"
-      ],
-      "mmdsMatches": [],
-      "codeOwners": [
-        "@unknown",
-        "@MetaMask/mobile-core-ux",
-        "@MetaMask/money-movement"
-      ],
-      "codeOwnerBreakdown": {
-        "@unknown": 2,
-        "@MetaMask/mobile-core-ux": 2,
-        "@MetaMask/money-movement": 1
       }
     },
     {
@@ -6600,30 +6761,48 @@
       }
     },
     {
-      "component": "QuickBuy",
+      "component": "CollectibleMedia",
       "instances": 5,
       "fileCount": 5,
       "sourceCategory": "local-oneoff",
-      "canonicalSource": "UI/QuickBuy",
+      "canonicalSource": "components/UI/CollectibleMedia",
       "importSources": [
-        "./quickBuy",
-        "../../../UI/QuickBuy",
-        "../../QuickBuy/quickBuy",
-        "../../../../UI/QuickBuy",
-        "../../../QuickBuy/quickBuy"
+        "../../../components/UI/CollectibleMedia",
+        "../CollectibleMedia",
+        "../../../../UI/CollectibleMedia",
+        "../../../../../UI/CollectibleMedia"
       ],
       "mmdsMatches": [],
       "codeOwners": [
-        "@MetaMask/social-ai",
-        "@MetaMask/swaps-engineers",
         "@MetaMask/metamask-assets",
+        "@MetaMask/confirmations",
         "@unknown"
       ],
       "codeOwnerBreakdown": {
-        "@MetaMask/swaps-engineers": 1,
-        "@MetaMask/social-ai": 2,
-        "@MetaMask/metamask-assets": 1,
-        "@unknown": 1
+        "@MetaMask/metamask-assets": 2,
+        "@unknown": 1,
+        "@MetaMask/confirmations": 2
+      }
+    },
+    {
+      "component": "TouchableHighlight",
+      "instances": 5,
+      "fileCount": 5,
+      "sourceCategory": "platform-primitive",
+      "canonicalSource": "react-native",
+      "importSources": [
+        "react-native"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@unknown",
+        "@MetaMask/mobile-core-ux",
+        "@MetaMask/money-movement"
+      ],
+      "codeOwnerBreakdown": {
+        "@unknown": 2,
+        "@MetaMask/mobile-core-ux": 2,
+        "@MetaMask/money-movement": 1
       }
     },
     {
@@ -6759,6 +6938,23 @@
       }
     },
     {
+      "component": "StepLayout",
+      "instances": 5,
+      "fileCount": 5,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "StepLayout",
+      "importSources": [
+        "./StepLayout"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/accounts-engineers"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/accounts-engineers": 5
+      }
+    },
+    {
       "component": "QuoteDetailLine",
       "instances": 5,
       "fileCount": 1,
@@ -6815,6 +7011,23 @@
         "@MetaMask/perps": 3,
         "@MetaMask/swaps-engineers": 1,
         "@MetaMask/predict": 1
+      }
+    },
+    {
+      "component": "VbaIllustration",
+      "instances": 5,
+      "fileCount": 5,
+      "sourceCategory": "local-oneoff",
+      "canonicalSource": "components/Illustration",
+      "importSources": [
+        "../../components/Illustration"
+      ],
+      "mmdsMatches": [],
+      "codeOwners": [
+        "@MetaMask/universal-kyc"
+      ],
+      "codeOwnerBreakdown": {
+        "@MetaMask/universal-kyc": 5
       }
     },
     {
