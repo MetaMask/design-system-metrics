@@ -1,9 +1,9 @@
 {
   "component": "Button",
-  "generatedAt": "2026-10-19T08:36:22.147Z",
+  "generatedAt": "2026-10-26T08:35:19.101Z",
   "projects": {
     "extension": {
-      "filesScanned": 3810,
+      "filesScanned": 3813,
       "targetComponent": "Button",
       "mmds": {
         "totalInstances": 7,
@@ -577,47 +577,31 @@
       }
     },
     "mobile": {
-      "filesScanned": 8917,
+      "filesScanned": 9049,
       "targetComponent": "Button",
       "mmds": {
-        "totalInstances": 5,
-        "filesCount": 4,
+        "totalInstances": 2,
+        "filesCount": 2,
         "props": {
           "variant": {
-            "count": 5,
+            "count": 2,
             "values": {
-              "{ButtonVariant.Primary}": 2,
-              "{ButtonVariant.Secondary}": 2,
-              "{ButtonVariant.Tertiary}": 1
+              "{ButtonVariant.Tertiary}": 1,
+              "{ButtonVariant.Secondary}": 1
             }
           },
           "onPress": {
-            "count": 5,
+            "count": 2,
             "values": {
-              "{goNext}": 2,
               "{this.onLearnMore}": 1,
-              "{showRemindLater}": 1,
               "{() => handleWordSelect(word, i)}": 1
             }
           },
-          "size": {
-            "count": 4,
-            "values": {
-              "{ButtonSize.Lg}": 4
-            }
-          },
           "testID": {
-            "count": 3,
+            "count": 2,
             "values": {
               "{ProtectWalletModalSelectorsIDs.LEARN_MORE_BUTTON}": 1,
-              "{ManualBackUpStepsSelectorsIDs.REMIND_ME_LATER_BUTTON}": 1,
               "{`${ManualBackUpStepsSelectorsIDs.MISSING_WORDS}-${i}`}": 1
-            }
-          },
-          "isFullWidth": {
-            "count": 3,
-            "values": {
-              "true (shorthand)": 3
             }
           },
           "twClassName": {
@@ -631,6 +615,12 @@
             "count": 1,
             "values": {
               "{`${word}-${i}`}": 1
+            }
+          },
+          "size": {
+            "count": 1,
+            "values": {
+              "{ButtonSize.Lg}": 1
             }
           },
           "isDisabled": {
@@ -751,13 +741,12 @@
         }
       },
       "overall": {
-        "totalInstances": 15,
-        "filesCount": 8,
+        "totalInstances": 12,
+        "filesCount": 6,
         "props": {
           "onPress": {
-            "count": 15,
+            "count": 12,
             "values": {
-              "{goNext}": 2,
               "{toggleModal}": 2,
               "{onCancelPress}": 1,
               "{onConfirmPress}": 1,
@@ -765,7 +754,6 @@
               "{this.onLearnMore}": 1,
               "{onCancelAction}": 1,
               "{onConfirmAction}": 1,
-              "{showRemindLater}": 1,
               "{onPrimary}": 1,
               "{onSecondary}": 1,
               "{handleSubmit}": 1,
@@ -773,20 +761,19 @@
             }
           },
           "variant": {
-            "count": 15,
+            "count": 12,
             "values": {
               "{ButtonVariants.Primary}": 5,
               "{ButtonVariants.Secondary}": 4,
-              "{ButtonVariant.Primary}": 2,
-              "{ButtonVariant.Secondary}": 2,
               "{ButtonVariant.Tertiary}": 1,
-              "{dataCollectionForMarketing ? ButtonVariants.Secondary : ButtonVariants.Primary}": 1
+              "{dataCollectionForMarketing ? ButtonVariants.Secondary : ButtonVariants.Primary}": 1,
+              "{ButtonVariant.Secondary}": 1
             }
           },
           "size": {
-            "count": 13,
+            "count": 10,
             "values": {
-              "{ButtonSize.Lg}": 13
+              "{ButtonSize.Lg}": 10
             }
           },
           "label": {
@@ -804,8 +791,14 @@
               "{strings('error_screen.submit')}": 1
             }
           },
-          "testID": {
+          "width": {
             "count": 8,
+            "values": {
+              "{ButtonWidthTypes.Full}": 8
+            }
+          },
+          "testID": {
+            "count": 7,
             "values": {
               "{cancelTestID}": 1,
               "{confirmTestID}": 1,
@@ -813,14 +806,7 @@
               "{ProtectWalletModalSelectorsIDs.LEARN_MORE_BUTTON}": 1,
               "{SkipAccountSecurityModalSelectorsIDs.CANCEL_BUTTON}": 1,
               "{SkipAccountSecurityModalSelectorsIDs.SKIP_BUTTON}": 1,
-              "{ManualBackUpStepsSelectorsIDs.REMIND_ME_LATER_BUTTON}": 1,
               "{`${ManualBackUpStepsSelectorsIDs.MISSING_WORDS}-${i}`}": 1
-            }
-          },
-          "width": {
-            "count": 8,
-            "values": {
-              "{ButtonWidthTypes.Full}": 8
             }
           },
           "style": {
@@ -841,12 +827,6 @@
               "{!skipCheckbox}": 1,
               "{!feedback}": 1,
               "{isUsed}": 1
-            }
-          },
-          "isFullWidth": {
-            "count": 3,
-            "values": {
-              "true (shorthand)": 3
             }
           },
           "twClassName": {

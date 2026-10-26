@@ -1,9 +1,9 @@
 {
   "component": "Toast",
-  "generatedAt": "2026-10-19T08:37:38.154Z",
+  "generatedAt": "2026-10-26T08:36:29.668Z",
   "projects": {
     "extension": {
-      "filesScanned": 3810,
+      "filesScanned": 3813,
       "targetComponent": "Toast",
       "mmds": {
         "totalInstances": 0,
@@ -23,7 +23,7 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 8917,
+      "filesScanned": 9049,
       "targetComponent": "Toast",
       "mmds": {
         "totalInstances": 0,
@@ -31,8 +31,8 @@
         "props": {}
       },
       "deprecated": {
-        "totalInstances": 4,
-        "filesCount": 4,
+        "totalInstances": 8,
+        "filesCount": 7,
         "props": {
           "status": {
             "count": 2,
@@ -69,14 +69,70 @@
           "onPress": {
             "count": 2,
             "values": {
-              "{detailsFadeIn}": 1,
+              "{onPressNotification}": 1,
               "{onPress}": 1
+            }
+          },
+          "twClassName": {
+            "count": 2,
+            "values": {
+              "{`px-0 mt-auto justify-end ${ Platform.OS === 'android' ? 'mb-6' : 'mb-4' }`}": 1,
+              "\"px-0\"": 1
+            }
+          },
+          "primaryButtonProps": {
+            "count": 2,
+            "values": {
+              "{{ children: strings('account_backup_step_1.cta_text'), onPress: goNext, size:...}": 1,
+              "{{ children: strings('account_backup_step_1B.cta_text'), onPress: goNext, size...}": 1
+            }
+          },
+          "backdrop": {
+            "count": 2,
+            "values": {
+              "\"static\"": 2
+            }
+          },
+          "onLayout": {
+            "count": 2,
+            "values": {
+              "{onHeaderLayout}": 2
+            }
+          },
+          "includesTopInset": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
             }
           },
           "testID": {
             "count": 1,
             "values": {
               "{testID}": 1
+            }
+          },
+          "secondaryButtonProps": {
+            "count": 1,
+            "values": {
+              "{!hasFunds ? { children: strings('account_backup_step_1.remind_me_later'), onP...}": 1
+            }
+          },
+          "title": {
+            "count": 1,
+            "values": {
+              "{metamaskLogoTitle}": 1
+            }
+          },
+          "onBack": {
+            "count": 1,
+            "values": {
+              "{() => navigation.goBack()}": 1
+            }
+          },
+          "backButtonProps": {
+            "count": 1,
+            "values": {
+              "{{ testID: ManualBackUpStepsSelectorsIDs.BACK_BUTTON, }}": 1
             }
           },
           "color": {
@@ -94,8 +150,8 @@
         }
       },
       "overall": {
-        "totalInstances": 4,
-        "filesCount": 4,
+        "totalInstances": 8,
+        "filesCount": 7,
         "props": {
           "status": {
             "count": 2,
@@ -132,14 +188,70 @@
           "onPress": {
             "count": 2,
             "values": {
-              "{detailsFadeIn}": 1,
+              "{onPressNotification}": 1,
               "{onPress}": 1
+            }
+          },
+          "twClassName": {
+            "count": 2,
+            "values": {
+              "{`px-0 mt-auto justify-end ${ Platform.OS === 'android' ? 'mb-6' : 'mb-4' }`}": 1,
+              "\"px-0\"": 1
+            }
+          },
+          "primaryButtonProps": {
+            "count": 2,
+            "values": {
+              "{{ children: strings('account_backup_step_1.cta_text'), onPress: goNext, size:...}": 1,
+              "{{ children: strings('account_backup_step_1B.cta_text'), onPress: goNext, size...}": 1
+            }
+          },
+          "backdrop": {
+            "count": 2,
+            "values": {
+              "\"static\"": 2
+            }
+          },
+          "onLayout": {
+            "count": 2,
+            "values": {
+              "{onHeaderLayout}": 2
+            }
+          },
+          "includesTopInset": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
             }
           },
           "testID": {
             "count": 1,
             "values": {
               "{testID}": 1
+            }
+          },
+          "secondaryButtonProps": {
+            "count": 1,
+            "values": {
+              "{!hasFunds ? { children: strings('account_backup_step_1.remind_me_later'), onP...}": 1
+            }
+          },
+          "title": {
+            "count": 1,
+            "values": {
+              "{metamaskLogoTitle}": 1
+            }
+          },
+          "onBack": {
+            "count": 1,
+            "values": {
+              "{() => navigation.goBack()}": 1
+            }
+          },
+          "backButtonProps": {
+            "count": 1,
+            "values": {
+              "{{ testID: ManualBackUpStepsSelectorsIDs.BACK_BUTTON, }}": 1
             }
           },
           "color": {
@@ -157,7 +269,7 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "BaseNotification": 4
+        "BaseNotification": 8
       }
     }
   }
