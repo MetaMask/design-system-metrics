@@ -1,27 +1,43 @@
 {
   "component": "Text",
-  "generatedAt": "2026-11-09T08:24:00.541Z",
+  "generatedAt": "2026-11-16T08:38:26.696Z",
   "projects": {
     "extension": {
-      "filesScanned": 3848,
+      "filesScanned": 3888,
       "targetComponent": "Text",
       "mmds": {
-        "totalInstances": 5,
-        "filesCount": 3,
+        "totalInstances": 13,
+        "filesCount": 5,
         "props": {
           "variant": {
-            "count": 5,
+            "count": 11,
             "values": {
-              "{TextVariant.BodySm}": 3,
-              "{TextVariant.BodyMd}": 1,
+              "{TextVariant.BodySm}": 6,
+              "{TextVariant.BodyMd}": 4,
               "{TextVariant.bodySm}": 1
             }
           },
           "className": {
-            "count": 2,
+            "count": 5,
             "values": {
+              "\"w-3/4\"": 2,
               "\"multichain-account-list-item__account-name__button p-0 bg-transparent w-full text-left\"": 1,
+              "\"mt-2\"": 1,
               "\"pr-2\"": 1
+            }
+          },
+          "color": {
+            "count": 5,
+            "values": {
+              "{TextColor.TextAlternative}": 4,
+              "{isSelected ? TextColor.TextDefault : TextColor.TextAlternative}": 1
+            }
+          },
+          "fontWeight": {
+            "count": 4,
+            "values": {
+              "{FontWeight.Medium}": 2,
+              "{FontWeight.Bold}": 2
             }
           },
           "asChild": {
@@ -30,22 +46,10 @@
               "true (shorthand)": 1
             }
           },
-          "fontWeight": {
-            "count": 1,
-            "values": {
-              "{FontWeight.Medium}": 1
-            }
-          },
           "ellipsis": {
             "count": 1,
             "values": {
               "true (shorthand)": 1
-            }
-          },
-          "color": {
-            "count": 1,
-            "values": {
-              "{TextColor.TextAlternative}": 1
             }
           },
           "data-testid": {
@@ -57,14 +61,14 @@
         }
       },
       "deprecated": {
-        "totalInstances": 403,
-        "filesCount": 82,
+        "totalInstances": 397,
+        "filesCount": 80,
         "props": {
           "variant": {
-            "count": 339,
+            "count": 335,
             "values": {
-              "{TextVariant.bodySm}": 175,
-              "{TextVariant.bodyMd}": 63,
+              "{TextVariant.bodySm}": 172,
+              "{TextVariant.bodyMd}": 62,
               "{TextVariant.inherit}": 25,
               "{TextVariant.bodyLgMedium}": 19,
               "{TextVariant.bodyMdMedium}": 15,
@@ -124,10 +128,10 @@
             }
           },
           "fontWeight": {
-            "count": 70,
+            "count": 68,
             "values": {
               "{FontWeight.Medium}": 47,
-              "{FontWeight.Bold}": 18,
+              "{FontWeight.Bold}": 16,
               "{FontWeight.Normal}": 4,
               "\"bold\"": 1
             }
@@ -202,9 +206,9 @@
             }
           },
           "textAlign": {
-            "count": 31,
+            "count": 30,
             "values": {
-              "{TextAlign.Center}": 22,
+              "{TextAlign.Center}": 21,
               "\"center\"": 3,
               "{TextAlign.End}": 2,
               "{TextAlign.Left}": 2,
@@ -213,11 +217,11 @@
             }
           },
           "marginTop": {
-            "count": 21,
+            "count": 20,
             "values": {
               "0": 4,
               "1": 1,
-              "2": 6,
+              "2": 5,
               "3": 1,
               "4": 6,
               "6": 1,
@@ -255,17 +259,6 @@
               "{{ overflow: 'hidden' }}": 2,
               "{accountNameStyling}": 1,
               "{{ flex: '1 0 auto' }}": 1
-            }
-          },
-          "width": {
-            "count": 9,
-            "values": {
-              "{BlockSize.Full}": 3,
-              "{BlockSize.ThreeFourths}": 2,
-              "{BlockSize.FiveSixths}": 1,
-              "{BlockSize.Max}": 1,
-              "{BLOCK_SIZES.FULL}": 1,
-              "{hasDetailTextInSeparateRow ? BlockSize.Full : null}": 1
             }
           },
           "data-testid": {
@@ -308,6 +301,16 @@
               "{termTypography}": 1,
               "{definitionTypography}": 1,
               "{warningProps}": 1
+            }
+          },
+          "width": {
+            "count": 7,
+            "values": {
+              "{BlockSize.Full}": 3,
+              "{BlockSize.FiveSixths}": 1,
+              "{BlockSize.Max}": 1,
+              "{BLOCK_SIZES.FULL}": 1,
+              "{hasDetailTextInSeparateRow ? BlockSize.Full : null}": 1
             }
           },
           "paddingTop": {
@@ -420,25 +423,25 @@
         }
       },
       "overall": {
-        "totalInstances": 408,
+        "totalInstances": 410,
         "filesCount": 85,
         "props": {
           "variant": {
-            "count": 344,
+            "count": 346,
             "values": {
-              "{TextVariant.bodySm}": 176,
-              "{TextVariant.bodyMd}": 63,
+              "{TextVariant.bodySm}": 173,
+              "{TextVariant.bodyMd}": 62,
               "{TextVariant.inherit}": 25,
               "{TextVariant.bodyLgMedium}": 19,
               "{TextVariant.bodyMdMedium}": 15,
               "{TextVariant.headingSm}": 11,
               "{TextVariant.headingMd}": 11,
               "{TextVariant.headingLg}": 6,
+              "{TextVariant.BodySm}": 6,
               "{TextVariant.bodyMdBold}": 5,
               "{TextVariant.bodySmBold}": 5,
-              "{TextVariant.BodySm}": 3,
+              "{TextVariant.BodyMd}": 4,
               "{TextVariant.bodyXs}": 3,
-              "{TextVariant.BodyMd}": 1,
               "{TextVariant.bodySmMedium}": 1
             }
           },
@@ -471,13 +474,14 @@
             }
           },
           "color": {
-            "count": 99,
+            "count": 103,
             "values": {
               "{TextColor.textAlternative}": 44,
               "{TextColor.inherit}": 20,
               "{TextColor.textDefault}": 12,
               "{Color.textAlternative}": 5,
               "{TextColor.errorDefault}": 4,
+              "{TextColor.TextAlternative}": 4,
               "{Color.textMuted}": 3,
               "{TextColor.infoInverse}": 3,
               "{Color.textDefault}": 2,
@@ -485,14 +489,14 @@
               "{isVisible && sensitive ? Color.errorAlternative : TextColor.textAlternative}": 1,
               "{TextColor.infoDefault}": 1,
               "{TextColor.primaryDefault}": 1,
-              "{TextColor.TextAlternative}": 1,
+              "{isSelected ? TextColor.TextDefault : TextColor.TextAlternative}": 1,
               "{TextColor.warningDefault}": 1
             }
           },
           "fontWeight": {
-            "count": 71,
+            "count": 72,
             "values": {
-              "{FontWeight.Medium}": 48,
+              "{FontWeight.Medium}": 49,
               "{FontWeight.Bold}": 18,
               "{FontWeight.Normal}": 4,
               "\"bold\"": 1
@@ -532,11 +536,12 @@
             }
           },
           "className": {
-            "count": 40,
+            "count": 43,
             "values": {
               "\"edit-gas-tooltip__container__label\"": 3,
               "\"edit-gas-tooltip__container__value\"": 3,
               "\"connected-accounts-list__account-name\"": 2,
+              "\"w-3/4\"": 2,
               "\"confirm-add-suggested-nft__nft-name\"": 2,
               "\"confirm-add-suggested-nft__nft-tokenId\"": 2,
               "\"connected-accounts-list__account-status\"": 1,
@@ -550,6 +555,7 @@
               "\"snap-ui-markdown__text\"": 1,
               "\"multichain-account-list-item__account-name__button p-0 bg-transparent w-full text-left\"": 1,
               "{classnames( 'multichain-account-picker__label w-full', labelProps.className ?...}": 1,
+              "\"mt-2\"": 1,
               "\"callout__content\"": 1,
               "\"chip__label\"": 1,
               "\"confusable__point\"": 1,
@@ -570,9 +576,9 @@
             }
           },
           "textAlign": {
-            "count": 31,
+            "count": 30,
             "values": {
-              "{TextAlign.Center}": 22,
+              "{TextAlign.Center}": 21,
               "\"center\"": 3,
               "{TextAlign.End}": 2,
               "{TextAlign.Left}": 2,
@@ -581,11 +587,11 @@
             }
           },
           "marginTop": {
-            "count": 21,
+            "count": 20,
             "values": {
               "0": 4,
               "1": 1,
-              "2": 6,
+              "2": 5,
               "3": 1,
               "4": 6,
               "6": 1,
@@ -640,17 +646,6 @@
               "{{ flex: '1 0 auto' }}": 1
             }
           },
-          "width": {
-            "count": 9,
-            "values": {
-              "{BlockSize.Full}": 3,
-              "{BlockSize.ThreeFourths}": 2,
-              "{BlockSize.FiveSixths}": 1,
-              "{BlockSize.Max}": 1,
-              "{BLOCK_SIZES.FULL}": 1,
-              "{hasDetailTextInSeparateRow ? BlockSize.Full : null}": 1
-            }
-          },
           "display": {
             "count": 9,
             "values": {
@@ -677,6 +672,16 @@
               "{termTypography}": 1,
               "{definitionTypography}": 1,
               "{warningProps}": 1
+            }
+          },
+          "width": {
+            "count": 7,
+            "values": {
+              "{BlockSize.Full}": 3,
+              "{BlockSize.FiveSixths}": 1,
+              "{BlockSize.Max}": 1,
+              "{BLOCK_SIZES.FULL}": 1,
+              "{hasDetailTextInSeparateRow ? BlockSize.Full : null}": 1
             }
           },
           "paddingTop": {
@@ -795,11 +800,11 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "Text": 403
+        "Text": 397
       }
     },
     "mobile": {
-      "filesScanned": 9385,
+      "filesScanned": 9545,
       "targetComponent": "Text",
       "mmds": {
         "totalInstances": 30,

@@ -1,30 +1,29 @@
 {
   "component": "Button",
-  "generatedAt": "2026-11-09T08:23:21.066Z",
+  "generatedAt": "2026-11-16T08:37:35.408Z",
   "projects": {
     "extension": {
-      "filesScanned": 3848,
+      "filesScanned": 3888,
       "targetComponent": "Button",
       "mmds": {
-        "totalInstances": 7,
+        "totalInstances": 6,
         "filesCount": 5,
         "props": {
           "onClick": {
-            "count": 7,
+            "count": 6,
             "values": {
               "{cancelTransaction}": 1,
               "{onAccept}": 1,
               "{() => onIgnore(checkboxState)}": 1,
-              "{() => { onActionComplete(); }}": 1,
               "{async () => { try { const result = await importAccountFunc(); if (result) { o...}": 1,
               "{() => setShowDisconnectAllModal(true)}": 1,
               "{onClick}": 1
             }
           },
           "variant": {
-            "count": 7,
+            "count": 6,
             "values": {
-              "{ButtonVariant.Secondary}": 4,
+              "{ButtonVariant.Secondary}": 3,
               "{ButtonVariant.Primary}": 3
             }
           },
@@ -38,16 +37,10 @@
             }
           },
           "size": {
-            "count": 4,
-            "values": {
-              "{ButtonSize.Lg}": 3,
-              "{ButtonBaseSize.Sm}": 1
-            }
-          },
-          "isFullWidth": {
             "count": 3,
             "values": {
-              "true (shorthand)": 3
+              "{ButtonSize.Lg}": 2,
+              "{ButtonBaseSize.Sm}": 1
             }
           },
           "className": {
@@ -55,6 +48,12 @@
             "values": {
               "\"home-notification__accept-button\"": 1,
               "\"home-notification__ignore-button\"": 1
+            }
+          },
+          "isFullWidth": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
             }
           },
           "[spread]": {
@@ -307,11 +306,11 @@
         }
       },
       "overall": {
-        "totalInstances": 40,
+        "totalInstances": 39,
         "filesCount": 27,
         "props": {
           "onClick": {
-            "count": 35,
+            "count": 34,
             "values": {
               "{onClose}": 4,
               "{onCancel}": 4,
@@ -327,7 +326,6 @@
               "{handleClick}": 1,
               "{handleScrollDownClick}": 1,
               "{() => updateArgs({ isShowingModal: true })}": 1,
-              "{() => { onActionComplete(); }}": 1,
               "{async () => { try { const result = await importAccountFunc(); if (result) { o...}": 1,
               "{() => setShowDisconnectAllModal(true)}": 1,
               "{onCancel ? (e) => onCancel(e) : undefined}": 1,
@@ -341,9 +339,9 @@
             }
           },
           "variant": {
-            "count": 30,
+            "count": 29,
             "values": {
-              "{ButtonVariant.Secondary}": 11,
+              "{ButtonVariant.Secondary}": 10,
               "{ButtonVariant.Primary}": 10,
               "{BUTTON_VARIANT.SECONDARY}": 3,
               "{ButtonVariant.Link}": 2,
@@ -353,9 +351,9 @@
             }
           },
           "size": {
-            "count": 21,
+            "count": 20,
             "values": {
-              "{ButtonSize.Lg}": 14,
+              "{ButtonSize.Lg}": 13,
               "{BUTTON_SIZES.LG}": 4,
               "{Size.LG}": 1,
               "{ButtonBaseSize.Sm}": 1,
@@ -441,12 +439,6 @@
               "{hasAlerts ? IconName.Info : undefined}": 1
             }
           },
-          "isFullWidth": {
-            "count": 3,
-            "values": {
-              "true (shorthand)": 3
-            }
-          },
           "href": {
             "count": 2,
             "values": {
@@ -455,6 +447,12 @@
             }
           },
           "externalLink": {
+            "count": 2,
+            "values": {
+              "true (shorthand)": 2
+            }
+          },
+          "isFullWidth": {
             "count": 2,
             "values": {
               "true (shorthand)": 2
@@ -577,7 +575,7 @@
       }
     },
     "mobile": {
-      "filesScanned": 9385,
+      "filesScanned": 9545,
       "targetComponent": "Button",
       "mmds": {
         "totalInstances": 2,
