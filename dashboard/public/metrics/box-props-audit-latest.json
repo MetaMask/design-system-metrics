@@ -1,22 +1,23 @@
 {
   "component": "Box",
-  "generatedAt": "2026-11-09T08:23:17.240Z",
+  "generatedAt": "2026-11-16T08:37:30.751Z",
   "projects": {
     "extension": {
-      "filesScanned": 3848,
+      "filesScanned": 3888,
       "targetComponent": "Box",
       "mmds": {
-        "totalInstances": 106,
-        "filesCount": 27,
+        "totalInstances": 114,
+        "filesCount": 31,
         "props": {
           "className": {
-            "count": 90,
+            "count": 97,
             "values": {
               "\"flex\"": 20,
               "\"flex flex-col\"": 8,
               "\"flex w-full\"": 4,
               "\"hold-to-reveal-button__absolute-fill\"": 2,
               "\"permission-cell__status__accounts-group-box inline-flex\"": 2,
+              "\"flex-1\"": 2,
               "{classnames('flex connected-accounts-list__row', className)}": 1,
               "\"connected-accounts-list__row-content\"": 1,
               "\"connected-accounts-permissions\"": 1,
@@ -50,6 +51,11 @@
               "\"multichain-account-list-item__account-name flex me-2\"": 1,
               "\"multichain-account-list-item__asset flex overflow-hidden\"": 1,
               "\"network-indicator\"": 1,
+              "\"mt-auto\"": 1,
+              "\"h-full\"": 1,
+              "\"w-fit rounded-lg\"": 1,
+              "\"min-h-0 flex-1\"": 1,
+              "\"h-6\"": 1,
               "\"flex h-full flex-col items-center justify-center p-4\"": 1,
               "\"flex w-full flex-col items-center gap-2\"": 1,
               "\"form-field__heading-title flex\"": 1,
@@ -74,11 +80,18 @@
             }
           },
           "alignItems": {
-            "count": 27,
+            "count": 29,
             "values": {
-              "{BoxAlignItems.Center}": 25,
+              "{BoxAlignItems.Center}": 27,
               "{BoxAlignItems.Start}": 1,
               "{BoxAlignItems.Baseline}": 1
+            }
+          },
+          "flexDirection": {
+            "count": 27,
+            "values": {
+              "{BoxFlexDirection.Column}": 16,
+              "{BoxFlexDirection.Row}": 11
             }
           },
           "justifyContent": {
@@ -91,11 +104,13 @@
               "{BoxJustifyContent.End}": 1
             }
           },
-          "flexDirection": {
-            "count": 20,
+          "padding": {
+            "count": 11,
             "values": {
-              "{BoxFlexDirection.Column}": 11,
-              "{BoxFlexDirection.Row}": 9
+              "0": 2,
+              "1": 2,
+              "2": 2,
+              "4": 5
             }
           },
           "backgroundColor": {
@@ -109,37 +124,29 @@
               "{BoxBackgroundColor.InfoMuted}": 1
             }
           },
-          "padding": {
-            "count": 10,
+          "gap": {
+            "count": 9,
             "values": {
-              "0": 2,
               "1": 1,
               "2": 2,
-              "4": 5
+              "4": 5,
+              "6": 1
+            }
+          },
+          "paddingTop": {
+            "count": 9,
+            "values": {
+              "2": 2,
+              "4": 4,
+              "5": 1,
+              "6": 1,
+              "8": 1
             }
           },
           "asChild": {
             "count": 8,
             "values": {
               "true (shorthand)": 8
-            }
-          },
-          "paddingTop": {
-            "count": 8,
-            "values": {
-              "2": 2,
-              "4": 3,
-              "5": 1,
-              "6": 1,
-              "8": 1
-            }
-          },
-          "gap": {
-            "count": 6,
-            "values": {
-              "2": 2,
-              "4": 3,
-              "6": 1
             }
           },
           "marginTop": {
@@ -171,6 +178,16 @@
             "count": 6,
             "values": {
               "4": 6
+            }
+          },
+          "data-testid": {
+            "count": 5,
+            "values": {
+              "\"connected-accounts-permissions-list\"": 1,
+              "\"account-item\"": 1,
+              "\"account-list-item-badge\"": 1,
+              "\"import-account-type-toggle\"": 1,
+              "\"no-connections\"": 1
             }
           },
           "paddingBottom": {
@@ -208,15 +225,6 @@
               "{BlockSize.Full}": 4
             }
           },
-          "data-testid": {
-            "count": 4,
-            "values": {
-              "\"connected-accounts-permissions-list\"": 1,
-              "\"account-item\"": 1,
-              "\"account-list-item-badge\"": 1,
-              "\"no-connections\"": 1
-            }
-          },
           "marginRight": {
             "count": 4,
             "values": {
@@ -241,6 +249,13 @@
               "{headerRef}": 1
             }
           },
+          "borderColor": {
+            "count": 3,
+            "values": {
+              "{BoxBorderColor.BorderMuted}": 2,
+              "{BorderColor.borderDefault}": 1
+            }
+          },
           "style": {
             "count": 2,
             "values": {
@@ -248,11 +263,10 @@
               "{{ overflow: 'hidden' }}": 1
             }
           },
-          "borderColor": {
+          "borderWidth": {
             "count": 2,
             "values": {
-              "{BorderColor.borderDefault}": 1,
-              "{BoxBorderColor.BorderMuted}": 1
+              "1": 2
             }
           },
           "margin": {
@@ -274,10 +288,16 @@
               "{() => { // Without this check, the account will be selected after // the acco...}": 1
             }
           },
-          "borderWidth": {
+          "role": {
             "count": 1,
             "values": {
-              "1": 1
+              "\"group\"": 1
+            }
+          },
+          "aria-label": {
+            "count": 1,
+            "values": {
+              "{t('selectType')}": 1
             }
           },
           "boxShadow": {
@@ -289,19 +309,19 @@
         }
       },
       "deprecated": {
-        "totalInstances": 133,
-        "filesCount": 42,
+        "totalInstances": 130,
+        "filesCount": 39,
         "props": {
           "display": {
-            "count": 82,
+            "count": 81,
             "values": {
-              "{Display.Flex}": 79,
+              "{Display.Flex}": 78,
               "{Display.Block}": 2,
               "{isCollapsable && isCollapsed ? Display.None : Display.Flex}": 1
             }
           },
           "className": {
-            "count": 58,
+            "count": 57,
             "values": {
               "\"snap-home-menu__item\"": 3,
               "\"confirmation-network-switch__icon\"": 2,
@@ -329,7 +349,6 @@
               "\"snap-external-pill__wrapper\"": 1,
               "\"w-full\"": 1,
               "\"min-w-0\"": 1,
-              "\"multichain-app-header__contents flex\"": 1,
               "\"multichain-connection-list-item\"": 1,
               "\"multichain-product-tour-menu__container\"": 1,
               "\"multichain-product-tour-menu__arrow\"": 1,
@@ -361,9 +380,9 @@
             }
           },
           "alignItems": {
-            "count": 45,
+            "count": 44,
             "values": {
-              "{AlignItems.center}": 41,
+              "{AlignItems.center}": 40,
               "{AlignItems.flexEnd}": 2,
               "{isLoading && AlignItems.center}": 1,
               "{AlignItems.baseline}": 1
@@ -419,18 +438,18 @@
             }
           },
           "width": {
-            "count": 29,
+            "count": 28,
             "values": {
-              "{BlockSize.Full}": 27,
+              "{BlockSize.Full}": 26,
               "\"full\"": 1,
               "{BlockSize.FiveTwelfths}": 1
             }
           },
           "backgroundColor": {
-            "count": 23,
+            "count": 22,
             "values": {
               "{BackgroundColor.backgroundAlternative}": 8,
-              "{BackgroundColor.backgroundDefault}": 7,
+              "{BackgroundColor.backgroundDefault}": 6,
               "{isVisible && sensitive ? BackgroundColor.errorMuted : BackgroundColor.primary...}": 1,
               "{isError ? BackgroundColor.errorMuted : BackgroundColor.backgroundDefault}": 1,
               "{userAgree ? BackgroundColor.infoMuted : BackgroundColor.backgroundAlternative}": 1,
@@ -460,38 +479,28 @@
             }
           },
           "padding": {
-            "count": 14,
+            "count": 13,
             "values": {
               "1": 2,
-              "2": 3,
+              "2": 2,
               "4": 7,
               "{!disablePadding || isLoading ? 4 : 0}": 1,
               "{hasHeader || hasHeaderMaybe ? 0 : 4}": 1
             }
           },
           "paddingLeft": {
-            "count": 14,
+            "count": 13,
             "values": {
-              "2": 2,
+              "2": 1,
               "4": 11,
               "8": 1
             }
           },
           "paddingRight": {
-            "count": 12,
-            "values": {
-              "2": 1,
-              "4": 11
-            }
-          },
-          "paddingBottom": {
             "count": 11,
             "values": {
-              "1": 1,
-              "2": 6,
-              "3": 1,
-              "4": 2,
-              "8": 1
+              "2": 1,
+              "4": 10
             }
           },
           "borderRadius": {
@@ -505,22 +514,22 @@
               "{BorderRadius.pill}": 1
             }
           },
-          "paddingTop": {
+          "paddingBottom": {
             "count": 10,
+            "values": {
+              "1": 1,
+              "2": 6,
+              "3": 1,
+              "4": 2
+            }
+          },
+          "paddingTop": {
+            "count": 9,
             "values": {
               "1": 1,
               "2": 5,
               "3": 1,
-              "4": 3
-            }
-          },
-          "gap": {
-            "count": 9,
-            "values": {
-              "1": 1,
-              "2": 2,
-              "4": 5,
-              "{showAvatarAccount ? 2 : 0}": 1
+              "4": 2
             }
           },
           "marginBottom": {
@@ -529,6 +538,15 @@
               "1": 1,
               "4": 5,
               "{marginBottom}": 1
+            }
+          },
+          "gap": {
+            "count": 7,
+            "values": {
+              "1": 1,
+              "2": 1,
+              "4": 4,
+              "{showAvatarAccount ? 2 : 0}": 1
             }
           },
           "flexWrap": {
@@ -642,11 +660,11 @@
         }
       },
       "overall": {
-        "totalInstances": 239,
-        "filesCount": 69,
+        "totalInstances": 244,
+        "filesCount": 70,
         "props": {
           "className": {
-            "count": 148,
+            "count": 154,
             "values": {
               "\"flex\"": 20,
               "\"flex flex-col\"": 8,
@@ -654,6 +672,7 @@
               "\"snap-home-menu__item\"": 3,
               "\"hold-to-reveal-button__absolute-fill\"": 2,
               "\"permission-cell__status__accounts-group-box inline-flex\"": 2,
+              "\"flex-1\"": 2,
               "\"confirmation-network-switch__icon\"": 2,
               "\"toggle-ipfs-modal\"": 1,
               "{classnames('flex connected-accounts-list__row', className)}": 1,
@@ -712,7 +731,11 @@
               "\"network-indicator\"": 1,
               "\"w-full\"": 1,
               "\"min-w-0\"": 1,
-              "\"multichain-app-header__contents flex\"": 1,
+              "\"mt-auto\"": 1,
+              "\"h-full\"": 1,
+              "\"w-fit rounded-lg\"": 1,
+              "\"min-h-0 flex-1\"": 1,
+              "\"h-6\"": 1,
               "\"multichain-connection-list-item\"": 1,
               "\"flex h-full flex-col items-center justify-center p-4\"": 1,
               "\"flex w-full flex-col items-center gap-2\"": 1,
@@ -765,23 +788,34 @@
             }
           },
           "display": {
-            "count": 82,
+            "count": 81,
             "values": {
-              "{Display.Flex}": 79,
+              "{Display.Flex}": 78,
               "{Display.Block}": 2,
               "{isCollapsable && isCollapsed ? Display.None : Display.Flex}": 1
             }
           },
           "alignItems": {
-            "count": 72,
+            "count": 73,
             "values": {
-              "{AlignItems.center}": 41,
-              "{BoxAlignItems.Center}": 25,
+              "{AlignItems.center}": 40,
+              "{BoxAlignItems.Center}": 27,
               "{AlignItems.flexEnd}": 2,
               "{BoxAlignItems.Start}": 1,
               "{isLoading && AlignItems.center}": 1,
               "{AlignItems.baseline}": 1,
               "{BoxAlignItems.Baseline}": 1
+            }
+          },
+          "flexDirection": {
+            "count": 68,
+            "values": {
+              "{FlexDirection.Column}": 25,
+              "{BoxFlexDirection.Column}": 16,
+              "{FlexDirection.Row}": 14,
+              "{BoxFlexDirection.Row}": 11,
+              "{sensitive && isVisible ? FlexDirection.Column : FlexDirection.Row}": 1,
+              "{showAvatarAccount ? FlexDirection.Row : FlexDirection.Column}": 1
             }
           },
           "justifyContent": {
@@ -799,23 +833,12 @@
               "{BoxJustifyContent.End}": 1
             }
           },
-          "flexDirection": {
-            "count": 61,
-            "values": {
-              "{FlexDirection.Column}": 25,
-              "{FlexDirection.Row}": 14,
-              "{BoxFlexDirection.Column}": 11,
-              "{BoxFlexDirection.Row}": 9,
-              "{sensitive && isVisible ? FlexDirection.Column : FlexDirection.Row}": 1,
-              "{showAvatarAccount ? FlexDirection.Row : FlexDirection.Column}": 1
-            }
-          },
           "backgroundColor": {
-            "count": 34,
+            "count": 33,
             "values": {
               "{BackgroundColor.backgroundAlternative}": 8,
-              "{BackgroundColor.backgroundDefault}": 7,
               "{BoxBackgroundColor.BackgroundDefault}": 6,
+              "{BackgroundColor.backgroundDefault}": 6,
               "{containerbackgroundColor}": 1,
               "{isVisible && sensitive ? BackgroundColor.errorMuted : BackgroundColor.primary...}": 1,
               "{isError ? BackgroundColor.errorMuted : BackgroundColor.backgroundDefault}": 1,
@@ -832,9 +855,9 @@
             }
           },
           "width": {
-            "count": 33,
+            "count": 32,
             "values": {
-              "{BlockSize.Full}": 31,
+              "{BlockSize.Full}": 30,
               "\"full\"": 1,
               "{BlockSize.FiveTwelfths}": 1
             }
@@ -874,8 +897,8 @@
             "count": 24,
             "values": {
               "0": 2,
-              "1": 3,
-              "2": 5,
+              "1": 4,
+              "2": 4,
               "4": 12,
               "{!disablePadding || isLoading ? 4 : 0}": 1,
               "{hasHeader || hasHeaderMaybe ? 0 : 4}": 1
@@ -893,21 +916,6 @@
               "{[4, 7]}": 1
             }
           },
-          "paddingLeft": {
-            "count": 19,
-            "values": {
-              "2": 2,
-              "4": 16,
-              "8": 1
-            }
-          },
-          "paddingRight": {
-            "count": 18,
-            "values": {
-              "2": 1,
-              "4": 17
-            }
-          },
           "paddingTop": {
             "count": 18,
             "values": {
@@ -920,25 +928,39 @@
               "8": 1
             }
           },
-          "paddingBottom": {
+          "paddingLeft": {
+            "count": 18,
+            "values": {
+              "2": 1,
+              "4": 16,
+              "8": 1
+            }
+          },
+          "paddingRight": {
+            "count": 17,
+            "values": {
+              "2": 1,
+              "4": 16
+            }
+          },
+          "gap": {
             "count": 16,
+            "values": {
+              "1": 2,
+              "2": 3,
+              "4": 9,
+              "6": 1,
+              "{showAvatarAccount ? 2 : 0}": 1
+            }
+          },
+          "paddingBottom": {
+            "count": 15,
             "values": {
               "1": 1,
               "2": 9,
               "3": 1,
               "4": 3,
-              "5": 1,
-              "8": 1
-            }
-          },
-          "gap": {
-            "count": 15,
-            "values": {
-              "1": 1,
-              "2": 4,
-              "4": 8,
-              "6": 1,
-              "{showAvatarAccount ? 2 : 0}": 1
+              "5": 1
             }
           },
           "height": {
@@ -978,6 +1000,20 @@
               "{BorderRadius.full}": 1
             }
           },
+          "data-testid": {
+            "count": 9,
+            "values": {
+              "\"connected-accounts-permissions-list\"": 1,
+              "{snapId}": 1,
+              "\"account-item\"": 1,
+              "\"account-list-item-badge\"": 1,
+              "\"import-account-type-toggle\"": 1,
+              "\"connection-list-item\"": 1,
+              "\"no-connections\"": 1,
+              "{dataTestId}": 1,
+              "\"app-header-logo\"": 1
+            }
+          },
           "marginRight": {
             "count": 9,
             "values": {
@@ -996,19 +1032,6 @@
             "count": 8,
             "values": {
               "true (shorthand)": 8
-            }
-          },
-          "data-testid": {
-            "count": 8,
-            "values": {
-              "\"connected-accounts-permissions-list\"": 1,
-              "{snapId}": 1,
-              "\"account-item\"": 1,
-              "\"account-list-item-badge\"": 1,
-              "\"connection-list-item\"": 1,
-              "\"no-connections\"": 1,
-              "{dataTestId}": 1,
-              "\"app-header-logo\"": 1
             }
           },
           "ref": {
@@ -1032,6 +1055,13 @@
               "{titleDetailWrapperProps}": 1
             }
           },
+          "borderColor": {
+            "count": 7,
+            "values": {
+              "{BorderColor.borderDefault}": 5,
+              "{BoxBorderColor.BorderMuted}": 2
+            }
+          },
           "key": {
             "count": 6,
             "values": {
@@ -1043,13 +1073,6 @@
               "{`${address}-${tokenId}`}": 1
             }
           },
-          "borderColor": {
-            "count": 6,
-            "values": {
-              "{BorderColor.borderDefault}": 5,
-              "{BoxBorderColor.BorderMuted}": 1
-            }
-          },
           "onClick": {
             "count": 4,
             "values": {
@@ -1058,17 +1081,17 @@
               "{() => { // Without this check, the account will be selected after // the acco...}": 1
             }
           },
+          "borderWidth": {
+            "count": 4,
+            "values": {
+              "1": 4
+            }
+          },
           "borderStyle": {
             "count": 4,
             "values": {
               "{BorderStyle.solid}": 2,
               "{BorderStyle.none}": 2
-            }
-          },
-          "borderWidth": {
-            "count": 3,
-            "values": {
-              "1": 3
             }
           },
           "onScroll": {
@@ -1095,6 +1118,18 @@
             "values": {
               "0": 1,
               "2": 1
+            }
+          },
+          "role": {
+            "count": 1,
+            "values": {
+              "\"group\"": 1
+            }
+          },
+          "aria-label": {
+            "count": 1,
+            "values": {
+              "{t('selectType')}": 1
             }
           },
           "paddingInlineEnd": {
@@ -1124,11 +1159,11 @@
         }
       },
       "deprecatedByLegacyComponent": {
-        "Box": 133
+        "Box": 130
       }
     },
     "mobile": {
-      "filesScanned": 9385,
+      "filesScanned": 9545,
       "targetComponent": "Box",
       "mmds": {
         "totalInstances": 25,

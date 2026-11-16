@@ -1,52 +1,67 @@
 {
   "component": "ButtonIcon",
-  "generatedAt": "2026-11-09T08:23:28.522Z",
+  "generatedAt": "2026-11-16T08:37:45.047Z",
   "projects": {
     "extension": {
-      "filesScanned": 3848,
+      "filesScanned": 3888,
       "targetComponent": "ButtonIcon",
       "mmds": {
-        "totalInstances": 4,
-        "filesCount": 4,
+        "totalInstances": 6,
+        "filesCount": 6,
         "props": {
           "iconName": {
-            "count": 4,
+            "count": 6,
             "values": {
               "{IconName.MoreVertical}": 2,
-              "{IconName.ArrowLeft}": 2
+              "{IconName.ArrowLeft}": 2,
+              "{showPassword ? IconName.Eye : IconName.EyeSlash}": 1,
+              "{showPrivateKey ? IconName.Eye : IconName.EyeSlash}": 1
             }
           },
           "size": {
-            "count": 4,
+            "count": 6,
             "values": {
-              "{ButtonIconSize.Sm}": 2,
-              "{ButtonIconSize.Md}": 2
+              "{ButtonIconSize.Md}": 4,
+              "{ButtonIconSize.Sm}": 2
             }
           },
           "onClick": {
-            "count": 4,
+            "count": 6,
             "values": {
               "{(e) => { e.stopPropagation(); if (!accountOptionsMenuOpen) { trackEvent( crea...}": 1,
+              "{() => setShowPassword(!showPassword)}": 1,
+              "{() => setShowPrivateKey(!showPrivateKey)}": 1,
               "{handleBack}": 1,
               "{prevClick}": 1,
               "{() => setAssetOptionsOpen(true)}": 1
             }
           },
           "data-testid": {
-            "count": 4,
+            "count": 6,
             "values": {
               "\"account-list-item-menu-button\"": 1,
+              "\"show-hide-json-password\"": 1,
+              "\"show-hide-private-key\"": 1,
               "\"permissions-page-back\"": 1,
               "\"multichain-product-tour-menu-popover-prevIcon\"": 1,
               "\"asset-options__button\"": 1
             }
           },
           "ariaLabel": {
-            "count": 3,
+            "count": 5,
             "values": {
               "{`${account.metadata.name} ${t('options')}`}": 1,
+              "{showPassword ? t('hide') : t('show')}": 1,
+              "{showPrivateKey ? t('privateKeyShown') : t('privateKeyHidden')}": 1,
               "{t('back')}": 1,
               "{t('assetOptions')}": 1
+            }
+          },
+          "aria-pressed": {
+            "count": 2,
+            "values": {
+              "{showPassword}": 1,
+              "{showPrivateKey}": 1
             }
           },
           "iconProps": {
@@ -201,11 +216,11 @@
         }
       },
       "overall": {
-        "totalInstances": 21,
-        "filesCount": 19,
+        "totalInstances": 23,
+        "filesCount": 21,
         "props": {
           "iconName": {
-            "count": 21,
+            "count": 23,
             "values": {
               "{IconName.MoreVertical}": 5,
               "{IconName.Close}": 5,
@@ -214,11 +229,13 @@
               "{copied ? IconName.CopySuccess : IconName.Copy}": 2,
               "\"arrow-left\"": 2,
               "{expanded ? IconName.ArrowUp : IconName.ArrowDown}": 1,
+              "{showPassword ? IconName.Eye : IconName.EyeSlash}": 1,
+              "{showPrivateKey ? IconName.Eye : IconName.EyeSlash}": 1,
               "{IconName.Arrow2Down}": 1
             }
           },
           "onClick": {
-            "count": 20,
+            "count": 22,
             "values": {
               "{handleBack}": 2,
               "{() => handleCopy(address)}": 2,
@@ -229,6 +246,8 @@
               "{onCancel}": 1,
               "{() => { handleMenuOpen(); }}": 1,
               "{(e) => { e.stopPropagation(); if (!accountOptionsMenuOpen) { trackEvent( crea...}": 1,
+              "{() => setShowPassword(!showPassword)}": 1,
+              "{() => setShowPrivateKey(!showPrivateKey)}": 1,
               "{prevClick}": 1,
               "{() => { setRemoved(true); }}": 1,
               "{onBack}": 1,
@@ -241,9 +260,9 @@
             }
           },
           "size": {
-            "count": 17,
+            "count": 19,
             "values": {
-              "{ButtonIconSize.Md}": 7,
+              "{ButtonIconSize.Md}": 9,
               "{ButtonIconSize.Sm}": 4,
               "{IconSize.Sm}": 3,
               "{Size.SM}": 2,
@@ -251,7 +270,7 @@
             }
           },
           "ariaLabel": {
-            "count": 16,
+            "count": 18,
             "values": {
               "{t('close')}": 3,
               "{t('options')}": 2,
@@ -260,6 +279,8 @@
               "{t('showPermissions')}": 1,
               "{t('snapHomeMenu')}": 1,
               "{`${account.metadata.name} ${t('options')}`}": 1,
+              "{showPassword ? t('hide') : t('show')}": 1,
+              "{showPrivateKey ? t('privateKeyShown') : t('privateKeyHidden')}": 1,
               "{t('assetOptions')}": 1,
               "{t('scrollDown')}": 1,
               "{copied ? t('copiedExclamation') : t('copyToClipboard')}": 1,
@@ -267,11 +288,13 @@
             }
           },
           "data-testid": {
-            "count": 9,
+            "count": 11,
             "values": {
               "{permissionName}": 1,
               "\"snap-home-menu-button\"": 1,
               "\"account-list-item-menu-button\"": 1,
+              "\"show-hide-json-password\"": 1,
+              "\"show-hide-private-key\"": 1,
               "\"permissions-page-back\"": 1,
               "\"multichain-product-tour-menu-popover-prevIcon\"": 1,
               "\"popover-close\"": 1,
@@ -306,6 +329,13 @@
             "values": {
               "{setMenuRef}": 1,
               "{setAccountListItemMenuRef}": 1
+            }
+          },
+          "aria-pressed": {
+            "count": 2,
+            "values": {
+              "{showPassword}": 1,
+              "{showPrivateKey}": 1
             }
           },
           "iconProps": {
@@ -353,7 +383,7 @@
       }
     },
     "mobile": {
-      "filesScanned": 9385,
+      "filesScanned": 9545,
       "targetComponent": "ButtonIcon",
       "mmds": {
         "totalInstances": 3,
