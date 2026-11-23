@@ -1,9 +1,9 @@
 {
   "component": "AvatarAccount",
-  "generatedAt": "2026-11-16T08:36:29.858Z",
+  "generatedAt": "2026-11-23T08:27:24.986Z",
   "projects": {
     "extension": {
-      "filesScanned": 3888,
+      "filesScanned": 3893,
       "targetComponent": "AvatarAccount",
       "mmds": {
         "totalInstances": 1,
@@ -49,12 +49,31 @@
       "deprecatedByLegacyComponent": {}
     },
     "mobile": {
-      "filesScanned": 9545,
+      "filesScanned": 9695,
       "targetComponent": "AvatarAccount",
       "mmds": {
-        "totalInstances": 0,
-        "filesCount": 0,
-        "props": {}
+        "totalInstances": 1,
+        "filesCount": 1,
+        "props": {
+          "address": {
+            "count": 1,
+            "values": {
+              "{address}": 1
+            }
+          },
+          "size": {
+            "count": 1,
+            "values": {
+              "{AvatarAccountSize.Md}": 1
+            }
+          },
+          "variant": {
+            "count": 1,
+            "values": {
+              "{getAvatarAccountVariant(accountAvatarType)}": 1
+            }
+          }
+        }
       },
       "deprecated": {
         "totalInstances": 2,
@@ -94,13 +113,21 @@
         }
       },
       "overall": {
-        "totalInstances": 2,
-        "filesCount": 1,
+        "totalInstances": 3,
+        "filesCount": 2,
         "props": {
           "variant": {
-            "count": 2,
+            "count": 3,
             "values": {
-              "{AvatarVariant.Account}": 2
+              "{AvatarVariant.Account}": 2,
+              "{getAvatarAccountVariant(accountAvatarType)}": 1
+            }
+          },
+          "size": {
+            "count": 3,
+            "values": {
+              "{AvatarSize.Sm}": 2,
+              "{AvatarAccountSize.Md}": 1
             }
           },
           "type": {
@@ -116,16 +143,16 @@
               "{updatedTransactionDetails.renderTo}": 1
             }
           },
-          "size": {
-            "count": 2,
-            "values": {
-              "{AvatarSize.Sm}": 2
-            }
-          },
           "style": {
             "count": 2,
             "values": {
               "{styles.accountAvatar}": 2
+            }
+          },
+          "address": {
+            "count": 1,
+            "values": {
+              "{address}": 1
             }
           }
         }
